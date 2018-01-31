@@ -70,7 +70,7 @@ class FulfilledOrders extends Component {
 
 
             return (
-                <Page title="Unfulfilled Orders" separator>
+                <Page title="Untracified Orders" separator>
                         {orderArray.map((order, index) => {
     const qrValue = order.order_number.toString();
     const title = "Order No: " + order.order_number;

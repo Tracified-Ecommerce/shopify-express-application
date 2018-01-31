@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CollapaseCards from './collapase';
 import * as axios from 'axios';
 import { Container, Row, Col, Button } from 'reactstrap';
-import { Thumbnail, Card, Page, List } from '@shopify/polaris';
+import { Thumbnail, Card, Page, List, RadioButton } from '@shopify/polaris';
 import Loading from './Loading';
 const QRCode = require('qrcode.react');
 
@@ -108,10 +108,11 @@ class Part2Cards extends Component {
             }
 
             return (
-                <Page title="Unfulfilled Orders" separator>
+                <Page title="Untracified Orders" separator>
 
                     <div>
-                        <Card>
+                        <Card> 
+                        
                             <input
                                 type="text"
                                 placeholder="Enter the order id"
