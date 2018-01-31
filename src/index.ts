@@ -33,7 +33,7 @@ app.engine("html", ejs.renderFile);
  * db connection
  * -set up default mongoose connection
  */
-const mongoDB = "mongodb://shopify:Tracified@ds251435.mlab.com:51435/shopify-db";
+const mongoDB = "mongodb://tracified:1234@ds219318.mlab.com:19318/ecommerceplugin";
 mongoose.connect(mongoDB, {
   useMongoClient: true,
 });
