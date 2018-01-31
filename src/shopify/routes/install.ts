@@ -9,7 +9,7 @@ const verifyQueryHMAC = require("../helpers").verifyQueryHMAC;
 const shopAdminAPI = require("../helpers").shopAdminAPI;
 const router = Router();
 const scopes = "read_products,write_products,write_themes,write_orders,read_orders";
-const forwardingAddress = "https://shopify-tracified.herokuapp.com";
+const forwardingAddress = "https://tracified-api-test.herokuapp.com";
 const apiKey = "8cbed825a1a05c935cbb12574bb24257";
 const apiSecret = "4bc97ed0ae56f7e75f2560f7816fd96a";
 
@@ -21,7 +21,7 @@ router.get("/", (req: Request, res: Response) => {
     const redirectUri = forwardingAddress + "/shopify/install/callback";
     const installUrl = "https://" + shop +
       "/admin/oauth/authorize?client_id=" + apiKey +
-      "&scope=" + scopes +
+      "&scope=" + scopes 
       "&state=" + state +
       "&redirect_uri=" + redirectUri;
 
