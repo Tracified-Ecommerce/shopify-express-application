@@ -21,7 +21,7 @@ router.get("/", (req: Request, res: Response) => {
     const redirectUri = forwardingAddress + "/shopify/install/callback";
     const installUrl = "https://" + shop +
       "/admin/oauth/authorize?client_id=" + apiKey +
-      "&scope=" + scopes 
+      "&scope=" + scopes +
       "&state=" + state +
       "&redirect_uri=" + redirectUri;
 
