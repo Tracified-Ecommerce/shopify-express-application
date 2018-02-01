@@ -93,7 +93,7 @@ class FulfilledOrdersPage extends Component {
             }
 
             return (
-                <Page title="Fulfilled Orders" separator>
+                <Page title="Tracified Orders" separator>
                     <table className="table table-striped">
                         <thead>
                             <tr>

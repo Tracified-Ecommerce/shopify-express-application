@@ -9,9 +9,9 @@ const verifyQueryHMAC = require("../helpers").verifyQueryHMAC;
 const shopAdminAPI = require("../helpers").shopAdminAPI;
 const router = Router();
 const scopes = "read_products,write_products,write_themes,write_orders,read_orders";
-const forwardingAddress = "https://shopify-tracified.herokuapp.com";
-const apiKey = "7f3bc78eabe74bdca213aceb9cfcc1f4";
-const apiSecret = "d3141aefd842b5857b2048a3a229f4c8";
+const forwardingAddress = "https://tracified-api-test.herokuapp.com";
+const apiKey = "8cbed825a1a05c935cbb12574bb24257";
+const apiSecret = "4bc97ed0ae56f7e75f2560f7816fd96a";
 
 //installation route
 router.get("/", (req: Request, res: Response) => {
@@ -206,5 +206,5 @@ router.get("/callback", (req: Request, res: Response) => {
     res.status(400).send("Required parameters missing");
   }
 });
-
+  
 export { router };

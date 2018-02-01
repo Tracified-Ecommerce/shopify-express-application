@@ -64,4 +64,31 @@ router.get("/orders/:id/fulfill", (req: Request, res: Response) => {
     });
 });
 
-export { router };
+router.get("/orders/:id/tracify", (req: Request, res: Response) => {
+    const url: string = "/admin/orders"+ req.params.id + ".json";
+    const body: object = {
+    
+         "order" : {
+
+            "id": req.params.id,
+            "note_attributes": [
+              {
+                "isTracified": 0,
+               
+              }
+            ]
+          }
+
+
+        }
+
+        shopAdminAPI("PUT", req["session"].shop.name, url , req["shopRequestHeaders"], body, (order: any) => {
+            console.log("order fulfilled");
+            res.status(200).send(order);
+        });
+           
+     }
+);
+
+
+    export { router };
