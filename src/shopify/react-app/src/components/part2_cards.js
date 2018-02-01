@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as axios from 'axios';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import { Thumbnail, Card, Page, List, RadioButton, Button, Stack } from '@shopify/polaris';
 import Loading from './Loading';
 import CollapseMain from './CollapseMain';
