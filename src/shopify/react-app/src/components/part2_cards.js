@@ -1,24 +1,46 @@
 import React, { Component } from 'react';
-import CollapaseCards from './collapase';
 import * as axios from 'axios';
 import { Container, Row, Col, Button } from 'reactstrap';
-import { Thumbnail, Card, Page, List, RadioButton } from '@shopify/polaris';
+import { Thumbnail, Card, Page, List, RadioButton, Button, Stack } from '@shopify/polaris';
 import Loading from './Loading';
-const QRCode = require('qrcode.react');
+import CollapseMain from './CollapseMain';
+import Uncollapsed from './Uncollapsed';
 
 class Part2Cards extends Component {
     constructor() {
         super();
+        this.handleClick = this.handleClick.bind(this);
         this.state = {
             orders: [],
+            cardStateArray: [],
             products: {},
             isOrderListLoading: true,
-            search: ''
+            search: '',
+            isExpanded: true
         };
+        this.toggleCardType = this.toggleCardType.bind(this);
         this.resetOrders = this.resetOrders.bind(this);
     }
 
+    handleClick = (index, isClosed) => {
+  
+        if(!isClosed){
+        //reset all values in array to false -> (sets all cards' "isOpen" attributes to false)
+        this.state.cardStateArray.fill(false);
 
+        }
+
+        //set only this card's collapse attribute to true
+        var temp = this.state.cardStateArray.slice();
+        temp[index] = !(temp[index]);
+        // replace array with modified temp array
+        this.setState({cardStateArray: temp});
+    
+    }
+
+    toggleCardType() {
+        this.setState({isExpanded: !this.state.isExpanded});
+    }
 
     componentDidMount() {
         axios.get('/shopify/shop-api/products')
@@ -28,9 +50,14 @@ class Part2Cards extends Component {
             });
         axios.get('/shopify/shop-api/orders')
             .then(response => {
+                let arr = [];
+                 response.data.orders.forEach((order) => {
+                     arr.push(false);
+                 });
                 this.setState({
                     orders: response.data.orders,
-                    isOrderListLoading: false
+                    isOrderListLoading: false,
+                    cardStateArray: arr
                 });
             });
     }
@@ -56,6 +83,9 @@ class Part2Cards extends Component {
 
 
     render() {
+
+        let buttonText = this.state.isExpanded ? {text:"Switch to collapsed view"} : {text:"Switch to expanded view"}
+
         if (this.state.isOrderListLoading) {
             return <Loading />;
         }
@@ -110,44 +140,69 @@ class Part2Cards extends Component {
             return (
                 <Page title="Untracified Orders" separator>
 
-                    <div>
-                        <Card> 
-                        
-                            <input
-                                type="text"
-                                placeholder="Enter the order id"
-                                value={this.state.search}
-                                onChange={this.updateSearch.bind(this)}
-                                style={inputStyle}
-                            />
-                        </Card>
-                    </div>
+                <div>
+                    <Card> 
+                    
+                        <input
+                            type="text"
+                            placeholder="Enter the order id"
+                            value={this.state.search}
+                            onChange={this.updateSearch.bind(this)}
+                            style={inputStyle}
+                        />
+                    </Card>
+                </div>
+                <Stack 
+                     distribution="trailing"
+                 >
+                 <div style={{paddingBottom:10}}>
+                 <Stack.Item>
+                         <Button 
+                             plain
+                             size="slim" 
+                             outline  
+                             onClick={this.toggleCardType} 
+                             style={{ marginBottom: '1rem' }}
+                         >
+                             {buttonText.text}
+                         </Button>
+                     </Stack.Item>
+                 </div>
+                     
+                 </Stack>
 
                     {orderArray.map((order, index) => {
                         const qrValue = order.order_number.toString();
                         const title = "Order ID: " + order.order_number;
-                        return (
-                            <Card key={order.order_number} title={title} sectioned subdued={false}>
-                                <Row>
 
-                                    <Col sm="10">
-                                        <List type="bullet">
-                                            <List.Item>Customer  &nbsp;&nbsp;: {order.customer}</List.Item>
-                                            <List.Item>Created At&nbsp;&nbsp;: {order.created_at}</List.Item>
-                                        </List>
-                                    </Col>
-                                    <Col sm="2">
-                                        <QRCode value={qrValue} />
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col sm="12">
-                                        <CollapaseCards resetOrders={this.resetOrders} itemArray={order.lineItems} products={this.state.products} orderID={order.id} />
-                                    </Col>
-                                </Row>
-                            </Card>
-                        )
+                        if(this.state.isExpanded){
+                            return (
+                                <Uncollapsed 
+                                    key={index}
+                                    order={order} 
+                                    productsProp={this.state.products} 
+                                    qrVal={qrValue} 
+                                    title={title}
+                                />
+                       
+                            );}else{
+                                return (
+                                    <CollapseMain 
+                                        key={index} 
+                                        order={order} 
+                                        productsProp={this.state.products} 
+                                        qrVal={qrValue} 
+                                        title={title}
+                                        resetOrders={this.resetOrders}
+                                        collapseArray={this.state.cardStateArray}
+                                        collapseArrayKey={index}
+                                        onClick={this.handleClick}
+                                    />
+                                );
+                            }          
+                               
                     })}
+
                 </Page>
             );
         }
