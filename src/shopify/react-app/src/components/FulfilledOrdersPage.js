@@ -20,10 +20,18 @@ class FulfilledOrdersPage extends Component {
     componentDidMount() {
         axios.get('/shopify/config/mapping')
             .then(response => {
+                if(response.data && response.data.length){
+                    this.setState({
+                        mapping: response.data
+                    });
+                }
                 this.setState({
-                    mapping: response.data,
                     isMappingLoading: false
                 });
+
+                
+            }).catch(function(error) {
+                console.error(error);
             });
         axios.get('/shopify/shop-api/fulfilled-orders')
             .then(response => {

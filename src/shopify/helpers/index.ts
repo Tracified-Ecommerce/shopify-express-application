@@ -1,4 +1,4 @@
-import * as crypto from "crypto";
+    import * as crypto from "crypto";
 import querystring = require("querystring");
 import request = require("request-promise");
 

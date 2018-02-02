@@ -17,7 +17,12 @@ router.get("/mapping", (req: Request, res: Response) => {
     const shop = req["session"].shop;
     ShopifyMapping.findOne({ "shop_name": shop.name }, (err: Error, mapping: ShopifyMappingModel) => {
         if (err) return res.status(503).send("error with db connection. Plese try again in a while");
-        return res.send(mapping.mapping);
+        if (mapping){
+            return res.send(mapping.mapping);
+        }else{
+            return res.status(204).send({});
+        }
+
     });
 });
 

@@ -65,21 +65,15 @@ router.get("/orders/:id/fulfill", (req: Request, res: Response) => {
 });
 
 router.get("/orders/:id/tracify", (req: Request, res: Response) => {
-    const url: string = "/admin/orders"+ req.params.id + ".json";
+    const url: string = "/admin/orders/"+ req.params.id + ".json";
     const body: object = {
-    
-         "order" : {
 
-            "id": req.params.id,
-            "note_attributes": [
-              {
-                "isTracified": 0,
-               
-              }
-            ]
-          }
-
-
+            "order": {
+                "id": req.params.id,
+                "note_attributes": {
+                    "tracified": "1"
+                }
+            }
         }
 
         shopAdminAPI("PUT", req["session"].shop.name, url , req["shopRequestHeaders"], body, (order: any) => {
