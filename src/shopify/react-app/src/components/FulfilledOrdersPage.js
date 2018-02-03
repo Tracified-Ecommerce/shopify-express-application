@@ -20,7 +20,7 @@ class FulfilledOrdersPage extends Component {
     componentDidMount() {
         axios.get('/shopify/config/mapping')
             .then(response => {
-                if(response.data && response.data.length){
+                if(response.status == 200){
                     this.setState({
                         mapping: response.data
                     });
@@ -28,6 +28,8 @@ class FulfilledOrdersPage extends Component {
                 this.setState({
                     isMappingLoading: false
                 });
+
+                console.log("this.state.mapping is : "+ JSON.stringify(this.state.mapping));
 
                 
             }).catch(function(error) {
