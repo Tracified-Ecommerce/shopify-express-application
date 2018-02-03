@@ -28,6 +28,7 @@ router.get("/mapping", (req: Request, res: Response) => {
 
 router.post("/mapping", (req: Request, res: Response) => {
     const shop = req["session"].shop;
+    console.log(req.body.mapping+ "was posted to api");
     ShopifyMapping.findOne({ "shop_name": shop.name }, (err: Error, mapping: ShopifyMappingModel) => { // use if a mapping record is alredy there
         if (err) return res.status(503).send("error with db connection. Plese try again in a while");
         if (mapping) {

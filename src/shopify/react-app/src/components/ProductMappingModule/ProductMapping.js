@@ -62,7 +62,7 @@ class ProductMapping extends Component {
       this.state.mapping[shopifyProductID][1] = permission;
     }
 
-    console.log(this.state.permission);
+    console.log("updated permissions: "+this.state.permission);
   }
   updateMapping(tracifiedItemID, shopifyProductID) {
     console.log(shopifyProductID);
@@ -73,7 +73,7 @@ class ProductMapping extends Component {
       this.state.mapping[shopifyProductID] = [tracifiedItemID, false];
     }
 
-    console.log(this.state.mapping);
+    console.log("updated mapping :"+this.state.mapping);
 
   }
 
@@ -92,7 +92,7 @@ class ProductMapping extends Component {
     else{
       this.state.mapping[shopifyProductID] = [tracifiedItemID, false];
     }
-    console.log(this.state.mapping);
+    console.log("item was changed :"+this.state.mapping);
   }
   
   onPermissionChange(permission, shopifyProductID){
@@ -107,11 +107,17 @@ class ProductMapping extends Component {
   componentDidMount() {
     axios.get('/shopify/config/mapping')
     .then(response => {
-      this.setState({
-        initialMapping:response.data,
-        mapping:response.data        
-      });
-      console.log(this.state.initialMapping);
+      if(response.status == 200){
+        console.log("inside if");
+        this.setState({
+          initialMapping:response.data,
+          mapping:response.data        
+        });
+      }else{
+        console.log("outside if");
+      }
+      console.log("response status:"+response.status+" response data: "+JSON.stringify(response.data));
+      console.log("mapping is :"+JSON.stringify(this.state.mapping));
 
     });
     axios.get('/shopify/shop-api/products')
@@ -201,7 +207,7 @@ class ProductMapping extends Component {
     axios.post('/shopify/config/mapping', { mapping })
       .then((result) => {
         alert("Mapping Successfully Saved!");
-        console.log(result);
+        console.log( "Result :"+result);
       });
 
   }
