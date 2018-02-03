@@ -15,7 +15,7 @@ module.exports = {
                 method: "POST",
                 uri: tracifiedURL + "/account/verify",
             };
-            
+
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 console.log(type);
@@ -57,7 +57,7 @@ module.exports = {
         });
     },
 
-    getProductArtifacts(itemID: string, accessToken: string){
+    getProductArtifacts(itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",
@@ -71,5 +71,5 @@ module.exports = {
                 resolve(data);
             });
         });
-    }
+    },
 };
