@@ -45,7 +45,8 @@ module.exports = {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",
-                uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+                // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+                uri: "http://www.mocky.io/v2/5a7688f02e000030006ab297",
             };
 
             request(options).then((data: any) => {
