@@ -21,7 +21,7 @@ class TimelineContent extends Component {
 
     componentDidMount() {
         this.height = document.getElementById(this.props.componentID).clientHeight;
-        if(this.height > 105){
+        if(this.height > 95){
             this.setState({isCollsapsible:true});
         }  
         console.log(this.height);
@@ -33,7 +33,7 @@ class TimelineContent extends Component {
         var isClosed = this.props.collapseArray[this.props.collapseArrayKey];
         // var buttonText = this.props.collapseArray[this.props.collapseArrayKey] ? {text: "see less \u25B2"} : {text: "see more \u25BC"};
         var buttonText = this.props.collapseArray[this.props.collapseArrayKey] ? {text: "see less   "} : {text: "see more..."};
-        var divStyle = this.state.isCollsapsible ? (!this.state.collapseArray[this.props.collapseArrayKey] ? {overflow:"hidden", height:105, transition: 'all 0.7s ease-in-out'} : {overflow:"hidden", height:this.height, transition: 'all 0.7s ease-in-out'}) : {} ;
+        var divStyle = this.state.isCollsapsible ? (!this.state.collapseArray[this.props.collapseArrayKey] ? {overflow:"hidden", height:95, transition: 'all 0.7s ease-in-out'} : {overflow:"hidden", height:this.height, transition: 'all 0.7s ease-in-out'}) : {} ;
         var buttonCode = <p></p>;
 
         if(this.state.isCollsapsible){
@@ -57,20 +57,22 @@ class TimelineContent extends Component {
                         if(subGroup.hasOwnProperty("value")){
                             // subgroups which have the value field set won't have grouping
                             // In the subgroups with grouping the groups will be stored as objects  
-                            return <div key={key}> <span style={{fontWeight:'bold', fontSize: 14}}> {subGroup.title} :</span> {subGroup.value}</div>
+                            return <div key={key} style={{ height:24}}> <span style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div>
                         } else {
 
                             return(
                                 <div key={key}>
+                                <div style={{height:24}}>
                                     <span style={{fontWeight:'bold', fontSize: 14, color:'green'}}>
-                                            {stageData[key].title} :
+                                        &#8227; {stageData[key].title} :
                                     </span>
+                                </div>
                                     {
                                         Object.keys(subGroup).map((innerKey)=>{
                                 
                                             if(isObject(subGroup[innerKey])){
                                                 return(
-                                                    <div key={innerKey}><span style={{fontWeight: 'bold'}}>&nbsp;&nbsp;&nbsp;{subGroup[innerKey].title}</span> : <span>{subGroup[innerKey].value}</span></div>
+                                                    <div key={innerKey} style={{height:24}}><span style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span>{subGroup[innerKey].value}</span></div>
                                                 )
                                             }
                                             return null;
@@ -87,12 +89,8 @@ class TimelineContent extends Component {
                 } 
                 </div>
                 
-                <div style={{background:"white", opacity:"0.5", paddingLeft:"60", paddingRight:0}}>
-          
-                    <div style={{ }}>
+                <div style={{opacity:"0.7", paddingLeft:"60", paddingRight:0}}>
                     {buttonCode}
-                    </div>
-         
                 </div>
                    
             </div>
