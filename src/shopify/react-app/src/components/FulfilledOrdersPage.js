@@ -28,9 +28,6 @@ class FulfilledOrdersPage extends Component {
                 this.setState({
                     isMappingLoading: false
                 });
-
-                console.log("this.state.mapping is : "+ JSON.stringify(this.state.mapping));
-
                 
             }).catch(function(error) {
                 console.error(error);
@@ -64,8 +61,7 @@ class FulfilledOrdersPage extends Component {
                     return order1.name.indexOf(this.state.search) !== -1;
                 }
              );
-
-            console.log(orders);
+             
             var orderArray = [];
             orders.forEach((order) => {
                 var items = order.line_items;

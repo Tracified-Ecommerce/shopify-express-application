@@ -53,6 +53,7 @@ class FulfilledOrder extends Component {
         const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID;
         console.log(modalURL);
         console.log(this.props.mapping);
+        console.log(JSON.stringify(this.props.order));
         return (
             <tr>
                 <td>
