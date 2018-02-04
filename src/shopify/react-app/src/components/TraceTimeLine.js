@@ -105,8 +105,8 @@ class TraceTimeLine extends Component {
                             let titleText = (index+1)+". "+stage.title;
                             let descriptionText = stage.description;
 
-                            var ico = (<svg height="20" width="20" >
-                                            <image width="20" height="20" xlinkHref={stage.icon}  />    
+                            var ico = (<svg height="30" width="30" >
+                                            <image width="30" height="30" xlinkHref={stage.icon}  />    
                                         </svg>);
 
                             var stageData = stage.data;
