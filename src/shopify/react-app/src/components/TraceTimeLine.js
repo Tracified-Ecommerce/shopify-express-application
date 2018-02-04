@@ -8,7 +8,7 @@ import {
 } from '@shopify/polaris';
 import { Row, Col, Container } from 'reactstrap';
 import {Timeline, TimelineEvent} from 'react-event-timeline';
-import TimelineContent from '../../../../../../../timeline-test/src/components/TimelineContent';
+import TimelineContent from './TimelineContent';
 
 class TraceTimeLine extends Component {
 
