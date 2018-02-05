@@ -1,8 +1,8 @@
     import * as crypto from "crypto";
-import querystring = require("querystring");
-import request = require("request-promise");
+    import querystring = require("querystring");
+    import request = require("request-promise");
 
-module.exports = {
+    module.exports = {
 
     verifyQueryHMAC(query: any, apiSecret: string) {
         if (!query.hmac) {

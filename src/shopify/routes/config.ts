@@ -6,7 +6,7 @@ import { Error } from "mongoose";
 const router = Router();
 
 router.all("/*", (req: Request, res: Response, next: NextFunction) => {
-    if (req["session"] && req["session"].shop) {
+    if (req.session && req.session.shop) {
         next();
     } else {
         console.log("cookies not found");
@@ -16,7 +16,7 @@ router.all("/*", (req: Request, res: Response, next: NextFunction) => {
 });
 
 router.get("/mapping", (req: Request, res: Response) => {
-    const shop = req["session"].shop;
+    const shop = req.session.shop;
     ShopifyMapping.findOne({ shop_name: shop.name }, (err: Error, mapping: ShopifyMappingModel) => {
         if (err) {
             return res.status(503).send("error with db connection. Plese try again in a while");
@@ -31,7 +31,7 @@ router.get("/mapping", (req: Request, res: Response) => {
 });
 
 router.post("/mapping", (req: Request, res: Response) => {
-    const shop = req["session"].shop;
+    const shop = req.session.shop;
     console.log(req.body.mapping + "was posted to api");
     ShopifyMapping.findOne({
         shop_name: shop.name },

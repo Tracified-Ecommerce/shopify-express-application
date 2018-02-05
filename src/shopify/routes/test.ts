@@ -33,7 +33,7 @@ router.post("/webhook", (req, res) => {
 });
 
 router.get("/api", (req, res) => {
-    res.send({ "message": "Tracified/Shopify API can be used" });
+    res.send({ message: "Tracified/Shopify API can be used" });
 });
 
 router.get("/services/item-list", (req, res) => {
@@ -58,29 +58,29 @@ router.get("/services/order-details", (req, res) => {
 
 router.get("/shop-link", (req, res) => {
     console.log("cookie-checking");
-    console.log(req["session"]);
-    if (req["session"] && req["session"].shop) {
+    console.log(req.session);
+    if (req.session && req.session.shop) {
         console.log("cookie");
-        console.log(req["session"].shop);
-        console.log(req["session"].shop.name);
+        console.log(req.session.shop);
+        console.log(req.session.shop.name);
         res.render("about.html");
     }
     //res.send(ref);
 });
 
 router.get("/set-cookie", (req, res) => {
-    req["session"].test = { "test": "cookie" };
+    req.session.test = { test: "cookie" };
     return res.redirect("/test/test-cookie");
 });
 
 router.get("/test-cookie", (req, res) => {
-    if (req["session"] && req["session"].test) {
+    if (req.session && req.session.test) {
         console.log("cookie enabled");
-        console.log(req["session"].test);
+        console.log(req.session.test);
         res.send("cookie enabled");
     } else {
         console.log("cookie enabled");
-        console.log(req["session"].test);
+        console.log(req.session.test);
         res.send("cookie disabled, You need to enable browser cookie to use the plugin without interruptions. Please enable cookies and retry.");
     }
 });
@@ -91,9 +91,8 @@ router.get("/route-check", (req, res) => {
 
 export { router };
 
-
         // if (mapping && Object.keys(mapping).length) {
         //     return
         // } else {
         // }
-        
+

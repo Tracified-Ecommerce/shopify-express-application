@@ -12,7 +12,7 @@ router.post("/uninstall-app", (req: Request, res: Response) => {
     const shop = req.get("X-Shopify-Shop-Domain");
     console.log("App is unistalled by " + shop);
     if (shop) {
-        Shop.findOne({ 'name': shop }, "name access_token", (err: Error, uninstalledShop: ShopModel) => {
+        Shop.findOne({ name: shop }, "name access_token", (err: Error, uninstalledShop: ShopModel) => {
             if (err) {
                 return res.status(503).send("error with db connection. Plese try again in a while");
             }
@@ -28,8 +28,7 @@ router.post("/uninstall-app", (req: Request, res: Response) => {
             }
         });
         res.status(200).send("webhook recieved");
-    }
-    else {
+    } else {
         res.status(200).send("No shop in the header");
     }
 });

@@ -23,7 +23,7 @@ router.get("/:productID/enabled", (req: Request, res: Response) => {
             }
             return res.json({
                 enabled: mapping.mapping[productID][1],
-                itemID: mapping.mapping[productID][0]
+                itemID: mapping.mapping[productID][0],
             });
         });
     } else {
@@ -40,7 +40,7 @@ router.get("/artifacts/:itemID", (req: Request, res: Response) => {
             return res.status(503).send("error with db connection. Plese try again in a while");
         }
         if (shop && shop.tracified_token) {
-            tracifiedServices["getProductArtifacts"](itemID, shop.tracified_token).then((data: any) => {
+            tracifiedServices.getProductArtifacts(itemID, shop.tracified_token).then((data: any) => {
                 res.send(data);
             });
         } else {
