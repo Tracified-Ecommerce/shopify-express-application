@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col} from 'reactstrap';
 import { Button, Stack } from '@shopify/polaris';
 import { isObject } from 'util';
+import { OverflowDetector } from 'react-overflow';
 
 class TimelineContent extends Component {
 
@@ -58,7 +59,7 @@ class TimelineContent extends Component {
                             // In the subgroups with grouping the groups will be stored as objects  
                             function handleOverflowChange(isOverflowed) {
                                 if(isOverflowed){
-                                    document.getElementById(key).style.height = "48px";
+                                    document.getElementById(key).style.height = "35px";
                                 }
                                 
                             }
@@ -85,7 +86,7 @@ class TimelineContent extends Component {
                                             if(isObject(subGroup[innerKey])){
                                                 function handleOverflowChange(isOverflowed) {
                                                     if(isOverflowed){
-                                                        document.getElementById(key).style.height = "48px";
+                                                        document.getElementById(key).style.height = "35px";
                                                     }
                                                     
                                                 }
