@@ -50,6 +50,19 @@ class FulfilledOrder extends Component {
         }
     }
 
+    componentDidMount() {
+
+        const url = '/shopify/shop-api/item/' + this.state.productID;
+            axios.get(url)
+            .then(response => {
+                console.log("product name is: "+response.data.product.handle);
+                this.setState({
+                    itemName: response.data.product.handle
+                });
+            });
+
+    }
+
     render() {
         const order = this.props.order;
         var itemOptions = [];
