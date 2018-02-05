@@ -93,7 +93,6 @@ class TraceTimeLine extends Component {
                         </h1>
                         
                         <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Ordered ID:&nbsp;{this.props.match.params.orderID}</p>
-                        <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Item ID:&nbsp;{this.props.match.params.itemID}</p>
                         <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Item Name:&nbsp;{this.props.match.params.itemName}</p>
                     
                     </div>
