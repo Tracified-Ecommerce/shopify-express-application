@@ -116,7 +116,7 @@ class TraceTimeLine extends Component {
                                 <TimelineEvent
                                     key={index}
                                     title={titleText}
-                                    titleStyle={{fontSize:17}}
+                                    titleStyle={{fontSize:17, fontWeight: "bold"}}
                                     subtitle={descriptionText}
                                     subtitleStyle={{fontSize:15}}
                                     icon={ico}
