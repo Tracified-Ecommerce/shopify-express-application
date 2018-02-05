@@ -2,9 +2,21 @@
     import querystring = require("querystring");
     import request = require("request-promise");
 
-    module.exports = {
+    export interface IHelper {
+        verifyQueryHMAC(query: any, apiSecret: string): boolean;
+        verifyPayloadHMAC(data: any, hmac: any, apiSecret: string, next: any): boolean;
+        shopAdminAPI(
+            method: string,
+            shop: any,
+            relUrl: string,
+            shopRequestHeaders: any,
+            body: any,
+            callback: (obj: any) => any): any;
+    }
 
-    verifyQueryHMAC(query: any, apiSecret: string) {
+    export class Helper implements IHelper {
+
+    public verifyQueryHMAC(query: any, apiSecret: string) {
         if (!query.hmac) {
             return false;
         }
@@ -17,9 +29,9 @@
             .digest("hex");
 
         return generatedHash !== query.hmac ? false : true;
-    },
+    }
 
-    verifyPayloadHMAC(data: any, hmac: any, apiSecret: string, next: any) {
+    public verifyPayloadHMAC(data: any, hmac: any, apiSecret: string, next: any) {
         data = JSON.stringify(data);
         const digest = crypto.createHmac("SHA256", apiSecret)
         .update(data)
@@ -29,18 +41,19 @@
         console.log("hmac");
         console.log(hmac);
         return digest === hmac ? true : false;
-    },
+    }
 
-    shopAdminAPI(method: string, shop: any, relUrl: string, shopRequestHeaders: any, body: any, callback: () => any) {
+    public shopAdminAPI(
+        method: string, shop: any, relUrl: string, shopRequestHeaders: any, body: any, callback: (obj: any) => any) {
         const options = {
+            body,
+            headers: shopRequestHeaders,
+            json: true,
             method,
             uri: "https://" + shop + relUrl,
-            headers: shopRequestHeaders,
-            body,
-            json: true,
         };
         request(options).then(callback).catch((err: Error) => {
             return (err);
           } );
-    },
-};
+    }
+}

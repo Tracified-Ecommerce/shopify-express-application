@@ -1,8 +1,8 @@
 import * as mongoose from "mongoose";
 
 const ShopSchema = new mongoose.Schema({
-  name: String,
   access_token: String,
+  name: String,
   tracified_token: String,
 });
 

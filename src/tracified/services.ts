@@ -1,7 +1,14 @@
 import request = require("request-promise");
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
 
-module.exports = {
+export interface IServices {
+    verifyTracifiedAccount(tempToken: string): Promise<any>;
+    getTracifiedItemList(accessToken: any): Promise<any>;
+    getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string): Promise<any>;
+    getProductArtifacts(itemID: string, accessToken: string): Promise<any>;
+}
+
+export class Services implements IServices {
     /**
      * this function will verify an Tracified account and connect store with the account
      * normally this will needed to be invoked once per installation
@@ -9,7 +16,7 @@ module.exports = {
      * a callback url(or to return a promise?) will also need to send
      * and have implemented here to handle te after verification peocess
      */
-    verifyTracifiedAccount(tempToken: string) {
+    public verifyTracifiedAccount(tempToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "POST",
@@ -23,9 +30,9 @@ module.exports = {
                 resolve(data);
             });
         });
-    },
+    }
 
-    getTracifiedItemList(accessToken: string) {
+    public getTracifiedItemList(accessToken: any) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",
@@ -39,9 +46,9 @@ module.exports = {
                 resolve(data);
             });
         });
-    },
+    }
 
-    getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string) {
+    public getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",
@@ -56,9 +63,9 @@ module.exports = {
                 resolve(data);
             });
         });
-    },
+    }
 
-    getProductArtifacts(itemID: string, accessToken: string) {
+    public getProductArtifacts(itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",
@@ -72,5 +79,5 @@ module.exports = {
                 resolve(data);
             });
         });
-    },
-};
+    }
+}

@@ -1,10 +1,11 @@
 import { NextFunction, Request, Response, Router } from "express";
-import * as tracifiedServices from "../../tracified/services";
+import { IServices, Services } from "../../tracified/services";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
 import { Error } from "mongoose";
 
+const tracifiedServices: IServices = new Services();
 const router = Router();
 
 router.all("/*", (req: Request, res: Response, next: NextFunction) => {
@@ -35,12 +36,12 @@ router.get("/artifacts/:itemID", (req: Request, res: Response) => {
     const shop = req.query.shop;
     const itemID = req.params.itemID;
 
-    Shop.findOne({ name: shop }, "tracified_token", (err: Error, shop: ShopModel) => {
+    Shop.findOne({ name: shop }, "tracified_token", (err: Error, shopp: ShopModel) => {
         if (err) {
             return res.status(503).send("error with db connection. Plese try again in a while");
         }
-        if (shop && shop.tracified_token) {
-            tracifiedServices.getProductArtifacts(itemID, shop.tracified_token).then((data: any) => {
+        if (shopp && shopp.tracified_token) {
+            tracifiedServices.getProductArtifacts(itemID, shopp.tracified_token).then((data: any) => {
                 res.send(data);
             });
         } else {

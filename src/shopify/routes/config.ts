@@ -41,16 +41,16 @@ router.post("/mapping", (req: Request, res: Response) => {
         }
         if (mapping) {
             mapping.mapping = req.body.mapping;
-            mapping.save((err: Error) => {
-                if (err) {
+            mapping.save((errr: Error) => {
+                if (errr) {
                     return res.status(503).send("error with db connection. Plese try again in a while");
                 }
                 res.send("mapping successfully saved");
             });
         } else {
             const mappingInstance = new ShopifyMapping({ shop_name: shop.name, mapping: req.body.mapping });
-            mappingInstance.save( (err: Error) => {
-                if (err) {
+            mappingInstance.save( (errr: Error) => {
+                if (errr) {
                     return res.status(503).send("error with db connection. Plese try again in a while");
                 }
                 res.send("mapping successfully saved");

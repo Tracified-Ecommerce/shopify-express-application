@@ -1,7 +1,11 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
+import { IOrder } from "../../types/order/orderType";
+import { Helper, IHelper } from "../helpers/index";
+
+const helper: IHelper = new Helper();
 const router = Router();
-const shopAdminAPI = require("../helpers").shopAdminAPI;
+const shopAdminAPI = helper.shopAdminAPI;
 
 router.all("/*", (req: Request, res: Response, next: NextFunction) => {
     if (req.session && req.session.shop) {
@@ -18,7 +22,8 @@ router.all("/*", (req: Request, res: Response, next: NextFunction) => {
 router.get("/products", (req: Request, res: Response) => {
     console.log("products");
     console.log(req.session.shop.name);
-    shopAdminAPI("GET", req.session.shop.name, "/admin/products.json", req.shopRequestHeaders, null, (products: object) => {
+    shopAdminAPI(
+        "GET", req.session.shop.name, "/admin/products.json", req.shopRequestHeaders, null, (products: any) => {
         console.log("got products");
         res.status(200).send(products);
     });
@@ -28,8 +33,8 @@ router.get("/orders", (req: Request, res: Response) => {
     console.log("orders");
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
-        const unFulfilledOrders = orders.orders.filter((order: object) => {
-            return order.fulfillment_status != "fulfilled";
+        const unFulfilledOrders = orders.orders.filter((order: IOrder) => {
+            return order.fulfillment_status !== "fulfilled";
         });
         res.status(200).send({orders : unFulfilledOrders});
     });
@@ -38,13 +43,17 @@ router.get("/orders", (req: Request, res: Response) => {
 router.get("/fulfilled-orders", (req: Request, res: Response) => {
     console.log("orders");
     const shopDomain = req.session.shop.name;
-    shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json?status=any", req.shopRequestHeaders, null, (orders: any) => {
+    shopAdminAPI(
+        "GET", req.session.shop.name,
+        "/admin/orders.json?status=any",
+        req.shopRequestHeaders,
+        null,
+        (orders: any) => {
         console.log("got all orders");
-
-        const fulfilledOrders = orders.orders.filter((order: object) => {
-            console.log("inside fulfilled function");
-            return order.fulfillment_status == "fulfilled";
-        });
+        const fulfilledOrders = orders.orders.filter((order: IOrder) => {
+                console.log("inside fulfilled function");
+                return order.fulfillment_status === "fulfilled";
+            });
 
         res.status(200).send({fulfilledOrders, shopDomain});
     });
@@ -54,8 +63,8 @@ router.get("/orders/:id/fulfill", (req: Request, res: Response) => {
     const url: string = "/admin/orders/" + req.params.id + "/fulfillments.json";
     const body: object = {
         fulfillment: {
-          tracking_number: null,
-          notify_customer: true,
+            notify_customer: true,
+            tracking_number: null,
         },
       };
     shopAdminAPI("POST", req.session.shop.name, url , req.shopRequestHeaders, body, (fulfillment: any) => {
@@ -80,16 +89,15 @@ router.get("/orders/:id/tracify", (req: Request, res: Response) => {
             console.log("order fulfilled");
             res.status(200).send(order);
         });
+});
 
 router.get("/item/:id", (req: Request, res: Response) => {
-    const url: string = "/admin/products/"+ req.params.id + ".json";
+    const url: string = "/admin/products/" + req.params.id + ".json";
 
-        shopAdminAPI("GET", req["session"].shop.name, url , req["shopRequestHeaders"], null, (item: any) => {
-            console.log("item request sent");
-            res.status(200).send(item);
-        });
-           
-     }
-);
+    shopAdminAPI("GET", req.session.shop.name, url , req.shopRequestHeaders, null, (item: any) => {
+        console.log("item request sent");
+        res.status(200).send(item);
+    });
+});
 
 export { router };

@@ -1,19 +1,22 @@
+import * as cookie from "cookie";
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
+import * as nonce from "nonce";
+import * as querystring from "querystring";
+import * as request from "request-promise";
+import { Helper, IHelper } from "../helpers/index";
 import { Shop, ShopModel } from "../models/Shop";
-const cookie = require("cookie");
-const nonce = require("nonce")();
-const querystring = require("querystring");
-const request = require("request-promise");
-const verifyQueryHMAC = require("../helpers").verifyQueryHMAC;
-const shopAdminAPI = require("../helpers").shopAdminAPI;
+
+const helper: IHelper = new Helper();
+const shopAdminAPI = helper.shopAdminAPI;
+const verifyQueryHMAC = helper.verifyQueryHMAC;
 const router = Router();
 const scopes = "read_products,write_products,write_themes,write_orders,read_orders";
 const forwardingAddress = "https://tracified-api-test.herokuapp.com";
 const apiKey = "8cbed825a1a05c935cbb12574bb24257";
 const apiSecret = "4bc97ed0ae56f7e75f2560f7816fd96a";
 
-//installation route
+// installation route
 router.get("/", (req: Request, res: Response) => {
   const shop = req.query.shop;
   if (shop) {
@@ -32,7 +35,7 @@ router.get("/", (req: Request, res: Response) => {
   }
 });
 
-//callback url on app installation
+// callback url on app installation
 router.get("/callback", (req: Request, res: Response) => {
   const { shop, hmac, code, state } = req.query;
   const stateCookie = cookie.parse(req.headers.cookie).state;
@@ -51,21 +54,24 @@ router.get("/callback", (req: Request, res: Response) => {
       code,
     };
 
-    shopAdminAPI("POST", shop, "/admin/oauth/access_token", null, accessTokenPayload, function(accessTokenResponse: any) {
+    shopAdminAPI(
+      "POST", shop, "/admin/oauth/access_token", null, accessTokenPayload, (accessTokenResponse: any) => {
 
       const accessToken = accessTokenResponse.access_token;
-      Shop.findOne({ name: shop }, "name access_token", function(err: Error, installedShop: ShopModel) { //to use if a shop record is alredy there
+      Shop.findOne(
+        { name: shop }, "name access_token", (err: Error, installedShop: ShopModel) => {
+          // to use if a shop record is alredy there
         if (err) { return res.status(503).send("error with db connection. Plese try again in a while"); }
         if (installedShop) {
           installedShop.access_token = accessToken;
-          installedShop.save(function() {
+          installedShop.save(() => {
             if (err) { return res.status(503).send("error with db connection. Plese try again in a while"); }
           });
         } else {
-          let ShopInstance = new Shop({ name: shop, access_token: accessToken });
-          ShopInstance.save((err: Error) => {
-            if (err) {
-              if (err) { return res.status(503).send("error with db connection. Plese try again in a while"); }
+          const ShopInstance = new Shop({ name: shop, access_token: accessToken });
+          ShopInstance.save((errr: Error) => {
+            if (errr) {
+              if (errr) { return res.status(503).send("error with db connection. Plese try again in a while"); }
             }
           });
         }
@@ -75,27 +81,28 @@ router.get("/callback", (req: Request, res: Response) => {
         "X-Shopify-Access-Token": accessToken,
       };
 
-      //get the theme id for asset uploading
+      // get the theme id for asset uploading
       shopAdminAPI("GET", shop, "/admin/themes.json", shopRequestHeaders, null, (parsedBody: any) => {
 
-        let theme_id;
-        let themes = parsedBody.themes;
-        for (let i = 0; i < themes.length; i++) {
-          if (themes[i].role == "main") {
-            theme_id = themes[i].id;
-            console.log(theme_id);
+        let themeID;
+        const themes = parsedBody.themes;
+        for (let i of themes) {
+          if (themes[i].role === "main") {
+            themeID = themes[i].id;
+            console.log(themeID);
             break;
           }
         }
-        console.log("theme_id");
-        console.log(theme_id);
+        console.log("themeID");
+        console.log(themeID);
 
         /**
          * asset uploading
-         * -use this in the theme where trace details needed to be dispalyed(ideally in product-template).{% include 'tracified' %}
+         * -use this in the theme where trace details needed to be dispalyed
+         * (ideally in product-template).{% include 'tracified' %}
          */
-        //var timestamp = new Date().getTime();
-        const assetUploadURL = "/admin/themes/" + theme_id + "/assets.json";
+        // var timestamp = new Date().getTime();
+        const assetUploadURL = "/admin/themes/" + themeID + "/assets.json";
 
         const snippetUploadPayload = {
           asset: {

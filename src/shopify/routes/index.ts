@@ -1,15 +1,19 @@
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
+import { Helper, IHelper } from "../helpers/index";
 import {Shop, ShopModel} from "../models/Shop";
-import { router as adminlink }  from "./adminlink";
-import { router as config }  from "./config";
-import { router as customer }  from "./customer";
-import { router as install }  from "./install";
-import { router as shopAPI }  from "./shop-api";
-import { router as test }  from "./test";
-import { router as tracified }  from "./tracified";
-import { router as webhook }  from "./webhook";
-const shopAdminAPI = require("../helpers").shopAdminAPI;
+import { router as adminlink } from "./adminlink";
+import { router as config } from "./config";
+import { router as customer } from "./customer";
+import { router as install } from "./install";
+import { router as shopAPI } from "./shop-api";
+import { router as test } from "./test";
+import { router as tracified } from "./tracified";
+import { router as webhook } from "./webhook";
+
+const helper: IHelper = new Helper();
+const shopAdminAPI = helper.shopAdminAPI;
+// tslint:disable-next-line:no-var-requires
 const path = require("path");
 const router = Router();
 
@@ -37,7 +41,8 @@ router.get("/", (req: Request, res: Response) => {
     const shop = req.query.shop;
     if (shop) {
         const query = Object.keys(req.query).map((key) => `${key}=${req.query[key]}`).join("&");
-        Shop.findOne({ name: shop }, "name access_token tracified_token", function(err: Error, exisitingShop: ShopModel) {
+        Shop.findOne(
+            { name: shop }, "name access_token tracified_token", (err: Error, exisitingShop: ShopModel) => {
             if (err) { return res.status(503).send("error with db connection. Plese try again in a while"); }
             if (exisitingShop && exisitingShop.access_token) {
                 req.session.shop = exisitingShop;
@@ -69,7 +74,10 @@ router.get("/cookie-check", (req: Request, res: Response) => {
 
     } else {
         console.log("cookies disabled");
-        res.send("cookies disabled, You need to enable browser cookie to use the plugin without interruptions. Please enable cookies and retry.");
+        res.send(
+            "cookies disabled, You need to enable browser cookie to use the"
+            + " plugin without interruptions. Please enable cookies and retry.",
+        );
     }
 });
 
@@ -79,7 +87,7 @@ router.get("/cookie-check", (req: Request, res: Response) => {
  * hence all remaining requests will be handled by the react-router in react-app.
  */
 
-router.get("*", function(req: Request, res: Response) {
+router.get("*", (req: Request, res: Response) => {
   res.sendFile(path.resolve(__dirname, "../react-app/build", "index.html"));
 });
 

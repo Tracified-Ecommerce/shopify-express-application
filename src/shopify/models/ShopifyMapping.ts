@@ -1,8 +1,8 @@
 import * as mongoose from "mongoose";
 
 const ShopifyMappingSchema = new mongoose.Schema({
-  shop_name: String,
   mapping: Object,
+  shop_name: String,
 });
 
 type ShopifyMappingModel = mongoose.Document & {
