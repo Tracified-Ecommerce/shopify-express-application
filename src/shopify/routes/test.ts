@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
+import { IRequest } from "../../types/session/sessionType";
 import { Helper, IHelper } from "../helpers/index";
 
 const router = Router();
@@ -61,7 +62,7 @@ router.get("/services/item-list", (req: Request, res: Response) => {
 //     });
 // });
 
-router.get("/shop-link", (req: Request, res: Response) => {
+router.get("/shop-link", (req: IRequest, res: Response) => {
     console.log("cookie-checking");
     console.log(req.session);
     if (req.session && req.session.shop) {
@@ -72,12 +73,12 @@ router.get("/shop-link", (req: Request, res: Response) => {
     }
 });
 
-router.get("/set-cookie", (req: Request, res: Response) => {
+router.get("/set-cookie", (req: IRequest, res: Response) => {
     req.session.test = { test: "cookie" };
     return res.redirect("/test/test-cookie");
 });
 
-router.get("/test-cookie", (req: Request, res: Response) => {
+router.get("/test-cookie", (req: IRequest, res: Response) => {
     if (req.session && req.session.test) {
         console.log("cookie enabled");
         console.log(req.session.test);

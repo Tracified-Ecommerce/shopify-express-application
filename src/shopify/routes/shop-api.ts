@@ -1,13 +1,14 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IOrder } from "../../types/order/orderType";
+import { IRequest } from "../../types/session/sessionType";
 import { Helper, IHelper } from "../helpers/index";
 
 const helper: IHelper = new Helper();
 const router = Router();
 const shopAdminAPI = helper.shopAdminAPI;
 
-router.all("/*", (req: Request, res: Response, next: NextFunction) => {
+router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
     if (req.session && req.session.shop) {
         req.shopRequestHeaders = {
             "X-Shopify-Access-Token": req.session.shop.access_token,
@@ -19,7 +20,7 @@ router.all("/*", (req: Request, res: Response, next: NextFunction) => {
     }
 });
 
-router.get("/products", (req: Request, res: Response) => {
+router.get("/products", (req: IRequest, res: Response) => {
     console.log("products");
     console.log(req.session.shop.name);
     shopAdminAPI(
@@ -29,7 +30,7 @@ router.get("/products", (req: Request, res: Response) => {
     });
 });
 
-router.get("/orders", (req: Request, res: Response) => {
+router.get("/orders", (req: IRequest, res: Response) => {
     console.log("orders");
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
@@ -40,7 +41,7 @@ router.get("/orders", (req: Request, res: Response) => {
     });
 });
 
-router.get("/fulfilled-orders", (req: Request, res: Response) => {
+router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
     console.log("orders");
     const shopDomain = req.session.shop.name;
     shopAdminAPI(
@@ -59,7 +60,7 @@ router.get("/fulfilled-orders", (req: Request, res: Response) => {
     });
 });
 
-router.get("/orders/:id/fulfill", (req: Request, res: Response) => {
+router.get("/orders/:id/fulfill", (req: IRequest, res: Response) => {
     const url: string = "/admin/orders/" + req.params.id + "/fulfillments.json";
     const body: object = {
         fulfillment: {
@@ -73,7 +74,7 @@ router.get("/orders/:id/fulfill", (req: Request, res: Response) => {
     });
 });
 
-router.get("/orders/:id/tracify", (req: Request, res: Response) => {
+router.get("/orders/:id/tracify", (req: IRequest, res: Response) => {
     const url: string = "/admin/orders/" + req.params.id + ".json";
     const body: object = {
 
@@ -91,7 +92,7 @@ router.get("/orders/:id/tracify", (req: Request, res: Response) => {
         });
 });
 
-router.get("/item/:id", (req: Request, res: Response) => {
+router.get("/item/:id", (req: IRequest, res: Response) => {
     const url: string = "/admin/products/" + req.params.id + ".json";
 
     shopAdminAPI("GET", req.session.shop.name, url , req.shopRequestHeaders, null, (item: any) => {

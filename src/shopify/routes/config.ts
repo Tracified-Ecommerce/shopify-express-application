@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response, Router } from "express";
+import { IRequest } from "../../types/session/sessionType";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
 import { Error } from "mongoose";
 
 const router = Router();
 
-router.all("/*", (req: Request, res: Response, next: NextFunction) => {
+router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
     if (req.session && req.session.shop) {
         next();
     } else {
@@ -15,7 +16,7 @@ router.all("/*", (req: Request, res: Response, next: NextFunction) => {
 
 });
 
-router.get("/mapping", (req: Request, res: Response) => {
+router.get("/mapping", (req: IRequest, res: Response) => {
     const shop = req.session.shop;
     ShopifyMapping.findOne({ shop_name: shop.name }, (err: Error, mapping: ShopifyMappingModel) => {
         if (err) {
@@ -30,7 +31,7 @@ router.get("/mapping", (req: Request, res: Response) => {
     });
 });
 
-router.post("/mapping", (req: Request, res: Response) => {
+router.post("/mapping", (req: IRequest, res: Response) => {
     const shop = req.session.shop;
     console.log(req.body.mapping + "was posted to api");
     ShopifyMapping.findOne({

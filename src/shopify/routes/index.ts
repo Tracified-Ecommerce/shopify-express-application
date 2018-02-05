@@ -1,5 +1,6 @@
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
+import { IRequest } from "../../types/session/sessionType";
 import { Helper, IHelper } from "../helpers/index";
 import {Shop, ShopModel} from "../models/Shop";
 import { router as adminlink } from "./adminlink";

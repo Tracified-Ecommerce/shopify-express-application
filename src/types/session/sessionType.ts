@@ -4,22 +4,27 @@ export interface IRequest extends Request {
   session: ISession;
   body: IBody;
   params: IParams;
+  shopRequestHeaders: any;
 }
 
 interface ISession {
   shop: IShop;
+  test: any;
 }
 
 interface IShop {
-  name: string;
-  tracified_token: string;
+  name: any;
+  tracified_token: any;
+  access_token: any;
 }
 
 interface IBody {
-  tempToken: string;
+  tempToken: any;
+  mapping: any;
 }
 
 interface IParams {
-  orderID: string;
-  itemID: string;
+  orderID: any;
+  itemID: any;
+  id: any;
 }
