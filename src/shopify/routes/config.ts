@@ -31,7 +31,7 @@ router.get("/mapping", (req: IRequest, res: Response) => {
     });
 });
 
-router.post("/mapping", (req: IRequest, res: Response) => {
+router.post("/mapping", (req: IRequest & Request, res: Response) => {
     const shop = req.session.shop;
     console.log(req.body.mapping + "was posted to api");
     ShopifyMapping.findOne({

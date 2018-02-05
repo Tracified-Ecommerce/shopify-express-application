@@ -60,7 +60,7 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
     });
 });
 
-router.get("/orders/:id/fulfill", (req: IRequest, res: Response) => {
+router.get("/orders/:id/fulfill", (req: IRequest & Request, res: Response) => {
     const url: string = "/admin/orders/" + req.params.id + "/fulfillments.json";
     const body: object = {
         fulfillment: {
@@ -74,7 +74,7 @@ router.get("/orders/:id/fulfill", (req: IRequest, res: Response) => {
     });
 });
 
-router.get("/orders/:id/tracify", (req: IRequest, res: Response) => {
+router.get("/orders/:id/tracify", (req: IRequest & Request, res: Response) => {
     const url: string = "/admin/orders/" + req.params.id + ".json";
     const body: object = {
 
@@ -92,7 +92,7 @@ router.get("/orders/:id/tracify", (req: IRequest, res: Response) => {
         });
 });
 
-router.get("/item/:id", (req: IRequest, res: Response) => {
+router.get("/item/:id", (req: IRequest & Request, res: Response) => {
     const url: string = "/admin/products/" + req.params.id + ".json";
 
     shopAdminAPI("GET", req.session.shop.name, url , req.shopRequestHeaders, null, (item: any) => {

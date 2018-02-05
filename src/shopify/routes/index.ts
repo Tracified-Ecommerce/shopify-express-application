@@ -38,7 +38,7 @@ router.use("/test", test);
  * cookies are set here and redirected to the "/cookie-check".
  */
 
-router.get("/", (req: Request, res: Response) => {
+router.get("/", (req: IRequest & Request, res: Response) => {
     const shop = req.query.shop;
     if (shop) {
         const query = Object.keys(req.query).map((key) => `${key}=${req.query[key]}`).join("&");
@@ -61,7 +61,7 @@ router.get("/", (req: Request, res: Response) => {
  * -this route is used for detect whether cookies are enabled in the browser calling to the shopify index route
  */
 
-router.get("/cookie-check", (req: Request, res: Response) => {
+router.get("/cookie-check", (req: IRequest, res: Response) => {
     if (req.session && req.session.shop) {
         if (req.session.shop.tracified_token) {
             console.log("tracified token exists");

@@ -2,8 +2,6 @@ import { Request } from "express";
 
 export interface IRequest extends Request {
   session: ISession;
-  body: IBody;
-  params: IParams;
   shopRequestHeaders: any;
 }
 

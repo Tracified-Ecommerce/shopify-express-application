@@ -1,4 +1,4 @@
-import { NextFunction, Response, Router } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IRequest } from "../../types/session/sessionType";
 
@@ -23,7 +23,7 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
     }
 });
 
-router.post("/account/verify", (req: IRequest, res: Response) => {
+router.post("/account/verify", (req: IRequest & Request, res: Response) => {
     tracifiedServices.verifyTracifiedAccount(req.body.tempToken).then((data: any) => {
         data = JSON.parse(data);
         console.log(data.tracifiedToken);
@@ -49,14 +49,14 @@ router.post("/account/verify", (req: IRequest, res: Response) => {
     });
 });
 
-router.get("/item-list", (req: IRequest, res: Response) => {
+router.get("/item-list", (req: IRequest & Request, res: Response) => {
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
         console.log(data);
         res.send(data);
     });
 });
 
-router.get("/trace/:orderID/:itemID", (req: IRequest, res: Response) => {
+router.get("/trace/:orderID/:itemID", (req: IRequest & Request, res: Response) => {
     const orderID = req.params.orderID;
     const itemID = req.params.itemID;
     console.log(orderID + itemID);
@@ -67,7 +67,7 @@ router.get("/trace/:orderID/:itemID", (req: IRequest, res: Response) => {
     });
 });
 
-router.get("/artifacts/:itemID", (req: IRequest, res: Response) => {
+router.get("/artifacts/:itemID", (req: IRequest & Request, res: Response) => {
     const itemID = req.params.itemID;
     tracifiedServices.getProductArtifacts(itemID, req.session.shop.tracified_token).then((data: any) => {
         res.send(data);
