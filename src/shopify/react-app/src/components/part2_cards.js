@@ -98,8 +98,6 @@ class Part2Cards extends Component {
                 }
             );
 
-            console.log(orders);
-
             var orderArray = [];
             orders.forEach((order) => {
                 var items = order.line_items;
@@ -125,7 +123,6 @@ class Part2Cards extends Component {
                 });
             });
 
-            console.log(orderArray);
 
             var inputStyle={
                 marginLeft: '2%',

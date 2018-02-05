@@ -32,7 +32,6 @@ class FulfilledOrder extends Component {
 
     onTraceSelect() {
         if (this.state.itemID == "noTraceabilityItem") {
-            console.log(this.state.itemID);
             this.setState({ alertOpen: true });
         }
         else {
@@ -40,7 +39,6 @@ class FulfilledOrder extends Component {
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
             .then(response => {
-                console.log("product name is: "+response.data.product.handle);
                 this.setState({
                     itemName: response.data.product.handle
                 });
@@ -55,7 +53,6 @@ class FulfilledOrder extends Component {
         const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
             .then(response => {
-                console.log("product name is: "+response.data.product.handle);
                 this.setState({
                     itemName: response.data.product.handle
                 });
@@ -75,7 +72,6 @@ class FulfilledOrder extends Component {
         });
         const shopOrigin = "https://" + this.props.shopDomain;
         const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
-        console.log(modalURL);
         return (
             <tr>
                 <td>

@@ -80,8 +80,6 @@ class TraceTimeLine extends Component {
             return <Loading />;
         }
         else {
-            console.log(this.props.match.params.orderID);
-            console.log(this.props.match.params.itemID);
             return (
                 <div style={{backgroundColor: '#f4f6f8'}}>
                     <div style={timelineTopStyle}>

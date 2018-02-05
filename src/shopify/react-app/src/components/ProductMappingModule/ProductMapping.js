@@ -272,7 +272,6 @@ class ProductMapping extends Component {
       </div>
     );
     <ProductMapping /> , document.getElementById('productmapping')
-    console.log('document thing works');
   }
 
 }
