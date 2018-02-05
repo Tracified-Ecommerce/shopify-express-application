@@ -56,7 +56,20 @@ class TimelineContent extends Component {
                         if(subGroup.hasOwnProperty("value")){
                             // subgroups which have the value field set won't have grouping
                             // In the subgroups with grouping the groups will be stored as objects  
-                            return <div key={key} style={{ height:24}}> <span style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div>
+                            function handleOverflowChange(isOverflowed) {
+                                if(isOverflowed){
+                                    document.getElementById(key).style.height = "48px";
+                                }
+                                
+                            }
+                            return(
+                                <OverflowDetector
+                                key={key}
+                                onOverflowChange={handleOverflowChange}
+                                >
+                                    <div key={key} style={{ height:24}}> <span style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div>
+                                </OverflowDetector>
+                            ) 
                         } else {
 
                             return(
@@ -70,8 +83,19 @@ class TimelineContent extends Component {
                                         Object.keys(subGroup).map((innerKey)=>{
                                 
                                             if(isObject(subGroup[innerKey])){
+                                                function handleOverflowChange(isOverflowed) {
+                                                    if(isOverflowed){
+                                                        document.getElementById(key).style.height = "48px";
+                                                    }
+                                                    
+                                                }
                                                 return(
+                                                    <OverflowDetector
+                                                    key={key}
+                                                    onOverflowChange={handleOverflowChange}
+                                                    >
                                                     <div key={innerKey} style={{height:24}}><span style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span>{subGroup[innerKey].value}</span></div>
+                                                    </OverflowDetector>
                                                 )
                                             }
                                             return null;
