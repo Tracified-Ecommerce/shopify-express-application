@@ -80,8 +80,6 @@ class TraceTimeLine extends Component {
             return <Loading />;
         }
         else {
-            console.log(this.props.match.params.orderID);
-            console.log(this.props.match.params.itemID);
             return (
                 <div style={{backgroundColor: '#f4f6f8'}}>
                     <div style={timelineTopStyle}>
@@ -93,9 +91,9 @@ class TraceTimeLine extends Component {
                             fied
                             </span> 
                         </h1>
+                        
+                        <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Ordered ID:&nbsp;{this.props.match.params.orderID}</p>
                         <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Item Name:&nbsp;{this.props.match.params.itemName}</p>
-                        <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Ordered by: Jhon Doe</p>
-                        <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Ordered On: 18-01-2018</p>
                     
                     </div>
                     <div style={{paddingLeft: 30}}>
@@ -115,7 +113,7 @@ class TraceTimeLine extends Component {
                                 <TimelineEvent
                                     key={index}
                                     title={titleText}
-                                    titleStyle={{fontSize:17}}
+                                    titleStyle={{fontSize:17, fontWeight: "bold"}}
                                     subtitle={descriptionText}
                                     subtitleStyle={{fontSize:15}}
                                     icon={ico}

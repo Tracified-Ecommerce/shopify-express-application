@@ -24,7 +24,6 @@ class TimelineContent extends Component {
         if(this.height > 95){
             this.setState({isCollsapsible:true});
         }  
-        console.log(this.height);
     }
 
     render() {

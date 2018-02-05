@@ -40,7 +40,6 @@ class FulfilledOrders extends Component {
         else {
             // All the order details
             var orders = this.state.orders;
-            console.log(orders);
 
             var orderArray = [];
             orders.forEach((order) => {
