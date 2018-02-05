@@ -86,17 +86,8 @@ router.get("/orders/:id/tracify", (req: Request, res: Response) => {
 
 router.get("/item/:id", (req: Request, res: Response) => {
     const url: string = "/admin/products/"+ req.params.id + ".json";
-    const body: object = {
 
-            "order": {
-                "id": req.params.id,
-                "note_attributes": {
-                    "tracified": "1"
-                }
-            }
-        }
-
-        shopAdminAPI("GET", req["session"].shop.name, url , req["shopRequestHeaders"], body, (item: any) => {
+        shopAdminAPI("GET", req["session"].shop.name, url , req["shopRequestHeaders"], null, (item: any) => {
             console.log("item request sent");
             res.status(200).send(item);
         });
