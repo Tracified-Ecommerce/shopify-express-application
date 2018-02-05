@@ -25,7 +25,6 @@ class CollapseMain extends Component {
         const url = '/shopify/shop-api/orders/' + this.props.order.id + '/fulfill';
         axios.get(url)
         .then(response => {
-            console.log(response.data);
             alert("order fulfilled!");
             this.props.resetOrders();
         });

@@ -81,7 +81,15 @@ router.get("/orders/:id/tracify", (req: Request, res: Response) => {
             res.status(200).send(order);
         });
 
-     },
+router.get("/item/:id", (req: Request, res: Response) => {
+    const url: string = "/admin/products/"+ req.params.id + ".json";
+
+        shopAdminAPI("GET", req["session"].shop.name, url , req["shopRequestHeaders"], null, (item: any) => {
+            console.log("item request sent");
+            res.status(200).send(item);
+        });
+           
+     }
 );
 
 export { router };
