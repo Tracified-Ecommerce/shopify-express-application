@@ -1,12 +1,16 @@
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { Shop, ShopModel } from "../models/Shop";
+import { Helper,IHelper } from "../helpers/index";
 const cookie = require("cookie");
 const nonce = require("nonce")();
 const querystring = require("querystring");
 const request = require("request-promise");
-const verifyQueryHMAC = require("../helpers/index").verifyQueryHMAC;
-const shopAdminAPI = require("../helpers/index").shopAdminAPI;
+// const verifyQueryHMAC = require("../helpers/index").verifyQueryHMAC;
+// const shopAdminAPI = require("../helpers/index").shopAdminAPI;
+const helper : IHelper = new Helper();
+const verifyQueryHMAC = helper.verifyQueryHMAC;
+const shopAdminAPI = helper.shopAdminAPI;
 const router = Router();
 const scopes = "read_products,write_products,write_themes,write_orders,read_orders";
 const forwardingAddress = "https://tracified-api-test.herokuapp.com";
