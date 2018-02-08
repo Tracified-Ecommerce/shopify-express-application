@@ -21,8 +21,8 @@ class TimelineContent extends Component {
     }
 
     componentDidMount() {
-        this.height = document.getElementById(this.props.componentID).clientHeight;
-        if(this.height > 95){
+        this.height = document.getElementById(this.props.componentID).clientHeight+15;
+        if(this.height > 112){
             this.setState({isCollsapsible:true});
         }  
     }
@@ -31,10 +31,10 @@ class TimelineContent extends Component {
 
         var stageData = this.props.data;
         var isClosed = this.props.collapseArray[this.props.collapseArrayKey];
-        // var buttonText = this.props.collapseArray[this.props.collapseArrayKey] ? {text: "see less \u25B2"} : {text: "see more \u25BC"};
-        var buttonText = this.props.collapseArray[this.props.collapseArrayKey] ? {text: "see less   "} : {text: "see more..."};
-        var divStyle = this.state.isCollsapsible ? (!this.state.collapseArray[this.props.collapseArrayKey] ? {overflow:"hidden", height:95, transition: 'all 0.7s ease-in-out'} : {overflow:"hidden", height:this.height, transition: 'all 0.7s ease-in-out'}) : {} ;
+        var buttonText = this.props.collapseArray[this.props.collapseArrayKey] ? {text: "see less \u25B2"} : {text: "see more  \u25BC"};
+        var divStyle = this.state.isCollsapsible ? (!this.state.collapseArray[this.props.collapseArrayKey] ? {overflow:"hidden", height:112, transition: 'all 0.7s ease-in-out'} : {overflow:"hidden", height:this.height, transition: 'all 0.7s ease-in-out'}) : {} ;
         var buttonCode = <p></p>;
+        var seeMoreStyle = !this.props.collapseArray[this.props.collapseArrayKey] ? {background: 'linear-gradient(rgba(255,255,255,1), white)', position:'relative', bottom:'0px', boxShadow:'0px -8px 10px -1px rgba(255,255,255,1)'}: {};
 
         if(this.state.isCollsapsible){
             buttonCode =     <Button plain 
@@ -55,55 +55,37 @@ class TimelineContent extends Component {
                         let subGroup = stageData[key];
 
                         if(subGroup.hasOwnProperty("value")){
-                            // subgroups which have the value field set won't have grouping
-                            // In the subgroups with grouping the groups will be stored as objects  
-
-                            // function handleOverflowChange(isOverflowed) {
-                            //     if(isOverflowed){
-                            //         document.getElementById(key).style.height = "35px";
-                            //     }
-                                
-                            // }
+                            
                             return(
-                                // <OverflowDetector
-                                // key={key}
-                                // onOverflowChange={handleOverflowChange}
-                                // >
-                                    <div key={key} style={{ height:24}}> <span style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div>
-                                // </OverflowDetector> 
+                                
+                                <div key={key} style={{ height:24, paddingLeft:14}}> <span style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div> 
                             ) 
                         } else {
 
                             return(
-                                <div key={key}>
-                                <div style={{height:24}}>
+                                <div key={key} style={{boxShadow:'0px 1px 5px 1px rgba(189,189,189,0.52)', margin:7, padding:5, borderRadius:4, backgroundColor:'#fafafa'}}>
+                                <div style={{minHeight:24}}>
                                     <span style={{fontWeight:'bold', fontSize: 14, color:'green'}}>
                                         &#8227; {stageData[key].title} :
                                     </span>
                                 </div>
+                                    <Row>
                                     {
                                         Object.keys(subGroup).map((innerKey)=>{
                                 
                                             if(isObject(subGroup[innerKey])){
-                                                // function handleOverflowChange(isOverflowed) {
-                                                //     if(isOverflowed){
-                                                //         document.getElementById(key).style.height = "35px";
-                                                //     }
-                                                    
-                                                // }
+
                                                 return(
-                                                    // <OverflowDetector
-                                                    // key={key}
-                                                    // onOverflowChange={handleOverflowChange}
-                                                    // >
+                                                    <Col xs='12' sm='6'>
                                                     <div key={innerKey} style={{height:24}}><span style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span>{subGroup[innerKey].value}</span></div>
-                                                    // </OverflowDetector>
+                                                    </Col>
                                                 )
                                             }
                                             return null;
                                             
                                         })
                                     }
+                                    </Row>
                                     
                                 </div>       
                             );
@@ -114,7 +96,7 @@ class TimelineContent extends Component {
                 } 
                 </div>
                 
-                <div style={{opacity:"0.7", paddingLeft:"60", paddingRight:0}}>
+                <div style={seeMoreStyle}>
                     {buttonCode}
                 </div>
                    
