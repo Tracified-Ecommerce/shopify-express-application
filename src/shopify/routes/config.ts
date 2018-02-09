@@ -36,7 +36,8 @@ router.get("/mapping", (req: IRequest, res: Response) => {
 });
 
 router.get("/modal-mapping/:shopname", (req: IRequest & Request, res: Response) => {
-    
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     return res.send("modal mapping"+req.params.shopname);
         
 });
