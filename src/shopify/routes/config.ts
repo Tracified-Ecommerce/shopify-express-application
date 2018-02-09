@@ -7,7 +7,7 @@ import { Error } from "mongoose";
 const router = Router();
 
 router.all("/*", (req: IRequest & Request, res: Response, next: NextFunction) => {
-    if(req.path == "/modal-mapping/:shopname"){
+    if(req.path == "/modal-mapping/*"){
         next();
     } else if (req.session && req.session.shop) {
         next();
