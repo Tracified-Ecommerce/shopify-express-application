@@ -7,7 +7,7 @@ import { Error } from "mongoose";
 const router = Router();
 
 router.all("/*", (req: IRequest & Request, res: Response, next: NextFunction) => {
-    if(req.path == "/modal-mapping"){
+    if(req.path == "/modal-mapping/:shop-name"){
         next();
     } else if (req.session && req.session.shop) {
         next();
@@ -33,7 +33,7 @@ router.get("/mapping", (req: IRequest, res: Response) => {
     });
 });
 
-router.get("/modal-mapping", (req: IRequest & Request, res: Response) => {
+router.get("/modal-mapping/:shop-name", (req: IRequest & Request, res: Response) => {
     
     return res.send("modal mapping");
         
