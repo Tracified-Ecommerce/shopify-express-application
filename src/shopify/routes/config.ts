@@ -44,9 +44,10 @@ router.get("/modal-mapping/:shopname", (req: IRequest & Request, res: Response) 
             return res.status(503).send("error with db connection. Plese try again in a while");
         }
         if (mapping) {
-            return res.send(mapping.mapping);
+            // mapping.mapping -> is the object with all the mapping
+            return res.send("mapping received");
         } else {
-            return res.status(204).send({});
+            return res.status(204).send("mapping not available");
         }
 
     });
