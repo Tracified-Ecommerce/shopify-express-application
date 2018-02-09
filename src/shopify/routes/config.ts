@@ -7,7 +7,9 @@ import { Error } from "mongoose";
 const router = Router();
 
 router.all("/*", (req: IRequest & Request, res: Response, next: NextFunction) => {
-    if (req.session && req.session.shop) {
+    if(req.path == "/modal-mapping"){
+        next();
+    } else if (req.session && req.session.shop) {
         next();
     } else {
         console.log("cookies not found");
@@ -29,6 +31,12 @@ router.get("/mapping", (req: IRequest, res: Response) => {
         }
 
     });
+});
+
+router.get("/modal-mapping", (req: IRequest & Request, res: Response) => {
+    
+    return res.send("modal mapping");
+        
 });
 
 router.post("/mapping", (req: IRequest & Request, res: Response) => {
