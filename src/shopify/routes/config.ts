@@ -6,7 +6,7 @@ import { Error } from "mongoose";
 
 const router = Router();
 
-router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
+router.all("/*", (req: IRequest & Request, res: Response, next: NextFunction) => {
     if (req.session && req.session.shop) {
         next();
     } else {

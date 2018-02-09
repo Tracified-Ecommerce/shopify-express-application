@@ -1,4 +1,4 @@
-import { Request, Response, Router } from "express";
+import { Request, Response, Router, NextFunction } from "express";
 import { Error } from "mongoose";
 import { IRequest } from "../../types/session/sessionType";
 import { Helper, IHelper } from "../helpers/index";
@@ -38,7 +38,12 @@ router.use("/test", test);
  * cookies are set here and redirected to the "/cookie-check".
  */
 
-router.get("/", (req: IRequest & Request, res: Response) => {
+router.get("/", (req: IRequest & Request, res: Response, next: NextFunction) => {
+    
+    if ( req.path == 'abc') {
+        return res.send("abcdefg");
+    }
+
     const shop = req.query.shop;
     if (shop) {
         const query = Object.keys(req.query).map((key) => `${key}=${req.query[key]}`).join("&");
