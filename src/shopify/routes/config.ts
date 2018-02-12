@@ -46,7 +46,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
         }
         if (mapping) {
             // mapping.mapping -> is the object with all the mapping
-            return res.send("mapping of "+ product +" from "+shopName+" received");
+            return res.send(mapping);
         } else {
             return res.status(204).send("mapping not available");
         }
