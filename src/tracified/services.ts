@@ -6,6 +6,7 @@ export interface IServices {
     getTracifiedItemList(accessToken: any): Promise<any>;
     getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string): Promise<any>;
     getProductArtifacts(itemID: string, accessToken: string): Promise<any>;
+    getModalData(itemID: string, accessToken: string): Promise<any>;
 }
 
 export class Services implements IServices {
@@ -49,6 +50,23 @@ export class Services implements IServices {
     }
 
     public getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string) {
+        return new Promise((resolve, reject) => {
+            const options = {
+                method: "GET",
+                // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+                uri: "http://www.mocky.io/v2/5a7688f02e000030006ab297",
+            };
+
+            request(options).then((data: any) => {
+                const type: string = typeof data;
+                console.log(type);
+                console.log(data);
+                resolve(data);
+            });
+        });
+    }
+
+    public getModalData(itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",

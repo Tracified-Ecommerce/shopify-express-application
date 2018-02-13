@@ -1,4 +1,4 @@
-import { Request, Response, Router, NextFunction } from "express";
+import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IRequest } from "../../types/session/sessionType";
 import { Helper, IHelper } from "../helpers/index";
@@ -7,6 +7,7 @@ import { router as adminlink } from "./adminlink";
 import { router as config } from "./config";
 import { router as customer } from "./customer";
 import { router as install } from "./install";
+import { router as modal } from "./modal";
 import { router as shopAPI } from "./shop-api";
 import { router as test } from "./test";
 import { router as tracified } from "./tracified";
@@ -30,6 +31,7 @@ router.use("/config", config);
 router.use("/tracified", tracified);
 router.use("/customer", customer);
 router.use("/test", test);
+router.use("/modal", modal);
 
 /**
  * -shopify index route - all the requests from shopify admin app lists
@@ -39,8 +41,8 @@ router.use("/test", test);
  */
 
 router.get("/", (req: IRequest & Request, res: Response, next: NextFunction) => {
-    
-    if ( req.path == 'abc') {
+
+    if ( req.path === "abc") {
         return res.send("abcdefg");
     }
 
