@@ -40,11 +40,11 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             const tracifiedToken = exisitingShop.tracified_token;
 
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data: any) => {
-                                console.log(data);
-                                resData = data;
+                                console.log("got data");
+                                // resData = data;
+                                return res.send("inside existing shop if");
                             });
 
-                            return res.send(resData);
                         } else {
                             return res.send("no shop in database");
                     }
