@@ -46,7 +46,11 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
         }
         if (mapping) {
             // mapping.mapping -> is the object with all the mapping
-            return res.send(mapping);
+            if (mapping.mapping.hasOwnProperty(product)) {
+                return res.send(mapping.mappimg[product][0]);
+            } else {
+                return res.send("item not found");
+            }
         } else {
             return res.status(204).send("mapping not available");
         }
