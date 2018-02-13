@@ -28,6 +28,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
             // mapping.mapping -> is the object with all the mapping
             if (mapping.mapping.hasOwnProperty(product)) {
                 const TracifiedID = mapping.mapping[product][0];
+                let resData = "";
                 Shop.findOne(
                     { name: shopName },
                     "name access_token tracified_token",
@@ -40,7 +41,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
 
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data: any) => {
                                 console.log(data);
-                                return res.send(data);
+                                return res.send("data");
                             });
 
                             return res.redirect("/shopify/cookie-check");
@@ -48,8 +49,6 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             return res.send("no shop in database");
                     }
                 });
-
-                return res.send(mapping.mapping[product][0]);
             } else {
                 return res.send("item not found");
             }
