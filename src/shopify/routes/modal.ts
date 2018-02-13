@@ -28,7 +28,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
             // mapping.mapping -> is the object with all the mapping
             if (mapping.mapping.hasOwnProperty(product)) {
                 const TracifiedID = mapping.mapping[product][0];
-                let resData = "";
+                let resData = "no data";
                 Shop.findOne(
                     { name: shopName },
                     "name access_token tracified_token",
@@ -41,8 +41,9 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
 
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data: any) => {
                                 console.log("got data");
-                                // resData = data;
-                                return res.send("inside existing shop if");
+                                console.log(data);
+                                resData = data;
+                                return res.send(resData);
                             });
 
                         } else {

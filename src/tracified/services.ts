@@ -76,8 +76,6 @@ export class Services implements IServices {
 
             request(options).then((data: any) => {
                 const type: string = typeof data;
-                console.log(type);
-                console.log(data);
                 resolve(data);
             });
         });
