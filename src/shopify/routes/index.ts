@@ -42,10 +42,6 @@ router.use("/modal", modal);
 
 router.get("/", (req: IRequest & Request, res: Response, next: NextFunction) => {
 
-    if ( req.path === "abc") {
-        return res.send("abcdefg");
-    }
-
     const shop = req.query.shop;
     if (shop) {
         const query = Object.keys(req.query).map((key) => `${key}=${req.query[key]}`).join("&");
