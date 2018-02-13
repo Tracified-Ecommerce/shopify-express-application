@@ -41,10 +41,10 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
 
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data: any) => {
                                 console.log(data);
-                                return res.send("data");
+                                resData = data;
                             });
 
-                            return res.redirect("/shopify/cookie-check");
+                            return res.send(resData);
                         } else {
                             return res.send("no shop in database");
                     }
