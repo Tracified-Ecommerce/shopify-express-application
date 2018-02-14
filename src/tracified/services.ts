@@ -69,14 +69,15 @@ export class Services implements IServices {
     public getModalData(itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
+                json: true,
                 method: "GET",
                 // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
                 uri: "http://www.mocky.io/v2/5a8377012f0000680074bdf9",
-                json: true
+
             };
 
             request(options).then((data: any) => {
-                console.log("getModaData returns :"+data);
+                console.log("getModaData returns :" + data);
                 const type: string = typeof data;
                 resolve(data);
             });
@@ -90,7 +91,7 @@ export class Services implements IServices {
                 uri: tracifiedURL + "/Traceability_data/artifacts/" + itemID,
             };
 
-            request(options).then((data: JSON) => {
+            request(options).then((data: any) => {
                 const type: string = typeof data;
                 console.log(type);
                 console.log(data);

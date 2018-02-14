@@ -1,17 +1,28 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
-import { IRequest } from "../../types/session/sessionType";
 import { Imodal } from "../../types/modal/modalType";
+import { IRequest } from "../../types/session/sessionType";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
 const router = Router();
 const tracifiedServices: IServices = new Services();
 
-function buildComponent(component: any) : string{
+function buildComponent(component: any): string {
+    switch (component.componentType) {
+        case "average" : {
+            console.log("average");
+        }
+        case "trueFalse" : {
+            console.log("trueFalse");
+        }
+        default : {
+            console.log("default");
+        }
+    }
     let txt = "";
-    txt += "<p>"+component.description+"</p><br>";
+    txt += "<p>" + component.description + "</p><br>";
     return txt;
 }
 
@@ -40,7 +51,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                     "name access_token tracified_token",
                     (errr: Error, exisitingShop: ShopModel) => {
                     if (err) {
-                        return res.status(503).send("error with db connection. Plese try again in a while"); 
+                        return res.status(503).send("error with db connection. Plese try again in a while");
                     }
                     if (exisitingShop && exisitingShop.tracified_token) {
                         const tracifiedToken = exisitingShop.tracified_token;
@@ -51,9 +62,9 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             console.log(data.components);
                             let htmltxt = "";
                             let componentArray = [];
-                            componentArray = data.components
-                            for(let i=0; i<componentArray.length; i++){
-                                htmltxt += buildComponent(componentArray[i]);
+                            componentArray = data.components;
+                            for (const component of componentArray) {
+                                htmltxt += buildComponent(component);
                             }
                             return res.send(htmltxt);
                         });
