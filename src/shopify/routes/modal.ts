@@ -32,18 +32,19 @@ function buildComponent(component: any): string {
                     let maxElement = "";
                     let maxCount = 0;
                     for (const value of component.values) {
-
+                        console.log("value is :" + value);
                         if (!valMap.value) {
                             valMap[value] = 0;
+                            console.log("valmap value set is :" + value);
                         } else {
                             valMap[value] = valMap[value] + 1;
+                            console.log("valmap value is :" + valMap.value);
                             if (valMap.value > maxCount) {
                                 maxCount = valMap.value;
                                 maxElement = value;
                             }
                         }
                     }
-                    console.log(valMap);
                     txt += "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
                     "<h3>" + maxElement + "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
                 }
