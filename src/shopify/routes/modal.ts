@@ -34,9 +34,9 @@ function buildComponent(component: any): string {
                     for (const value of component.values) {
 
                         if (!valMap.value) {
-                            valMap.value = 0;
+                            valMap[value] = 0;
                         } else {
-                            valMap.value ++;
+                            valMap[value] = valMap[value] + 1;
                             if (valMap.value > maxCount) {
                                 maxCount = valMap.value;
                                 maxElement = value;
