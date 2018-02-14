@@ -25,7 +25,7 @@ function buildComponent(component: any): string {
             txt += "<p>piechart " + tot + "</p>";
             break;
         case "outOfTen" :
-            for (const value of component.data) {
+            for (const value of component.values) {
                 if ( value === true ) {
                     tot++;
                 }
@@ -34,7 +34,7 @@ function buildComponent(component: any): string {
             console.log("trueFalse");
             break;
         case "barChart" :
-            for (const value of component.data) {
+            for (const value of component.values) {
                 if ( value === true ) {
                     tot++;
                 }
