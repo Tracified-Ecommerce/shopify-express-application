@@ -8,6 +8,12 @@ import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 const router = Router();
 const tracifiedServices: IServices = new Services();
 
+function buildComponent(component: any) : string{
+    let txt = "";
+    txt += "<p>"+component.description+"</p><br>";
+    return txt;
+}
+
 router.all("/*", (req: IRequest & Request, res: Response, next: NextFunction) => {
     const re = /^\/(modal-mapping\/)[a-zA-Z0-9]+/;
     if (re.test(req.path)) {
@@ -42,8 +48,12 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data: any) => {
                                 console.log("got data");
                                 console.log(data);
-                                resData = data;
-                                return res.send(resData);
+                                let htmltxt = "<div>";
+                                data.components.map((component: any, index: any) => {
+                                    htmltxt += buildComponent(component);
+                                });
+                                htmltxt += "</div>"
+                                return res.send(htmltxt);
                             });
 
                         } else {
