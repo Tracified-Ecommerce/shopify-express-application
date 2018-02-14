@@ -23,15 +23,41 @@ function buildComponent(component: any): string {
                 }
             }
             txt += "<div>piechart " + tot + "</div>";
+            txt += "<h3>" + component.uiComponent.title + "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
             break;
         case "outOfTen" :
-            for (const value of component.values) {
-                if ( value === true ) {
-                    tot++;
+            if (component.uiComponent.titleFunction) {
+                if (component.uiComponent.titleFunction === "getMode") {
+                    const valMap: any = {};
+                    let maxElement = "";
+                    let maxCount = 0;
+                    for (const value of component.values) {
+
+                        if (!valMap.value) {
+                            valMap.value = 0;
+                        } else {
+                            valMap.value ++;
+                            if (valMap.value > maxCount) {
+                                maxCount = valMap.value;
+                                maxElement = value;
+                            }
+                        }
+                    }
+                    txt += "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>";
+                    txt += "<h3>" + maxElement + "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
                 }
+            } else {
+                for (const value of component.values) {
+                    if ( value === true ) {
+                        tot++;
+                    }
+                }
+                txt += "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>";
+                txt += "<h3>" +
+                component.uiComponent.title +
+                "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
+                console.log("outOfTen");
             }
-            txt += "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>";
-            console.log("outOfTen");
             break;
         case "barChart" :
             for (const value of component.values) {
@@ -41,6 +67,7 @@ function buildComponent(component: any): string {
             }
             txt += "<div>out of ten " + tot + "</div>";
             console.log("trueFalse");
+            txt += "<h3>" + component.uiComponent.title + "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
             break;
         default :
             console.log("default");
@@ -48,7 +75,6 @@ function buildComponent(component: any): string {
 
     }
 
-    txt += "<h3>" + component.uiComponent.title + "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
     return txt;
 }
 
