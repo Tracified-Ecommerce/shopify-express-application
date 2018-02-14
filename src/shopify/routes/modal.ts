@@ -39,9 +39,9 @@ function buildComponent(component: any): string {
                             console.log("valmap is : " + JSON.stringify(valMap));
                         } else {
                             valMap[value] = valMap[value] + 1;
-                            console.log("valmap value is :" + valMap.value);
-                            if (valMap.value > maxCount) {
-                                maxCount = valMap.value;
+                            console.log("valmap value is :" + valMap[value]);
+                            if (valMap[value] > maxCount) {
+                                maxCount = valMap[value];
                                 maxElement = value;
                             }
                         }
