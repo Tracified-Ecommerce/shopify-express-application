@@ -11,26 +11,35 @@ const tracifiedServices: IServices = new Services();
 
 function buildComponent(component: any): string {
 
-    let num: number = 0;
     let txt = "<div class=\"col-lg-3 col-md-4 col-sm-6 col-xs-12\">";
     let tot: number = 0;
-    const l = component.data.length;
-    switch (component.componentType) {
-        case "average" :
-            console.log("average");
-            for (const value of component.data) {
-                tot += value;
+
+    switch (component.uiComponent.name) {
+        case "pieChart" :
+            console.log("pieChart");
+            for (const value of component.values) {
+                if ( value === true ) {
+                    tot++;
+                }
             }
-            num = tot / l;
-            txt += "<p>" + num + "</p>";
+            txt += "<p>piechart " + tot + "</p>";
             break;
-        case "trueFalse" :
+        case "outOfTen" :
             for (const value of component.data) {
                 if ( value === true ) {
                     tot++;
                 }
             }
-            txt += "<p>" + tot + "/" + l + "</p>";
+            txt += "<p>out of ten " + tot + "</p>";
+            console.log("trueFalse");
+            break;
+        case "barChart" :
+            for (const value of component.data) {
+                if ( value === true ) {
+                    tot++;
+                }
+            }
+            txt += "<p>out of ten " + tot + "</p>";
             console.log("trueFalse");
             break;
         default :
@@ -39,7 +48,7 @@ function buildComponent(component: any): string {
 
     }
 
-    txt += "<p>" + component.description + "</p></div>";
+    txt += "<h2>" + component.title + "</h2><p>" + component.subTitle + "</p></div>";
     return txt;
 }
 
@@ -76,10 +85,10 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                         tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
                             console.log("got data");
                             console.log(data);
-                            console.log(data.components);
+                            console.log(data.data[0].pointOfSale);
                             let htmltxt = "";
                             let componentArray = [];
-                            componentArray = data.components;
+                            componentArray = data.data[0].pointOfSale;
                             for (const component of componentArray) {
                                 htmltxt += buildComponent(component);
                             }
