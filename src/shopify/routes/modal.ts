@@ -13,10 +13,10 @@ function buildComponent(component: any): string {
 
     let num: number = 0;
     let txt = "";
+    let tot: number = 0;
     const l = component.data.length;
     switch (component.componentType) {
-        case "average" : {
-            let tot: number = 0;
+        case "average" :
             console.log("average");
             for (const value of component.data) {
                 tot += value;
@@ -24,9 +24,7 @@ function buildComponent(component: any): string {
             num = tot / l;
             txt += "<p>" + num + "</p>";
             break;
-        }
-        case "trueFalse" : {
-            let tot: number = 0;
+        case "trueFalse" :
             for (const value of component.data) {
                 if ( value === true ) {
                     tot++;
@@ -35,11 +33,10 @@ function buildComponent(component: any): string {
             txt += "<p>" + tot + "/" + l + "</p>";
             console.log("trueFalse");
             break;
-        }
-        default : {
+        default :
             console.log("default");
             break;
-        }
+
     }
 
     txt += "<p>" + component.description + "</p><br>";
