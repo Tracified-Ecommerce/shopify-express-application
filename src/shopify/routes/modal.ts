@@ -2,6 +2,7 @@ import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
 import { IRequest } from "../../types/session/sessionType";
+import { Imodal } from "../../types/modal/modalType";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
@@ -34,7 +35,6 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
             // mapping.mapping -> is the object with all the mapping
             if (mapping.mapping.hasOwnProperty(product)) {
                 const TracifiedID = mapping.mapping[product][0];
-                let resData = "no data";
                 Shop.findOne(
                     { name: shopName },
                     "name access_token tracified_token",
@@ -45,7 +45,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                         if (exisitingShop && exisitingShop.tracified_token) {
                             const tracifiedToken = exisitingShop.tracified_token;
 
-                            tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data: any) => {
+                            tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data: Imodal) => {
                                 console.log("got data");
                                 console.log(data);
                                 let htmltxt = "<div>";
