@@ -48,7 +48,7 @@ function buildComponent(component: any): string {
 
     }
 
-    txt += "<h2>" + component.title + "</h2><p>" + component.subTitle + "</p></div>";
+    txt += "<h3>" + component.uiComponent.title + "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
     return txt;
 }
 
