@@ -49,9 +49,11 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             console.log("got data");
                             console.log(data);
                             let htmltxt = "<div>";
-                            data.components.map((component: any, index: any) => {
-                                htmltxt += buildComponent(component);
-                            });
+                            let componentArray = [];
+                            componentArray = data.components
+                            for(let i=0; i<componentArray.length; i++){
+                                htmltxt += buildComponent(componentArray[i]);
+                            }
                             htmltxt += "</div>"
                             return res.send(htmltxt);
                         });
