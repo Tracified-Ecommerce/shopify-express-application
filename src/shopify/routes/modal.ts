@@ -11,7 +11,7 @@ const tracifiedServices: IServices = new Services();
 
 function buildComponent(component: any): string {
 
-    let txt = "<div class=\"col-lg-3 col-md-4 col-sm-6 col-xs-12\">";
+    let txt = "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
     let tot: number = 0;
 
     switch (component.uiComponent.name) {
@@ -30,8 +30,8 @@ function buildComponent(component: any): string {
                     tot++;
                 }
             }
-            txt += "<p>out of ten " + tot + "</p>";
-            console.log("trueFalse");
+            txt += "<p class=\"large-green\">" + tot + "/" + component.values.length + "</p>";
+            console.log("outOfTen");
             break;
         case "barChart" :
             for (const value of component.values) {
