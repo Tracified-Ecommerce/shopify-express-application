@@ -89,7 +89,7 @@ export class Services implements IServices {
                 uri: tracifiedURL + "/Traceability_data/artifacts/" + itemID,
             };
 
-            request(options).then((data: any) => {
+            request(options).then((data: JSON) => {
                 const type: string = typeof data;
                 console.log(type);
                 console.log(data);
