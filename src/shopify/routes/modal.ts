@@ -22,7 +22,7 @@ function buildComponent(component: any): string {
                     tot++;
                 }
             }
-            txt += "<p>piechart " + tot + "</p>";
+            txt += "<div>piechart " + tot + "</div>";
             break;
         case "outOfTen" :
             for (const value of component.values) {
@@ -30,7 +30,7 @@ function buildComponent(component: any): string {
                     tot++;
                 }
             }
-            txt += "<p class=\"large-green\">" + tot + "/" + component.values.length + "</p>";
+            txt += "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>";
             console.log("outOfTen");
             break;
         case "barChart" :
@@ -39,7 +39,7 @@ function buildComponent(component: any): string {
                     tot++;
                 }
             }
-            txt += "<p>out of ten " + tot + "</p>";
+            txt += "<div>out of ten " + tot + "</div>";
             console.log("trueFalse");
             break;
         default :
