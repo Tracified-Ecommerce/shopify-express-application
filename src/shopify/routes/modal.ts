@@ -10,18 +10,38 @@ const router = Router();
 const tracifiedServices: IServices = new Services();
 
 function buildComponent(component: any): string {
+
+    let num: number = 0;
+    let txt = "";
+    const l = component.data.length;
     switch (component.componentType) {
         case "average" : {
+            let tot: number = 0;
             console.log("average");
+            for (const value of component.data) {
+                tot += value;
+            }
+            num = tot / l;
+            txt += "<p>" + num + "</p>";
+            break;
         }
         case "trueFalse" : {
+            let tot: number = 0;
+            for (const value of component.data) {
+                if ( value === true ) {
+                    tot++;
+                }
+            }
+            txt += "<p>" + tot + "/" + l + "</p>";
             console.log("trueFalse");
+            break;
         }
         default : {
             console.log("default");
+            break;
         }
     }
-    let txt = "";
+
     txt += "<p>" + component.description + "</p><br>";
     return txt;
 }
