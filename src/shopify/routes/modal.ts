@@ -12,7 +12,7 @@ const tracifiedServices: IServices = new Services();
 function buildComponent(component: any): string {
 
     let num: number = 0;
-    let txt = "<div class=\"componentChild\">";
+    let txt = "<div class=\"col-lg-3 col-md-4 col-sm-6 col-xs-12\">";
     let tot: number = 0;
     const l = component.data.length;
     switch (component.componentType) {
