@@ -39,25 +39,25 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                     { name: shopName },
                     "name access_token tracified_token",
                     (errr: Error, exisitingShop: ShopModel) => {
-                        if (err) {
-                            return res.status(503).send("error with db connection. Plese try again in a while"); 
-                        }
-                        if (exisitingShop && exisitingShop.tracified_token) {
-                            const tracifiedToken = exisitingShop.tracified_token;
+                    if (err) {
+                        return res.status(503).send("error with db connection. Plese try again in a while"); 
+                    }
+                    if (exisitingShop && exisitingShop.tracified_token) {
+                        const tracifiedToken = exisitingShop.tracified_token;
 
-                            tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data: Imodal) => {
-                                console.log("got data");
-                                console.log(data);
-                                let htmltxt = "<div>";
-                                data.components.map((component: any, index: any) => {
-                                    htmltxt += buildComponent(component);
-                                });
-                                htmltxt += "</div>"
-                                return res.send(htmltxt);
+                        tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
+                            console.log("got data");
+                            console.log(data);
+                            let htmltxt = "<div>";
+                            data.components.map((component, index) => {
+                                htmltxt += buildComponent(component);
                             });
+                            htmltxt += "</div>"
+                            return res.send(htmltxt);
+                        });
 
-                        } else {
-                            return res.send("no shop in database");
+                    } else {
+                        return res.send("no shop in database");
                     }
                 });
             } else {
