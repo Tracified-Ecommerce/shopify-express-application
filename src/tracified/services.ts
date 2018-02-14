@@ -72,6 +72,7 @@ export class Services implements IServices {
                 method: "GET",
                 // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
                 uri: "http://www.mocky.io/v2/5a8377012f0000680074bdf9",
+                json: true
             };
 
             request(options).then((data: any) => {
