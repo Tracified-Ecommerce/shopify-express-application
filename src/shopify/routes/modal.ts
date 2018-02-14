@@ -43,8 +43,9 @@ function buildComponent(component: any): string {
                             }
                         }
                     }
-                    txt += "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>";
-                    txt += "<h3>" + maxElement + "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
+                    console.log(valMap);
+                    txt += "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
+                    "<h3>" + maxElement + "</h3><p>" + component.uiComponent.subTitle + "</p></div>";
                 }
             } else {
                 for (const value of component.values) {
