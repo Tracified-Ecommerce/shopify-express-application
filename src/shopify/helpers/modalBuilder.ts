@@ -6,13 +6,12 @@ function buildComponent(component: any): string {
     switch (component.uiComponent.name) {
 
         case "pieChart" :
-            console.log("pieChart");
             for (const value of component.values) {
                 if ( value === true ) {
                     tot++;
                 }
             }
-            txt += "<div>piechart " + tot + "</div>";
+            txt += "<div class=\"large-green\">piechart " + tot + "</div>";
             txt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
             "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
             break;
@@ -24,14 +23,10 @@ function buildComponent(component: any): string {
                     let maxElement = "";
                     let maxCount = 0;
                     for (const value of component.values) {
-                        console.log("value is :" + value);
                         if (!valMap.hasOwnProperty(value)) {
                             valMap[value] = 0;
-                            console.log("valmap value set is :" + value);
-                            console.log("valmap is : " + JSON.stringify(valMap));
                         } else {
                             valMap[value] = valMap[value] + 1;
-                            console.log("valmap value is :" + valMap[value]);
                             if (valMap[value] > maxCount) {
                                 maxCount = valMap[value];
                                 maxElement = value;
@@ -52,7 +47,6 @@ function buildComponent(component: any): string {
                 txt += "<div class=\"titleDiv\">" +
                 component.uiComponent.title +
                 "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
-                console.log("outOfTen");
             }
             break;
 
@@ -62,8 +56,7 @@ function buildComponent(component: any): string {
                     tot++;
                 }
             }
-            txt += "<div>out of ten " + tot + "</div>";
-            console.log("trueFalse");
+            txt += "<div class=\"large-green\">barchart " + tot + "</div>";
             txt += "<div class=\"titleDiv\">" + component.uiComponent.title +
             "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
             break;

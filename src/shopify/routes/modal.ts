@@ -41,9 +41,6 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                         const tracifiedToken = exisitingShop.tracified_token;
 
                         tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
-                            console.log("got data");
-                            console.log(data);
-                            console.log(data.data[0].pointOfSale);
                             let htmltxt = "";
                             let componentArray = [];
                             componentArray = data.data[0].pointOfSale;
