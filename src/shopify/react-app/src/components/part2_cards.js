@@ -319,7 +319,8 @@ class Part2Cards extends Component {
                                 <Uncollapsed 
                                     key={index}
                                     order={order} 
-                                    productsProp={this.state.products} 
+                                    productsProp={this.state.products}
+                                    resetOrders={this.resetOrders} 
                                     qrVal={qrValue} 
                                     title={title}
                                 />
