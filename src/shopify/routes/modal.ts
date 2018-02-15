@@ -3,7 +3,7 @@ import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
 import { Imodal } from "../../types/modal/modalType";
 import { IRequest } from "../../types/session/sessionType";
-import { buildComponent } from "../helpers/modalComponentBuilder";
+import { componentBuilder } from "../helpers/modalComponentBuilder";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
@@ -44,9 +44,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             let htmltxt = "";
                             let componentArray = [];
                             componentArray = data.data[0].pointOfSale;
-                            for (const component of componentArray) {
-                                htmltxt += buildComponent(component);
-                            }
+                            htmltxt += componentBuilder(componentArray);
                             return res.send(htmltxt);
                         });
 
