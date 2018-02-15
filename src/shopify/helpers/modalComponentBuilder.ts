@@ -3,18 +3,26 @@ interface IComponentJSON {
     pieChartData: any[];
 }
 
+interface IResponseJSON {
+    components: IComponentJSON;
+    map: any;
+}
+
 function componentBuilder(components: any): IComponentJSON {
 
-    const componentJSON: IComponentJSON = {htmltxt: "", pieChartData: []};
+    const componentJSON: IComponentJSON = {
+        htmltxt: "",
+        pieChartData: [],
+    };
 
     for (const component of components) {
         componentJSON.htmltxt += "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
         let tot: number = 0;
         switch (component.uiComponent.name) {
 
-            case "pieChart" :
+            case "pieChart":
                 for (const value of component.values) {
-                    if ( value === true ) {
+                    if (value === true) {
                         tot++;
                     }
                 }
@@ -26,10 +34,10 @@ function componentBuilder(components: any): IComponentJSON {
                 componentJSON.pieChartData.push(pieData);
                 componentJSON.htmltxt += "<div class=\"ct-chart ct-square\" id=\"" + component.key + "\"" + "></div>";
                 componentJSON.htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
-                "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
+                    "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 break;
 
-            case "outOfTen" :
+            case "outOfTen":
                 if (component.uiComponent.titleFunction) {
                     if (component.uiComponent.titleFunction === "getMode") {
                         const valMap: any = {};
@@ -47,36 +55,36 @@ function componentBuilder(components: any): IComponentJSON {
                             }
                         }
                         componentJSON.htmltxt +=
-                        "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
-                        "<div class=\"titleDiv\">" + maxElement + "</div>" +
-                        "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
+                            "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
+                            "<div class=\"titleDiv\">" + maxElement + "</div>" +
+                            "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                     }
                 } else {
                     for (const value of component.values) {
-                        if ( value === true ) {
+                        if (value === true) {
                             tot++;
                         }
                     }
                     componentJSON.htmltxt +=
-                    "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>"
-                    + "<div class=\"titleDiv\">" +
-                    component.uiComponent.title +
-                    "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
+                        "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>"
+                        + "<div class=\"titleDiv\">" +
+                        component.uiComponent.title +
+                        "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
                 break;
 
-            case "barChart" :
+            case "barChart":
                 for (const value of component.values) {
-                    if ( value === true ) {
+                    if (value === true) {
                         tot++;
                     }
                 }
                 componentJSON.htmltxt += "<div class=\"large-green\">bar " + tot + "</div>"
-                + "<div class=\"titleDiv\">" + component.uiComponent.title +
-                "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
+                    + "<div class=\"titleDiv\">" + component.uiComponent.title +
+                    "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 break;
 
-            default :
+            default:
                 console.log("default");
                 break;
 
@@ -86,4 +94,4 @@ function componentBuilder(components: any): IComponentJSON {
     return componentJSON;
 }
 
-export { componentBuilder, IComponentJSON };
+export { componentBuilder, IComponentJSON, IResponseJSON };

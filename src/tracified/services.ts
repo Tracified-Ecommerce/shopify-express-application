@@ -77,7 +77,6 @@ export class Services implements IServices {
             };
 
             request(options).then((data: any) => {
-                console.log("getModaData returns :" + data);
                 const type: string = typeof data;
                 resolve(data);
             });

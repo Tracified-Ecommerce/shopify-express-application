@@ -3,7 +3,7 @@ import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
 import { Imodal } from "../../types/modal/modalType";
 import { IRequest } from "../../types/session/sessionType";
-import { componentBuilder } from "../helpers/modalComponentBuilder";
+import { componentBuilder, IResponseJSON } from "../helpers/modalComponentBuilder";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
@@ -34,23 +34,30 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                     { name: shopName },
                     "name access_token tracified_token",
                     (errr: Error, exisitingShop: ShopModel) => {
-                    if (err) {
-                        return res.status(503).send("error with db connection. Plese try again in a while");
-                    }
-                    if (exisitingShop && exisitingShop.tracified_token) {
-                        const tracifiedToken = exisitingShop.tracified_token;
+                        if (err) {
+                            return res.status(503).send("error with db connection. Plese try again in a while");
+                        }
+                        if (exisitingShop && exisitingShop.tracified_token) {
+                            const tracifiedToken = exisitingShop.tracified_token;
 
-                        tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
-                            let componentArray = [];
-                            componentArray = data.data[0].pointOfSale;
-                            const componentJSON = componentBuilder(componentArray);
-                            return res.send(componentJSON);
-                        });
+                            tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
+                                let componentArray = [];
+                                componentArray = data.data[0].pointOfSale;
+                                const componentJSON: IResponseJSON = {
+                                    components: {
+                                        htmltxt: "",
+                                        pieChartData: [],
+                                    },
+                                    map: [],
+                                };
+                                componentJSON.components = componentBuilder(componentArray);
+                                return res.send(componentJSON);
+                            });
 
-                    } else {
-                        return res.send("no shop in database");
-                    }
-                });
+                        } else {
+                            return res.send("no shop in database");
+                        }
+                    });
             } else {
                 return res.send("item not found");
             }
