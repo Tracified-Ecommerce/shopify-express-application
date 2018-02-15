@@ -17,7 +17,7 @@ function componentBuilder(components: any): IComponentJSON {
                         tot++;
                     }
                 }
-                componentJSON.htmltxt += "<div class=\"large-green\">pie " + tot + "</div>";
+                componentJSON.htmltxt += "<div class=\"ct-chart ct-square\" id=\"chart1\">pie " + tot + "</div>";
                 componentJSON.htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
                 "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 break;
