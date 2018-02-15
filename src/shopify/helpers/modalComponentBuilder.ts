@@ -1,6 +1,6 @@
 function buildComponent(component: any): string {
 
-    let txt = "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
+    let txt = "<div class=\"col-4 col-sm-6 col-xs-12\">";
     let tot: number = 0;
 
     switch (component.uiComponent.name) {
