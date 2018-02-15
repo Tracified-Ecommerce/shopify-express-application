@@ -62,6 +62,7 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
                     }
                 });
                 console.log("inside fulfilled function");
+                console.log(flag);
                 return flag;
             });
 
