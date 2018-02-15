@@ -52,11 +52,15 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
         (orders: any) => {
         const fulfilledOrders = orders.orders.filter((order: IOrder) => {
                 console.log(order.note_attributes);
+                let flag = false;
                 order.note_attributes.map((noteAttrib: any) => {
                     console.log(JSON.stringify(noteAttrib));
+                    if (noteAttrib.name === "tracefied" && noteAttrib.value === 1) {
+                        flag = true;
+                    }
                 });
                 console.log("inside fulfilled function");
-                return order.fulfillment_status === "fulfilled";
+                return flag;
             });
 
         res.status(200).send({fulfilledOrders, shopDomain});
