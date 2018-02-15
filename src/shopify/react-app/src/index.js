@@ -22,7 +22,7 @@ ReactDOM.render(
             <Route exact path='/index' component={IndexItem} />
             <Route exact path='/edit/:id' component={EditItem} />
             <Route exact path='/product-mapping' component={ProductMapping} />
-            <Route exact path='/trace/:orderID/:itemID' component={TraceTimeLine} />
+            <Route exact path='/trace/:orderID/:itemID/:itemName' component={TraceTimeLine} />
             <Route exact path='/account-verify' component={AccountVerify} />
             
         </div>

@@ -8,15 +8,34 @@ import {
 } from '@shopify/polaris';
 import { Row, Col, Container } from 'reactstrap';
 import {Timeline, TimelineEvent} from 'react-event-timeline';
+import TimelineContent from './TimelineContent';
 
 class TraceTimeLine extends Component {
 
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
         this.state = {
+            array: [],
             timeline: "",
             istimelineLoading: true
         };
+    }
+
+    handleClick = (index, isClosed) => {
+
+        if(!isClosed){
+        //reset all values in array to false -> (sets all cards' "isOpen" attributes to false)
+        this.state.array.fill(false);
+
+        }
+
+        //set only this card's collapse attribute to true
+        var temp = this.state.array.slice();
+        temp[index] = !(temp[index]);
+        // replace array with modified temp array
+        this.setState({array: temp});
+
     }
 
     componentDidMount() {
@@ -25,14 +44,23 @@ class TraceTimeLine extends Component {
             method: 'get',
             url: traceURL,
             headers: {
-                'Content-Type': 'text/plain;charset=utf-8',
+                'Content-Type': 'application/json;charset=utf-8',
             },
         })
             .then(response => {
-                let timeline = response.data[2];
+                let timeline = response.data.tabs[2];
+                let itms = timeline.items;
+                let arr = [];
+
+                itms.map((e,i) => {
+                    arr.push(false);
+                    return true;
+                });
+
                 this.setState({
                     timeline: timeline,
-                    istimelineLoading: false
+                    istimelineLoading: false,
+                    array: arr
                 });
             });
 
@@ -40,110 +68,76 @@ class TraceTimeLine extends Component {
 
     render() {
 
+        let timelineTopStyle = {
+            backgroundColor: 'rgba(0,0,0,0.8)', 
+            height: 110, 
+            width: 220,
+            marginLeft: 10,
+            padding: 10
+        };
+
         if (this.state.istimelineLoading) {
             return <Loading />;
         }
         else {
-            console.log(this.props.match.params.orderID);
-            console.log(this.props.match.params.itemID);
             return (
                 <div style={{backgroundColor: '#f4f6f8'}}>
-                    <Page title="Trace Back Timeline" separator>    
+                    <div style={timelineTopStyle}>
+                        <h1 style={{color: 'white', textAlign: 'center'}}>
+                            <span style={{color: 'white'}}>
+                            Traci
+                            </span>
+                            <span style={{color: 'green'}}>
+                            fied
+                            </span> 
+                        </h1>
+                        
+                        <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Ordered ID:&nbsp;{this.props.match.params.orderID}</p>
+                        <p style={{color: 'white', fontSize: 12, textAlign: 'center', marginBottom: 1}}>Item Name:&nbsp;{this.props.match.params.itemName}</p>
+                    
+                    </div>
+                    <div style={{paddingLeft: 30}}>
                         <Timeline>
                         {this.state.timeline.items.map((stage, index) => {
 
                             let titleText = (index+1)+". "+stage.title;
                             let descriptionText = stage.description;
 
-                            var ico = (<svg height="20" width="20" >
-                                            <image width="20" height="20" xlinkHref={stage.icon}  />    
+                            var ico = (<svg height="30" width="30" >
+                                            <image width="30" height="30" xlinkHref={stage.icon}  />    
                                         </svg>);
+
+                            var stageData = stage.data;
 
                             return(
                                 <TimelineEvent
                                     key={index}
                                     title={titleText}
-                                    titleStyle={{fontSize:17}}
+                                    titleStyle={{fontSize:17, fontWeight: "bold"}}
                                     subtitle={descriptionText}
                                     subtitleStyle={{fontSize:15}}
                                     icon={ico}
-                                    iconColor="#6fba1c"
                                     contentStyle={{fontSize:13}}
+                                    bubbleStyle={{border: "none"}}
+                                    // onclick={this.showMessage}
                                 >
-                                    {
 
-                                        Object.keys(stage.data).map(function (key) {
-                                            return <div key={key}> {stage.data[key].title}</div>;
-                                        })
-
-                                    }
+                                    <div id={index}>
+                                        <TimelineContent 
+                                            collapseArray={this.state.array} 
+                                            collapseArrayKey={index} 
+                                            data={stageData}
+                                            componentID={"component"+index} 
+                                            onClick={this.handleClick}
+                                        />
+                                    </div>    
                                 </TimelineEvent>                                    
                             );
 
                         })}
                         </Timeline>
-                    </Page>
+                    </div>      
                 </div>
-
-                //OLD CODE ----------------------------
-
-                // <Page title="Trace Back Timeline" separator>
-                //     <DisplayText size="small">
-
-                //         {this.state.timeline.items.map((stage, index) => {
-                //             return (
-                //                 <Card key={stage.stage}
-                //                 >
-                //                     <Card.Section>
-                //                         <Row>
-                //                             <Col sm='1'>
-                //                                 <Avatar
-                //                                     customer
-                //                                     name="Farrah"
-                //                                     source={stage.icon}
-                //                                 />
-                //                             </Col>
-                //                             <Col sm='11'>
-                //                             <TextStyle variation='strong' >
-                //                                 {index+1}.&nbsp;{stage.title}
-
-                //                             </TextStyle>
-                //                             </Col>   
-                //                         </Row>
-                //                         <div >
-                //                             <Row>
-                //                                 <Col sm="1">
-                //                                     {/* <div style={line}></div> */}
-                //                                     <hr width="1" size="500"/>
-                //                                 </Col>
-                //                                 <Col sm="11">
-                //                                     <Heading> <div > {stage.description} </div> </Heading> <br />
-
-                //                                     {
-
-                //                                         Object.keys(stage.data).map(function (key) {
-                //                                             return <div> {stage.data[key].title}</div>;
-                //                                         })
-
-                //                                     }
-                //                                 </Col>
-                //                             </Row>
-                //                         </div>
-
-
-                //                     </Card.Section>
-                //                 </Card>
-
-
-
-                //             )
-                //         })}
-
-                //     </DisplayText>
-                // </Page>
-
-                //OLD CODE ----------------------------
-
             );
         }
     }

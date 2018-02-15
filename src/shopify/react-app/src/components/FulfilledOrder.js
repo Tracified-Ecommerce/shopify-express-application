@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Select } from '@shopify/polaris';
+import * as axios from 'axios';
 import { EmbeddedApp, Alert, Modal } from '@shopify/polaris/embedded';
 
 class FulfilledOrder extends Component {
@@ -10,6 +11,7 @@ class FulfilledOrder extends Component {
             productID: this.props.order.lineItems[0].product_id,
             modalOpen: false,
             alertOpen: false,
+            itemName: "",
             itemID: this.props.mapping.hasOwnProperty(this.props.order.lineItems[0].product_id) ? (this.props.mapping[this.props.order.lineItems[0].product_id][1] ? this.props.mapping[this.props.order.lineItems[0].product_id][1] : "noTraceabilityItem") : "noTraceabilityItem"
         };
         this.onSelectItem = this.onSelectItem.bind(this);
@@ -30,13 +32,32 @@ class FulfilledOrder extends Component {
 
     onTraceSelect() {
         if (this.state.itemID == "noTraceabilityItem") {
-            console.log(this.state.itemID);
             this.setState({ alertOpen: true });
         }
         else {
+           
+            const url = '/shopify/shop-api/item/' + this.state.productID;
+            axios.get(url)
+            .then(response => {
+                this.setState({
+                    itemName: response.data.product.handle
+                });
+            });
+
             this.setState({ modalOpen: true });
-            console.log(this.state.itemID);
         }
+    }
+
+    componentDidMount() {
+
+        const url = '/shopify/shop-api/item/' + this.state.productID;
+            axios.get(url)
+            .then(response => {
+                this.setState({
+                    itemName: response.data.product.handle
+                });
+            });
+
     }
 
     render() {
@@ -50,9 +71,7 @@ class FulfilledOrder extends Component {
             });
         });
         const shopOrigin = "https://" + this.props.shopDomain;
-        const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID;
-        console.log(modalURL);
-        console.log(this.props.mapping);
+        const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
         return (
             <tr>
                 <td>

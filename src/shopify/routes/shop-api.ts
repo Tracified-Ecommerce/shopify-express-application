@@ -1,12 +1,17 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
-const router = Router();
-const shopAdminAPI = require("../helpers").shopAdminAPI;
+import { IOrder } from "../../types/order/orderType";
+import { IRequest } from "../../types/session/sessionType";
+import { Helper, IHelper } from "../helpers/index";
 
-router.all("/*", (req: Request, res: Response, next: NextFunction) => {
-    if (req["session"] && req["session"].shop) {
-        req["shopRequestHeaders"] = {
-            "X-Shopify-Access-Token": req["session"].shop.access_token,
+const helper: IHelper = new Helper();
+const router = Router();
+const shopAdminAPI = helper.shopAdminAPI;
+
+router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
+    if (req.session && req.session.shop) {
+        req.shopRequestHeaders = {
+            "X-Shopify-Access-Token": req.session.shop.access_token,
         };
         next();
     } else {
@@ -15,80 +20,85 @@ router.all("/*", (req: Request, res: Response, next: NextFunction) => {
     }
 });
 
-router.get("/products", (req: Request, res: Response) => {
+router.get("/products", (req: IRequest, res: Response) => {
     console.log("products");
-    console.log(req["session"].shop.name);
-    shopAdminAPI("GET", req["session"].shop.name, "/admin/products.json", req["shopRequestHeaders"], null, (products: object) => {
+    console.log(req.session.shop.name);
+    shopAdminAPI(
+        "GET", req.session.shop.name, "/admin/products.json", req.shopRequestHeaders, null, (products: any) => {
         console.log("got products");
         res.status(200).send(products);
     });
 });
 
-router.get("/orders", (req: Request, res: Response) => {
+router.get("/orders", (req: IRequest, res: Response) => {
     console.log("orders");
-    shopAdminAPI("GET", req["session"].shop.name, "/admin/orders.json", req["shopRequestHeaders"], null, (orders: any) => {
+    shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
-        let unFulfilledOrders = orders.orders.filter((order: object) => {
-            return order["fulfillment_status"] != "fulfilled"
+        const unFulfilledOrders = orders.orders.filter((order: IOrder) => {
+            return order.fulfillment_status !== "fulfilled";
         });
         res.status(200).send({orders : unFulfilledOrders});
     });
 });
 
-router.get("/fulfilled-orders", (req: Request, res: Response) => {
+router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
     console.log("orders");
-    const shopDomain = req["session"].shop.name;
-    shopAdminAPI("GET", req["session"].shop.name, "/admin/orders.json?status=any", req["shopRequestHeaders"], null, (orders: any) => {
+    const shopDomain = req.session.shop.name;
+    shopAdminAPI(
+        "GET", req.session.shop.name,
+        "/admin/orders.json?status=any",
+        req.shopRequestHeaders,
+        null,
+        (orders: any) => {
         console.log("got all orders");
+        const fulfilledOrders = orders.orders.filter((order: IOrder) => {
+                console.log("inside fulfilled function");
+                return order.fulfillment_status === "fulfilled";
+            });
 
-        let fulfilledOrders = orders.orders.filter((order: object) => {
-            console.log("inside fulfilled function");
-            return order["fulfillment_status"] == "fulfilled"
-        });
-        
-    res.status(200).send({fulfilledOrders, shopDomain});
+        res.status(200).send({fulfilledOrders, shopDomain});
     });
 });
 
-router.get("/orders/:id/fulfill", (req: Request, res: Response) => {
-    const url: string = "/admin/orders/"+ req.params.id +"/fulfillments.json";
+router.get("/orders/:id/fulfill", (req: IRequest & Request, res: Response) => {
+    const url: string = "/admin/orders/" + req.params.id + "/fulfillments.json";
     const body: object = {
-        "fulfillment": {
-          "tracking_number": null,
-          "notify_customer": true
-        }
-      }
-    shopAdminAPI("POST", req["session"].shop.name, url , req["shopRequestHeaders"], body, (fulfillment: any) => {
+        fulfillment: {
+            notify_customer: true,
+            tracking_number: null,
+        },
+      };
+    shopAdminAPI("POST", req.session.shop.name, url , req.shopRequestHeaders, body, (fulfillment: any) => {
         console.log("order fulfilled");
         res.status(200).send(fulfillment);
     });
 });
 
-router.get("/orders/:id/tracify", (req: Request, res: Response) => {
-    const url: string = "/admin/orders"+ req.params.id + ".json";
+router.get("/orders/:id/tracify", (req: IRequest & Request, res: Response) => {
+    const url: string = "/admin/orders/" + req.params.id + ".json";
     const body: object = {
-    
-         "order" : {
 
-            "id": req.params.id,
-            "note_attributes": [
-              {
-                "isTracified": 0,
-               
-              }
-            ]
-          }
+            order: {
+                id: req.params.id,
+                note_attributes: {
+                    tracified: "1",
+                },
+            },
+        };
 
-
-        }
-
-        shopAdminAPI("PUT", req["session"].shop.name, url , req["shopRequestHeaders"], body, (order: any) => {
+    shopAdminAPI("PUT", req.session.shop.name, url , req.shopRequestHeaders, body, (order: any) => {
             console.log("order fulfilled");
             res.status(200).send(order);
         });
-           
-     }
-);
+});
 
+router.get("/item/:id", (req: IRequest & Request, res: Response) => {
+    const url: string = "/admin/products/" + req.params.id + ".json";
 
-    export { router };
+    shopAdminAPI("GET", req.session.shop.name, url , req.shopRequestHeaders, null, (item: any) => {
+        console.log("item request sent");
+        res.status(200).send(item);
+    });
+});
+
+export { router };

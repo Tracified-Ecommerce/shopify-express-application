@@ -1,7 +1,15 @@
 import request = require("request-promise");
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
 
-module.exports = {
+export interface IServices {
+    verifyTracifiedAccount(tempToken: string): Promise<any>;
+    getTracifiedItemList(accessToken: any): Promise<any>;
+    getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string): Promise<any>;
+    getProductArtifacts(itemID: string, accessToken: string): Promise<any>;
+    getModalData(itemID: string, accessToken: string): Promise<any>;
+}
+
+export class Services implements IServices {
     /**
      * this function will verify an Tracified account and connect store with the account
      * normally this will needed to be invoked once per installation
@@ -9,13 +17,13 @@ module.exports = {
      * a callback url(or to return a promise?) will also need to send
      * and have implemented here to handle te after verification peocess
      */
-    verifyTracifiedAccount(tempToken: string) {
+    public verifyTracifiedAccount(tempToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "POST",
                 uri: tracifiedURL + "/account/verify",
             };
-            
+
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 console.log(type);
@@ -23,9 +31,9 @@ module.exports = {
                 resolve(data);
             });
         });
-    },
+    }
 
-    getTracifiedItemList(accessToken: string) {
+    public getTracifiedItemList(accessToken: any) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",
@@ -39,13 +47,14 @@ module.exports = {
                 resolve(data);
             });
         });
-    },
+    }
 
-    getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string) {
+    public getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",
-                uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+                // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+                uri: "http://www.mocky.io/v2/5a7688f02e000030006ab297",
             };
 
             request(options).then((data: any) => {
@@ -55,9 +64,27 @@ module.exports = {
                 resolve(data);
             });
         });
-    },
+    }
 
-    getProductArtifacts(itemID: string, accessToken: string){
+    public getModalData(itemID: string, accessToken: string) {
+        return new Promise((resolve, reject) => {
+            const options = {
+                json: true,
+                method: "GET",
+                // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+                uri: "http://www.mocky.io/v2/5a83f0e92f00005b0074bfb4",
+
+            };
+
+            request(options).then((data: any) => {
+                console.log("getModaData returns :" + data);
+                const type: string = typeof data;
+                resolve(data);
+            });
+        });
+    }
+
+    public getProductArtifacts(itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
                 method: "GET",
@@ -72,4 +99,4 @@ module.exports = {
             });
         });
     }
-};
+}
