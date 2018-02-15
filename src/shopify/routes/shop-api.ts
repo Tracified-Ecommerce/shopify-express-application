@@ -50,8 +50,11 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
         req.shopRequestHeaders,
         null,
         (orders: any) => {
-        console.log("got all orders :" + JSON.stringify(orders));
         const fulfilledOrders = orders.orders.filter((order: IOrder) => {
+                console.log(order.note_attributes);
+                order.note_attributes.map((noteAttrib: any) => {
+                    console.log(JSON.stringify(noteAttrib));
+                });
                 console.log("inside fulfilled function");
                 return order.fulfillment_status === "fulfilled";
             });
