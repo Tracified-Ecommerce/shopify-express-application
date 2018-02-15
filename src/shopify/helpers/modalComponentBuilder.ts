@@ -4,11 +4,10 @@ interface IComponentJSON {
 
 function componentBuilder(components: any): IComponentJSON {
 
-    let htmltxt = "";
     const componentJSON: IComponentJSON = {htmltxt: ""};
 
     for (const component of components) {
-        htmltxt = "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
+        componentJSON.htmltxt += "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
         let tot: number = 0;
         switch (component.uiComponent.name) {
 
@@ -18,8 +17,8 @@ function componentBuilder(components: any): IComponentJSON {
                         tot++;
                     }
                 }
-                htmltxt += "<div class=\"large-green\">pie " + tot + "</div>";
-                htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
+                componentJSON.htmltxt += "<div class=\"large-green\">pie " + tot + "</div>";
+                componentJSON.htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
                 "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 break;
 
@@ -40,7 +39,8 @@ function componentBuilder(components: any): IComponentJSON {
                                 }
                             }
                         }
-                        htmltxt += "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
+                        componentJSON.htmltxt +=
+                        "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
                         "<div class=\"titleDiv\">" + maxElement + "</div>" +
                         "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                     }
@@ -50,8 +50,9 @@ function componentBuilder(components: any): IComponentJSON {
                             tot++;
                         }
                     }
-                    htmltxt += "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>";
-                    htmltxt += "<div class=\"titleDiv\">" +
+                    componentJSON.htmltxt +=
+                    "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>"
+                    + "<div class=\"titleDiv\">" +
                     component.uiComponent.title +
                     "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
@@ -63,8 +64,8 @@ function componentBuilder(components: any): IComponentJSON {
                         tot++;
                     }
                 }
-                htmltxt += "<div class=\"large-green\">bar " + tot + "</div>";
-                htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title +
+                componentJSON.htmltxt += "<div class=\"large-green\">bar " + tot + "</div>"
+                + "<div class=\"titleDiv\">" + component.uiComponent.title +
                 "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 break;
 
@@ -75,7 +76,6 @@ function componentBuilder(components: any): IComponentJSON {
         }
     }
 
-    componentJSON.htmltxt = htmltxt;
     return componentJSON;
 }
 
