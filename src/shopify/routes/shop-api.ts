@@ -55,6 +55,8 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
                 let flag = false;
                 order.note_attributes.map((noteAttrib: any) => {
                     console.log(JSON.stringify(noteAttrib));
+                    console.log("name is :" + noteAttrib.name);
+                    console.log("value is :" + noteAttrib.value);
                     if (noteAttrib.name === "tracefied" && noteAttrib.value === 1) {
                         flag = true;
                     }
