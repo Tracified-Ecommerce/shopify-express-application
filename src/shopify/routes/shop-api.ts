@@ -57,7 +57,7 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
                     console.log(JSON.stringify(noteAttrib));
                     console.log("name is :" + noteAttrib.name);
                     console.log("value is :" + noteAttrib.value);
-                    if (noteAttrib.name === "tracified" && noteAttrib.value === true) {
+                    if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
                         flag = true;
                         console.log("flag inside map: " + flag);
                     }
