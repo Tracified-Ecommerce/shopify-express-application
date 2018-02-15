@@ -35,7 +35,14 @@ router.get("/orders", (req: IRequest, res: Response) => {
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
         const unFulfilledOrders = orders.orders.filter((order: IOrder) => {
-            return order.fulfillment_status !== "fulfilled";
+            let flag = false;
+            order.note_attributes.map((noteAttrib: any) => {
+                if (!(noteAttrib.name === "tracified" && noteAttrib.value === "true")) {
+                    flag = true;
+                }
+            });
+            console.log("inside fulfilled function");
+            return flag;
         });
         res.status(200).send({orders : unFulfilledOrders});
     });
@@ -51,19 +58,13 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
         null,
         (orders: any) => {
         const fulfilledOrders = orders.orders.filter((order: IOrder) => {
-                console.log(order.note_attributes);
                 let flag = false;
                 order.note_attributes.map((noteAttrib: any) => {
-                    console.log(JSON.stringify(noteAttrib));
-                    console.log("name is :" + noteAttrib.name);
-                    console.log("value is :" + noteAttrib.value);
                     if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
                         flag = true;
-                        console.log("flag inside map: " + flag);
                     }
                 });
                 console.log("inside fulfilled function");
-                console.log(flag);
                 return flag;
             });
 
