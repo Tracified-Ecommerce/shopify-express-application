@@ -41,11 +41,10 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                         const tracifiedToken = exisitingShop.tracified_token;
 
                         tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
-                            let htmltxt = "";
                             let componentArray = [];
                             componentArray = data.data[0].pointOfSale;
-                            htmltxt += componentBuilder(componentArray);
-                            return res.send(htmltxt);
+                            const componentJSON = componentBuilder(componentArray);
+                            return res.send(componentJSON);
                         });
 
                     } else {

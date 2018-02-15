@@ -1,9 +1,15 @@
-function componentBuilder(components: any): string {
+interface IComponentJSON {
+    htmltxt: string;
+}
 
-    let htmltxt = "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
-    let tot: number = 0;
+function componentBuilder(components: any): IComponentJSON {
+
+    let htmltxt = "";
+    const componentJSON: IComponentJSON = {htmltxt: ""};
 
     for (const component of components) {
+        htmltxt = "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
+        let tot: number = 0;
         switch (component.uiComponent.name) {
 
             case "pieChart" :
@@ -69,7 +75,8 @@ function componentBuilder(components: any): string {
         }
     }
 
-    return htmltxt;
+    componentJSON.htmltxt = htmltxt;
+    return componentJSON;
 }
 
-export { componentBuilder };
+export { componentBuilder, IComponentJSON };
