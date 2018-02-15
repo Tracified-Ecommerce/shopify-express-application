@@ -1,10 +1,11 @@
 interface IComponentJSON {
     htmltxt: string;
+    pieChartData: any[];
 }
 
 function componentBuilder(components: any): IComponentJSON {
 
-    const componentJSON: IComponentJSON = {htmltxt: ""};
+    const componentJSON: IComponentJSON = {htmltxt: "", pieChartData: []};
 
     for (const component of components) {
         componentJSON.htmltxt += "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
@@ -17,7 +18,13 @@ function componentBuilder(components: any): IComponentJSON {
                         tot++;
                     }
                 }
-                componentJSON.htmltxt += "<div class=\"ct-chart ct-square\" id=\"chart1\">pie " + tot + "</div>";
+                const pieData = {
+                    divName: component.key,
+                    values: [tot, (component.values.length - tot)],
+                };
+
+                componentJSON.pieChartData.push(pieData);
+                componentJSON.htmltxt += "<div class=\"ct-chart ct-square\" id=\"" + component.key + "\"" + "></div>";
                 componentJSON.htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
                 "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 break;
