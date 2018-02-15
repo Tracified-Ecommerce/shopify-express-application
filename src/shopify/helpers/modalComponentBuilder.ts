@@ -11,7 +11,7 @@ function buildComponent(component: any): string {
                     tot++;
                 }
             }
-            txt += "<div class=\"large-green\">piechart " + tot + "</div>";
+            txt += "<div class=\"large-green\">pie " + tot + "</div>";
             txt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
             "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
             break;
@@ -56,7 +56,7 @@ function buildComponent(component: any): string {
                     tot++;
                 }
             }
-            txt += "<div class=\"large-green\">barchart " + tot + "</div>";
+            txt += "<div class=\"large-green\">bar " + tot + "</div>";
             txt += "<div class=\"titleDiv\">" + component.uiComponent.title +
             "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
             break;
