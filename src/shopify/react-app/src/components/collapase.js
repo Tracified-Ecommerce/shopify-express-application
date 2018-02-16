@@ -81,10 +81,10 @@ class CollapaseCard extends Component {
                         <Col sm="7">
                             <Row>
                             <Col sm="4">
-                            <Button primary onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Order Items " : " Hide Order Items "}</Button>
+                            <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                         </Col>
                         <Col sm="4">
-                            <Button primary onClick={this.fulfillOrder}>Mark as Fulfilled</Button>
+                            <Button primary onClick={this.fulfillOrder}>Mark as Tracified</Button>
                         </Col>
                             </Row>
                         </Col>
