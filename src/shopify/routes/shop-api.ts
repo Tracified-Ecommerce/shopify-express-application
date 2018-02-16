@@ -35,14 +35,21 @@ router.get("/orders", (req: IRequest, res: Response) => {
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
         const unFulfilledOrders = orders.orders.filter((order: IOrder) => {
-            return order.fulfillment_status !== "fulfilled";
+            let flag = false;
+            order.note_attributes.map((noteAttrib: any) => {
+                if (!(noteAttrib.name === "tracified" && noteAttrib.value === "true")) {
+                    flag = true;
+                }
+            });
+            console.log("inside fulfilled function");
+            return flag;
         });
         res.status(200).send({orders : unFulfilledOrders});
     });
 });
 
 router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
-    console.log("orders");
+    console.log("fullfilled orders");
     const shopDomain = req.session.shop.name;
     shopAdminAPI(
         "GET", req.session.shop.name,
@@ -50,10 +57,15 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
         req.shopRequestHeaders,
         null,
         (orders: any) => {
-        console.log("got all orders");
         const fulfilledOrders = orders.orders.filter((order: IOrder) => {
+                let flag = false;
+                order.note_attributes.map((noteAttrib: any) => {
+                    if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                        flag = true;
+                    }
+                });
                 console.log("inside fulfilled function");
-                return order.fulfillment_status === "fulfilled";
+                return flag;
             });
 
         res.status(200).send({fulfilledOrders, shopDomain});
@@ -81,7 +93,7 @@ router.get("/orders/:id/tracify", (req: IRequest & Request, res: Response) => {
             order: {
                 id: req.params.id,
                 note_attributes: {
-                    tracified: "1",
+                    tracified: true,
                 },
             },
         };
