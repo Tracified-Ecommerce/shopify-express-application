@@ -43,15 +43,15 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
                                 let componentArray = [];
                                 componentArray = data.data[0].pointOfSale;
-                                const componentJSON: IResponseJSON = {
+                                const responseJSON: IResponseJSON = {
                                     components: {
                                         htmltxt: "",
                                         pieChartData: [],
                                     },
                                     map: [],
                                 };
-                                componentJSON.components = componentBuilder(componentArray);
-                                return res.send(componentJSON);
+                                responseJSON.components = componentBuilder(componentArray);
+                                return res.send(responseJSON);
                             });
 
                         } else {
