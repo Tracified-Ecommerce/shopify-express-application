@@ -26,13 +26,21 @@ function componentBuilder(components: any): IComponentJSON {
                         tot++;
                     }
                 }
+
+                var arcData = {
+                    "bigArc": tot,
+                    "littleArc": component.values.length - tot
+                };
+
                 const pieData = {
-                    divName: component.key,
-                    values: [tot, (component.values.length - tot)],
+                    canvas: component.key,
+                    data: arcData,
+                    colors:["#2f823a","#5bfd72"],
+                    doughnutHoleSize:0.5
                 };
 
                 componentJSON.pieChartData.push(pieData);
-                componentJSON.htmltxt += "<div class=\"ct-chart ct-square\" id=\"" + component.key + "\"" + "></div>";
+                componentJSON.htmltxt += "<canvas id=\"" + component.key + "\"" + "></canvas>";
                 componentJSON.htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
                     "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 break;
