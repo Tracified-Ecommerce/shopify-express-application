@@ -11,7 +11,7 @@ class CollapaseCard extends Component {
 
     render() {
 
-        console.log("item array: "+this.props.itemArray);
+        console.log("item array: "+JSON.stringify(this.props.itemArray));
         let resourceList = this.props.itemArray.map((resItem, index) => {
             let productImage = "no/image";
             if (!isUndefined(this.props.products.length) && !isUndefined(this.props.products)) {
