@@ -35,7 +35,7 @@ function componentBuilder(components: any): IComponentJSON {
                 const pieOptions = {
                     canvas: component.key,
                     data: arcData,
-                    percentage: Math.floor((tot/component.values.length)*100),
+                    percentage: Math.floor((tot/component.values.length)*100).toString(),
                     colors:["#2f823a","#5bfd72"],
                     doughnutHoleSize:0.5
                 };
