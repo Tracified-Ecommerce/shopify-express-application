@@ -83,7 +83,6 @@ class CollapseMain extends Component {
                             <Row style={{paddingRight: 20, paddingLeft: 20}}>   
                                 <Collapse2 itemArray={this.props.order.lineItems} products={this.props.productsProp} />
                             </Row>    
-                            <Collapse2 itemArray={this.props.order.lineItems} products={this.props.productsProp} />
                         </Col>
                     </Row>
                 </Collapse>
