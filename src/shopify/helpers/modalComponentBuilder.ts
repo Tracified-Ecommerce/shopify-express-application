@@ -32,14 +32,15 @@ function componentBuilder(components: any): IComponentJSON {
                     "littleArc": component.values.length - tot
                 };
 
-                const pieData = {
+                const pieOptions = {
                     canvas: component.key,
                     data: arcData,
+                    percentage: Math.floor((tot/component.values.length)*100),
                     colors:["#2f823a","#5bfd72"],
                     doughnutHoleSize:0.5
                 };
 
-                componentJSON.pieChartData.push(pieData);
+                componentJSON.pieChartData.push(pieOptions);
                 componentJSON.htmltxt += "<canvas id=\"" + component.key + "\"" + "></canvas>";
                 componentJSON.htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
                     "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
