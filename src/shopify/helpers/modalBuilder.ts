@@ -107,8 +107,8 @@ function componentBuilder(components: any): IComponentJSON {
                             }
                         }
                         componentJSON.htmltxt +=
-                            "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
-                            "<div class=\"titleDiv\">" + maxElement + "</div>" +
+                            "<div class=\"large-green\">" + maxCount + "<span style=\"color:black;font-size:120%\">of the</span>" + component.values.length + "</div>" +
+                            "<div class=\"titleDiv\">are " + maxElement + "</div>" +
                             "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                     }
                 } else {
@@ -118,8 +118,8 @@ function componentBuilder(components: any): IComponentJSON {
                         }
                     }
                     componentJSON.htmltxt +=
-                        "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>"
-                        + "<div class=\"titleDiv\">" +
+                        "<div class=\"large-green\">" + tot + "<span style=\"color:black;font-size:120%\">out of</span>" + component.values.length + "</div>"
+                        + "<div class=\"titleDiv\"> are" +
                         component.uiComponent.title +
                         "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
