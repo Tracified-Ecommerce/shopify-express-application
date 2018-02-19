@@ -3,7 +3,7 @@ import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
 import { Imodal } from "../../types/modal/modalType";
 import { IRequest } from "../../types/session/sessionType";
-import { componentBuilder, IResponseJSON } from "../helpers/modalBuilder";
+import { componentBuilder, IResponseJSON, dimensionBuilder, IDimensionJSON } from "../helpers/modalBuilder";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
