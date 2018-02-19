@@ -3,7 +3,7 @@ import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
 import { Imodal } from "../../types/modal/modalType";
 import { IRequest } from "../../types/session/sessionType";
-import { componentBuilder, IResponseJSON,dimensionBuilder,IDimensionJSON } from "../helpers/modalComponentBuilder";
+import { componentBuilder, IResponseJSON } from "../helpers/modalBuilder";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
@@ -19,7 +19,7 @@ router.all("/*", (req: IRequest & Request, res: Response, next: NextFunction) =>
 
 router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res: Response) => {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     const shopName = req.params.shopname;
     const product = req.params.productID;
     ShopifyMapping.findOne({ shop_name: shopName }, (err: Error, mapping: ShopifyMappingModel) => {
