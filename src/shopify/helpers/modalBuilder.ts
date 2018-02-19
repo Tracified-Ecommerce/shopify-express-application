@@ -64,7 +64,7 @@ function componentBuilder(components: any): IComponentJSON {
                             }
                         }
                         componentJSON.htmltxt +=
-                            "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
+                            "<div class=\"green\"><span class=\"large-green\">" + maxCount + "</span>" + component.values.length + "</div>" +
                             "<div class=\"titleDiv\">" + maxElement + "</div>" +
                             "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                     }
@@ -81,6 +81,42 @@ function componentBuilder(components: any): IComponentJSON {
                         "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
                 break;
+
+                case "XOutOfY":
+                if (component.uiComponent.titleFunction) {
+                    if (component.uiComponent.titleFunction === "getMode") {
+                        const valMap: any = {};
+                        let maxElement = "";
+                        let maxCount = 0;
+                        for (const value of component.values) {
+                            if (!valMap.hasOwnProperty(value)) {
+                                valMap[value] = 0;
+                            } else {
+                                valMap[value] = valMap[value] + 1;
+                                if (valMap[value] > maxCount) {
+                                    maxCount = valMap[value];
+                                    maxElement = value;
+                                }
+                            }
+                        }
+                        componentJSON.htmltxt +=
+                            "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
+                            "<div class=\"titleDiv\">" + maxElement + "</div>" +
+                            "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
+                    }
+                } else {
+                    for (const value of component.values) {
+                        if (value === true) {
+                            tot++;
+                        }
+                    }
+                    componentJSON.htmltxt +=
+                        "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>"
+                        + "<div class=\"titleDiv\">" +
+                        component.uiComponent.title +
+                        "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
+                }
+                break;    
 
             case "barChart":
                 for (const value of component.values) {
