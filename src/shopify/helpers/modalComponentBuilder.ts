@@ -6,7 +6,14 @@ interface IComponentJSON {
 interface IResponseJSON {
     components: IComponentJSON;
     map: any;
+    dimensionComponents:IDimensionJSON;
 }
+
+// dimension component
+interface IDimensionJSON {
+   htmltxt:string;
+}
+
 
 function componentBuilder(components: any): IComponentJSON {
 
@@ -103,4 +110,24 @@ function componentBuilder(components: any): IComponentJSON {
     return componentJSON;
 }
 
-export { componentBuilder, IComponentJSON, IResponseJSON };
+function dimensionBuilder(dimensions: any): IDimensionJSON {
+    const dimensionComponents: IDimensionJSON = {
+        htmltxt: ""
+    };
+
+    for (const dimension of dimensions) {
+        dimensionComponents.htmltxt+="<div class=\"col-sm-6\"><div class=\"row\"><div class=\"col-sm-4\">";
+        dimensionComponents.htmltxt+="<p>"+dimension.name+"</p></div><div class=\"col-sm-8\" style=\"line-height:1.5em;min-height:4.5em\">";
+        dimensionComponents.htmltxt+="<p class=\"descript\">"+dimension.tagline+"</p><div class=\"arrow-left\"></div></div></div>";
+        dimensionComponents.htmltxt+="<div class=\"row dimensionContent\">"
+
+        for (const x of dimension.data) {
+            dimensionComponents.htmltxt+="<div class=\"col-sm-7 keyTitle\">"+x.label+"</div><div class=\"col-sm-5 keyContent\">"+x.value+"</div>";
+        }
+        dimensionComponents.htmltxt+="</div></div>"
+    }
+
+    return dimensionComponents;
+}
+
+export { componentBuilder, IComponentJSON, IResponseJSON ,IDimensionJSON,dimensionBuilder};
