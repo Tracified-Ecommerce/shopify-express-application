@@ -3,7 +3,7 @@ import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
 import { Imodal } from "../../types/modal/modalType";
 import { IRequest } from "../../types/session/sessionType";
-import { componentBuilder, IResponseJSON, dimensionBuilder, IDimensionJSON } from "../helpers/modalBuilder";
+import { componentBuilder, dimensionBuilder, IDimensionJSON, IResponseJSON } from "../helpers/modalBuilder";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
@@ -42,7 +42,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
 
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
                                 let componentArray = [];
-                                let dimensionComponentArray=[];
+                                let dimensionComponentArray = [];
                                 componentArray = data.data[0].pointOfSale;
                                 dimensionComponentArray = data.data[1].traceMore[1].dimensions;
                                 const responseJSON: IResponseJSON = {
@@ -50,10 +50,10 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                         htmltxt: "",
                                         pieChartData: [],
                                     },
+                                    dimensionComponents: {
+                                        htmltxt: "",
+                                    },
                                     map: [],
-                                    dimensionComponents:{
-                                        htmltxt:"",
-                                    }
                                 };
                                 responseJSON.components = componentBuilder(componentArray);
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);

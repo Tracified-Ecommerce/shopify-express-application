@@ -72,7 +72,7 @@ export class Services implements IServices {
                 json: true,
                 method: "GET",
                 // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
-                uri: "http://www.mocky.io/v2/5a8aa1a52f00005f00e4706c",
+                uri: "https://tracified-mock-api.herokuapp.com/Traceability_data/ui/1005",
 
             };
 
