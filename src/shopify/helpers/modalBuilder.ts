@@ -160,7 +160,7 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
         // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt+="<p class=\"descript\" style=\"background-color:"+dimension.descriptionBackColor+",color:"+dimension.descriptionTxtColor+"\">"+dimension.tagline+"</p><div class=\"arrow-left\" style=\"border-bottom:46px solid "+dimension.titleBackColor+"\"></div></div></div></div>";
         dimensionComponents.htmltxt+="<div class=\"row dimensionContent\">"
-
+        console.log("check tracified "+dimension.titleTxtColor);
         for (const x of dimension.data) {
             // tslint:disable-next-line:max-line-length
             dimensionComponents.htmltxt += "<div class=\"col-sm-7 keyTitle\">" + x.label + "</div><div class=\"col-sm-5 keyContent\">" + x.value + "</div>";
