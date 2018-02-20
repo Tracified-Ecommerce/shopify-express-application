@@ -153,20 +153,13 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
     };
 
     for (const dimension of dimensions) {
-<<<<<<< HEAD
+        // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt+="<div class=\"col-sm-6\" id=\"dimensionName\"><div class=\"row\"><div class=\"dimensionRow\"><div class=\"col-sm-4\" id=\"dimTitle\" style=\"background-color:"+dimension.titleBackColor+";\">";
+        // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt+="<p style=\"color:"+dimension.titleTxtColor+"\">"+dimension.name+"</p></div><div class=\"col-sm-8\" style=\"line-height:1.5em;min-height:4.5em\">";
+        // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt+="<p class=\"descript\" style=\"background-color:"+dimension.descriptionBackColor+",color:"+dimension.descriptionTxtColor+"\">"+dimension.tagline+"</p><div class=\"arrow-left\" style=\"border-bottom:46px solid "+dimension.titleBackColor+"\"></div></div></div></div>";
         dimensionComponents.htmltxt+="<div class=\"row dimensionContent\">"
-=======
-        // tslint:disable-next-line:max-line-length
-        dimensionComponents.htmltxt += "<div class=\"col-sm-6\" id=\"dimensionName\"><div class=\"row\"><div class=\"dimensionRow\"><div class=\"col-sm-4\" id=\"dimTitle\">";
-        // tslint:disable-next-line:max-line-length
-        dimensionComponents.htmltxt += "<p>" + dimension.name + "</p></div><div class=\"col-sm-8\" style=\"line-height:1.5em;min-height:4.5em\">";
-        // tslint:disable-next-line:max-line-length
-        dimensionComponents.htmltxt += "<p class=\"descript\">" + dimension.tagline + "</p><div class=\"arrow-left\"></div></div></div></div>";
-        dimensionComponents.htmltxt += "<div class=\"row dimensionContent\">";
->>>>>>> f1bb543ef7cfdab6eaa67df52dff75dafd151b93
 
         for (const x of dimension.data) {
             // tslint:disable-next-line:max-line-length
