@@ -82,8 +82,9 @@ function componentBuilder(components: any): IComponentJSON {
                         }
                     }
                     componentJSON.htmltxt +=
-                        "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>"
-                        + "<div class=\"titleDiv\">" +
+                        // tslint:disable-next-line:max-line-length
+                        "<div class=\"xoutofy-top\">" + tot + "</div><div class=\"xoutofy-middle\">out of " + component.values.length + "</div>"
+                        + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "are" + "</span>" +
                         component.uiComponent.title +
                         "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
