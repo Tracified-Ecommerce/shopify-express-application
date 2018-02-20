@@ -6,14 +6,13 @@ interface IComponentJSON {
 interface IResponseJSON {
     components: IComponentJSON;
     map: any;
-    dimensionComponents:IDimensionJSON;
+    dimensionComponents: IDimensionJSON;
 }
 
 // dimension component
 interface IDimensionJSON {
-   htmltxt:string;
+    htmltxt: string;
 }
-
 
 function componentBuilder(components: any): IComponentJSON {
 
@@ -34,17 +33,17 @@ function componentBuilder(components: any): IComponentJSON {
                     }
                 }
 
-                var arcData = {
-                    "bigArc": tot,
-                    "littleArc": component.values.length - tot
+                const arcData = {
+                    bigArc: tot,
+                    littleArc: component.values.length - tot,
                 };
 
                 const pieOptions = {
                     canvas: component.key,
+                    colors: ["#2f823a", "#5bfd72"],
                     data: arcData,
-                    percentage: Math.floor((tot/component.values.length)*100).toString(),
-                    colors:["#2f823a","#5bfd72"],
-                    doughnutHoleSize:0.5
+                    doughnutHoleSize: 0.5,
+                    percentage: Math.floor((tot / component.values.length) * 100).toString(),
                 };
 
                 componentJSON.pieChartData.push(pieOptions);
@@ -71,7 +70,8 @@ function componentBuilder(components: any): IComponentJSON {
                             }
                         }
                         componentJSON.htmltxt +=
-                            "<div class=\"green\"><span class=\"large-green\">" + maxCount + "</span>" + component.values.length + "</div>" +
+                            "<div class=\"green\"><span class=\"large-green\">" + maxCount +
+                            "</span>" + component.values.length + "</div>" +
                             "<div class=\"titleDiv\">" + maxElement + "</div>" +
                             "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                     }
@@ -89,7 +89,7 @@ function componentBuilder(components: any): IComponentJSON {
                 }
                 break;
 
-                case "outOfTen":
+            case "outOfTen":
                 if (component.uiComponent.titleFunction) {
                     if (component.uiComponent.titleFunction === "getMode") {
                         const valMap: any = {};
@@ -123,7 +123,7 @@ function componentBuilder(components: any): IComponentJSON {
                         component.uiComponent.title +
                         "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
-                break;    
+                break;
 
             case "barChart":
                 for (const value of component.values) {
@@ -148,22 +148,26 @@ function componentBuilder(components: any): IComponentJSON {
 
 function dimensionBuilder(dimensions: any): IDimensionJSON {
     const dimensionComponents: IDimensionJSON = {
-        htmltxt: ""
+        htmltxt: "",
     };
 
     for (const dimension of dimensions) {
-        dimensionComponents.htmltxt+="<div class=\"col-sm-6\" id=\"dimensionName\"><div class=\"row\"><div class=\"dimensionRow\"><div class=\"col-sm-4\" id=\"dimTitle\">";
-        dimensionComponents.htmltxt+="<p>"+dimension.name+"</p></div><div class=\"col-sm-8\" style=\"line-height:1.5em;min-height:4.5em\">";
-        dimensionComponents.htmltxt+="<p class=\"descript\">"+dimension.tagline+"</p><div class=\"arrow-left\"></div></div></div></div>";
-        dimensionComponents.htmltxt+="<div class=\"row dimensionContent\">"
+        // tslint:disable-next-line:max-line-length
+        dimensionComponents.htmltxt += "<div class=\"col-sm-6\" id=\"dimensionName\"><div class=\"row\"><div class=\"dimensionRow\"><div class=\"col-sm-4\" id=\"dimTitle\">";
+        // tslint:disable-next-line:max-line-length
+        dimensionComponents.htmltxt += "<p>" + dimension.name + "</p></div><div class=\"col-sm-8\" style=\"line-height:1.5em;min-height:4.5em\">";
+        // tslint:disable-next-line:max-line-length
+        dimensionComponents.htmltxt += "<p class=\"descript\">" + dimension.tagline + "</p><div class=\"arrow-left\"></div></div></div></div>";
+        dimensionComponents.htmltxt += "<div class=\"row dimensionContent\">";
 
         for (const x of dimension.data) {
-            dimensionComponents.htmltxt+="<div class=\"col-sm-7 keyTitle\">"+x.label+"</div><div class=\"col-sm-5 keyContent\">"+x.value+"</div>";
+            // tslint:disable-next-line:max-line-length
+            dimensionComponents.htmltxt += "<div class=\"col-sm-7 keyTitle\">" + x.label + "</div><div class=\"col-sm-5 keyContent\">" + x.value + "</div>";
         }
-        dimensionComponents.htmltxt+="</div></div>"
+        dimensionComponents.htmltxt += "</div></div>";
     }
 
     return dimensionComponents;
 }
 
-export { componentBuilder, IComponentJSON, IResponseJSON ,IDimensionJSON,dimensionBuilder};
+export { componentBuilder, IComponentJSON, IResponseJSON, IDimensionJSON, dimensionBuilder };

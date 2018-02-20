@@ -7,7 +7,7 @@ router.get("/order-trace", (req: Request, res: Response) => {
         "Data": "No Tracified Data Found",
         "Order id": req.query.id,
         "Shop": req.query.shop,
-      });
+    });
 });
 
 export { router };

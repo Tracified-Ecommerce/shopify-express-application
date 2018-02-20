@@ -2,7 +2,7 @@ import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IRequest } from "../../types/session/sessionType";
 import { Helper, IHelper } from "../helpers/index";
-import {Shop, ShopModel} from "../models/Shop";
+import { Shop, ShopModel } from "../models/Shop";
 import { router as adminlink } from "./adminlink";
 import { router as config } from "./config";
 import { router as customer } from "./customer";
@@ -47,14 +47,14 @@ router.get("/", (req: IRequest & Request, res: Response, next: NextFunction) => 
         const query = Object.keys(req.query).map((key) => `${key}=${req.query[key]}`).join("&");
         Shop.findOne(
             { name: shop }, "name access_token tracified_token", (err: Error, exisitingShop: ShopModel) => {
-            if (err) { return res.status(503).send("error with db connection. Plese try again in a while"); }
-            if (exisitingShop && exisitingShop.access_token) {
-                req.session.shop = exisitingShop;
-                return res.redirect("/shopify/cookie-check");
-            } else {
-                return res.redirect(`/shopify/install/?${query}`);
-            }
-        });
+                if (err) { return res.status(503).send("error with db connection. Plese try again in a while"); }
+                if (exisitingShop && exisitingShop.access_token) {
+                    req.session.shop = exisitingShop;
+                    return res.redirect("/shopify/cookie-check");
+                } else {
+                    return res.redirect(`/shopify/install/?${query}`);
+                }
+            });
     } else {
         return res.status(200).send("Shopify App Details and Tracified Details goes here");
     }
@@ -92,7 +92,7 @@ router.get("/cookie-check", (req: IRequest, res: Response) => {
  */
 
 router.get("*", (req: Request, res: Response) => {
-  res.sendFile(path.resolve(__dirname, "../react-app/build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../react-app/build", "index.html"));
 });
 
 export { router };
