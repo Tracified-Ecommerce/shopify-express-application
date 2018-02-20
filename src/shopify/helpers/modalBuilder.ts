@@ -83,8 +83,8 @@ function componentBuilder(components: any): IComponentJSON {
                     }
                     componentJSON.htmltxt +=
                         // tslint:disable-next-line:max-line-length
-                        "<div class=\"xoutofy-top\">" + tot + "</div><div class=\"xoutofy-middle\">out of " + component.values.length + "</div>"
-                        + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "are" + "</span>" +
+                        "<div class=\"xoutofy-top\">" + tot + "</div><div class=\"xoutofy-middle\">out of " + component.values.length + " items</div>"
+                        + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "have " + "</span>" +
                         component.uiComponent.title +
                         "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
