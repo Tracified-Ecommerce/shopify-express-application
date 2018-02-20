@@ -152,9 +152,9 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
     };
 
     for (const dimension of dimensions) {
-        dimensionComponents.htmltxt+="<div class=\"col-sm-6\" id=\"dimensionName\"><div class=\"row\"><div class=\"dimensionRow\"><div class=\"col-sm-4\" id=\"dimTitle\">";
-        dimensionComponents.htmltxt+="<p>"+dimension.name+"</p></div><div class=\"col-sm-8\" style=\"line-height:1.5em;min-height:4.5em\">";
-        dimensionComponents.htmltxt+="<p class=\"descript\">"+dimension.tagline+"</p><div class=\"arrow-left\"></div></div></div></div>";
+        dimensionComponents.htmltxt+="<div class=\"col-sm-6\" id=\"dimensionName\"><div class=\"row\"><div class=\"dimensionRow\"><div class=\"col-sm-4\" id=\"dimTitle\" style=\"background-color:"+dimension.titleBackColor+";\">";
+        dimensionComponents.htmltxt+="<p style=\"color:"+dimension.titleTxtColor+"\">"+dimension.name+"</p></div><div class=\"col-sm-8\" style=\"line-height:1.5em;min-height:4.5em\">";
+        dimensionComponents.htmltxt+="<p class=\"descript\" style=\"background-color:"+dimension.descriptionBackColor+",color:"+dimension.descriptionTxtColor+"\">"+dimension.tagline+"</p><div class=\"arrow-left\" style=\"border-bottom:46px solid "+dimension.titleBackColor+"\"></div></div></div></div>";
         dimensionComponents.htmltxt+="<div class=\"row dimensionContent\">"
 
         for (const x of dimension.data) {
