@@ -37,16 +37,20 @@ class AccountVerify extends Component {
 
         const temporaryToken = this.state.tempToken;
         console.log("temp token is :"+temporaryToken);
-        axios.post('/shopify/verify/account/verify', { tempToken: temporaryToken })
-            .then((response) => {
-                // alert("Account verified successfully " + result.data);
-                window.location.replace('/shopify/main-view');
-                // window.location.href = response.redirect;
-                console.log(response);
-            }).catch((err) =>{
-                alert("Account verification Failed, PLease Try re-entering the temperory access token");
-                console.log(err);
-            });
+        axios.post(
+            '/shopify/verify/account/verify',
+            {
+                tempToken: temporaryToken 
+            })
+        .then((response) => {
+            // alert("Account verified successfully " + result.data);
+            window.location.replace('/shopify/main-view');
+            // window.location.href = response.redirect;
+            console.log(response);
+        }).catch((err) =>{
+            alert("Account verification Failed, PLease Try re-entering the temperory access token");
+            console.log(err);
+        });
     }
 
     render() {

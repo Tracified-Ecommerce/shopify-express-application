@@ -10,8 +10,7 @@ const router = Router();
 const tracifiedServices: IServices = new Services();
 
 router.post("/account/verify", (req: IRequest & Request, res: Response) => {
-    console.log("temp token received is:" + req.body.tempToken);
-    tracifiedServices.verifyTracifiedAccount(req.body.tempToken).then((data: any) => {
+    tracifiedServices.verifyTracifiedAccount(req.body.tempToken, req.session.shop.name).then((data: any) => {
         data = JSON.parse(data);
         console.log("tracified token is: " + data.tracifiedToken);
         const tracifiedToken = data.tracifiedToken;

@@ -2,7 +2,7 @@ import request = require("request-promise");
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
 
 export interface IServices {
-    verifyTracifiedAccount(tempToken: string): Promise<any>;
+    verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;
     getTracifiedItemList(accessToken: any): Promise<any>;
     getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string): Promise<any>;
     getProductArtifacts(itemID: string, accessToken: string): Promise<any>;
@@ -17,7 +17,8 @@ export class Services implements IServices {
      * a callback url(or to return a promise?) will also need to send
      * and have implemented here to handle te after verification peocess
      */
-    public verifyTracifiedAccount(tempToken: string) {
+    public verifyTracifiedAccount(tempToken: string, shopName: string) {
+        console.log("inside veifyAccount Method, token is :" + tempToken + " shop is :" + shopName);
         return new Promise((resolve, reject) => {
             const options = {
                 method: "POST",
