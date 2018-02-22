@@ -156,13 +156,13 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
         // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt += "<div class=\"col-md-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr><td class=\"dimTitle\" style=\"background-color:" + dimension.titleBackColor + ";color:"+dimension.titleTxtColor+"\">"+dimension.name+"";
         // tslint:disable-next-line:max-line-length
-        dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:"+dimension.descriptionBackColor+";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr><tr class=\"dimensionContent\">";
+        dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:"+dimension.descriptionBackColor+";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
         
         for (const x of dimension.data) {
             // tslint:disable-next-line:max-line-length
-            dimensionComponents.htmltxt += "<td class=\"keyTitle\">"+x.label+"</td><td class=\"keyContent\">"+x.value+"</td>";
+            dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">"+x.label+"</td><td class=\"keyContent\">"+x.value+"</td></tr>";
         }
-        dimensionComponents.htmltxt += "</tr></table></div>";
+        dimensionComponents.htmltxt += "</table></div>";
     }
 
     return dimensionComponents;
