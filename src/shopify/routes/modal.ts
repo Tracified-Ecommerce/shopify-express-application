@@ -29,6 +29,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
         if (mapping) {
             // mapping.mapping -> is the object with all the mapping
             if (mapping.mapping.hasOwnProperty(product)) {
+                console.log("product has a mapping");
                 const TracifiedID = mapping.mapping[product][0];
                 Shop.findOne(
                     { name: shopName },
@@ -65,6 +66,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                         }
                     });
             } else {
+                console.log("no mapping for product");
                 return res.status(204).send("item not found");
             }
         } else {
