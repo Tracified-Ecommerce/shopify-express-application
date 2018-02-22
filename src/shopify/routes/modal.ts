@@ -67,7 +67,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                     });
             } else {
                 console.log("no mapping for product");
-                return res.status(204).send("item not found");
+                return res.status(404).send("item not found");
             }
         } else {
             return res.status(204).send("mapping not available");
