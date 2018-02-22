@@ -23,33 +23,6 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
     }
 });
 
-router.post("/account/verify", (req: IRequest & Request, res: Response) => {
-    console.log("temp token received is:" + req.body.tempToken);
-    tracifiedServices.verifyTracifiedAccount(req.body.tempToken, req.session.shop.name).then((data: any) => {
-        data = JSON.parse(data);
-        console.log("tracified token is: " + data.tracifiedToken);
-        const tracifiedToken = data.tracifiedToken;
-        const shop = req.session.shop.name;
-
-        // to use if a shop record is alredy there
-        Shop.findOne({ name: shop }, "name access_token", (err: Error, installedShop: ShopModel) => {
-            if (err) { return res.status(503).send("error with db connection. Plese try again in a while"); }
-            if (installedShop) {
-                installedShop.tracified_token = tracifiedToken;
-                installedShop.save(() => {
-                    if (err) { return res.status(503).send("error with db connection. Plese try again in a while"); }
-                    return res.redirect("/shopify/main-view");
-                });
-            } else {
-                return res.status(401).send("Account Verification Failed. Please try reinstalling the Plugin");
-            }
-        });
-    }).catch((err: any) => {
-        console.log(err);
-        return res.status(401).send("Account Verification Failed. Please try again!");
-    });
-});
-
 router.get("/item-list", (req: IRequest & Request, res: Response) => {
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
         console.log(data);
