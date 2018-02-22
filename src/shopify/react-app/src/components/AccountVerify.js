@@ -37,7 +37,7 @@ class AccountVerify extends Component {
 
         const temporaryToken = this.state.tempToken;
         console.log("temp token is :"+temporaryToken);
-        axios.post('/shopify/tracified/account/verify', { tempToken: temporaryToken })
+        axios.post('/shopify/verify/account/verify', { tempToken: temporaryToken })
             .then((response) => {
                 // alert("Account verified successfully " + result.data);
                 window.location.replace('/shopify/main-view');

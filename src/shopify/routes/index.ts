@@ -11,6 +11,7 @@ import { router as modal } from "./modal";
 import { router as shopAPI } from "./shop-api";
 import { router as test } from "./test";
 import { router as tracified } from "./tracified";
+import { router as verify } from "./verify";
 import { router as webhook } from "./webhook";
 
 const helper: IHelper = new Helper();
@@ -29,6 +30,7 @@ router.use("/adminlink", adminlink);
 router.use("/shop-api", shopAPI);
 router.use("/config", config);
 router.use("/tracified", tracified);
+router.use("/verify", verify);
 router.use("/customer", customer);
 router.use("/test", test);
 router.use("/modal", modal);
