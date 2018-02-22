@@ -21,6 +21,10 @@ export class Services implements IServices {
         console.log("inside veifyAccount Method, token is :" + tempToken + " shop is :" + shopName);
         return new Promise((resolve, reject) => {
             const options = {
+                body: {
+                    Ttoken: tempToken,
+                    shop: shopName,
+                },
                 method: "POST",
                 uri: tracifiedURL + "/account/verify",
             };
