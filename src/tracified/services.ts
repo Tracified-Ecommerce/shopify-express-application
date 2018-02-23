@@ -1,6 +1,8 @@
 import request = require("request-promise");
+import errors = require('request-promise/errors');
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
 const adminURL: string = "https://tracified-admin.herokuapp.com/ecom/ecompermenettoken";
+
 
 export interface IServices {
     verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;
@@ -36,10 +38,16 @@ export class Services implements IServices {
                 console.log(type);
                 console.log(data);
                 resolve(data);
-            }).catch((err: any) => {
-                const JSONerror = JSON.parse(err);
-                console.log("JSON error :" + JSONerror);
-            } );
+            }).catch(errors.StatusCodeError, (reason) => {
+                console.log("inside catch1" + reason.statusCode);
+                // The server responded with a status codes other than 2xx.
+                // Check reason.statusCode
+            })
+            .catch(errors.RequestError, (reason) => {
+                console.log("inside catch1" + reason.cause);
+                // The request failed due to technical reasons.
+                // reason.cause is the Error object Request would pass into a callback.
+            });
         });
     }
 
