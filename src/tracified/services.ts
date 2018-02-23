@@ -1,5 +1,6 @@
 import request = require("request-promise");
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
+const adminURL: string = "https://tracified-admin.herokuapp.com/ecom/ecompermenettoken";
 
 export interface IServices {
     verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;
@@ -26,7 +27,7 @@ export class Services implements IServices {
                     shop: shopName,
                 },
                 method: "POST",
-                uri: tracifiedURL + "/account/verify",
+                uri: adminURL,
             };
 
             request(options).then((data: any) => {
