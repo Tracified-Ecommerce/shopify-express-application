@@ -40,6 +40,11 @@ export class Services implements IServices {
                 resolve(data);
             }).catch(errors.StatusCodeError, (reason) => {
                 console.log("inside catch1");
+                console.log("reason response is :" + reason.response);
+                console.log("reason cause is :" + reason.cause);
+                console.log("reason error is :" + reason.error);
+                console.log("reason options are :" + reason.options);
+
                 if (reason.statusCode === 406) {
                     reject(Error("invalid token"));
                 }
