@@ -38,8 +38,7 @@ export class Services implements IServices {
                 resolve(data);
             }).catch((err: any) => {
                 const JSONerror = JSON.parse(err);
-                console.log(JSONerror);
-                reject(err);
+                console.log("JSON error :" + JSONerror);
             } );
         });
     }
