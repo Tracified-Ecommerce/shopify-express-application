@@ -41,7 +41,6 @@ export class Services implements IServices {
             }).catch(errors.StatusCodeError, (reason) => {
                 console.log("inside catch1");
                 console.log("reason response is :" + reason.response);
-                console.log("reason cause is :" + reason.cause);
                 console.log("reason error is :" + reason.error);
                 console.log("reason options are :" + reason.options);
 
