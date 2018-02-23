@@ -22,12 +22,13 @@ export class Services implements IServices {
         console.log("inside veifyAccount Method, token is :" + tempToken + " shop is :" + shopName);
         return new Promise((resolve, reject) => {
             const options = {
+                uri: adminURL,
+                method: "POST",
                 body: {
                     Ttoken: tempToken,
                     shop: shopName,
                 },
-                method: "POST",
-                uri: adminURL,
+                json: true,
             };
 
             request(options).then((data: any) => {
