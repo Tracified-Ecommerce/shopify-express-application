@@ -32,7 +32,6 @@ router.post("/account/verify", (req: IRequest & Request, res: Response) => {
         });
     }).catch((err: any) => {
         console.log("error is : " + err);
-        console.log("error message is :" + err.message);
         return res.status(401).send("Account Verification Failed. Please try again!");
     });
 });
