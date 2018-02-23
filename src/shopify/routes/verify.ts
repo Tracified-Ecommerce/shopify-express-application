@@ -12,9 +12,9 @@ const tracifiedServices: IServices = new Services();
 router.post("/account/verify", (req: IRequest & Request, res: Response) => {
     // tslint:disable-next-line:max-line-length
     tracifiedServices.verifyTracifiedAccount(req.body.tempToken, req.session.shop.name).then((data: any) => {
-        data = JSON.parse(data);
-        console.log("tracified token is: " + data.tracifiedToken);
-        const tracifiedToken = data.tracifiedToken;
+        // data = JSON.parse(data);
+        console.log("tracified token is: " + data);
+        const tracifiedToken = data;
         const shop = req.session.shop.name;
 
         // to use if a shop record is alredy there
