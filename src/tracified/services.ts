@@ -37,7 +37,6 @@ export class Services implements IServices {
                 console.log(data);
                 resolve(data);
             }).catch((err: any) => {
-                console.log("error name is :" + err.message.message);
                 reject(err);
             } );
         });
