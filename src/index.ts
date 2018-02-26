@@ -2,6 +2,7 @@ import bodyParser = require("body-parser");
 import session = require("client-sessions");
 import ejs = require("ejs");
 import express = require("express");
+import { NextFunction, Request, Response } from "express";
 import mongoose = require("mongoose");
 import path = require("path");
 import { router as general } from "./routes/index";
@@ -14,7 +15,7 @@ const app = express();
 app.set("port", process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(function(req, res, next) {
+app.use((req: Request, res: Response, next: NextFunction) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, X-My-Custom-Header");
   next();
@@ -23,10 +24,10 @@ app.use(function(req, res, next) {
  * cookies set up with encryption
  */
 app.use(session({
-  cookieName: "session",
-  secret: "7f3bc78eabe74bdca213aceb9cfcc1f4",
-  duration: 60 * 60 * 1000,
   activeDuration: 5 * 60 * 1000,
+  cookieName: "session",
+  duration: 60 * 60 * 1000,
+  secret: "7f3bc78eabe74bdca213aceb9cfcc1f4",
 }));
 /**
  * html rendering - if needed (For shopify react app is served by sending the index.html file.

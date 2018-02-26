@@ -3,9 +3,8 @@ import errors = require('request-promise/errors');
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
 const adminURL: string = "https://tracified-admin.herokuapp.com/ecom/ecompermenettoken";
 
-
 export interface IServices {
-    verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;
+    // verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;
     getTracifiedItemList(accessToken: any): Promise<any>;
     getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string): Promise<any>;
     getProductArtifacts(itemID: string, accessToken: string): Promise<any>;
@@ -20,45 +19,49 @@ export class Services implements IServices {
      * a callback url(or to return a promise?) will also need to send
      * and have implemented here to handle te after verification peocess
      */
-    public verifyTracifiedAccount(tempToken: string, shopName: string) {
-        console.log("inside veifyAccount Method, token is :" + tempToken + " shop is :" + shopName);
-        return new Promise((resolve, reject) => {
-            const options = {
-                uri: adminURL,
-                method: "POST",
-                body: {
-                    Ttoken: tempToken,
-                    shop: shopName,
-                },
-                json: true,
-            };
 
-            request(options).then((data: any) => {
-                const type: string = typeof data;
-                console.log(type);
-                console.log(data);
-                resolve(data);
-            }).catch(errors.StatusCodeError, (reason) => {
-                console.log("inside catch1");
-                console.log("reason response is :" + JSON.stringify(reason.response));
-                console.log("reason error is :" + JSON.stringify(reason.error));
-                console.log("reason options are :" + JSON.stringify(reason.options));
+    // public verifyTracifiedAccount(tempToken: string, shopName: string) {
+    //     console.log("inside veifyAccount Method, token is :" + tempToken + " shop is :" + shopName);
+    //     return new Promise((resolve, reject) => {
+    //         const options = {
+    //             uri: adminURL,
+    //             method: "POST",
+    //             body: {
+    //                 Ttoken: tempToken,
+    //                 shop: shopName,
+    //             },
+    //             json: true,
+    //         };
 
-                if (reason.statusCode === 406) {
-                    reject(Error("invalid token"));
-                }
-            })
-            .catch(errors.RequestError, (reason) => {
-                console.log("inside catch2  " + reason.cause);
-                // The request failed due to technical reasons.
-                // reason.cause is the Error object Request would pass into a callback.
-            });
-        });
-    }
+    //         request(options).then((data: any) => {
+    //             const type: string = typeof data;
+    //             console.log(type);
+    //             console.log(data);
+    //             resolve(data);
+    //         }).catch(errors.StatusCodeError, (reason) => {
+    //             console.log("inside catch1");
+    //             console.log("reason response is :" + JSON.stringify(reason.response));
+    //             console.log("reason error is :" + JSON.stringify(reason.error));
+    //             console.log("reason options are :" + JSON.stringify(reason.options));
+
+    //             if (reason.statusCode === 406) {
+    //                 reject(Error("invalid token"));
+    //             }
+    //         })
+    //         .catch(errors.RequestError, (reason) => {
+    //             console.log("inside catch2  " + reason.cause);
+    //             // The request failed due to technical reasons.
+    //             // reason.cause is the Error object Request would pass into a callback.
+    //         });
+    //     });
+    // }
 
     public getTracifiedItemList(accessToken: any) {
         return new Promise((resolve, reject) => {
             const options = {
+                headers: {
+                    Authorization: "Bearer " + accessToken,
+                },
                 method: "GET",
                 uri: tracifiedURL + "/traceability_data/Data/tracified_item_list/sort-list",
             };
@@ -75,9 +78,13 @@ export class Services implements IServices {
     public getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
+                headers: {
+                    Authorization: "Bearer " + accessToken,
+                },
                 method: "GET",
                 // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
                 uri: "http://www.mocky.io/v2/5a7688f02e000030006ab297",
+
             };
 
             request(options).then((data: any) => {
@@ -92,6 +99,9 @@ export class Services implements IServices {
     public getModalData(itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
+                headers: {
+                    Authorization: "Bearer " + accessToken,
+                },
                 json: true,
                 method: "GET",
                 // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
@@ -109,6 +119,9 @@ export class Services implements IServices {
     public getProductArtifacts(itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {
             const options = {
+                headers: {
+                    Authorization: "Bearer " + accessToken,
+                },
                 method: "GET",
                 uri: tracifiedURL + "/Traceability_data/artifacts/" + itemID,
             };
