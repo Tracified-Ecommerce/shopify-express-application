@@ -34,17 +34,18 @@ router.get("/orders", (req: IRequest, res: Response) => {
     console.log("orders");
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
-        const unFulfilledOrders = orders.orders.filter((order: IOrder) => {
-            let flag = false;
+        const unTracified = orders.orders.filter((order: IOrder) => {
+            // let flag = false;
+            let flag = true;
             order.note_attributes.map((noteAttrib: any) => {
-                if (!(noteAttrib.name === "tracified" && noteAttrib.value === "true")) {
-                    flag = true;
+                if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                    flag = false;
                 }
             });
             console.log("inside fulfilled function");
             return flag;
         });
-        res.status(200).send({orders : unFulfilledOrders});
+        res.status(200).send({orders : unTracified});
     });
 });
 
