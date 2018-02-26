@@ -36,7 +36,7 @@ class TabsView extends Component {
       },
       {
         id: 'tab3',
-        title: 'Installation',
+        title: 'Configuration',
         panelID: 'panel2',
       },
     ];

@@ -16,10 +16,10 @@ class Installation extends Component {
         return (
             <div>
                 <div class="InstallTitle">
-                    <DisplayText size="medium">Installation Instructions</DisplayText>
+                    <DisplayText size="medium">Configuration Instructions</DisplayText>
                 </div>
                 <div class="InstallVideo">
-                    <iframe width="560" height="415" src="https://www.youtube.com/embed/1zVRoaq-wDA?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    <iframe width="560" height="415" src="https://www.youtube.com/embed/ZloSL21iOIk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div class="InstallDescription">
                     <Card>
