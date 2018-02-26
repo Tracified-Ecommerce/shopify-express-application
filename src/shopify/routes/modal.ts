@@ -59,7 +59,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 responseJSON.components = componentBuilder(componentArray);
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
                                 return res.send(responseJSON);
-                            });
+                            }); // TODO: catch error
 
                         } else {
                             return res.send("no shop in database");

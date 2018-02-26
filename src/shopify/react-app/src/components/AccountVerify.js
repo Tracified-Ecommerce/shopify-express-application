@@ -41,7 +41,7 @@ class AccountVerify extends Component {
                 tempToken: temporaryToken 
         })
         .then((response) => {
-            // alert("Account verified successfully " + result.data);
+            alert("Your Tracified Account was verified successfully ");
             window.location.replace('/shopify/main-view');
             // window.location.href = response.redirect;
             console.log(response);
