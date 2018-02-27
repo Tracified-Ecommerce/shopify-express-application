@@ -178,7 +178,6 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
         dimensionComponents.htmltxt += "</table></div>";
     }
 
-
     return dimensionComponents;
 
 }
@@ -209,8 +208,8 @@ function mapBuilder(tabs: any): IMapJSON {
 
             const mapData = {
                // label: coordinate.label,
-                lat: coordinate.lat,
-                long: coordinate.long,
+                lat: parseFloat(coordinate.lat),
+                long: parseFloat(coordinate.long),
             };
             mapTab.markers.push(mapData);
 
