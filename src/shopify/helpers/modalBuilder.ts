@@ -188,12 +188,14 @@ function mapBuilder(tabs: any): IMapJSON {
 
         // tslint:disable-next-line:max-line-length
         mapComponents.htmltabs += "<button class=\"tablinks\" onclick=\"openCity(event, '" + tab.tabName + "')\">" + tab.tabName + "<\button>";
-
+        // tslint:disable-next-line:max-line-length
+        mapComponents.htmltabcontent += "<div id =\"" + tab.tabName + "\" class = \" tabcontent \">";
+        // tslint:disable-next-line:max-line-length
+        mapComponents.htmltabcontent += "<div id =\"map" + tab.tabName + "\" style= \"height: 440px; border: 1px solid #AAA;\"></div></div>";
+ 
         for (const x of tab.values) {
 
-            // tslint:disable-next-line:max-line-length
-            mapComponents.htmltabcontent += "<button class=\"tablinks\" onclick=\"openCity(event, 'London')\">" + tab.values + "<\button>";
-
+            
         }
     }
     return mapComponents;
