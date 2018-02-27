@@ -4,7 +4,7 @@ const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
 const adminURL: string = "https://tracified-admin.herokuapp.com/ecom/ecompermenettoken";
 
 export interface IServices {
-    // verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;
+    verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;
     getTracifiedItemList(accessToken: any): Promise<any>;
     getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string): Promise<any>;
     getProductArtifacts(itemID: string, accessToken: string): Promise<any>;
@@ -20,41 +20,41 @@ export class Services implements IServices {
      * and have implemented here to handle te after verification peocess
      */
 
-    // public verifyTracifiedAccount(tempToken: string, shopName: string) {
-    //     console.log("inside veifyAccount Method, token is :" + tempToken + " shop is :" + shopName);
-    //     return new Promise((resolve, reject) => {
-    //         const options = {
-    //             uri: adminURL,
-    //             method: "POST",
-    //             body: {
-    //                 Ttoken: tempToken,
-    //                 shop: shopName,
-    //             },
-    //             json: true,
-    //         };
+    public verifyTracifiedAccount(tempToken: string, shopName: string) {
+        console.log("inside veifyAccount Method, token is :" + tempToken + " shop is :" + shopName);
+        return new Promise((resolve, reject) => {
+            const options = {
+                uri: adminURL,
+                method: "POST",
+                body: {
+                    Ttoken: tempToken,
+                    shop: shopName,
+                },
+                json: true,
+            };
 
-    //         request(options).then((data: any) => {
-    //             const type: string = typeof data;
-    //             console.log(type);
-    //             console.log(data);
-    //             resolve(data);
-    //         }).catch(errors.StatusCodeError, (reason) => {
-    //             console.log("inside catch1");
-    //             console.log("reason response is :" + JSON.stringify(reason.response));
-    //             console.log("reason error is :" + JSON.stringify(reason.error));
-    //             console.log("reason options are :" + JSON.stringify(reason.options));
+            request(options).then((data: any) => {
+                const type: string = typeof data;
+                console.log(type);
+                console.log(data);
+                resolve(data);
+            }).catch(errors.StatusCodeError, (reason) => {
+                console.log("inside catch1");
+                console.log("reason response is :" + JSON.stringify(reason.response));
+                console.log("reason error is :" + JSON.stringify(reason.error));
+                console.log("reason options are :" + JSON.stringify(reason.options));
 
-    //             if (reason.statusCode === 406) {
-    //                 reject(Error("invalid token"));
-    //             }
-    //         })
-    //         .catch(errors.RequestError, (reason) => {
-    //             console.log("inside catch2  " + reason.cause);
-    //             // The request failed due to technical reasons.
-    //             // reason.cause is the Error object Request would pass into a callback.
-    //         });
-    //     });
-    // }
+                if (reason.statusCode === 406) {
+                    reject(Error("invalid token"));
+                }
+            })
+            .catch(errors.RequestError, (reason) => {
+                console.log("inside catch2  " + reason.cause);
+                // The request failed due to technical reasons.
+                // reason.cause is the Error object Request would pass into a callback.
+            });
+        });
+    }
 
     public getTracifiedItemList(accessToken: any) {
         return new Promise((resolve, reject) => {
