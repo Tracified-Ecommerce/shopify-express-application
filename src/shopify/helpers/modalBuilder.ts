@@ -192,11 +192,10 @@ function mapBuilder(tabs: any): IMapJSON {
         mapComponents.htmltabcontent += "<div id =\"" + tab.tabName + "\" class = \" tabcontent \">";
         // tslint:disable-next-line:max-line-length
         mapComponents.htmltabcontent += "<div id =\"map" + tab.tabName + "\" style= \"height: 440px; border: 1px solid #AAA;\"></div></div>";
- 
-        for (const x of tab.values) {
 
-            
-        }
+        // for (const x of tab.values) {
+
+        // }
     }
     return mapComponents;
 }

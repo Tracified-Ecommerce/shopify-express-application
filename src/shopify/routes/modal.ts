@@ -46,7 +46,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 let dimensionComponentArray = [];
                                 let mapComponentArray = [];
                                 componentArray = data.data[0].pointOfSale;
-                                mapComponentArray = data.data[1].traceMore;
+                                mapComponentArray = data.data[1].traceMore[0].map;
                                 dimensionComponentArray = data.data[1].traceMore[1].dimensions;
                                 const responseJSON: IResponseJSON = {
                                     components: {
@@ -57,8 +57,9 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                         htmltxt: "",
                                     },
                                     mapComponents: {
-                                        htmltxt:"",
-                                    }
+                                        htmltabcontent: "",
+                                        htmltabs: "",
+                                    },
                                 };
                                 responseJSON.components = componentBuilder(componentArray);
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
