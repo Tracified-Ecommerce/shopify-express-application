@@ -59,6 +59,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                     mapComponents: {
                                         htmltabcontent: "",
                                         htmltabs: "",
+                                        mapTabData: [],
                                     },
                                 };
                                 responseJSON.components = componentBuilder(componentArray);
