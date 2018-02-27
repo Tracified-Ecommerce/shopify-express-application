@@ -8,6 +8,12 @@ interface IDimensionJSON {
     htmltxt: string;
 }
 
+// mapTab component
+interface IMapTab {
+    markers: any[];
+    mapID: string;
+}
+
 // map component
 interface IMapJSON {
     htmltabs: string;
@@ -172,6 +178,7 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
         dimensionComponents.htmltxt += "</table></div>";
     }
 
+
     return dimensionComponents;
 
 }
@@ -192,17 +199,28 @@ function mapBuilder(tabs: any): IMapJSON {
         mapComponents.htmltabcontent += "<div id =\"tab" + count + "\" class =\"tabcontent\">";
         // tslint:disable-next-line:max-line-length
         mapComponents.htmltabcontent += "<div id =\"map" + count + "\" style=\"height: 440px; border: 1px solid #AAA;\"></div></div>";
-        const mapTab = {
-            mapID: "map" + count,
+        const mapTab: IMapTab = {
+            mapID: "map" + count ,
             markers: [],
         };
+
+        for (const coordinate of tab.values) {
+
+
+            const mapData = {
+               // label: coordinate.label,
+                lat: coordinate.lat,
+                long: coordinate.long,
+            };
+            mapTab.markers.push(mapData);
+
+        }
+
         mapComponents.mapTabData.push(mapTab);
         count++;
 
-        // for (const x of tab.values) {
-
-        // }
     }
+
     return mapComponents;
 }
 
