@@ -8,16 +8,14 @@ interface IDimensionJSON {
     htmltxt: string;
 }
 
-<<<<<<< HEAD
 // mapTab component
 interface IMapTab {
     markers: any[];
     mapID: string;
-=======
+}
 // image slider component
 interface IImageSliderJSON {
     htmltxt: string;
->>>>>>> modified-imageSlider
 }
 
 // map component
