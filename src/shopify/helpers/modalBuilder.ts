@@ -5,7 +5,6 @@ interface IComponentJSON {
     pieChartData: any[];
 }
 
-
 // dimension component
 interface IDimensionJSON {
     htmltxt: string;
@@ -13,14 +12,13 @@ interface IDimensionJSON {
 
 // map component
 interface IMapJSON {
-    htmltxt: string;
     htmltabs: string;
-    htmltabcontent : string;
+    htmltabcontent: string;
 }
 
 interface IResponseJSON {
     components: IComponentJSON;
-    mapComponents : IMapJSON;
+    mapComponents: IMapJSON;
     dimensionComponents: IDimensionJSON;
 }
 
@@ -165,40 +163,40 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
 
     for (const dimension of dimensions) {
         // tslint:disable-next-line:max-line-length
-        dimensionComponents.htmltxt += "<div class=\"col-md-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr><td class=\"dimTitle\" style=\"background-color:" + dimension.titleBackColor + ";color:"+dimension.titleTxtColor+"\">"+dimension.name+"";
+        dimensionComponents.htmltxt += "<div class=\"col-md-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr><td class=\"dimTitle\" style=\"background-color:" + dimension.titleBackColor + ";color:" + dimension.titleTxtColor + "\">" + dimension.name + "";
         // tslint:disable-next-line:max-line-length
-        dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:"+dimension.descriptionBackColor+";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
-        
+        dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:" + dimension.descriptionBackColor + ";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
+
         for (const x of dimension.data) {
             // tslint:disable-next-line:max-line-length
-            dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">"+x.label+"</td><td class=\"keyContent\">"+x.value+"</td></tr>";
+            dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + x.label + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
         }
         dimensionComponents.htmltxt += "</table></div>";
     }
 
     return dimensionComponents;
 
-
-
-function mapBuilder(tabs : any): IMapJSON{
-    const mapComponents: IMapJSON =
-    {
-        htmltxt:"",
-    }
-
-
-     for(const tab of tabs){
-       
-        mapComponents.htmltxt+= "<button class=\"tablinks\" onclick=\"openCity(event, '"+tab.tabName+"')\">"+ tab.tabName+ "<\button>";
-         
-      
-        for(const x of tab.values){
-       
-        mapComponents.htmltxt+= "<button class=\"tablinks\" onclick=\"openCity(event, 'London')\">"+ tab.values+ "<\button>";
-    
-       }
-    }
- return mapComponents;
 }
 
-export { componentBuilder, IComponentJSON, IResponseJSON, IDimensionJSON, dimensionBuilder,mapBuilder, IMapJSON };
+function mapBuilder(tabs: any): IMapJSON {
+    const mapComponents: IMapJSON = {
+        htmltabcontent: "",
+        htmltabs: "",
+    };
+
+    for (const tab of tabs) {
+
+        // tslint:disable-next-line:max-line-length
+        mapComponents.htmltabs += "<button class=\"tablinks\" onclick=\"openCity(event, '" + tab.tabName + "')\">" + tab.tabName + "<\button>";
+
+        for (const x of tab.values) {
+
+            // tslint:disable-next-line:max-line-length
+            mapComponents.htmltabcontent += "<button class=\"tablinks\" onclick=\"openCity(event, 'London')\">" + tab.values + "<\button>";
+
+        }
+    }
+    return mapComponents;
+}
+
+export { componentBuilder, IComponentJSON, IResponseJSON, IDimensionJSON, dimensionBuilder, mapBuilder, IMapJSON };
