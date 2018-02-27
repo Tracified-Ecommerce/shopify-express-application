@@ -1,5 +1,3 @@
-import { map } from "bluebird";
-
 interface IComponentJSON {
     htmltxt: string;
     pieChartData: any[];
@@ -21,7 +19,6 @@ interface IResponseJSON {
     mapComponents: IMapJSON;
     dimensionComponents: IDimensionJSON;
 }
-
 
 function componentBuilder(components: any): IComponentJSON {
 
