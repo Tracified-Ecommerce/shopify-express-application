@@ -1,5 +1,6 @@
 import request = require("request-promise");
-import errors = require('request-promise/errors');
+import errors = require("request-promise/errors");
+import { IReason } from "../types/requestPromise/requestPromiseTypes";
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
 const adminURL: string = "https://tracified-admin.herokuapp.com/ecom/ecompermenettoken";
 
@@ -24,13 +25,13 @@ export class Services implements IServices {
         console.log("inside veifyAccount Method, token is :" + tempToken + " shop is :" + shopName);
         return new Promise((resolve, reject) => {
             const options = {
-                uri: adminURL,
-                method: "POST",
                 body: {
                     Ttoken: tempToken,
                     shop: shopName,
                 },
                 json: true,
+                method: "POST",
+                uri: adminURL,
             };
 
             request(options).then((data: any) => {
@@ -38,7 +39,7 @@ export class Services implements IServices {
                 console.log(type);
                 console.log(data);
                 resolve(data);
-            }).catch(errors.StatusCodeError, (reason) => {
+            }).catch(errors.StatusCodeError, (reason: IReason) => {
                 console.log("inside catch1");
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
@@ -48,7 +49,7 @@ export class Services implements IServices {
                     reject(Error("invalid token"));
                 }
             })
-            .catch(errors.RequestError, (reason) => {
+            .catch(errors.RequestError, (reason: IReason) => {
                 console.log("inside catch2  " + reason.cause);
                 // The request failed due to technical reasons.
                 // reason.cause is the Error object Request would pass into a callback.
