@@ -1,18 +1,29 @@
+import { map } from "bluebird";
+
 interface IComponentJSON {
     htmltxt: string;
     pieChartData: any[];
 }
 
-interface IResponseJSON {
-    components: IComponentJSON;
-    map: any;
-    dimensionComponents: IDimensionJSON;
-}
 
 // dimension component
 interface IDimensionJSON {
     htmltxt: string;
 }
+
+// map component
+interface IMapJSON {
+    htmltxt: string;
+    htmltabs: string;
+    htmltabcontent : string;
+}
+
+interface IResponseJSON {
+    components: IComponentJSON;
+    mapComponents : IMapJSON;
+    dimensionComponents: IDimensionJSON;
+}
+
 
 function componentBuilder(components: any): IComponentJSON {
 
@@ -166,6 +177,28 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
     }
 
     return dimensionComponents;
+
+
+
+function mapBuilder(tabs : any): IMapJSON{
+    const mapComponents: IMapJSON =
+    {
+        htmltxt:"",
+    }
+
+
+     for(const tab of tabs){
+       
+        mapComponents.htmltxt+= "<button class=\"tablinks\" onclick=\"openCity(event, '"+tab.tabName+"')\">"+ tab.tabName+ "<\button>";
+         
+      
+        for(const x of tab.values){
+       
+        mapComponents.htmltxt+= "<button class=\"tablinks\" onclick=\"openCity(event, 'London')\">"+ tab.values+ "<\button>";
+    
+       }
+    }
+ return mapComponents;
 }
 
-export { componentBuilder, IComponentJSON, IResponseJSON, IDimensionJSON, dimensionBuilder };
+export { componentBuilder, IComponentJSON, IResponseJSON, IDimensionJSON, dimensionBuilder,mapBuilder, IMapJSON };

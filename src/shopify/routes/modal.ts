@@ -3,7 +3,7 @@ import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
 import { Imodal } from "../../types/modal/modalType";
 import { IRequest } from "../../types/session/sessionType";
-import { componentBuilder, dimensionBuilder, IDimensionJSON, IResponseJSON } from "../helpers/modalBuilder";
+import { componentBuilder, dimensionBuilder, IDimensionJSON, IResponseJSON, mapBuilder } from "../helpers/modalBuilder";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
@@ -44,7 +44,9 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
                                 let componentArray = [];
                                 let dimensionComponentArray = [];
+                                let mapComponentArray = [];
                                 componentArray = data.data[0].pointOfSale;
+                                mapComponentArray = data.data[1].traceMore;
                                 dimensionComponentArray = data.data[1].traceMore[1].dimensions;
                                 const responseJSON: IResponseJSON = {
                                     components: {
@@ -54,10 +56,13 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                     dimensionComponents: {
                                         htmltxt: "",
                                     },
-                                    map: [],
+                                    mapComponents: {
+                                        htmltxt:"",
+                                    }
                                 };
                                 responseJSON.components = componentBuilder(componentArray);
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
+                                responseJSON.mapComponents = mapBuilder(mapComponentArray);
                                 return res.send(responseJSON);
                             });
 
