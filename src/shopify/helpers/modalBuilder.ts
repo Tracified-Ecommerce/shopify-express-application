@@ -12,6 +12,7 @@ interface IDimensionJSON {
 interface IMapJSON {
     htmltabs: string;
     htmltabcontent: string;
+    mapTabData: any[];
 }
 
 interface IResponseJSON {
@@ -179,6 +180,7 @@ function mapBuilder(tabs: any): IMapJSON {
     const mapComponents: IMapJSON = {
         htmltabcontent: "",
         htmltabs: "",
+        mapTabData: [],
     };
 
     let count: number = 0;
@@ -190,6 +192,11 @@ function mapBuilder(tabs: any): IMapJSON {
         mapComponents.htmltabcontent += "<div id =\"tab" + count + "\" class =\"tabcontent\">";
         // tslint:disable-next-line:max-line-length
         mapComponents.htmltabcontent += "<div id =\"map" + count + "\" style=\"height: 440px; border: 1px solid #AAA;\"></div></div>";
+        const mapTab = {
+            mapID: "map" + count,
+            markers: [],
+        };
+        mapComponents.mapTabData.push(mapTab);
         count++;
 
         // for (const x of tab.values) {
