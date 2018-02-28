@@ -30,7 +30,7 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
         let responseTxt = "";
 
         for ( const obj of dataJSON) {
-            const itemname = obj.itemName.replace(/\s/g, "");
+            const itemname = obj.itemName.replace(/\s/g, "-");
             responseTxt += obj.itemID + " : " + itemname + " , ";
         }
 
