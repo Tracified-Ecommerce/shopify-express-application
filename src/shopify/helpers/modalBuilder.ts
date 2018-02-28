@@ -29,7 +29,7 @@ interface IResponseJSON {
     components: IComponentJSON;
     mapComponents: IMapJSON;
     dimensionComponents: IDimensionJSON;
-    imageSliderComponents:IImageSliderJSON;
+    imageSliderComponents: IImageSliderJSON;
 }
 
 function componentBuilder(components: any): IComponentJSON {
@@ -199,21 +199,21 @@ function imageSliderBuilder(images: any): IImageSliderJSON {
     let imageIdentifier = 0; // to keep track of images we have already looked at
     let rowCount = 0; // to keep track of image rows
 
-    while(rowCount < 2) {
+    while (rowCount < 2) {
         // row code
 
-        for (let i = 0; i<3; i++ ) {
+        for (let i = 0; i < 3; i++) {
 
             //code for columns inside row
-            if(rowCount===0){
+            if (rowCount === 0) {
                 imageSliderComponents.htmltxt += "<div class=\"item active\"><div class=\"row\">"
             }
-            else{
+            else {
                 imageSliderComponents.htmltxt += "<div class=\"item\"><div class=\"row\">"
             }
-            
+
             // tslint:disable-next-line:max-line-length
-            imageSliderComponents.htmltxt += "<div class=\"col-md-4\"><img id=\"img"+imageIdentifier+"\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\"><div class=\"carousel-caption\"></div></div></div></div>";
+            imageSliderComponents.htmltxt += "<div class=\"col-md-4\"><img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\"><div class=\"carousel-caption\"></div></div></div></div>";
             // images[imageIdentifier]
             imageIdentifier++;
         }
@@ -221,7 +221,7 @@ function imageSliderBuilder(images: any): IImageSliderJSON {
         rowCount++;
     }
 
-    
+
 
     return imageSliderComponents;
 
@@ -244,7 +244,7 @@ function mapBuilder(tabs: any): IMapJSON {
         // tslint:disable-next-line:max-line-length
         mapComponents.htmltabcontent += "<div id =\"map" + count + "\" style=\"height: 440px; border: 1px solid #AAA;\"></div></div>";
         const mapTab: IMapTab = {
-            mapID: "map" + count ,
+            mapID: "map" + count,
             markers: [],
         };
 
@@ -252,7 +252,7 @@ function mapBuilder(tabs: any): IMapJSON {
 
 
             const mapData = {
-               // label: coordinate.label,
+                // label: coordinate.label,
                 lat: parseFloat(coordinate.lat),
                 long: parseFloat(coordinate.long),
             };
@@ -268,4 +268,4 @@ function mapBuilder(tabs: any): IMapJSON {
     return mapComponents;
 }
 
-export { componentBuilder, IComponentJSON, IResponseJSON, IDimensionJSON, dimensionBuilder, mapBuilder, IMapJSON , imageSliderBuilder,IImageSliderJSON};
+export { componentBuilder, IComponentJSON, IResponseJSON, IDimensionJSON, dimensionBuilder, mapBuilder, IMapJSON, imageSliderBuilder, IImageSliderJSON };
