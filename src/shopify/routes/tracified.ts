@@ -26,7 +26,17 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
 router.get("/item-list", (req: IRequest & Request, res: Response) => {
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
         console.log(data);
-        res.send(data);
+        let responseTxt = "";
+
+        for ( const obj of data) {
+           // tslint:disable-next-line:no-trailing-whitespace
+           
+            // tslint:disable-next-line:no-trailing-whitespace
+            responseTxt += obj.itemID + " : " + obj.itemName + " , ";          
+        }
+
+        console.log("Item list response is  " + responseTxt);
+        res.json(responseTxt);
     });
 });
 

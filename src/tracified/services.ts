@@ -3,6 +3,7 @@ import errors = require("request-promise/errors");
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
 const tracifiedBackendURL: string = "https://staging.tracified.com/api/v1";
 const adminURL: string = "https://tracified-admin.herokuapp.com/ecom/ecompermenettoken";
+const adminItem: string = "https://tracified-admin.herokuapp.com/api/tracifieditem";
 
 export interface IServices {
     verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;
@@ -64,7 +65,7 @@ export class Services implements IServices {
                     Authorization: "Bearer " + accessToken,
                 },
                 method: "GET",
-                uri: tracifiedURL + "/traceability_data/Data/tracified_item_list/sort-list",
+                uri: adminItem,
             };
 
             request(options).then((data: any) => {
