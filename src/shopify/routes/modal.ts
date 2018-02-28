@@ -43,7 +43,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
 
                             const mockItem = "Apple123456";
                             tracifiedServices.getPosData(mockItem, tracifiedToken).then((data) => {
-                                console.log("murataza sent : " + JSON.stringify(data));
+                                console.log("murataza sent : " + JSON.stringify(data.components.pointOfSale));
                             }).catch((err) => {
                                 console.log("error : " + err);
                             });
