@@ -88,18 +88,6 @@ class CollapaseCard extends Component {
                     <Row>
                         <Col sm="7">
                             <Row>
-<<<<<<< HEAD
-                            <Col sm="4">
-                            <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
-                        </Col>
-                        <Col sm="4">
-                        </ Col>
-                        <Col sm="4">
-                            <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
-                        </Col>
-                       
-                
-=======
                                 <Col sm="4">
                                     <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                                 </Col>
@@ -108,7 +96,6 @@ class CollapaseCard extends Component {
                                 <Col sm="2" style={markTracifiedStyle}>
                                     <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                                 </Col>
->>>>>>> 0fca75fe683b174d9d00e7a75a7cc806f857b088
                             </Row>
                         </Col>
                     </Row>
