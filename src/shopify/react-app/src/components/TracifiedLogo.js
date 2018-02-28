@@ -17,10 +17,15 @@ class TracifiedLogo extends Component{
         }
 
         return(
+<<<<<<< HEAD
             <div style={wrapperStyle} >
                 <div style={backStyle}>
                     <img src={TraciLogo} style={logoStyle}/>
                 </div>
+=======
+            <div >
+                <img src={TraciLogo} style={logoStyle}/>
+>>>>>>> 2eb42889215fdd6533eb43288a80bb24aa2f5079
             </div>
         );
     }
