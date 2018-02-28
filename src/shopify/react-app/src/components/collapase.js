@@ -26,7 +26,11 @@ class CollapaseCard extends Component {
     }
 
     render() {
-
+        var markTracifiedStyle={
+            marginLeft: '110%',
+            width: '25%',
+            marginTop: '-10%'
+        }
         console.log("collapse products");
         let resourceThumbnails = [];
         let resourceList = this.props.itemArray.map((resItem, index) => {
@@ -69,13 +73,11 @@ class CollapaseCard extends Component {
             return (
                 resource
             );
+
+            
         });
 
-        var markTracifiedStyle={
-            marginLeft: '110%',
-            width: '25%',
-            marginTop: '-10%'
-        }
+       
 
         return (
             <div>
