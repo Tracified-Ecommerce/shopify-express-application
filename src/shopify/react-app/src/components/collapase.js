@@ -20,7 +20,7 @@ class CollapaseCard extends Component {
         const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
         axios.get(url)
         .then(response => {
-            alert("order fulfilled!");
+            alert("Added tracified details!");
             this.props.resetOrders();
         });
     }
@@ -84,8 +84,9 @@ class CollapaseCard extends Component {
                             <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                         </Col>
                         <Col sm="4">
-                            <Button primary onClick={this.fulfillOrder}>Mark as Tracified</Button>
+                            <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                         </Col>
+                
                             </Row>
                         </Col>
                     </Row>
