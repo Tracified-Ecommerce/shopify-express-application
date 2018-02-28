@@ -71,6 +71,12 @@ class CollapaseCard extends Component {
             );
         });
 
+        var markTracifiedStyle={
+            marginLeft: '110%',
+            width: '25%',
+            marginTop: '-10%'
+        }
+
         return (
             <div>
                 <Container>
@@ -80,16 +86,14 @@ class CollapaseCard extends Component {
                     <Row>
                         <Col sm="7">
                             <Row>
-                            <Col sm="4">
-                            <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
-                        </Col>
-                        <Col sm="6">
-                        </ Col>
-                        <Col sm="4">
-                            <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
-                        </Col>
-                       
-                
+                                <Col sm="4">
+                                    <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
+                                </Col>
+                                <Col sm="6">
+                                </ Col>
+                                <Col sm="2" style={markTracifiedStyle}>
+                                    <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
+                                </Col>
                             </Row>
                         </Col>
                     </Row>
