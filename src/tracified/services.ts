@@ -1,6 +1,7 @@
 import request = require("request-promise");
 import errors = require("request-promise/errors");
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
+const tracifiedBackendURL: string = "https://staging.tracified.com/api/v1";
 const adminURL: string = "https://tracified-admin.herokuapp.com/ecom/ecompermenettoken";
 
 export interface IServices {

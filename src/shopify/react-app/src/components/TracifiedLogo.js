@@ -9,10 +9,12 @@ class TracifiedLogo extends Component{
 
         var backStyle={
             backgroundColor:"black",
-            textAlign: 'center',
-                         
-        
+            textAlign: 'center'
         }
+
+        // var wrapperStyle={
+        //     width:'100%'
+        // }
 
         return(
             <div style={backStyle}>
