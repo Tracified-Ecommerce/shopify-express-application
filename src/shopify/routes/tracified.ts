@@ -29,10 +29,8 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
         let responseTxt = "";
 
         for ( const obj of data) {
-           // tslint:disable-next-line:no-trailing-whitespace
-           
-            // tslint:disable-next-line:no-trailing-whitespace
-            responseTxt += obj.itemID + " : " + obj.itemName + " , ";          
+            console.log(obj);
+            responseTxt += obj.itemID + " : " + obj.itemName + " , ";
         }
 
         console.log("Item list response is  " + responseTxt);
