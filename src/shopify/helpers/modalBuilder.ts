@@ -213,7 +213,7 @@ function imageSliderBuilder(images: any): IImageSliderJSON {
             }
             
             // tslint:disable-next-line:max-line-length
-            imageSliderComponents.htmltxt += "<div class=\"col-md-4\"><img id=\"img"+imageIdentifier+"\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\"><div class=\"carousel-caption\"></div></div>";
+            imageSliderComponents.htmltxt += "<div class=\"col-md-4\"><img id=\"img"+imageIdentifier+"\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\"><div class=\"carousel-caption\"></div></div></div></div>";
             // images[imageIdentifier]
             imageIdentifier++;
         }
