@@ -25,9 +25,8 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
 
 router.get("/item-list", (req: IRequest & Request, res: Response) => {
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
-        console.log("item list from admin :" + JSON.stringify(data));
+        console.log(data);
         res.send(data);
-
     });
 });
 
