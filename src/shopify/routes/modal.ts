@@ -41,6 +41,13 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                         if (exisitingShop && exisitingShop.tracified_token) {
                             const tracifiedToken = exisitingShop.tracified_token;
 
+                            const mockItem = "Apple123456";
+                            tracifiedServices.getPosData(mockItem, tracifiedToken).then((data) => {
+                                console.log("murataza sent : " + JSON.stringify(data));
+                            }).catch((err) => {
+                                console.log("error : " + err);
+                            });
+
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
                                 let componentArray = [];
                                 let dimensionComponentArray = [];

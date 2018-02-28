@@ -1,7 +1,7 @@
 import request = require("request-promise");
 import errors = require("request-promise/errors");
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
-const tracifiedBackendURL: string = "https://staging.tracified.com/api/v1";
+const tracifiedPosURL: string = "https://staging.tracified.com/api/v1/traceabilityProfiles/ecommerce/pos/";
 const adminURL: string = "https://tracified-admin.herokuapp.com/ecom/ecompermenettoken";
 const adminItem: string = "https://tracified-admin.herokuapp.com/api/tracifieditem";
 
@@ -11,6 +11,7 @@ export interface IServices {
     getOrderItemTraceabilityData(orderID: string, itemID: string, accessToken: string): Promise<any>;
     getProductArtifacts(itemID: string, accessToken: string): Promise<any>;
     getModalData(itemID: string, accessToken: string): Promise<any>;
+    getPosData(itemID: string, accessToken: string): Promise<any>;
 }
 
 export class Services implements IServices {
@@ -95,6 +96,42 @@ export class Services implements IServices {
                 console.log(data);
                 resolve(data);
             });
+        });
+    }
+
+    // Apple123456
+
+    public getPosData(itemID: string, accessToken: string) {
+        return new Promise((resolve, reject) => {
+            const options = {
+                headers: {
+                    Authorization: "Bearer " + accessToken,
+                },
+                json: true,
+                method: "GET",
+                // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+                uri: tracifiedPosURL + itemID,
+
+            };
+
+            request(options).then((data: any) => {
+                const type: string = typeof data;
+                resolve(data);
+            }).catch(errors.StatusCodeError, (reason) => {
+                console.log("inside catch1");
+                console.log("reason response is :" + JSON.stringify(reason.response));
+                console.log("reason error is :" + JSON.stringify(reason.error));
+                console.log("reason options are :" + JSON.stringify(reason.options));
+
+                if (reason.statusCode === 406) {
+                    reject(Error("invalid token"));
+                }
+            })
+            .catch(errors.RequestError, (reason) => {
+                console.log("inside catch2  " + reason.cause);
+                // The request failed due to technical reasons.
+                // reason.cause is the Error object Request would pass into a callback.
+            });;
         });
     }
 
