@@ -10,6 +10,8 @@ class TracifiedLogo extends Component{
         var backStyle={
             backgroundColor:"black",
             textAlign: 'center',
+             height: '250px'             
+        
         }
 
         return(
