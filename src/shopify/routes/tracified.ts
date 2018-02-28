@@ -30,8 +30,8 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
         let responseTxt = "";
 
         for ( const obj of dataJSON) {
-            console.log("obj is : " + obj);
-            responseTxt += obj.itemID + " : " + obj.itemName + " , ";
+            const itemname = obj.itemName.replace(/\s/g, "");
+            responseTxt += obj.itemID + " : " + itemname + " , ";
         }
 
         console.log("Item list response is  " + responseTxt);
