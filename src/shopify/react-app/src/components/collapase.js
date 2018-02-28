@@ -86,6 +86,8 @@ class CollapaseCard extends Component {
                         <Col sm="4">
                             <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                         </Col>
+                        <Col sm="4">
+                        </ Col>
                 
                             </Row>
                         </Col>
