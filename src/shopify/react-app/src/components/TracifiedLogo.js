@@ -15,7 +15,7 @@ class TracifiedLogo extends Component{
         }
 
         return(
-            <div >
+            <div style={backStyle}>
                 <img src={TraciLogo} style={logoStyle}/>
             </div>
         );
