@@ -63,7 +63,6 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             const mockItem = "Apple123456";
                             tracifiedServices.getPosData(mockItem, tracifiedToken).then((data) => {
 
-                                console.log("backend team sent : " + JSON.stringify(data.components.pointOfSale));
                                 let miniWidgetArray = [];
                                 miniWidgetArray = data.components.pointOfSale;
                                 let dimensionComponentArray = [];
