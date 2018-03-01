@@ -124,7 +124,7 @@ export class Services implements IServices {
                 console.log("reason options are :" + JSON.stringify(reason.options));
 
                 if (reason.statusCode === 406) {
-                    reject(Error(reason.statusCode));
+                    reject(Error("status code error"));
                 }
             })
             .catch(errors.RequestError, (reason) => {
