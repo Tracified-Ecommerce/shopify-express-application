@@ -82,8 +82,8 @@ export class Services implements IServices {
                     Authorization: "Bearer " + accessToken,
                 },
                 method: "GET",
-                // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
-                uri: "https://staging.tracified.com/api/v1/traceabilityProfiles/ecommerce/admin" + itemID + orderID,
+                uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+               // uri: "https://staging.tracified.com/api/v1/traceabilityProfiles/ecommerce/admin" + itemID + orderID,
 
             };
 
