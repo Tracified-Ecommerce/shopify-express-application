@@ -92,7 +92,7 @@ class FulfilledOrder extends Component {
                 <td>
                     <Button size="slim" onClick={this.onTraceSelect}>View Trace More Timeline</Button>
                     <EmbeddedApp
-                        apiKey="1e8eb6af3744c654294f374e7afb2efd"
+                        apiKey="49dbd3c2b4c268b05af0c141a889933e"
                         shopOrigin={shopOrigin}
                     >
                         <Modal
@@ -108,7 +108,7 @@ class FulfilledOrder extends Component {
                         />
                     </EmbeddedApp>
                     <EmbeddedApp
-                        apiKey="1e8eb6af3744c654294f374e7afb2efd"
+                        apiKey="49dbd3c2b4c268b05af0c141a889933e"
                         shopOrigin={shopOrigin}
                     >
                         <Alert
