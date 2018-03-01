@@ -129,9 +129,10 @@ export class Services implements IServices {
             })
             .catch(errors.RequestError, (reason) => {
                 console.log("inside catch2  " + reason.cause);
+                reject(Error(reason.cause));
                 // The request failed due to technical reasons.
                 // reason.cause is the Error object Request would pass into a callback.
-            });;
+            });
         });
     }
 

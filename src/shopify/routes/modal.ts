@@ -3,7 +3,26 @@ import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
 import { Imodal } from "../../types/modal/modalType";
 import { IRequest } from "../../types/session/sessionType";
-import { componentBuilder, dimensionBuilder, imageSliderBuilder, IImageSliderJSON, IDimensionJSON, IResponseJSON, mapBuilder } from "../helpers/modalBuilder";
+import {
+    componentBuilder,
+    dimensionBuilder,
+    IDimensionJSON,
+    IImageSliderJSON,
+    imageSliderBuilder,
+    IResponseJSON,
+    mapBuilder,
+} from "../helpers/modalBuilder";
+import {
+    IWidgetComponentJSON,
+    IWidgetDimensionJSON,
+    IWidgetImageSliderJSON,
+    IWidgetMapJSON,
+    IWidgetResponseJSON,
+    widgetComponentBuilder,
+    widgetDimensionBuilder,
+    widgetImageSliderBuilder,
+    widgetMapBuilder,
+} from "../helpers/widgetBuilder";
 import { Shop, ShopModel } from "../models/Shop";
 import { ShopifyMapping, ShopifyMappingModel } from "../models/ShopifyMapping";
 
@@ -43,7 +62,46 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
 
                             const mockItem = "Apple123456";
                             tracifiedServices.getPosData(mockItem, tracifiedToken).then((data) => {
-                                console.log("murataza sent : " + JSON.stringify(data.components.pointOfSale));
+
+                                console.log("backend team sent : " + JSON.stringify(data.components.pointOfSale));
+                                let miniWidgetArray = [];
+                                miniWidgetArray = data.components.pointOfSale;
+                                let dimensionComponentArray = [];
+                                dimensionComponentArray = data.components.dimensions;
+                                let mapComponentArray = [];
+                                mapComponentArray = data.components.map;
+                                const imageSliderComponentArray = ["image1", "image2", "image3" ];
+                                // TODO: make const let
+                                // imageSliderComponentArray = data.components.imageSlider;
+
+                                const widgetResponseJSON: IWidgetResponseJSON = {
+                                    components: {
+                                        htmltxt: "",
+                                        pieChartData: [],
+                                    },
+                                    dimensionComponents: {
+                                        htmltxt: "",
+                                    },
+                                    imageSliderComponents: {
+                                        htmltxt: "",
+                                    },
+                                    mapComponents: {
+                                        htmltabcontent: "",
+                                        htmltabs: "",
+                                        mapTabData: [],
+                                    },
+                                };
+
+                                // need to ask muri for clarification
+                                widgetResponseJSON.components = componentBuilder(miniWidgetArray);
+                                // tslint:disable-next-line:max-line-length
+                                widgetResponseJSON.dimensionComponents = widgetDimensionBuilder(dimensionComponentArray);
+                                widgetResponseJSON.mapComponents = widgetMapBuilder(mapComponentArray);
+                                widgetResponseJSON.imageSliderComponents = imageSliderBuilder(
+                                    imageSliderComponentArray,
+                                );
+                                console.log("this is the widget response I've been looking for :" + widgetResponseJSON);
+
                             }).catch((err) => {
                                 console.log("error : " + err);
                             });
