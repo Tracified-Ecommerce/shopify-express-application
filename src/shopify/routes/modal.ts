@@ -52,7 +52,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                 const TracifiedID = mapping.mapping[product][0];
                 Shop.findOne(
                     { name: shopName },
-                    "    access_token tracified_token",
+                    "name access_token tracified_token",
                     (errr: Error, exisitingShop: ShopModel) => {
                         if (err) {
                             return res.status(503).send("error with db connection. Plese try again in a while");
@@ -61,7 +61,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             const tracifiedToken = exisitingShop.tracified_token;
                             console.log("shop has a tracified token : " + exisitingShop.tracified_token);
                             const mockItem = "Apple123456";
-                            tracifiedServices.getPosData(mockItem, tracifiedToken).then((data) => {
+                            tracifiedServices.getPosData(   mockItem, tracifiedToken).then((data) => {
 
                                 let miniWidgetArray = [];
                                 miniWidgetArray = data.components.pointOfSale;
