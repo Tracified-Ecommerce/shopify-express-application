@@ -52,14 +52,14 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                 const TracifiedID = mapping.mapping[product][0];
                 Shop.findOne(
                     { name: shopName },
-                    "name access_token tracified_token",
+                    "    access_token tracified_token",
                     (errr: Error, exisitingShop: ShopModel) => {
                         if (err) {
                             return res.status(503).send("error with db connection. Plese try again in a while");
                         }
                         if (exisitingShop && exisitingShop.tracified_token) {
                             const tracifiedToken = exisitingShop.tracified_token;
-
+                            console.log("shop has a tracified token : " + exisitingShop.tracified_token);
                             const mockItem = "Apple123456";
                             tracifiedServices.getPosData(mockItem, tracifiedToken).then((data) => {
 
@@ -92,13 +92,13 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 };
 
                                 // need to ask muri for clarification
-                                widgetResponseJSON.components = componentBuilder(miniWidgetArray);
+                                // widgetResponseJSON.components = componentBuilder(miniWidgetArray);
                                 // tslint:disable-next-line:max-line-length
-                                widgetResponseJSON.dimensionComponents = widgetDimensionBuilder(dimensionComponentArray);
-                                widgetResponseJSON.mapComponents = widgetMapBuilder(mapComponentArray);
-                                widgetResponseJSON.imageSliderComponents = imageSliderBuilder(
-                                    imageSliderComponentArray,
-                                );
+                                // widgetResponseJSON.dimensionComponents = widgetDimensionBuilder(dimensionComponentArray);
+                                // widgetResponseJSON.mapComponents = widgetMapBuilder(mapComponentArray);
+                                // widgetResponseJSON.imageSliderComponents = imageSliderBuilder(
+                                    // imageSliderComponentArray,
+                                // );
                                 console.log("this is the widget response I've been looking for :" + widgetResponseJSON);
 
                             }).catch((err) => {
