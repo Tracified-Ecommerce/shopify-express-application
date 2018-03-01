@@ -86,7 +86,7 @@ export class Services implements IServices {
                 },
                 method: "GET",
                 // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
-                uri: "http://www.mocky.io/v2/5a7688f02e000030006ab297",
+                uri: "https://staging.tracified.com/api/v1/traceabilityProfiles/ecommerce/admin" + itemID + orderID,
 
             };
 
