@@ -25,7 +25,6 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
 
 router.get("/item-list", (req: IRequest & Request, res: Response) => {
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
-        console.log(data);
         const dataJSON = JSON.parse(data);
         let responseTxt = "";
 

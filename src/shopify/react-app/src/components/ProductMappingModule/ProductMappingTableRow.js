@@ -71,7 +71,6 @@ onItemChange(tracifiedItemID, shopifyProductID){
       CBdisabled : false,
       selectVal : tracifiedItemID
     });
-    console.log("true");
   }
   else{
     this.setState({
@@ -79,7 +78,6 @@ onItemChange(tracifiedItemID, shopifyProductID){
       selectVal : tracifiedItemID,
       CBchecked : false
     });
-    console.log("false");
   }
   this.props.onItemChange(tracifiedItemID, shopifyProductID);
 }

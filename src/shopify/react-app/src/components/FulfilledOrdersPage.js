@@ -50,8 +50,6 @@ class FulfilledOrdersPage extends Component {
     }
 
     updateSearch(event){
-        console.log(this.state.isCheckedCus);
-        console.log(this.state.isCheckedOrd);
         this.setState({
             search: event.target.value.substr(0, 20),
         });
@@ -80,14 +78,12 @@ class FulfilledOrdersPage extends Component {
             // All the order details
 
             if(this.state.isCheckedCus){
-                console.log("cus works");
 
                 let orders = this.state.orders.filter(
                     (order) => {
                         const customer = order.customer.first_name+ " "+order.customer.last_name;
                         const customer1 =customer.toLowerCase();
                         const customer2 =customer.toUpperCase();
-                        console.log(customer1);
                         return customer1.indexOf(this.state.search) !== -1 || customer2.indexOf(this.state.search) !== -1 || customer.indexOf(this.state.search) !== -1;
                     }
                 );
@@ -120,7 +116,6 @@ class FulfilledOrdersPage extends Component {
                 });
 
             } else if(this.state.isCheckedOrd) {
-                console.log("ord works");
 
                 let orders = this.state.orders.filter(
                     (order) => {

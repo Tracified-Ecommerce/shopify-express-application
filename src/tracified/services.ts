@@ -42,7 +42,6 @@ export class Services implements IServices {
                 console.log(data);
                 resolve(data);
             }).catch(errors.StatusCodeError, (reason) => {
-                console.log("inside catch1");
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
                 console.log("reason options are :" + JSON.stringify(reason.options));
@@ -71,8 +70,6 @@ export class Services implements IServices {
 
             request(options).then((data: any) => {
                 const type: string = typeof data;
-                console.log(type);
-                console.log(data);
                 resolve(data);
             });
         });
@@ -168,8 +165,6 @@ export class Services implements IServices {
 
             request(options).then((data: any) => {
                 const type: string = typeof data;
-                console.log(type);
-                console.log(data);
                 resolve(data);
             });
         });

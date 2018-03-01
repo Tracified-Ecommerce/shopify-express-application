@@ -99,7 +99,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 widgetResponseJSON.imageSliderComponents = imageSliderBuilder(
                                     imageSliderComponentArray,
                                 ); // TODO: fix this method
-                                console.log("this is the widget response I've been looking for :" + widgetResponseJSON);
+                                console.log("this is the widget response I've been looking for :" + JSON.stringify(widgetResponseJSON));
 
                             }).catch((err) => {
                                 console.log("error : " + err);

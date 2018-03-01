@@ -31,8 +31,6 @@ class ProductMappingTableRow extends Component {
         super(props);
 
         this.props.tracelist.forEach(v => console.log(v.id));
-        console.log(this.props.tracelist[1].id);
-        console.log(this.props.tracelist.length)
 
         this.productMappingService = new ProductMappingService();
         this.handleSubmit = this.handleSubmit.bind(this);
