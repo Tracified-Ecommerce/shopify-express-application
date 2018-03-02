@@ -65,7 +65,8 @@ export class Services implements IServices {
                     Authorization: "Bearer " + accessToken,
                 },
                 method: "GET",
-                uri: "https://tracified-mock-api.herokuapp.com/Traceability_data/data/tracified_item_list/sort-list",
+                uri: adminItem,
+                // uri: "https://tracified-mock-api.herokuapp.com/Traceability_data/data/tracified_item_list/sort-list",
             };
 
             request(options).then((data: any) => {
