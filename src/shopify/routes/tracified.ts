@@ -29,8 +29,10 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
         let responseTxt = "";
 
         for ( const obj of data) {
-            const itemname = obj.itemName.replace(/\s/g, "-");
-            responseTxt += obj.itemID + " : " + obj.itemname + " , ";
+           // const itemname = obj.itemName.replace(/\s/g, "-");
+           const itemname = obj.itemName.replace(/\s/g, "");
+
+           responseTxt += obj.itemID + " : " + obj.itemname + " , ";
 
         }
 
