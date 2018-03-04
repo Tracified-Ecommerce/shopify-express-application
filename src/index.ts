@@ -14,7 +14,7 @@ const app = express();
 app.set("port", process.env.PORT || 4000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use((req: Request, res: express.Response, next: express.NextFunction) => {
+app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, X-My-Custom-Header");
   next();
