@@ -4,7 +4,7 @@ const router = Router();
 const shopAdminAPI = require("../helpers").shopAdminAPI;
 const shopName = "99xnsbm.myshopify.com";
 const shopRequestHeaders = {
-    "X-Shopify-Access-Token": "94687cbe08d0e4024c74f8adbffa94ca",
+    "X-Shopify-Access-Token": "b6445ab66c5f8372f19de5a4c7dcbf75",
 };
 
 // router.all("/*", (req: Request, res: Response, next: NextFunction) => {
