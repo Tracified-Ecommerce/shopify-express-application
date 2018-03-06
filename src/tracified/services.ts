@@ -132,7 +132,7 @@ export class Services implements IServices {
                 const type: string = typeof data;
                 resolve(data);
             }).catch(errors.StatusCodeError, (reason) => {
-                console.log("inside catch1");
+                console.log("inside pos catch1");
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
                 console.log("reason options are :" + JSON.stringify(reason.options));
@@ -142,7 +142,7 @@ export class Services implements IServices {
                 }
             })
             .catch(errors.RequestError, (reason) => {
-                console.log("inside catch2  " + reason.cause);
+                console.log("inside pos catch2  " + reason.cause);
                 reject(Error(reason.cause));
                 // The request failed due to technical reasons.
                 // reason.cause is the Error object Request would pass into a callback.

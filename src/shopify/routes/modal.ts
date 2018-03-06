@@ -107,41 +107,41 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 console.log("error : " + err);
                             });
 
-                            tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
-                                let componentArray = [];
-                                let dimensionComponentArray = [];
-                                let mapComponentArray = [];
-                                // image slider
-                                let imageSliderComponentArray = [];
-                                componentArray = data.data[0].pointOfSale;
-                                mapComponentArray = data.data[1].traceMore[0].map;
-                                dimensionComponentArray = data.data[1].traceMore[1].dimensions;
-                                // image slider
-                                imageSliderComponentArray = data.data[2].images;
+                            // tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
+                            //     let componentArray = [];
+                            //     let dimensionComponentArray = [];
+                            //     let mapComponentArray = [];
+                            //     // image slider
+                            //     let imageSliderComponentArray = [];
+                            //     componentArray = data.data[0].pointOfSale;
+                            //     mapComponentArray = data.data[1].traceMore[0].map;
+                            //     dimensionComponentArray = data.data[1].traceMore[1].dimensions;
+                            //     // image slider
+                            //     imageSliderComponentArray = data.data[2].images;
 
-                                const responseJSON: IResponseJSON = {
-                                    components: {
-                                        htmltxt: "",
-                                        pieChartData: [],
-                                    },
-                                    dimensionComponents: {
-                                        htmltxt: "",
-                                    },
-                                    imageSliderComponents: {
-                                        htmltxt: "",
-                                    },
-                                    mapComponents: {
-                                        htmltabcontent: "",
-                                        htmltabs: "",
-                                        mapTabData: [],
-                                    },
-                                };
-                                responseJSON.components = componentBuilder(componentArray);
-                                responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
-                                responseJSON.imageSliderComponents = imageSliderBuilder(imageSliderComponentArray);
-                                responseJSON.mapComponents = mapBuilder(mapComponentArray);
-                                // return res.send(responseJSON);
-                            }); // TODO: catch error
+                            //     const responseJSON: IResponseJSON = {
+                            //         components: {
+                            //             htmltxt: "",
+                            //             pieChartData: [],
+                            //         },
+                            //         dimensionComponents: {
+                            //             htmltxt: "",
+                            //         },
+                            //         imageSliderComponents: {
+                            //             htmltxt: "",
+                            //         },
+                            //         mapComponents: {
+                            //             htmltabcontent: "",
+                            //             htmltabs: "",
+                            //             mapTabData: [],
+                            //         },
+                            //     };
+                            //     responseJSON.components = componentBuilder(componentArray);
+                            //     responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
+                            //     responseJSON.imageSliderComponents = imageSliderBuilder(imageSliderComponentArray);
+                            //     responseJSON.mapComponents = mapBuilder(mapComponentArray);
+                            //     // return res.send(responseJSON);
+                            // }); // TODO: catch error
 
                         } else {
                             return res.send("no shop in database");
