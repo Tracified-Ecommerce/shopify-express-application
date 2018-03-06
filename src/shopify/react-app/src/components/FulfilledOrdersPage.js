@@ -46,6 +46,8 @@ class FulfilledOrdersPage extends Component {
                     shopDomain: response.data.shopDomain,
                     isOrderListLoading: false
                 });
+            }).catch(function(error){
+                console.error(error);
             });
     }
 

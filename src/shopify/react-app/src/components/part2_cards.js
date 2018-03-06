@@ -49,8 +49,10 @@ class Part2Cards extends Component {
             .then(response => {
                 const products = response.data.products;
                 this.setState({ products: response.data.products });
+            }).catch(function(error){
+                console.log(error);
             });
-        axios.get('/shopify/shop-api/orders')
+        axios.get('/shpify/shop-api/orders')
             .then(response => {
                 let arr = [];
                 response.data.orders.forEach((order) => {
@@ -61,6 +63,8 @@ class Part2Cards extends Component {
                     isOrderListLoading: false,
                     cardStateArray: arr
                 });
+            }).catch(function(error){
+                console.log(error);
             });
     }
 

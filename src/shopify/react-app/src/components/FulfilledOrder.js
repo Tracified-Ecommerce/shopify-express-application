@@ -42,7 +42,10 @@ class FulfilledOrder extends Component {
                 this.setState({
                     itemName: response.data.product.handle
                 });
-            });
+            }). catch((error) =>
+        {
+            console.log(error);
+        });
 
             this.setState({ modalOpen: true });
         }
@@ -56,6 +59,9 @@ class FulfilledOrder extends Component {
                 this.setState({
                     itemName: response.data.product.handle
                 });
+            }).catch((error) =>
+            {
+                console.log(error);
             });
 
     }
