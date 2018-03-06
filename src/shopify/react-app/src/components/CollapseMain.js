@@ -27,6 +27,8 @@ class CollapseMain extends Component {
         .then(response => {
             alert("order fulfilled!");
             this.props.resetOrders();
+        }).catch((err) => {
+            console.log(err);
         });
     }
 

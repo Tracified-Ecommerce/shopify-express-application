@@ -22,7 +22,9 @@ class CollapaseCard extends Component {
         .then(response => {
             alert("Added tracified details!");
             this.props.resetOrders();
-        });
+        }).catch((err) => {
+                console.log(err);
+            });
     }
 
     render() {
