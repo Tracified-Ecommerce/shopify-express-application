@@ -38,7 +38,7 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
         }
 
         console.log("Item list response is  " + responseTxt);
-        res.json(data);
+        res.json(responseTxt);
     }).catch((err) => {
         console.log("item list error : " + err);
     });
