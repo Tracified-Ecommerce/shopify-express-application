@@ -94,7 +94,7 @@ function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponen
                     "<div class=\"large-green\">" + tot + "/" + otpCount + "</div>"
                     + "<div class=\"titleDiv\">" +
                     component.title +
-                    "</div><div class=\"subtitleDiv\">" + component.disp.subTitle + "</div></div>";
+                    "</div><div class=\"subtitleDiv\">" + component.displayInfo.subTitle + "</div></div>";
 
                 break;
 
