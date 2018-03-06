@@ -62,7 +62,9 @@ class TraceTimeLine extends Component {
                     istimelineLoading: false,
                     array: arr
                 });
-            });
+            }).catch((error) => {
+                console.log(error);
+              });
 
     }
 

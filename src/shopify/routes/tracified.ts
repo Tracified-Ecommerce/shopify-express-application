@@ -51,14 +51,18 @@ router.get("/trace/:orderID/:itemID", (req: IRequest & Request, res: Response) =
         .then((data: any) => {
             console.log(data);
             res.send(data);
-        });
+        }).catch((error) => {
+            console.log(error);
+          });
 });
 
 router.get("/artifacts/:itemID", (req: IRequest & Request, res: Response) => {
     const itemID = req.params.itemID;
     tracifiedServices.getProductArtifacts(itemID, req.session.shop.tracified_token).then((data: any) => {
         res.send(data);
-    });
+    }).catch((error) => {
+        console.log(error);
+      });
 });
 
 export { router };

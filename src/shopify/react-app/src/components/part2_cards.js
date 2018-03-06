@@ -78,7 +78,9 @@ class Part2Cards extends Component {
                     orders: response.data.orders,
                     isOrderListLoading: false
                 });
-            });
+            }).catch((error) => {
+                console.log(error);
+              });
     }
 
     updateSearch(event) {

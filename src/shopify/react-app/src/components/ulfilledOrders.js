@@ -21,14 +21,18 @@ class FulfilledOrders extends Component {
             .then(response => {
                 const products = response.data.products;
                 this.setState({ products: response.data.products });
-            });
+            }).catch((error) => {
+                console.log(error);
+              });
         axios.get('/shopify/shop-api/fulfilled-orders')
             .then(response => {
                 this.setState({
                     orders: response.data.fulfilledOrders,
                     isOrderListLoading: false
                 });
-            });
+            }).catch((error) => {
+                console.log(error);
+              });
     }
 
 

@@ -109,7 +109,9 @@ export class Services implements IServices {
                 console.log(type);
                 console.log(data);
                 resolve(data);
-            });
+            }).catch((error) => {
+                console.log(error);
+              });
         });
     }
 
@@ -166,7 +168,9 @@ export class Services implements IServices {
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 resolve(data);
-            });
+            }).catch((error) => {
+                console.log(error);
+              });
         });
     }
 
@@ -183,7 +187,9 @@ export class Services implements IServices {
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 resolve(data);
-            });
+            }).catch((error) => {
+                console.log(error);
+              });
         });
     }
 }

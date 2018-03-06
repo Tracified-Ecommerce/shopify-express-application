@@ -119,7 +119,10 @@ class ProductMapping extends Component {
       console.log("response status:"+response.status+" response data: "+JSON.stringify(response.data));
       console.log("mapping is :"+JSON.stringify(this.state.mapping));
 
+    }).catch((error) => {
+      console.log(error);
     });
+
     axios.get('/shopify/shop-api/products')
       .then(response => {
         var products = response.data.products;
@@ -208,7 +211,9 @@ class ProductMapping extends Component {
       .then((result) => {
         alert("Mapping Successfully Saved!");
         console.log( "Result :"+result);
-      });
+      }).catch((error) => {
+                console.log(error);
+              });
 
   }
 
