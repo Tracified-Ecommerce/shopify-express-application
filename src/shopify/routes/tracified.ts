@@ -28,10 +28,9 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
         const dataJSON = JSON.parse(data);
         let responseTxt = "";
 
-        for (const obj of data) {
+        for (const obj of dataJSON) {
             console.log("each object : " + JSON.stringify(obj));
-            // const itemname = obj.itemName.replace(/\s/g, "-");
-            const itemname = obj.itemName.replace(/\s/g, "");
+            const itemname = obj.itemName.replace(/\s/g, "-");
 
             responseTxt += obj.itemID + " : " + obj.itemname + " , ";
 
