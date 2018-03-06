@@ -32,7 +32,7 @@ interface IWidgetResponseJSON {
     imageSliderComponents: IWidgetImageSliderJSON;
 }
 
-function widgetComponentBuilder(components: any): IWidgetComponentJSON {
+function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponentJSON {
 
     const componentJSON: IWidgetComponentJSON = {
         htmltxt: "",
@@ -47,19 +47,13 @@ function widgetComponentBuilder(components: any): IWidgetComponentJSON {
         switch (component.displayInfo.componentType) {
 
             case "pieChart":
-                for (const value of component.values) {
-                    if (value === true) {
-                        tot++;
-                    }
-                }
 
                 const arcData = component.data;
 
                 for (const property in arcData) {
                     if (arcData.hasOwnProperty(property)) {
-                        // do stuff
-                        console.log(arcData[property]); // gets value of each property
                         tot += arcData[property];
+                        break;
                     }
                 }
 
@@ -68,87 +62,40 @@ function widgetComponentBuilder(components: any): IWidgetComponentJSON {
                     colors: ["#2f823a", "#5bfd72"], // TODO add more colours
                     data: arcData,
                     doughnutHoleSize: 0.5,
-                    percentage: Math.floor((tot / component.values.length) * 100).toString(),
+                    percentage: Math.floor((tot / (otpCount)) * 100).toString(),
                 };
 
                 componentJSON.pieChartData.push(pieOptions);
                 componentJSON.htmltxt += "<canvas id=\"component" + componentIdentifier + "\"" + "></canvas>";
-                componentJSON.htmltxt += "<div class=\"titleDiv\">" + component.uiComponent.title + "</div>" +
-                    "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
+                componentJSON.htmltxt += "<div class=\"titleDiv\">" + component.title + "</div>" +
+                    "<div class=\"subtitleDiv\">" + component.displayInfo.subTitle + "</div></div>";
                 break;
 
             case "xOutOfY":
-                if (component.uiComponent.titleFunction) {
-                    if (component.uiComponent.titleFunction === "getMode") {
-                        const valMap: any = {};
-                        let maxElement = "";
-                        let maxCount = 0;
-                        for (const value of component.values) {
-                            if (!valMap.hasOwnProperty(value)) {
-                                valMap[value] = 0;
-                            } else {
-                                valMap[value] = valMap[value] + 1;
-                                if (valMap[value] > maxCount) {
-                                    maxCount = valMap[value];
-                                    maxElement = value;
-                                }
-                            }
-                        }
-                        componentJSON.htmltxt +=
-                            "<div class=\"green\"><span class=\"large-green\">" + maxCount +
-                            "</span>" + component.values.length + "</div>" +
-                            "<div class=\"titleDiv\">" + maxElement + "</div>" +
-                            "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
-                    }
-                } else {
-                    for (const value of component.values) {
-                        if (value === true) {
-                            tot++;
-                        }
-                    }
-                    componentJSON.htmltxt +=
-                        // tslint:disable-next-line:max-line-length
-                        "<div class=\"xoutofy-top\">" + tot + "</div><div class=\"xoutofy-middle\">out of " + component.values.length + " items</div>"
-                        + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "have " + "</span>" +
-                        component.uiComponent.title +
-                        "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
-                }
+
+                componentJSON.htmltxt +=
+                    // tslint:disable-next-line:max-line-length
+                    "<div class=\"xoutofy-top\">" + component.data + "</div><div class=\"xoutofy-middle\">out of " + otpCount + " items</div>"
+                    + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "have " + "</span>" +
+                    component.title +
+                    "</div><div class=\"subtitleDiv\">" + component.displayInfo.subTitle + "</div></div>";
                 break;
 
-            case "outOfTen":
-                if (component.uiComponent.titleFunction) {
-                    if (component.uiComponent.titleFunction === "getMode") {
-                        const valMap: any = {};
-                        let maxElement = "";
-                        let maxCount = 0;
-                        for (const value of component.values) {
-                            if (!valMap.hasOwnProperty(value)) {
-                                valMap[value] = 0;
-                            } else {
-                                valMap[value] = valMap[value] + 1;
-                                if (valMap[value] > maxCount) {
-                                    maxCount = valMap[value];
-                                    maxElement = value;
-                                }
-                            }
-                        }
-                        componentJSON.htmltxt +=
-                            "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
-                            "<div class=\"titleDiv\">have " + maxElement + "</div>" +
-                            "<div class=\"subtitleDiv\"> as the " + component.uiComponent.subTitle + "</div></div>";
+            case "fraction":
+
+                for (const property in component.data) {
+                    if (component.data.hasOwnProperty(property)) {
+                        tot += component.data[property];
+                        break;
                     }
-                } else {
-                    for (const value of component.values) {
-                        if (value === true) {
-                            tot++;
-                        }
-                    }
-                    componentJSON.htmltxt +=
-                        "<div class=\"large-green\">" + tot + "/" + component.values.length + "</div>"
-                        + "<div class=\"titleDiv\">" +
-                        component.uiComponent.title +
-                        "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
+
+                componentJSON.htmltxt +=
+                    "<div class=\"large-green\">" + tot + "/" + otpCount + "</div>"
+                    + "<div class=\"titleDiv\">" +
+                    component.title +
+                    "</div><div class=\"subtitleDiv\">" + component.displayInfo.subTitle + "</div></div>";
+
                 break;
 
             default:

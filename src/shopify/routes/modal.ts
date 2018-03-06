@@ -92,14 +92,16 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 };
 
                                 // need to ask muri for clarification
-                                // widgetResponseJSON.components = componentBuilder(miniWidgetArray);
+                                widgetResponseJSON.components = widgetComponentBuilder(miniWidgetArray, data.otpCount);
                                 // tslint:disable-next-line:max-line-length
                                 widgetResponseJSON.dimensionComponents = widgetDimensionBuilder(dimensionComponentArray);
                                 widgetResponseJSON.mapComponents = widgetMapBuilder(mapComponentArray);
                                 widgetResponseJSON.imageSliderComponents = imageSliderBuilder(
                                     imageSliderComponentArray,
                                 ); // TODO: fix this method
-                                console.log("this is the widget response I've been looking for :" + JSON.stringify(widgetResponseJSON));
+                                console.log("this is the widget response I've been looking for :"
+                                + JSON.stringify(widgetResponseJSON));
+                                return res.send(widgetResponseJSON);
 
                             }).catch((err) => {
                                 console.log("error : " + err);
@@ -138,7 +140,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
                                 responseJSON.imageSliderComponents = imageSliderBuilder(imageSliderComponentArray);
                                 responseJSON.mapComponents = mapBuilder(mapComponentArray);
-                                return res.send(responseJSON);
+                                // return res.send(responseJSON);
                             }); // TODO: catch error
 
                         } else {
