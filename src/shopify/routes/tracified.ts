@@ -40,7 +40,7 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
         console.log("Item list response is  " + responseTxt);
         res.json(data);
     }).catch((err) => {
-        console.log("item list : " + err);
+        console.log("item list error : " + err);
     });
 });
 
