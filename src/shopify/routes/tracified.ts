@@ -26,14 +26,14 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
 router.get("/item-list", (req: IRequest & Request, res: Response) => {
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
         const dataJSON = JSON.parse(data);
-        console.log("item list response ! : " + data);
         let responseTxt = "";
 
-        for ( const obj of data) {
-           // const itemname = obj.itemName.replace(/\s/g, "-");
-           const itemname = obj.itemName.replace(/\s/g, "");
+        for (const obj of data) {
+            console.log("each object : " + JSON.stringify(obj));
+            // const itemname = obj.itemName.replace(/\s/g, "-");
+            const itemname = obj.itemName.replace(/\s/g, "");
 
-           responseTxt += obj.itemID + " : " + obj.itemname + " , ";
+            responseTxt += obj.itemID + " : " + obj.itemname + " , ";
 
         }
 
@@ -49,10 +49,10 @@ router.get("/trace/:orderID/:itemID", (req: IRequest & Request, res: Response) =
     const itemID = req.params.itemID;
     console.log(orderID + itemID);
     tracifiedServices.getOrderItemTraceabilityData(orderID, itemID, req.session.shop.tracified_token)
-    .then((data: any) => {
-        console.log(data);
-        res.send(data);
-    });
+        .then((data: any) => {
+            console.log(data);
+            res.send(data);
+        });
 });
 
 router.get("/artifacts/:itemID", (req: IRequest & Request, res: Response) => {
