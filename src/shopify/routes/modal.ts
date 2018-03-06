@@ -105,9 +105,10 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
 
                             }).catch((err) => {
                                 const errJSON = JSON.parse("{" + err + "}");
-                                console.log("ERROR IN POS CALL:");
-                                console.log("status code:" + errJSON.status);
-                                console.log("message :" + err.Error);
+                                console.log("err json test : " + errJSON.Error.statusCode);
+                                console.log("ERROR IN POS CALL:" + err);
+                                console.log("type of err:" + typeof err);
+                                // console.log("message :" + err.Error);
                             });
 
                             // tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
