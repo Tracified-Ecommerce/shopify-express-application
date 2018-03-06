@@ -52,8 +52,6 @@ function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponen
 
                 for (const property in arcData) {
                     if (arcData.hasOwnProperty(property)) {
-                        // do stuff
-                        console.log(arcData[property]); // gets value of each property
                         tot += arcData[property];
                         break;
                     }
@@ -87,8 +85,6 @@ function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponen
 
                 for (const property in component.data) {
                     if (component.data.hasOwnProperty(property)) {
-                        // do stuff
-                        console.log(component.data[property]); // gets value of each property
                         tot += component.data[property];
                         break;
                     }
@@ -98,7 +94,7 @@ function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponen
                     "<div class=\"large-green\">" + tot + "/" + otpCount + "</div>"
                     + "<div class=\"titleDiv\">" +
                     component.title +
-                    "</div><div class=\"subtitleDiv\">" + component.displayInfo.subTitle + "</div></div>";
+                    "</div><div class=\"subtitleDiv\">" + component.disp.subTitle + "</div></div>";
 
                 break;
 

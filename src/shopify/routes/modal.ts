@@ -101,6 +101,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 ); // TODO: fix this method
                                 console.log("this is the widget response I've been looking for :"
                                 + JSON.stringify(widgetResponseJSON));
+                                return res.send(widgetResponseJSON);
 
                             }).catch((err) => {
                                 console.log("error : " + err);
@@ -139,7 +140,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
                                 responseJSON.imageSliderComponents = imageSliderBuilder(imageSliderComponentArray);
                                 responseJSON.mapComponents = mapBuilder(mapComponentArray);
-                                return res.send(responseJSON);
+                                // return res.send(responseJSON);
                             }); // TODO: catch error
 
                         } else {
