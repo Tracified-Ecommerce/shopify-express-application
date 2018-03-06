@@ -28,13 +28,16 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
         const dataJSON = JSON.parse(data);
         let responseTxt = "";
 
-        for ( const obj of dataJSON) {
-            const itemname = obj.itemName.replace(/\s/g, "-");
-            responseTxt += obj.itemID + " : " + itemname + " , ";
+        for ( const obj of data) {
+           // const itemname = obj.itemName.replace(/\s/g, "-");
+           const itemname = obj.itemName.replace(/\s/g, "");
+
+           responseTxt += obj.itemID + " : " + obj.itemname + " , ";
+
         }
 
         console.log("Item list response is  " + responseTxt);
-        res.json(responseTxt);
+        res.json(data);
     });
 });
 

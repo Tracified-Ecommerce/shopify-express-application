@@ -247,10 +247,10 @@ class ProductMapping extends Component {
             <table className="table table-striped">
               <thead className="headingsThread">
                 <tr className="headingsTr">
-                  <td >Product Name</td>
-                  <td >Product Item ID</td>
-                  <td >Tracified Item title</td>
-                  <td >Permission</td>
+                  <td ><b>Product Name</b></td>
+                  <td ><b>Product Item ID</b></td>
+                  <td ><b>Tracified Item title</b></td>
+                  <td ><b>Permission</b></td>
                 </tr>
               </thead>
               <tbody>
