@@ -26,6 +26,7 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
 router.get("/item-list", (req: IRequest & Request, res: Response) => {
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
         const dataJSON = JSON.parse(data);
+        console.log("item list response ! : " + data);
         let responseTxt = "";
 
         for ( const obj of data) {
@@ -38,6 +39,8 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
 
         console.log("Item list response is  " + responseTxt);
         res.json(data);
+    }).catch((err) => {
+        console.log("item list : " + err);
     });
 });
 
