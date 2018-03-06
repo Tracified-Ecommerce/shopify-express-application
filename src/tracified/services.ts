@@ -59,6 +59,7 @@ export class Services implements IServices {
     }
 
     public getTracifiedItemList(accessToken: any) {
+        console.log("item list request Access token : " + accessToken);
         return new Promise((resolve, reject) => {
             const options = {
                 headers: {
@@ -72,6 +73,19 @@ export class Services implements IServices {
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 resolve(data);
+            }).catch(errors.StatusCodeError, (reason) => {
+                console.log("reason response is :" + JSON.stringify(reason.response));
+                console.log("reason error is :" + JSON.stringify(reason.error));
+                console.log("reason options are :" + JSON.stringify(reason.options));
+
+                if (reason.statusCode === 406) {
+                    reject(Error("invalid token"));
+                }
+            })
+            .catch(errors.RequestError, (reason) => {
+                console.log("inside catch2  " + reason.cause);
+                // The request failed due to technical reasons.
+                // reason.cause is the Error object Request would pass into a callback.
             });
         });
     }

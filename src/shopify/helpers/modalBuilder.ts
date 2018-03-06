@@ -204,12 +204,11 @@ function imageSliderBuilder(images: any): IImageSliderJSON {
 
         for (let i = 0; i < 3; i++) {
 
-            //code for columns inside row
+            // code for columns inside row
             if (rowCount === 0) {
-                imageSliderComponents.htmltxt += "<div class=\"item active\"><div class=\"row\">"
-            }
-            else {
-                imageSliderComponents.htmltxt += "<div class=\"item\"><div class=\"row\">"
+                imageSliderComponents.htmltxt += "<div class=\"item active\"><div class=\"row\">";
+            } else {
+                imageSliderComponents.htmltxt += "<div class=\"item\"><div class=\"row\">";
             }
 
             // tslint:disable-next-line:max-line-length
@@ -220,8 +219,6 @@ function imageSliderBuilder(images: any): IImageSliderJSON {
 
         rowCount++;
     }
-
-
 
     return imageSliderComponents;
 
@@ -249,7 +246,6 @@ function mapBuilder(tabs: any): IMapJSON {
         };
 
         for (const coordinate of tab.values) {
-
 
             const mapData = {
                 // label: coordinate.label,
