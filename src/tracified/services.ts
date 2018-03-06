@@ -138,7 +138,7 @@ export class Services implements IServices {
                 console.log("reason options are :" + JSON.stringify(reason.options));
 
                 if (reason.statusCode) {
-                    reject(Error(JSON.stringify(reason.response)));
+                    reject(reason);
                 }
             })
             .catch(errors.RequestError, (reason) => {
