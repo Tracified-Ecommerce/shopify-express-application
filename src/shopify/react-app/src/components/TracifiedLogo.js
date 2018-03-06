@@ -12,12 +12,13 @@ class TracifiedLogo extends Component{
             textAlign: 'center'
         }
 
-        // var wrapperStyle={
-        //     width:'100%'
-        // }
+        var wrapperStyle={
+            height:'50%',
+            textAlign: 'center'
+        }
 
         return(
-            <div style={backStyle}>
+            <div style={wrapperStyle}>
                 <img src={TraciLogo} style={logoStyle}/>
             </div>
         );
