@@ -104,9 +104,8 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 return res.send(widgetResponseJSON);
 
                             }).catch((err) => {
-                                const errJSON = JSON.parse("{" + err + "}");
                                 console.log("ERROR IN POS CALL:");
-                                console.log("status code:" + errJSON.status);
+                                console.log("status code:" + err.status);
                                 console.log("message :" + err.Error);
                             });
 
