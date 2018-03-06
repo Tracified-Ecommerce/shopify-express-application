@@ -245,8 +245,8 @@ class ProductMapping extends Component {
           <br />
           <form>
             <table className="table table-striped">
-              <thead>
-                <tr>
+              <thead className="headingsThread">
+                <tr className="headingsTr">
                   <td >Product Name</td>
                   <td >Product Item ID</td>
                   <td >Tracified Item title</td>
