@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '@shopify/polaris/styles.css';
 import { Row, Col } from 'reactstrap';
 import * as axios from 'axios';
-import AlertBox from "./AlertBox";
+import AlertBox from "./Alert";
 import {
     AccountConnection,
     Page,
