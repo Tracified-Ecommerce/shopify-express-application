@@ -48,6 +48,11 @@ class FulfilledOrder extends Component {
                 traceButtonDisable: true
             });
             console.log(this.state. traceButtonDisable);
+        }else{
+            this.setState({
+                traceButtonDisable: false
+            });
+
         }
     }
      
