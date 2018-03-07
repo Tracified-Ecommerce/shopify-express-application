@@ -54,11 +54,10 @@ class AccountVerify extends Component {
                 window.location.replace('/shopify/main-view');
                 // window.location.href = response.redirect;
             }).catch((err) => {
-                JSON.stringify(err);
                 this.setState({
                     isOpen: true,
                 });
-                console.log("error is : " + err);
+                console.log("error is : " + JSON.stringify(err));
                 console.log("isOpen : " + this.state.isOpen);
             });
     }
