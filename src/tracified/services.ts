@@ -46,12 +46,13 @@ export class Services implements IServices {
                 console.log("reason error is :" + JSON.stringify(reason.error));
                 console.log("reason options are :" + JSON.stringify(reason.options));
 
-                if (reason.statusCode === 406) {
-                    reject(Error("invalid token"));
+                if (reason.statusCode) {
+                    reject(reason);
                 }
             })
             .catch(errors.RequestError, (reason) => {
                 console.log("inside catch2  " + reason.cause);
+                reject(reason);
                 // The request failed due to technical reasons.
                 // reason.cause is the Error object Request would pass into a callback.
             });
