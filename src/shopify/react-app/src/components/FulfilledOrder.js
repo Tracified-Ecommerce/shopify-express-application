@@ -35,17 +35,16 @@ class FulfilledOrder extends Component {
             this.setState({ alertOpen: true });
         }
         else {
-           
+
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
-            .then(response => {
-                this.setState({
-                    itemName: response.data.product.handle
+                .then(response => {
+                    this.setState({
+                        itemName: response.data.product.handle
+                    });
+                }).catch((error) => {
+                    console.log(error);
                 });
-            }). catch((error) =>
-        {
-            console.log(error);
-        });
 
             this.setState({ modalOpen: true });
         }
@@ -54,13 +53,12 @@ class FulfilledOrder extends Component {
     componentDidMount() {
 
         const url = '/shopify/shop-api/item/' + this.state.productID;
-            axios.get(url)
+        axios.get(url)
             .then(response => {
                 this.setState({
                     itemName: response.data.product.handle
                 });
-            }).catch((error) =>
-            {
+            }).catch((error) => {
                 console.log(error);
             });
 

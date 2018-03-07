@@ -52,7 +52,7 @@ class Part2Cards extends Component {
             }).catch(function(error){
                 console.log(error);
             });
-        axios.get('/shpify/shop-api/orders')
+        axios.get('/shopify/shop-api/orders')
             .then(response => {
                 let arr = [];
                 response.data.orders.forEach((order) => {
