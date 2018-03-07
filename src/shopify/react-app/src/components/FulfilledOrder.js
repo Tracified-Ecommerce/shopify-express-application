@@ -12,6 +12,7 @@ class FulfilledOrder extends Component {
             modalOpen: false,
             alertOpen: false,
             itemName: "",
+            traceButtonDisable: true,
             itemID: this.props.mapping.hasOwnProperty(this.props.order.lineItems[0].product_id) ? (this.props.mapping[this.props.order.lineItems[0].product_id][1] ? this.props.mapping[this.props.order.lineItems[0].product_id][1] : "noTraceabilityItem") : "noTraceabilityItem"
         };
         this.onSelectItem = this.onSelectItem.bind(this);
@@ -26,9 +27,19 @@ class FulfilledOrder extends Component {
         }
         this.setState({
             itemID: itemID,
-            productID: productID
+            productID: productID,
+           
         });
+
+        if (this.state.itemID == "noTraceabilityItem") {
+            this.setState({
+                traceButtonDisable: false
+            });
+            console.log(this.state. traceButtonDisable);
+        }
     }
+     
+
 
     onTraceSelect() {
         if (this.state.itemID == "noTraceabilityItem") {
@@ -94,7 +105,11 @@ class FulfilledOrder extends Component {
                     />
                 </td>
                 <td>
-                    <Button size="slim" onClick={this.onTraceSelect}>View Trace More Timeline</Button>
+                    <Button 
+                    size="slim" 
+                    onClick={this.onTraceSelect}
+                    disabled= {this.state.traceButtonDisable}
+                    >View Trace More Timeline</Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
