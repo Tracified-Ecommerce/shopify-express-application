@@ -32,7 +32,7 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
             console.log("each object : " + JSON.stringify(obj));
             const itemname = obj.itemName.replace(/\s/g, "-");
 
-            responseTxt += obj.itemID + " : " + obj.itemname + " , ";
+            responseTxt += obj.itemID + " : " + obj.itemName + " , ";
 
         }
 
