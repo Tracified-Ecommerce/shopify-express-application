@@ -17,13 +17,13 @@ class FulfilledOrder extends Component {
         };
         this.onSelectItem = this.onSelectItem.bind(this);
         this.onTraceSelect = this.onTraceSelect.bind(this);
-        console.log(itemID);
+        // console.log(itemID); 
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
                 traceButtonDisable: true
             });
-            console.log(this.state. traceButtonDisable);
-        }else{
+            console.log(this.state.traceButtonDisable);
+        } else {
             this.setState({
                 traceButtonDisable: false
             });
@@ -34,36 +34,36 @@ class FulfilledOrder extends Component {
 
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
+        let itemID = "noTraceabilityItem";
         console.log(itemID);
 
-      //  let itemID = "noTraceabilityItem";
         if (mapping.hasOwnProperty(productID) && mapping[productID][1]) {
             itemID = mapping[productID][0];
         }
         this.setState({
             itemID: itemID,
             productID: productID,
-           
+
         });
 
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
                 traceButtonDisable: true
             });
-            console.log(this.state. traceButtonDisable);
-        }else{
+            console.log(this.state.traceButtonDisable);
+        } else {
             this.setState({
                 traceButtonDisable: false
             });
 
         }
     }
-     
+
 
 
     onTraceSelect() {
         if (this.state.itemID == "noTraceabilityItem") {
-            this.setState({  traceButtonDisable: true });
+            this.setState({ traceButtonDisable: true });
         }
         else {
 
@@ -125,10 +125,10 @@ class FulfilledOrder extends Component {
                     />
                 </td>
                 <td>
-                    <Button 
-                    size="slim" 
-                    onClick={this.onTraceSelect}
-                    disabled= {this.state.traceButtonDisable}
+                    <Button
+                        size="slim"
+                        onClick={this.onTraceSelect}
+                        disabled={this.state.traceButtonDisable}
                     >View Trace More Timeline</Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
