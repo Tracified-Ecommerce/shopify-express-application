@@ -28,13 +28,14 @@ class FulfilledOrder extends Component {
         this.setState({
             itemID: itemID,
             productID: productID,
-            onSelectItem: false
+           
         });
 
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
-                onSelectItem: false
+                traceButtonDisable: false
             });
+            console.log(this.state. traceButtonDisable);
         }
     }
      
