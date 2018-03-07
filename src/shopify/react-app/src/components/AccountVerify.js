@@ -55,7 +55,7 @@ class AccountVerify extends Component {
                 // window.location.href = response.redirect;
             }).catch((err) => {
                 this.setState({
-                    isOpen: false,
+                    isOpen: true,
                 });
                 console.log(err);
             });
