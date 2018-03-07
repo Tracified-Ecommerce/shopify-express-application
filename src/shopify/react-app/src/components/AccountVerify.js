@@ -57,7 +57,7 @@ class AccountVerify extends Component {
                 this.setState({
                     isOpen: true,
                 });
-                console.log(err);
+                console.log("error is : " + err);
                 console.log("isOpen : " + this.state.isOpen);
             });
     }
