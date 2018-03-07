@@ -32,10 +32,9 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
             console.log("each object : " + JSON.stringify(obj));
             const itemname = obj.itemName.replace(/\s/g, "-");
 
-            if (obj.itemID && obj.itemName) {
+            if ((obj.itemID && obj.itemName) && obj.itemID !== "" && obj.itemName !== "") {
                 responseTxt += obj.itemID + " : " + obj.itemName + " , ";
             }
-
 
         }
 
