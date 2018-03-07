@@ -19,9 +19,14 @@ class FulfilledOrder extends Component {
         this.onTraceSelect = this.onTraceSelect.bind(this);
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
-                traceButtonDisable: false
+                traceButtonDisable: true
             });
             console.log(this.state. traceButtonDisable);
+        }else{
+            this.setState({
+                traceButtonDisable: false
+            });
+
         }
 
     }
@@ -50,7 +55,7 @@ class FulfilledOrder extends Component {
 
     onTraceSelect() {
         if (this.state.itemID == "noTraceabilityItem") {
-            this.setState({  traceButtonDisable: false });
+            this.setState({  traceButtonDisable: true });
         }
         else {
 
