@@ -58,6 +58,7 @@ class AccountVerify extends Component {
                     isOpen: true,
                 });
                 console.log(err);
+                console.log("isOpen : " + this.state.isOpen);
             });
     }
 
