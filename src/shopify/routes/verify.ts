@@ -32,7 +32,7 @@ router.post("/account/verify", (req: IRequest & Request, res: Response) => {
         });
     }).catch((err: any) => {
         console.log("error is : " + JSON.stringify(err));
-        return res.status(500).send(err);
+        return res.status(err.statusCode || 500).json(err.body);
     });
 });
 
