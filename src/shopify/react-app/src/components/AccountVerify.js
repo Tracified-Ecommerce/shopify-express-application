@@ -56,9 +56,10 @@ class AccountVerify extends Component {
             }).catch((err) => {
                 this.setState({
                     isOpen: true,
+                    errorStatus: err.response.status,
+                    errorMessage: err.response.data.message,
                 });
                 console.log("error is : " + JSON.stringify(err.response));
-                console.log("isOpen : " + this.state.isOpen);
             });
     }
 
