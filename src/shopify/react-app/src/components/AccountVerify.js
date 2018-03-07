@@ -24,8 +24,8 @@ class AccountVerify extends Component {
         this.state = {
             tempToken: "",
             isOpen: false,
-            errorStatus: "dummy status",
-            errorMessage: "dummy message",
+            alertHeading: "dummy status",
+            alertMessage: "dummy message",
         };
         this.onChange = this.onChange.bind(this);
         this.onClick = this.onClick.bind(this);
@@ -50,15 +50,20 @@ class AccountVerify extends Component {
             tempToken: temporaryToken
         })
             .then((response) => {
-                alert("Your Tracified Account was verified successfully ");
+                this.setState({
+                    isOpen: true,
+                    alertHeading: "",
+                    alertMessage: "Your Tracified Account was verified successfully ",
+                });
                 window.location.replace('/shopify/main-view');
                 // window.location.href = response.redirect;
             }).catch((err) => {
                 this.setState({
                     isOpen: true,
+                    alertHeading: err.response.status,
+                    alertMessage: err.response.data.message,
                 });
-                console.log("error is : " + err);
-                console.log("isOpen : " + this.state.isOpen);
+                console.log("error is : " + JSON.stringify(err.response));
             });
     }
 
