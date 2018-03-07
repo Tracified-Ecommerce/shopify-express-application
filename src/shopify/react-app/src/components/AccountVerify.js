@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '@shopify/polaris/styles.css';
 import { Row, Col } from 'reactstrap';
 import * as axios from 'axios';
-import AlertBox from "./AlertBox";
+import AlertBox from "./Alert";
 import {
     AccountConnection,
     Page,
@@ -55,7 +55,7 @@ class AccountVerify extends Component {
                 // window.location.href = response.redirect;
             }).catch((err) => {
                 this.setState({
-                    isOpen: false,
+                    isOpen: true,
                 });
                 console.log(err);
             });
