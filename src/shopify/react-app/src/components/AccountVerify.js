@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '@shopify/polaris/styles.css';
 import { Row, Col } from 'reactstrap';
 import * as axios from 'axios';
+import AlertBox from "./AlertBox";
 import {
     AccountConnection,
     Page,
@@ -21,10 +22,19 @@ class AccountVerify extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tempToken: ""
+            tempToken: "",
+            isOpen: false,
+            errorStatus: "dummy status",
+            errorMessage: "dummy message",
         };
         this.onChange = this.onChange.bind(this);
         this.onClick = this.onClick.bind(this);
+    }
+
+    toggleAlert = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
     }
 
     onChange(token, id) {
@@ -37,16 +47,18 @@ class AccountVerify extends Component {
 
         const temporaryToken = this.state.tempToken;
         axios.post('/shopify/verify/account/verify', {
-                tempToken: temporaryToken 
+            tempToken: temporaryToken
         })
-        .then((response) => {
-            alert("Your Tracified Account was verified successfully ");
-            window.location.replace('/shopify/main-view');
-            // window.location.href = response.redirect;
-        }).catch((err) =>{
-            alert("Account verification Failed, PLease Try re-entering the temperory access token");
-            console.log(err);
-        });
+            .then((response) => {
+                alert("Your Tracified Account was verified successfully ");
+                window.location.replace('/shopify/main-view');
+                // window.location.href = response.redirect;
+            }).catch((err) => {
+                this.setState({
+                    isOpen: false,
+                });
+                console.log(err);
+            });
     }
 
     render() {
@@ -56,20 +68,25 @@ class AccountVerify extends Component {
                     <FormLayout>
                         <Card.Section>
                             <p> Looks like you haven't connected a Tracified Account yet.</p>
-                            <p> Please Contact your Tracified Admin and submit the temporary token here to connect an account for further proceedings</p><br/>
-                        <Row>
-                            <Col sm="10" offset="2">
-                                <TextField onChange={this.onChange} value={this.state.tempToken} label="Enter the access token:" />
-                            </Col>
-                            <Col sm="2" offset="2">
-                                <Button primary onClick={this.onClick}>Connect</Button>
-                            </Col>
-                        </Row>                            
+                            <p> Please Contact your Tracified Admin and submit the temporary token here to connect an account for further proceedings</p><br />
+                            <Row>
+                                <Col sm="10" offset="2">
+                                    <TextField onChange={this.onChange} value={this.state.tempToken} label="Enter the access token:" />
+                                </Col>
+                                <Col sm="2" offset="2">
+                                    <Button primary onClick={this.onClick}>Connect</Button>
+                                </Col>
+                            </Row>
                         </Card.Section>
                     </FormLayout>
                     <Row>
                     </Row>
                 </Card>
+                <AlertBox show={this.state.isOpen}
+                    onClose={this.toggleAlert}
+                    heading={this.state.errorStatus}
+                    message={this.state.errorMessage}>
+                </AlertBox>
             </Page>
         );
     }
