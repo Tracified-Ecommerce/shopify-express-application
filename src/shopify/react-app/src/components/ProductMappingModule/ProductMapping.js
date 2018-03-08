@@ -149,13 +149,7 @@ class ProductMapping extends Component {
       });
 
 
-    axios({
-      method: 'get',
-      url: '/shopify/tracified/item-list',
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8',
-      },
-    })
+    axios.get('/shopify/tracified/item-list')
       .then(response_ => {
         this.setState({ tracedata: response_.data });
 

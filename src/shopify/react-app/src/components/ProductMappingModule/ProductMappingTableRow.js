@@ -93,7 +93,7 @@ onPermissionChange(permission, shopifyProductID){
 render() {
     // OLD CODE 
     // let traceList = this.props.tracelist.split(" ");
-    let traceList = this.props.tracelist;
+    let traceList = JSON.parse(this.props.tracelist);
     let traceOptions = [{
       value:"noItem",
       label:"No Item"
@@ -101,7 +101,7 @@ render() {
     let permission = false;
     let tracifiedItemId = "";
     
-    for (let i = 0; i <traceList.length; i=i+4) {
+    for (let i = 0; i <traceList.length; i++) {
       traceOptions.push({
         value:traceList[i].itemID, 
         label:traceList[i].itemName,
