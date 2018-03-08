@@ -31,7 +31,8 @@ class CollapaseCard extends Component {
         var markTracifiedStyle={
             paddingLeft: '15%',
             // width: '25%',
-            marginTop: '-4%'
+            marginTop: '-4%',
+            position:'fixed'
         }
         console.log("collapse products");
         let resourceThumbnails = [];
