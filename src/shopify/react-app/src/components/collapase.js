@@ -88,7 +88,8 @@ class CollapaseCard extends Component {
                 <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                 {/* </Collapse> */}
                     <Row>
-                        <Col sm="7">
+                        <Col sm="12">
+                        {/*<Col sm="7">*/}
                             <Row>
                                 <Col sm="4">
                                     <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
