@@ -51,17 +51,23 @@ class AccountVerify extends Component {
         })
             .then((response) => {
                 this.setState({
-                    isOpen: true,
                     alertHeading: "",
                     alertMessage: "Your Tracified Account was verified successfully ",
+                });
+                this.setState({
+                    isOpen: true,
                 });
                 window.location.replace('/shopify/main-view');
                 // window.location.href = response.redirect;
             }).catch((err) => {
+                console.log("err status for modal is : " + err.response.status);
+                console.log("err status for modal is : " + err.response.data.message);
                 this.setState({
-                    isOpen: true,
                     alertHeading: err.response.status,
                     alertMessage: err.response.data.message,
+                });
+                this.setState({
+                    isOpen: true,
                 });
                 console.log("error is : " + JSON.stringify(err.response));
             });
@@ -90,8 +96,8 @@ class AccountVerify extends Component {
                 </Card>
                 <AlertBox show={this.state.isOpen}
                     onClose={this.toggleAlert}
-                    heading={this.state.errorStatus}
-                    message={this.state.errorMessage}>
+                    heading={this.state.alertHeading}
+                    message={this.state.alertMessage}>
                 </AlertBox>
             </Page>
         );
