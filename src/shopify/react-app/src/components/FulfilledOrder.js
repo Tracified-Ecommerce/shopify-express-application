@@ -22,8 +22,8 @@ class FulfilledOrder extends Component {
 
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
-        let itemID = this.state.itemID;
-        console.log(itemID);
+      //  let itemID = this.state.itemID;
+        console.log(this.state.itemID);
 
         if (mapping.hasOwnProperty(productID) && mapping[productID][1]) {
             itemID = mapping[productID][0];
