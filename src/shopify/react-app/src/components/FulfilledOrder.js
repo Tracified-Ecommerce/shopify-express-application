@@ -22,7 +22,7 @@ class FulfilledOrder extends Component {
 
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
-        let itemID = "noTraceabilityItem";
+        let itemID = this.state.itemID;
         console.log(itemID);
 
         if (mapping.hasOwnProperty(productID) && mapping[productID][1]) {
@@ -34,7 +34,7 @@ class FulfilledOrder extends Component {
 
         });
 
-        if (this.state.itemID == "noTraceabilityItem") {
+        if (itemID == "noTraceabilityItem") {
             this.setState({
                 traceButtonDisable: true
             });
@@ -50,11 +50,16 @@ class FulfilledOrder extends Component {
 
 
     onTraceSelect() {
+        console.log("Button clicked , itemID is :" + this.state.itemID);
         if (this.state.itemID == "noTraceabilityItem") {
-            this.setState({ traceButtonDisable: true });
+            this.setState({ 
+                traceButtonDisable: true });
+                console.log("No traceability data added");
         }
         else {
-
+            console.log("Traceability data added");
+            this.setState({ 
+                traceButtonDisable: true });
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
                 .then(response => {
@@ -85,11 +90,7 @@ class FulfilledOrder extends Component {
 
     render() {
         const order = this.props.order;
-        var itemOptions = [{
-
-            value:"noItem",
-            label:"No Item"
-        }];
+        var itemOptions = [];
         order.lineItems.forEach(item => {
 
             itemOptions.push({
@@ -110,7 +111,7 @@ class FulfilledOrder extends Component {
                 <td>
                     <Select
                         options={itemOptions}
-                        placeholder="Select an Item to view"
+                        placeholder="Select an item to view"
                         id={order.order_number}
                         onChange={this.onSelectItem}
                         value={this.state.productID}
