@@ -17,19 +17,7 @@ class FulfilledOrder extends Component {
         };
         this.onSelectItem = this.onSelectItem.bind(this);
         this.onTraceSelect = this.onTraceSelect.bind(this);
-        // console.log(itemID); 
-        if (this.state.itemID == "noTraceabilityItem") {
-            this.setState({
-                traceButtonDisable: true
-            });
-            console.log(this.state.traceButtonDisable);
-        } else {
-            this.setState({
-                traceButtonDisable: false
-            });
-
-        }
-
+    
     }
 
     onSelectItem(productID, orderNumber) {
@@ -97,7 +85,11 @@ class FulfilledOrder extends Component {
 
     render() {
         const order = this.props.order;
-        var itemOptions = [];
+        var itemOptions = [{
+
+            value:"noItem",
+            label:"No Item"
+        }];
         order.lineItems.forEach(item => {
 
             itemOptions.push({
