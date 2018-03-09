@@ -94,7 +94,12 @@ class FulfilledOrder extends Component {
 
     render() {
         const order = this.props.order;
-        var itemOptions = [];
+       let itemOptions = [
+            {
+                value:"noItem",
+                label:"No Item"
+            }
+        ];
         order.lineItems.forEach(item => {
 
             itemOptions.push({
