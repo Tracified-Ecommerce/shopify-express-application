@@ -15,6 +15,7 @@ class FulfilledOrder extends Component {
             traceButtonDisable: true,
             itemID: this.props.mapping.hasOwnProperty(this.props.order.lineItems[0].product_id) ? (this.props.mapping[this.props.order.lineItems[0].product_id][1] ? this.props.mapping[this.props.order.lineItems[0].product_id][1] : "noTraceabilityItem") : "noTraceabilityItem"
         };
+        this.itemID="";
         this.onSelectItem = this.onSelectItem.bind(this);
         this.onTraceSelect = this.onTraceSelect.bind(this);
     
@@ -22,12 +23,13 @@ class FulfilledOrder extends Component {
 
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
-      //  let itemID = this.state.itemID;
+         this.itemID = this.state.itemID;
         console.log(this.state.itemID);
 
         if (mapping.hasOwnProperty(productID) && mapping[productID][1]) {
-            itemID = mapping[productID][0];
-        }
+
+              this.itemID = mapping[productID][0];
+             }
         this.setState({
             itemID: itemID,
             productID: productID,
