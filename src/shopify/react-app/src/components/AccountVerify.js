@@ -63,9 +63,11 @@ class AccountVerify extends Component {
                 console.log("err status for modal is : " + err.response.status);
                 console.log("err status for modal is : " + err.response.data.message);
                 this.setState({
-                    isOpen: true,
                     alertHeading: err.response.status,
                     alertMessage: err.response.data.message,
+                });
+                this.setState({
+                    isOpen: true,
                 });
                 console.log("error is : " + JSON.stringify(err.response));
             });
