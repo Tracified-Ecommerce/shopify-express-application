@@ -41,8 +41,10 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     const shopName = req.params.shopname;
     const product = req.params.productID;
+    console.log("SHOPNAME : " + shopName + " PRODUCT : " + product);
     ShopifyMapping.findOne({ shop_name: shopName }, (err: Error, mapping: ShopifyMappingModel) => {
         if (err) {
+            console.log("DB ERROR");
             return res.status(503).send("error with db connection. Plese try again in a while");
         }
         if (mapping) {
@@ -50,6 +52,7 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
             if (mapping.mapping.hasOwnProperty(product)) {
                 console.log("product has a mapping");
                 const TracifiedID = mapping.mapping[product][0];
+                console.log("TRACIFIED ID : " + TracifiedID);
                 Shop.findOne(
                     { name: shopName },
                     "name access_token tracified_token",
