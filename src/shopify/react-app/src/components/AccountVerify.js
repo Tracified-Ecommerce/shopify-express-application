@@ -51,9 +51,11 @@ class AccountVerify extends Component {
         })
             .then((response) => {
                 this.setState({
-                    isOpen: true,
                     alertHeading: "",
                     alertMessage: "Your Tracified Account was verified successfully ",
+                });
+                this.setState({
+                    isOpen: true,
                 });
                 window.location.replace('/shopify/main-view');
                 // window.location.href = response.redirect;
