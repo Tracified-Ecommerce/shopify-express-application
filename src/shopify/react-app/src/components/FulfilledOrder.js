@@ -17,7 +17,6 @@ class FulfilledOrder extends Component {
         };
         this.onSelectItem = this.onSelectItem.bind(this);
         this.onTraceSelect = this.onTraceSelect.bind(this);
-        console.log(this.state.itemID);
     
     }
 
@@ -51,12 +50,14 @@ class FulfilledOrder extends Component {
 
 
     onTraceSelect() {
+        console.log("Button clicked , itemID is :" + this.state.itemID);
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({ 
                 traceButtonDisable: true });
+                console.log("No traceability data added");
         }
         else {
- 
+            console.log("Traceability data added");
             this.setState({ 
                 traceButtonDisable: true });
             const url = '/shopify/shop-api/item/' + this.state.productID;
