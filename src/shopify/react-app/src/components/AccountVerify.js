@@ -94,8 +94,8 @@ class AccountVerify extends Component {
                 </Card>
                 <AlertBox show={this.state.isOpen}
                     onClose={this.toggleAlert}
-                    heading={this.state.errorStatus}
-                    message={this.state.errorMessage}>
+                    heading={this.state.alertHeading}
+                    message={this.state.alertMessage}>
                 </AlertBox>
             </Page>
         );
