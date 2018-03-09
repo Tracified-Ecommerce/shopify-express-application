@@ -97,7 +97,7 @@ class FulfilledOrder extends Component {
        let itemOptions = [
             {
                 value:"noItem",
-                label:"No Item"
+                label:"Select an item to view"
             }
         ];
         order.lineItems.forEach(item => {
@@ -107,6 +107,8 @@ class FulfilledOrder extends Component {
                 label: item.title
             });
         });
+        console.log("productId is : " + this.state.productID);
+        console.log("array is :" + itemOptions);
         const shopOrigin = "https://" + this.props.shopDomain;
         const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
         return (
@@ -123,7 +125,7 @@ class FulfilledOrder extends Component {
                        
                         id={order.order_number}
                         onChange={this.onSelectItem}
-                       // value={this.state.productID}
+                        value={this.state.productID}
                     />
                 </td>
                 <td>
