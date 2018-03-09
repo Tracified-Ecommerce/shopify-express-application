@@ -31,12 +31,12 @@ class FulfilledOrder extends Component {
               this.itemID = mapping[productID][0];
              }
         this.setState({
-            itemID: itemID,
+            itemID: this.itemID,
             productID: productID,
 
         });
 
-        if (itemID == "noTraceabilityItem") {
+        if (this.itemID == "noTraceabilityItem") {
             this.setState({
                 traceButtonDisable: true
             });
