@@ -17,6 +17,7 @@ class FulfilledOrder extends Component {
         };
         this.onSelectItem = this.onSelectItem.bind(this);
         this.onTraceSelect = this.onTraceSelect.bind(this);
+        console.log(this.state.itemID);
     
     }
 
@@ -86,7 +87,6 @@ class FulfilledOrder extends Component {
     render() {
         const order = this.props.order;
         var itemOptions = [{
-
             value:"noItem",
             label:"No Item"
         }];
@@ -110,7 +110,7 @@ class FulfilledOrder extends Component {
                 <td>
                     <Select
                         options={itemOptions}
-                        placeholder="Select an Item to view"
+                        placeholder="Select an item to view"
                         id={order.order_number}
                         onChange={this.onSelectItem}
                         value={this.state.productID}
