@@ -97,7 +97,7 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
                                 responseJSON.imageSliderComponents = imageSliderBuilder(imageSliderComponentArray);
                                 responseJSON.mapComponents = mapBuilder(mapComponentArray);
-                                // return res.send(responseJSON);
+                                return res.send(responseJSON);
                             }).catch((err) => {
                                 console.log("ERROR IN POS CALL : " + err.error);
                                 console.log("Status Code of error : " + err.statusCode);
