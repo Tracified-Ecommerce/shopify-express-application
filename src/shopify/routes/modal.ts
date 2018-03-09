@@ -60,6 +60,7 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                         if (exisitingShop && exisitingShop.tracified_token) {
                             const tracifiedToken = exisitingShop.tracified_token;
                             console.log("shop has a tracified token : " + exisitingShop.tracified_token);
+                            console.log("requesting modal data from backend....");
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
                                 let componentArray = [];
                                 let dimensionComponentArray = [];
@@ -102,7 +103,7 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                             });
 
                         } else {
-                            return res.send("no shop in database");
+                            return res.status(404).send("no shop in database");
                         }
                     });
             } else {
