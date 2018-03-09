@@ -29,7 +29,7 @@ class CollapaseCard extends Component {
 
     render() {
         var markTracifiedStyle={
-            marginLeft: '-2%',
+            // marginLeft: '-2%',
             // width: '25%',
             marginTop: '-4%',
             // position:'fixed'
@@ -86,7 +86,7 @@ class CollapaseCard extends Component {
             <div>
                 <Container>
                 {/* <Collapse isOpen={this.state.collapsed}> */}
-                <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
+                <Stack alignment="default" wrap={false}> {resourceThumbnails} </Stack>
                 {/* </Collapse> */}
                     <Row>
                         <Col sm="12">
@@ -96,9 +96,9 @@ class CollapaseCard extends Component {
                                 <Col sm="2">
                                     <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                                 </Col>
-                                <Col sm="6">
+                                <Col sm="7">
                                 </ Col>
-                                <Col sm="4" style={markTracifiedStyle}>
+                                <Col sm="3" style={markTracifiedStyle}>
                                     <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                                 </Col>
                                 {/*</Col>*/}

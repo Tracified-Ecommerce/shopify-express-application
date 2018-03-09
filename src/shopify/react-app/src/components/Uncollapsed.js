@@ -16,7 +16,7 @@ class Uncollapsed extends Component {
 
     render() {
         var qrcodeStyle={
-            marginLeft: '-2%',
+            // marginLeft: '-2%',
             marginTop: '-4%',
         }
 
