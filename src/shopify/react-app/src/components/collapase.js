@@ -89,7 +89,7 @@ class CollapaseCard extends Component {
                 <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                 {/* </Collapse> */}
                     <Row>
-                        <Col sm="12">
+                        {/*<Col sm="12">*/}
                         {/*<Col sm="7">*/}
                             {/*<Row>*/}
                                 {/*<Col sm="10">*/}
@@ -103,7 +103,7 @@ class CollapaseCard extends Component {
                                 </Col>
                                 {/*</Col>*/}
                             {/*</Row>*/}
-                        </Col>
+                        {/*</Col>*/}
                     </Row>
                 </Container>
                 <Collapse isOpen={!this.state.collapsed}>
