@@ -60,6 +60,8 @@ class AccountVerify extends Component {
                 window.location.replace('/shopify/main-view');
                 // window.location.href = response.redirect;
             }).catch((err) => {
+                console.log("err status for modal is : " + err.response.status);
+                console.log("err status for modal is : " + err.response.data.message);
                 this.setState({
                     isOpen: true,
                     alertHeading: err.response.status,
