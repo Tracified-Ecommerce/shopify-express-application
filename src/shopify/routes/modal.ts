@@ -41,8 +41,10 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     const shopName = req.params.shopname;
     const product = req.params.productID;
+    console.log("SHOPNAME : " + shopName + " PRODUCT : " + product);
     ShopifyMapping.findOne({ shop_name: shopName }, (err: Error, mapping: ShopifyMappingModel) => {
         if (err) {
+            console.log("DB ERROR");
             return res.status(503).send("error with db connection. Plese try again in a while");
         }
         if (mapping) {
@@ -50,6 +52,7 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
             if (mapping.mapping.hasOwnProperty(product)) {
                 console.log("product has a mapping");
                 const TracifiedID = mapping.mapping[product][0];
+                console.log("TRACIFIED ID : " + TracifiedID);
                 Shop.findOne(
                     { name: shopName },
                     "name access_token tracified_token",
@@ -60,6 +63,7 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                         if (exisitingShop && exisitingShop.tracified_token) {
                             const tracifiedToken = exisitingShop.tracified_token;
                             console.log("shop has a tracified token : " + exisitingShop.tracified_token);
+                            console.log("requesting modal data from backend....");
                             tracifiedServices.getModalData(TracifiedID, tracifiedToken).then((data) => {
                                 let componentArray = [];
                                 let dimensionComponentArray = [];
@@ -93,16 +97,16 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
                                 responseJSON.imageSliderComponents = imageSliderBuilder(imageSliderComponentArray);
                                 responseJSON.mapComponents = mapBuilder(mapComponentArray);
-                                // return res.send(responseJSON);
+                                return res.send(responseJSON);
                             }).catch((err) => {
                                 console.log("ERROR IN POS CALL : " + err.error);
                                 console.log("Status Code of error : " + err.statusCode);
-                                res.status(err.statusCode).send(err);
+                                return res.status(err.statusCode).send(err);
                                 // console.log("stringified obj : " + JSON.stringify(err)); // finding error structure
                             });
 
                         } else {
-                            return res.send("no shop in database");
+                            return res.status(404).send("no shop in database");
                         }
                     });
             } else {

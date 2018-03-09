@@ -152,6 +152,7 @@ export class Services implements IServices {
     }
 
     public getModalData(itemID: string, accessToken: string) {
+        console.log("getting modal data");
         return new Promise((resolve, reject) => {
             const options = {
                 headers: {
@@ -174,8 +175,7 @@ export class Services implements IServices {
                 console.log("reason options are :" + JSON.stringify(reason.options));
                 reject(reason);
 
-            })
-                .catch(errors.RequestError, (reason) => {
+            }).catch(errors.RequestError, (reason) => {
                     console.log("inside pos catch2  " + reason.cause);
                     reject(Error(reason.cause));
                     // The request failed due to technical reasons.

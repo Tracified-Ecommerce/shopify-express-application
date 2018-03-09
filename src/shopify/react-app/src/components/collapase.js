@@ -29,10 +29,10 @@ class CollapaseCard extends Component {
 
     render() {
         var markTracifiedStyle={
-            paddingLeft: '15%',
+            marginLeft: '-2%',
             // width: '25%',
             marginTop: '-4%',
-            position:'fixed'
+            // position:'fixed'
         }
         console.log("collapse products");
         let resourceThumbnails = [];
@@ -89,19 +89,21 @@ class CollapaseCard extends Component {
                 <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                 {/* </Collapse> */}
                     <Row>
-                        <Col sm="12">
+                        {/*<Col sm="12">*/}
                         {/*<Col sm="7">*/}
-                            <Row>
-                                <Col sm="4">
+                            {/*<Row>*/}
+                                {/*<Col sm="10">*/}
+                                <Col sm="2">
                                     <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                                 </Col>
-                                <Col sm="2">
+                                <Col sm="6">
                                 </ Col>
-                                <Col sm="6" style={markTracifiedStyle}>
+                                <Col sm="4" style={markTracifiedStyle}>
                                     <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                                 </Col>
-                            </Row>
-                        </Col>
+                                {/*</Col>*/}
+                            {/*</Row>*/}
+                        {/*</Col>*/}
                     </Row>
                 </Container>
                 <Collapse isOpen={!this.state.collapsed}>
