@@ -15,6 +15,10 @@ class Uncollapsed extends Component {
     }
 
     render() {
+        var qrcodeStyle={
+            marginLeft: '-2%',
+            marginTop: '-4%',
+        }
 
         return (
             <Card key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
@@ -30,7 +34,7 @@ class Uncollapsed extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm="12">
+                    <Col sm="12" style={qrcodeStyle}>
                         <CollapaseCards itemArray={this.props.order.lineItems} products={this.props.productsProp} orderID={this.props.order.id
                         } />
                     </Col>
