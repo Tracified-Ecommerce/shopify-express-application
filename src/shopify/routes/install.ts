@@ -1,7 +1,10 @@
 /* tslint:disable:no-shadowed-variable max-line-length no-var-requires */
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
-import * as Assets from "../assets/shopifyAssets";
+import * as MainAssets from "../assets/shopifyAssets";
+import * as DimensionAssets from "../assets/shopifyDimensionAssets";
+import * as MapAssets from "../assets/shopifyMapAssets";
+import * as SliderAssets from "../assets/shopifySliderAssets";
 import * as Snippets from "../assets/shopifySnippets";
 import { Helper, IHelper } from "../helpers/index";
 import { Shop, ShopModel } from "../models/Shop";
@@ -103,42 +106,64 @@ router.get("/callback", (req: Request, res: Response) => {
          */
         const assetUploadURL = "/admin/themes/" + themeId + "/assets.json";
 
-        const snippetUploadPayload = {
+        const mainSnippetUploadPayload = {
           asset: {
             attachment: Snippets.tracifiedDotLiquid,
             key: "snippets\/tracified.liquid",
           },
         };
-        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, snippetUploadPayload, (parsedBody: any) => {
-          console.log("snippet uploaded");
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, mainSnippetUploadPayload, (parsedBody: any) => {
+          console.log("main snippet uploaded");
+          console.log(parsedBody);
+        });
+
+        const posSnippetUploadPayload = {
+          asset: {
+            attachment: Snippets.tracifiedPosDotLiquid,
+            key: "snippets\/tracified-pos.liquid",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, posSnippetUploadPayload, (parsedBody: any) => {
+          console.log("pos snippet uploaded");
+          console.log(parsedBody);
+        });
+
+        const sliderSnippetUploadPayload = {
+          asset: {
+            attachment: Snippets.ImageSliderDotLiquid,
+            key: "snippets\/tracified-imageSlider.liquid",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, sliderSnippetUploadPayload, (parsedBody: any) => {
+          console.log("slider snippet uploaded");
           console.log(parsedBody);
         });
 
         const jsUploadPayload = {
           asset: {
-            attachment: Assets.tracifiedDotJs,
+            attachment: MainAssets.tracifiedDotJs,
             key: "assets\/tracified.js",
           },
         };
         shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, jsUploadPayload, (parsedBody: any) => {
-          console.log("js uploaded");
+          console.log("tracifiedjs uploaded");
           console.log(parsedBody);
         });
 
-        const cssUploadPayload = {
+        const MainCssUploadPayload = {
           asset: {
-            attachment: Assets.testDotCss,
+            attachment: MainAssets.testDotCss,
             key: "assets\/test.css",
           },
         };
-        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, cssUploadPayload, (parsedBody: any) => {
-          console.log("css uploaded");
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, MainCssUploadPayload, (parsedBody: any) => {
+          console.log("test.css uploaded");
           console.log(parsedBody);
         });
 
         const bootstrapcssUploadPayload = {
           asset: {
-            attachment: Assets.bootstrapCss,
+            attachment: MainAssets.bootstrapCss,
             key: "assets\/tracified_bootstrap.min.css",
           },
         };
@@ -149,7 +174,7 @@ router.get("/callback", (req: Request, res: Response) => {
 
         const bootstrapjsUploadPayload = {
           asset: {
-            attachment: Assets.bootstrapJs,
+            attachment: MainAssets.bootstrapJs,
             key: "assets\/tracified_bootstrap.min.js",
           },
         };
@@ -160,12 +185,133 @@ router.get("/callback", (req: Request, res: Response) => {
 
         const jqueryUploadPayload = {
           asset: {
-            attachment: Assets.tracifiedJqueryDotJs,
+            attachment: MainAssets.tracifiedJqueryDotJs,
             key: "assets\/tracified_jquery.min.js",
           },
         };
         shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, jqueryUploadPayload, (parsedBody: any) => {
-          console.log("jquery uploaded");
+          console.log("tracified_jquery.min.js uploaded");
+          console.log(parsedBody);
+        });
+
+        const posCssUploadPayload = {
+          asset: {
+            attachment: DimensionAssets.tracifiedPosSectionCss,
+            key: "assets\/tracified-POS-section.css",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, posCssUploadPayload, (parsedBody: any) => {
+          console.log("tracified-POS-section.css uploaded");
+          console.log(parsedBody);
+        });
+
+        const d3CollectionUploadPayload = {
+          asset: {
+            attachment: DimensionAssets.d3CollectionMinJs,
+            key: "assets\/d3-collection.v1.min.js",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, d3CollectionUploadPayload, (parsedBody: any) => {
+          console.log("d3-collection.v1.min.js uploaded");
+          console.log(parsedBody);
+        });
+
+        const d3DispatchUploadPayload = {
+          asset: {
+            attachment: DimensionAssets.d3DispatchMinJs,
+            key: "assets\/d3-dispatch.v1.min.js",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, d3DispatchUploadPayload, (parsedBody: any) => {
+          console.log("d3-dispatch.v1.min.js uploaded");
+          console.log(parsedBody);
+        });
+
+        const d3DsvUploadPayload = {
+          asset: {
+            attachment: DimensionAssets.d3DsvMinJs,
+            key: "assets\/d3-dsv.v1.min.js",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, d3DsvUploadPayload, (parsedBody: any) => {
+          console.log("d3-dsv.v1.min.js uploaded");
+          console.log(parsedBody);
+        });
+
+        const d3RequestUploadPayload = {
+          asset: {
+            attachment: DimensionAssets.d3RequestMinJs,
+            key: "assets\/d3-request.v1.min.js",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, d3RequestUploadPayload, (parsedBody: any) => {
+          console.log("d3-request.v1.min.js uploaded");
+          console.log(parsedBody);
+        });
+
+        const leafletCssUploadPayload = {
+          asset: {
+            attachment: MapAssets.tracifiedLeafletCss,
+            key: "assets\/tracified_leaflet.css",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, leafletCssUploadPayload, (parsedBody: any) => {
+          console.log("tracified_leaflet.css uploaded");
+          console.log(parsedBody);
+        });
+
+        const tabCssUploadPayload = {
+          asset: {
+            attachment: MapAssets.tracifiedTabCss,
+            key: "assets\/tracified_tab.css",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, tabCssUploadPayload, (parsedBody: any) => {
+          console.log("tracified_tab.css uploaded");
+          console.log(parsedBody);
+        });
+
+        const LeafletJsUploadPayload = {
+          asset: {
+            attachment: MapAssets.tracifiedLeafletsJs,
+            key: "assets\/tracified_leaflets.js",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, LeafletJsUploadPayload, (parsedBody: any) => {
+          console.log("tracified_leaflets.js uploaded");
+          console.log(parsedBody);
+        });
+
+        const TabJsUploadPayload = {
+          asset: {
+            attachment: MapAssets.tracifiedLeafletsJs,
+            key: "assets\/tracified_tab.js",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, TabJsUploadPayload, (parsedBody: any) => {
+          console.log("tracified_tab.js uploaded");
+          console.log(parsedBody);
+        });
+
+        const SliderCssUploadPayload = {
+          asset: {
+            attachment: SliderAssets.tracifiedImageSliderCss,
+            key: "assets\/tracified-imageSlider.css",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, SliderCssUploadPayload, (parsedBody: any) => {
+          console.log("tracified-imageSlider.css uploaded");
+          console.log(parsedBody);
+        });
+
+        const mediaQueryCssUploadPayload = {
+          asset: {
+            attachment: SliderAssets.tracifiedMediaQueriesCss,
+            key: "assets\/tracified-mediaQueries.css",
+          },
+        };
+        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, mediaQueryCssUploadPayload, (parsedBody: any) => {
+          console.log("tracified-mediaQueries.css uploaded");
           console.log(parsedBody);
         });
 

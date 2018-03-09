@@ -86,7 +86,7 @@ class CollapaseCard extends Component {
             <div>
                 <Container>
                 {/* <Collapse isOpen={this.state.collapsed}> */}
-                <Stack alignment="default" wrap={false}> {resourceThumbnails} </Stack>
+                <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                 {/* </Collapse> */}
                     <Row>
                         <Col sm="12">
