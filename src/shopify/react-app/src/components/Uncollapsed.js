@@ -34,7 +34,7 @@ class Uncollapsed extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm="12" style={qrcodeStyle}>
+                    <Col sm="10" style={qrcodeStyle}>
                         <CollapaseCards itemArray={this.props.order.lineItems} products={this.props.productsProp} orderID={this.props.order.id
                         } />
                     </Col>
