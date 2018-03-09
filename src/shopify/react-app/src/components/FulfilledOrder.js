@@ -15,28 +15,28 @@ class FulfilledOrder extends Component {
             traceButtonDisable: true,
             itemID: this.props.mapping.hasOwnProperty(this.props.order.lineItems[0].product_id) ? (this.props.mapping[this.props.order.lineItems[0].product_id][1] ? this.props.mapping[this.props.order.lineItems[0].product_id][1] : "noTraceabilityItem") : "noTraceabilityItem"
         };
-        this.itemID="";
+        this.itemID = "";
         this.onSelectItem = this.onSelectItem.bind(this);
         this.onTraceSelect = this.onTraceSelect.bind(this);
-    
+
     }
 
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
-         this.itemID = this.state.itemID;
+        let tempItemID = "noTraceabilityItem";
         console.log(this.state.itemID);
 
         if (mapping.hasOwnProperty(productID) && mapping[productID][1]) {
-
-              this.itemID = mapping[productID][0];
-             }
+            // if the item exists in the mapping reasiign the temporary itemID
+            tempItemID = mapping[productID][0];
+        }
         this.setState({
-            itemID: this.itemID,
+            itemID: tempItemID,
             productID: productID,
 
         });
 
-        if (this.itemID == "noTraceabilityItem") {
+        if (tempItemID == "noTraceabilityItem") { // if the item ID was not reassigned (i.e: if the item is not available in mapping)
             this.setState({
                 traceButtonDisable: true
             });
@@ -54,14 +54,16 @@ class FulfilledOrder extends Component {
     onTraceSelect() {
         console.log("Button clicked , itemID is :" + this.state.itemID);
         if (this.state.itemID == "noTraceabilityItem") {
-            this.setState({ 
-                traceButtonDisable: true });
-                console.log("No traceability data added");
+            this.setState({
+                traceButtonDisable: true
+            });
+            console.log("No traceability data added");
         }
         else {
             console.log("Traceability data added");
-            this.setState({ 
-                traceButtonDisable: true });
+            this.setState({
+                traceButtonDisable: true
+            });
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
                 .then(response => {
