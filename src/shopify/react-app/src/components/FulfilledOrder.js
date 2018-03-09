@@ -52,10 +52,13 @@ class FulfilledOrder extends Component {
 
     onTraceSelect() {
         if (this.state.itemID == "noTraceabilityItem") {
-            this.setState({ traceButtonDisable: true });
+            this.setState({ 
+                traceButtonDisable: true });
         }
         else {
-
+ 
+            this.setState({ 
+                traceButtonDisable: true });
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
                 .then(response => {
@@ -86,10 +89,7 @@ class FulfilledOrder extends Component {
 
     render() {
         const order = this.props.order;
-        var itemOptions = [{
-            value:"noItem",
-            label:"No Item"
-        }];
+        var itemOptions = [];
         order.lineItems.forEach(item => {
 
             itemOptions.push({
