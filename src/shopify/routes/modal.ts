@@ -106,7 +106,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             }).catch((err) => {
                                 console.log("ERROR IN POS CALL : " + err.error);
                                 console.log("Status Code of error : " + err.statusCode);
-                                res.status(err.statusCode).send(err.error);
+                                res.status(err.statusCode).send(err);
                                 // console.log("stringified obj : " + JSON.stringify(err)); // finding error structure
                             });
 

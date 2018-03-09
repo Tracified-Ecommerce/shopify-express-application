@@ -50,12 +50,12 @@ export class Services implements IServices {
                     reject(reason.response);
                 }
             })
-            .catch(errors.RequestError, (reason) => {
-                console.log("inside catch2  " + reason.cause);
-                reject(reason);
-                // The request failed due to technical reasons.
-                // reason.cause is the Error object Request would pass into a callback.
-            });
+                .catch(errors.RequestError, (reason) => {
+                    console.log("inside catch2  " + reason.cause);
+                    reject(reason);
+                    // The request failed due to technical reasons.
+                    // reason.cause is the Error object Request would pass into a callback.
+                });
         });
     }
 
@@ -83,11 +83,11 @@ export class Services implements IServices {
                     reject(Error("invalid token"));
                 }
             })
-            .catch(errors.RequestError, (reason) => {
-                console.log("inside catch2  " + reason.cause);
-                // The request failed due to technical reasons.
-                // reason.cause is the Error object Request would pass into a callback.
-            });
+                .catch(errors.RequestError, (reason) => {
+                    console.log("inside catch2  " + reason.cause);
+                    // The request failed due to technical reasons.
+                    // reason.cause is the Error object Request would pass into a callback.
+                });
         });
     }
 
@@ -98,8 +98,8 @@ export class Services implements IServices {
                     Authorization: "Bearer " + accessToken,
                 },
                 method: "GET",
-               // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
-              // uri: "http://www.mocky.io/v2/5a7688f02e000030006ab297",
+                // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
+                // uri: "http://www.mocky.io/v2/5a7688f02e000030006ab297",
                 // tslint:disable-next-line:max-line-length
                 uri: "https://staging.tracified.com/api/v1/traceabilityProfiles/ecommerce/admin/" + itemID + "/" + orderID,
 
@@ -112,7 +112,7 @@ export class Services implements IServices {
                 resolve(data);
             }).catch((error) => {
                 console.log(error);
-              });
+            });
         });
     }
 
@@ -139,17 +139,15 @@ export class Services implements IServices {
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
                 console.log("reason options are :" + JSON.stringify(reason.options));
+                reject(reason);
 
-                if (reason.statusCode) {
-                    reject(reason);
-                }
             })
-            .catch(errors.RequestError, (reason) => {
-                console.log("inside pos catch2  " + reason.cause);
-                reject(Error(reason.cause));
-                // The request failed due to technical reasons.
-                // reason.cause is the Error object Request would pass into a callback.
-            });
+                .catch(errors.RequestError, (reason) => {
+                    console.log("inside pos catch2  " + reason.cause);
+                    reject(Error(reason.cause));
+                    // The request failed due to technical reasons.
+                    // reason.cause is the Error object Request would pass into a callback.
+                });
         });
     }
 
@@ -171,7 +169,7 @@ export class Services implements IServices {
                 resolve(data);
             }).catch((error) => {
                 console.log(error);
-              });
+            });
         });
     }
 
@@ -190,7 +188,7 @@ export class Services implements IServices {
                 resolve(data);
             }).catch((error) => {
                 console.log(error);
-              });
+            });
         });
     }
 }
