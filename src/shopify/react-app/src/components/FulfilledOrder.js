@@ -123,7 +123,7 @@ class FulfilledOrder extends Component {
                         placeholder="Select an item to view"
                         id={order.order_number}
                         onChange={this.onSelectItem}
-                        value={this.state.productID}
+                       // value={this.state.productID}
                     />
                 </td>
                 <td>
