@@ -125,7 +125,7 @@ class FulfilledOrder extends Component {
                        
                         id={order.order_number}
                         onChange={this.onSelectItem}
-                        value={this.state.productID}
+                       // value={this.state.productID}
                     />
                 </td>
                 <td>
