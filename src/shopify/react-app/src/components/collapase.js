@@ -29,7 +29,7 @@ class CollapaseCard extends Component {
 
     render() {
         var markTracifiedStyle={
-            // paddingLeft: '15%',
+            marginLeft: '-2%',
             // width: '25%',
             marginTop: '-4%',
             // position:'fixed'
