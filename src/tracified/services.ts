@@ -152,6 +152,7 @@ export class Services implements IServices {
     }
 
     public getModalData(itemID: string, accessToken: string) {
+        console.log("getting modal data");
         return new Promise((resolve, reject) => {
             const options = {
                 headers: {
