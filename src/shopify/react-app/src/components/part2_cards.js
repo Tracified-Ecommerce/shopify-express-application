@@ -155,6 +155,13 @@ class Part2Cards extends Component {
                         created_at: order.created_at.substring(0, 10)
                     });
                 });
+                
+                if(customer1.indexOf(this.state.search) == -1 || customer2.indexOf(this.state.search) == -1 || customer.indexOf(this.state.search) == -1){
+                    alert("No serach result");
+                        <p>
+                            No search result found!
+                        </p>
+                }
 
             }
 
