@@ -178,8 +178,12 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
         dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:" + dimension.descriptionBackColor + ";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
 
         for (const x of dimension.data) {
-            // tslint:disable-next-line:max-line-length
-            dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + x.label + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
+             if(x.value==null){
+                // document.getElementById()=""
+                x.label=null;
+                // tslint:disable-next-line:max-line-length
+                dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + x.label + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
+             }
         }
         dimensionComponents.htmltxt += "</table></div>";
     }
