@@ -155,8 +155,11 @@ class Part2Cards extends Component {
                         created_at: order.created_at.substring(0, 10)
                     });
                 });
+                console.log(orderArray);
                 
-                if(customer1.indexOf(this.state.search) == -1 || customer2.indexOf(this.state.search) == -1 || customer.indexOf(this.state.search) == -1){
+                if( !Array.isArray(orderArray) || !orderArray.length) 
+                    // array does not exist, is not an array, or is empty
+                  {
                     alert("No serach result");
                         <p>
                             No search result found!
