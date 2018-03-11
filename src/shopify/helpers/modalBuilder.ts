@@ -179,7 +179,7 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
 
         for (let x of dimension.data) {            
              var contentTitle=x.label;
-             console.log(contentTitle);
+             console.log("test123")
             //  if(x.value==null){
                 // x.label=null;
                 // tslint:disable-next-line:max-line-length
