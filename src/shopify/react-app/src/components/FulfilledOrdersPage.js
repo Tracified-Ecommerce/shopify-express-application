@@ -253,9 +253,7 @@ class FulfilledOrdersPage extends Component {
 
                             {
                                 
-                                ( !Array.isArray(orderArray) || !orderArray.length)   ? (
-                
-                                    <ErrorMsgSearch errorMessage={this.state.errorText}/> ) : (
+                               
                                      orderArray.map((order, index) => {
                                      
                                          return (
@@ -264,7 +262,7 @@ class FulfilledOrdersPage extends Component {
                     
                                          )
                     
-                                  } )
+                                  } 
                                     
                                  )   
                                 
@@ -283,6 +281,25 @@ class FulfilledOrdersPage extends Component {
                             
                             
                             }
+                            <tfoot>
+                            {
+                                
+                                ( !Array.isArray(orderArray) || !orderArray.length)   ? (
+                
+                                    <ErrorMsgSearch errorMessage={this.state.errorText}/> ) : (
+                                     orderArray.map((order, index) => {
+                                     
+                                         return (
+                                             <FulfilledOrder key={order.order_number} order={order} />
+                                             
+                    
+                                         )
+                    
+                                  } )
+                                    
+                                 )   
+                                }
+                            </tfoot>
 
                         </tbody>
                     </table>
