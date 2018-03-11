@@ -157,14 +157,6 @@ class Part2Cards extends Component {
                 });
                 console.log(orderArray);
                 
-                if( !Array.isArray(orderArray) || !orderArray.length) 
-                    // array does not exist, is not an array, or is empty
-                  {
-                    alert("No serach result");
-                        <p>
-                            No search result found!
-                        </p>
-                }
 
             }
 

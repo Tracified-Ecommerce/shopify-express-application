@@ -5,7 +5,7 @@ import { Container, Row, Col} from 'reactstrap';
 import FulfilledOrder from './FulfilledOrder';
 import Loading from './Loading';
 import SearchInput, {createFilter} from 'react-search-input'
-import ErrorMsg from './errorMsgSearch';
+import ErrorMsgSearch from './errorMsgSearch';
 
 const KEYS_TO_FILTER = ['order.order_number']
 const QRCode = require('qrcode.react');

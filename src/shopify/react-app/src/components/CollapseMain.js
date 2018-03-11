@@ -74,7 +74,7 @@ class CollapseMain extends Component {
                         <Col sm="12">
                             <Row style={{padding: 20}}>
                                 <Col sm="3" style={{paddingBottom: 20}}>
-                                    <Button primary onClick={this.fulfillOrder}>Mark as Fulfilled</Button>
+                                    <Button primary onClick={this.fulfillOrder}>Mark as Tracified</Button>
                                 </Col>
                                 <Col sm="7">
                                 </Col >
