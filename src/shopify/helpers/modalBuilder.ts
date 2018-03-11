@@ -179,7 +179,7 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
 
         for (const x of dimension.data) {
             //  if(x.value==null){
-                var contentTitle=x.label;
+                var contentTitle=dimension.data(x).label;
                 // x.label=null;
                 // tslint:disable-next-line:max-line-length
                 dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + contentTitle + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
