@@ -177,7 +177,7 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
         // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:" + dimension.descriptionBackColor + ";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
 
-        for (let x of dimension.data) {
+        for (const x of dimension.data) {
             //  if(x.value==null){
                 var contentTitle=x.label;
                 // x.label=null;
