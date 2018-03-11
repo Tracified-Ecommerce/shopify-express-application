@@ -17,8 +17,6 @@ class Uncollapsed extends Component {
     render() {
       
         return (
-
-            
             <Card key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
                 <Row>
                     <Col sm="10">                                    
