@@ -5,6 +5,8 @@ import { Container, Row, Col} from 'reactstrap';
 import FulfilledOrder from './FulfilledOrder';
 import Loading from './Loading';
 import SearchInput, {createFilter} from 'react-search-input'
+import ErrorMsg from './errorMsgSearch';
+
 const KEYS_TO_FILTER = ['order.order_number']
 const QRCode = require('qrcode.react');
 
@@ -249,7 +251,25 @@ class FulfilledOrdersPage extends Component {
                         </thead>
                         <tbody>
 
-                            {orderArray.map((order, index) => {
+                            {
+                                
+                                ( !Array.isArray(orderArray) || !orderArray.length)   ? (
+                
+                                    <ErrorMsgSearch errorMessage={this.state.errorText}/> ) : (
+                                     orderArray.map((order, index) => {
+                                     
+                                         return (
+                                             <FulfilledOrder key={order.order_number} order={order} />
+                                             
+                    
+                                         )
+                    
+                                  } )
+                                    
+                                 )   
+                                
+                            
+                                /* {orderArray.map((order, index) => {
 
                                 return (
                                     <FulfilledOrder
@@ -259,7 +279,10 @@ class FulfilledOrdersPage extends Component {
                                         mapping={this.state.mapping}
                                     />
                                 )
-                            })}
+                            })} */
+                            
+                            
+                            }
 
                         </tbody>
                     </table>
