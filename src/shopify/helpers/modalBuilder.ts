@@ -179,13 +179,14 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
 
         for (let x of dimension.data) {            
              var contentTitle=x.label;
-             if(x.value==null){
-                x.label=null;
+             console.log(contentTitle);
+            //  if(x.value==null){
+                // x.label=null;
                 // tslint:disable-next-line:max-line-length
                 dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + contentTitle + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
                 
              }
-            x++;
+            // x++;
         }
         dimensionComponents.htmltxt += "</table></div>";
     }
