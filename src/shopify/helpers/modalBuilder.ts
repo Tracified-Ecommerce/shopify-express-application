@@ -177,13 +177,15 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
         // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:" + dimension.descriptionBackColor + ";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
 
-        for (const x of dimension.data) {
-            //  if(x.value==null){
-                var contentTitle=x.label;
-                // x.label=null;
+        for (let x of dimension.data) {            
+             var contentTitle=x.label;
+             if(x.value==null){
+                x.label=null;
                 // tslint:disable-next-line:max-line-length
                 dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + contentTitle + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
-            //  }
+                
+             }
+            x++;
         }
         dimensionComponents.htmltxt += "</table></div>";
     }
