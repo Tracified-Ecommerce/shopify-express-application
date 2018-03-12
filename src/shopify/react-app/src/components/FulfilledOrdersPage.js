@@ -290,14 +290,14 @@ class FulfilledOrdersPage extends Component {
                             
                             }
                             <tfoot>
-                            {/* {
+                             {
                                 
                                 ( !Array.isArray(orderArray) || !orderArray.length)   ? (
                 
                                     <ErrorMsgSearch errorMessage={this.state.errorText}/> ) : (
                                         "True"
                                     )
-                                } */}
+                                } 
                             </tfoot>
 
                         </tbody>
