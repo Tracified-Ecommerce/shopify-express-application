@@ -254,7 +254,7 @@ class Part2Cards extends Component {
             }
 
             return (
-                <Page title="Untracified Orders" separator>
+                <Page title="UnTracified Orders" separator>
                     <Stack
                         distribution="trailing"
                     >

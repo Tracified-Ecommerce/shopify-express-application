@@ -26,7 +26,7 @@ class SubTabs extends Component {
     const tabs = [
       {
         id: 'tab1',
-        title: 'Untracified Orders',
+        title: 'UnTracified Orders',
         panelID: 'panel2',
       },
       {
