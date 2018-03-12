@@ -37,7 +37,7 @@ class CollapaseCard extends Component {
             this.setState({
                 isOpen: true,
             });
-            this.props.resetOrders();
+            this.props.reset();
         // }).catch((err) => {
         //         console.log(err);
         //     });
