@@ -27,9 +27,9 @@ class CollapaseCard extends Component {
     }
 
     fulfillOrder(){
-        const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
-        axios.get(url)
-        .then(response => {
+        // const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
+        // axios.get(url)
+        // .then(response => {
             this.setState({
                 alertHeading: "",
                 alertMessage: "Tracified details added successfully ",
@@ -38,9 +38,9 @@ class CollapaseCard extends Component {
                 isOpen: true,
             });
             this.props.resetOrders();
-        }).catch((err) => {
-                console.log(err);
-            });
+        // }).catch((err) => {
+        //         console.log(err);
+        //     });
     }
 
     render() {
@@ -51,7 +51,7 @@ class CollapaseCard extends Component {
             // position:'fixed'
         }
         console.log("collapse products");
-        console.log("type of reset order() : " + typeof this.props.resetOrders)
+        console.log("type of reset order() : " +    typeof this.props.resetOrders)
         let resourceThumbnails = [];
         let resourceList = this.props.itemArray.map((resItem, index) => {
             let productImage = "no/image";

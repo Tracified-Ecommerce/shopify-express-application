@@ -24,7 +24,6 @@ class Part2Cards extends Component {
             errorText: "No Result Found"
         };
         this.toggleCardType = this.toggleCardType.bind(this);
-        this.resetOrders = this.resetOrders.bind(this);
     }
 
     handleClick = (index, isClosed) => {
@@ -69,6 +68,21 @@ class Part2Cards extends Component {
             }).catch(function(error){
                 console.log(error);
             });
+    }
+
+    reset = () => {
+        this.setState({
+            isOrderListLoading: true
+        });
+        axios.get('/shopify/shop-api/orders')
+            .then(response => {
+                this.setState({
+                    orders: response.data.orders,
+                    isOrderListLoading: false
+                });
+            }).catch((error) => {
+                console.log(error);
+              });
     }
 
     resetOrders() {
@@ -334,6 +348,7 @@ class Part2Cards extends Component {
                                     resetOrders={this.resetOrders}
                                     qrVal={qrValue}
                                     title={title}
+                                    reset={this.reset}
                                 />
 
                             );
