@@ -36,6 +36,11 @@ class Uncollapsed extends Component {
                         <CollapaseCards itemArray={this.props.order.lineItems} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
                     </Col>
                 </Row>
+                <AlertBox show={this.state.isOpen}
+                    onClose={this.toggleAlert}
+                    heading={this.state.alertHeading}
+                    message={this.state.alertMessage}>
+                </AlertBox>
             </Card>
         );
     }
