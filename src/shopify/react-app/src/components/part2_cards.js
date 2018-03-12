@@ -5,6 +5,8 @@ import { Thumbnail, Card, Page, List, RadioButton, Button, Stack } from '@shopif
 import Loading from './Loading';
 import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
+import ErrorMsgSearch from './errorMsgSearch';
+
 
 class Part2Cards extends Component {
     constructor() {
@@ -18,7 +20,8 @@ class Part2Cards extends Component {
             search: '',
             isExpanded: true,
             isCheckedCus: false,
-            isCheckedOrd: true
+            isCheckedOrd: true,
+            errorText: "No Result Found"
         };
         this.toggleCardType = this.toggleCardType.bind(this);
         this.resetOrders = this.resetOrders.bind(this);
@@ -309,9 +312,18 @@ class Part2Cards extends Component {
 
                         </Stack>
                     </div>
-                    {orderArray.map((order, index) => {
+
+
+                    {
+                         ( !Array.isArray(orderArray) || !orderArray.length)   ? (
+                
+                            <ErrorMsgSearch errorMessage={this.state.errorText}/> ) :(
+                        
+                        orderArray.map((order, index) => {
                         const qrValue = order.order_number.toString();
                         const title = "Order ID: " + order.order_number;
+
+
 
                         if (this.state.isExpanded) {
                             return (
@@ -341,7 +353,10 @@ class Part2Cards extends Component {
                             );
                         }
 
-                    })}
+                    })
+                    
+                       )
+                    }
 
                 </Page>
             );
