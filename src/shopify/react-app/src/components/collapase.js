@@ -25,36 +25,35 @@ class CollapaseCard extends Component {
             isOpen: !this.state.isOpen
         });
 
-        if(this.props.isOpen) { 
-            this.props.resetOrders(); 
-        }
+        console.log("orders being reset");
+        this.props.resetOrders();
     }
 
-    fulfillOrder(){
+    fulfillOrder() {
         const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
         axios.get(url)
-        .then(response => {
-            this.setState({
-                alertHeading: "",
-                alertMessage: "Tracified details added successfully ",
-            });
-            this.setState({
-                isOpen: true,
-            });
-        }).catch((err) => {
+            .then(response => {
+                this.setState({
+                    alertHeading: "",
+                    alertMessage: "Tracified details added successfully ",
+                });
+                this.setState({
+                    isOpen: true,
+                });
+            }).catch((err) => {
                 console.log(err);
             });
     }
 
     render() {
-        var markTracifiedStyle={
+        var markTracifiedStyle = {
             marginLeft: '-10%',
             // width: '25%',
             marginTop: '-4%',
             // position:'fixed'
         }
         console.log("collapse products");
-        console.log("type of reset order() : " +    typeof this.props.resetOrders)
+        console.log("type of reset order() : " + typeof this.props.resetOrders)
         let resourceThumbnails = [];
         let resourceList = this.props.itemArray.map((resItem, index) => {
             let productImage = "no/image";
@@ -66,19 +65,19 @@ class CollapaseCard extends Component {
 
                 if (!isUndefined(product[0])) {
                     productImage = product[0].images[0].src;
-                    if(resourceThumbnails.length < 5){
-                        resourceThumbnails.push(                        
+                    if (resourceThumbnails.length < 5) {
+                        resourceThumbnails.push(
                             <Thumbnail
-                            key={resourceThumbnails.length}
-                            source={product[0].images[0].src}
-                            alt={" Image"}
-                        />
+                                key={resourceThumbnails.length}
+                                source={product[0].images[0].src}
+                                alt={" Image"}
+                            />
                         );
                     }
                     else if (resourceThumbnails.length == 5) {
-                        resourceThumbnails.push(<p key={resourceThumbnails.length}><b>. . .</b></p>);                            
+                        resourceThumbnails.push(<p key={resourceThumbnails.length}><b>. . .</b></p>);
                     }
-                    
+
                 }
             }
 
@@ -97,31 +96,31 @@ class CollapaseCard extends Component {
                 resource
             );
 
-            
+
         });
 
-       
+
 
         return (
             <div>
                 <Container>
-                {/* <Collapse isOpen={this.state.collapsed}> */}
-                <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
-                {/* </Collapse> */}
+                    {/* <Collapse isOpen={this.state.collapsed}> */}
+                    <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
+                    {/* </Collapse> */}
                     <Row>
                         <Col sm="12">
-                        {/*<Col sm="7">*/}
+                            {/*<Col sm="7">*/}
                             {/*<Row>*/}
-                                {/*<Col sm="10">*/}
-                                <Col sm="3">
-                                    <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
-                                </Col>
-                                <Col sm="6">
-                                </ Col>
-                                <Col sm="3" style={markTracifiedStyle}>
-                                    <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
-                                </Col>
-                                {/*</Col>*/}
+                            {/*<Col sm="10">*/}
+                            <Col sm="3">
+                                <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
+                            </Col>
+                            <Col sm="6">
+                            </ Col>
+                            <Col sm="3" style={markTracifiedStyle}>
+                                <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
+                            </Col>
+                            {/*</Col>*/}
                             {/*</Row>*/}
                         </Col>
                     </Row>
