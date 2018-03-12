@@ -75,8 +75,8 @@ function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponen
 
                 componentJSON.htmltxt +=
                     // tslint:disable-next-line:max-line-length
-                    "<div class=\"xoutofy-top\">" + component.data + "</div><div class=\"xoutofy-middle\">out of " + otpCount + " items</div>"
-                    + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "have " + "</span>" +
+                    "<div class=\"xoutofy-top\">" + component.data + "</div><div class=\"xoutofy-middle\">out of " + otpCount + "</div>"
+                    + "<div class=\"titleDiv\"><span class=\"titleModifier\"></span>" +
                     component.title +
                     "</div><div class=\"subtitleDiv\">" + component.displayInfo.subTitle + "</div></div>";
                 break;
