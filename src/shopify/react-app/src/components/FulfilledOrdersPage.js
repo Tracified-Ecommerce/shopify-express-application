@@ -22,7 +22,9 @@ class FulfilledOrdersPage extends Component {
             isMappingLoading: true,
             search: '',
             isCheckedCus:false,
-            isCheckedOrd:true
+            isCheckedOrd:true,
+            errorText: "No Result found"
+
         };
     }
 
@@ -290,14 +292,14 @@ class FulfilledOrdersPage extends Component {
                             
                             }
                             <tfoot>
-                             {
+                             {/* {
                                 
                                 ( !Array.isArray(orderArray) || !orderArray.length)   ? (
                 
                                     <ErrorMsgSearch errorMessage={this.state.errorText}/> ) : (
                                         "True"
                                     )
-                                } 
+                                }  */}
                             </tfoot>
 
                         </tbody>
