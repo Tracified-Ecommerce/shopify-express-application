@@ -51,6 +51,7 @@ class CollapaseCard extends Component {
             // position:'fixed'
         }
         console.log("collapse products");
+        console.log("type of reset order() : " + typeof this.props.resetOrders)
         let resourceThumbnails = [];
         let resourceList = this.props.itemArray.map((resItem, index) => {
             let productImage = "no/image";
