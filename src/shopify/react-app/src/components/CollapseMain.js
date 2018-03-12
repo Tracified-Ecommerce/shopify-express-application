@@ -34,9 +34,8 @@ class CollapseMain extends Component {
 
     fulfillOrder() {
         const url = '/shopify/shop-api/orders/' + this.props.order.id + '/tracify';
-        console.log("fulfill url is : " + url );
-        // axios.get(url)
-        //     .then(response => {
+        axios.get(url)
+            .then(response => {
                 this.setState({
                     alertHeading: "",
                     alertMessage: "Tracified details added successfully ",
@@ -44,9 +43,9 @@ class CollapseMain extends Component {
                 this.setState({
                     isOpen: true,
                 });
-        //     }).catch((err) => {
-        //         console.log(err);
-        //     });
+            }).catch((err) => {
+                console.log(err);
+            });
     }
 
     toggle() {
