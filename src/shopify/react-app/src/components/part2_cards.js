@@ -85,7 +85,7 @@ class Part2Cards extends Component {
               });
     }
 
-    resetOrders() {
+    resetOrders = () => {
         this.setState({
             isOrderListLoading: true
         });

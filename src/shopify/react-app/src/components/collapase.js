@@ -27,9 +27,9 @@ class CollapaseCard extends Component {
     }
 
     fulfillOrder(){
-        // const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
-        // axios.get(url)
-        // .then(response => {
+        const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
+        axios.get(url)
+        .then(response => {
             this.setState({
                 alertHeading: "",
                 alertMessage: "Tracified details added successfully ",
@@ -37,10 +37,10 @@ class CollapaseCard extends Component {
             this.setState({
                 isOpen: true,
             });
-            this.props.reset();
-        // }).catch((err) => {
-        //         console.log(err);
-        //     });
+            this.props.resetOrders();
+        }).catch((err) => {
+                console.log(err);
+            });
     }
 
     render() {
