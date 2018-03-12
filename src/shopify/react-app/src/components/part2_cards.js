@@ -348,7 +348,6 @@ class Part2Cards extends Component {
                                     resetOrders={this.resetOrders}
                                     qrVal={qrValue}
                                     title={title}
-                                    reset={this.reset}
                                 />
 
                             );
