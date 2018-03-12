@@ -24,6 +24,10 @@ class CollapaseCard extends Component {
         this.setState({
             isOpen: !this.state.isOpen
         });
+
+        if(this.props.isOpen) { 
+            this.props.resetOrders(); 
+        }
     }
 
     fulfillOrder(){
@@ -37,7 +41,6 @@ class CollapaseCard extends Component {
             this.setState({
                 isOpen: true,
             });
-            this.props.resetOrders();
         }).catch((err) => {
                 console.log(err);
             });
