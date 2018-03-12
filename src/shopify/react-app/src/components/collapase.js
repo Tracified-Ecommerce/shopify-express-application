@@ -9,18 +9,33 @@ class CollapaseCard extends Component {
         super(props);
         this.toggleCollapse = this.toggleCollapse.bind(this);
         this.fulfillOrder = this.fulfillOrder.bind(this);
-        this.state = { collapsed: true };
+        this.state = {
+            collapsed: true,
+            isOpen: false,
+        };
     }
 
     toggleCollapse() {
         this.setState({ collapsed: !this.state.collapsed });
     }
 
+    toggleAlert = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+
     fulfillOrder(){
         const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
         axios.get(url)
         .then(response => {
-            alert("Added tracified details!");
+            this.setState({
+                alertHeading: "",
+                alertMessage: "Tracified details added successfully ",
+            });
+            this.setState({
+                isOpen: true,
+            });
             this.props.resetOrders();
         }).catch((err) => {
                 console.log(err);
@@ -115,6 +130,11 @@ class CollapaseCard extends Component {
                     />
 
                 </Collapse>
+                <AlertBox show={this.state.isOpen}
+                    onClose={this.toggleAlert}
+                    heading={this.state.alertHeading}
+                    message={this.state.alertMessage}>
+                </AlertBox>
             </div>
         );
     }

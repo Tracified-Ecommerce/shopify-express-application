@@ -1,48 +1,30 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import TraciLogo from '../assets/TracifiedLogo.png';
-import AlertBox from "./Alert";
 
 class ErrorPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            isOpen: false,
-        }
     }
 
-    toggleModal = () => {
-        this.setState({
-          isOpen: !this.state.isOpen
-        });
-      }
-
     render() {
-        var logoStyle={
-            height:'250px',
-            width:'100%',
-        }
+
+        const errorCardStyle = { border: "3px solid #e84040", margin: 10 };
+        const errorHeadingStyle = { backgroundColor: "#e84040", color: "white", padding: 10 };
+        let errorNoun = this.props.errors.length == 1 ? "error" : "errors";
 
         return (
-            <div className="App">
-                <button onClick={this.toggleModal}>
-                Open the AlertBox
-                </button>
-                <AlertBox show={this.state.isOpen}
-                    onClose={this.toggleModal}
-                    heading={this.props.errorStatus}
-                    message={this.props.errorMessage}>
-                Here's some content for the AlertBox
-                </AlertBox>
-            {/* </div>
-            <div className="errorMsg-page">
-            <div className="banner">
-                    <img src={TraciLogo} style={logoStyle}/>
-                </div>
-                <p className="status">{this.props.errorStatus}</p>
-                <p className="msg">{this.props.errorMessage}</p> */}
+
+            <div className="errorMsg-page" style={errorCardStyle}>
+                <div style={errorHeadingStyle}><span style={{ fontSize: "25px" }}>&#9888;</span> Oops! Tracified has encountered the following {errorNoun}</div><br />
+                {
+                    this.props.errors.map(error => {
+                        return (<div style={{ paddingLeft: 10, paddingBottom: 10 }}>
+                            <p className="tracerrorMsg"><span className="tracerrorstatus" style={{ fontWeight: "bold" }}>{error.errorStatus} : </span>{error.errorMessage}</p>
+                        </div>);
+                    })
+                }
             </div>
+
         );
     }
 }
