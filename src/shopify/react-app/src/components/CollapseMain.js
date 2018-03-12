@@ -33,19 +33,20 @@ class CollapseMain extends Component {
     }
 
     fulfillOrder() {
-        const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
-        axios.get(url)
-            .then(response => {
-                this.setState({
-                    alertHeading: "",
-                    alertMessage: "Tracified details added successfully ",
-                });
-                this.setState({
-                    isOpen: true,
-                });
-            }).catch((err) => {
-                console.log(err);
-            });
+        alert("order tracified");
+        // const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
+        // axios.get(url)
+        //     .then(response => {
+        //         this.setState({
+        //             alertHeading: "",
+        //             alertMessage: "Tracified details added successfully ",
+        //         });
+        //         this.setState({
+        //             isOpen: true,
+        //         });
+        //     }).catch((err) => {
+        //         console.log(err);
+        //     });
     }
 
     toggle() {
@@ -105,7 +106,7 @@ class CollapseMain extends Component {
                         </Col>
                     </Row>
                 </Collapse>
-                
+
                 <AlertBox show={this.state.isOpen}
                     onClose={this.toggleAlert}
                     heading={this.state.alertHeading}

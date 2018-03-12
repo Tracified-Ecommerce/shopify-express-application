@@ -51,7 +51,7 @@ class Part2Cards extends Component {
             .then(response => {
                 const products = response.data.products;
                 this.setState({ products: response.data.products });
-            }).catch(function(error){
+            }).catch(function (error) {
                 console.log(error);
             });
         axios.get('/shopify/shop-api/orders')
@@ -65,7 +65,7 @@ class Part2Cards extends Component {
                     isOrderListLoading: false,
                     cardStateArray: arr
                 });
-            }).catch(function(error){
+            }).catch(function (error) {
                 console.log(error);
             });
     }
@@ -82,7 +82,7 @@ class Part2Cards extends Component {
                 });
             }).catch((error) => {
                 console.log(error);
-              });
+            });
     }
 
     resetOrders = () => {
@@ -97,7 +97,7 @@ class Part2Cards extends Component {
                 });
             }).catch((error) => {
                 console.log(error);
-              });
+            });
     }
 
     updateSearch(event) {
@@ -173,7 +173,7 @@ class Part2Cards extends Component {
                     });
                 });
                 console.log(orderArray);
-                
+
 
             }
 
@@ -329,47 +329,47 @@ class Part2Cards extends Component {
 
 
                     {
-                         ( !Array.isArray(orderArray) || !orderArray.length)   ? (
-                
-                            <ErrorMsgSearch errorMessage={this.state.errorText}/> ) :(
-                        
-                        orderArray.map((order, index) => {
-                        const qrValue = order.order_number.toString();
-                        const title = "Order ID: " + order.order_number;
+                        (!Array.isArray(orderArray) || !orderArray.length) ? (
+
+                            <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
+
+                                orderArray.map((order, index) => {
+                                    const qrValue = order.order_number.toString();
+                                    const title = "Order ID: " + order.order_number;
 
 
 
-                        if (this.state.isExpanded) {
-                            return (
-                                <Uncollapsed
-                                    key={index}
-                                    order={order}
-                                    productsProp={this.state.products}
-                                    resetOrders={this.resetOrders}
-                                    qrVal={qrValue}
-                                    title={title}
-                                />
+                                    if (this.state.isExpanded) {
+                                        return (
+                                            <Uncollapsed
+                                                key={index}
+                                                order={order}
+                                                productsProp={this.state.products}
+                                                resetOrders={this.resetOrders}
+                                                qrVal={qrValue}
+                                                title={title}
+                                            />
 
-                            );
-                        } else {
-                            return (
-                                <CollapseMain
-                                    key={index}
-                                    order={order}
-                                    productsProp={this.state.products}
-                                    qrVal={qrValue}
-                                    title={title}
-                                    resetOrders={this.resetOrders}
-                                    collapseArray={this.state.cardStateArray}
-                                    collapseArrayKey={index}
-                                    onClick={this.handleClick}
-                                />
-                            );
-                        }
+                                        );
+                                    } else {
+                                        return (
+                                            <CollapseMain
+                                                key={index}
+                                                order={order}
+                                                productsProp={this.state.products}
+                                                qrVal={qrValue}
+                                                title={title}
+                                                resetOrders={this.resetOrders}
+                                                collapseArray={this.state.cardStateArray}
+                                                collapseArrayKey={index}
+                                                onClick={this.handleClick}
+                                            />
+                                        );
+                                    }
 
-                    })
-                    
-                       )
+                                })
+
+                            )
                     }
 
                 </Page>
