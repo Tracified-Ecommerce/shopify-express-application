@@ -257,7 +257,11 @@ class FulfilledOrdersPage extends Component {
                                      orderArray.map((order, index) => {
                                      
                                          return (
-                                             <FulfilledOrder key={order.order_number} order={order} />
+                                             <FulfilledOrder
+                                              key={order.order_number} 
+                                              order={order}
+                                              shopDomain={this.state.shopDomain}
+                                               mapping={this.state.mapping} />
                                              
                     
                                          )
