@@ -255,8 +255,11 @@ class FulfilledOrdersPage extends Component {
                                 
                                
                                      orderArray.map((order, index) => {
+                                        ( !Array.isArray(orderArray) || !orderArray.length)   ? (
+                
+                                            <ErrorMsgSearch errorMessage={this.state.errorText}/> ) : (
                                      
-                                         return (
+                                         
                                              <FulfilledOrder
                                               key={order.order_number} 
                                               order={order}
@@ -264,7 +267,8 @@ class FulfilledOrdersPage extends Component {
                                                mapping={this.state.mapping} />
                                              
                     
-                                         )
+                                             
+                                        )
                     
                                   } 
                                     
