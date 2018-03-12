@@ -3,6 +3,7 @@ import { Container, Collapse, Row, Col } from 'reactstrap';
 import { Button, Card, ResourceList, Thumbnail, Stack } from '@shopify/polaris';
 import * as axios from 'axios';
 import { isUndefined } from 'util';
+import AlertBox from "./Alert";
 
 class CollapaseCard extends Component {
     constructor(props) {
