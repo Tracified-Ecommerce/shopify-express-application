@@ -33,17 +33,17 @@ class CollapseMain extends Component {
     }
 
     fulfillOrder() {
-        alert("order tracified");
-        // const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
+        const url = '/shopify/shop-api/orders/' + this.props.order.id + '/tracify';
+        console.log("fulfill url is : " + url );
         // axios.get(url)
         //     .then(response => {
-        //         this.setState({
-        //             alertHeading: "",
-        //             alertMessage: "Tracified details added successfully ",
-        //         });
-        //         this.setState({
-        //             isOpen: true,
-        //         });
+                this.setState({
+                    alertHeading: "",
+                    alertMessage: "Tracified details added successfully ",
+                });
+                this.setState({
+                    isOpen: true,
+                });
         //     }).catch((err) => {
         //         console.log(err);
         //     });
