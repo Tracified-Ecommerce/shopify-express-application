@@ -82,7 +82,7 @@ function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponen
                 break;
 
             case "fraction":
-
+                let titleText = "";
                 for (const property in component.data) {
                     if (component.data.hasOwnProperty(property)) {
                         tot += component.data[property];
@@ -90,10 +90,16 @@ function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponen
                     }
                 }
 
+                if(component.displayInfo.prefix) {
+                    titleText = component.displayInfo.prefix + component.title;
+                } else {
+                    titleText = component.title;
+                }
+
                 componentJSON.htmltxt +=
                     "<div class=\"large-green\">" + tot + "/" + otpCount + "</div>"
                     + "<div class=\"titleDiv\">" +
-                    component.title +
+                    titleText +
                     "</div><div class=\"subtitleDiv\">" + component.displayInfo.subTitle + "</div></div>";
 
                 break;
