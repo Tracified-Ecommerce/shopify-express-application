@@ -131,6 +131,11 @@ function widgetDimensionBuilder(dimensions: any): IWidgetDimensionJSON {
                 value = "no";
             } else if (x.value.max && x.value.min) {
                 value = x.value.max + " to " + x.value.min;
+            } else if (Array.isArray(x.value)) {
+                const valSet = new Set(x.value);
+                for (const item of valSet) {
+                    value += item + ", ";
+                }
             } else {
                 value = x.value;
             }
