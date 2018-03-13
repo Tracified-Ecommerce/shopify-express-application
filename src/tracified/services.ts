@@ -71,6 +71,8 @@ export class Services implements IServices {
                 // uri: "https://tracified-mock-api.herokuapp.com/Traceability_data/data/tracified_item_list/sort-list",
             };
 
+            console.log("inside getItemList() , options are " + JSON.stringify(options));
+
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 resolve(data);

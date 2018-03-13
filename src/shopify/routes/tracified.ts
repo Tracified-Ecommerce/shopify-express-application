@@ -24,20 +24,9 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
 });
 
 router.get("/item-list", (req: IRequest & Request, res: Response) => {
+    console.log("getting the item list from admin backend");
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
         const dataJSON = JSON.parse(data);
-        let responseTxt = "";
-
-        for (const obj of dataJSON) {
-            console.log("each object : " + JSON.stringify(obj));
-            const itemname = obj.itemName.replace(/\s/g, "-");
-
-            if ((obj.itemID && obj.itemName) && obj.itemID !== "" && obj.itemName !== "") {
-                responseTxt += obj.itemID + " : " + obj.itemName + " , ";
-            }
-
-        }
-
         console.log("Item list response is  " + data);
         res.json(data);
     }).catch((err) => {
