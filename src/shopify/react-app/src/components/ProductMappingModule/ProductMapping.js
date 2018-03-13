@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ProductMappingService from './ProductMappingService';
 import axios from 'axios';
 import ProductMappingTableRow from './ProductMappingTableRow';
+import Sticky from 'react-sticky-el';
 import {
   Layout,
   Page,
@@ -215,7 +216,10 @@ class ProductMapping extends Component {
 
   render() {
     const { productName, tracifiedItemID, tracifiedItemtitle, permission, isTraceListLoading, isProductListLoading } = this.state;
-
+    var navStyle={
+      // width: '340%',
+      zindex: '20'
+    }
     if (isTraceListLoading || isProductListLoading) {
       return <Loading/> ;
       console.log('spinner');
@@ -229,45 +233,41 @@ class ProductMapping extends Component {
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
 
-        <div className="saveBtn">
-        <Row>
-          <Col sm="10">
-          </Col>
-          <Col sm="2">
-            <Button primary onClick={this.onSubmit}>Save</Button>
-          </Col>
-        </Row>
-        </div>
-
-        <div className="product-Mapping">
-        <Card title="Product Mapping Details">
-          <br />
-          <form>
             <table className="table table-striped">
-              <thead className="headingsThread">
-                <tr className="headingsTr">
-                  <td ><b>Product Name</b></td>
-                  <td ><b>Product Item ID</b></td>
-                  <td ><b>Tracified Item title</b></td>
-                  <td ><b>Permission</b></td>
+              
+
+              <thead>
+                <Sticky>
+                <Row className="cardWrapper" style={navStyle}>
+                  <div id="stickyCard">
+                <Card>
+                  <tr>
+                    <td>
+                      <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
+                    </td>
+                    <td className="saveBtn">
+                      <Button primary onClick={this.onSubmit}>Save</Button>
+                    </td>
+                  </tr>
+                <tr >
+                  <Row className="tblHeaders">
+                    <Col sm="5" xs="5" className="pName">Product Name</Col>
+                    <Col sm="2" xs="2" className="Pid">Product Item ID</Col>
+                    <Col sm="3" xs="3"className="tTitle">Tracified Item title</Col>
+                    <Col sm="2" xs="2" className="Permission">Permission</Col>
+                  </Row>
                 </tr>
-              </thead>
-              <tbody>
-
-                {this.tabRow()}
-
-              </tbody>
-            </table>
-            <Row>
-                  <Col sm="10">
-                  </Col>
-                  <Col sm="2">
-                    {/* <Button primary onClick={this.onSubmit}>Save</Button> */}
-                  </Col>
+                </Card>
+                </div>
                 </Row>
-          </form>
-        </Card>
-        </div>
+              </Sticky>
+
+              </thead>
+                <br/><br/><br/><br/><br/><br/><br/>
+              <tbody>
+                {this.tabRow()}
+              </tbody>
+            </table>   
       </div>
     );
     <ProductMapping /> , document.getElementById('productmapping')
