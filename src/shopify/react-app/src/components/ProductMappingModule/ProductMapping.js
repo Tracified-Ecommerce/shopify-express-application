@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ProductMappingService from './ProductMappingService';
 import axios from 'axios';
 import ProductMappingTableRow from './ProductMappingTableRow';
+import Sticky from 'react-sticky-el';
 import {
   Layout,
   Page,
@@ -215,7 +216,10 @@ class ProductMapping extends Component {
 
   render() {
     const { productName, tracifiedItemID, tracifiedItemtitle, permission, isTraceListLoading, isProductListLoading } = this.state;
-
+    var navStyle={
+      // width: '340%',
+      zindex: '20'
+    }
     if (isTraceListLoading || isProductListLoading) {
       return <Loading/> ;
       console.log('spinner');
