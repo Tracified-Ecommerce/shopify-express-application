@@ -54,7 +54,9 @@ router.get("/trace/:orderID/:itemID", (req: IRequest & Request, res: Response) =
             console.log(data);
             res.send(data);
         }).catch((error) => {
-            console.log(error);
+            console.log("ERROR IN TIMELINE CALL : " + error.error);
+            console.log("Status Code of error : " + error.statusCode);
+            res.status(error.statusCode).send(error);
         });
 });
 

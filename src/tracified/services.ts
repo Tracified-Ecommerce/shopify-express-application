@@ -110,13 +110,22 @@ export class Services implements IServices {
                 console.log(type);
                 console.log(data);
                 resolve(data);
-            }).catch((error) => {
-                console.log(error);
-            });
+            }).catch(errors.StatusCodeError, (reason) => {
+                console.log("inside timeline catch1");
+                console.log("reason response is :" + JSON.stringify(reason.response));
+                console.log("reason error is :" + JSON.stringify(reason.error));
+                console.log("reason options are :" + JSON.stringify(reason.options));
+                reject(reason);
+
+            })
+                .catch(errors.RequestError, (reason) => {
+                    console.log("inside timeline catch2  " + reason.cause);
+                    reject(Error(reason.cause));
+                    // The request failed due to technical reasons.
+                    // reason.cause is the Error object Request would pass into a callback.
+                });
         });
     }
-
-    // Apple123456
 
     public getPosData(itemID: string, accessToken: string) {
         return new Promise((resolve, reject) => {

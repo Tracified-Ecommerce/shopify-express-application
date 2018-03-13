@@ -130,7 +130,7 @@ function widgetDimensionBuilder(dimensions: any): IWidgetDimensionJSON {
             } else if (x.value === false) {
                 value = "no";
             } else if (x.value.max && x.value.min) {
-                value = x.value.max + " to " + x.value.min;
+                value = x.value.min + " to " + x.value.max;
             } else if (Array.isArray(x.value)) {
                 const valSet = new Set(x.value);
                 for (const item of valSet) {
@@ -224,6 +224,11 @@ function widgetMapBuilder(tabs: any): IWidgetMapJSON {
     }
 
     return mapComponents;
+}
+
+function dateFormatter(date: string): string {
+    let ret = "";
+    return ret;
 }
 
 // tslint:disable-next-line:max-line-length

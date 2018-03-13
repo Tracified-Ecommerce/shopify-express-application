@@ -70,21 +70,6 @@ class Part2Cards extends Component {
             });
     }
 
-    reset = () => {
-        this.setState({
-            isOrderListLoading: true
-        });
-        axios.get('/shopify/shop-api/orders')
-            .then(response => {
-                this.setState({
-                    orders: response.data.orders,
-                    isOrderListLoading: false
-                });
-            }).catch((error) => {
-                console.log(error);
-            });
-    }
-
     resetOrders = () => {
         this.setState({
             isOrderListLoading: true
