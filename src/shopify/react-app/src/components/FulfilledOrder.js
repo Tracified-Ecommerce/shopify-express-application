@@ -12,6 +12,7 @@ class FulfilledOrder extends Component {
             modalOpen: false,
             alertOpen: false,
             itemName: "",
+            itemEnable: "",
             traceButtonDisable: true,
             itemID: this.props.mapping.hasOwnProperty(this.props.order.lineItems[0].product_id) ? (this.props.mapping[this.props.order.lineItems[0].product_id][1] ? this.props.mapping[this.props.order.lineItems[0].product_id][1] : "noTraceabilityItem") : "noTraceabilityItem"
         };
@@ -33,6 +34,7 @@ class FulfilledOrder extends Component {
         this.setState({
             itemID: tempItemID,
             productID: productID,
+            itemEnable:productID
 
         });
 
@@ -122,10 +124,10 @@ class FulfilledOrder extends Component {
                 <td>
                     <Select
                         options={itemOptions}
-                       
+                        placeholder="Select an Item to view"
                         id={order.order_number}
                         onChange={this.onSelectItem}
-                       // value={this.state.productID}
+                        value={this.state.itemEnable}
                     />
                 </td>
                 <td>
