@@ -117,7 +117,6 @@ class FulfilledOrder extends Component {
 
         var traceMoreBtnStyle={
             fontWeight:"bolder",
-            marginTop:"-10%",
             
         }
 
