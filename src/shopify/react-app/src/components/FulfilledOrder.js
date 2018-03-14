@@ -113,6 +113,14 @@ class FulfilledOrder extends Component {
         console.log("array is :" + itemOptions);
         const shopOrigin = "https://" + this.props.shopDomain;
         const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
+
+
+        var traceMoreBtnStyle={
+            fontWeight:"bolder",
+            marginTop:"-13.5%",
+            
+        }
+
         return (
             <tr>
                 <td>
@@ -132,9 +140,11 @@ class FulfilledOrder extends Component {
                 </td>
                 <td>
                     <Button
+                        primary
                         size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
+                        style={traceMoreBtnStyle}
                         >View Trace More Timeline</Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
