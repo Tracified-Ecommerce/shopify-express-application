@@ -115,12 +115,7 @@ class FulfilledOrder extends Component {
         const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
 
 
-        var traceMoreBtnStyle={
-            fontWeight:"bolder",
-            marginBottom: "5%"
-            
-        }
-
+        
         return (
             <tr>
                 <td>
@@ -140,7 +135,7 @@ class FulfilledOrder extends Component {
                 </td>
                 <td>
                     <Button
-                        primary
+                        
                         size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
