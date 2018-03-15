@@ -193,6 +193,13 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
                 + "<div class=\"carousel-caption\">"
                 + "</div></div>";
         }
+
+        const imgObj = {
+            id: "img" + imageIdentifier,
+            src: image,
+        };
+
+        imageSliderComponents.imageArray.push(imgObj);
         imageIdentifier++;
     }
 
