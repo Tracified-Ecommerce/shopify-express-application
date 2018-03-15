@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 interface IWidgetComponentJSON {
     htmltxt: string;
     pieChartData: any[];
@@ -90,8 +91,8 @@ function widgetComponentBuilder(components: any, otpCount: any): IWidgetComponen
                     }
                 }
 
-                if(component.displayInfo.prefix) {
-                    titleText = component.displayInfo.prefix + component.title;
+                if (component.displayInfo.prefix) {
+                    titleText = component.displayInfo.prefix + " " + component.title;
                 } else {
                     titleText = component.title;
                 }
@@ -164,28 +165,37 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
         htmltxt: "",
     };
 
-    let imageIdentifier = 0; // to keep track of images we have already looked at
-    let rowCount = 0; // to keep track of image rows
+    let firstRow = true;
+    let imageIdentifier = 0; // to keep track of image rows
 
-    while (rowCount < 2) {
-        // row code
-
-        for (let i = 0; i < 3; i++) {
-
-            // code for columns inside row
-            if (rowCount === 0) {
+    for (const image of images) {
+        // for every third item, modulo 3 of imageIdentifier will be zero
+        // this can be used to track how many images have gone into each row
+        if (imageIdentifier % 3 === 0) {
+            if (firstRow) {
                 imageSliderComponents.htmltxt += "<div class=\"item active\"><div class=\"row\">";
+                firstRow = false;
             } else {
                 imageSliderComponents.htmltxt += "<div class=\"item\"><div class=\"row\">";
             }
-
-            // tslint:disable-next-line:max-line-length
-            imageSliderComponents.htmltxt += "<div class=\"col-md-4\"><img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\"><div class=\"carousel-caption\"></div></div></div></div>";
-            // images[imageIdentifier]
-            imageIdentifier++;
         }
 
-        rowCount++;
+        if ((imageIdentifier + 1) % 3 === 0) {
+            imageSliderComponents.htmltxt += "<div class=\"col-md-4\">"
+                + "<img id=\"img" + imageIdentifier + "\" src=\"" + image + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
+                + "<div class=\"carousel-caption\">"
+                + "</div></div></div></div>";
+        } else {
+            imageSliderComponents.htmltxt += "<div class=\"col-md-4\">"
+                + "<img id=\"img" + imageIdentifier + "\" src=\"" + image + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
+                + "<div class=\"carousel-caption\">"
+                + "</div></div>";
+        }
+        imageIdentifier++;
+    }
+
+    if (images.length % 3 !== 0) {
+        imageSliderComponents.htmltxt += "</div></div>";
     }
 
     return imageSliderComponents;
@@ -233,9 +243,8 @@ function widgetMapBuilder(tabs: any): IWidgetMapJSON {
 }
 
 function dateFormatter(date: string): string {
-    let ret = "";
-    return ret;
+    const dat = date; // TODO add formatting
+    return dat;
 }
 
-// tslint:disable-next-line:max-line-length
 export { widgetComponentBuilder, widgetDimensionBuilder, widgetImageSliderBuilder, widgetMapBuilder, IWidgetComponentJSON, IWidgetDimensionJSON, IWidgetImageSliderJSON, IWidgetMapJSON, IWidgetResponseJSON };

@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
@@ -145,7 +146,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             const tracifiedToken = exisitingShop.tracified_token;
                             console.log("shop has a tracified token : " + exisitingShop.tracified_token);
                             const mockItem = "Apple123456";
-                            tracifiedServices.getPosData(   mockItem, tracifiedToken).then((data) => {
+                            tracifiedServices.getPosData(mockItem, tracifiedToken).then((data) => {
 
                                 let miniWidgetArray = [];
                                 miniWidgetArray = data.components.pointOfSale;
@@ -153,9 +154,8 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                 dimensionComponentArray = data.components.dimensions;
                                 let mapComponentArray = [];
                                 mapComponentArray = data.components.map;
-                                const imageSliderComponentArray = ["image1", "image2", "image3" ];
-                                // TODO: make const let
-                                // imageSliderComponentArray = data.components.imageSlider;
+                                let imageSliderComponentArray = [];
+                                imageSliderComponentArray = data.components.photos;
 
                                 const widgetResponseJSON: IWidgetResponseJSON = {
                                     components: {
@@ -177,14 +177,11 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
 
                                 // need to ask muri for clarification
                                 widgetResponseJSON.components = widgetComponentBuilder(miniWidgetArray, data.otpCount);
-                                // tslint:disable-next-line:max-line-length
                                 widgetResponseJSON.dimensionComponents = widgetDimensionBuilder(dimensionComponentArray);
                                 widgetResponseJSON.mapComponents = widgetMapBuilder(mapComponentArray);
-                                widgetResponseJSON.imageSliderComponents = imageSliderBuilder(
-                                    imageSliderComponentArray,
-                                ); // TODO: fix this method
+                                widgetResponseJSON.imageSliderComponents = widgetImageSliderBuilder(imageSliderComponentArray);
                                 console.log("this is the widget response I've been looking for :"
-                                + JSON.stringify(widgetResponseJSON));
+                                    + JSON.stringify(widgetResponseJSON));
                                 return res.send(widgetResponseJSON);
 
                             }).catch((err) => {
