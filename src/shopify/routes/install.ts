@@ -1,6 +1,7 @@
 /* tslint:disable:no-shadowed-variable max-line-length no-var-requires */
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
+import * as configs from "../../appConfig";
 import * as MainAssets from "../assets/shopifyAssets";
 import * as DimensionAssets from "../assets/shopifyDimensionAssets";
 import * as MapAssets from "../assets/shopifyMapAssets";
@@ -18,9 +19,9 @@ const router = Router();
 // installation route
 
 const scopes = "read_products,write_products,write_themes,write_orders,read_orders";
-const forwardingAddress = "https://tracified-api-test.herokuapp.com";
-const apiKey = "8cbed825a1a05c935cbb12574bb24257";
-const apiSecret = "4bc97ed0ae56f7e75f2560f7816fd96a";
+const forwardingAddress = configs.shopifyConfigs.install.forwardingAddress;
+const apiKey = configs.shopifyConfigs.install.apiKey;
+const apiSecret = configs.shopifyConfigs.install.apiSecret;
 
 router.get("/", (req: Request, res: Response) => {
   const shop = req.query.shop;

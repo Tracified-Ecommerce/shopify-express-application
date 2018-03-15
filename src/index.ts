@@ -1,10 +1,11 @@
 import bodyParser = require("body-parser");
 import session = require("client-sessions");
 import ejs = require("ejs");
-import express = require("express");
 import { NextFunction, Request, Response } from "express";
+import express = require("express");
 import mongoose = require("mongoose");
 import path = require("path");
+import * as configs from "./appConfig";
 import { router as general } from "./routes/index";
 import { router as shopify } from "./shopify/routes/index";
 import { router as woocommerce } from "./woocommerce/routes/index";
@@ -39,7 +40,7 @@ app.engine("html", ejs.renderFile);
  * db connection
  * -set up default mongoose connection
  */
-const mongoDB = "mongodb://tracified:1234@ds219318.mlab.com:19318/ecommerceplugin";
+const mongoDB = configs.shopifyConfigs.db;
 mongoose.connect(mongoDB, {
   useMongoClient: true,
 });
