@@ -17,6 +17,7 @@ interface IWidgetMapTab {
 // image slider component
 interface IWidgetImageSliderJSON {
     htmltxt: string;
+    imageArray: any[];
 }
 
 // map component
@@ -163,6 +164,7 @@ function widgetDimensionBuilder(dimensions: any): IWidgetDimensionJSON {
 function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
     const imageSliderComponents: IWidgetImageSliderJSON = {
         htmltxt: "",
+        imageArray: [],
     };
 
     let firstRow = true;
@@ -182,12 +184,12 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
 
         if ((imageIdentifier + 1) % 3 === 0) {
             imageSliderComponents.htmltxt += "<div class=\"col-md-4\">"
-                + "<img id=\"img" + imageIdentifier + "\" src=\"" + image + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
+                + "<img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
                 + "<div class=\"carousel-caption\">"
                 + "</div></div></div></div>";
         } else {
             imageSliderComponents.htmltxt += "<div class=\"col-md-4\">"
-                + "<img id=\"img" + imageIdentifier + "\" src=\"" + image + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
+                + "<img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
                 + "<div class=\"carousel-caption\">"
                 + "</div></div>";
         }

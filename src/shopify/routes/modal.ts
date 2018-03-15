@@ -167,6 +167,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                     },
                                     imageSliderComponents: {
                                         htmltxt: "",
+                                        imageArray: [],
                                     },
                                     mapComponents: {
                                         htmltabcontent: "",
