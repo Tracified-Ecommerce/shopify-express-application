@@ -45,7 +45,7 @@
 #stickyCard .Polaris-Card {
     position: fixed;
     z-index: 50;
-    width: 250%;
+    width: 500%;
     white-space: nowrap; 
 /*     width: 0em;  */
     overflow: hidden;
