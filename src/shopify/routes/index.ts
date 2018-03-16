@@ -69,7 +69,7 @@ router.get("/", (req: IRequest & Request, res: Response, next: NextFunction) => 
 router.get("/cookie-check", (req: IRequest, res: Response) => {
     if (req.session && req.session.shop) {
         if (req.session.shop.tracified_token) {
-            console.log("tracified token exists");
+            console.log("tracified token exists" + req.session.shop.tracified_token );
             console.log(req.session.shop);
             return res.redirect("/shopify/main-view");
         } else {
