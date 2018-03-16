@@ -146,7 +146,7 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                             const tracifiedToken = exisitingShop.tracified_token;
                             console.log("shop has a tracified token : " + exisitingShop.tracified_token);
                             const mockItem = "Apple123456";
-                            tracifiedServices.getPosData(mockItem, tracifiedToken).then((data) => {
+                            tracifiedServices.getPosData(TracifiedID, tracifiedToken).then((data) => {
 
                                 let miniWidgetArray = [];
                                 miniWidgetArray = data.components.pointOfSale;
