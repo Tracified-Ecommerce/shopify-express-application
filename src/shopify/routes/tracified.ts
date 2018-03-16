@@ -28,6 +28,7 @@ router.get("/item-list", (req: IRequest & Request, res: Response) => {
     tracifiedServices.getTracifiedItemList(req.session.shop.tracified_token).then((data: any) => {
         const dataJSON = JSON.parse(data);
         console.log("Item list response is  " + data);
+        console.log("token for item list is " + req.session.shop.tracified_token);
         res.json(data);
     }).catch((err) => {
         console.log("item list error : " + err);
