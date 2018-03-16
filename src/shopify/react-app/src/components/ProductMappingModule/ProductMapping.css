@@ -320,7 +320,7 @@
     #stickyCard .Polaris-Card {
         position: fixed;
         z-index: 50;
-        width: 260%;
+        width: 500%;
         white-space: nowrap; 
         overflow: hidden;
         -o-text-overflow: ellipsis;
