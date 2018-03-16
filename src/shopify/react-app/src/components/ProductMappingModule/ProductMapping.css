@@ -320,7 +320,7 @@
     #stickyCard .Polaris-Card {
         position: fixed;
         z-index: 50;
-        width: 500%;
+        width: 700%;
         white-space: nowrap; 
         overflow: hidden;
         -o-text-overflow: ellipsis;
@@ -344,7 +344,7 @@
       
       .pName{
           margin-left: 4%;
-          width: 37%;
+         width: 37%;
       }
       
     .MappingDetails{
