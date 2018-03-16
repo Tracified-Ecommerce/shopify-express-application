@@ -183,9 +183,7 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
                 // x.label=null;
                 // tslint:disable-next-line:max-line-length
                 dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + contentTitle + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
-                
             //  }
-            
         }
         dimensionComponents.htmltxt += "</table></div>";
     }
