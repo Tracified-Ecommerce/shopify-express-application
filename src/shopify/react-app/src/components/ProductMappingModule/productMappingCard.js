@@ -13,14 +13,14 @@ class ProductMappingCard extends Component{
         var saveBtnStyle={
             backgroundColor:"#5d6bc4", 
             color:"white",
-            marginLeft: "-30%"
+            // marginLeft: "-30%"
         }
 
         return(
             
             <div className="cardProductMapping" style={cardStyle}>
                 <tr>
-                <td style={{width:'94% !important'}}>
+                <td style={{width:'94%'}}>
                       <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
                     </td>
                     <td className="saveBtn">
