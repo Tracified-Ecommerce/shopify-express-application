@@ -31,7 +31,7 @@ import Spinner from '../../lib/components/Spinner';
 import { request } from 'http';
 import { Row, Col } from 'reactstrap';
 import Loading from '../Loading'
-
+import ProductMappingCard from './productMappingCard';
 
 
 
