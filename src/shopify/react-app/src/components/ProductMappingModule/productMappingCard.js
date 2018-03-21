@@ -12,7 +12,8 @@ class ProductMappingCard extends Component{
 
         var saveBtnStyle={
             backgroundColor:"#5d6bc4", 
-            color:"white"
+            color:"white",
+            marginLeft: '-30% !important'
         }
 
         return(
