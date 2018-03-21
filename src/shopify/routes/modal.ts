@@ -77,7 +77,7 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                                 // image slider
                                 imageSliderComponentArray = data.data[2].images;
 
-                                const responseJSON: IResponseJSON = {
+                                const responseJSON: IWidgetResponseJSON = {
                                     components: {
                                         htmltxt: "",
                                         pieChartData: [],
@@ -87,6 +87,7 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                                     },
                                     imageSliderComponents: {
                                         htmltxt: "",
+                                        imageArray: [],
                                     },
                                     mapComponents: {
                                         htmltabcontent: "",
@@ -96,8 +97,8 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                                 };
                                 responseJSON.components = componentBuilder(componentArray);
                                 responseJSON.dimensionComponents = dimensionBuilder(dimensionComponentArray);
-                                responseJSON.imageSliderComponents = imageSliderBuilder(imageSliderComponentArray);
-                                responseJSON.mapComponents = mapBuilder(mapComponentArray);
+                                responseJSON.imageSliderComponents = widgetImageSliderBuilder(imageSliderComponentArray);
+                                responseJSON.mapComponents = widgetMapBuilder(mapComponentArray);
                                 return res.send(responseJSON);
                             }).catch((err) => {
                                 console.log("ERROR IN POS CALL : " + err.error);
