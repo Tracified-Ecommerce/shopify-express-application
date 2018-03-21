@@ -23,7 +23,7 @@ class ProductMappingCard extends Component{
                       <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
                     </td>
                     <td className="saveBtn">
-                      <Button primary onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>
+                      <Button onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>
                     </td>
                   </tr>
                 <tr >
