@@ -47,7 +47,7 @@ class CollapaseCard extends Component {
 
     render() {
         var markTracifiedStyle = {
-            marginLeft: '-10%',
+            // marginLeft: '-10%',
             // width: '25%',
             marginTop: '-4%',
             // position:'fixed'
@@ -103,7 +103,7 @@ class CollapaseCard extends Component {
 
         return (
             <div>
-                <Container>
+                <Container fluid={true}>
                     <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                     <Row>
                             <Col sm="3">
