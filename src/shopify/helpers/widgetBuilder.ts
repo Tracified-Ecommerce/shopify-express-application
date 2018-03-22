@@ -173,7 +173,7 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
     for (const image of images) {
         // for every third item, modulo 3 of imageIdentifier will be zero
         // this can be used to track how many images have gone into each row
-        if (imageIdentifier % 3 === 0) {
+        if (imageIdentifier % 4 === 0) {
             if (firstRow) {
                 imageSliderComponents.htmltxt += "<div class=\"item active\"><div class=\"row\">";
                 firstRow = false;
@@ -182,7 +182,7 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
             }
         }
 
-        if ((imageIdentifier + 1) % 3 === 0) {
+        if ((imageIdentifier + 1) % 4 === 0) {
             imageSliderComponents.htmltxt += "<div class=\"col-md-4\">"
                 + "<img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
                 + "<div class=\"carousel-caption\">"
@@ -203,7 +203,7 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
         imageIdentifier++;
     }
 
-    if (images.length % 3 !== 0) {
+    if (images.length % 4 !== 0) {
         imageSliderComponents.htmltxt += "</div></div>";
     }
 
