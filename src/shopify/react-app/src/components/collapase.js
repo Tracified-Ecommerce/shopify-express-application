@@ -104,14 +104,8 @@ class CollapaseCard extends Component {
         return (
             <div>
                 <Container>
-                    {/* <Collapse isOpen={this.state.collapsed}> */}
                     <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
-                    {/* </Collapse> */}
                     <Row>
-                        <Col sm="12">
-                            {/*<Col sm="7">*/}
-                            {/*<Row>*/}
-                            {/*<Col sm="10">*/}
                             <Col sm="3">
                                 <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                             </Col>
@@ -120,9 +114,6 @@ class CollapaseCard extends Component {
                             <Col sm="3" style={markTracifiedStyle}>
                                 <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                             </Col>
-                            {/*</Col>*/}
-                            {/*</Row>*/}
-                        </Col>
                     </Row>
                 </Container>
                 <Collapse isOpen={!this.state.collapsed}>

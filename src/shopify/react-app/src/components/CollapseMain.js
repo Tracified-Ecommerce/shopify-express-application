@@ -89,7 +89,8 @@ class CollapseMain extends Component {
                 <Collapse isOpen={this.state.collapseArray[this.props.collapseArrayKey]} style={{ marginTop: 8, borderTop: '2px solid rgba(0, 0, 0, .3)' }}>
                     <Row style={{ paddingTop: '1rem' }}>
                         <Col sm="12">
-                            <Row style={{ padding: 20 }}>
+                            {/* <Row style={{ padding: 20 }}> */}
+                            <Row style={{ padding: 0 }}>
                                 <Col sm="3" style={{ paddingBottom: 20 }}>
                                     <Button primary onClick={this.fulfillOrder}>Mark as Tracified</Button>
                                 </Col>
