@@ -18,7 +18,7 @@ class ProductMappingCard extends Component{
         }
 
         var tdStyle={
-            marginLeft:'-10%',
+            // marginLeft:'-10%',
             width:'90%'
         }
 
