@@ -1,13 +1,10 @@
-#mappingDetailsDiv{
-    width: 94% !important;
-}
 
 .cardProductMapping  td{
     width: 200% !important;
 }
 
 .tblHeaders .col-sm-3,.tblHeaders .col-sm-2,tblHeaders .col-sm-5{
-     padding-left: 1% !important; 
+     padding-left: 10% !important; 
 /*     width: 25% !important; */
     padding-bottom: 1%;
     font-weight: bold;
@@ -16,7 +13,6 @@
 .pName,.Pid,.tTitle,.Permission{
     font-weight: bold;
 }
-
 
 .cardProductMapping {
     position: fixed;
@@ -38,7 +34,7 @@
     width: 40%;
 }
 
-.saveBtn {
+.saveBtn .Polaris-Button--primary{
     margin-left: -40% !important;
     overflow: hidden;
     -o-text-overflow: ellipsis;
@@ -67,7 +63,7 @@
         padding-left: 10%;
     }
     
-    .saveBtn {
+    .saveBtn .Polaris-Button--primary{
         margin-left: -40% !important;
         overflow: hidden;
         -o-text-overflow: ellipsis;
@@ -138,7 +134,7 @@
         padding-left: 10%;
     }
     
-    .saveBtn {
+    .saveBtn .Polaris-Button--primary{
         margin-left: -30% !important;
         overflow: hidden;
         -o-text-overflow: ellipsis;
@@ -215,7 +211,7 @@
         padding-left: 10%;
     }
     
-    .saveBtn {
+    .saveBtn .Polaris-Button--primary{
         margin-left: -30% !important;
         overflow: hidden;
         -o-text-overflow: ellipsis;
@@ -278,9 +274,10 @@
         -o-text-overflow: ellipsis;
            text-overflow: ellipsis; 
 /*         margin-left: 20%; */
+        padding-bottom: 3%
     }
     
-    .saveBtn {
+    .saveBtn .Polaris-Button--primary{
         margin-left: -30% !important;
         overflow: hidden;
         -o-text-overflow: ellipsis;
@@ -302,8 +299,17 @@
     .MappingDetails{
         padding-top: 1%;
         padding-left: 4%;
-        padding-bottom: 2% !important;
+        padding-bottom: 7% !important;
         font-size: 150% !important;
         width: 40%;
     }
+      .Pid{
+          margin-left: -3%;
+      }
+      .tTitle{
+          margin-left: 3%;
+      }
+      .tblHeaders{
+          width: 210% !important;
+      }
 }

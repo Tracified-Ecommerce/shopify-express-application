@@ -10,7 +10,6 @@ import {
   FooterHelp,
   Card,
   Link,
-  Button,
   FormLayout,
   TextField,
   AccountConnection,
@@ -29,7 +28,7 @@ import './ProductMapping.css';
 import { setTimeout } from 'timers';
 import Spinner from '../../lib/components/Spinner';
 import { request } from 'http';
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Container,Button} from 'reactstrap';
 import Loading from '../Loading'
 import ProductMappingCard from './productMappingCard';
 
@@ -227,6 +226,22 @@ class ProductMapping extends Component {
       console.log('not spinner');
     }
 
+    var saveBtnStyle={
+      // borderRadius: '50%',
+      // marginLeft:'75%',
+      // position:'fixed',
+      // backgroundColor:'#5b69c3'
+      position:'fixed',
+      width:'60px',
+      height:'60px',
+      bottom:'40px',
+      right:'40px',
+      backgroundColor:'#5b69c3',
+      color:'#FFF',
+      borderRadius:'50px',
+      textAlign:'center',
+      boxShadow: '2px 2px 3px #999',
+    }
 
     return (
       <div class="loader" id="productmapping">
@@ -250,7 +265,11 @@ class ProductMapping extends Component {
               <tbody>
                 {this.tabRow()}
               </tbody>
-            </table>   
+            </table> 
+
+            <Button primary onClick={this.onSubmit} style={saveBtnStyle}>
+              Save
+            </Button>
       </div>
     );
     <ProductMapping /> , document.getElementById('productmapping')
