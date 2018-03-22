@@ -46,9 +46,6 @@ class CollapaseCard extends Component {
     }
 
     render() {
-        var markTracifiedStyle = {
-            marginTop: '-4%',
-        }
         console.log("collapse products");
         console.log("type of reset order() : " + typeof this.props.resetOrders)
         let resourceThumbnails = [];
@@ -108,7 +105,7 @@ class CollapaseCard extends Component {
                             </Col>
                             <Col sm="6">
                             </ Col>
-                            <Col sm="3" style={markTracifiedStyle}>
+                            <Col sm="3" style={{marginTop: '-4%', textAlign: 'right'}}>
                                 <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                             </Col>
                     </Row>
