@@ -47,10 +47,7 @@ class CollapaseCard extends Component {
 
     render() {
         var markTracifiedStyle = {
-            // marginLeft: '-10%',
-            // width: '25%',
             marginTop: '-4%',
-            // position:'fixed'
         }
         console.log("collapse products");
         console.log("type of reset order() : " + typeof this.props.resetOrders)
