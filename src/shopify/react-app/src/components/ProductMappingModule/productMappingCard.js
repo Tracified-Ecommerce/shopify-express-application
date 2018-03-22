@@ -27,18 +27,20 @@ class ProductMappingCard extends Component{
         return(
             
             <div className="cardProductMapping" style={cardStyle}>
-                <div className="mappingDetailsDiv" style={tdStyle}>
+                
                 <tr>
+                    <div className="mappingDetailsDiv" style={tdStyle}>
                     <td>
                         
                             <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
                        
                     </td>
+                    </div>
                     <td className="saveBtn">
                       <Button onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>
                     </td>
                 </tr>
-                 </div>
+                 
                 <tr >
                   <Row className="tblHeaders">
                     <Col sm="5" xs="5" className="pName">Product Name</Col>
