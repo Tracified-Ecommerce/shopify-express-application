@@ -206,7 +206,7 @@ function imageSliderBuilder(images: any): IImageSliderJSON {
     while (rowCount < 2) {
         // row code
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 4; i++) {
 
             // code for columns inside row
             if (rowCount === 0) {
