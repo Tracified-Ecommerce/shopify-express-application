@@ -20,7 +20,7 @@ class ProductMappingCard extends Component{
             
             <div className="cardProductMapping" style={cardStyle}>
                 <tr>
-                <td style={{width:'94%'}}>
+                <td style={{width:'94%'+'!important'}}>
                       <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
                     </td>
                     <td className="saveBtn">
