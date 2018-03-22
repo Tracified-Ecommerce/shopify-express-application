@@ -17,11 +17,18 @@ class ProductMappingCard extends Component{
             // marginLeft: "-30%"
         }
 
+        var tdStyle={
+            width:{
+                value:'94%',
+                important:'true'
+            }
+        }
+
         return(
             
             <div className="cardProductMapping" style={cardStyle}>
                 <tr>
-                <td style={{width:94+'% !important'}}>
+                <td style={tdStyle}>
                       <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
                     </td>
                     <td className="saveBtn">
