@@ -33,7 +33,7 @@ class ProductMappingCard extends Component{
                          </div>
                     </td>
                     <td className="saveBtn">
-                      <Button onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>
+                      {/*<Button onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>*/}
                     </td>
                 </tr>
                 
