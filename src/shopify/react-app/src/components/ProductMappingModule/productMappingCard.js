@@ -23,7 +23,7 @@ class ProductMappingCard extends Component{
 
         return(
             
-            <div className="cardProductMapping">
+            <div className="cardProductMapping" style={cardStyle}>
                 
                 <tr style={tdStyle}>
                     <td>
