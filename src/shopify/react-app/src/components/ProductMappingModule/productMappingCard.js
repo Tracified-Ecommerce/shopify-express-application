@@ -18,14 +18,14 @@ class ProductMappingCard extends Component{
         }
 
         var tdStyle={
-            width:"94%"
+            marginLeft:'-10%'
         }
 
         return(
             
-            <div className="cardProductMapping" style={cardStyle}>
+            <div className="cardProductMapping">
                 
-                <tr>
+                <tr style={tdStyle}>
                     <td>
                         <div className="mappingDetailsDiv" style={tdStyle}>    
                             <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
@@ -37,7 +37,7 @@ class ProductMappingCard extends Component{
                 </tr>
                 
                 <tr >
-                  <Row className="tblHeaders">
+                  <Row className="tblHeaders" >
                     <Col sm="5" xs="5" className="pName">Product Name</Col>
                     <Col sm="2" xs="2" className="Pid">Product Item ID</Col>
                     <Col sm="3" xs="3"className="tTitle">Tracified Item title</Col>
