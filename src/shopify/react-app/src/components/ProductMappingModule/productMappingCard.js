@@ -7,7 +7,8 @@ class ProductMappingCard extends Component{
     render(){
         var cardStyle={
             backgroundColor:'white',
-            width: '250%'            
+            width: '250%',
+            boxShadow: '0 8px 6px -6px #22384f9c',            
         }
 
         var saveBtnStyle={
