@@ -18,10 +18,7 @@ class ProductMappingCard extends Component{
         }
 
         var tdStyle={
-            width:{
-                value:'94%',
-                important:'true'
-            }
+            width:"94%"
         }
 
         return(
