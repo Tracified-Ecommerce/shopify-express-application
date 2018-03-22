@@ -17,26 +17,28 @@ class ProductMappingCard extends Component{
             // marginLeft: "-30%"
         }
 
-        // var tdStyle={
-        //     width:{
-        //         value:'94%',
-        //         important:'true'
-        //     }
-        // }
+        var tdStyle={
+            width:{
+                value:'94%',
+                important:'true'
+            }
+        }
 
         return(
             
             <div className="cardProductMapping" style={cardStyle}>
+                <div className="mappingDetailsDiv" style={tdStyle}>
                 <tr>
                     <td>
-                        <div className="mappingDetailsDiv">
+                        
                             <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
-                        </div>
+                       
                     </td>
                     <td className="saveBtn">
                       <Button onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>
                     </td>
-                  </tr>
+                </tr>
+                 </div>
                 <tr >
                   <Row className="tblHeaders">
                     <Col sm="5" xs="5" className="pName">Product Name</Col>
