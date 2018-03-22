@@ -243,7 +243,7 @@ function mapBuilder(tabs: any): IMapJSON {
         mapComponents.htmltabs += "<button id =\"button" + count + "\" class=\"tablinks\" onclick=\"openCity(event, 'tab" + count + "')\">" + tab.tabName + "</button>";
         mapComponents.htmltabcontent += "<div id =\"tab" + count + "\" class =\"tabcontent\">";
         // tslint:disable-next-line:max-line-length
-        mapComponents.htmltabcontent += "<div id =\"map" + count + "\" style=\"height: 440px; border: 1px solid #AAA;\"></div></div>";
+        mapComponents.htmltabcontent += "<div id =\"map" + count + "\" style=\"height: 390px; border: 1px solid #AAA;\"></div></div>";
         const mapTab: IMapTab = {
             mapID: "map" + count,
             markers: [],
