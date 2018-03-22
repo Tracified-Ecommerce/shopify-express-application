@@ -4,7 +4,7 @@
 }
 
 .tblHeaders .col-sm-3,.tblHeaders .col-sm-2,tblHeaders .col-sm-5{
-     padding-left: 10% !important; 
+/*      padding-left: 10% !important;  */
 /*     width: 25% !important; */
     padding-bottom: 1%;
     font-weight: bold;
@@ -12,6 +12,7 @@
 
 .pName,.Pid,.tTitle,.Permission{
     font-weight: bold;
+    back
 }
 
 .cardProductMapping {
@@ -305,11 +306,16 @@
     }
       .Pid{
           margin-left: -3%;
+          width: 6%;          
       }
       .tTitle{
           margin-left: 3%;
+      }
+      .Permission{
+        margin-left: -15%;
       }
       .tblHeaders{
           width: 210% !important;
       }
 }
+
