@@ -32,7 +32,7 @@ class Uncollapsed extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm="10">
+                    <Col sm="12">
                         <CollapaseCards itemArray={this.props.order.lineItems} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
                     </Col>
                 </Row>
