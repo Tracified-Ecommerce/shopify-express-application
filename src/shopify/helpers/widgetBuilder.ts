@@ -183,12 +183,12 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
         }
 
         if ((imageIdentifier + 1) % 4 === 0) {
-            imageSliderComponents.htmltxt += "<div class=\"col-md-4\">"
+            imageSliderComponents.htmltxt += "<div class=\"col-md-3\">"
                 + "<img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
                 + "<div class=\"carousel-caption\">"
                 + "</div></div></div></div>";
         } else {
-            imageSliderComponents.htmltxt += "<div class=\"col-md-4\">"
+            imageSliderComponents.htmltxt += "<div class=\"col-md-3\">"
                 + "<img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
                 + "<div class=\"carousel-caption\">"
                 + "</div></div>";
