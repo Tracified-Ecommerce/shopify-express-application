@@ -3,7 +3,7 @@ export const shopifyConfigs = {
     install: {
         apiKey: "8cbed825a1a05c935cbb12574bb24257",
         apiSecret: "4bc97ed0ae56f7e75f2560f7816fd96a",
-        forwardingAddress: "https://tracified-api-test.herokuapp.com",
+        forwardingAddress: "https://tracified-api.herokuapp.com",
     },
     services: {
         adminURL: "https://tracified-admin.herokuapp.com/",
