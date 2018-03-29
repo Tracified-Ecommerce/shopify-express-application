@@ -7,12 +7,21 @@ class ProductMappingCard extends Component{
     render(){
         var cardStyle={
             backgroundColor:'white',
-            width: '360%'            
+            width: '260%',
+            boxShadow: '0 8px 6px -6px #22384f9c',            
+            // width: '360%'            
         }
 
         var saveBtnStyle={
             backgroundColor:"#5d6bc4", 
-            color:"white"
+            color:"white",
+            // marginLeft: "-30%"
+        }
+
+        var tdStyle={
+            // marginLeft:'-10%',
+            width:'90%'
+            // color:"white"
         }
 
         return(
