@@ -16,7 +16,9 @@ class Installation extends Component {
         return (
             <div>
                 <div class="InstallTitle">
-                    <DisplayText size="medium">Tracified - Configuration Instructions</DisplayText>
+                    <h1>
+                        <DisplayText size="medium">Tracified - Configuration Instructions</DisplayText>
+                    </h1>
                 </div>
                 <div class="InstallVideo">
                     <iframe width="560" height="415" src="https://www.youtube.com/embed/gk8W521N5d4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
