@@ -329,7 +329,7 @@ var saveBtnStyle={
 
               </thead>
                 <br/><br/><br/><br/><br/><br/><br/>
-              <tbody>
+              <tbody className="settingContent">
                 {this.tabRow()}
               </tbody>
             </table> 
