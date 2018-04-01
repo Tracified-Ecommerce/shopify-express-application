@@ -7,6 +7,7 @@ class FulfilledOrder extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            timelineText:"",
             orderNumber: this.props.order.order_number,
             productID: this.props.order.lineItems[0].product_id,
             modalOpen: false,
@@ -57,14 +58,17 @@ class FulfilledOrder extends Component {
         console.log("Button clicked , itemID is :" + this.state.itemID);
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
-                traceButtonDisable: true
+                traceButtonDisable: true,
+                timelineText:"no traceability"
             });
+            // this.setState({timelineText="no traceability"});
             console.log("No traceability data added");
         }
         else {
             console.log("Traceability data added");
             this.setState({
-                traceButtonDisable: true
+                traceButtonDisable: true,
+                timelineText:"see timeline"
             });
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
@@ -135,11 +139,12 @@ class FulfilledOrder extends Component {
                 </td>
                 <td>
                     <Button
-                        
+                        ariaControls="timelineBtn"
+                        children={timelineText}
                         size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
-                        >View Trace More Timeline</Button>
+                        />
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
