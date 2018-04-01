@@ -145,7 +145,7 @@ class FulfilledOrder extends Component {
                         size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
-                        >View Trace More Timeline</Button>
+                        ></Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
