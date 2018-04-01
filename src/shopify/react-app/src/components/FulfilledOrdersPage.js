@@ -208,7 +208,7 @@ class FulfilledOrdersPage extends Component {
                             }
 
             return (
-                <Page title="Tracified Orders" >
+                <Page title="Tracified Orders" seperator>
                      <div className="filterWrapper" style={filterStyle}>                       
                        <Stack alignment="center" >
                             <Stack.Item>
