@@ -313,7 +313,7 @@ var saveBtnStyle={
       <div class="loader" id="productmapping">
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
-        <table className="table table-striped">
+        <table className="table table-striped" id="settingContent">
           
             {/*<table className="table table-striped">              */}
 
@@ -329,7 +329,7 @@ var saveBtnStyle={
 
               </thead>
                 <br/><br/><br/><br/><br/><br/><br/>
-              <tbody className="settingContent">
+              <tbody>
                 {this.tabRow()}
               </tbody>
             </table> 

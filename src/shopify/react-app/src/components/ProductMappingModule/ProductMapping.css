@@ -113,7 +113,7 @@
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px)  { 
            
-    .settingContent {
+  #settingContent {
         width: 80% !important;
         margin-left: 10% !important;
         font-size: 100%;
