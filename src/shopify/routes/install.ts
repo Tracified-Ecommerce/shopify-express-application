@@ -285,7 +285,7 @@ router.get("/callback", (req: Request, res: Response) => {
 
         const TabJsUploadPayload = {
           asset: {
-            attachment: MapAssets.tracifiedLeafletsJs,
+            attachment: MapAssets.tracifiedTabJs,
             key: "assets\/tracified_tab.js",
           },
         };
