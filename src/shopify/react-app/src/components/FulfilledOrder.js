@@ -141,11 +141,11 @@ class FulfilledOrder extends Component {
                 <td>
                     <Button
                         ariaControls="timelineBtn"
-                        children={this.state.timelineText}
+                        {/*children={this.state.timelineText}*/}
                         size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
-                        ></Button>
+                        >{this.state.timelineText}</Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
