@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { Thumbnail, Card, Page, List, RadioButton, Button, Stack } from '@shopify/polaris';
+import { Thumbnail, Card, Page, List, RadioButton, Button, Stack,TextField} from '@shopify/polaris';
 import Loading from './Loading';
 import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
@@ -300,7 +300,7 @@ class Part2Cards extends Component {
                             </Stack.Item>
                             <Stack.Item>
 
-                                <input
+                                <TextField
                                     type="text"
                                     value={this.state.search}
                                     onChange={this.updateSearch.bind(this)}
