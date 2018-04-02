@@ -59,7 +59,7 @@ class FulfilledOrder extends Component {
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
                 traceButtonDisable: true,
-                timelineText:"no traceability"                
+                // timelineText:"no traceability"                
             });
             // this.state.timelineText="no traceability";
             console.log("No traceability data added");
@@ -68,7 +68,7 @@ class FulfilledOrder extends Component {
             console.log("Traceability data added");
             this.setState({
                 traceButtonDisable: true,
-                timelineText:"see timeline"
+                // timelineText:"see timeline"
             });
             // this.state.timelineText="see timeline";
             const url = '/shopify/shop-api/item/' + this.state.productID;
