@@ -203,7 +203,7 @@ class FulfilledOrdersPage extends Component {
             }
 
             var filterStyle={
-                              paddingBottom:5,
+                              paddingBottom:21,
                                 // marginTop:'-5%',
                             }
 
