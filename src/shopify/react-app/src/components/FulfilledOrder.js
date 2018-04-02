@@ -7,7 +7,7 @@ class FulfilledOrder extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            timelineText:"",
+            timelineText:"View Tracemore Timeline",
             orderNumber: this.props.order.order_number,
             productID: this.props.order.lineItems[0].product_id,
             modalOpen: false,
@@ -141,11 +141,11 @@ class FulfilledOrder extends Component {
                 <td>
                     <Button
                         ariaControls="timelineBtn"
-                        {/*children={this.state.timelineText}*/}
+                        children={this.state.timelineText}
                         size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
-                        >{this.state.timelineText}</Button>
+                        ></Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
