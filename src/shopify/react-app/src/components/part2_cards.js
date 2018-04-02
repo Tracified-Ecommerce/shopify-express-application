@@ -300,7 +300,7 @@ class Part2Cards extends Component {
                             </Stack.Item>
                             <Stack.Item>
 
-                                <TextField
+                                <input
                                     type="text"
                                     value={this.state.search}
                                     onChange={this.updateSearch.bind(this)}
