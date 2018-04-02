@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as axios from 'axios';
-import { Page, RadioButton, Card, Stack} from '@shopify/polaris';
+import { Page, RadioButton, Card, Stack,TextField} from '@shopify/polaris';
 import { Container, Row, Col} from 'reactstrap';
 import FulfilledOrder from './FulfilledOrder';
 import Loading from './Loading';
@@ -203,8 +203,8 @@ class FulfilledOrdersPage extends Component {
             }
 
             var filterStyle={
-                              paddingBottom:5,
-                                marginTop:'-5%',
+                              paddingBottom:21,
+                                // marginTop:'-5%',
                             }
 
             return (
@@ -236,7 +236,7 @@ class FulfilledOrdersPage extends Component {
                             </Stack.Item>
                             <Stack.Item>
                                 
-                                <input
+                                <TextField
                                 type="text"
                                 value={this.state.search}
                                 onChange={this.updateSearch.bind(this)}
