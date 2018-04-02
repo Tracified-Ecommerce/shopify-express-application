@@ -55,7 +55,7 @@ class FulfilledOrdersPage extends Component {
             });
     }
 
-    updateSearch(event){
+    updateSearch = event => {
         this.setState({
             search: event.target.value.substr(0, 20),
         });
