@@ -180,12 +180,12 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
 
         if ((imageIdentifier + 1) % imagesPerRow === 0) {
             imageSliderComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3\">"
-                + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"30\">"
+                + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"10\">"
                 + "<div class=\"carousel-caption\">"
                 + "</div></div></div></div>";
         } else {
             imageSliderComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3\">"
-                + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"30\">"
+                + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"10\">"
                 + "<div class=\"carousel-caption\">"
                 + "</div></div>";
         }

@@ -101,7 +101,6 @@ function componentBuilder(components: any): IComponentJSON {
                         }
                     }
                     componentJSON.htmltxt +=
-                        // tslint:disable-next-line:max-line-length
                         "<div class=\"xoutofy-top\">" + tot + "</div><div class=\"xoutofy-middle\">out of " + component.values.length + " items</div>"
                         + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "have " + "</span>" +
                         component.uiComponent.title +
@@ -173,16 +172,13 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
     };
 
     for (const dimension of dimensions) {
-        // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr style=\"margin-top:-1%\"><td class=\"dimTitle\" style=\"background-color:" + dimension.titleBackColor + ";color:" + dimension.titleTxtColor + "\">" + dimension.name + "";
-        // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:" + dimension.descriptionBackColor + ";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
 
         for (const x of dimension.data) {
             //  if(x.value==null){
-                var contentTitle=x.label;
+                const contentTitle = x.label;
                 // x.label=null;
-                // tslint:disable-next-line:max-line-length
                 dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + contentTitle + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
             //  }
         }
