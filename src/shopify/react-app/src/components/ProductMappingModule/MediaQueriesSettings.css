@@ -36,7 +36,7 @@
         font-size: 100%;
     }
 
-    #itemTitle{
+    .itemTitle,.enableCheckbox{
         z-index: -10;
     }
 
