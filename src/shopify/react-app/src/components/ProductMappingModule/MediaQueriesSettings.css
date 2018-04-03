@@ -110,7 +110,7 @@
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 255%!important;
+        width: 265%!important;
         white-space: nowrap;
         margin-left: 1%;
         overflow: hidden;
@@ -128,16 +128,25 @@
     }
 
     .tblHeaders{
-        margin-left: -3%;
-        font-size: 110%!important;
+        margin-left: -5%;
+        font-size: 97%!important;
         font-weight: 600;
-        width: 72%;
+        width: 77%;
         font-family: calibri;
+    }
+
+    .tTitle{
+        margin-left: 2%;
+    }
+
+    .Permission {
+        margin-left: -2%;
     }
 
     #settingContent {
         width: 70% !important;
         margin-left: 15%;
+        font-size: 12px !important;
     }    
             
     .Polaris-Choice__Label{
