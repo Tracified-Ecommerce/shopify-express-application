@@ -125,7 +125,7 @@ render() {
           <td>
           {this.props.obj.id}
           </td>   
-                  <td>  
+                  <td id="itemTitle">  
                   <Select 
                   placeholder="Select"
                   options={traceOptions}

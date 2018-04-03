@@ -1,18 +1,43 @@
 @media screen and (max-width: 2560px) and (min-width: 1440px){
-    .cardProductMapping td{
-        width: 200% !important;
-    }    
-    
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 260% !important;
-        white-space: nowrap; 
+        width: 255%!important;
+        white-space: nowrap;
+        margin-left: 1%;
         overflow: hidden;
         -o-text-overflow: ellipsis;
-           text-overflow: ellipsis; 
+        text-overflow: ellipsis;
         padding-bottom: 3%;
- 
+        padding-left: 0%;
+    }
+
+    .MappingDetails{
+        font-size: 150% !important;
+        margin-left: -25%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+
+    .tblHeaders{
+        margin-left: -20%;
+        font-size: 130% !important;
+        font-weight: 600;
+        width: 128%;
+        font-family: calibri;
+    }
+
+    #settingContent {
+        width: 70% !important;
+        margin-left: 15%;
+    }    
+            
+    .Polaris-Choice__Label{
+        font-size: 100%;
+    }
+
+    #itemTitle{
+        z-index: -10;
     }
 }
 
