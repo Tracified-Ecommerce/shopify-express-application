@@ -1,3 +1,4 @@
+/* tslint:disable:no-shadowed-variable max-line-length no-var-requires */
 import request = require("request-promise");
 import errors = require("request-promise/errors");
 import * as configs from "../appConfig";
