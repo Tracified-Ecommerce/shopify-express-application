@@ -58,7 +58,9 @@ class CollapaseCard extends Component {
                 });
 
                 if (!isUndefined(product[0])) {
-                    productImage = product[0].images[0].src;
+                    if (!isUndefined(product[0].images[0])) {
+                        productImage = product[0].images[0].src;
+                    }
                     if (resourceThumbnails.length < 5) {
                         resourceThumbnails.push(
                             <Thumbnail
@@ -100,14 +102,14 @@ class CollapaseCard extends Component {
                 <Container fluid={true}>
                     <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                     <Row noGutters={true}>
-                            <Col sm="3">
-                                <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
-                            </Col>
-                            <Col sm="6">
-                            </ Col>
-                            <Col sm="3" style={{marginTop: '-4%', textAlign: 'right'}}>
-                                <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
-                            </Col>
+                        <Col sm="3">
+                            <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
+                        </Col>
+                        <Col sm="6">
+                        </ Col>
+                        <Col sm="3" style={{ marginTop: '-4%', textAlign: 'right' }}>
+                            <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
+                        </Col>
                     </Row>
                 </Container>
                 <Collapse isOpen={!this.state.collapsed}>
