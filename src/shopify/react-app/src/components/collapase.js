@@ -65,7 +65,7 @@ class CollapaseCard extends Component {
                         resourceThumbnails.push(
                             <Thumbnail
                                 key={resourceThumbnails.length}
-                                source={product[0].images[0].src}
+                                source={productImage}
                                 alt={" Image"}
                             />
                         );
