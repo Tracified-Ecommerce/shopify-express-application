@@ -45,6 +45,11 @@
         width: 90px !important;
         height: 90px !important;
     }
+
+    .sticky{
+        z-index:50 !important; 
+    }
+    
 }
 
 @media screen and (max-width: 1440px) and (min-width: 1024px){
