@@ -41,7 +41,7 @@ function componentBuilder(components: any): IComponentJSON {
     };
 
     for (const component of components) {
-        componentJSON.htmltxt += "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
+        componentJSON.htmltxt += "<div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-12 summary-widget\">";
         let tot: number = 0;
         switch (component.uiComponent.name) {
 
@@ -174,7 +174,7 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
 
     for (const dimension of dimensions) {
         // tslint:disable-next-line:max-line-length
-        dimensionComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr style=\"margin-top:-1%\"><td class=\"dimTitle\" style=\"background-color:" + dimension.titleBackColor + ";color:" + dimension.titleTxtColor + "\">" + dimension.name + "";
+        dimensionComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr style=\"margin-top:-1%\"><td class=\"dimTitle\" style=\"background-color:" + dimension.titleBackColor + ";color:" + dimension.titleTxtColor + "\">" + dimension.name + "";
         // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:" + dimension.descriptionBackColor + ";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
 
