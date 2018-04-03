@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Container,Button} from 'reactstrap';
 // import {Button} from '@shopify/polaris';
-import './productMappingCard.css';
+// import './productMappingCard.css';
+import './MediaQueriesSettings.css';
 
 class ProductMappingCard extends Component{
     render(){
