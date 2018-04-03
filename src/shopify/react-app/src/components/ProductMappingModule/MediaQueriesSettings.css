@@ -36,7 +36,7 @@
         font-size: 100%;
     }
 
-    .itemTitle,.enableCheckbox,.Polaris-Select,.Polaris-Choice__Label,.Polaris-Icon{
+    .itemTitle,.enableCheckbox{
         z-index: -10;
     }
 
@@ -47,7 +47,7 @@
     }
 
     .sticky{
-        z-index:50 !important; 
+        z-index:100 !important; 
     }
     
 }
