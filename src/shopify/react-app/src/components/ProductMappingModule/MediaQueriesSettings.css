@@ -68,16 +68,16 @@
 
     .MappingDetails{
         font-size: 150% !important;
-        margin-left: -25%;
+        margin-left: 1%;
         padding-top: 4%;
         padding-bottom: 4%;
     }
 
     .tblHeaders{
-        margin-left: -20%;
-        font-size: 130% !important;
+        margin-left: -3%;
+        font-size: 110%!important;
         font-weight: 600;
-        width: 128%;
+        width: 72%;
         font-family: calibri;
     }
 
@@ -95,9 +95,10 @@
     }
 
     .saveBtn{
-        font-size: 170%;
-        width: 90px !important;
-        height: 90px !important;
+        font-size: 125% !important;
+        width: 70px!important;
+        height: 70px!important;
+        font-family: calibri;
     }
 
     .sticky{
