@@ -313,7 +313,7 @@ var saveBtnStyle={
               </tbody>
             </table> 
 -
--            <Button primary onClick={this.onSubmit} style={saveBtnStyle}>
+-            <Button primary onClick={this.onSubmit} style={saveBtnStyle} className="saveBtn">
               Save
             </Button>
       </div>
