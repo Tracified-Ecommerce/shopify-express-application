@@ -135,6 +135,10 @@
         font-family: calibri;
     }
 
+    .Pid{
+        margin-left: -2%;
+    }
+
     .tTitle{
         margin-left: 2%;
     }
@@ -174,7 +178,58 @@
 }
 
 @media screen and (max-width: 425px) and (min-width: 375px){
-    
+    .cardProductMapping {
+        position: fixed;
+        z-index: 50;
+        width: 265%!important;
+        white-space: nowrap;
+        margin-left: 1%;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        padding-bottom: 3%;
+        padding-left: 0%;
+    }
+
+    .MappingDetails{
+        font-size: 150% !important;
+        margin-left: 1%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+
+    .tblHeaders{
+        margin-left: -5%;
+        font-size: 97%!important;
+        font-weight: 600;
+        width: 77%;
+        font-family: calibri;
+    }
+
+    #settingContent {
+        width: 70% !important;
+        margin-left: 15%;
+        font-size: 12px !important;
+    }    
+            
+    .Polaris-Choice__Label{
+        font-size: 100%;
+    }
+
+    .itemTitle,.enableCheckbox{
+        z-index: -10;
+    }
+
+    .saveBtn{
+        font-size: 125% !important;
+        width: 60px!important;
+        height: 60px!important;
+        font-family: calibri;
+    }
+
+    .sticky{
+        z-index:100 !important; 
+    }
 }
 
 @media screen and (max-width: 375px) and (min-width: 320px){
