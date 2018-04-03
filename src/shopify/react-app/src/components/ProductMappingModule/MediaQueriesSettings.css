@@ -181,7 +181,7 @@
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 265%!important;
+        width: 355%!important;
         white-space: nowrap;
         margin-left: 1%;
         overflow: hidden;
@@ -189,13 +189,14 @@
         text-overflow: ellipsis;
         padding-bottom: 3%;
         padding-left: 0%;
+        height: 70px;
     }
 
     .MappingDetails{
         font-size: 150% !important;
         margin-left: 1%;
         padding-top: 4%;
-        padding-bottom: 4%;
+        /* padding-bottom: 4%; */
     }
 
     .tblHeaders{
@@ -221,9 +222,9 @@
     }
 
     .saveBtn{
-        font-size: 125% !important;
-        width: 60px!important;
-        height: 60px!important;
+        font-size: 110%!important;
+        width: 55px!important;
+        height: 55px!important;
         font-family: calibri;
     }
 
