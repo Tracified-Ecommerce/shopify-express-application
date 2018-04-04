@@ -234,6 +234,7 @@ class FulfilledOrdersPage extends Component {
 
                                 />
                             </Stack.Item>
+                        </Stack>
                             {/* <Stack.Item> */}
                             <div className="searchText">    
                                 <TextField
@@ -245,7 +246,7 @@ class FulfilledOrdersPage extends Component {
                             </div>  
                             {/* </Stack.Item>  */}
 
-                        </Stack>
+                        
                     </div>
                     <table className="table table-striped">
                         <thead>
