@@ -126,10 +126,10 @@
         margin-left: 0%!important;
     }
     .tTitle{
-        margin-left: 0%!important;
+        margin-left: 1%!important;
     } 
     .Permission{
-        padding-left: 0% !important;
+        margin-left: -2%!important;
     }
 }
 
