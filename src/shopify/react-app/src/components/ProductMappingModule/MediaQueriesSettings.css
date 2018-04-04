@@ -121,6 +121,13 @@
     .sticky{
         z-index:100 !important; 
     }
+
+    .tTitle{
+        margin-left: 9% !important;
+    } 
+    .Permission{
+        padding-left: 14% !important;
+    }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
