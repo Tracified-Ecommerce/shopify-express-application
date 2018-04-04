@@ -234,16 +234,16 @@ class FulfilledOrdersPage extends Component {
 
                                 />
                             </Stack.Item>
-                            <Stack.Item>
-                                
+                            {/* <Stack.Item> */}
+                            <div className="searchText">    
                                 <TextField
                                 // type="text"
                                 value={this.state.search}
                                 onChange={this.updateSearch.bind(this)}
                                 style={inputStyle}
                                 />
-                                
-                            </Stack.Item> 
+                            </div>  
+                            {/* </Stack.Item>  */}
 
                         </Stack>
                     </div>
