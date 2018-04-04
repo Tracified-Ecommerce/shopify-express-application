@@ -223,6 +223,7 @@
         width: 55px!important;
         height: 55px!important;
         font-family: calibri;
+        z-index:50;
     }
 
     .sticky{
