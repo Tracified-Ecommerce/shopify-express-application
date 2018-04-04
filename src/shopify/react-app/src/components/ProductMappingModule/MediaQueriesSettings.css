@@ -122,11 +122,14 @@
         z-index:100 !important; 
     }
 
+    .Pid{
+        margin-left: -13%;
+    }
     .tTitle{
-        margin-left: 9% !important;
+        margin-left: -3%!important;
     } 
     .Permission{
-        padding-left: 14% !important;
+        margin-left: -7%!important;
     }
 }
 
