@@ -49,6 +49,18 @@
     .sticky{
         z-index:100 !important; 
     }
+
+    .pName{
+        padding-left: 14% !important;
+    }
+
+    .Pid{
+        padding-left: 4% !important;
+    }
+
+    .Permission{
+        margin-left: -7% !important;
+    }
     
 }
 
