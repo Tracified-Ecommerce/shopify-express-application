@@ -57,7 +57,7 @@ class FulfilledOrdersPage extends Component {
 
     updateSearch (event){
         this.setState({
-            search: event.target.value.substr(0, 20),
+            // search: event.target.value.substr(0, 20),
         });
     }
     
@@ -237,7 +237,7 @@ class FulfilledOrdersPage extends Component {
                         </Stack>
                             {/* <Stack.Item> */}
                             <div className="searchText">    
-                                <TextField
+                                <TextField 
                                 // type="text"
                                 value={this.state.search}
                                 onChange={this.updateSearch.bind(this)}
