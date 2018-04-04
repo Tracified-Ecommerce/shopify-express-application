@@ -276,7 +276,11 @@
     }
 
     .tblHeaders{
-        display: none;
+        margin-left: -5%;
+        font-size: 97%!important;
+        font-weight: 600;
+        width: 77%;
+        font-family: calibri;
     }
 
     #settingContent {
