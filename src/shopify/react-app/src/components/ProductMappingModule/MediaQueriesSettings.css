@@ -66,6 +66,15 @@
     /* .Permission{
         margin-left: -7% !important;
     } */
+
+     /*alertBox css changes*/
+     .alertBox{
+        min-height: 150px;
+    }
+
+    .Polaris-Button.Polaris-Button--primary{
+        margin-left: 40%;
+    }
     
 }
 
@@ -130,6 +139,15 @@
     } 
     .Permission{
         margin-left: -2%!important;
+    }
+
+      /*alertBox css changes*/
+      .alertBox{
+        min-height: 150px;
+    }
+
+    .Polaris-Button.Polaris-Button--primary{
+        margin-left: 40%;
     }
 }
 
