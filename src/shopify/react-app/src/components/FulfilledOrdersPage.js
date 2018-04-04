@@ -237,7 +237,7 @@ class FulfilledOrdersPage extends Component {
                             <Stack.Item>
                                 
                                 <TextField
-                                type="text"
+                                // type="text"
                                 value={this.state.search}
                                 onChange={this.updateSearch.bind(this)}
                                 style={inputStyle}
