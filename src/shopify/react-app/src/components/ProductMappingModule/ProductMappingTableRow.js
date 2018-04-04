@@ -132,7 +132,6 @@ render() {
                   onChange={this.onItemChange}
                   value = {this.state.selectVal}
                   id={this.props.obj.id}
-                  name="itemTitle"
                   />
                   </td>      
           <td className="enableCheckbox">
