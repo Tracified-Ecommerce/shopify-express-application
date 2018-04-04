@@ -188,8 +188,8 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    var customer = order.customer.first_name + " " + order.customer.last_name;
-
+                    // var customer = order.customer.first_name + " " + order.customer.last_name;
+                    var customer =  order.customer.last_name;
 
 
                     orderArray.push({
