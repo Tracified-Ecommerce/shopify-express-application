@@ -123,13 +123,13 @@
     }
 
     .Pid{
-        margin-left: -13%;
+        margin-left: 0%!important;
     }
     .tTitle{
-        margin-left: -3%!important;
+        margin-left: 0%!important;
     } 
     .Permission{
-        margin-left: -7%!important;
+        padding-left: 0% !important;
     }
 }
 
