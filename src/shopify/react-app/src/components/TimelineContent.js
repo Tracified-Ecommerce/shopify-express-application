@@ -32,7 +32,7 @@ class TimelineContent extends Component {
         var stageData = this.props.data;
         var isClosed = this.props.collapseArray[this.props.collapseArrayKey];
         var buttonText = this.props.collapseArray[this.props.collapseArrayKey] ? {text: "see less \u25B2"} : {text: "see more  \u25BC"};
-        var divStyle = this.state.isCollsapsible ? (!this.state.collapseArray[this.props.collapseArrayKey] ? {overflow:"hidden", height:112, transition: 'all 0.7s ease-in-out'} : {overflow:"hidden", height:this.height, transition: 'all 0.7s ease-in-out'}) : {} ;
+        var divStyle = this.state.isCollsapsible ? (!this.state.collapseArray[this.props.collapseArrayKey] ? {overflow:"hidden", height:120, transition: 'all 0.7s ease-in-out'} : {overflow:"hidden", height:this.height, transition: 'all 0.7s ease-in-out'}) : {} ;
         var buttonCode = <p></p>;
         var seeMoreStyle = !this.props.collapseArray[this.props.collapseArrayKey] ? {background: 'linear-gradient(rgba(255,255,255,1), white)', position:'relative', bottom:'0px', boxShadow:'0px -8px 10px -1px rgba(255,255,255,1)'}: {};
 
@@ -63,7 +63,7 @@ class TimelineContent extends Component {
                         } else {
 
                             return(
-                                <div key={key} style={{boxShadow:'0px 1px 5px 1px rgba(189,189,189,0.52)', margin:7, padding:5, borderRadius:4, backgroundColor:'#fafafa'}}>
+                                <div key={key} style={{boxShadow:'0px 1px 5px 1px rgba(189,189,189,0.52)', margin:7, padding:5, borderRadius:4, backgroundColor:'#fafafa',marginBottom:'4%'}}>
                                 <div style={{minHeight:24}}>
                                     <span style={{fontWeight:'bold', fontSize: 14, color:'green'}}>
                                         &#8227; {stageData[key].title} :
