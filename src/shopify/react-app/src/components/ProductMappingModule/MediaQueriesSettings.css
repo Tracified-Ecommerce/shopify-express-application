@@ -264,8 +264,17 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) {
     .saveBtn{
         z-index: 50 !important;
+    }
+
+    .MappingDetails{
+        margin-left: 10% !important;
+        margin-top: 4% !important;
+    }
+
+    .itemTitle,.enableCheckbox{
+        z-index: -10;
     }
 }
