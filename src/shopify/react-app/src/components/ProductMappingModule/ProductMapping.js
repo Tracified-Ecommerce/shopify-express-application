@@ -335,7 +335,7 @@ var saveBtnStyle={
                     onClose={this.toggleAlert}
                     heading={this.state.alertHeading}
                     message={this.state.alertMessage}>
-                </AlertBox>
+            </AlertBox>
       </div>
     );
     <ProductMapping /> , document.getElementById('productmapping')
