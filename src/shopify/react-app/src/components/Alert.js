@@ -28,7 +28,7 @@ class Alert extends Component {
         justifyContent: "space-between",
         borderRadius: 20,
         maxWidth: 500,
-        minHeight: 300,
+        minHeight: 150,
         margin: '0 auto',
         padding: 30
       };
@@ -38,6 +38,10 @@ class Alert extends Component {
         bottom: 0, 
         width: "100%", 
         height: "50px",
+      };
+
+      const closeBtnStyle ={
+        marginleft: "40%"
       };
   
       return (
@@ -49,7 +53,7 @@ class Alert extends Component {
           </TextContainer>
             
             <div className="alertFooter" style={footerStyle}>
-            <Button primary onClick={this.props.onClose} >
+            <Button className="closeBtn" style={closeBtnStyle} primary onClick={this.props.onClose} >
               Close
             </Button>
             </div>

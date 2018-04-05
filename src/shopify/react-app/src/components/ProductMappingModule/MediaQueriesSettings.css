@@ -68,13 +68,7 @@
     } */
 
      /*alertBox css changes*/
-     .alertBox{
-        min-height: 150px;
-    }
-
-    .Polaris-Button.Polaris-Button--primary{
-        margin-left: 40%;
-    }
+     
     
 }
 
@@ -141,14 +135,7 @@
         margin-left: -2%!important;
     }
 
-      /*alertBox css changes*/
-      .alertBox{
-        min-height: 150px;
-    }
-
-    .Polaris-Button.Polaris-Button--primary{
-        margin-left: 40%;
-    }
+    
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
