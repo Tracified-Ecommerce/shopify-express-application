@@ -66,7 +66,7 @@ class CollapseMain extends Component {
         return (
 
             <Card className="collapasedView_Untracified" style={cardStyle}>
-                <Row style={{ paddingBottom: 5 }}>
+                <Row>
                     <Col sm="2" style={{ paddingBottom: 5, paddingTop: 5 }}>
                         <TextStyle variation="strong">{this.props.title}</TextStyle>
                     </Col>
