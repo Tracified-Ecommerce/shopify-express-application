@@ -104,7 +104,7 @@ class FulfilledOrder extends Component {
        let itemOptions = [
             {
                 value:"noItem",
-                label:"Select an item to view"
+                label:"Select an item"
             }
         ];
         order.lineItems.forEach(item => {
