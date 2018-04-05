@@ -41,7 +41,7 @@ class Alert extends Component {
       };
 
       const closeBtnStyle ={
-        marginleft: "40%"
+        marginLeft: "40%"
       };
   
       return (
