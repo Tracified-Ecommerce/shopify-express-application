@@ -41,7 +41,7 @@ class Alert extends Component {
       };
 
       const closeBtnStyle ={
-        marginLeft: "40px"
+        margin: 'auto'
       };
   
       return (
