@@ -143,7 +143,11 @@ class FulfilledOrdersPage extends Component {
                          });
                      });
           
-                     const customer = order.customer.first_name + " " + order.customer.last_name;
+                     if(order.customer) {
+                        const customer = order.customer.first_name + " " + order.customer.last_name;
+                     } else {
+                        const customer = "Admin created order";
+                     }
 
                      orderArray.push({
                          id: order.id,
