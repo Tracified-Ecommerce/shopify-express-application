@@ -104,7 +104,7 @@ class FulfilledOrder extends Component {
        let itemOptions = [
             {
                 value:"noItem",
-                label:"Select an item to view"
+                label:"Select an item"
             }
         ];
         order.lineItems.forEach(item => {
@@ -132,7 +132,7 @@ class FulfilledOrder extends Component {
                 <td>
                     <Select
                         options={itemOptions}
-                        placeholder="Select an Item to view"
+                        placeholder="Select an item"
                         id={order.order_number}
                         onChange={this.onSelectItem}
                         value={this.state.itemEnable}
