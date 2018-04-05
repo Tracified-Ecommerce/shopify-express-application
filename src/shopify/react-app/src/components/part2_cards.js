@@ -249,7 +249,19 @@ class Part2Cards extends Component {
                 float: 'center',
                 fontSize: '14px',
                 marginTop: '-4%',
-                marginBottom: '1%'
+                marginBottom: '1%',
+                fontWeight: 400,
+                lineHeight: "2.4rem",
+                textTransform: "none",
+                letterSpacing: "normal",
+                position: "relative",
+                display: "-ms-flexbox",
+                display: "flex",
+                msFlexAlign: "center",
+                alignItems: "center",
+                padding: "0 1.2rem",
+                color: "#919eab",
+                cursor: text
             }
 
             return (
