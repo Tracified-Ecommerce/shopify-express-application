@@ -7,6 +7,7 @@ import ProductMappingService from './ProductMappingService';
 import axios from 'axios';
 import ProductMappingTableRow from './ProductMappingTableRow';
 import Sticky from 'react-sticky-el';
+import AlertBox from "./Alert";
 import {
   Layout,
   Page,
@@ -52,7 +53,8 @@ class ProductMapping extends Component {
       tracedata: [],
       permission: {},
       mapping: {},
-      initialMapping: {}
+      initialMapping: {},
+      isOpen: false,
     };
 
     this.productMappingService = new ProductMappingService();
@@ -83,6 +85,12 @@ class ProductMapping extends Component {
     // console.log(this.state.mapping);
 
   }
+
+  toggleAlert = () => {
+    this.setState({
+        isOpen: !this.state.isOpen
+    });
+}
 
   onItemChange(tracifiedItemID, shopifyProductID){
     
@@ -238,7 +246,14 @@ class ProductMapping extends Component {
     axios.post('/shopify/config/mapping', { mapping })
     // axios.post('https://tracified-react-api.herokuapp.com//shopify/config/mapping', { mapping })
       .then((result) => {
-        alert("Mapping Successfully Saved!");
+        // alert("Mapping Successfully Saved!");
+        this.setState({
+          alertHeading: "",
+          alertMessage: "Mapping Successfully Saved!",
+      });
+      this.setState({
+          isOpen: true,
+      });
         console.log( "Result :"+result);
       }).catch((error) => {
                 console.log(error);
@@ -316,6 +331,11 @@ var saveBtnStyle={
 -            <Button primary onClick={this.onSubmit} style={saveBtnStyle} className="saveBtn">
               Save
             </Button>
+            <AlertBox show={this.state.isOpen}
+                    onClose={this.toggleAlert}
+                    heading={this.state.alertHeading}
+                    message={this.state.alertMessage}>
+                </AlertBox>
       </div>
     );
     <ProductMapping /> , document.getElementById('productmapping')
