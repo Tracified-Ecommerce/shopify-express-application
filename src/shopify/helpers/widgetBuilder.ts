@@ -164,31 +164,28 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
     let firstRow = true;
     let imageIdentifier = 0; // to keep track of image rows
     // for every nth item, modulo n of imageIdentifier will be zero
-    const imagesPerRow = 4;
+    // const imagesPerRow = 4; // snot needed now REMOVE
 
     for (const image of images) {
         // for every nth item, modulo n of imageIdentifier will be zero
         // this can be used to track how many images have gone into each row
-        if (imageIdentifier % imagesPerRow === 0) {
-            if (firstRow) {
-                imageSliderComponents.htmltxt += "<div class=\"item active\"><div class=\"row\">";
-                firstRow = false;
-            } else {
-                imageSliderComponents.htmltxt += "<div class=\"item\"><div class=\"row\">";
-            }
-        }
-
-        if ((imageIdentifier + 1) % imagesPerRow === 0) {
-            imageSliderComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3\">"
-                + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"10\">"
-                + "<div class=\"carousel-caption\">"
-                + "</div></div></div></div>";
+        // if (imageIdentifier % imagesPerRow === 0) { REMOVE
+        if (firstRow) {
+            imageSliderComponents.htmltxt += "<div class=\"item active\"><div class=\"carousel-col\"><div class=\"block img-responsive\"></div>";
+            firstRow = false;
         } else {
-            imageSliderComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3\">"
-                + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"10\">"
-                + "<div class=\"carousel-caption\">"
-                + "</div></div>";
+            imageSliderComponents.htmltxt += "<div class=\"item\"><div class=\"carousel-col\"><div class=\"block img-responsive\"></div>";
         }
+        // } REMOVE
+
+        // if ((imageIdentifier + 1) % imagesPerRow === 0) { REMOVE
+        imageSliderComponents.htmltxt += "<img id=\"img" + imageIdentifier + "\"></div></div>";
+        // } else { REMOVE
+        // imageSliderComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3\">"
+        //     + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"10\">"
+        //     + "<div class=\"carousel-caption\">"
+        //     + "</div></div>";
+        // } REMOVE
 
         const imgObj = {
             id: "img" + imageIdentifier,
@@ -199,9 +196,9 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
         imageIdentifier++;
     }
 
-    if (images.length % imagesPerRow !== 0) {
-        imageSliderComponents.htmltxt += "</div></div>";
-    }
+    // if (images.length % imagesPerRow !== 0) {
+    //     imageSliderComponents.htmltxt += "</div></div>";
+    // }
 
     return imageSliderComponents;
 
