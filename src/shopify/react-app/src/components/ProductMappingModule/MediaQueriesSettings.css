@@ -10,21 +10,26 @@
         text-overflow: ellipsis;
         padding-bottom: 3%;
         padding-left: 0%;
+        height: 130px;  
     }
 
     .MappingDetails{
         font-size: 150% !important;
-        margin-left: -25%;
-        padding-top: 4%;
-        padding-bottom: 4%;
+        margin-top: 4%;
+        margin-left: 3%;
+        margin-bottom: 2%;
     }
 
     .tblHeaders{
-        margin-left: -20%;
-        font-size: 130% !important;
+        margin-left: -3%;
+        font-size: 130%!important;
         font-weight: 600;
-        width: 128%;
+        width: 100%;
         font-family: calibri;
+    }
+  
+    .Pid{
+        margin-left: -2%!important;
     }
 
     #settingContent {
@@ -49,6 +54,21 @@
     .sticky{
         z-index:100 !important; 
     }
+
+    /* .pName{
+        padding-left: 14% !important;
+    } */
+
+    /* .Pid{
+        padding-left: 4% !important;
+    } */
+
+    /* .Permission{
+        margin-left: -7% !important;
+    } */
+
+     /*alertBox css changes*/
+     
     
 }
 
@@ -56,7 +76,7 @@
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 255%!important;
+        width: 271%!important;
         white-space: nowrap;
         margin-left: 1%;
         overflow: hidden;
@@ -104,6 +124,18 @@
     .sticky{
         z-index:100 !important; 
     }
+
+    .Pid{
+        margin-left: 0%!important;
+    }
+    .tTitle{
+        margin-left: 1%!important;
+    } 
+    .Permission{
+        margin-left: -2%!important;
+    }
+
+    
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
@@ -193,23 +225,20 @@
     }
 
     .MappingDetails{
-        font-size: 150% !important;
-        margin-left: 1%;
-        padding-top: 4%;
-        /* padding-bottom: 4%; */
+        font-weight: bold;
+        font-size: 120%;
+        margin-top: 4%;
+        margin-left: 4%;
+        margin-bottom: 4%;
     }
 
     .tblHeaders{
-        margin-left: -5%;
-        font-size: 97%!important;
-        font-weight: 600;
-        width: 77%;
-        font-family: calibri;
+        display: none;
     }
 
     #settingContent {
         width: 70% !important;
-        margin-left: 15%;
+        margin-left: 4%;
         font-size: 12px !important;
     }    
             
@@ -226,6 +255,7 @@
         width: 55px!important;
         height: 55px!important;
         font-family: calibri;
+        z-index:50;
     }
 
     .sticky{
@@ -234,9 +264,22 @@
 }
 
 @media screen and (max-width: 375px) and (min-width: 320px){
-    
+    .saveBtn{
+        z-index: 50 !important;
+    }
 }
 
-@media screen and (max-width: 320px) {
-    
+@media screen and (min-width: 320px) {
+    .saveBtn{
+        z-index: 50 !important;
+    }
+
+    .MappingDetails{
+        margin-left: 10% !important;
+        margin-top: 4% !important;
+    }
+
+    .itemTitle,.enableCheckbox{
+        z-index: -10;
+    }
 }

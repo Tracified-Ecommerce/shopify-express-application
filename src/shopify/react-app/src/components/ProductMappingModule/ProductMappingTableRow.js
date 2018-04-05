@@ -96,7 +96,7 @@ render() {
     let traceList = JSON.parse(this.props.tracelist);
     let traceOptions = [{
       value:"noItem",
-      label:"Select an Item"
+      label:"Select an item"
     }];
     let permission = false;
     let tracifiedItemId = "";
