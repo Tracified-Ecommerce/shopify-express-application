@@ -7,7 +7,7 @@ import ProductMappingService from './ProductMappingService';
 import axios from 'axios';
 import ProductMappingTableRow from './ProductMappingTableRow';
 import Sticky from 'react-sticky-el';
-import AlertBox from "./Alert";
+import AlertBox from "../../components/Alert";
 import {
   Layout,
   Page,
