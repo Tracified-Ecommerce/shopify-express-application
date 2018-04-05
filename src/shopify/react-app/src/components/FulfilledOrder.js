@@ -132,7 +132,7 @@ class FulfilledOrder extends Component {
                 <td>
                     <Select
                         options={itemOptions}
-                        placeholder="Select an Item to view"
+                        placeholder="Select an item"
                         id={order.order_number}
                         onChange={this.onSelectItem}
                         value={this.state.itemEnable}
