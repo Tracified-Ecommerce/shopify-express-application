@@ -58,14 +58,14 @@ class CollapseMain extends Component {
         var buttonText = this.props.collapseArray[this.props.collapseArrayKey] ? { text: "see less" } : { text: "see more" };
         let cardStyle = {
             backgroundColor: 'white',
-            margin: 10,
+            // margin: 10,
             padding: 10,
             boxShadow: "0.2px 0.2px 1px 0.5px rgba(0, 0, 0, .2)"
         };
 
         return (
 
-            <Card style={cardStyle}>
+            <Card className="collapasedView_Untracified" style={cardStyle}>
                 <Row style={{ paddingBottom: 5 }}>
                     <Col sm="2" style={{ paddingBottom: 5, paddingTop: 5 }}>
                         <TextStyle variation="strong">{this.props.title}</TextStyle>
