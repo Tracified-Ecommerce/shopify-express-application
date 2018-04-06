@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import router from 'router';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import App from './App';
 import Tabs from './components/TabsView';
 import Logo from './components/TracifiedLogo';
 import ProductMapping from './components/ProductMappingModule/ProductMapping';
