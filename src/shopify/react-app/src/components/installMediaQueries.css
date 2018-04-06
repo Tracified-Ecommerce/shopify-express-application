@@ -1,0 +1,14 @@
+/* Media queries for the mobile devices */
+@media  (min-width: 360px) and (max-width: 640px) {
+
+}
+
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+
+}
+
+/* Media queries for the PC devices */
+@media (min-width: 1024px) {
+
+}
