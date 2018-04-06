@@ -22,7 +22,7 @@ class Installation extends Component {
                     </h1>
                 </div>
                 <div class="InstallVideo">
-                    <iframe width="1040px" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    <iframe width="1040px" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div class="InstallDescription">
                     <Card>
