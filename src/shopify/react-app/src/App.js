@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Background from './background_image.png';
 import '@shopify/polaris/styles.css';
 import {
+  Tabs,
+  PageActions,
+  Button,
+  Card,
   Badge
 } from '@shopify/polaris';
 import { Link } from 'react-router-dom';

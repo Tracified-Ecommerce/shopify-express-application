@@ -1,9 +1,30 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import ProductMappingService from './ProductMappingService';
 import 'react-select/dist/react-select.css';
 import './AppMP.css';
+import ReactDOM  from 'react-dom';
+import axios from 'axios';
+
+
+
 import {
+  Layout,
+  Page,
+  FooterHelp,
+  Card,
+  Button,
+  FormLayout,
+  TextField,
+  AccountConnection,
+  ChoiceList,
+  SettingToggle,
+  Stack,
+  Badge,
+  Heading,
+  PageActions,
   Checkbox,
+  ResourceList,
   Select
 
 } from '@shopify/polaris';
@@ -23,6 +44,7 @@ class ProductMappingTableRow extends Component {
         };     
             
         let testlist = this.props.tracelist;
+        let arraytestlist = testlist.split("");
         this.productMappingService = new ProductMappingService();
         this.changeMapping = this.changeMapping.bind(this);
         this.changePermission = this.changePermission.bind(this);
@@ -44,7 +66,7 @@ changePermission(value, id){
 }
 
 onItemChange(tracifiedItemID, shopifyProductID){
-  if(!(tracifiedItemID==="noItem")){
+  if(!(tracifiedItemID=="noItem")){
     this.setState({
       CBdisabled : false,
       selectVal : tracifiedItemID
@@ -76,6 +98,8 @@ render() {
       value:"noItem",
       label:"Select an item"
     }];
+    let permission = false;
+    let tracifiedItemId = "";
     
     for (let i = 0; i <traceList.length; i++) {
       traceOptions.push({
@@ -85,9 +109,9 @@ render() {
     }
 
     if (this.props.mapping.hasOwnProperty(this.props.obj.id)) {
-      this.setState({CBchecked : this.props.mapping[this.props.obj.id][1]});
-      this.setState({CBdisabled : false});
-      this.setState({selectVal : this.props.mapping[this.props.obj.id][0]});
+      this.state.CBchecked = this.props.mapping[this.props.obj.id][1];
+      this.state.CBdisabled = false;
+      this.state.selectVal = this.props.mapping[this.props.obj.id][0];
     }
 
     const CheckboxID = "CB" + this.props.obj.id
@@ -121,8 +145,8 @@ render() {
         </tr>
     );
    
-// <ProductMappingTableRow />,
-//   document.getElementById('root')
+<ProductMappingTableRow />,
+  document.getElementById('root')
   }
 }
 
