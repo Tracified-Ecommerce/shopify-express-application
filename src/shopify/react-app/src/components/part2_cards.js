@@ -261,7 +261,7 @@ class Part2Cards extends Component {
                 alignItems: "center",
                 padding: "0 1.2rem",
                 color: "#919eab",
-                cursor: text
+                // cursor: text
             }
 
             var toggleBtnStyle={
