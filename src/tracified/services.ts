@@ -42,7 +42,7 @@ export class Services implements IServices {
                 console.log(type);
                 console.log(data);
                 resolve(data);
-            }).catch(errors.StatusCodeError, (reason) => {
+            }).catch(errors.StatusCodeError, (reason: any) => {
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
                 console.log("reason options are :" + JSON.stringify(reason.options));
@@ -51,7 +51,7 @@ export class Services implements IServices {
                     reject(reason.response);
                 }
             })
-                .catch(errors.RequestError, (reason) => {
+                .catch(errors.RequestError, (reason: any) => {
                     console.log("inside catch2  " + reason.cause);
                     reject(reason);
                     // The request failed due to technical reasons.
@@ -77,7 +77,7 @@ export class Services implements IServices {
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 resolve(data);
-            }).catch(errors.StatusCodeError, (reason) => {
+            }).catch(errors.StatusCodeError, (reason: any) => {
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
                 console.log("reason options are :" + JSON.stringify(reason.options));
@@ -86,7 +86,7 @@ export class Services implements IServices {
                     reject(Error("invalid token"));
                 }
             })
-                .catch(errors.RequestError, (reason) => {
+                .catch(errors.RequestError, (reason: any) => {
                     console.log("inside catch2  " + reason.cause);
                     // The request failed due to technical reasons.
                     // reason.cause is the Error object Request would pass into a callback.
@@ -112,7 +112,7 @@ export class Services implements IServices {
                 console.log(type);
                 console.log(data);
                 resolve(data);
-            }).catch(errors.StatusCodeError, (reason) => {
+            }).catch(errors.StatusCodeError, (reason: any) => {
                 console.log("inside timeline catch1");
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
@@ -120,7 +120,7 @@ export class Services implements IServices {
                 reject(reason);
 
             })
-                .catch(errors.RequestError, (reason) => {
+                .catch(errors.RequestError, (reason: any) => {
                     console.log("inside timeline catch2  " + reason.cause);
                     reject(Error(reason.cause));
                     // The request failed due to technical reasons.
@@ -145,7 +145,7 @@ export class Services implements IServices {
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 resolve(data);
-            }).catch(errors.StatusCodeError, (reason) => {
+            }).catch(errors.StatusCodeError, (reason: any) => {
                 console.log("inside pos catch1");
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
@@ -153,7 +153,7 @@ export class Services implements IServices {
                 reject(reason);
 
             })
-                .catch(errors.RequestError, (reason) => {
+                .catch(errors.RequestError, (reason: any) => {
                     console.log("inside pos catch2  " + reason.cause);
                     reject(Error(reason.cause));
                     // The request failed due to technical reasons.
@@ -179,14 +179,14 @@ export class Services implements IServices {
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 resolve(data);
-            }).catch(errors.StatusCodeError, (reason) => {
+            }).catch(errors.StatusCodeError, (reason: any) => {
                 console.log("inside pos catch1");
                 console.log("reason response is :" + JSON.stringify(reason.response));
                 console.log("reason error is :" + JSON.stringify(reason.error));
                 console.log("reason options are :" + JSON.stringify(reason.options));
                 reject(reason);
 
-            }).catch(errors.RequestError, (reason) => {
+            }).catch(errors.RequestError, (reason: any) => {
                     console.log("inside pos catch2  " + reason.cause);
                     reject(Error(reason.cause));
                     // The request failed due to technical reasons.
@@ -208,7 +208,7 @@ export class Services implements IServices {
             request(options).then((data: any) => {
                 const type: string = typeof data;
                 resolve(data);
-            }).catch((error) => {
+            }).catch((error: any) => {
                 console.log(error);
             });
         });

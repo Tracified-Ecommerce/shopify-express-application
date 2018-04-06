@@ -1,3 +1,4 @@
+// tslint:disable:no-var-requires
 import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IRequest } from "../../types/session/sessionType";
@@ -16,7 +17,6 @@ import { router as webhook } from "./webhook";
 
 const helper: IHelper = new Helper();
 const shopAdminAPI = helper.shopAdminAPI;
-// tslint:disable-next-line:no-var-requires
 const path = require("path");
 const router = Router();
 
