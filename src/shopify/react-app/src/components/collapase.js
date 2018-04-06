@@ -95,7 +95,12 @@ class CollapaseCard extends Component {
 
         });
 
-
+        var markAsTracifiedBtnStyle={
+            marginTop: "-4%",
+            textAlign: "right",
+            marginLeft: "0%",
+            paddingRight: "1% !important"
+        }
 
         return (
             <div>
@@ -107,7 +112,7 @@ class CollapaseCard extends Component {
                         </Col>
                         <Col sm="6">
                         </ Col>
-                        <Col sm="3" style={{ marginTop: '-4%', textAlign: 'right' }}>
+                        <Col sm="3" style={markAsTracifiedBtnStyle}>
                             <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                         </Col>
                     </Row>
