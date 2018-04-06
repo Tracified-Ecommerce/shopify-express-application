@@ -100,10 +100,10 @@ router.get("/modal-mapping/mock/:shopname/:productID", (req: IRequest & Request,
                                 responseJSON.imageSliderComponents = widgetImageSliderBuilder(imageSliderComponentArray);
                                 responseJSON.mapComponents = widgetMapBuilder(mapComponentArray);
                                 return res.send(responseJSON);
-                            }).catch((err) => {
-                                console.log("ERROR IN POS CALL : " + err.error);
-                                console.log("Status Code of error : " + err.statusCode);
-                                return res.status(err.statusCode).send(err);
+                            }).catch((error) => {
+                                console.log("ERROR IN POS CALL : " + error.error);
+                                console.log("Status Code of error : " + error.statusCode);
+                                return res.status(error.statusCode).send(error);
                                 // console.log("stringified obj : " + JSON.stringify(err)); // finding error structure
                             });
 
@@ -186,10 +186,10 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                     + JSON.stringify(widgetResponseJSON));
                                 return res.send(widgetResponseJSON);
 
-                            }).catch((err) => {
-                                console.log("ERROR IN POS CALL : " + err.error);
-                                console.log("Status Code of error : " + err.statusCode);
-                                res.status(err.statusCode).send(err);
+                            }).catch((er) => {
+                                console.log("ERROR IN POS CALL : " + er.error);
+                                console.log("Status Code of error : " + er.statusCode);
+                                res.status(er.statusCode).send(er);
                                 // console.log("stringified obj : " + JSON.stringify(err)); // finding error structure
                             });
 
