@@ -265,9 +265,9 @@ class Part2Cards extends Component {
             }
 
             var toggleBtnStyle={
-                marginLeft: "4%",
-                width: "105%",
-                marginBottom: '1rem'
+                paddingBottom: "10px",
+                marginLeft: "5%",
+                width: "105%"
             }
 
             return (
@@ -276,14 +276,13 @@ class Part2Cards extends Component {
                         distribution="trailing"
                     >
 
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={toggleBtnStyle}>
                             <Stack.Item>
                                 <Button
                                     plain
                                     size="slim"
                                     outline
                                     onClick={this.toggleCardType}
-                                    style={toggleBtnStyle}
                                 >
                                     {buttonText.text}
                                 </Button>
