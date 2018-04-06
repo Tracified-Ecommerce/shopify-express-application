@@ -37,14 +37,14 @@ class ProductMappingCard extends Component{
                       {/*<Button primary onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>*/}
                     </Col>
                   </Row>
-                <Container >
-                  <Col xs="12" sm="12" md="12" lg="12" className="tblHeaders">
+                <Row >
+                  <div className="tblHeaders">
                     <Col xs="5" sm="5" md="5" lg="5" className="pName">Product Name</Col>
                     <Col xs="2" sm="2" md="2" lg="2" className="Pid">Product Item ID</Col>
                     <Col xs="3" sm="3" md="3" lg="3" className="tTitle">Tracified Item title</Col>
                     <Col xs="2" sm="2" md="2" lg="2" className="Permission">Permission</Col>
-                  </Col>
-                </Container>
+                  </div>
+                </Row>
                 </Container>
             </div>
         );
