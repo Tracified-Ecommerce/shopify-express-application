@@ -5,19 +5,19 @@
     }
 
     .InstallVideo iframe{  
-        width: 100%;
-        height: 500px;
+        width: 120%;
+        height: 340px;
     }
 
     .InstallTitle .Polaris-DisplayText {       
         margin-left: 0% ;
-        font-size: 150%;
+        font-size: 130%;
     }
 
     .InstallDescription {        
         width: 120% ;
         margin-left: 0% ;
-        font-size: 120%;
+        font-size: 80%;
     }
 }
 
