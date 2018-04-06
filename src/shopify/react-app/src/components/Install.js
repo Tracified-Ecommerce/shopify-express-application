@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, DisplayText, Button } from '@shopify/polaris';
 import { Container, Row, Col } from 'reactstrap';
 import './install.css';
+import './installMediaQueries.css';
 
 class Installation extends Component {
     render() {
