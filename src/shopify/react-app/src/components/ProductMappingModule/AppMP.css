@@ -1,4 +1,4 @@
-.table-center-content {
+.table-center-content>tbody>tr>td {
   vertical-align: baseline;
 }
 
