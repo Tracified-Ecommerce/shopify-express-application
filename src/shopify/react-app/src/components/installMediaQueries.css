@@ -1,10 +1,5 @@
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
-
-}
-
-/* Media queries for the tablet devices */
-@media (min-width: 650px) and (max-width: 1023px) {
     .InstallVideo {
         margin-left: 0% !important;
     }
@@ -23,6 +18,29 @@
         width: 120% !important;
         margin-left: 0% !important;
         font-size: 120%!important;
+    }
+}
+
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    .InstallVideo {
+        margin-left: 0% !important;
+    }
+
+    .InstallVideo iframe{  
+        width: 100%!important;
+        height: 437px!important;
+    }
+
+    .InstallTitle .Polaris-DisplayText {       
+        margin-left: 0% !important;
+        font-size: 150%!important;
+    }
+
+    .InstallDescription {        
+        width: 120% !important;
+        margin-left: 0% !important;
+        font-size: 100%!important;
     }
 }
 
