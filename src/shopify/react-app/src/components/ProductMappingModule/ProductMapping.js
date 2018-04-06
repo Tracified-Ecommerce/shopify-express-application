@@ -304,7 +304,7 @@ var saveBtnStyle={
 
 
     return (
-      <div class="loader" id="productmapping">
+      <div class="Polaris-Page" id="productmapping">
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
         <table className="table table-striped table-center-content" id="settingContent">
