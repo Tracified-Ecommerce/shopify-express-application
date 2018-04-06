@@ -264,6 +264,12 @@ class Part2Cards extends Component {
                 cursor: text
             }
 
+            var toggleBtnStyle={
+                marginLeft: "4%",
+                width: "105%",
+                marginBottom: '1rem'
+            }
+
             return (
                 <Page title="UnTracified Orders" separator>
                     <Stack
@@ -277,7 +283,7 @@ class Part2Cards extends Component {
                                     size="slim"
                                     outline
                                     onClick={this.toggleCardType}
-                                    style={{ marginBottom: '1rem' }}
+                                    style={toggleBtnStyle}
                                 >
                                     {buttonText.text}
                                 </Button>
