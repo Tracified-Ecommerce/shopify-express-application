@@ -1,8 +1,8 @@
-@media (min-width: 1440px){
+@media screen and (max-width: 2560px) and (min-width: 1440px){
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        /* width: 255%!important; */
+        width: 255%!important;
         white-space: nowrap;
         margin-left: 1%;
         overflow: hidden;
@@ -26,6 +26,10 @@
         font-weight: 600;
         width: 100%;
         font-family: calibri;
+    }
+  
+    .Pid{
+        margin-left: -2%!important;
     }
 
     /* #settingContent {
@@ -68,11 +72,11 @@
     
 }
 
-@media (min-width: 1024px){
+@media screen and (max-width: 1440px) and (min-width: 1024px){
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        /* width: 271%!important; */
+        width: 271%!important;
         white-space: nowrap;
         margin-left: 1%;
         overflow: hidden;
@@ -93,7 +97,7 @@
         margin-left: -3%;
         font-size: 110%!important;
         font-weight: 600;
-        /* width: 72%; */
+        width: 72%;
         font-family: calibri;
     }
 
@@ -134,11 +138,11 @@
     
 }
 
-@media (min-width: 768px){
+@media screen and (max-width: 1024px) and (min-width: 768px){
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        /* width: 265%!important; */
+        width: 265%!important;
         white-space: nowrap;
         margin-left: 1%;
         overflow: hidden;
@@ -156,15 +160,11 @@
     }
 
     .tblHeaders{
-        margin-left: -7%;
+        margin-left: -5%;
         font-size: 97%!important;
         font-weight: 600;
-        /* width: 77%; */
+        width: 77%;
         font-family: calibri;
-    }
-
-    .pName{
-        width: 45.66666667% !important;
     }
 
     .Pid{
@@ -172,7 +172,7 @@
     }
 
     .tTitle{
-        margin-left: 0%;
+        margin-left: 2%;
     }
 
     .Permission {
@@ -205,15 +205,15 @@
     }
 }
 
-@media (min-width: 425px){
+@media screen and (max-width: 768px) and (min-width: 425px){
     
 }
 
-@media (min-width: 375px){
+@media screen and (max-width: 425px) and (min-width: 375px){
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        /* width: 355%!important; */
+        width: 355%!important;
         white-space: nowrap;
         margin-left: 1%;
         overflow: hidden;
@@ -263,7 +263,13 @@
     }
 }
 
-@media (min-width: 320px) {
+@media screen and (max-width: 375px) and (min-width: 320px){
+    .saveBtn{
+        z-index: 50 !important;
+    }
+}
+
+@media screen and (min-width: 320px) {
     .saveBtn{
         z-index: 50 !important;
     }
@@ -275,9 +281,5 @@
 
     .itemTitle,.enableCheckbox{
         z-index: -10;
-    }
-
-    .tblHeaders{
-        display: none;
     }
 }
