@@ -4,9 +4,13 @@ import { Row, Col } from 'reactstrap';
 import * as axios from 'axios';
 import AlertBox from "./Alert";
 import {
+    AccountConnection,
     Page,
     TextField,
     Button,
+    TextStyle,
+    VisuallyHidden,
+    Heading,
     FormLayout,
     Card
 

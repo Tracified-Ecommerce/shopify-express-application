@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Collapse2 from './collapse2';
 import * as axios from 'axios';
 import { Row, Col, Card, Collapse } from 'reactstrap';
-import { Button, TextStyle } from '@shopify/polaris';
+import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
 import AlertBox from "./Alert";
 const QRCode = require('qrcode.react');
 

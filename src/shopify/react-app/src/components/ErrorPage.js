@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 
 class ErrorPage extends Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
 
         const errorCardStyle = { border: "3px solid #e84040", margin: 10 };
         const errorHeadingStyle = { backgroundColor: "#e84040", color: "white", padding: 10 };
-        let errorNoun = this.props.errors.length === 1 ? "error" : "errors";
+        let errorNoun = this.props.errors.length == 1 ? "error" : "errors";
 
         return (
 

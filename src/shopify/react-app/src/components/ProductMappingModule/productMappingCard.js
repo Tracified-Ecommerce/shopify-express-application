@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Container} from 'reactstrap';
+import { Row, Col, Container,Button} from 'reactstrap';
 // import {Button} from '@shopify/polaris';
 // import './productMappingCard.css';
 import './MediaQueriesSettings.css';
@@ -11,6 +11,18 @@ class ProductMappingCard extends Component{
             width: '260%',
             boxShadow: '0 8px 6px -6px #22384f9c',            
             // width: '360%'            
+        }
+
+        var saveBtnStyle={
+            backgroundColor:"#5d6bc4", 
+            color:"white",
+            // marginLeft: "-30%"
+        }
+
+        var tdStyle={
+            // marginLeft:'-10%',
+            width:'90%'
+            // color:"white"
         }
 
         return(

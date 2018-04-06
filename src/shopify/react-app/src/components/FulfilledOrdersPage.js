@@ -202,6 +202,10 @@ class FulfilledOrdersPage extends Component {
                 marginBottom:'2%'
             }
 
+            var tableStyle={
+                backgroundColor:"white"
+            }
+
             var filterStyle={
                               paddingBottom:21,
                                 // marginTop:'-5%',
