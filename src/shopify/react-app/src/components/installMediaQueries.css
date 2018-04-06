@@ -47,7 +47,7 @@
 /* Media queries for the PC devices */
 @media (min-width: 1024px) {
     .InstallVideo {
-        margin-left: 0% ;
+        margin-left: 19% ;
     }
 
     .InstallVideo iframe{  
@@ -57,10 +57,10 @@
 
     .InstallDescription {        
         width: 100% ;
-        margin-left: 0% ;
+        margin-left: 19% ;
     }
 
     .InstallTitle .Polaris-DisplayText {       
-        margin-left: 0% ;
+        margin-left: 19% ;
     }
 }
