@@ -48,6 +48,7 @@
 @media (min-width: 1024px) {
     .InstallVideo {
         margin-left: 19% ;
+        margin-right: 19% ;
     }
 
     .InstallVideo iframe{  
