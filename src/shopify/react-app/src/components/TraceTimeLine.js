@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import Loading from './Loading';
 import * as axios from 'axios';
-import {
-    Spinner,
-    Card,
-    Page
-} from '@shopify/polaris';
-import { Row, Col, Container } from 'reactstrap';
 import { Timeline, TimelineEvent } from 'react-event-timeline';
 import TimelineContent from './TimelineContent';
 import ErrorPage from './ErrorPage';

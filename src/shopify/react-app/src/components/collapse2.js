@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Collapse, Row, Col } from 'reactstrap';
-import { Button, Card, ResourceList, Thumbnail, Stack } from '@shopify/polaris';
-import * as axios from 'axios';
+import { ResourceList, Thumbnail } from '@shopify/polaris';
 import { isUndefined } from 'util';
 
 class CollapaseCard extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
 
@@ -15,7 +10,7 @@ class CollapaseCard extends Component {
             let productImage = "no/image";
             if (!isUndefined(this.props.products.length) && !isUndefined(this.props.products)) {
                 const product = this.props.products.filter((product) => {
-                    return product.id == resItem.product_id
+                    return product.id === resItem.product_id
                 });
 
                 if (!isUndefined(product[0])) {

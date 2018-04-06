@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Row, Col} from 'reactstrap';
-import { Button, Stack } from '@shopify/polaris';
+import { Row, Col} from 'reactstrap';
+import { Button } from '@shopify/polaris';
 import { isObject } from 'util';
-import { OverflowDetector } from 'react-overflow';
 
 class TimelineContent extends Component {
 

@@ -39,7 +39,7 @@ class FulfilledOrder extends Component {
 
         });
 
-        if (tempItemID == "noTraceabilityItem") { // if the item ID was not reassigned (i.e: if the item is not available in mapping)
+        if (tempItemID === "noTraceabilityItem") { // if the item ID was not reassigned (i.e: if the item is not available in mapping)
             this.setState({
                 traceButtonDisable: true
             });
@@ -56,7 +56,7 @@ class FulfilledOrder extends Component {
 
     onTraceSelect() {
         console.log("Button clicked , itemID is :" + this.state.itemID);
-        if (this.state.itemID == "noTraceabilityItem") {
+        if (this.state.itemID === "noTraceabilityItem") {
             this.setState({
                 traceButtonDisable: true,
                 // timelineText:"no traceability"                

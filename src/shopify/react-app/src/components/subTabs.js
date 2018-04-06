@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Tabs} from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
-import Mapping from './ProductMappingModule/ProductMapping';
 import Part2Cards from './part2_cards';
 import FulfilledOrdersPage from './FulfilledOrdersPage';
 

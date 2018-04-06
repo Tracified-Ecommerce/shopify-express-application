@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import CollapaseCards from './collapase';
-import * as axios from 'axios';
-import { Container, Row, Col } from 'reactstrap';
-import { Thumbnail, Card, Page, List } from '@shopify/polaris';
-import Loading from './Loading';
+import { Row, Col } from 'reactstrap';
+import { Card, List } from '@shopify/polaris';
 const QRCode = require('qrcode.react');
 
 class Uncollapsed extends Component {

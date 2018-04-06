@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as axios from 'axios';
-import { Container, Row, Col } from 'reactstrap';
-import { Thumbnail, Card, Page, List, RadioButton, Button, Stack,TextField} from '@shopify/polaris';
+import { Page, RadioButton, Button, Stack} from '@shopify/polaris';
 import Loading from './Loading';
 import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
@@ -49,7 +48,6 @@ class Part2Cards extends Component {
     componentDidMount() {
         axios.get('/shopify/shop-api/products')
             .then(response => {
-                const products = response.data.products;
                 this.setState({ products: response.data.products });
             }).catch(function (error) {
                 console.log(error);
@@ -119,6 +117,7 @@ class Part2Cards extends Component {
         else {
             // All the order details
             //var orders = this.state.orders;
+            var orderArray = [];
 
             if (this.state.isCheckedCus) {
 
@@ -131,7 +130,7 @@ class Part2Cards extends Component {
                     }
                 );
 
-                var orderArray = [];
+                orderArray = [];
                 orders.forEach((order) => {
                     var items = order.line_items;
                     var lineItems = [];
@@ -174,7 +173,7 @@ class Part2Cards extends Component {
 
                 console.log(orders);
 
-                var orderArray = [];
+                orderArray = [];
                 orders.forEach((order) => {
                     var items = order.line_items;
                     var lineItems = [];
@@ -212,7 +211,7 @@ class Part2Cards extends Component {
 
                 console.log(orders);
 
-                var orderArray = [];
+                orderArray = [];
                 orders.forEach((order) => {
                     var items = order.line_items;
                     var lineItems = [];
