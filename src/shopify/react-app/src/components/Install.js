@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, DisplayText, Button } from '@shopify/polaris';
+import { Card, DisplayText, Button ,Page} from '@shopify/polaris';
 import { Container, Row, Col } from 'reactstrap';
 import './install.css';
 import './installMediaQueries.css';
@@ -15,6 +15,7 @@ class Installation extends Component {
         }
 
         return (
+            <Page title="wrapperInstall">
             <div>
                 <div class="InstallTitle">
                     <h1>
@@ -63,6 +64,7 @@ class Installation extends Component {
                     <br />
                 </div>
             </div>
+            </Page>
         );
     }
 }
