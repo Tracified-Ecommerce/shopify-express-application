@@ -1,4 +1,3 @@
-// tslint:disable:no-var-requires
 import { Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IServices, Services } from "../../tracified/services";
