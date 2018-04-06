@@ -1,13 +1,13 @@
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
-    .InstallVideo {
+    /* .InstallVideo {
         margin-left: 0% ;
-    }
+    } */
 
-    .InstallVideo iframe{  
+    /* .InstallVideo iframe{  
         width: 120%;
         height: 340px;
-    }
+    } */
 
     .InstallTitle .Polaris-DisplayText {       
         margin-left: 0% ;
@@ -23,14 +23,14 @@
 
 /* Media queries for the tablet devices */
 @media (min-width: 650px) and (max-width: 1023px) {
-    .InstallVideo {
+    /* .InstallVideo {
         margin-left: 0% ;
-    }
+    } */
 
-    .InstallVideo iframe{  
+    /* .InstallVideo iframe{  
         width: 100%;
         height: 437px;
-    }
+    } */
 
     .InstallTitle .Polaris-DisplayText {       
         margin-left: 0% ;
@@ -46,15 +46,15 @@
 
 /* Media queries for the PC devices */
 @media (min-width: 1024px) {
-    .InstallVideo {
+    /* .InstallVideo {
         margin-left: 19% ;
         margin-right: 19% ;
-    }
+    } */
 
-    .InstallVideo iframe{  
+    /* .InstallVideo iframe{  
         /* width: 100%; */
-        height: 500px;
-    }
+        /* height: 500px;
+    } */ 
 
     .InstallDescription {        
         /* width: 100% ; */

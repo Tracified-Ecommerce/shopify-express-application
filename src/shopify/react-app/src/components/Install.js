@@ -22,9 +22,9 @@ class Installation extends Component {
                         <DisplayText size="medium">Tracified - Configuration Instructions</DisplayText>
                     </h1>
                 </div>
-                <div class="InstallVideo">
-                    <iframe width="1050px" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                </div>
+                {/* <div class="InstallVideo"> */}
+                    <iframe width="100%" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                {/* </div> */}
                 <div class="InstallDescription">
                     <Card>
                         <ol>
