@@ -261,6 +261,7 @@ class Part2Cards extends Component {
                 alignItems: "center",
                 padding: "0 1.2rem",
                 color: "#919eab",
+                borderRadius: "4px"
                 // cursor: text
             }
 
