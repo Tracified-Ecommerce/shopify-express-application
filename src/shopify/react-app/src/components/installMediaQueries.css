@@ -10,5 +10,21 @@
 
 /* Media queries for the PC devices */
 @media (min-width: 1024px) {
+    .InstallVideo {
+        margin-left: 0%;
+    }
 
+    .InstallVideo iframe{  
+        width: 100%;
+        height: 500px;
+    }
+
+    .InstallDescription {        
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+
+    .InstallTitle .Polaris-DisplayText {       
+        margin-left: 0%;
+    }
 }
