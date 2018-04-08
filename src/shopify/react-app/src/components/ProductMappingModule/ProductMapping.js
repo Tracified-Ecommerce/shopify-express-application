@@ -298,7 +298,7 @@ var saveBtnStyle={
 
     var stikyStyle={
       width: "100%",
-      marginLeft: "-15%"
+      marginLeft: "-24%"
     }
 
     return (
@@ -311,7 +311,7 @@ var saveBtnStyle={
             {/*<table className="table table-striped">              */}
 
               <thead>
-                
+              <div style="margin-left: 8%;width: 100%;">
                 <Sticky style={stikyStyle}>
                 <Row className="cardWrapper" style={navStyle}>
                   <div id="stickyCard">                
@@ -321,7 +321,7 @@ var saveBtnStyle={
               </Sticky>
 
               </thead>
-                <br/><br/><br/><br/><br/><br/><br/>
+                <br/>
               <tbody>
                 {this.tabRow()}
               </tbody>
