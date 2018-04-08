@@ -302,6 +302,10 @@ var saveBtnStyle={
       boxShadow: '2px 2px 3px #999',
     }
 
+    var stikyStyle={
+      width: "100%",
+      marginLeft: "-15%"
+    }
 
     return (
       <div class="Polaris-Page" id="productmapping">
@@ -313,7 +317,7 @@ var saveBtnStyle={
 
               <thead>
                 
-                <Sticky>
+                <Sticky style={stikyStyle}>
                 <Row className="cardWrapper" style={navStyle}>
                   <div id="stickyCard">                
                     <ProductMappingCard/>

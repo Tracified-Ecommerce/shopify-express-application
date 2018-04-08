@@ -11,7 +11,7 @@ class ProductMappingCard extends Component{
             width: '100%',
             boxShadow: '0 8px 6px -6px #22384f9c', 
             marginLeft:'2%' ,
-            height:'70px'
+            height:'88px'
         }
 
         var saveBtnStyle={
