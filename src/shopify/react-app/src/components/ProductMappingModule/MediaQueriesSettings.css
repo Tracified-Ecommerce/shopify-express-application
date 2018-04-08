@@ -73,7 +73,7 @@
 }
 
 @media screen and (max-width: 1440px) and (min-width: 1024px){
-    .	 {
+    .cardProductMapping {
         position: fixed;
         z-index: 50;
         width: 271%!important;
