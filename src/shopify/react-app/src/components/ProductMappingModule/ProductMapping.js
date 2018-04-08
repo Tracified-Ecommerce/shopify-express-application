@@ -322,7 +322,7 @@ var saveBtnStyle={
               {/* </div> */}
               </thead>
 
-              <br/>
+              <div className="space"></div>
 
               <tbody>
                 {this.tabRow()}

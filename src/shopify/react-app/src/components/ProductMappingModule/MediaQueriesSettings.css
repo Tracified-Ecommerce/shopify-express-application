@@ -1,10 +1,11 @@
+/* Media Queries for PC */
 @media screen and (min-width: 1024px){
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 271%!important;
+        width: 255%!important;
         white-space: nowrap;
-        margin-left: 1%;
+        margin-left: 3%;
         overflow: hidden;
         -o-text-overflow: ellipsis;
         text-overflow: ellipsis;
@@ -12,9 +13,13 @@
         padding-left: 0%;
     }
 
+    #productmapping{
+        margin-left: 15%;
+    }
+
     .MappingDetails{
         font-size: 150% !important;
-        margin-left: 1%;
+        margin-left: 0%;
         padding-top: 4%;
         padding-bottom: 4%;
     }
@@ -23,7 +28,7 @@
         margin-left: -3%;
         font-size: 110%!important;
         font-weight: 600;
-        width: 72%;
+        width: 100%;
         font-family: calibri;
     }
 
@@ -51,19 +56,26 @@
         z-index:100 !important; 
     }
 
+    .pName{
+        margin-left: -2%;
+    }
     .Pid{
-        margin-left: 0%!important;
+        margin-left: -10%!important;
     }
     .tTitle{
-        margin-left: 1%!important;
+        margin-left: -4%!important;
     } 
     .Permission{
-        margin-left: -2%!important;
+        margin-left: -8%!important;
     }    
+
+    .space{
+        height: 122px !important;
+    }
 }
 
 
 /* Media queries for the tablet devices */
 @media (min-width: 650px) and (max-width: 1023px) {
-    
+
 }
