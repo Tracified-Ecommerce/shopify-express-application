@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Container,Button} from 'reactstrap';
-import {Page} from '@shopify/polaris';
+// import {Page} from '@shopify/polaris';
 // import './productMappingCard.css';
 import './MediaQueriesSettings.css';
 
@@ -10,9 +10,9 @@ class ProductMappingCard extends Component{
             backgroundColor:'white',
             width: '100%',
             boxShadow: '0 8px 6px -6px #22384f9c', 
-            marginLeft:'2%' ,
-            height:'88px',
-            marginTop: "-4%"
+            // marginLeft:'2%' ,
+            // height:'88px',
+            // marginTop: "-4%"
         }
 
         var saveBtnStyle={
@@ -25,7 +25,7 @@ class ProductMappingCard extends Component{
         }
 
         return(
-            <Page>
+            // <Page>
             <div className="cardProductMapping" style={cardStyle}>
                 <Container>
                 <Row>
@@ -46,7 +46,7 @@ class ProductMappingCard extends Component{
                 </Container>
                 </Container>
             </div>
-            </Page>
+            // </Page>
         );
     }
 }

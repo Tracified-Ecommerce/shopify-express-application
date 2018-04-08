@@ -296,13 +296,13 @@ var saveBtnStyle={
       boxShadow: '2px 2px 3px #999',
     }
 
-    var stikyStyle={
-      width: "100%",
-      marginLeft: "-24%"
-    }
+    // var stikyStyle={
+    //   width: "100%",
+    //   marginLeft: "-17y%"
+    // }
 
     return (
-      <Page>
+      // <Page>
       <div class="Polaris-Page" id="productmapping">
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
@@ -311,15 +311,15 @@ var saveBtnStyle={
             {/*<table className="table table-striped">              */}
 
               <thead>
-              <div style={{marginLeft: "8%",width: "100%"}}>
-                <Sticky style={stikyStyle}>
+              {/* <div style={{marginLeft: "8%",width: "100%"}}> */}
+                <Sticky >
                 <Row className="cardWrapper" style={navStyle}>
                   <div id="stickyCard">                
                     <ProductMappingCard/>
                   </div>
                 </Row>
               </Sticky>
-              </div>
+              {/* </div> */}
               </thead>
 
               <br/>
@@ -338,7 +338,7 @@ var saveBtnStyle={
                     message={this.state.alertMessage}>
             </AlertBox>
       </div>
-      </Page>
+      // </Page>
     );
     <ProductMapping /> , document.getElementById('productmapping')
     // console.log('document thing works');
