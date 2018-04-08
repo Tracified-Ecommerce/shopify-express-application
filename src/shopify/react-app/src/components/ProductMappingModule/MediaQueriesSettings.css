@@ -21,4 +21,15 @@
         font-weight: 600;
         font-family: inherit;    
     }
+
+    #settingContent {
+        width: 80% !important;
+        margin-left: 10% !important;
+        font-size: 100%;
+    }    
+
+    .sticky{
+        z-index:50 !important; 
+    }
+    
 }

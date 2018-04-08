@@ -25,15 +25,9 @@ import {
   PageActions,
   Select,
   Checkbox
-  // Checkbox,
-  // Spinner, 
-  // DisplayText,
-  // TextStyle 
 } from '@shopify/polaris';
-// import {Card} from 'reactstrap';
 import '@shopify/polaris/styles.css';
 import './AppMP.css';
-// import './ProductMapping.css';
 import './MediaQueriesSettings.css';
 import { setTimeout } from 'timers';
 import { request } from 'http';
@@ -308,6 +302,7 @@ var saveBtnStyle={
     }
 
     return (
+      <Page>
       <div class="Polaris-Page" id="productmapping">
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
@@ -341,6 +336,7 @@ var saveBtnStyle={
                     message={this.state.alertMessage}>
             </AlertBox>
       </div>
+      </Page>
     );
     <ProductMapping /> , document.getElementById('productmapping')
     // console.log('document thing works');
