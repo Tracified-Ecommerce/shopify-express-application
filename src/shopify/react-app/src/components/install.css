@@ -67,3 +67,7 @@ code{
 .InstallVideo iframe{    
     /* width: 165% !important; */
 }
+
+.ytp-chrome-top-buttons{
+    display: none !important;
+}
