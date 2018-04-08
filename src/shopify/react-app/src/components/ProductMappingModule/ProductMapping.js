@@ -311,7 +311,7 @@ var saveBtnStyle={
             {/*<table className="table table-striped">              */}
 
               <thead>
-              <div style="margin-left: 8%;width: 100%;">
+              <div style={{marginLeft: "8%",width: "100%"}}>
                 <Sticky style={stikyStyle}>
                 <Row className="cardWrapper" style={navStyle}>
                   <div id="stickyCard">                
