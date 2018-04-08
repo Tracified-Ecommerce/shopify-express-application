@@ -319,9 +319,11 @@ var saveBtnStyle={
                   </div>
                 </Row>
               </Sticky>
-
+              </div>
               </thead>
-                <br/>
+
+              <br/>
+
               <tbody>
                 {this.tabRow()}
               </tbody>
