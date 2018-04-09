@@ -143,7 +143,7 @@ class FulfilledOrder extends Component {
                     <Button
                         ariaControls="timelineBtn"
                         children={this.state.timelineText}
-                        size="slim"
+                        // size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
                         ></Button>
