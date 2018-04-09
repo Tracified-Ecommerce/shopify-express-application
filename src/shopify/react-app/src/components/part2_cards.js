@@ -292,13 +292,14 @@ class Part2Cards extends Component {
                         </div>
 
                     </Stack>
-                    <div style={{ paddingBottom: 5 }}>
+                    <div style={{ paddingBottom: 5 , textAlign: center }}>
                         <Stack alignment="center" >
                             <Stack.Item>
                             <div style={{marginBottom:5,fontWeight:"bold",fontSize:"140%", paddingBottom:'9%'}}>
                                     Filter By :
                              </div>
                             </Stack.Item>
+                       
                             <Stack.Item>
                                 <RadioButton
 
@@ -317,6 +318,7 @@ class Part2Cards extends Component {
 
                                 />
                             </Stack.Item>
+                    
                             <Stack.Item>
 
                                 <input
