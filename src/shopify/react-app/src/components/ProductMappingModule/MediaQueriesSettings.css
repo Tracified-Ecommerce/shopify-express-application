@@ -13,10 +13,10 @@
         padding-left: 0%;
     }
 
-    #productmapping{
+    /* #productmapping{
         margin-left: 4%;
         width: 92%;
-    }
+    } */
 
     .MappingDetails{
         font-size: 150% !important;
@@ -59,15 +59,15 @@
 
     .pName{
         margin-left: -17px;
-        width: 43.5%;
+        width: 45%;
     }
     .Pid{
         margin-left: -28px!important;
-        width: 18.25%;
+        width: 18.8%;
     }
     .tTitle{
         margin-left: -20px!important;
-        width: 26.5%;
+        width: 27.2%;
     } 
     .Permission{
         margin-left: -40px!important;
@@ -94,10 +94,10 @@
         padding-left: 0%;
     }
 
-    #productmapping{
+    /* #productmapping{
         margin-left: 4%;
         width: 92%;
-    }
+    } */
 
     .MappingDetails{
         font-size: 150% !important;
@@ -140,12 +140,15 @@
 
     .pName{
         margin-left: -17px;
+        width: 47.7%;
     }
     .Pid{
         margin-left: -38px!important;
+        width: 17.5%;
     }
     .tTitle{
         margin-left: -5px!important;
+        width: 29.2%;
     } 
     .Permission{
         margin-left: -40px!important;
@@ -172,16 +175,16 @@
         padding-left: 0%;
     }
 
-    #productmapping{
+    /* #productmapping{
         margin-left: 4%;
         width: 92%;
-    }
+    } */
 
     .MappingDetails{
         font-size: 150% !important;
         margin-left: 0%;
         padding-top: 4%;
-        margin-bottom: 16%;
+        /* margin-bottom: 16%; */
     }
 
     .tblHeaders{
@@ -204,8 +207,8 @@
 
     .saveBtn{
         font-size: 125% !important;
-        width: 70px!important;
-        height: 70px!important;
+        /* width: 70px!important;
+        height: 70px!important; */
         font-family: calibri;
     }
 
@@ -219,7 +222,7 @@
     }
     .Pid{
         margin-left: 84px!important;
-        margin-top: -6%;
+        margin-top: -5.6%;
         width: 45%;
     }
     .tTitle{
@@ -232,6 +235,7 @@
         margin-left: 97%!important;
         width: 40%;
         margin-top: -6%;
+        display: none;
     }    
 
     .space{
