@@ -6,7 +6,7 @@ import Loading from './Loading';
 import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
 import ErrorMsgSearch from './errorMsgSearch';
-import './part2card_mediaQueries.css'
+import './untracifiedOrders_mediaQueries.css'
 
 class Part2Cards extends Component {
     constructor() {
@@ -252,7 +252,7 @@ class Part2Cards extends Component {
                 marginTop: '-4%',
                 marginBottom: '1%',
                 fontWeight: 400,
-                lineHeight: "2.4rem",
+                lineHeight: "1.4rem",
                 textTransform: "none",
                 letterSpacing: "normal",
                 position: "relative",
