@@ -165,7 +165,7 @@
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 340%!important;
+        width: 333%!important;
         white-space: nowrap;
         margin-left: 2%;
         overflow: hidden;
@@ -176,9 +176,9 @@
     }
 
     #productmapping{
-        width: 100px;
+        /* width: 100px;
         margin: 0px;
-        font-size: 13px !important;
+        font-size: 13px !important; */
     }
 
     .MappingDetails{
@@ -192,7 +192,7 @@
         margin-left: -3%;
         font-size: 89%!important;
         font-weight: 600;
-        width: 104%;
+        width: 100%;
         font-family: calibri;
         margin-top: 5%;
         margin-bottom: 2%;
@@ -218,28 +218,26 @@
     }
 
     .pName{
-        margin-left: -32px;
-        width: 34%;
+        margin-left: -26px;
+        width: 37%
     }
     .Pid{
         /* margin-left: 84px!important;
         margin-top: -5.6%; */
-        width: 29%;
+        display: none;
     }
     .tTitle{
         /* margin-left: 194px!important;
         margin-top: -6%;
         height: 21%;
         width: 45%; */
-        margin-left: -4%;
-        width: 27%;
     } 
     .Permission{
         /* margin-left: 97%!important;
         width: 40%;
         margin-top: -6%; */
         /* display: none; */
-        margin-left: 2%;
+        margin-left: -2%;
     }
     
     .hide-cell-xs{
