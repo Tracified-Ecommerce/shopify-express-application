@@ -97,7 +97,7 @@ class CollapaseCard extends Component {
 
         var markAsTracifiedBtnStyle={
             marginTop: "-4%",
-            textAlign: "right",
+            textAlign: "center",
             marginLeft: "0%",
             paddingRight: "1% !important"
         }
