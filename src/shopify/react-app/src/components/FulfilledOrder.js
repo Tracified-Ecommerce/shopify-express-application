@@ -47,7 +47,14 @@ class FulfilledOrder extends Component {
                 timelineText:"Traceability Not Enabled"
             });
             console.log(this.state.traceButtonDisable);
-        } else {
+        }
+         else if(this.placeholder=="Select an item"){
+            this.setState({
+                traceButtonDisable: true,
+                timelineText:"View Tracemore Timeline"
+            });
+        }
+        else {
             this.setState({
                 traceButtonDisable: false,
                 timelineText:"View Tracemore Timeline"
