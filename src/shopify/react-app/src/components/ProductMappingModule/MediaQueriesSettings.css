@@ -238,7 +238,8 @@
         /* margin-left: 97%!important;
         width: 40%;
         margin-top: -6%; */
-        display: none;
+        /* display: none; */
+        margin-left: 2%;
     }    
 
     .space{
