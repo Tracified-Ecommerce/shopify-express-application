@@ -55,6 +55,16 @@ class FulfilledOrdersPage extends Component {
                 console.error(error);
             });
     }
+    /** Uncomment this method if there is a need to restrict the input to a pattern.
+     * (insert-regex-here) can be changed to a test for the pattern 
+     */
+    
+    // onKeyPress(event) {
+    //     const keyCode = event.keyCode || event.which;
+    //     const keyValue = String.fromCharCode(keyCode);
+    //      if (/insert-regex-here/.test(keyValue))
+    //        event.preventDefault();
+    //    }
 
     updateSearch(event) {
         this.setState({
@@ -66,7 +76,6 @@ class FulfilledOrdersPage extends Component {
         this.setState({
             isCheckedCus: false,
             isCheckedOrd: true,
-            inputType: "number"
         });
     }
 
@@ -74,7 +83,6 @@ class FulfilledOrdersPage extends Component {
         this.setState({
             isCheckedCus: true,
             isCheckedOrd: false,
-            inputType: "text"
         });
     }
 
@@ -267,7 +275,7 @@ class FulfilledOrdersPage extends Component {
                             <Stack.Item>
                                 <div className="searchText">
                                     <input
-                                        type={this.state.inputType}
+                                        type="text"
                                         value={this.state.search}
                                         onChange={this.updateSearch.bind(this)}
                                         style={inputStyle}

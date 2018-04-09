@@ -47,7 +47,8 @@ class FulfilledOrder extends Component {
             console.log(this.state.traceButtonDisable);
         } else {
             this.setState({
-                traceButtonDisable: false
+                traceButtonDisable: false,
+                timelineText:"View Tracemore Timeline"
             });
 
         }
@@ -126,15 +127,15 @@ class FulfilledOrder extends Component {
         
         return (
             <tr>
-                <td>
-                    <div className="orderNo" style={commonCusOdrStyle}>
+                <td style={commonCusOdrStyle}>
+                    {/* <div className="orderNo" style={commonCusOdrStyle}> */}
                         {order.order_number}
-                    </div>
+                    {/* </div> */}
                 </td>
-                <td>
-                    <div className="cusName" style={commonCusOdrStyle}>
+                <td style={commonCusOdrStyle}>
+                    {/* <div className="cusName" style={commonCusOdrStyle}> */}
                         {order.customer}
-                    </div>
+                    {/* </div> */}
                 </td>
                 <td>
                     <Select
