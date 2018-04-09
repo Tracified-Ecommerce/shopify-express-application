@@ -95,7 +95,8 @@ class Part2Cards extends Component {
     clickOrder() {
         this.setState({
             isCheckedCus: false,
-            isCheckedOrd: true
+            isCheckedOrd: true,
+            search: ""
 
         });
     }
@@ -103,7 +104,8 @@ class Part2Cards extends Component {
     clickCustomer() {
         this.setState({
             isCheckedCus: true,
-            isCheckedOrd: false
+            isCheckedOrd: false,
+            search: ""
 
         });
     }
