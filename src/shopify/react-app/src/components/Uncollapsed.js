@@ -20,7 +20,7 @@ class Uncollapsed extends Component {
         return (
             <Card key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
                 <Row>
-                    <div class="" >
+                    <div>
                         <Col sm="10" >
                             <div class="cardHeading_list">
                             <List type="bullet" class="cardHeading_bullets">
