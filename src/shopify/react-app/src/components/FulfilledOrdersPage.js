@@ -56,6 +56,13 @@ class FulfilledOrdersPage extends Component {
             });
     }
 
+    // onKeyPress(event) {
+    //     const keyCode = event.keyCode || event.which;
+    //     const keyValue = String.fromCharCode(keyCode);
+    //      if (/\+|-/.test(keyValue))
+    //        event.preventDefault();
+    //    }
+
     updateSearch(event) {
         this.setState({
             search: event.target.value.substr(0, 20),
@@ -66,7 +73,6 @@ class FulfilledOrdersPage extends Component {
         this.setState({
             isCheckedCus: false,
             isCheckedOrd: true,
-            inputType: "number"
         });
     }
 
@@ -74,7 +80,6 @@ class FulfilledOrdersPage extends Component {
         this.setState({
             isCheckedCus: true,
             isCheckedOrd: false,
-            inputType: "text"
         });
     }
 
@@ -267,8 +272,9 @@ class FulfilledOrdersPage extends Component {
                             <Stack.Item>
                                 <div className="searchText">
                                     <input
-                                        type={this.state.inputType}
+                                        type="text"
                                         value={this.state.search}
+                                        onKeyPress={this.onKeyPress.bind(this)}
                                         onChange={this.updateSearch.bind(this)}
                                         style={inputStyle}
                                     />
