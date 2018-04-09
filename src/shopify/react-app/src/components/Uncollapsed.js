@@ -25,7 +25,7 @@ class Uncollapsed extends Component {
                     <div class="untacified_card" >
                         <Col sm="10" class="">
                             <div class="cardHeading_bullets">
-                            <List type="bullet">
+                            <List type="bullet" class="cardHeading_bullets">
                                 <List.Item>Customer  : {this.props.order.customer}</List.Item>
                                 <List.Item>Created At: {this.props.order.created_at}</List.Item>
                             </List>
