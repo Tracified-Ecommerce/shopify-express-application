@@ -285,6 +285,7 @@ class ProductMapping extends Component {
 
 var saveBtnStyle={
       position:'fixed',
+      zIndex: 30,
       width:'60px',
       height:'60px',
       bottom:'40px',
