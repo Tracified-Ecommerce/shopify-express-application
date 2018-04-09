@@ -27,7 +27,7 @@ class ProductMappingCard extends Component{
         return(
             // <Page>
             <div className="cardProductMapping" style={cardStyle}>
-                <Container>
+                <Container fluid={true}>
                 <Row>
                     <Col xs="8" sm="8" md="8" lg="8">
                       <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
@@ -36,7 +36,7 @@ class ProductMappingCard extends Component{
                       {/*<Button primary onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>*/}
                     </Col>
                   </Row>
-                <Container >
+                <Container fluid={true}>
                   <Col xs="12" sm="12" md="12" lg="12" className="tblHeaders">
                     <Col xs="5" sm="5" md="5" lg="5" className="pName">Product Name</Col>
                     <Col xs="2" sm="2" md="2" lg="2" className="Pid">Product Item ID</Col>
