@@ -299,7 +299,7 @@ class Part2Cards extends Component {
                                     Filter By :
                              </div>
                             </Stack.Item>
-                            <div style={{textAlign:"center"}}>
+                       
                             <Stack.Item>
                                 <RadioButton
 
@@ -318,7 +318,7 @@ class Part2Cards extends Component {
 
                                 />
                             </Stack.Item>
-                            </div>
+                    
                             <Stack.Item>
 
                                 <input
