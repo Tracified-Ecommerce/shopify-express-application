@@ -195,11 +195,28 @@ class FulfilledOrdersPage extends Component {
              );
 
             var inputStyle={
+                // marginLeft: '1%',
+                // float: 'center',
+                // fontSize: '14px',
+                // marginTop: '1%',
+                // marginBottom:'2%'
                 marginLeft: '1%',
                 float: 'center',
                 fontSize: '14px',
-                marginTop: '1%',
-                marginBottom:'2%'
+                marginTop: '-4%',
+                marginBottom: '1%',
+                fontWeight: 400,
+                lineHeight: "2.4rem",
+                textTransform: "none",
+                letterSpacing: "normal",
+                position: "relative",
+                display: "-ms-flexbox",
+                display: "flex",
+                msFlexAlign: "center",
+                alignItems: "center",
+                padding: "0 1.2rem",
+                color: "#919eab",
+                borderRadius: "4px"
             }
 
             var tableStyle={
@@ -240,7 +257,7 @@ class FulfilledOrdersPage extends Component {
                             </Stack.Item>
                             <Stack.Item>
                             <div className="searchText">    
-                                <TextField
+                                <input
                                 type="text"
                                 value={this.state.search}
                                 onChange={this.updateSearch.bind(this)}

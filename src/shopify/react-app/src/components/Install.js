@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Card, DisplayText, Button } from '@shopify/polaris';
+import { Card, DisplayText, Button ,Page} from '@shopify/polaris';
 import { Container, Row, Col } from 'reactstrap';
 import './install.css';
+import './installMediaQueries.css';
 
 class Installation extends Component {
     render() {
@@ -14,16 +15,17 @@ class Installation extends Component {
         }
 
         return (
+            <Page title="Tracified - Configuration Instructions">
             <div>
-                <div class="InstallTitle">
+                {/* <div class="InstallTitle">
                     <h1>
                         <DisplayText size="medium">Tracified - Configuration Instructions</DisplayText>
                     </h1>
-                </div>
-                <div class="InstallVideo">
-                    <iframe width="560" height="415" src="https://www.youtube.com/embed/gk8W521N5d4" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="InstallDescription">
+                </div> */}
+                {/* <div class="InstallVideo"> */}
+                    <iframe width="100%" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4?showinfo=0&controls=1&rel=0&amp" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                {/* </div> */}
+                {/* <div class="InstallDescription"> */}
                     <Card>
                         <ol>
                             <li style={liStyle}>
@@ -60,8 +62,9 @@ class Installation extends Component {
                         </div>
                     </Card>
                     <br />
-                </div>
+                {/* </div> */}
             </div>
+            </Page>
         );
     }
 }

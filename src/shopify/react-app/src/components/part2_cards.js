@@ -95,7 +95,8 @@ class Part2Cards extends Component {
     clickOrder() {
         this.setState({
             isCheckedCus: false,
-            isCheckedOrd: true
+            isCheckedOrd: true,
+            search: ""
 
         });
     }
@@ -103,7 +104,8 @@ class Part2Cards extends Component {
     clickCustomer() {
         this.setState({
             isCheckedCus: true,
-            isCheckedOrd: false
+            isCheckedOrd: false,
+            search: ""
 
         });
     }
@@ -188,15 +190,14 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    // const customer = order.customer.first_name + " " + order.customer.last_name;
-                    // var customer = order.customer.first_name + " " + order.customer.last_name;
+                    const customer = order.customer.first_name + " " + order.customer.last_name;
 
 
                     orderArray.push({
                         id: order.id,
                         order_number: order.order_number,
                         lineItems: lineItems,
-                        // customer: customer,
+                        customer: customer,
                         created_at: order.created_at.substring(0, 10)
                     });
                 });
@@ -261,7 +262,14 @@ class Part2Cards extends Component {
                 alignItems: "center",
                 padding: "0 1.2rem",
                 color: "#919eab",
-                cursor: text
+                borderRadius: "4px"
+                // cursor: text
+            }
+
+            var toggleBtnStyle={
+                paddingBottom: "10px",
+                marginLeft: "5%",
+                width: "105%"
             }
 
             return (
@@ -270,14 +278,13 @@ class Part2Cards extends Component {
                         distribution="trailing"
                     >
 
-                        <div style={{ paddingBottom: 10 }}>
+                        <div style={toggleBtnStyle}>
                             <Stack.Item>
                                 <Button
                                     plain
                                     size="slim"
                                     outline
                                     onClick={this.toggleCardType}
-                                    style={{ marginBottom: '1rem' }}
                                 >
                                     {buttonText.text}
                                 </Button>
