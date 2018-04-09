@@ -120,15 +120,21 @@ class FulfilledOrder extends Component {
         const shopOrigin = "https://" + this.props.shopDomain;
         const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
 
-
+        var commonCusOdrStyle={
+            padding:"2%"
+        }
         
         return (
             <tr>
                 <td>
-                    {order.order_number}
+                    <div className="orderNo" style={commonCusOdrStyle}>
+                        {order.order_number}
+                    </div>
                 </td>
                 <td>
-                    {order.customer}
+                    <div className="cusName" style={commonCusOdrStyle}>
+                        {order.customer}
+                    </div>
                 </td>
                 <td>
                     <Select
