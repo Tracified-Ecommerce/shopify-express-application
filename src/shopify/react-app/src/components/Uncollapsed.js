@@ -22,9 +22,9 @@ class Uncollapsed extends Component {
         <div class="order_card" >
             <Card key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
                 <Row>
-                    <div class="untacified_card" >
-                        <Col sm="10" class="">
-                            <div class="cardHeading_bullets">
+                    <div class="untracified_card" >
+                        <Col sm="10" >
+                            <div class="cardHeading_list">
                             <List type="bullet" class="cardHeading_bullets">
                                 <List.Item>Customer  : {this.props.order.customer}</List.Item>
                                 <List.Item>Created At: {this.props.order.created_at}</List.Item>
