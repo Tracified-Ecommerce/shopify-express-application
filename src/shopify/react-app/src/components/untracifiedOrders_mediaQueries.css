@@ -43,5 +43,9 @@
     .collapasedView_Untracified{
         text-align: center !important;
     }
+
+    #unfulfillContent{
+        text-align: center;
+    }
   
 }
