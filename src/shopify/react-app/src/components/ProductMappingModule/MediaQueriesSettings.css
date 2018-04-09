@@ -176,9 +176,9 @@
     }
 
     #productmapping{
-        width: 100px;
+        /* width: 100px;
         margin: 0px;
-        font-size: 13px !important;
+        font-size: 13px !important; */
     }
 
     .MappingDetails{
@@ -218,13 +218,13 @@
     }
 
     .pName{
-        margin-left: -32px;
-        width: 34%;
+        margin-left: -26px;
+        width: 39%
     }
     .Pid{
         /* margin-left: 84px!important;
         margin-top: -5.6%; */
-        width: 29%;
+        display: none;
     }
     .tTitle{
         /* margin-left: 194px!important;
@@ -239,7 +239,7 @@
         width: 40%;
         margin-top: -6%; */
         /* display: none; */
-        margin-left: 2%;
+        margin-left: -5%;
     }
     
     .hide-cell-xs{
