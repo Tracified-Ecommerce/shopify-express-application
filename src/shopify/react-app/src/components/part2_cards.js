@@ -292,7 +292,7 @@ class Part2Cards extends Component {
                         </div>
 
                     </Stack>
-                    <div style={{ paddingBottom: 5 , textAlign: center }}>
+                    <div style={{ paddingBottom: 5 , textAlign: "center" }}>
                         <Stack alignment="center" >
                             <Stack.Item>
                             <div style={{marginBottom:5,fontWeight:"bold",fontSize:"140%", paddingBottom:'9%'}}>
