@@ -19,8 +19,10 @@ class CollapaseCard extends Component {
                 });
 
                 if (!isUndefined(product[0])) {
-                    productImage = product[0].images[0].src;
-                    
+                    if (!isUndefined(product[0].images[0])) {
+                        productImage = product[0].images[0].src;
+                    }
+
                 }
             }
 

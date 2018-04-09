@@ -25,15 +25,9 @@ import {
   PageActions,
   Select,
   Checkbox
-  // Checkbox,
-  // Spinner, 
-  // DisplayText,
-  // TextStyle 
 } from '@shopify/polaris';
-// import {Card} from 'reactstrap';
 import '@shopify/polaris/styles.css';
 import './AppMP.css';
-// import './ProductMapping.css';
 import './MediaQueriesSettings.css';
 import { setTimeout } from 'timers';
 import { request } from 'http';
@@ -291,6 +285,7 @@ class ProductMapping extends Component {
 
 var saveBtnStyle={
       position:'fixed',
+      zIndex: 30,
       width:'60px',
       height:'60px',
       bottom:'40px',
@@ -302,27 +297,34 @@ var saveBtnStyle={
       boxShadow: '2px 2px 3px #999',
     }
 
+    // var stikyStyle={
+    //   width: "100%",
+    //   marginLeft: "-17y%"
+    // }
 
     return (
-      <div class="loader" id="productmapping">
+      // <Page>
+      <div class="Polaris-Page" id="productmapping">
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
-        <table className="table table-striped" id="settingContent">
+        <table className="table table-striped table-center-content" id="settingContent">
           
             {/*<table className="table table-striped">              */}
 
               <thead>
-                
-                <Sticky>
+              {/* <div style={{marginLeft: "8%",width: "100%"}}> */}
+                <Sticky >
                 <Row className="cardWrapper" style={navStyle}>
                   <div id="stickyCard">                
                     <ProductMappingCard/>
                   </div>
                 </Row>
               </Sticky>
-
+              {/* </div> */}
               </thead>
-                <br/><br/><br/><br/><br/><br/><br/>
+
+              <div className="space"></div>
+
               <tbody>
                 {this.tabRow()}
               </tbody>
@@ -337,6 +339,7 @@ var saveBtnStyle={
                     message={this.state.alertMessage}>
             </AlertBox>
       </div>
+      // </Page>
     );
     <ProductMapping /> , document.getElementById('productmapping')
     // console.log('document thing works');

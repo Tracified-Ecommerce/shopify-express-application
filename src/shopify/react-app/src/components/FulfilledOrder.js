@@ -41,12 +41,14 @@ class FulfilledOrder extends Component {
 
         if (tempItemID == "noTraceabilityItem") { // if the item ID was not reassigned (i.e: if the item is not available in mapping)
             this.setState({
-                traceButtonDisable: true
+                traceButtonDisable: true,
+                timelineText:"Traceability Not Enabled"
             });
             console.log(this.state.traceButtonDisable);
         } else {
             this.setState({
-                traceButtonDisable: false
+                traceButtonDisable: false,
+                timelineText:"View Tracemore Timeline"
             });
 
         }
@@ -119,15 +121,21 @@ class FulfilledOrder extends Component {
         const shopOrigin = "https://" + this.props.shopDomain;
         const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
 
-
+        var commonCusOdrStyle={
+            padding:"2%"
+        }
         
         return (
             <tr>
-                <td>
-                    {order.order_number}
+                <td style={commonCusOdrStyle}>
+                    {/* <div className="orderNo" style={commonCusOdrStyle}> */}
+                        {order.order_number}
+                    {/* </div> */}
                 </td>
-                <td>
-                    {order.customer}
+                <td style={commonCusOdrStyle}>
+                    {/* <div className="cusName" style={commonCusOdrStyle}> */}
+                        {order.customer}
+                    {/* </div> */}
                 </td>
                 <td>
                     <Select
@@ -142,7 +150,7 @@ class FulfilledOrder extends Component {
                     <Button
                         ariaControls="timelineBtn"
                         children={this.state.timelineText}
-                        size="slim"
+                        // size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
                         ></Button>
