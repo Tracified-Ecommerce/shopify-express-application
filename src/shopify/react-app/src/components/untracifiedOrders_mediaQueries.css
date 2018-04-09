@@ -26,5 +26,12 @@
      .col-xs-7, .col-xs-8, .col-xs-9 {
             text-align: center;
     }
+    .cardHeading_bullets{
+        text-align: center;
+    }
+
+    .qrcode_div{
+        text-align: center;
+    }
   
 }

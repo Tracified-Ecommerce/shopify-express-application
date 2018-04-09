@@ -24,14 +24,17 @@ class Uncollapsed extends Component {
                 <Row>
                     <div class="untacified_card" >
                         <Col sm="10" class="">
-
+                            <div class="cardHeading_bullets">
                             <List type="bullet">
                                 <List.Item>Customer  : {this.props.order.customer}</List.Item>
                                 <List.Item>Created At: {this.props.order.created_at}</List.Item>
                             </List>
+                            </div>
                         </Col>
                         <Col sm="2">
+                        <div class="qrcode_div">
                             <QRCode value={this.props.qrVal} />
+                            </div>
                         </Col>
                     </div>
                 </Row>
