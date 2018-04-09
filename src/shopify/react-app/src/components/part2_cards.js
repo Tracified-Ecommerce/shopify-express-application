@@ -252,7 +252,7 @@ class Part2Cards extends Component {
                 marginTop: '-4%',
                 marginBottom: '1%',
                 fontWeight: 400,
-                lineHeight: "1.4rem",
+                lineHeight: "2.4rem",
                 textTransform: "none",
                 letterSpacing: "normal",
                 position: "relative",
@@ -262,8 +262,9 @@ class Part2Cards extends Component {
                 alignItems: "center",
                 padding: "0 1.2rem",
                 color: "#919eab",
-                borderRadius: "4px"
-                // cursor: text
+                borderRadius: "4px",
+                height: "30px",
+                paddingLeft: "5%"
             }
 
             var toggleBtnStyle={
