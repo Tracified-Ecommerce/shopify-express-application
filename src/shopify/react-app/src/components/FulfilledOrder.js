@@ -39,6 +39,8 @@ class FulfilledOrder extends Component {
 
         });
 
+        console.log("productID inside state for order - " + orderNumber + " is : " + this.state.productID);
+
         if (tempItemID == "noTraceabilityItem") { // if the item ID was not reassigned (i.e: if the item is not available in mapping)
             this.setState({
                 traceButtonDisable: true,
@@ -57,6 +59,7 @@ class FulfilledOrder extends Component {
 
 
     onTraceSelect() {
+
         console.log("Button clicked , itemID is :" + this.state.itemID);
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
@@ -64,18 +67,20 @@ class FulfilledOrder extends Component {
                 // timelineText:"no traceability"                
             });
             // this.state.timelineText="no traceability";
-            console.log("No traceability data added");
+            console.log("inside onTraceSelect() No traceability data added");
         }
         else {
-            console.log("Traceability data added");
+            console.log("inside onTraceSelect() Traceability data added");
             this.setState({
                 traceButtonDisable: true,
                 // timelineText:"see timeline"
             });
             // this.state.timelineText="see timeline";
+            console.log("inside onTraceSelect() product id is : " + this.state.productID);
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
                 .then(response => {
+                    console.log("inside onTraceSelect() product selected is : " + response.data.product.handle);
                     this.setState({
                         itemName: response.data.product.handle
                     });
