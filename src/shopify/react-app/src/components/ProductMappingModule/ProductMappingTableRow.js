@@ -118,11 +118,11 @@ render() {
 
     return (   
         <tr>
-          <td>  
+          <td className="itemNameColumn">  
             {this.props.obj.title}
             
           </td>
-          <td>
+          <td className="shopifyIdColumn">
           {this.props.obj.id}
           </td>   
                   <td className="itemTitle">  

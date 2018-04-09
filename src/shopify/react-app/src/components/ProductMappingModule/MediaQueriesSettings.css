@@ -240,7 +240,15 @@
         margin-top: -6%; */
         /* display: none; */
         margin-left: 2%;
-    }    
+    }
+    
+    .shopifyIdColumn{
+        z-index: 20;
+    }
+
+    .itemNameColumn{
+        z-index: 20;
+    }
 
     .space{
         height: 122px !important;
