@@ -124,7 +124,7 @@ class FulfilledOrder extends Component {
         console.log("productId is : " + this.state.productID);
         console.log("array is :" + itemOptions);
         const shopOrigin = "https://" + this.props.shopDomain;
-        const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
+        let modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
 
         var commonCusOdrStyle={
             padding:"2%"
