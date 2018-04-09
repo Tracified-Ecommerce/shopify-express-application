@@ -14,12 +14,15 @@ class Uncollapsed extends Component {
 
         };
     }
-
+    
     render() {
+        var unfulfillStyle={
+            textAlign:"center"
+        }
 
         return (
             <Card key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
-                <Row>
+                <Row id="unfulfillContent" style={unfulfillStyle}>
                     <div>
                         <Col sm="10" >
                             <div class="cardHeading_list">
