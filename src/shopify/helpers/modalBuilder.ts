@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 interface IComponentJSON {
     htmltxt: string;
     pieChartData: any[];
@@ -40,7 +41,7 @@ function componentBuilder(components: any): IComponentJSON {
     };
 
     for (const component of components) {
-        componentJSON.htmltxt += "<div class=\"col-md-4 col-sm-6 col-xs-12\">";
+        componentJSON.htmltxt += "<div class=\"col-lg-4 col-md-4 col-sm-6 col-xs-12 summary-widget\">";
         let tot: number = 0;
         switch (component.uiComponent.name) {
 
@@ -100,7 +101,6 @@ function componentBuilder(components: any): IComponentJSON {
                         }
                     }
                     componentJSON.htmltxt +=
-                        // tslint:disable-next-line:max-line-length
                         "<div class=\"xoutofy-top\">" + tot + "</div><div class=\"xoutofy-middle\">out of " + component.values.length + " items</div>"
                         + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "have " + "</span>" +
                         component.uiComponent.title +
@@ -172,16 +172,13 @@ function dimensionBuilder(dimensions: any): IDimensionJSON {
     };
 
     for (const dimension of dimensions) {
-        // tslint:disable-next-line:max-line-length
-        dimensionComponents.htmltxt += "<div class=\"col-md-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr style=\"margin-top:-1%\"><td class=\"dimTitle\" style=\"background-color:" + dimension.titleBackColor + ";color:" + dimension.titleTxtColor + "\">" + dimension.name + "";
-        // tslint:disable-next-line:max-line-length
+        dimensionComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr style=\"margin-top:-1%\"><td class=\"dimTitle\" style=\"background-color:" + dimension.titleBackColor + ";color:" + dimension.titleTxtColor + "\">" + dimension.name + "";
         dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:" + dimension.descriptionBackColor + ";color:" + dimension.descriptionTxtColor + "\">" + dimension.tagline + "</td></tr>";
 
         for (const x of dimension.data) {
             //  if(x.value==null){
-                var contentTitle=x.label;
+                const contentTitle = x.label;
                 // x.label=null;
-                // tslint:disable-next-line:max-line-length
                 dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + contentTitle + "</td><td class=\"keyContent\">" + x.value + "</td></tr>";
             //  }
         }
@@ -198,8 +195,6 @@ function imageSliderBuilder(images: any): IImageSliderJSON {
         htmltxt: "",
     };
 
-    // tslint:disable-next-line:max-line-length 
-
     let imageIdentifier = 0; // to keep track of images we have already looked at
     let rowCount = 0; // to keep track of image rows
 
@@ -215,8 +210,7 @@ function imageSliderBuilder(images: any): IImageSliderJSON {
                 imageSliderComponents.htmltxt += "<div class=\"item\"><div class=\"row\">";
             }
 
-            // tslint:disable-next-line:max-line-length
-            imageSliderComponents.htmltxt += "<div class=\"col-md-4\"><img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\"><div class=\"carousel-caption\"></div></div></div></div>";
+            imageSliderComponents.htmltxt += "<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-4\"><img id=\"img" + imageIdentifier + "\" width=\"\" height=\"\" align=\"middle\" hspace=\"30\"><div class=\"carousel-caption\"></div></div></div></div>";
             // images[imageIdentifier]
             imageIdentifier++;
         }

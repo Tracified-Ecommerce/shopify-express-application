@@ -7,6 +7,7 @@ class FulfilledOrder extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            timelineText:"View Tracemore Timeline",
             orderNumber: this.props.order.order_number,
             productID: this.props.order.lineItems[0].product_id,
             modalOpen: false,
@@ -57,15 +58,19 @@ class FulfilledOrder extends Component {
         console.log("Button clicked , itemID is :" + this.state.itemID);
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
-                traceButtonDisable: true
+                traceButtonDisable: true,
+                // timelineText:"no traceability"                
             });
+            // this.state.timelineText="no traceability";
             console.log("No traceability data added");
         }
         else {
             console.log("Traceability data added");
             this.setState({
-                traceButtonDisable: true
+                traceButtonDisable: true,
+                // timelineText:"see timeline"
             });
+            // this.state.timelineText="see timeline";
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
                 .then(response => {
@@ -99,7 +104,7 @@ class FulfilledOrder extends Component {
        let itemOptions = [
             {
                 value:"noItem",
-                label:"Select an item to view"
+                label:"Select an item"
             }
         ];
         order.lineItems.forEach(item => {
@@ -127,7 +132,7 @@ class FulfilledOrder extends Component {
                 <td>
                     <Select
                         options={itemOptions}
-                        placeholder="Select an Item to view"
+                        placeholder="Select an item"
                         id={order.order_number}
                         onChange={this.onSelectItem}
                         value={this.state.itemEnable}
@@ -135,11 +140,12 @@ class FulfilledOrder extends Component {
                 </td>
                 <td>
                     <Button
-                        
+                        ariaControls="timelineBtn"
+                        children={this.state.timelineText}
                         size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
-                        >View Trace More Timeline</Button>
+                        ></Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}

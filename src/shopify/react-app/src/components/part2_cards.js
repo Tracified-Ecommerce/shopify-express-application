@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { Thumbnail, Card, Page, List, RadioButton, Button, Stack } from '@shopify/polaris';
+import { Thumbnail, Card, Page, List, RadioButton, Button, Stack,TextField} from '@shopify/polaris';
 import Loading from './Loading';
 import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
@@ -188,15 +188,15 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    const customer = order.customer.first_name + " " + order.customer.last_name;
-
+                    // const customer = order.customer.first_name + " " + order.customer.last_name;
+                    // var customer = order.customer.first_name + " " + order.customer.last_name;
 
 
                     orderArray.push({
                         id: order.id,
                         order_number: order.order_number,
                         lineItems: lineItems,
-                        customer: customer,
+                        // customer: customer,
                         created_at: order.created_at.substring(0, 10)
                     });
                 });
@@ -249,7 +249,19 @@ class Part2Cards extends Component {
                 float: 'center',
                 fontSize: '14px',
                 marginTop: '-4%',
-                marginBottom: '1%'
+                marginBottom: '1%',
+                fontWeight: 400,
+                lineHeight: "2.4rem",
+                textTransform: "none",
+                letterSpacing: "normal",
+                position: "relative",
+                display: "-ms-flexbox",
+                display: "flex",
+                msFlexAlign: "center",
+                alignItems: "center",
+                padding: "0 1.2rem",
+                color: "#919eab",
+                cursor: text
             }
 
             return (
@@ -276,7 +288,7 @@ class Part2Cards extends Component {
                     <div style={{ paddingBottom: 5 }}>
                         <Stack alignment="center" >
                             <Stack.Item>
-                            <div style={{padding:"0.4rem", marginBottom:5,fontWeight:"bold",fontSize:"140%", paddingBottom:'9%'}}>
+                            <div style={{marginBottom:5,fontWeight:"bold",fontSize:"140%", paddingBottom:'9%'}}>
                                     Filter By :
                              </div>
                             </Stack.Item>

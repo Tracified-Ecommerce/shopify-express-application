@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as axios from 'axios';
-import { Page, RadioButton, Card, Stack} from '@shopify/polaris';
+import { Page, RadioButton, Card, Stack,TextField} from '@shopify/polaris';
 import { Container, Row, Col} from 'reactstrap';
 import FulfilledOrder from './FulfilledOrder';
 import Loading from './Loading';
@@ -55,7 +55,7 @@ class FulfilledOrdersPage extends Component {
             });
     }
 
-    updateSearch(event){
+    updateSearch (event){
         this.setState({
             search: event.target.value.substr(0, 20),
         });
@@ -143,7 +143,11 @@ class FulfilledOrdersPage extends Component {
                          });
                      });
           
-                     const customer = order.customer.first_name + " " + order.customer.last_name;
+                     let customer = "Admin created order";
+
+                     if(order.customer) {
+                        customer = order.customer.first_name + " " + order.customer.last_name;
+                     }
 
                      orderArray.push({
                          id: order.id,
@@ -203,8 +207,8 @@ class FulfilledOrdersPage extends Component {
             }
 
             var filterStyle={
-                              paddingBottom:5,
-                                marginTop:'-5%',
+                              paddingBottom:21,
+                                // marginTop:'-5%',
                             }
 
             return (
@@ -235,14 +239,14 @@ class FulfilledOrdersPage extends Component {
                                 />
                             </Stack.Item>
                             <Stack.Item>
-                                
-                                <input
+                            <div className="searchText">    
+                                <TextField
                                 type="text"
                                 value={this.state.search}
                                 onChange={this.updateSearch.bind(this)}
                                 style={inputStyle}
                                 />
-                                
+                            </div>  
                             </Stack.Item> 
 
                         </Stack>

@@ -125,13 +125,10 @@ function widgetDimensionBuilder(dimensions: any): IWidgetDimensionJSON {
     };
 
     for (const dimension of dimensions) {
-        // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt += "<div class=\"col-md-6\" id=\"dimensionName\"><table class=\"tblDimensions\"><tr><td class=\"dimTitle\" style=\"background-color:" + dimension.displayInfo.titleBackColor + ";color:" + dimension.displayInfo.titleTxtColor + "\">" + dimension.displayInfo.name + "";
-        // tslint:disable-next-line:max-line-length
         dimensionComponents.htmltxt += "</td><td class=\"descript\" style=\"background-color:" + dimension.displayInfo.descriptionBackColor + ";color:" + dimension.displayInfo.descriptionTxtColor + "\">" + dimension.displayInfo.tagline + "</td></tr>";
 
         for (const x of dimension.data) {
-            // tslint:disable-next-line:max-line-length
             let value = "";
             if (x.value === true) {
                 value = "yes";
@@ -148,7 +145,6 @@ function widgetDimensionBuilder(dimensions: any): IWidgetDimensionJSON {
                 value = x.value;
             }
 
-            // tslint:disable-next-line:max-line-length
             dimensionComponents.htmltxt += "<tr class=\"dimensionContent\"><td class=\"keyTitle\">" + x.label + "</td><td class=\"keyContent\">" + value + "</td></tr>";
         }
         dimensionComponents.htmltxt += "</table></div>";
@@ -159,8 +155,6 @@ function widgetDimensionBuilder(dimensions: any): IWidgetDimensionJSON {
 }
 
 // image slider builder function
-// this is not complete, only the structure of the html is built here
-// TODO assign images dynamically -> waiting on tracifiedbackend for images
 function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
     const imageSliderComponents: IWidgetImageSliderJSON = {
         htmltxt: "",
@@ -169,11 +163,13 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
 
     let firstRow = true;
     let imageIdentifier = 0; // to keep track of image rows
+    // for every nth item, modulo n of imageIdentifier will be zero
+    const imagesPerRow = 4;
 
     for (const image of images) {
-        // for every third item, modulo 3 of imageIdentifier will be zero
+        // for every nth item, modulo n of imageIdentifier will be zero
         // this can be used to track how many images have gone into each row
-        if (imageIdentifier % 4 === 0) {
+        if (imageIdentifier % imagesPerRow === 0) {
             if (firstRow) {
                 imageSliderComponents.htmltxt += "<div class=\"item active\"><div class=\"row\">";
                 firstRow = false;
@@ -182,14 +178,14 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
             }
         }
 
-        if ((imageIdentifier + 1) % 4 === 0) {
-            imageSliderComponents.htmltxt += "<div class=\"col-md-3\">"
-                + "<img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
+        if ((imageIdentifier + 1) % imagesPerRow === 0) {
+            imageSliderComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3\">"
+                + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"10\">"
                 + "<div class=\"carousel-caption\">"
                 + "</div></div></div></div>";
         } else {
-            imageSliderComponents.htmltxt += "<div class=\"col-md-3\">"
-                + "<img id=\"img" + imageIdentifier + "\" width=\"100\" height=\"200\" align=\"middle\" hspace=\"30\">"
+            imageSliderComponents.htmltxt += "<div class=\"col-xs-12 col-sm-12 col-md-3 col-lg-3\">"
+                + "<img id=\"img" + imageIdentifier + "\" align=\"middle\" hspace=\"10\">"
                 + "<div class=\"carousel-caption\">"
                 + "</div></div>";
         }
@@ -203,7 +199,7 @@ function widgetImageSliderBuilder(images: any): IWidgetImageSliderJSON {
         imageIdentifier++;
     }
 
-    if (images.length % 4 !== 0) {
+    if (images.length % imagesPerRow !== 0) {
         imageSliderComponents.htmltxt += "</div></div>";
     }
 
@@ -222,10 +218,8 @@ function widgetMapBuilder(tabs: any): IWidgetMapJSON {
 
     for (const tab of tabs) {
 
-        // tslint:disable-next-line:max-line-length
         mapComponents.htmltabs += "<button id =\"button" + count + "\" class=\"tablinks\" onclick=\"openCity(event, 'tab" + count + "')\">" + tab.tabName + "</button>";
         mapComponents.htmltabcontent += "<div id =\"tab" + count + "\" class =\"tabcontent\">";
-        // tslint:disable-next-line:max-line-length
         mapComponents.htmltabcontent += "<div id =\"map" + count + "\" style=\"height: 440px; border: 1px solid #AAA;\"></div></div>";
         const mapTab: IWidgetMapTab = {
             mapID: "map" + count,
@@ -235,7 +229,6 @@ function widgetMapBuilder(tabs: any): IWidgetMapJSON {
         for (const coordinate of tab.values) {
 
             const mapData = {
-                // label: coordinate.label,
                 lat: parseFloat(coordinate.lat),
                 long: parseFloat(coordinate.long),
             };

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Container,Button} from 'reactstrap';
 // import {Button} from '@shopify/polaris';
-import './productMappingCard.css';
+// import './productMappingCard.css';
+import './MediaQueriesSettings.css';
 
 class ProductMappingCard extends Component{
     render(){
@@ -9,6 +10,7 @@ class ProductMappingCard extends Component{
             backgroundColor:'white',
             width: '260%',
             boxShadow: '0 8px 6px -6px #22384f9c',            
+            // width: '360%'            
         }
 
         var saveBtnStyle={
@@ -20,31 +22,30 @@ class ProductMappingCard extends Component{
         var tdStyle={
             // marginLeft:'-10%',
             width:'90%'
+            // color:"white"
         }
 
         return(
             
             <div className="cardProductMapping" style={cardStyle}>
-                
-                <tr style={tdStyle}>
-                    <td>
-                        <div className="mappingDetailsDiv" style={tdStyle}>    
-                            <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
-                         </div>
-                    </td>
-                    <td className="saveBtn">
-                      <Button onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>
-                    </td>
-                </tr>
-                
-                <tr >
-                  <Row className="tblHeaders" >
-                    <Col sm="5" xs="5" className="pName">Product Name</Col>
-                    <Col sm="2" xs="2" className="Pid">Product Item ID</Col>
-                    <Col sm="3" xs="3"className="tTitle">Tracified Item title</Col>
-                    <Col sm="2" xs="2" className="Permission">Permission</Col>
+                <Container>
+                <Row>
+                    <Col xs="8" sm="8" md="8" lg="8">
+                      <p className="MappingDetails" style={{fontWeight:'bold',fontSize:'120%'}}>Product Mapping Details</p>
+                    </Col>
+                    <Col xs="4" sm="4" md="4" lg="4" className="saveBtn">
+                      {/*<Button primary onClick={this.onSubmit} style={saveBtnStyle}>Save</Button>*/}
+                    </Col>
                   </Row>
-                </tr>
+                <Container >
+                  <Col xs="12" sm="12" md="12" lg="12" className="tblHeaders">
+                    <Col xs="5" sm="5" md="5" lg="5" className="pName">Product Name</Col>
+                    <Col xs="2" sm="2" md="2" lg="2" className="Pid">Product Item ID</Col>
+                    <Col xs="3" sm="3" md="3" lg="3" className="tTitle">Tracified Item title</Col>
+                    <Col xs="2" sm="2" md="2" lg="2" className="Permission">Permission</Col>
+                  </Col>
+                </Container>
+                </Container>
             </div>
         );
     }

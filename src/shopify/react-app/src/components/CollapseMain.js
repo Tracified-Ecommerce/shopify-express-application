@@ -58,25 +58,25 @@ class CollapseMain extends Component {
         var buttonText = this.props.collapseArray[this.props.collapseArrayKey] ? { text: "see less" } : { text: "see more" };
         let cardStyle = {
             backgroundColor: 'white',
-            margin: 10,
+            // margin: 10,
             padding: 10,
             boxShadow: "0.2px 0.2px 1px 0.5px rgba(0, 0, 0, .2)"
         };
 
         return (
 
-            <Card style={cardStyle}>
-                <Row style={{ paddingBottom: 5 }}>
+            <Card className="collapasedView_Untracified" style={cardStyle}>
+                <Row>
                     <Col sm="2" style={{ paddingBottom: 5, paddingTop: 5 }}>
                         <TextStyle variation="strong">{this.props.title}</TextStyle>
                     </Col>
                     <Col sm="3" style={{ paddingBottom: 5, paddingTop: 5 }}>
                         <TextStyle variation="subdued"><strong>Created on:</strong> {this.props.order.created_at}</TextStyle>
                     </Col>
-                    <Col xs="3" sm="5" style={{ paddingTop: 5, paddingBottom: 5, paddingRight: 0, width: 420 }}>
+                    <Col xs="3" sm="5" style={{ paddingTop: 5, paddingBottom: 5, paddingRight: 0, width: 409 }}>
                         <TextStyle variation="subdued"><strong>Customer:</strong> {this.props.order.customer}</TextStyle>
                     </Col>
-                    <Col sm="2" style={{ paddingRight: 0, width: 130 }}>
+                    <Col className="exploreBtn" sm="2" style={{ paddingRight: 0, width: 130, display: "table-cell", verticalAlign: "middle"}}>
                         <Button
                             size="slim"
                             outline
