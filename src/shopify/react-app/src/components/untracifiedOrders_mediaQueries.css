@@ -14,38 +14,12 @@
 /* Media Queries for mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
    
-    .untracified_card {
-        
-        text-align: center !important;
-    }
-   
-    .cardHeading_bullets .col col-sm-10{
-        text-align: center !important;
-    }
-
-    
-    .order_card {
-        text-align: center !important;
-    }
-
-    .order_card .untracified_card .col .cardHeading_list .cardHeading_bullets col-sm-10 {
-        text-align: center !important;
-    }
-    
-    .order_card .untracified_card .qrcode_div {
-        text-align: center !important;
-    }
-
-    .Polaris-Card__Header{
-        text-align: center !important;
-    }
-
-    .collapasedView_Untracified{
-        text-align: center !important;
-    }
 
     #unfulfillContent{
         text-align: center;
     }
   
+    #unfulfillproducts{
+        text-align: center; 
+    }
 }

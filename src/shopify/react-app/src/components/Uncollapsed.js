@@ -20,23 +20,17 @@ class Uncollapsed extends Component {
         return (
             <Card key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
                 <Row id="unfulfillContent">
-                    <div>
                         <Col sm="10" >
-                            <div class="cardHeading_list">
-                            <List type="bullet" class="cardHeading_bullets">
+                            <List type="bullet">
                                 <List.Item>Customer  : {this.props.order.customer}</List.Item>
                                 <List.Item>Created At: {this.props.order.created_at}</List.Item>
                             </List>
-                            </div>
                         </Col>
                         <Col sm="2">
-                        <div class="qrcode_div">
                             <QRCode value={this.props.qrVal} />
-                            </div>
                         </Col>
-                    </div>
                 </Row>
-                <Row>
+                <Row id="unfulfillproducts">
                     <CollapaseCards itemArray={this.props.order.lineItems} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
                 </Row>
             </Card>
