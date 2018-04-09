@@ -38,11 +38,11 @@ class ProductMappingCard extends Component{
                     </Col>
                   </Row>
                 <Container fluid={true} className="no-right-padding">
-                  <Col xs="12" sm="12" md="12" lg="12" className="tblHeaders">
-                    <Col xs="5" sm="5" md="5" lg="5" className="pName">Product Name</Col>
-                    <Col xs="2" sm="2" md="2" lg="2" className="Pid">Product Item ID</Col>
-                    <Col xs="3" sm="3" md="3" lg="3" className="tTitle">Tracified Item title</Col>
-                    <Col xs="2" sm="2" md="2" lg="2" className="Permission">Permission</Col>
+                  <Col xs="12" sm="12" md="12" lg="12" className="tblHeaders col-xs-12">
+                    <Col xs="5" sm="5" md="5" lg="5" className="pName col-xs-5">Product Name</Col>
+                    <Col xs="2" sm="2" md="2" lg="2" className="Pid col-xs-2">Product Item ID</Col>
+                    <Col xs="3" sm="3" md="3" lg="3" className="tTitle col-xs-3">Tracified Item title</Col>
+                    <Col xs="2" sm="2" md="2" lg="2" className="Permission col-xs-2">Permission</Col>
                   </Col>
                 </Container>
                 </Container>
