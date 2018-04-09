@@ -175,18 +175,11 @@
         padding-left: 0%;
     }
 
-<<<<<<< HEAD
     #productmapping{
         /* width: 100px;
         margin: 0px;
         font-size: 13px !important; */
     }
-=======
-    /* #productmapping{
-        margin-left: 4%;
-        width: 92%;
-    } */
->>>>>>> parent of 2afcd88... did some style changes to fix with mobile view & show permission header  - settings
 
     .MappingDetails{
         font-size: 150% !important;
@@ -225,13 +218,8 @@
     }
 
     .pName{
-<<<<<<< HEAD
         margin-left: -26px;
         width: 39%
-=======
-        margin-left: -32px;
-        width: 36%;
->>>>>>> parent of 2afcd88... did some style changes to fix with mobile view & show permission header  - settings
     }
     .Pid{
         /* margin-left: 84px!important;
