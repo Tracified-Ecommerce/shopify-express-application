@@ -21,6 +21,7 @@ class FulfilledOrdersPage extends Component {
             isOrderListLoading: true,
             isMappingLoading: true,
             search: '',
+            inputType: "number",
             isCheckedCus: false,
             isCheckedOrd: true,
             errorText: "No Result found"
@@ -64,14 +65,16 @@ class FulfilledOrdersPage extends Component {
     clickOrder() {
         this.setState({
             isCheckedCus: false,
-            isCheckedOrd: true
+            isCheckedOrd: true,
+            inputType: "number"
         });
     }
 
     clickCustomer() {
         this.setState({
             isCheckedCus: true,
-            isCheckedOrd: false
+            isCheckedOrd: false,
+            inputType: "text"
         });
     }
 
@@ -264,7 +267,7 @@ class FulfilledOrdersPage extends Component {
                             <Stack.Item>
                                 <div className="searchText">
                                     <input
-                                        type="text"
+                                        type={this.state.inputType}
                                         value={this.state.search}
                                         onChange={this.updateSearch.bind(this)}
                                         style={inputStyle}
