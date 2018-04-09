@@ -242,12 +242,8 @@
         margin-left: 2%;
     }
     
-    .shopifyIdColumn{
-        z-index: 20;
-    }
-
-    .itemNameColumn{
-        z-index: 20;
+    .hide-cell-xs{
+        display: none;
     }
 
     .space{
