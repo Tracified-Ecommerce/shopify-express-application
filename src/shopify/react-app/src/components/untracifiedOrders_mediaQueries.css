@@ -35,5 +35,13 @@
     .order_card .untracified_card .qrcode_div {
         text-align: center !important;
     }
+
+    .Polaris-Card__Header{
+        text-align: center !important;
+    }
+
+    .collapasedView_Untracified{
+        text-align: center !important;
+    }
   
 }

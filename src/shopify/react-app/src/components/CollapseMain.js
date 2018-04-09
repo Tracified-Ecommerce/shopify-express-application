@@ -61,6 +61,7 @@ class CollapseMain extends Component {
             // margin: 10,
             padding: 10,
             boxShadow: "0.2px 0.2px 1px 0.5px rgba(0, 0, 0, .2)"
+        
         };
 
         return (
