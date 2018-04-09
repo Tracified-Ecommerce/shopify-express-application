@@ -55,11 +55,14 @@ class FulfilledOrdersPage extends Component {
                 console.error(error);
             });
     }
-
+    /** Uncomment this method if there is a need to restrict the input to a pattern.
+     * (insert-regex-here) can be changed to a test for the pattern 
+     */
+    
     // onKeyPress(event) {
     //     const keyCode = event.keyCode || event.which;
     //     const keyValue = String.fromCharCode(keyCode);
-    //      if (/\+|-/.test(keyValue))
+    //      if (/insert-regex-here/.test(keyValue))
     //        event.preventDefault();
     //    }
 
@@ -274,7 +277,6 @@ class FulfilledOrdersPage extends Component {
                                     <input
                                         type="text"
                                         value={this.state.search}
-                                        onKeyPress={this.onKeyPress.bind(this)}
                                         onChange={this.updateSearch.bind(this)}
                                         style={inputStyle}
                                     />
