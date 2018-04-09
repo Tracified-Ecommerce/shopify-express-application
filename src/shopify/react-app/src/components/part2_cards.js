@@ -252,7 +252,7 @@ class Part2Cards extends Component {
                 marginTop: '-4%',
                 marginBottom: '1%',
                 fontWeight: 400,
-                lineHeight: "2.4rem",
+                lineHeight: "1.4rem",
                 textTransform: "none",
                 letterSpacing: "normal",
                 position: "relative",
