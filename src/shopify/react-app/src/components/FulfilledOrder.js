@@ -47,7 +47,8 @@ class FulfilledOrder extends Component {
             console.log(this.state.traceButtonDisable);
         } else {
             this.setState({
-                traceButtonDisable: false
+                traceButtonDisable: false,
+                timelineText:"View Tracemore Timeline"
             });
 
         }
