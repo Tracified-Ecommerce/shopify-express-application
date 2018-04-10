@@ -181,7 +181,7 @@ class FulfilledOrder extends Component {
                                 content: 'Close',
                                 onAction: () => this.setState({ modalOpen: false }),
                             }}
-                            onClose={() => this.setState({ modalOpen: false })}
+                            onClose={() => this.setState({ modalOpen: false, traceButtonDisable: false })}
                         />
                     </EmbeddedApp>
                     <EmbeddedApp
