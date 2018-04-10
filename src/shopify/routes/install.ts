@@ -153,8 +153,8 @@ router.get("/callback", (req: Request, res: Response) => {
 
         const MainCssUploadPayload = {
           asset: {
-            attachment: MainAssets.testDotCss,
-            key: "assets\/test.css",
+            attachment: MainAssets.tracifiedDotCss,
+            key: "assets\/tracified.css",
           },
         };
         shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, MainCssUploadPayload, (parsedBody: any) => {
@@ -203,50 +203,6 @@ router.get("/callback", (req: Request, res: Response) => {
         };
         shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, posCssUploadPayload, (parsedBody: any) => {
           console.log("tracified-POS-section.css uploaded");
-          console.log(parsedBody);
-        });
-
-        const d3CollectionUploadPayload = {
-          asset: {
-            attachment: DimensionAssets.d3CollectionMinJs,
-            key: "assets\/d3-collection.v1.min.js",
-          },
-        };
-        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, d3CollectionUploadPayload, (parsedBody: any) => {
-          console.log("d3-collection.v1.min.js uploaded");
-          console.log(parsedBody);
-        });
-
-        const d3DispatchUploadPayload = {
-          asset: {
-            attachment: DimensionAssets.d3DispatchMinJs,
-            key: "assets\/d3-dispatch.v1.min.js",
-          },
-        };
-        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, d3DispatchUploadPayload, (parsedBody: any) => {
-          console.log("d3-dispatch.v1.min.js uploaded");
-          console.log(parsedBody);
-        });
-
-        const d3DsvUploadPayload = {
-          asset: {
-            attachment: DimensionAssets.d3DsvMinJs,
-            key: "assets\/d3-dsv.v1.min.js",
-          },
-        };
-        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, d3DsvUploadPayload, (parsedBody: any) => {
-          console.log("d3-dsv.v1.min.js uploaded");
-          console.log(parsedBody);
-        });
-
-        const d3RequestUploadPayload = {
-          asset: {
-            attachment: DimensionAssets.d3RequestMinJs,
-            key: "assets\/d3-request.v1.min.js",
-          },
-        };
-        shopAdminAPI("PUT", shop, assetUploadURL, shopRequestHeaders, d3RequestUploadPayload, (parsedBody: any) => {
-          console.log("d3-request.v1.min.js uploaded");
           console.log(parsedBody);
         });
 
