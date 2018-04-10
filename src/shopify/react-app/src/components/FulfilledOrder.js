@@ -7,6 +7,7 @@ class FulfilledOrder extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            modalURL: "",
             timelineText: "View Tracemore Timeline",
             orderNumber: this.props.order.order_number,
             productID: this.props.order.lineItems[0].product_id,
@@ -91,12 +92,14 @@ class FulfilledOrder extends Component {
                     let itemName = response.data.product.handle;
                     this.setState({
                         itemName: itemName
+                    }, () => {
+                        this.setState({ modalOpen: true });
                     });
                 }).catch((error) => {
                     console.log(error);
                 });
 
-            this.setState({ modalOpen: true });
+            // this.setState({ modalOpen: true });
         }
     }
 
