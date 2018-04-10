@@ -10,6 +10,12 @@
   
     .unfulfillColLeft{
         max-width: 75%;
+
+    }
+
+    .untracified_card{
+        text-align: center;
+
     }
 
 }
@@ -25,5 +31,18 @@
   
     #unfulfillproducts{
         text-align: center; 
+    }
+
+
+    #untracified_list{
+        list-style-type:none !important;
+    }
+
+    #cardHeader{
+        text-align: center; 
+    }
+
+    .collapasedView_Untracified{
+        text-align: center;
     }
 }

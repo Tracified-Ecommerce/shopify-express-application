@@ -18,10 +18,12 @@ class Uncollapsed extends Component {
     render() {
         
         return (
-            <Card key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
+            <Card id="cardHeader" key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
                 <Row id="unfulfillContent">
-                        <Col sm="10" className="unfulfillColLeft" >
-                            <List type="bullet">
+                        <Col xs="6" sm="4">
+                        </Col>
+                        <Col xs="6" sm="4" className="unfulfillColLeft" >
+                            <List id="untracified_list">
                                 <List.Item>Customer  : {this.props.order.customer}</List.Item>
                                 <List.Item>Created At: {this.props.order.created_at}</List.Item>
                             </List>
