@@ -18,7 +18,7 @@ class Uncollapsed extends Component {
     render() {
         
         return (
-            <Card className="untracified_card" key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
+            <Card id="cardHeader" key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
                 <Row id="unfulfillContent">
                         <Col sm="10" className="unfulfillColLeft" >
                             <List type="bullet" id="untracified_list">

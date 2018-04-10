@@ -35,6 +35,10 @@
 
 
     #untracified_list{
-        list-style:none !important;
+        list-style-type:none !important;
+    }
+
+    #cardHeader{
+        text-align: center; 
     }
 }
