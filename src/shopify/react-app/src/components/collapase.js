@@ -4,6 +4,7 @@ import { Button, Card, ResourceList, Thumbnail, Stack } from '@shopify/polaris';
 import * as axios from 'axios';
 import { isUndefined } from 'util';
 import AlertBox from "./Alert";
+// import '.'
 
 class CollapaseCard extends Component {
     constructor(props) {

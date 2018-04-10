@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProductMappingService from './ProductMappingService';
 import 'react-select/dist/react-select.css';
 import './AppMP.css';
-import ReactDOM  from 'react-dom';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 
@@ -31,80 +31,80 @@ import {
 import '@shopify/polaris/styles.css';
 
 class ProductMappingTableRow extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-          isToggleOn: true , 
-          typed: '', 
-          permissionObject: {} , 
-          mappingObject: {} , 
-          CBdisabled : true,
-          CBchecked : false,
-          selectVal : ""
-        };     
-            
-        let testlist = this.props.tracelist;
-        let arraytestlist = testlist.split("");
-        this.productMappingService = new ProductMappingService();
-        this.changeMapping = this.changeMapping.bind(this);
-        this.changePermission = this.changePermission.bind(this);
-        this.onItemChange = this.onItemChange.bind(this);
-        this.onPermissionChange = this.onPermissionChange.bind(this);
-      
-     
-    }  
+  constructor(props) {
+    super(props);
+    this.state = {
+      isToggleOn: true,
+      typed: '',
+      permissionObject: {},
+      mappingObject: {},
+      CBdisabled: true,
+      CBchecked: false,
+      selectVal: ""
+    };
 
-   
-changeMapping(value, id){
-  this.props.updateMapping(value, id);
-  this.setState({selectVal : value});
-}
+    let testlist = this.props.tracelist;
+    let arraytestlist = testlist.split("");
+    this.productMappingService = new ProductMappingService();
+    this.changeMapping = this.changeMapping.bind(this);
+    this.changePermission = this.changePermission.bind(this);
+    this.onItemChange = this.onItemChange.bind(this);
+    this.onPermissionChange = this.onPermissionChange.bind(this);
 
-changePermission(value, id){
-  id = id.substring(2);
-  this.props.updatePermission(value, id);
-}
 
-onItemChange(tracifiedItemID, shopifyProductID){
-  if(!(tracifiedItemID=="noItem")){
-    this.setState({
-      CBdisabled : false,
-      selectVal : tracifiedItemID
-    });
   }
-  else{
-    this.setState({
-      CBdisabled : true,
-      selectVal : tracifiedItemID,
-      CBchecked : false
-    });
-  }
-  this.props.onItemChange(tracifiedItemID, shopifyProductID);
-}
 
-onPermissionChange(permission, shopifyProductID){
-    this.setState({CBchecked : !this.state.CBchecked});
+
+  changeMapping(value, id) {
+    this.props.updateMapping(value, id);
+    this.setState({ selectVal: value });
+  }
+
+  changePermission(value, id) {
+    id = id.substring(2);
+    this.props.updatePermission(value, id);
+  }
+
+  onItemChange(tracifiedItemID, shopifyProductID) {
+    if (!(tracifiedItemID == "noItem")) {
+      this.setState({
+        CBdisabled: false,
+        selectVal: tracifiedItemID
+      });
+    }
+    else {
+      this.setState({
+        CBdisabled: true,
+        selectVal: tracifiedItemID,
+        CBchecked: false
+      });
+    }
+    this.props.onItemChange(tracifiedItemID, shopifyProductID);
+  }
+
+  onPermissionChange(permission, shopifyProductID) {
+    this.setState({ CBchecked: !this.state.CBchecked });
     shopifyProductID = shopifyProductID.substring(2);
     this.props.onPermissionChange(permission, shopifyProductID);
-}
+  }
 
 
 
-render() {
+  render() {
     // OLD CODE 
     // let traceList = this.props.tracelist.split(" ");
     let traceList = JSON.parse(this.props.tracelist);
     let traceOptions = [{
-      value:"noItem",
-      label:"Select an item"
+      value: "noItem",
+      label: "Select an item"
     }];
     let permission = false;
     let tracifiedItemId = "";
-    
-    for (let i = 0; i <traceList.length; i++) {
+
+    for (let i = 0; i < traceList.length; i++) {
       traceOptions.push({
-        value:traceList[i].itemID, 
-        label:traceList[i].itemName,
+        value: traceList[i].itemID,
+        label: traceList[i].itemName,
       });
     }
 
@@ -116,37 +116,40 @@ render() {
 
     const CheckboxID = "CB" + this.props.obj.id
 
-    return (   
-        <tr>
-          <td>  
+    return (
+      <tr>
+        <td>
+          <div className="cell itemNameColumn">
             {this.props.obj.title}
-            
-          </td>
-          <td>
-          {this.props.obj.id}
-          </td>   
-                  <td className="itemTitle">  
-                  <Select 
-                  placeholder="Select"
-                  options={traceOptions}
-                  onChange={this.onItemChange}
-                  value = {this.state.selectVal}
-                  id={this.props.obj.id}
-                  />
-                  </td>      
-          <td className="enableCheckbox">
-           <Checkbox 
-           disabled = {this.state.CBdisabled}
-           label="Traceability Enabled" 
-           onChange={this.onPermissionChange}
-           id={CheckboxID}
-           checked = {this.state.CBchecked}/>
-          </td>
-        </tr>
+          </div>
+        </td>
+        <td>
+          <div className="cell hide-cell-xs shopifyIdColumn">
+            {this.props.obj.id}
+          </div>
+        </td>
+        <td className="itemTitle">
+          <Select
+            placeholder="Select"
+            options={traceOptions}
+            onChange={this.onItemChange}
+            value={this.state.selectVal}
+            id={this.props.obj.id}
+          />
+        </td>
+        <td className="enableCheckbox">
+          <Checkbox
+            disabled={this.state.CBdisabled}
+            label="Traceability Enabled"
+            onChange={this.onPermissionChange}
+            id={CheckboxID}
+            checked={this.state.CBchecked} />
+        </td>
+      </tr>
     );
-   
-<ProductMappingTableRow />,
-  document.getElementById('root')
+
+    <ProductMappingTableRow /> ,
+      document.getElementById('root')
   }
 }
 

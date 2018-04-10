@@ -233,7 +233,9 @@ class FulfilledOrdersPage extends Component {
                 alignItems: "center",
                 padding: "0 1.2rem",
                 color: "#919eab",
-                borderRadius: "4px"
+                borderRadius: "4px",
+                height: "30px",
+                paddingLeft: "5%"
             }
 
             var tableStyle = {
