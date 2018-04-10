@@ -7,7 +7,7 @@ class FulfilledOrder extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            timelineText:"View Tracemore Timeline",
+            timelineText: "View Tracemore Timeline",
             orderNumber: this.props.order.order_number,
             productID: this.props.order.lineItems[0].product_id,
             modalOpen: false,
@@ -35,7 +35,7 @@ class FulfilledOrder extends Component {
         this.setState({
             itemID: tempItemID,
             productID: productID,
-            itemEnable:productID
+            itemEnable: productID
 
         });
 
@@ -44,20 +44,20 @@ class FulfilledOrder extends Component {
         if (tempItemID == "noTraceabilityItem") { // if the item ID was not reassigned (i.e: if the item is not available in mapping)
             this.setState({
                 traceButtonDisable: true,
-                timelineText:"Traceability Not Enabled"
+                timelineText: "Traceability Not Enabled"
             });
             console.log(this.state.traceButtonDisable);
         }
-         else if(this.placeholder=="Select an item"){
+        else if (this.placeholder == "Select an item") {
             this.setState({
                 traceButtonDisable: true,
-                timelineText:"View Tracemore Timeline"
+                timelineText: "View Tracemore Timeline"
             });
         }
         else {
             this.setState({
                 traceButtonDisable: false,
-                timelineText:"View Tracemore Timeline"
+                timelineText: "View Tracemore Timeline"
             });
 
         }
@@ -88,8 +88,9 @@ class FulfilledOrder extends Component {
             axios.get(url)
                 .then(response => {
                     console.log("inside onTraceSelect() product selected is : " + response.data.product.handle);
+                    let itemName = response.data.product.handle;
                     this.setState({
-                        itemName: response.data.product.handle
+                        itemName: itemName
                     });
                 }).catch((error) => {
                     console.log(error);
@@ -104,8 +105,9 @@ class FulfilledOrder extends Component {
         const url = '/shopify/shop-api/item/' + this.state.productID;
         axios.get(url)
             .then(response => {
+                let itemName = response.data.product.handle;
                 this.setState({
-                    itemName: response.data.product.handle
+                    itemName: itemName
                 });
             }).catch((error) => {
                 console.log(error);
@@ -115,10 +117,10 @@ class FulfilledOrder extends Component {
 
     render() {
         const order = this.props.order;
-       let itemOptions = [
+        let itemOptions = [
             {
-                value:"noItem",
-                label:"Select an item"
+                value: "noItem",
+                label: "Select an item"
             }
         ];
         order.lineItems.forEach(item => {
@@ -133,20 +135,20 @@ class FulfilledOrder extends Component {
         const shopOrigin = "https://" + this.props.shopDomain;
         let modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
 
-        var commonCusOdrStyle={
-            padding:"2%"
+        var commonCusOdrStyle = {
+            padding: "2%"
         }
-        
+
         return (
             <tr>
                 <td style={commonCusOdrStyle}>
                     {/* <div className="orderNo" style={commonCusOdrStyle}> */}
-                        {order.order_number}
+                    {order.order_number}
                     {/* </div> */}
                 </td>
                 <td style={commonCusOdrStyle}>
                     {/* <div className="cusName" style={commonCusOdrStyle}> */}
-                        {order.customer}
+                    {order.customer}
                     {/* </div> */}
                 </td>
                 <td>
@@ -165,7 +167,7 @@ class FulfilledOrder extends Component {
                         // size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
-                        ></Button>
+                    ></Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
