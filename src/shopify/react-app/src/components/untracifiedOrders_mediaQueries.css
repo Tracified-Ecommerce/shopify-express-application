@@ -1,0 +1,48 @@
+/* Media Queries for PC */
+@media screen and (min-width: 1024px){
+   
+}
+
+
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    
+  
+    .unfulfillColLeft{
+        max-width: 75%;
+
+    }
+
+    .untracified_card{
+        text-align: center;
+
+    }
+
+}
+
+
+/* Media Queries for mobile devices */
+@media  (min-width: 360px) and (max-width: 640px) {
+   
+
+    #unfulfillContent{
+        text-align: center;
+    }
+  
+    #unfulfillproducts{
+        text-align: center; 
+    }
+
+
+    #untracified_list{
+        list-style-type:none !important;
+    }
+
+    #cardHeader{
+        text-align: center; 
+    }
+
+    .collapasedView_Untracified{
+        text-align: center;
+    }
+}

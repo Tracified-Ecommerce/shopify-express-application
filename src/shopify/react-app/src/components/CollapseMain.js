@@ -4,7 +4,9 @@ import * as axios from 'axios';
 import { Row, Col, Card, Collapse } from 'reactstrap';
 import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
 import AlertBox from "./Alert";
+import './untracifiedOrders_mediaQueries.css';
 const QRCode = require('qrcode.react');
+
 
 class CollapseMain extends Component {
 
@@ -61,6 +63,7 @@ class CollapseMain extends Component {
             // margin: 10,
             padding: 10,
             boxShadow: "0.2px 0.2px 1px 0.5px rgba(0, 0, 0, .2)"
+        
         };
 
         return (

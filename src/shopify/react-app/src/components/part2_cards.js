@@ -6,7 +6,7 @@ import Loading from './Loading';
 import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
 import ErrorMsgSearch from './errorMsgSearch';
-
+import './untracifiedOrders_mediaQueries.css'
 
 class Part2Cards extends Component {
     constructor() {
@@ -262,8 +262,9 @@ class Part2Cards extends Component {
                 alignItems: "center",
                 padding: "0 1.2rem",
                 color: "#919eab",
-                borderRadius: "4px"
-                // cursor: text
+                borderRadius: "4px",
+                height: "30px",
+                paddingLeft: "5%"
             }
 
             var toggleBtnStyle={
@@ -292,13 +293,14 @@ class Part2Cards extends Component {
                         </div>
 
                     </Stack>
-                    <div style={{ paddingBottom: 5 }}>
+                    <div style={{ paddingBottom: 5 , textAlign: "center" }}>
                         <Stack alignment="center" >
                             <Stack.Item>
                             <div style={{marginBottom:5,fontWeight:"bold",fontSize:"140%", paddingBottom:'9%'}}>
                                     Filter By :
                              </div>
                             </Stack.Item>
+                       
                             <Stack.Item>
                                 <RadioButton
 
@@ -317,6 +319,7 @@ class Part2Cards extends Component {
 
                                 />
                             </Stack.Item>
+                    
                             <Stack.Item>
 
                                 <input

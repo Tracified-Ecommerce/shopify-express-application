@@ -139,8 +139,8 @@
     }
 
     .pName{
-        margin-left: -17px;
-        width: 47.7%;
+        margin-left: -21px;
+        width: 48.5%
     }
     .Pid{
         margin-left: -38px!important;
@@ -175,10 +175,11 @@
         padding-left: 0%;
     }
 
-    /* #productmapping{
-        margin-left: 4%;
-        width: 92%;
-    } */
+    #productmapping{
+        /* width: 100px;
+        margin: 0px;
+        font-size: 13px !important; */
+    }
 
     .MappingDetails{
         font-size: 150% !important;
@@ -217,13 +218,13 @@
     }
 
     .pName{
-        margin-left: -32px;
-        width: 36%;
+        margin-left: -26px;
+        width: 37%
     }
     .Pid{
         /* margin-left: 84px!important;
         margin-top: -5.6%; */
-        width: 29%;
+        display: none;
     }
     .tTitle{
         /* margin-left: 194px!important;
@@ -235,8 +236,13 @@
         /* margin-left: 97%!important;
         width: 40%;
         margin-top: -6%; */
+        /* display: none; */
+        margin-left: -2%;
+    }
+    
+    .hide-cell-xs{
         display: none;
-    }    
+    }
 
     .space{
         height: 122px !important;

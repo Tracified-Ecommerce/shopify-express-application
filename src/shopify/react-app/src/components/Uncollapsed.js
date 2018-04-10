@@ -4,6 +4,7 @@ import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import { Thumbnail, Card, Page, List } from '@shopify/polaris';
 import Loading from './Loading';
+import './untracifiedOrders_mediaQueries.css';
 const QRCode = require('qrcode.react');
 
 class Uncollapsed extends Component {
@@ -13,25 +14,25 @@ class Uncollapsed extends Component {
 
         };
     }
-
+    
     render() {
-
+        
         return (
-
-
-            <Card key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
-                <Row>
-                    <Col sm="10">
-                        <List type="bullet">
-                            <List.Item>Customer  : {this.props.order.customer}</List.Item>
-                            <List.Item>Created At: {this.props.order.created_at}</List.Item>
-                        </List>
-                    </Col>
-                    <Col sm="2">
-                        <QRCode value={this.props.qrVal} />
-                    </Col>
+            <Card id="cardHeader" key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
+                <Row id="unfulfillContent">
+                        <Col xs="6" sm="4">
+                        </Col>
+                        <Col xs="6" sm="4" className="unfulfillColLeft" >
+                            <List id="untracified_list">
+                                <List.Item>Customer  : {this.props.order.customer}</List.Item>
+                                <List.Item>Created At: {this.props.order.created_at}</List.Item>
+                            </List>
+                        </Col>
+                        <Col sm="2" >
+                            <QRCode value={this.props.qrVal} />
+                        </Col>
                 </Row>
-                <Row>
+                <Row id="unfulfillproducts">
                     <CollapaseCards itemArray={this.props.order.lineItems} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
                 </Row>
             </Card>

@@ -7,7 +7,8 @@ class FulfilledOrder extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            timelineText:"View Tracemore Timeline",
+            modalURL: "",
+            timelineText: "View Tracemore Timeline",
             orderNumber: this.props.order.order_number,
             productID: this.props.order.lineItems[0].product_id,
             modalOpen: false,
@@ -35,19 +36,29 @@ class FulfilledOrder extends Component {
         this.setState({
             itemID: tempItemID,
             productID: productID,
-            itemEnable:productID
+            itemEnable: productID
 
         });
+
+        console.log("productID inside state for order - " + orderNumber + " is : " + this.state.productID);
 
         if (tempItemID == "noTraceabilityItem") { // if the item ID was not reassigned (i.e: if the item is not available in mapping)
             this.setState({
                 traceButtonDisable: true,
-                timelineText:"Traceability Not Enabled"
+                timelineText: "Traceability Not Enabled"
             });
             console.log(this.state.traceButtonDisable);
-        } else {
+        }
+        else if (this.placeholder == "Select an item") {
             this.setState({
-                traceButtonDisable: false
+                traceButtonDisable: true,
+                timelineText: "View Tracemore Timeline"
+            });
+        }
+        else {
+            this.setState({
+                traceButtonDisable: false,
+                timelineText: "View Tracemore Timeline"
             });
 
         }
@@ -56,6 +67,7 @@ class FulfilledOrder extends Component {
 
 
     onTraceSelect() {
+
         console.log("Button clicked , itemID is :" + this.state.itemID);
         if (this.state.itemID == "noTraceabilityItem") {
             this.setState({
@@ -63,26 +75,31 @@ class FulfilledOrder extends Component {
                 // timelineText:"no traceability"                
             });
             // this.state.timelineText="no traceability";
-            console.log("No traceability data added");
+            console.log("inside onTraceSelect() No traceability data added");
         }
         else {
-            console.log("Traceability data added");
+            console.log("inside onTraceSelect() Traceability data added");
             this.setState({
                 traceButtonDisable: true,
                 // timelineText:"see timeline"
             });
             // this.state.timelineText="see timeline";
+            console.log("inside onTraceSelect() product id is : " + this.state.productID);
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
                 .then(response => {
+                    console.log("inside onTraceSelect() product selected is : " + response.data.product.handle);
+                    let itemName = response.data.product.handle;
                     this.setState({
-                        itemName: response.data.product.handle
+                        itemName: itemName
+                    }, () => {
+                        this.setState({ modalOpen: true });
                     });
                 }).catch((error) => {
                     console.log(error);
                 });
 
-            this.setState({ modalOpen: true });
+            // this.setState({ modalOpen: true });
         }
     }
 
@@ -91,8 +108,9 @@ class FulfilledOrder extends Component {
         const url = '/shopify/shop-api/item/' + this.state.productID;
         axios.get(url)
             .then(response => {
+                let itemName = response.data.product.handle;
                 this.setState({
-                    itemName: response.data.product.handle
+                    itemName: itemName
                 });
             }).catch((error) => {
                 console.log(error);
@@ -102,10 +120,10 @@ class FulfilledOrder extends Component {
 
     render() {
         const order = this.props.order;
-       let itemOptions = [
+        let itemOptions = [
             {
-                value:"noItem",
-                label:"Select an item"
+                value: "noItem",
+                label: "Select an item"
             }
         ];
         order.lineItems.forEach(item => {
@@ -118,17 +136,23 @@ class FulfilledOrder extends Component {
         console.log("productId is : " + this.state.productID);
         console.log("array is :" + itemOptions);
         const shopOrigin = "https://" + this.props.shopDomain;
-        const modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
+        let modalURL = "/shopify/trace/" + this.state.orderNumber + "/" + this.state.itemID + "/" + this.state.itemName;
 
+        var commonCusOdrStyle = {
+            padding: "2%"
+        }
 
-        
         return (
             <tr>
-                <td>
+                <td style={commonCusOdrStyle}>
+                    {/* <div className="orderNo" style={commonCusOdrStyle}> */}
                     {order.order_number}
+                    {/* </div> */}
                 </td>
-                <td>
+                <td style={commonCusOdrStyle}>
+                    {/* <div className="cusName" style={commonCusOdrStyle}> */}
                     {order.customer}
+                    {/* </div> */}
                 </td>
                 <td>
                     <Select
@@ -143,24 +167,24 @@ class FulfilledOrder extends Component {
                     <Button
                         ariaControls="timelineBtn"
                         children={this.state.timelineText}
-                        size="slim"
+                        // size="slim"
                         onClick={this.onTraceSelect}
                         disabled={this.state.traceButtonDisable}
-                        ></Button>
+                    ></Button>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
                     >
                         <Modal
                             src={modalURL}
-                            width="large"
+                            width="large"   
                             open={this.state.modalOpen}
                             title="Tracified - Trust Through Traceability"
                             primaryAction={{
                                 content: 'Close',
-                                onAction: () => this.setState({ modalOpen: false }),
+                                onAction: () => this.setState({ modalOpen: false, traceButtonDisable: false }),
                             }}
-                            onClose={() => this.setState({ modalOpen: false })}
+                            onClose={() => this.setState({ modalOpen: false, traceButtonDisable: false })}
                         />
                     </EmbeddedApp>
                     <EmbeddedApp
