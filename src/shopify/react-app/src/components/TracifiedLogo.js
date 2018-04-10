@@ -4,7 +4,9 @@ import TraciLogo from '../assets/tracified_logo.png';
 class TracifiedLogo extends Component{
     render(){
         var logoStyle={
-            height: '100px'             
+            height: '100px' ,
+            width: '100%'
+                    
         }
 
         var backStyle={
