@@ -33,7 +33,8 @@
         text-align: center; 
     }
 
-    .unfulfillColLeft{
+
+    #untracified_list{
         list-style:none !important;
     }
 }
