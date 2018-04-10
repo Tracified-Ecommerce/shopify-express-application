@@ -3,6 +3,7 @@ import { Container, Collapse, Row, Col } from 'reactstrap';
 import { Button, Card, ResourceList, Thumbnail, Stack } from '@shopify/polaris';
 import * as axios from 'axios';
 import { isUndefined } from 'util';
+import './untracifiedOrders_mediaQueries.css';
 
 class CollapaseCard extends Component {
     constructor(props) {
@@ -19,8 +20,10 @@ class CollapaseCard extends Component {
                 });
 
                 if (!isUndefined(product[0])) {
-                    productImage = product[0].images[0].src;
-                    
+                    if (!isUndefined(product[0].images[0])) {
+                        productImage = product[0].images[0].src;
+                    }
+
                 }
             }
 

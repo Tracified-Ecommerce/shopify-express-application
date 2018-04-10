@@ -3,7 +3,7 @@
     line-height: 3.2rem;
     font-weight: 600;
     font-family: inherit;
-    margin-left: 10%;
+    margin-left: 19%;
     margin-top: 2%;
     margin-bottom: 2%;
 }
@@ -13,7 +13,9 @@
     font-family: calibri;
     margin-left: 10%;
     margin-top: 1%;
-    width: 80%;
+    width: 1040px;
+    margin-left: 19%;
+    margin-right: 1593px;
 }
 
 li{
@@ -58,10 +60,14 @@ code{
 }
 
 .InstallVideo{
-    margin-left: 10%;
-    width: 48.5% !important;
+    margin-left: 19%;
+    /* width: 48.5% !important; */
 }
 
 .InstallVideo iframe{    
-    width: 165% !important;
+    /* width: 165% !important; */
+}
+
+.ytp-chrome-top-buttons{
+    display: none !important;
 }
