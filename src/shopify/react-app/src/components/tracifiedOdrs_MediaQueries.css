@@ -9,4 +9,9 @@
     .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled .Polaris-Button__Content span{
         font-size: 11px;
     }
+
+    .orderNo, .cusName{
+        vertical-align: middle;
+    }
+
 }

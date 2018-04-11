@@ -146,14 +146,14 @@ class FulfilledOrder extends Component {
         return (
             <tr>
                 <td style={commonCusOdrStyle}>
-                    {/* <div className="orderNo" style={commonCusOdrStyle}> */}
+                    <div className="orderNo">
                     {order.order_number}
-                    {/* </div> */}
+                    </div>
                 </td>
                 <td style={commonCusOdrStyle}>
-                    {/* <div className="cusName" style={commonCusOdrStyle}> */}
+                    <div className="cusName">
                     {order.customer}
-                    {/* </div> */}
+                    </div>
                 </td>
                 <td>
                     <Select
