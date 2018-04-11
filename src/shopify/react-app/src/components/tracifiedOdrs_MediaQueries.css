@@ -23,8 +23,8 @@
         font-size: 12px;
     }
 
-    .tblHeaderWrapper{
-        font-size: 80%;
+    #tblHeaderWrapper thread tr{
+        font-size: 12px;
         text-align: center;
     }
 

@@ -288,16 +288,14 @@ class FulfilledOrdersPage extends Component {
 
                         </Stack>
                     </div>
-                    <table className="table table-striped">
+                    <table className="table table-striped" id="tblHeaderWrapper">
                         <thead>
-                            <div className="tblHeaderWrapper">
-                                <tr>
-                                    <td ><b>Order No</b></td>
-                                    <td ><b>Customer</b></td>
-                                    <td ><b>Order Item to View</b></td>
-                                    <td ><b>Trace</b></td>                                
-                                </tr>
-                            </div>
+                             <tr>
+                                <td ><b>Order No</b></td>
+                                <td ><b>Customer</b></td>
+                                <td ><b>Order Item to View</b></td>
+                                <td ><b>Trace</b></td>                                
+                            </tr>
                         </thead>
                         <tbody>
 
