@@ -4,11 +4,6 @@ import './MediaQueries_Logo.css';
 
 class TracifiedLogo extends Component{
     render(){
-        var logoStyle={
-            height: '150px' ,
-            width: '550px'                    
-        }
-
         var backStyle={
             backgroundColor:"black",
             textAlign: 'center'
@@ -21,7 +16,7 @@ class TracifiedLogo extends Component{
 
         return(
             <div className="LogoWrapper" style={backStyle}>
-                <img src={TraciLogo} style={logoStyle}/>
+                <img src={TraciLogo} />
             </div>
         );
     }
