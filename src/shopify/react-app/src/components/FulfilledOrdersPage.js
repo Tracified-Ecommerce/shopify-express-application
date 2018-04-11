@@ -290,14 +290,14 @@ class FulfilledOrdersPage extends Component {
                     </div>
                     <table className="table table-striped">
                         <thead>
-                            <tr>
-                                <div className="tblHeaderWrapper">
+                            <div className="tblHeaderWrapper">
+                                <tr>
                                     <td ><b>Order No</b></td>
                                     <td ><b>Customer</b></td>
                                     <td ><b>Order Item to View</b></td>
-                                    <td ><b>Trace</b></td>
-                                </div>
-                            </tr>
+                                    <td ><b>Trace</b></td>                                
+                                </tr>
+                            </div>
                         </thead>
                         <tbody>
 
