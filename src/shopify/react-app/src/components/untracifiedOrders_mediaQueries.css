@@ -1,7 +1,8 @@
 /* Media Queries for PC */
 @media screen and (min-width: 1024px){
    .pageWrapper .Polaris-Page{
-        margin-left: 7%;
+        margin-left: auto;
+        margin-right: auto;
    }
 }
 
