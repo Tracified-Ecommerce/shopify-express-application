@@ -1,6 +1,10 @@
 
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
+    .timelineBtnWrapper{
+        width: 100px;
+    }
+
     .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled{
         padding: 1%;
         height: 10px;
@@ -12,6 +16,7 @@
 
     .orderNo, .cusName{
         vertical-align: middle;
+        font-size: 13px;
     }
 
 }
