@@ -127,7 +127,7 @@ function componentBuilder(components: any): IComponentJSON {
                         }
                         componentJSON.htmltxt +=
                             "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
-                            "<div class=\"titleDiv\">Are from " + maxElement + "</div>" +
+                            "<div class=\"titleDiv\">Seeds are from " + maxElement + "</div>" +
                             "<div class=\"subtitleDiv\"> " + component.uiComponent.subTitle + "</div></div>";
                     }
                 } else {
