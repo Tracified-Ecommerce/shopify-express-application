@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Select } from '@shopify/polaris';
 import * as axios from 'axios';
 import { EmbeddedApp, Alert, Modal } from '@shopify/polaris/embedded';
+import './tracifiedOdrs_MediaQueries.css';
 
 class FulfilledOrder extends Component {
     constructor(props) {
@@ -164,13 +165,15 @@ class FulfilledOrder extends Component {
                     />
                 </td>
                 <td>
-                    <Button
-                        ariaControls="timelineBtn"
-                        children={this.state.timelineText}
-                        // size="slim"
-                        onClick={this.onTraceSelect}
-                        disabled={this.state.traceButtonDisable}
-                    ></Button>
+                    <div className="timelineBtnWrapper">
+                        <Button
+                            ariaControls="timelineBtn"
+                            children={this.state.timelineText}
+                            // size="slim"
+                            onClick={this.onTraceSelect}
+                            disabled={this.state.traceButtonDisable}
+                        ></Button>
+                    </div>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
