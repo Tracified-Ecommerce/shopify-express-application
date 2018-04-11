@@ -1,0 +1,7 @@
+/* Media queries for the mobile devices */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .LogoWrapper img{
+        height: 150px;
+        width: 550px ;   
+    }
+}

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import TraciLogo from '../assets/tracified_logo.png';
+import './MediaQueries_Logo.css';
 
 class TracifiedLogo extends Component{
     render(){
         var logoStyle={
-            height: '165px' ,
-            width: '100%'
-                    
+            height: '150px' ,
+            width: '550px'                    
         }
 
         var backStyle={
@@ -20,7 +20,7 @@ class TracifiedLogo extends Component{
         }
 
         return(
-            <div style={backStyle}>
+            <div className="LogoWrapper" style={backStyle}>
                 <img src={TraciLogo} style={logoStyle}/>
             </div>
         );
