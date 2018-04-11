@@ -91,7 +91,7 @@ function componentBuilder(components: any): IComponentJSON {
                         componentJSON.htmltxt +=
                             "<div class=\"green\"><span class=\"large-green\">" + maxCount +
                             "</span>" + component.values.length + "</div>" +
-                            "<div class=\"titleDiv\">" + maxElement + "</div>" +
+                            "<div class=\"titleDiv\">use " + maxElement + "</div>" +
                             "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                     }
                 } else {
@@ -102,7 +102,7 @@ function componentBuilder(components: any): IComponentJSON {
                     }
                     componentJSON.htmltxt +=
                         "<div class=\"xoutofy-top\">" + tot + "</div><div class=\"xoutofy-middle\">out of " + component.values.length + " items</div>"
-                        + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "have " + "</span>" +
+                        + "<div class=\"titleDiv\"><span class=\"titleModifier\">" + "use " + "</span>" +
                         component.uiComponent.title +
                         "</div><div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                 }
@@ -127,7 +127,7 @@ function componentBuilder(components: any): IComponentJSON {
                         }
                         componentJSON.htmltxt +=
                             "<div class=\"large-green\">" + maxCount + "/" + component.values.length + "</div>" +
-                            "<div class=\"titleDiv\">have " + maxElement + "</div>" +
+                            "<div class=\"titleDiv\">Are from " + maxElement + "</div>" +
                             "<div class=\"subtitleDiv\"> as the " + component.uiComponent.subTitle + "</div></div>";
                     }
                 } else {
