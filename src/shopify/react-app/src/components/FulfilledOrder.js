@@ -156,13 +156,15 @@ class FulfilledOrder extends Component {
                     </div>
                 </td>
                 <td>
-                    <Select
-                        options={itemOptions}
-                        placeholder="Select an item"
-                        id={order.order_number}
-                        onChange={this.onSelectItem}
-                        value={this.state.itemEnable}
-                    />
+                    <div className="selectWrapper">
+                        <Select
+                            options={itemOptions}
+                            placeholder="Select an item"
+                            id={order.order_number}
+                            onChange={this.onSelectItem}
+                            value={this.state.itemEnable}
+                        />
+                    </div>
                 </td>
                 <td>
                     <div className="timelineBtnWrapper">
