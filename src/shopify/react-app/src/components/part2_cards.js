@@ -274,6 +274,7 @@ class Part2Cards extends Component {
             }
 
             return (
+                <div className="pageWrapper">
                 <Page title="UnTracified Orders" separator>
                     <Stack
                         distribution="trailing"
@@ -380,6 +381,7 @@ class Part2Cards extends Component {
                     }
 
                 </Page>
+                </div>
             );
         }
     }

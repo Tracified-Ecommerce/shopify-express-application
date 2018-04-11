@@ -1,0 +1,23 @@
+/* Media queries for the mobile devices */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .LogoWrapper img{
+        height: 125px;
+        width: 331px ;   
+    }
+}
+
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    .LogoWrapper img{
+        height: 125px;
+        width: 550px ;   
+    }
+}
+
+/* Media queries for the PC devices */
+@media (min-width: 1024px) {
+    .LogoWrapper img{
+        height: 125px;
+        width: 550px ;   
+    }
+}
