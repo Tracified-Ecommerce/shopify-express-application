@@ -1,0 +1,17 @@
+
+/* Media queries for the mobile devices */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled{
+        padding: 1%;
+        height: 10px;
+    }
+
+    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled .Polaris-Button__Content span{
+        font-size: 11px;
+    }
+
+    .orderNo, .cusName{
+        vertical-align: middle;
+    }
+
+}
