@@ -177,7 +177,6 @@ router.get("/modal-mapping/:shopname/:productID", (req: IRequest & Request, res:
                                     },
                                 };
 
-                                // need to ask muri for clarification
                                 widgetResponseJSON.components = widgetComponentBuilder(miniWidgetArray, data.otpCount);
                                 widgetResponseJSON.dimensionComponents = widgetDimensionBuilder(dimensionComponentArray);
                                 widgetResponseJSON.mapComponents = widgetMapBuilder(mapComponentArray);
