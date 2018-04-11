@@ -89,8 +89,8 @@ function componentBuilder(components: any): IComponentJSON {
                             }
                         }
                         componentJSON.htmltxt +=
-                            "<div class=\"green\"><span class=\"large-green\">" + maxCount +
-                            "</span>" + component.values.length + "</div>" +
+                            "<div class=\"xoutofy-top\">" + maxCount +
+                            "</div><div class=\"xoutofy-middle\">out of " + component.values.length + " items</div>" +
                             "<div class=\"titleDiv\">use " + maxElement + "</div>" +
                             "<div class=\"subtitleDiv\">" + component.uiComponent.subTitle + "</div></div>";
                     }
