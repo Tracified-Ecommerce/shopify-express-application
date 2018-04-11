@@ -19,4 +19,13 @@
         font-size: 13px;
     }
 
+    .selectWrapper .Polaris-Select__Input{
+        font-size: 12px;
+    }
+
+    .tblHeaderWrapper{
+        font-size: 80%;
+        text-align: center;
+    }
+
 }

@@ -6,6 +6,7 @@ import FulfilledOrder from './FulfilledOrder';
 import Loading from './Loading';
 import SearchInput, { createFilter } from 'react-search-input'
 import ErrorMsgSearch from './errorMsgSearch';
+import './tracifiedOdrs_MediaQueries.css';
 
 const KEYS_TO_FILTER = ['order.order_number']
 const QRCode = require('qrcode.react');
@@ -290,10 +291,12 @@ class FulfilledOrdersPage extends Component {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <td ><b>Order No</b></td>
-                                <td ><b>Customer</b></td>
-                                <td ><b>Order Item to View</b></td>
-                                <td ><b>Trace</b></td>
+                                <div className="tblHeaderWrapper">
+                                    <td ><b>Order No</b></td>
+                                    <td ><b>Customer</b></td>
+                                    <td ><b>Order Item to View</b></td>
+                                    <td ><b>Trace</b></td>
+                                </div>
                             </tr>
                         </thead>
                         <tbody>
