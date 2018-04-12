@@ -176,24 +176,21 @@ class FulfilledOrder extends Component {
                             disabled={this.state.traceButtonDisable}
                         ></Button>
                     </div>
-                    <div className="timelineModal">
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
                     >
-                        
-                            <Modal
-                                src={modalURL}
-                                width="large"   
-                                open={this.state.modalOpen}
-                                title="Tracified - Trust Through Traceability"
-                                primaryAction={{
-                                    content: 'Close',
-                                    onAction: () => this.setState({ modalOpen: false, traceButtonDisable: false }),
-                                }}
-                                onClose={() => this.setState({ modalOpen: false, traceButtonDisable: false })}
-                            />
-                        
+                        <Modal
+                            src={modalURL}
+                            width="large"   
+                            open={this.state.modalOpen}
+                            title="Tracified - Trust Through Traceability"
+                            primaryAction={{
+                                content: 'Close',
+                                onAction: () => this.setState({ modalOpen: false, traceButtonDisable: false }),
+                            }}
+                            onClose={() => this.setState({ modalOpen: false, traceButtonDisable: false })}
+                        />
                     </EmbeddedApp>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
@@ -208,7 +205,6 @@ class FulfilledOrder extends Component {
                             Traceability Not available for this Product!
                         </Alert>
                     </EmbeddedApp>
-                    </div>
                 </td>
             </tr>
         );

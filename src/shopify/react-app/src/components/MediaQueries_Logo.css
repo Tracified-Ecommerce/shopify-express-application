@@ -1,7 +1,7 @@
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
     .LogoWrapper img{
-        height: 125px;
+        height: 90px;
         width: 331px ;   
     }
 }
@@ -9,7 +9,7 @@
 /* Media queries for the tablet devices */
 @media (min-width: 650px) and (max-width: 1023px) {
     .LogoWrapper img{
-        height: 125px;
+        height: 130px;
         width: 550px ;   
     }
 }
