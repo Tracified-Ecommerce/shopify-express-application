@@ -1,6 +1,8 @@
 /* Media Queries for PC */
 @media screen and (min-width: 1024px){
-    
+    .showItems_column{
+        max-width: 75%;
+    }
  }
  
  
