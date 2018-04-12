@@ -1,0 +1,22 @@
+/* Media Queries for PC */
+@media screen and (min-width: 1024px){
+    .showItems_column{
+        max-width: 75%;
+    }
+ }
+ 
+ 
+ /* Media queries for the tablet devices */
+ @media (min-width: 650px) and (max-width: 1023px) {
+     
+   
+ 
+ }
+ 
+ 
+ /* Media Queries for mobile devices */
+ @media  (min-width: 360px) and (max-width: 640px) {
+    
+ 
+   
+ }
