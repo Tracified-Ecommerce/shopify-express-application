@@ -108,7 +108,7 @@ class CollapaseCard extends Component {
                 <Container fluid={true}>
                     <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                     <Row noGutters={true}>
-                        <Col sm="3">
+                        <Col sm="10">
                             <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                         </Col>
                         <Col sm="6">
