@@ -27,7 +27,7 @@ class Uncollapsed extends Component {
                                 <List.Item>Created At: {this.props.order.created_at}</List.Item>
                             </List>
                         </Col>
-                        <Col sm="2" >
+                        <Col sm="3" >
                             <QRCode value={this.props.qrVal} />
                         </Col>
                 </Row>
