@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Collapse2 from './collapse2';
+import {input} from './part2_cards';
+
 import * as axios from 'axios';
 import { Row, Col, Card, Collapse } from 'reactstrap';
 import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
 import AlertBox from "./Alert";
 import './untracifiedOrders_mediaQueries.css';
 const QRCode = require('qrcode.react');
-import {input} from './part2_cards';
 
 class CollapseMain extends Component {
 
