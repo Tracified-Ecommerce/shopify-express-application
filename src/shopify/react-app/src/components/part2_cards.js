@@ -43,7 +43,7 @@ class Part2Cards extends Component {
     }
 
     toggleCardType() {
-        this.setState({ isExpanded: !this.state.isExpanded });
+        this.setState({ isExpanded: !this.props.isExpanded });
     }
 
     componentDidMount() {
