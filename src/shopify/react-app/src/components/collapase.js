@@ -4,6 +4,7 @@ import { Button, Card, ResourceList, Thumbnail, Stack } from '@shopify/polaris';
 import * as axios from 'axios';
 import { isUndefined } from 'util';
 import AlertBox from "./Alert";
+import './collaps_mediaQueries.css';
 // import '.'
 
 class CollapaseCard extends Component {
@@ -108,7 +109,7 @@ class CollapaseCard extends Component {
                 <Container fluid={true}>
                     <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                     <Row noGutters={true}>
-                        <Col sm="3">
+                        <Col sm="10" className="showItems_column">
                             <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                         </Col>
                         <Col sm="6">
