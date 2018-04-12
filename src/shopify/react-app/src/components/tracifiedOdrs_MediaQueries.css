@@ -5,12 +5,12 @@
         width: 100px;
     }
 
-    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled{
+    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled , .timelineBtnWrapper .Polaris-Button{
         padding: 1%;
         height: 10px;
     }
 
-    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled .Polaris-Button__Content span{
+    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled .Polaris-Button__Content span , .timelineBtnWrapper .Polaris-Button .Polaris-Button__Content span{
         font-size: 11px;
     }
 
