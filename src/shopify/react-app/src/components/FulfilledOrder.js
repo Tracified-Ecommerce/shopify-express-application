@@ -176,11 +176,12 @@ class FulfilledOrder extends Component {
                             disabled={this.state.traceButtonDisable}
                         ></Button>
                     </div>
+                    <div className="timelineModal">
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
                     >
-                        <div className="timelineModal">
+                        
                             <Modal
                                 src={modalURL}
                                 width="large"   
@@ -192,7 +193,7 @@ class FulfilledOrder extends Component {
                                 }}
                                 onClose={() => this.setState({ modalOpen: false, traceButtonDisable: false })}
                             />
-                        </div>
+                        
                     </EmbeddedApp>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
@@ -207,6 +208,7 @@ class FulfilledOrder extends Component {
                             Traceability Not available for this Product!
                         </Alert>
                     </EmbeddedApp>
+                    </div>
                 </td>
             </tr>
         );
