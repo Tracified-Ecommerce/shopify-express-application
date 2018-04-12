@@ -6,7 +6,7 @@ import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
 import AlertBox from "./Alert";
 import './untracifiedOrders_mediaQueries.css';
 const QRCode = require('qrcode.react');
-
+import {input} from './part2_cards';
 
 class CollapseMain extends Component {
 
@@ -44,6 +44,7 @@ class CollapseMain extends Component {
                 });
                 this.setState({
                     isOpen: true,
+                    search:''
                 });
             }).catch((err) => {
                 console.log(err);
