@@ -62,7 +62,7 @@ class CollapseMain extends Component {
     }
 
     loadCards() {
-        if (this.state.isExpanded="true") {
+        if (this.state.isExpanded) {
             return (
                 <Uncollapsed
                     key={index}
