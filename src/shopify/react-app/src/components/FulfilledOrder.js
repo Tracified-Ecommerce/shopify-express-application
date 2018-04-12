@@ -180,17 +180,19 @@ class FulfilledOrder extends Component {
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
                     >
-                        <Modal
-                            src={modalURL}
-                            width="large"   
-                            open={this.state.modalOpen}
-                            title="Tracified - Trust Through Traceability"
-                            primaryAction={{
-                                content: 'Close',
-                                onAction: () => this.setState({ modalOpen: false, traceButtonDisable: false }),
-                            }}
-                            onClose={() => this.setState({ modalOpen: false, traceButtonDisable: false })}
-                        />
+                        <div className="timelineModal">
+                            <Modal
+                                src={modalURL}
+                                width="large"   
+                                open={this.state.modalOpen}
+                                title="Tracified - Trust Through Traceability"
+                                primaryAction={{
+                                    content: 'Close',
+                                    onAction: () => this.setState({ modalOpen: false, traceButtonDisable: false }),
+                                }}
+                                onClose={() => this.setState({ modalOpen: false, traceButtonDisable: false })}
+                            />
+                        </div>
                     </EmbeddedApp>
                     <EmbeddedApp
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
