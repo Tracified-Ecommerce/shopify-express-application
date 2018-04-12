@@ -337,9 +337,11 @@ class Part2Cards extends Component {
 
 
                     {
-                        (!Array.isArray(orderArray) || !orderArray.length) ? (
+                        // (!Array.isArray(orderArray) || !orderArray.length) ? (
+                            (!Array.isArray(orderArray)) ? (
 
-                            // <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
+
+                            <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
 
                                 orderArray.map((order, index) => {
                                     const qrValue = order.order_number.toString();
@@ -378,7 +380,6 @@ class Part2Cards extends Component {
                                 })
 
                             )
-                            
                     }
 
                 </Page>
