@@ -28,4 +28,11 @@
         text-align: center;
     }
 
+    .searchText input{
+        width: 350px;
+    }
+
+    .filterWrapper{
+        font-size: 14px;
+    }
 }
