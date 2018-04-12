@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Collapse2 from './collapse2';
-import {input} from './part2_cards';
+import Part2Cards from './part2_cards';
 
 import * as axios from 'axios';
 import { Row, Col, Card, Collapse } from 'reactstrap';
@@ -44,9 +44,11 @@ class CollapseMain extends Component {
                     alertMessage: "Tracified details added successfully ",
                 });
                 this.setState({
-                    isOpen: true,
-                    search:''
+                    isOpen: true
                 });
+                <Part2Cards>
+                    <input search=" "/>
+                </Part2Cards>
             }).catch((err) => {
                 console.log(err);
             });
