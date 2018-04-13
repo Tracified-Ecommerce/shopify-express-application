@@ -3,6 +3,7 @@ import { Button, Select } from '@shopify/polaris';
 import * as axios from 'axios';
 import { EmbeddedApp, Alert, Modal } from '@shopify/polaris/embedded';
 import './tracifiedOdrs_MediaQueries.css';
+import './timelineMediaQueries.css';
 
 class FulfilledOrder extends Component {
     constructor(props) {

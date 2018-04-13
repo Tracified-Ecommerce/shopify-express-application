@@ -10,6 +10,7 @@ import { Row, Col, Container } from 'reactstrap';
 import { Timeline, TimelineEvent } from 'react-event-timeline';
 import TimelineContent from './TimelineContent';
 import ErrorPage from './ErrorPage';
+import './timelineMediaQueries.css';
 
 class TraceTimeLine extends Component {
 

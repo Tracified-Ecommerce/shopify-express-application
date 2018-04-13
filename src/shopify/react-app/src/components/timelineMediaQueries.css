@@ -1,0 +1,6 @@
+/* Media queries for the mobile devices */
+@media  (min-width: 360px) and (max-width: 640px) {
+    #embedded_app_modal{
+        width: 90%;
+    }
+}
