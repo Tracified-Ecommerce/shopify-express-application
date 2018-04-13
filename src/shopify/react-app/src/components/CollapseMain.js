@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Collapse2 from './collapse2';
 import Part2Cards from './part2_cards';
-
+import CollapseMain from './CollapseMain';
 import * as axios from 'axios';
 import { Row, Col, Card, Collapse } from 'reactstrap';
 import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
@@ -49,6 +49,7 @@ class CollapseMain extends Component {
                 <Part2Cards>
                     <input search=" "/>
                 </Part2Cards>
+                <CollapseMain/>
             }).catch((err) => {
                 console.log(err);
             });

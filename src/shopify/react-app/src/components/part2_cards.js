@@ -325,7 +325,7 @@ class Part2Cards extends Component {
 
                                 <input
                                     type="text"
-                                    value={this.state.search}
+                                    value={this.props.search}
                                     onChange={this.updateSearch.bind(this)}
                                     style={inputStyle}
                                 />
@@ -337,8 +337,7 @@ class Part2Cards extends Component {
 
 
                     {
-                        // (!Array.isArray(orderArray) || !orderArray.length) ? (
-                            (!Array.isArray(orderArray)) ? (
+                        (!Array.isArray(orderArray) || !orderArray.length) ? (
 
 
                             <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
