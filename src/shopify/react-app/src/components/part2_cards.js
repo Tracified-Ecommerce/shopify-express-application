@@ -325,7 +325,7 @@ class Part2Cards extends Component {
 
                                 <input
                                     type="text"
-                                    value={this.prop.search}
+                                    value={this.props.search}
                                     onChange={this.updateSearch.bind(this)}
                                     style={inputStyle}
                                 />
