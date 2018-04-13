@@ -43,7 +43,7 @@ class Part2Cards extends Component {
     }
 
     toggleCardType() {
-        this.setState({ isExpanded: !this.props.isExpanded });
+        this.setState({ isExpanded: !this.state.isExpanded });
     }
 
     componentDidMount() {
@@ -325,7 +325,7 @@ class Part2Cards extends Component {
 
                                 <input
                                     type="text"
-                                    value={this.props.search}
+                                    value={this.state.search}
                                     onChange={this.updateSearch.bind(this)}
                                     style={inputStyle}
                                 />
@@ -337,8 +337,7 @@ class Part2Cards extends Component {
 
 
                     {
-                        // (!Array.isArray(orderArray) || !orderArray.length) ? (
-                            (!Array.isArray(orderArray)) ? (
+                        (!Array.isArray(orderArray) || !orderArray.length) ? (
 
 
                             <ErrorMsgSearch errorMessage={this.state.errorText} />) : (

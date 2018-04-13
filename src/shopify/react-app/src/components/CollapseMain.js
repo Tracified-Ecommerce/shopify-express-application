@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Collapse2 from './collapse2';
 import Part2Cards from './part2_cards';
-import CollapseMain from './CollapseMain';
-import Uncollapsed from './Uncollapsed';
+
 import * as axios from 'axios';
 import { Row, Col, Card, Collapse } from 'reactstrap';
 import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
@@ -36,7 +35,7 @@ class CollapseMain extends Component {
         this.props.resetOrders();
     }
 
-    fulfillOrder() {
+     fulfillOrder() {
         const url = '/shopify/shop-api/orders/' + this.props.order.id + '/tracify';
         axios.get(url)
             .then(response => {
@@ -48,46 +47,16 @@ class CollapseMain extends Component {
                     isOpen: true
                 });
                 <Part2Cards>
-                    <input search=" "/>   
-                    loadCards();                 
+                    <input search=" "/>
+                    <CollapseMain/>
                 </Part2Cards>
             }).catch((err) => {
                 console.log(err);
             });
     }
 
-    
     toggle() {
         this.setState({ collapse: !this.state.collapse });
-    }
-
-    loadCards() {
-        if (this.state.isExpanded) {
-            return (
-                <Uncollapsed
-                    key={index}
-                    order={order}
-                    productsProp={this.state.products}
-                    resetOrders={this.resetOrders}
-                    qrVal={qrValue}
-                    title={title}
-                />
-             );
-        } else {
-            return (
-                <CollapseMain
-                    key={index}
-                    order={order}
-                    productsProp={this.state.products}
-                    qrVal={qrValue}
-                    title={title}
-                    resetOrders={this.resetOrders}
-                    collapseArray={this.state.cardStateArray}
-                    collapseArrayKey={index}
-                    onClick={this.handleClick}
-                />
-            );    
-        }
     }
 
     render() {
