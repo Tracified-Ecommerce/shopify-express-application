@@ -336,17 +336,16 @@ class Part2Cards extends Component {
                     </div>
 
 
-                    {
-                        (!Array.isArray(orderArray)) ? (
+                    
+                        // (!Array.isArray(orderArray) || !orderArray.length) ? (
 
-
-                            <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
-
+                        if(!Array.isArray(orderArray) || !orderArray.length){
+                            <ErrorMsgSearch errorMessage={this.state.errorText} />
+                        }
+                        else{
                                 orderArray.map((order, index) => {
                                     const qrValue = order.order_number.toString();
                                     const title = "Order ID: " + order.order_number;
-
-
 
                                     if (this.state.isExpanded) {
                                         return (
@@ -358,7 +357,6 @@ class Part2Cards extends Component {
                                                 qrVal={qrValue}
                                                 title={title}
                                             />
-
                                         );
                                     } else {
                                         return (
@@ -375,12 +373,8 @@ class Part2Cards extends Component {
                                             />
                                         );
                                     }
-
                                 })
-
-                            )
-                    }
-
+                            }
                 </Page>
                 </div>
             );
