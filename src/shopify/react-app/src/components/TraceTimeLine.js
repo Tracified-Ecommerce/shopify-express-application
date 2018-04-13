@@ -110,7 +110,7 @@ class TraceTimeLine extends Component {
             return <ErrorPage errors={this.state.errorArray} />;
         } else {
             return (
-                <div style={{ backgroundColor: '#f4f6f8' }}>
+                <div className="traceTimelineWrapper" style={{ backgroundColor: '#f4f6f8' }}>
                     <div style={timelineTopStyle}>
                         <h1 style={{ color: 'white', textAlign: 'center' }}>
                             <span style={{ color: 'white' }}>
