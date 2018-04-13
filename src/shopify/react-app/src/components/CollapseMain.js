@@ -18,7 +18,7 @@ class CollapseMain extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             collapseArray: this.props.collapseArray,
-            isOpen: false,
+            isOpen: true,
         };
     }
 
@@ -44,12 +44,11 @@ class CollapseMain extends Component {
                     alertMessage: "Tracified details added successfully ",
                 });
                 this.setState({
-                    isOpen: true
+                    // isOpen: true
                 });
                 <Part2Cards>
                     <input search=" "/>
                 </Part2Cards>
-                <CollapseMain/>
             }).catch((err) => {
                 console.log(err);
             });
