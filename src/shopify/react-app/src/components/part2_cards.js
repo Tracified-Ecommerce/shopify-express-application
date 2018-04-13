@@ -337,7 +337,7 @@ class Part2Cards extends Component {
 
 
                     
-                        // (!Array.isArray(orderArray) || !orderArray.length) ? (
+                        {/* // (!Array.isArray(orderArray) || !orderArray.length) ? ( */}
 
                         if(!Array.isArray(orderArray) || !orderArray.length){
                             <ErrorMsgSearch errorMessage={this.state.errorText} />
