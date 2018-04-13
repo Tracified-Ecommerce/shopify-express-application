@@ -48,7 +48,6 @@ class CollapseMain extends Component {
                 });
                 <Part2Cards>
                     <input search=" "/>
-                    <CollapseMain/>
                 </Part2Cards>
             }).catch((err) => {
                 console.log(err);
