@@ -325,7 +325,7 @@ class Part2Cards extends Component {
 
                                 <input
                                     type="text"
-                                    value={this.props.search}
+                                    value={this.prop.search}
                                     onChange={this.updateSearch.bind(this)}
                                     style={inputStyle}
                                 />
@@ -336,18 +336,20 @@ class Part2Cards extends Component {
                     </div>
 
 
-                    
-                        {/* // (!Array.isArray(orderArray) || !orderArray.length) ? ( */}
+                    {
+                        (!Array.isArray(orderArray) || !orderArray.length) ? (
 
-                        if(!Array.isArray(orderArray) || !orderArray.length){
-                            <ErrorMsgSearch errorMessage={this.state.errorText} />
-                        }
-                        else{
+
+                            <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
+
                                 orderArray.map((order, index) => {
                                     const qrValue = order.order_number.toString();
                                     const title = "Order ID: " + order.order_number;
 
+                                    console.log("correct 1");
+
                                     if (this.state.isExpanded) {
+                                        console.log("correct 1= uncollapased");
                                         return (
                                             <Uncollapsed
                                                 key={index}
@@ -357,8 +359,10 @@ class Part2Cards extends Component {
                                                 qrVal={qrValue}
                                                 title={title}
                                             />
+
                                         );
                                     } else {
+                                        console.log("correct 1 - collapaseMain");
                                         return (
                                             <CollapseMain
                                                 key={index}
@@ -373,8 +377,12 @@ class Part2Cards extends Component {
                                             />
                                         );
                                     }
+
                                 })
-                            }
+
+                            )
+                    }
+
                 </Page>
                 </div>
             );
