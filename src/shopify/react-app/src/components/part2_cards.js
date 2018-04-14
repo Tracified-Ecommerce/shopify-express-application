@@ -322,14 +322,14 @@ class Part2Cards extends Component {
                             </Stack.Item>
                     
                             <Stack.Item>
-
-                                <input
-                                    type="text"
-                                    value={this.props.search}
-                                    onChange={this.updateSearch.bind(this)}
-                                    style={inputStyle}
-                                />
-
+                                <div className="searchOdrs">
+                                    <input
+                                        type="text"
+                                        value={this.props.search}
+                                        onChange={this.updateSearch.bind(this)}
+                                        style={inputStyle}
+                                    />
+                                </div>
                             </Stack.Item>
 
                         </Stack>
