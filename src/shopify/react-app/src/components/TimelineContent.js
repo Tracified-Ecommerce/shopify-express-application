@@ -78,7 +78,7 @@ class TimelineContent extends Component {
 
                                                 return(
                                                     <Col xs='12' sm='6'>
-                                                    <div key={innerKey} style={{height:24}}><span style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span>{subGroup[innerKey].value}</span></div>
+                                                    <div className="keyClass" key={innerKey} style={{height:24}}><span className="spanClass" style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span>{subGroup[innerKey].value}</span></div>
                                                     </Col>
                                                 )
                                             }
