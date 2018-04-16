@@ -1,18 +1,12 @@
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
     .wrapperClass{
-        height: 70%;
+        font-size: 11px;
+        width: 96%;
     }
     
     .keyClass{
         height: 40px;
-    }
-    
-    .spanClass{
-        /* padding-right: 27%; */
-    }
-
-    .innerSpanClass{
-        margin-left: 18%;
-    }
+        margin-left: -5%;
+    } 
 }
