@@ -52,8 +52,7 @@ class TraceTimeLine extends Component {
             },
         })
             .then(response => {
-                const responseJSON = JSON.parse(response);
-                let timeline = responseJSON.data.tabs[2];
+                let timeline = response.data.tabs[2];
                 let itms = timeline.items;
                 let arr = [];
 
