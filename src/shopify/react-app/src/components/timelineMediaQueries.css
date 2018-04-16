@@ -1,6 +1,14 @@
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
-    #embedded_app_modal{
-        width: 90%;
+    .keyClass{
+        height: 40%;
+    }
+    
+    .spanClass{
+        padding-right: 27%;
+    }
+
+    .innerSpanClass{
+        margin-left: 18%;
     }
 }

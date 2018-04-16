@@ -64,7 +64,7 @@ class TimelineContent extends Component {
                         } else {
 
                             return(
-                                <div key={key} style={{boxShadow:'0px 1px 5px 1px rgba(189,189,189,0.52)', margin:7, padding:5, borderRadius:4, backgroundColor:'#fafafa',marginBottom:'4%'}}>
+                                <div className="wrapperClass" key={key} style={{boxShadow:'0px 1px 5px 1px rgba(189,189,189,0.52)', margin:7, padding:5, borderRadius:4, backgroundColor:'#fafafa',marginBottom:'4%'}}>
                                 <div style={{minHeight:24}}>
                                     <span style={{fontWeight:'bold', fontSize: 14, color:'green'}}>
                                         &#8227; {stageData[key].title} :
