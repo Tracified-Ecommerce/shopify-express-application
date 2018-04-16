@@ -48,7 +48,7 @@ class TimelineContent extends Component {
         return(
             <div>
                     
-                <div style={divStyle} id={this.props.componentID} >                
+                <div className="componentClass" style={divStyle} id={this.props.componentID} >                
                 { 
                     
                     Object.keys(stageData).map(function (key) {

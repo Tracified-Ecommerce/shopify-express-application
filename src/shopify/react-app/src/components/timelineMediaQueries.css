@@ -1,5 +1,9 @@
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
+    .componentClass{
+        height: 140px;
+    } 
+
     .wrapperClass{
         font-size: 11px;
         width: 96%;
