@@ -23,7 +23,7 @@ class TimelineContent extends Component {
 
     componentDidMount() {
         this.height = document.getElementById(this.props.componentID).clientHeight+15;
-        if(this.height > 112){
+        if(this.height > 112) {
             this.setState({isCollsapsible:true});
         }  
     }
@@ -80,11 +80,13 @@ class TimelineContent extends Component {
                                 
                                             if(isObject(subGroup[innerKey])){
                                                 console.log("found an object subGroup[innerKey] : " + JSON.stringify(subGroup[innerKey]));
-                                                // return(
-                                                //     <Col xs='12' sm='6'>
-                                                //     <div className="keyClass" key={innerKey} style={{height:24}}><span className="spanClass" style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span className="innerSpanClass">{subGroup[innerKey].value}</span></div>
-                                                //     </Col>
-                                                // )
+                                                return(
+                                                    <Col xs='12' sm='6'>
+                                                    <div className="keyClass" key={innerKey} style={{height:24}}><span className="spanClass" style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span className="innerSpanClass">{subGroup[innerKey].value}</span></div>
+                                                    </Col>
+                                                )
+                                            } else {
+                                                console.log("found a non object subGroup[innerKey] : " + subGroup[innerKey]);
                                             }
                                             return null;
                                             
