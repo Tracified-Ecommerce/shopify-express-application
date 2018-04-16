@@ -351,7 +351,6 @@ class Part2Cards extends Component {
                                     if (this.state.isExpanded) {
                                         console.log("correct 1= uncollapased");
                                         return (
-                                            console.log("return");
                                             <Uncollapsed
                                                 key={index}
                                                 order={order}
