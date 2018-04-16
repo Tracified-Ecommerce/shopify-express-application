@@ -1,11 +1,15 @@
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
+    .wrapperClass{
+        height: 70%;
+    }
+    
     .keyClass{
-        height: 40%;
+        height: 40px;
     }
     
     .spanClass{
-        padding-right: 27%;
+        /* padding-right: 27%; */
     }
 
     .innerSpanClass{
