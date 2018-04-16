@@ -17,4 +17,8 @@
     .compSpanClass, .compClass{
         font-size: 11px !important;
     }
+
+    .componentClass{
+        height: 144px;
+    }
 }
