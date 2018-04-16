@@ -61,9 +61,9 @@ class TimelineContent extends Component {
                                 console.log("found an object subGroup.value: " + subGroup.value);
                             } else {
                                 console.log("not an object : " + subGroup.value);
-                                // return(  
-                                //     <div className="compClass" key={key} style={{ height:24, paddingLeft:14}}> <span className="compSpanClass" style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div> 
-                                // ) 
+                                return(  
+                                    <div className="compClass" key={key} style={{ height:24, paddingLeft:14}}> <span className="compSpanClass" style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div> 
+                                ) 
                             }
                         } else {
 
@@ -79,7 +79,7 @@ class TimelineContent extends Component {
                                         Object.keys(subGroup).map((innerKey)=>{
                                 
                                             if(isObject(subGroup[innerKey])){
-                                                console.log("found an object subGroup[innerKey] : " + subGroup[innerKey]);
+                                                console.log("found an object subGroup[innerKey] : " + JSON.stringify(subGroup[innerKey]));
                                                 // return(
                                                 //     <Col xs='12' sm='6'>
                                                 //     <div className="keyClass" key={innerKey} style={{height:24}}><span className="spanClass" style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span className="innerSpanClass">{subGroup[innerKey].value}</span></div>
