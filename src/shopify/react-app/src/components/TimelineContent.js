@@ -59,7 +59,7 @@ class TimelineContent extends Component {
                             
                             return(
                                 
-                                <div key={key} style={{ height:24, paddingLeft:14}}> <span style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div> 
+                                <div className="compClass" key={key} style={{ height:24, paddingLeft:14}}> <span className="compSpanClass" style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div> 
                             ) 
                         } else {
 
