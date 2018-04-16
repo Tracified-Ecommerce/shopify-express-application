@@ -42,7 +42,7 @@ router.get("/trace/:orderID/:itemID", (req: IRequest & Request, res: Response) =
     tracifiedServices.getOrderItemTraceabilityData(orderID, itemID, req.session.shop.tracified_token)
         .then((data: any) => {
             console.log(data);
-            res.send(data);
+            res.json(data);
         }).catch((error) => {
             console.log("ERROR IN TIMELINE CALL : " + error.error);
             console.log("Status Code of error : " + error.statusCode);
