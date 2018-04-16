@@ -52,20 +52,21 @@ class TraceTimeLine extends Component {
             },
         })
             .then(response => {
-                let timeline = response.data.tabs[2];
-                let itms = timeline.items;
-                let arr = [];
+                console.log(response.data);
+                // let timeline = response.data.tabs[2];
+                // let itms = timeline.items;
+                // let arr = [];
 
-                itms.map((e, i) => {
-                    arr.push(false);
-                    return true;
-                });
+                // itms.map((e, i) => {
+                //     arr.push(false);
+                //     return true;
+                // });
 
-                this.setState({
-                    timeline: timeline,
-                    istimelineLoading: false,
-                    array: arr
-                });
+                // this.setState({
+                //     timeline: timeline,
+                //     istimelineLoading: false,
+                //     array: arr
+                // });
             }).catch((error) => {
 
                 if(error.response) {
