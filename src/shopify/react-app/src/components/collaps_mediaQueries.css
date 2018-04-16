@@ -27,6 +27,8 @@
  /* Media Queries for mobile devices */
  @media  (min-width: 360px) and (max-width: 640px) {
     
- 
+    .MATbtn_column{
+        text-align: center;
+    }
    
  }

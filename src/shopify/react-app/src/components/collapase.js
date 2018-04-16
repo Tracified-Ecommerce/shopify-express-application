@@ -112,7 +112,7 @@ class CollapaseCard extends Component {
                         <Col sm="10" className="showItems_column">
                             <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                         </Col>
-                        <Col sm="3" style={markAsTracifiedBtnStyle}>
+                        <Col sm="3" className="MATbtn_column" style={markAsTracifiedBtnStyle}>
                             <Button primary onClick={this.fulfillOrder} className="MATbutton" >Mark as Tracified</Button>
                         </Col>
                     </Row>
