@@ -46,7 +46,7 @@ class TimelineContent extends Component {
         }
         
         return(
-            <div>
+            <div className="timelineContentWrapper">
                     
                 <div className="componentClass" style={divStyle} id={this.props.componentID} >                
                 { 
