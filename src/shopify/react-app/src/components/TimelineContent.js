@@ -59,11 +59,11 @@ class TimelineContent extends Component {
 
                             if(typeof subGroup.value === 'object') {
                                 console.log("found an object : " + subGroup.value);
+                            } else {
+                                return(  
+                                    <div className="compClass" key={key} style={{ height:24, paddingLeft:14}}> <span className="compSpanClass" style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div> 
+                                ) 
                             }
-                            
-                            return(  
-                                <div className="compClass" key={key} style={{ height:24, paddingLeft:14}}> <span className="compSpanClass" style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div> 
-                            ) 
                         } else {
 
                             return(
