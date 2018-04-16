@@ -102,7 +102,8 @@ export class Services implements IServices {
                 },
                 method: "GET",
                 // uri: tracifiedURL + "/Traceability_data/otp/customer-app",
-                uri: "https://staging.tracified.com/api/v1/traceabilityProfiles/ecommerce/admin/"+orderID+"/"+itemID,
+                uri: "https://staging.tracified.com/api/v1/traceabilityProfiles/ecommerce/admin/" + orderID + "/" + itemID,
+                // uri: "https://tracified-mock-api.herokuapp.com/Traceability_data/Saaraketha-customer/timeline/product_id
                 // uri: "https://staging.tracified.com/api/v1/traceabilityProfiles/ecommerce/admin/" + orderID + "/" + itemID,
 
             };
