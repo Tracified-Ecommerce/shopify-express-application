@@ -70,7 +70,11 @@ class TraceTimeLine extends Component {
             }).catch((error) => {
 
                 if(error.response) {
-                    const errorMessageObj = JSON.parse(error.response.data.error);
+                    try {
+                        const errorMessageObj = JSON.parse(error.response.data.error);
+                    } catch (e) {
+                        const errorMessageObj = {err: error.response.data.error}
+                    }
                 console.log("timeline status : " + error.response.status + "timeline error : " + errorMessageObj.err);
 
                 const error1 = {
