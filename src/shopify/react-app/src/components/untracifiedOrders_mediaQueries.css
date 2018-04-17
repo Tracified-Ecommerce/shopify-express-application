@@ -69,7 +69,10 @@
      }
  
      .unfulfillColLeft{
-         padding-left: 30%;
+         padding-left: 20%;
      }
     
+     .cardUntracifiedExpand .Polaris-Heading{
+        text-align: center;
+     }
  }

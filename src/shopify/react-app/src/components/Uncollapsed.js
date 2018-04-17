@@ -18,7 +18,7 @@ class Uncollapsed extends Component {
     render() {
         console.log("uncollapsed rendered");
         return (
-            
+            <div className="cardUntracifiedExpand">
             <Card className="cardHeader" key={this.props.order.order_number} title={this.props.title} sectioned subdued={false}>
                 <Row id="unfulfillContent">    
                         <Col sm="10"  className="unfulfillColLeft" >
@@ -37,7 +37,7 @@ class Uncollapsed extends Component {
                     <CollapaseCards  itemArray={this.props.order.lineItems} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
                 </Row>
             </Card>
-
+            </div>
         );
     }
 }
