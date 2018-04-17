@@ -222,7 +222,7 @@
         width: 37%
     }
     .Pid{
-        margin-left: -10%;
+        display: none;
     }
     .tTitle{
         margin-left: 10%;
@@ -232,7 +232,7 @@
     }
     
     .hide-cell-xs{
-        /* display: none; */
+        display: none;
     }
 
     .space{
