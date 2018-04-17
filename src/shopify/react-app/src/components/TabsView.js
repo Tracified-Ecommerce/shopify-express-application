@@ -10,13 +10,22 @@ class TabsView extends Component {
     super(props);
 
     this.handleTabChange = this.handleTabChange.bind(this);
+    this.areYouSure = this.areYouSure.bind(this);
 
     this.state = {
       selectedTab: 0,
+      navigate: false
     };
   }
 
+  areYouSure(answer) {
+    this.setState({navigate: answer});
+  }
+
   handleTabChange(selectedTab) {
+    if(this.state.navigate){
+      alert("areYouSure true");
+    }
     this.setState({selectedTab});
   }
 
@@ -49,7 +58,7 @@ class TabsView extends Component {
       ),
       (
         <Tabs.Panel id="panel2">
-          <Mapping/>
+          <Mapping areYouSure={this.areYouSure}/>
         </Tabs.Panel>
       ),
       (

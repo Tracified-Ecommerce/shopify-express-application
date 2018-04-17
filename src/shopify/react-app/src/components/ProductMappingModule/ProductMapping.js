@@ -227,6 +227,7 @@ class ProductMapping extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    this.props.areYouSure(true);
     // get our form data out of state
     const mapping = this.state.mapping;
 
