@@ -57,7 +57,6 @@ class Confirm extends Component {
             <Button className="confirmBtn" style={closeBtnStyle} primary onClick={this.props.onConfirm} >
               Confirm
             </Button>
-            <div style="width: 39px;height:auto;display:inline-block;"></div>
             <Button className="cancelBtn" style={closeBtnStyle} primary onClick={this.props.onCancel} >
               Cancel
             </Button>
