@@ -49,11 +49,12 @@
 
 
     #untracified_list{
-        list-style-type:none !important;
+        max-width: 75%;
     }
 
     #cardHeader{
         text-align: center; 
+        padding-left: 30%;
     }
 
     .collapasedView_Untracified{
@@ -64,6 +65,11 @@
         width: 350px;
     }
     .QRcode{
-        size: 100px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .unfulfillColLeft{
+        padding-left: 30%;
     }
 }
