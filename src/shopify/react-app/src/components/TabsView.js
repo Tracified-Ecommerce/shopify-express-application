@@ -10,15 +10,15 @@ class TabsView extends Component {
     super(props);
 
     this.handleTabChange = this.handleTabChange.bind(this);
-    this.areYouSure = this.areYouSure.bind(this);
+    this.setNotSaved = this.setNotSaved.bind(this);
 
     this.state = {
       selectedTab: 0,
-      notSaved: true
+      notSaved: false
     };
   }
 
-  areYouSure(answer) {
+  setNotSaved(answer) {
     this.setState({notSaved: answer});
   }
 
@@ -29,7 +29,6 @@ class TabsView extends Component {
         this.setState({selectedTab});
       }
     } else {
-      this.setState({notSaved: true});
       this.setState({selectedTab});
     }
   }
@@ -63,7 +62,7 @@ class TabsView extends Component {
       ),
       (
         <Tabs.Panel id="panel2">
-          <Mapping areYouSure={this.areYouSure}/>
+          <Mapping setNotSaved={this.setNotSaved}/>
         </Tabs.Panel>
       ),
       (

@@ -119,6 +119,7 @@ class ProductMapping extends Component {
 
 
   componentDidMount() {
+    this.props.setNotSaved(true);
     axios.get('/shopify/config/mapping')
     .then(response => {
       if(response.status == 200){
@@ -227,7 +228,7 @@ class ProductMapping extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.areYouSure(false);
+    this.props.setNotSaved(false);
     // get our form data out of state
     const mapping = this.state.mapping;
 
