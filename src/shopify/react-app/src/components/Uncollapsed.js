@@ -22,7 +22,7 @@ class Uncollapsed extends Component {
                 <Row id="unfulfillContent">
                         
                         <Col sm="10"  className="unfulfillColLeft" >
-                            <List type="none" id="untracified_list" >
+                            <List type="bullet" id="untracified_list" >
                                 <List.Item>Customer  : {this.props.order.customer}</List.Item>
                                 <List.Item>Created At: {this.props.order.created_at}</List.Item>
                             </List>
