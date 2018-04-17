@@ -79,6 +79,10 @@ class Part2Cards extends Component {
                 this.setState({
                     orders: response.data.orders,
                     isOrderListLoading: false
+                }, () => {
+                    this.setState({
+                        search: ""
+                    });
                 });
             }).catch((error) => {
                 console.log(error);
