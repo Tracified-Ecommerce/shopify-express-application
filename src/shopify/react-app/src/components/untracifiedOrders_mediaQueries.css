@@ -39,6 +39,9 @@
 /* Media Queries for mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {   
 
+    .cardHeader_div{
+        text-align: center;
+    }
     #unfulfillContent{
         text-align: center;
     }
@@ -72,4 +75,5 @@
     .unfulfillColLeft{
         padding-left: 30%;
     }
+   
 }
