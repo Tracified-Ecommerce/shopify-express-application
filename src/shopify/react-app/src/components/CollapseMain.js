@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Collapse2 from './collapse2';
-import Part2Cards from './part2_cards';
 import * as axios from 'axios';
 import { Row, Col, Card, Collapse } from 'reactstrap';
 import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
@@ -17,7 +16,7 @@ class CollapseMain extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             collapseArray: this.props.collapseArray,
-            isOpen: true,
+            isOpen: false,
         };
     }
 
@@ -43,11 +42,8 @@ class CollapseMain extends Component {
                     alertMessage: "Tracified details added successfully ",
                 });
                 this.setState({
-                    // isOpen: true
+                    isOpen: true
                 });
-                <Part2Cards>
-                    <input search=" "/>
-                </Part2Cards>
             }).catch((err) => {
                 console.log(err);
             });
