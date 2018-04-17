@@ -17,6 +17,11 @@
     .compSpanClass, .compClass{
         font-size: 11px !important;
     }
+
+    .fresh-ui .ui-modal {
+        height: 80%;
+        margin-bottom: 15%;
+    }    
 }
 
 
