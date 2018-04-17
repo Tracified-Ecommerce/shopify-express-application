@@ -1,10 +1,5 @@
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
-    .fresh-ui.ui-modal {
-        height: 80%;
-        margin-bottom: 15%;
-    }    
-
     .timelineContentWrapper{
         width: 101%;
     } 
@@ -22,6 +17,14 @@
     .compSpanClass, .compClass{
         font-size: 11px !important;
     }    
+}
+
+/* mobile screens */
+@media screen and (max-width: 450px){
+    .fresh-ui .ui-modal {       
+        height: 80%;
+        margin-bottom: 15%;
+    }
 }
 
 
