@@ -119,7 +119,6 @@ class ProductMapping extends Component {
 
 
   componentDidMount() {
-    this.props.setNotSaved(true);
     axios.get('/shopify/config/mapping')
     .then(response => {
       if(response.status == 200){
@@ -206,6 +205,7 @@ class ProductMapping extends Component {
       return this.state.shopifyProducts.map((object, i) => {
         return <ProductMappingTableRow
           onItemChange={this.onItemChange}
+          setNotSaved={this.props.setNotSaved}
           onPermissionChange={this.onPermissionChange}
           obj={object}
           key={i}
