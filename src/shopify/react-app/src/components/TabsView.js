@@ -14,6 +14,7 @@ class TabsView extends Component {
     this.setNotSaved = this.setNotSaved.bind(this);
 
     this.state = {
+      tempSelectedTab: 0,
       selectedTab: 0,
       notSaved: false,
       confirmHeading:"",
@@ -30,18 +31,21 @@ class TabsView extends Component {
         isOpen: !this.state.isOpen,
         notSaved: false
     });
-    this.setState({ selectedTab });
+    this.setState({ selectedTab: this.state.tempSelectedTab });
   }
 
-  toggleConfirm = () => {
+  toggleCancel = () => {
     this.setState({
         isOpen: !this.state.isOpen
     });
+    his.setState({ selectedTab: this.state.tempSelectedTab });
   }
 
   handleTabChange(selectedTab) {
     if (this.state.notSaved) {
-      this.setState({isOpen: true});
+      this.setState({tempSelectedTab: selectedTab}, () => {
+        this.setState({isOpen: true});
+      })  
     } else {
       this.setState({ selectedTab });
     }
