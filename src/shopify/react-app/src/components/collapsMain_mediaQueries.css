@@ -1,13 +1,14 @@
 /* Media Queries for PC */
 @media screen and (min-width: 1024px){
-    paddingRight: 0;
-     width: 130;
-    display: "table-cell";
-    verticalAlign: "middle";
+    
 
     .exploreBtn {
         text-align: right;
         padding-left : 133px;
+        padding-right: 0;
+         width: 130;
+        display: "table-cell";
+        vertical-align: "middle";
     }
  }
  
