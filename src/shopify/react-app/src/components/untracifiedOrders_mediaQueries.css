@@ -21,7 +21,9 @@
  
  /* Media queries for the tablet devices */
  @media (min-width: 650px) and (max-width: 1023px) {
-     
+     .cardUntracifiedExpand .Polaris-Card{
+        margin-bottom: 3%;
+     }
    
      .unfulfillColLeft{
          max-width: 75%;
