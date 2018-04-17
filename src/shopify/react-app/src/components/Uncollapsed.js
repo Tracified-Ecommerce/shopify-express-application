@@ -34,7 +34,7 @@ class Uncollapsed extends Component {
                         </Col>
                 </Row>
                 <Row id="unfulfillproducts">
-                    <CollapaseCards itemArray={this.props.order.lineItems} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
+                    <CollapaseCards  itemArray={this.props.order.lineItems} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
                 </Row>
             </Card>
 
