@@ -66,6 +66,7 @@ class ProductMappingTableRow extends Component {
   }
 
   onItemChange(tracifiedItemID, shopifyProductID) {
+    this.props.setNotSaved(true);
     if (!(tracifiedItemID == "noItem")) {
       this.setState({
         CBdisabled: false,
