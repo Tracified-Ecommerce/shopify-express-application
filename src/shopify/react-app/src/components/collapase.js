@@ -102,9 +102,10 @@ class CollapaseCard extends Component {
             marginLeft: "0%",
         }
 
+
         return (
             <div>
-                <Container fluid={true}>
+                <Container className="imageContainer" fluid={true}>
                     <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                     <Row noGutters={true}>
                         <Col sm="10" className="showItems_column">
