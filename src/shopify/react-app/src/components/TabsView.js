@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {Tabs} from '@shopify/polaris';
+import { Tabs } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import SubTabs from './subTabs';
 import Installation from './Install';
 import Mapping from './ProductMappingModule/ProductMapping';
+import { Confirm } from './Confirm';
 
 class TabsView extends Component {
   constructor(props) {
@@ -14,28 +15,40 @@ class TabsView extends Component {
 
     this.state = {
       selectedTab: 0,
-      notSaved: false
+      notSaved: false,
+      confirmHeading="",
+      confirmMessage="Are you sure"
     };
   }
 
   setNotSaved(answer) {
-    this.setState({notSaved: answer});
+    this.setState({ notSaved: answer });
+  }
+
+  toggleConfirm = () => {
+    this.setState({
+        isOpen: !this.state.isOpen,
+        notSaved: false
+    });
+    this.setState({ selectedTab });
+  }
+
+  toggleConfirm = () => {
+    this.setState({
+        isOpen: !this.state.isOpen
+    });
   }
 
   handleTabChange(selectedTab) {
-    if(this.state.notSaved){
-      var sure = window.confirm("You have unsaved changes, Are you sure you want to leave the page?");
-      if(sure) {
-        this.setState({selectedTab});
-        this.setState({notSaved: false});
-      }
+    if (this.state.notSaved) {
+      this.setState({isOpen: true});
     } else {
-      this.setState({selectedTab});
+      this.setState({ selectedTab });
     }
   }
 
   render() {
-    const {selectedTab} = this.state;
+    const { selectedTab } = this.state;
 
     const tabs = [
       {
@@ -58,17 +71,17 @@ class TabsView extends Component {
     const tabPanels = [
       (
         <Tabs.Panel id="panel1">
-          <SubTabs/>
+          <SubTabs />
         </Tabs.Panel>
       ),
       (
         <Tabs.Panel id="panel2">
-          <Mapping setNotSaved={this.setNotSaved}/>
+          <Mapping setNotSaved={this.setNotSaved} />
         </Tabs.Panel>
       ),
       (
         <Tabs.Panel id="panel3">
-          <Installation/>
+          <Installation />
         </Tabs.Panel>
       ),
     ];
@@ -81,6 +94,12 @@ class TabsView extends Component {
           onSelect={this.handleTabChange}
         />
         {tabPanels[selectedTab]}
+        <Confirm show={this.state.isOpen}
+          onConfirm={this.toggleConfirm}
+          onCancel={this.toggleCancel}
+          heading={this.state.confirmHeading}
+          message={this.state.confirmMessage}>
+        </Confirm>
       </div>
     );
   }
