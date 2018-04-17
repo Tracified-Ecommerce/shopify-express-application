@@ -94,4 +94,10 @@
         font-size: 87%;
         margin-left: 6%;
      }
+
+     .ExpandCollapaseToggleBtn .Polaris-Button__Content {
+        font-size: 90%;
+        margin-left: -31%;
+        margin-right: 0%;
+     }
  }
