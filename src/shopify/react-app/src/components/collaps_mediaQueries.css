@@ -5,7 +5,10 @@
     }
 
     .MATbutton{
-        float: left;
+        float: right;
+    }
+    .MATbtn_column{
+        text-align: right;
     }
  }
  
