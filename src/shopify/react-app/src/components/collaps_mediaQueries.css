@@ -7,7 +7,7 @@
 
     .MATbutton{
         float: left;
-        padding: 10px !important;
+        
     }
     .MATbtn_column{
         text-align: right;
@@ -15,6 +15,10 @@
 
     .imageContainer{
         margin-bottom: 20px;
+    }
+
+    .MATbtn .Polaris-Button.Polaris-Button--primary{
+        padding: 10px !important;
     }
  }
  
@@ -31,9 +35,7 @@
         float: left;
     }
  
-    .showItems_column{
-        margin-top: 3%;
-    }
+  
  }
  
  
@@ -42,6 +44,10 @@
     
     .MATbtn_column{
         text-align: center;
+    }
+
+    .showItems_column{
+        margin-top: 3%;
     }
    
  }

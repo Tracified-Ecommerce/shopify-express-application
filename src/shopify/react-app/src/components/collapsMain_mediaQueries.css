@@ -10,6 +10,10 @@
         display: "table-cell";
         vertical-align: "middle";
     }
+
+    .MAT_btn{
+        padding: 10px;
+    }
  }
  
  
@@ -21,7 +25,6 @@
         padding-left : 77px;
     }
  }
- 
  
  /* Media Queries for mobile devices */
  @media  (min-width: 360px) and (max-width: 640px) {   
