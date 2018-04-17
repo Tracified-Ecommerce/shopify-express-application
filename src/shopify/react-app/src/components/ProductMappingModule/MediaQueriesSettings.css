@@ -225,10 +225,10 @@
         display: none;
     }
     .tTitle{
-        margin-left: 10%;
+        margin-left: -5%;
     } 
     .Permission{       
-        margin-left: 8%;
+        margin-left: 5%;
     }
     
     .hide-cell-xs{
@@ -240,7 +240,7 @@
     }
 
     .itemTitle {
-        padding-right: 15% !important;
+        /* padding-right: 15% !important; */
     }
 
     #settingContent tbody{
