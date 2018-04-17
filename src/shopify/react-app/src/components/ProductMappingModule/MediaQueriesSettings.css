@@ -239,7 +239,7 @@
         height: 122px !important;
     }
 
-    enableCheckbox .Polaris-Select{
+    .enableCheckbox .Polaris-Select{
         width: 100px;
     }
 
