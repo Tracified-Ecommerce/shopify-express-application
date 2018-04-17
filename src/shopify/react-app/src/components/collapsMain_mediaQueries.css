@@ -10,8 +10,10 @@
  /* Media queries for the tablet devices */
  @media (min-width: 650px) and (max-width: 1023px) {
      
-  
- 
+    .exploreBtn {
+        text-align: right;
+        padding-left : 77px;
+    }
  }
  
  
@@ -19,7 +21,8 @@
  @media  (min-width: 360px) and (max-width: 640px) {   
  
     .exploreBtn {
-        text-align: center;
+        text-align: right;
+        padding-left : 133px;
 
     }
  }
