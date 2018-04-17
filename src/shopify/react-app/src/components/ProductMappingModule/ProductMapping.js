@@ -1,6 +1,7 @@
 // ProductMapping.js
 
 import React, { Component } from 'react';
+import { Prompt } from 'react-router'
 // import Sticky from 'react-sticky-el';
 import ReactDOM from 'react-dom';
 import ProductMappingService from './ProductMappingService';
@@ -41,6 +42,7 @@ class ProductMapping extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      saveNotPerformed: false,
       isTraceListLoading: true,
       isProductListLoading: true,
       shopifyProducts: [],
@@ -127,7 +129,8 @@ class ProductMapping extends Component {
       // .then(response => {
         this.setState({
           initialMapping: response.data,
-          mapping: response.data
+          mapping: response.data,
+          saveNotPerformed: false
         });
 
         }else{
@@ -244,6 +247,7 @@ class ProductMapping extends Component {
         this.setState({
           alertHeading: "",
           alertMessage: "Mapping Successfully Saved!",
+          saveNotPerformed: true
       });
       this.setState({
           isOpen: true,
@@ -305,7 +309,7 @@ var saveBtnStyle={
     return (
       // <Page>
       <div class="Polaris-Page" id="productmapping">
-        
+        <Prompt when={saveNotPerformed} message={"You have unsaved changes, are you sure you wan to leave?"}/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
         <table className="table table-striped table-center-content" id="settingContent">
           
