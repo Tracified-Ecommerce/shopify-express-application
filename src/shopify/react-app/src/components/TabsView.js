@@ -24,7 +24,7 @@ class TabsView extends Component {
 
   handleTabChange(selectedTab) {
     if(this.state.notSaved){
-      var sure = window.confirm("Are you sure?");
+      var sure = window.confirm("You have unsaved changes, Are you sure you want to leave the page?");
       if(sure) {
         this.setState({selectedTab});
         this.setState({notSaved: false});
