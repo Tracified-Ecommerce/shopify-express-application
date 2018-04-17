@@ -165,7 +165,7 @@
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 333%!important;
+        width: 400%!important;
         white-space: nowrap;
         margin-left: 2%;
         overflow: hidden;
@@ -190,7 +190,7 @@
 
     .tblHeaders{
         margin-left: -3%;
-        font-size: 89%!important;
+        font-size: 90%!important;
         font-weight: 600;
         width: 100%;
         font-family: calibri;
@@ -222,29 +222,28 @@
         width: 37%
     }
     .Pid{
-        /* margin-left: 84px!important;
-        margin-top: -5.6%; */
-        display: none;
+        margin-left: -10%;
     }
     .tTitle{
-        /* margin-left: 194px!important;
-        margin-top: -6%;
-        height: 21%;
-        width: 45%; */
+        margin-left: 10%;
     } 
-    .Permission{
-        /* margin-left: 97%!important;
-        width: 40%;
-        margin-top: -6%; */
-        /* display: none; */
-        margin-left: -2%;
+    .Permission{       
+        margin-left: 2%;
     }
     
     .hide-cell-xs{
-        display: none;
+        /* display: none; */
     }
 
     .space{
         height: 122px !important;
+    }
+
+    enableCheckbox .Polaris-Select{
+        width: 100px;
+    }
+
+    #settingContent tbody{
+        font-size: 80%;
     }
 }
