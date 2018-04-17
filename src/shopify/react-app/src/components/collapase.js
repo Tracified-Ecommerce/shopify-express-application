@@ -98,7 +98,7 @@ class CollapaseCard extends Component {
         });
 
         var markAsTracifiedBtnStyle={
-            marginTop: "-4%",
+            marginTop: "-1%",
             marginLeft: "0%",
         }
 
