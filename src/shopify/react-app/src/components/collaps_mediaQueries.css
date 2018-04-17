@@ -6,6 +6,7 @@
 
     .MATbutton{
         float: left;
+        padding: 10px;
     }
     .MATbtn_column{
         text-align: right;
