@@ -73,7 +73,7 @@ class TraceTimeLine extends Component {
                     var errorMessageObj = {};
 
                     if(error.response.data.error.startsWith("<")) {
-                        errorMessageObj = {err: error.response.data.error}
+                        errorMessageObj = {err: "internal server error"}
                     } else {
                         errorMessageObj = JSON.parse(error.response.data.error);
                     }
