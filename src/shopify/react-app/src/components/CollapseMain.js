@@ -75,7 +75,7 @@ class CollapseMain extends Component {
                     <Col sm="3" style={{ paddingBottom: 5, paddingTop: 5 }}>
                         <TextStyle variation="subdued"><strong>Created on:</strong> {this.props.order.created_at}</TextStyle>
                     </Col>
-                    <Col sm="3" style={{ paddingTop: 5, paddingBottom: 5, paddingRight: 0, width: 409 }}>
+                    <Col sm="3" style={{ paddingBottom: 5,paddingTop: 5 }}>
                         <TextStyle variation="subdued"><strong>Customer:</strong> {this.props.order.customer}</TextStyle>
                     </Col>
                     <Col className="exploreBtn" sm="2" >
