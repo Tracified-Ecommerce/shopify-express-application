@@ -79,7 +79,7 @@ class CollapseMain extends Component {
                     <Col sm="3" style={{ paddingBottom: 5,paddingTop: 5 }}>
                         <TextStyle variation="subdued"><strong>Customer:</strong> {this.props.order.customer}</TextStyle>
                     </Col>
-                    <Col className="exploreBtn" sm="2" >
+                    <Col className="exploreBtn" sm="3" >
                         <Button
                             size="slim"
                             outline
