@@ -16,6 +16,10 @@
      .QR_col{
          text-align: right;
      }
+     
+     .cardUntracifiedExpand .Polaris-Card{
+        margin-bottom: 3%;
+     }
  }
  
  
