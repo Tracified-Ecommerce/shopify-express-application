@@ -1,17 +1,25 @@
 /* Media Queries for PC */
 @media screen and (min-width: 1024px){
-    paddingRight: 0;
-     width: 130;
-      display: "table-cell";
-      verticalAlign: "middle";
+    
+
+    .exploreBtn {
+        text-align: right;
+        padding-left : 133px;
+        padding-right: 0;
+         width: 130;
+        display: "table-cell";
+        vertical-align: "middle";
+    }
  }
  
  
  /* Media queries for the tablet devices */
  @media (min-width: 650px) and (max-width: 1023px) {
      
-  
- 
+    .exploreBtn {
+        text-align: right;
+        padding-left : 77px;
+    }
  }
  
  
@@ -19,7 +27,7 @@
  @media  (min-width: 360px) and (max-width: 640px) {   
  
     .exploreBtn {
-        text-align: center;
+        text-align: right;
 
     }
  }

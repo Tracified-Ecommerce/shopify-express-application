@@ -16,12 +16,22 @@
      .QR_col{
          text-align: right;
      }
+
+     .cardUntracifiedExpand .Polaris-Card{
+        margin-bottom: 3%;
+     }
+
+     .Polaris-List__Item{
+         margin-bottom: 0rem !important;
+     }
  }
  
  
  /* Media queries for the tablet devices */
  @media (min-width: 650px) and (max-width: 1023px) {
-     
+     .cardUntracifiedExpand .Polaris-Card{
+        margin-bottom: 3%;
+     }
    
      .unfulfillColLeft{
          max-width: 75%;
@@ -58,11 +68,17 @@
  
      .collapasedView_Untracified{
          text-align: center;
+         width: 90%;
+        margin-left: auto;
+        margin-right: auto;
      }
  
      .searchOdrs input{
-         width: 350px;
+        width: 322px;
+        margin-bottom: 7% !important;
+        margin-left: 0% !important;
      }
+
      .QRcode{
          width: 100px;
          height: 100px;
@@ -74,5 +90,27 @@
     
      .cardUntracifiedExpand .Polaris-Heading{
         text-align: center;
+     }
+
+     .cardUntracifiedExpand .Polaris-Card{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+     }
+
+     .cardUntracifiedExpand .Polaris-List.Polaris-List--typeBullet{
+        font-size: 82%;
+     }
+
+     .untraciFilterBy{
+        font-size: 87%;
+        margin-left: 6%;
+     }
+
+     .ExpandCollapaseToggleBtn .Polaris-Button.Polaris-Button--outline.Polaris-Button--plain.Polaris-Button--sizeSlim {
+        font-size: 90%;
+        margin-left: -10%;
+        margin-right: 0%;
      }
  }

@@ -5,6 +5,7 @@ import { Row, Col, Card, Collapse } from 'reactstrap';
 import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
 import AlertBox from "./Alert";
 import './untracifiedOrders_mediaQueries.css';
+import './collapsMain_mediaQueries.css';
 const QRCode = require('qrcode.react');
 
 class CollapseMain extends Component {
@@ -78,7 +79,7 @@ class CollapseMain extends Component {
                     <Col sm="3" style={{ paddingBottom: 5,paddingTop: 5 }}>
                         <TextStyle variation="subdued"><strong>Customer:</strong> {this.props.order.customer}</TextStyle>
                     </Col>
-                    <Col className="exploreBtn" sm="2" >
+                    <Col className="exploreBtn" sm="3" >
                         <Button
                             size="slim"
                             outline
@@ -93,7 +94,7 @@ class CollapseMain extends Component {
                         <Col sm="12">
                             <Row style={{ padding: 20 }}>
                                 <Col sm="3" style={{ paddingBottom: 20 }}>
-                                    <Button primary onClick={this.fulfillOrder}>Mark as Tracified</Button>
+                                    <Button primary class="MAT_btn" onClick={this.fulfillOrder}>Mark as Tracified</Button>
                                 </Col>
                                 <Col sm="7">
                                 </Col >
