@@ -14,19 +14,24 @@ class TabsView extends Component {
 
     this.state = {
       selectedTab: 0,
-      navigate: false
+      notSaved: true
     };
   }
 
   areYouSure(answer) {
-    this.setState({navigate: answer});
+    this.setState({notSaved: answer});
   }
 
   handleTabChange(selectedTab) {
-    if(this.state.navigate){
-      alert("areYouSure true");
+    if(this.state.notSaved){
+      var sure = confirm("Are you sure?");
+      if(sure) {
+        this.setState({selectedTab});
+      }
+    } else {
+      this.setState({notSaved: true});
+      this.setState({selectedTab});
     }
-    this.setState({selectedTab});
   }
 
   render() {
