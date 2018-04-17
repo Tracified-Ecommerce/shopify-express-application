@@ -16,8 +16,8 @@ class TabsView extends Component {
     this.state = {
       selectedTab: 0,
       notSaved: false,
-      confirmHeading="",
-      confirmMessage="Are you sure"
+      confirmHeading:"",
+      confirmMessage:"Are you sure"
     };
   }
 
