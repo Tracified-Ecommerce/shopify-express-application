@@ -228,7 +228,7 @@
         margin-left: 10%;
     } 
     .Permission{       
-        margin-left: 2%;
+        margin-left: 6%;
     }
     
     .hide-cell-xs{
@@ -239,8 +239,8 @@
         height: 122px !important;
     }
 
-    .itemTitle .Polaris-Select{
-        width: 100px;
+    .itemTitle {
+        padding-right: 15%;
     }
 
     #settingContent tbody{
