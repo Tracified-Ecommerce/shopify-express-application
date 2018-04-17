@@ -4,9 +4,6 @@
         max-width: 75%;
     }
 
-    .MATbutton{
-        float: right;
-    }
     .MATbtn_column{
         text-align: right;
     }
@@ -18,10 +15,6 @@
      
     .showItems_column{
         max-width: 75%;
-    }
-
-    .MATbutton{
-        float: left;
     }
  
  }
