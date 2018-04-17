@@ -10,23 +10,28 @@ class TabsView extends Component {
     super(props);
 
     this.handleTabChange = this.handleTabChange.bind(this);
-    this.areYouSure = this.areYouSure.bind(this);
+    this.setNotSaved = this.setNotSaved.bind(this);
 
     this.state = {
       selectedTab: 0,
-      navigate: false
+      notSaved: false
     };
   }
 
-  areYouSure(answer) {
-    this.setState({navigate: answer});
+  setNotSaved(answer) {
+    this.setState({notSaved: answer});
   }
 
   handleTabChange(selectedTab) {
-    if(this.state.navigate){
-      alert("areYouSure true");
+    if(this.state.notSaved){
+      var sure = window.confirm("Are you sure?");
+      if(sure) {
+        this.setState({selectedTab});
+        this.setState({notSaved: false});
+      }
+    } else {
+      this.setState({selectedTab});
     }
-    this.setState({selectedTab});
   }
 
   render() {
@@ -58,7 +63,7 @@ class TabsView extends Component {
       ),
       (
         <Tabs.Panel id="panel2">
-          <Mapping areYouSure={this.areYouSure}/>
+          <Mapping setNotSaved={this.setNotSaved}/>
         </Tabs.Panel>
       ),
       (

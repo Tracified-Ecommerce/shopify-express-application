@@ -205,6 +205,7 @@ class ProductMapping extends Component {
       return this.state.shopifyProducts.map((object, i) => {
         return <ProductMappingTableRow
           onItemChange={this.onItemChange}
+          setNotSaved={this.props.setNotSaved}
           onPermissionChange={this.onPermissionChange}
           obj={object}
           key={i}
@@ -227,7 +228,7 @@ class ProductMapping extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.areYouSure(true);
+    this.props.setNotSaved(false);
     // get our form data out of state
     const mapping = this.state.mapping;
 
