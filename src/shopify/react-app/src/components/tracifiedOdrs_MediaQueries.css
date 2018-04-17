@@ -52,6 +52,6 @@
 
     .searchText input{
         width: 350px;
-        margin-top: -3%;
+        margin-top: -3px !important;
     }    
 }
