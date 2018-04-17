@@ -1,79 +1,77 @@
 /* Media Queries for PC */
 @media screen and (min-width: 1024px){
-   .pageWrapper .Polaris-Page{
-        margin-left: auto;
-        margin-right: auto;
-   }
-
-   .pageWrapper{
-       height:900px;
-   }
-
-   .unfulfillColLeft{
-    max-width: 75%;
+    .pageWrapper .Polaris-Page{
+         margin-left: auto;
+         margin-right: auto;
     }
-    
-    .QR_col{
-        text-align: right;
+ 
+    .pageWrapper{
+        height:900px;
     }
-}
-
-
-/* Media queries for the tablet devices */
-@media (min-width: 650px) and (max-width: 1023px) {
-    
-  
+ 
     .unfulfillColLeft{
-        max-width: 75%;
-
-    }
-
-    .untracified_card{
-        text-align: center;
-
-    }
-
-}
-
-
-/* Media Queries for mobile devices */
-@media  (min-width: 360px) and (max-width: 640px) {   
-
-    .cardHeader_div{
-        text-align: center;
-    }
-    #unfulfillContent{
-        text-align: center;
-    }
-  
-    #unfulfillproducts{
-        text-align: center; 
-    }
-
-
-    #untracified_list{
-        max-width: 75%;
-    }
-
-    #cardHeader{
-        text-align: center; 
-        padding-left: 30%;
-    }
-
-    .collapasedView_Untracified{
-        text-align: center;
-    }
-
-    .searchOdrs input{
-        width: 350px;
-    }
-    .QRcode{
-        width: 100px;
-        height: 100px;
-    }
-
-    .unfulfillColLeft{
-        padding-left: 30%;
-    }
+     max-width: 75%;
+     }
+     
+     .QR_col{
+         text-align: right;
+     }
+ }
+ 
+ 
+ /* Media queries for the tablet devices */
+ @media (min-width: 650px) and (max-width: 1023px) {
+     
    
-}
+     .unfulfillColLeft{
+         max-width: 75%;
+ 
+     }
+ 
+     .untracified_card{
+         text-align: center;
+ 
+     }
+ 
+ }
+ 
+ 
+ /* Media Queries for mobile devices */
+ @media  (min-width: 360px) and (max-width: 640px) {   
+ 
+     
+     #unfulfillContent{
+         text-align: center;
+     }
+   
+     #unfulfillproducts{
+         text-align: center; 
+     }
+ 
+ 
+     #untracified_list{
+         max-width: 75%;
+     }
+ 
+     #cardHeader{
+         text-align: center; 
+         padding-left: 30%;
+     }
+ 
+     .collapasedView_Untracified{
+         text-align: center;
+     }
+ 
+     .searchOdrs input{
+         width: 350px;
+     }
+     .QRcode{
+         width: 100px;
+         height: 100px;
+     }
+ 
+     .unfulfillColLeft{
+         padding-left: 30%;
+     }
+    
+ }
