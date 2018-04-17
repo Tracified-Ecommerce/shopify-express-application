@@ -39,7 +39,6 @@
  /* Media Queries for mobile devices */
  @media  (min-width: 360px) and (max-width: 640px) {   
  
-     
      #unfulfillContent{
          text-align: center;
      }
@@ -55,11 +54,6 @@
 
      .list_col{
         max-width: 80%;
-     }
- 
-     .cardHeader{
-         text-align: center; 
-
      }
  
      .collapasedView_Untracified{
