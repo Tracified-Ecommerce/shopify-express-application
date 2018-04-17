@@ -28,7 +28,7 @@ class Uncollapsed extends Component {
                             </List>
                         </Col>
                         <Col sm="3" className="QR_col" >
-                            <QRCode value={this.props.qrVal} />
+                            <QRCode className="QRcode" value={this.props.qrVal} />
                         </Col>
                 </Row>
                 <Row id="unfulfillproducts">

@@ -63,4 +63,7 @@
     .searchOdrs input{
         width: 350px;
     }
+    .QRcode{
+        size: 100px;
+    }
 }
