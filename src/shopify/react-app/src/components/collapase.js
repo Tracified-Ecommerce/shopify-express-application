@@ -99,7 +99,7 @@ class CollapaseCard extends Component {
 
         var markAsTracifiedBtnStyle={
             marginTop: "-4%",
-            textAlign: "left",
+            textAlign: "Right",
             marginLeft: "0%",
             paddingRight: "1% !important"
         }
@@ -113,7 +113,7 @@ class CollapaseCard extends Component {
                             <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                         </Col>
                         <Col sm="3" className="MATbtn_column" style={markAsTracifiedBtnStyle}>
-                            <Button primary onClick={this.fulfillOrder} className="MATbutton" >Mark as Tracified</Button>
+                            <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
                         </Col>
                     </Row>
                 </Container>
