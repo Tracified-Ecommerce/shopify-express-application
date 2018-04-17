@@ -50,12 +50,12 @@
  
  
      #untracified_list{
-         max-width: 75%;
+         max-width: 80%;
      }
  
-     #cardHeader{
+     .cardHeader{
          text-align: center; 
-         padding-left: 30%;
+
      }
  
      .collapasedView_Untracified{
