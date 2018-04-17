@@ -98,9 +98,9 @@
         margin-left: 6%;
      }
 
-     .ExpandCollapaseToggleBtn .Polaris-Button__Content {
+     .ExpandCollapaseToggleBtn .Polaris-Button.Polaris-Button--outline.Polaris-Button--plain.Polaris-Button--sizeSlim {
         font-size: 90%;
-        margin-left: -31%;
+        margin-left: -10%;
         margin-right: 0%;
      }
  }
