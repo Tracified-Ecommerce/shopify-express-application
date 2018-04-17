@@ -21,7 +21,7 @@
 
 /* mobile screens */
 @media screen and (min-width: 360px){
-    .fresh-ui .ui-modal {       
+    .ui-modal {       
         height: 80% !important;
         margin-bottom: 15% !important;
     }
