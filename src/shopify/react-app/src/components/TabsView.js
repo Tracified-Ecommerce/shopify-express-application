@@ -27,6 +27,7 @@ class TabsView extends Component {
       var sure = window.confirm("Are you sure?");
       if(sure) {
         this.setState({selectedTab});
+        this.setState({notSaved: false});
       }
     } else {
       this.setState({selectedTab});
