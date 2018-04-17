@@ -61,9 +61,9 @@
      }
  
      .searchOdrs input{
-        width: 330px;
+        width: 322px;
         margin-bottom: 7% !important;
-        margin-left: 5% !important;
+        margin-left: 0% !important;
      }
 
      .QRcode{
@@ -88,5 +88,10 @@
 
      .cardUntracifiedExpand .Polaris-List.Polaris-List--typeBullet{
         font-size: 82%;
+     }
+
+     .untraciFilterBy{
+        font-size: 87%;
+        margin-left: 6%;
      }
  }
