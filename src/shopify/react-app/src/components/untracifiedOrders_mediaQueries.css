@@ -11,7 +11,10 @@
 
    .unfulfillColLeft{
     max-width: 75%;
-
+    }
+    
+    .QR_col{
+        text-align: left;
     }
 }
 
