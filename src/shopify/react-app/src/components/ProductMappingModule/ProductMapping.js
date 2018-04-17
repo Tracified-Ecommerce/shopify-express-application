@@ -309,7 +309,7 @@ var saveBtnStyle={
     return (
       // <Page>
       <div class="Polaris-Page" id="productmapping">
-        <Prompt when={saveNotPerformed} message={"You have unsaved changes, are you sure you wan to leave?"}/>
+        <Prompt when={true} message={"You have unsaved changes, are you sure you wan to leave?"}/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
         <table className="table table-striped table-center-content" id="settingContent">
           
