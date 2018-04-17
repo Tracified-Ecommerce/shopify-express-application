@@ -69,30 +69,33 @@ class TraceTimeLine extends Component {
                 });
             }).catch((error) => {
 
-                if(error.response) {
-                    try {
-                        const errorMessageObj = JSON.parse(error.response.data.error);
-                    } catch (e) {
-                        const errorMessageObj = {err: error.response.data.error}
+                if (error.response) {
+                    var errorMessageObj = {};
+
+                    if(error.response.data.error.startsWith("<")) {
+                        errorMessageObj = {err: "internal server error"}
+                    } else {
+                        errorMessageObj = JSON.parse(error.response.data.error);
                     }
-                console.log("timeline status : " + error.response.status + "timeline error : " + errorMessageObj.err);
+                    
+                    console.log("timeline status : " + error.response.status + "timeline error : " + errorMessageObj.err);
 
-                const error1 = {
-                    errorStatus: error.response.status,
-                    errorMessage: errorMessageObj.err
-                };
+                    const error1 = {
+                        errorStatus: error.response.status,
+                        errorMessage: errorMessageObj.err
+                    };
 
-                let tempErrorArray = []
-                tempErrorArray.push(error1);
+                    let tempErrorArray = []
+                    tempErrorArray.push(error1);
 
-                this.setState({
-                    errorArray: tempErrorArray,
-                    isError: true,
-                });
+                    this.setState({
+                        errorArray: tempErrorArray,
+                        isError: true,
+                    });
 
-                this.setState({
-                    istimelineLoading: false,
-                });
+                    this.setState({
+                        istimelineLoading: false,
+                    });
                 } else {
                     console.error("error in timeline : " + error);
                 }
