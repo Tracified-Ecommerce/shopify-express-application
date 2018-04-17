@@ -18,3 +18,11 @@
         font-size: 11px !important;
     }
 }
+
+
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    div#embedded_app_modal.ui-modal.ui-modal--is-visible{
+        margin-top: -20%;
+    }
+}
