@@ -58,6 +58,9 @@
  
      .collapasedView_Untracified{
          text-align: center;
+         width: 90%;
+        margin-left: auto;
+        margin-right: auto;
      }
  
      .searchOdrs input{
