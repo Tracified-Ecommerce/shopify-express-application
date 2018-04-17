@@ -38,7 +38,7 @@ class TabsView extends Component {
     this.setState({
         isOpen: !this.state.isOpen
     });
-    his.setState({ selectedTab: this.state.tempSelectedTab });
+    this.setState({ selectedTab: this.state.tempSelectedTab });
   }
 
   handleTabChange(selectedTab) {
