@@ -4,7 +4,7 @@ import '@shopify/polaris/styles.css';
 import SubTabs from './subTabs';
 import Installation from './Install';
 import Mapping from './ProductMappingModule/ProductMapping';
-import { Confirm } from './Confirm';
+import Confirm from './Confirm';
 
 class TabsView extends Component {
   constructor(props) {
