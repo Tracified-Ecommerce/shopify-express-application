@@ -24,12 +24,16 @@
      
     .showItems_column{
         max-width: 75%;
+        margin-top: 3%;
     }
 
     .MATbutton{
         float: left;
     }
  
+    .showItems_column{
+        margin-top: 3%;
+    }
  }
  
  
