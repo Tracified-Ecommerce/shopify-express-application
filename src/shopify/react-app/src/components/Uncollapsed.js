@@ -24,8 +24,8 @@ class Uncollapsed extends Component {
                         <Col sm="10"  className="unfulfillColLeft" >
                             <div className="list_col" >
                                 <List type="bullet" id="untracified_list" >
-                                    <List.Item>Customer  : {this.props.order.customer}</List.Item>
-                                    <List.Item>Created At: {this.props.order.created_at}</List.Item>
+                                    <List.Item className="Listitem_class">Customer  : {this.props.order.customer}</List.Item>
+                                    <List.Item className="Listitem_class">Created At: {this.props.order.created_at}</List.Item>
                                 </List>
                             </div>
                         </Col>
