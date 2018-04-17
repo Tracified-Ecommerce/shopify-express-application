@@ -22,7 +22,7 @@
 
 /* Media queries for the tablet devices */
 @media (min-width: 650px) and (max-width: 1023px) {
-    .ui-modal.ui-modal--is-visible{
-        margin-top: -20%;
+    .fresh-ui .ui-modal {
+        margin-top: -10%;
     }
 }
