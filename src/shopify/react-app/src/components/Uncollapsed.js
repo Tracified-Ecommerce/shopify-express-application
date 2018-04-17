@@ -16,6 +16,10 @@ class Uncollapsed extends Component {
     }
     
     render() {
+
+        var markAsTracifiedBtnStyle={
+            padding:"10px",
+        }
         console.log("uncollapsed rendered");
         return (
             <div className="cardUntracifiedExpand">
@@ -24,8 +28,8 @@ class Uncollapsed extends Component {
                         <Col sm="10"  className="unfulfillColLeft" >
                             <div className="list_col" >
                                 <List type="bullet" id="untracified_list" >
-                                    <List.Item>Customer  : {this.props.order.customer}</List.Item>
-                                    <List.Item>Created At: {this.props.order.created_at}</List.Item>
+                                    <List.Item className="Listitem_class">Customer  : {this.props.order.customer}</List.Item>
+                                    <List.Item className="Listitem_class">Created At: {this.props.order.created_at}</List.Item>
                                 </List>
                             </div>
                         </Col>
@@ -34,7 +38,7 @@ class Uncollapsed extends Component {
                         </Col>
                 </Row>
                 <Row id="unfulfillproducts">
-                    <CollapaseCards  itemArray={this.props.order.lineItems} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
+                    <CollapaseCards  itemArray={this.props.order.lineItems} style={markAsTracifiedBtnStyle} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
                 </Row>
             </Card>
             </div>
