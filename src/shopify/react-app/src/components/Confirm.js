@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, DisplayText, TextContainer } from '@shopify/polaris';
+import { Button, DisplayText,TextStyle, TextContainer } from '@shopify/polaris';
 
 class Confirm extends Component {
     render() {
@@ -40,27 +40,29 @@ class Confirm extends Component {
         height: "50px",
         textAlign: "center"
       };
-
-      const closeBtnStyle ={
-        margin: 'auto',
-        marginLeft: '10%'
-      };
+      
+      var confirmBtnStyle={
+        marginLeft: "auto",
+        marginRight: "5%"
+      }
   
       return (
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-          <DisplayText size="extraLarge">{this.props.heading}</DisplayText>
-            <DisplayText size="small">{this.props.message}</DisplayText>  
+            <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
+            <TextStyle variation="subdued">{this.props.message}</TextStyle>  
           </TextContainer>
-            
+
+           <hr/> 
+           
             <div className="alertFooter" style={footerStyle}>
-            <Button className="confirmBtn" style={closeBtnStyle} primary onClick={this.props.onConfirm} >
+            <Button className="confirmBtn" style={confirmBtnStyle} primary onClick={this.props.onConfirm} >
               Confirm
             </Button>
 
-            <div className="confirmCloseBtn">
-              <Button className="cancelBtn" style={closeBtnStyle} primary onClick={this.props.onCancel} >
+            <div className="CloseBtn">
+              <Button className="cancelBtn" primary onClick={this.props.onCancel} >
                 Cancel
               </Button>
             </div>
