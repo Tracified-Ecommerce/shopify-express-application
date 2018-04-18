@@ -1,5 +1,6 @@
+
 /* Media Queries for laptop with hidpi screen */
-@media screen and (min-width:1080px) and (max-width:1440px){
+@media screen and (min-width:1280px) and (max-width:1440px){
     .cardProductMapping {
         position: fixed;
         z-index: 50;
