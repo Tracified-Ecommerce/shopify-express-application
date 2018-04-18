@@ -64,16 +64,27 @@ router.get("/products/:id/images", (req: Request, res: Response) => {
     });
 });
 
-router.get("/fulfilled-orders", (req: Request, res: Response) => {
-    console.log("orders");
-    shopAdminAPI("GET",  shopName, "/admin/orders.json?status=any", shopRequestHeaders, null, (orders: any) => {
-        console.log("got all orders");
+router.get("/fulfilled-orders", (req: any, res: any) => {
+    console.log("fullfilled orders");
+    const shopDomain = shopName;
+    shopAdminAPI(
+        "GET", shopName,
+        "/admin/orders.json?status=any",
+        shopRequestHeaders,
+        null,
+        (orders: any) => {
+        const fulfilledOrders = orders.orders.filter((order: any) => {
+                let flag = false;
+                order.note_attributes.map((noteAttrib: any) => {
+                    if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                        flag = true;
+                    }
+                });
+                console.log("inside fulfilled function");
+                return flag;
+            });
 
-        let fulfilledOrders = orders.orders.filter((order: object) => {
-            console.log("inside fulfilled function");
-            return order["fulfillment_status"] == "fulfilled"
-        });
-    res.status(200).send({fulfilledOrders});
+        res.status(200).send({fulfilledOrders, shopDomain});
     });
 });
 
