@@ -69,7 +69,9 @@
 
      .list_col{
         max-width: 80%;
-     }
+        font-size: 115%;
+    }
+     
  
      .collapasedView_Untracified{
          text-align: center;
