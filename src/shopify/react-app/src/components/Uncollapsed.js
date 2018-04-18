@@ -11,7 +11,7 @@ class Uncollapsed extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            size: 140
         };
 
         
@@ -20,7 +20,7 @@ class Uncollapsed extends Component {
 
     getInitialState() {
         return {
-            size: 138
+            size: 140
         };
     }
 
