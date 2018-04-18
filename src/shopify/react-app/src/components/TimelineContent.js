@@ -56,7 +56,7 @@ class TimelineContent extends Component {
                         
                         let subGroup = stageData[key];
 
-                        if(subGroup.hasOwnProperty("value") && subGroup.value != null){
+                        if(subGroup.hasOwnProperty("value")){
 
                             if(isObject(subGroup.value)) {
                                 console.log("found an object subGroup.value: " + subGroup.value);
