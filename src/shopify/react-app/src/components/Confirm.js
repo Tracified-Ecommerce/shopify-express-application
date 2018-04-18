@@ -41,12 +41,17 @@ class Confirm extends Component {
         height: "50px",
         textAlign: "center"
       };
+
+      var spaceBetweenHeadingStyle={
+        height:"10%"
+      }
          
       return (
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
             <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
+            <div className="spaceBetweenHeading"></div>
             <TextStyle variation="subdued">{this.props.message}</TextStyle>  
           </TextContainer>
 
