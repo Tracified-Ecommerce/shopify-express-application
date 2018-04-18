@@ -19,6 +19,8 @@
 
     .Polaris-Button.Polaris-Button--primary{
         padding: 10px !important;
+        max-width: 128px;
+        font-size: 100% !important;
     }
 
     .MATbtn{
