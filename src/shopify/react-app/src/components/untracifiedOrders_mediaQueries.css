@@ -17,6 +17,11 @@
          text-align: right;
      }
 
+     .audio, canvas, progress, video{
+         height: 140px !important;
+         width: 140px !important;
+     }
+
      .cardUntracifiedExpand .Polaris-Card{
         margin-bottom: 3%;
      }
