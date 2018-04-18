@@ -3,7 +3,7 @@ import { Container, Row, Col} from 'reactstrap';
 import { Button, Stack } from '@shopify/polaris';
 import { isObject } from 'util';
 import { OverflowDetector } from 'react-overflow';
-import { isEmpty } from "lodash";
+import { isEmpty, isNull, isArray } from "lodash";
 import './timelineMediaQueries.css';
 
 class TimelineContent extends Component {
@@ -54,17 +54,38 @@ class TimelineContent extends Component {
                     
                     Object.keys(stageData).map(function (key) {
                         
-                        let subGroup = stageData[key];
+                        const subGroup = stageData[key];
+                            let newTitle = "";
 
                         if(subGroup.hasOwnProperty("value")){
 
                             if(isObject(subGroup.value)) {
-                                console.log("found an object subGroup.value: " + subGroup.value);
+                                return <div>
+                                        {
+                                            Object.keys(subGroup.value).map((attributeKey) => {
+                                                const artifactAttribute = subGroup.value[attributeKey];
+                                                console.log("artifact attribute - " + JSON.stringify(artifactAttribute));
+
+                                                if (isNull(artifactAttribute.value)) {
+                                                    return <div style={{ display: "none" }}></div>
+                                                } else {
+                                                    return (
+                                                        
+                                                        <div className="artifactValue" key={key} > <span className="artifactValueTitle">&#8227; {artifactAttribute.title} :</span> {artifactAttribute.value}</div>
+                                                    )
+                                                }
+
+                                            })
+                                        }
+                                    </div>;
                             } else {
-                                console.log("not an object : " + subGroup.value);
-                                return(  
-                                    <div className="compClass" key={key} style={{ height:24, paddingLeft:14}}> <span className="compSpanClass" style={{fontWeight:'bold', fontSize: 14}}>&#8227; {subGroup.title} :</span> {subGroup.value}</div> 
-                                ) 
+                                if (isNull(subGroup.value)) {
+                                    return <div style={{ display: "none" }}></div>
+                                } else {
+                                    return (
+                                        <div className="compClass" key={key} > <span className="compSpanClass" >&#8227; {subGroup.title} :</span> {subGroup.value}</div>
+                                    )
+                                }
                             }
                         } else {
 
@@ -81,11 +102,36 @@ class TimelineContent extends Component {
                                 
                                             if(isObject(subGroup[innerKey])){
                                                 console.log("found an object subGroup[innerKey] : " + JSON.stringify(subGroup[innerKey]));
-                                                return(
-                                                    <Col key={innerKey} xs='12' sm='6'>
-                                                    <div className="keyClass" style={{height:24}}><span className="spanClass" style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span className="innerSpanClass">{subGroup[innerKey].value}</span></div>
-                                                    </Col>
-                                                )
+                                                if (isNull(subGroup[innerKey].value)) {
+                                                    return <div style={{ display: "none" }}></div>
+                                                } else if (isArray(subGroup[innerKey].value)) {
+                                                    console.log("FOUND ARRAY");
+                                                    let flag = 0;
+                                                    return (
+                                                        <Col key={innerKey} xs='12' sm='6'>
+                                                            {
+                                                                subGroup[innerKey].value.map(x => {
+                                                                    flag++;
+                                                                    if(flag == 1) {
+                                                                        return <div className="keyClass"><span className="spanClass" >{subGroup[innerKey].title}</span> : <span className="innerSpanClass">{x}</span></div>
+                                                                    } else {
+                                                                        newTitle = subGroup[innerKey].title.replace(/[a-zA-z0-9]/g, "\u2007");
+                                                                        return <div className="keyClass"><span className="spanClass" >{newTitle}</span> : <span className="innerSpanClass">{x}</span></div>
+                                                                    }
+                                                                })
+                                                            }
+                                                        </Col>
+                                                    )
+                                                    // return (
+
+                                                    // )
+                                                } else {
+                                                    return (
+                                                        <Col key={innerKey} xs='12' sm='6'>
+                                                            <div className="keyClass"><span className="spanClass" >{subGroup[innerKey].title}</span> : <span className="innerSpanClass">{subGroup[innerKey].value}</span></div>
+                                                        </Col>
+                                                    )
+                                                }
                                             } else {
                                                 console.log("found a non object subGroup[innerKey] : " + subGroup[innerKey]);
                                             }
