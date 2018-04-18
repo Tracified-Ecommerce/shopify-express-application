@@ -284,7 +284,7 @@ class Part2Cards extends Component {
                         distribution="trailing"
                     >
 
-                        <div style={toggleBtnStyle}>
+                        <div className="toggleBtn" style={toggleBtnStyle}>
                             <Stack.Item>
                                 <Button
                                     plain
