@@ -5,6 +5,7 @@ import { isObject } from 'util';
 import { OverflowDetector } from 'react-overflow';
 import { isEmpty, isNull, isArray } from "lodash";
 import './timelineMediaQueries.css';
+import './timelineContent.css';
 
 class TimelineContent extends Component {
 
