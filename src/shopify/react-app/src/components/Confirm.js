@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, DisplayText,TextStyle, TextContainer } from '@shopify/polaris';
+import './confirm.css';
 
 class Confirm extends Component {
     render() {
@@ -40,12 +41,7 @@ class Confirm extends Component {
         height: "50px",
         textAlign: "center"
       };
-      
-      var confirmBtnStyle={
-        marginLeft: "auto",
-        marginRight: "5%"
-      }
-  
+         
       return (
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
