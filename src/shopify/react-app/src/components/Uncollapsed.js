@@ -5,7 +5,6 @@ import { Container, Row, Col } from 'reactstrap';
 import { Thumbnail, Card, Page, List } from '@shopify/polaris';
 import Loading from './Loading';
 import './untracifiedOrders_mediaQueries.css';
-import './Uncollapsed.css';
 const QRCode = require('qrcode.react');
 
 class Uncollapsed extends Component {
