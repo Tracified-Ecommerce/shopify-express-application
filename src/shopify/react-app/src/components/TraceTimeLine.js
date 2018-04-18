@@ -23,6 +23,7 @@ class TraceTimeLine extends Component {
             timeline: "",
             istimelineLoading: true,
             errorArray: [],
+            filteredTimeline: [],
             isError: false,
         };
     }
@@ -67,18 +68,22 @@ class TraceTimeLine extends Component {
                     timeline: timeline,
                     istimelineLoading: false,
                     array: arr
+                }, () => {
+                    this.setState({
+                        filteredTimeline: this.state.timeline.items.filter(stage => !isEmpty(stage.data))
+                    });
                 });
             }).catch((error) => {
 
                 if (error.response) {
                     var errorMessageObj = {};
 
-                    if(error.response.data.error.startsWith("<")) {
-                        errorMessageObj = {err: "internal server error"}
+                    if (error.response.data.error.startsWith("<")) {
+                        errorMessageObj = { err: "internal server error" }
                     } else {
                         errorMessageObj = JSON.parse(error.response.data.error);
                     }
-                    
+
                     console.log("timeline status : " + error.response.status + "timeline error : " + errorMessageObj.err);
 
                     const error1 = {
@@ -140,13 +145,9 @@ class TraceTimeLine extends Component {
                     </div>
                     <div style={{ paddingLeft: 30 }}>
                         <Timeline>
-                            {this.state.timeline.items.map((stage, index) => {
+                            {this.state.filteredTimeline.map((stage, index) => {
 
-                                // if(isEmpty(stage.data)) {
-                                //     console.log("stage is empty");
-                                //     return;
-                                // } else {
-                                    let titleText = (index + 1) + ". " + stage.title;
+                                let titleText = (index + 1) + ". " + stage.title;
                                 let descriptionText = stage.description;
 
                                 var ico = (<svg height="30" width="30" >
@@ -165,7 +166,6 @@ class TraceTimeLine extends Component {
                                         icon={ico}
                                         contentStyle={{ fontSize: 13 }}
                                         bubbleStyle={{ border: "none" }}
-                                    // onclick={this.showMessage}
                                     >
 
                                         <div id={index}>
@@ -179,7 +179,6 @@ class TraceTimeLine extends Component {
                                         </div>
                                     </TimelineEvent>
                                 );
-                                // }
                             })}
                         </Timeline>
                     </div>
