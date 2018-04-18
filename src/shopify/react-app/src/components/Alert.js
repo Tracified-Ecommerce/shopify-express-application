@@ -45,12 +45,17 @@ class Alert extends Component {
       const closeBtnStyle ={
         margin: 'auto'
       };
+
+      var spaceBetweenContentStyle={
+        height:"10%"
+      }
   
       return (
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
           <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
+            <div className="spaceBetweenContent"></div>
             <TextStyle size="small">{this.props.message}</TextStyle>  
           </TextContainer>
             
