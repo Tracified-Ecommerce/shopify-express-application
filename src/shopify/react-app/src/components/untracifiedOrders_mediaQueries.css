@@ -118,4 +118,8 @@
         margin-left: -10%;
         margin-right: 0%;
      }
+
+     .toggleBtn{
+        margin-left: -7% !important;
+     }
  }
