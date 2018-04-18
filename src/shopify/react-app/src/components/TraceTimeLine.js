@@ -10,6 +10,7 @@ import { Row, Col, Container } from 'reactstrap';
 import { Timeline, TimelineEvent } from 'react-event-timeline';
 import TimelineContent from './TimelineContent';
 import ErrorPage from './ErrorPage';
+import { isEmpty } from "lodash";
 import './timelineMediaQueries.css';
 
 class TraceTimeLine extends Component {
@@ -141,7 +142,11 @@ class TraceTimeLine extends Component {
                         <Timeline>
                             {this.state.timeline.items.map((stage, index) => {
 
-                                let titleText = (index + 1) + ". " + stage.title;
+                                if(isEmpty(stage.data)) {
+                                    console.log("stage is empty");
+                                    return;
+                                } else {
+                                    let titleText = (index + 1) + ". " + stage.title;
                                 let descriptionText = stage.description;
 
                                 var ico = (<svg height="30" width="30" >
@@ -174,7 +179,7 @@ class TraceTimeLine extends Component {
                                         </div>
                                     </TimelineEvent>
                                 );
-
+                                }
                             })}
                         </Timeline>
                     </div>

@@ -3,6 +3,7 @@ import { Container, Row, Col} from 'reactstrap';
 import { Button, Stack } from '@shopify/polaris';
 import { isObject } from 'util';
 import { OverflowDetector } from 'react-overflow';
+import { isEmpty } from "lodash";
 import './timelineMediaQueries.css';
 
 class TimelineContent extends Component {
