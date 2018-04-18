@@ -61,11 +61,11 @@ class Confirm extends Component {
               Confirm
             </Button>
 
-            <div className="CloseBtn">
+            {/* <div className="CloseBtn"> */}
               <Button className="cancelBtn" primary onClick={this.props.onCancel} >
                 Cancel
               </Button>
-            </div>
+            {/* </div> */}
             </div>
           </div>
         </div>
