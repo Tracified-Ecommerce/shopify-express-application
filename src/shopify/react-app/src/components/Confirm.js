@@ -42,7 +42,8 @@ class Confirm extends Component {
       };
 
       const closeBtnStyle ={
-        margin: 'auto'
+        margin: 'auto',
+        marginLeft: '10%'
       };
   
       return (
@@ -57,9 +58,12 @@ class Confirm extends Component {
             <Button className="confirmBtn" style={closeBtnStyle} primary onClick={this.props.onConfirm} >
               Confirm
             </Button>
-            <Button className="cancelBtn" style={closeBtnStyle} primary onClick={this.props.onCancel} >
-              Cancel
-            </Button>
+
+            <div className="confirmCloseBtn">
+              <Button className="cancelBtn" style={closeBtnStyle} primary onClick={this.props.onCancel} >
+                Cancel
+              </Button>
+            </div>
             </div>
           </div>
         </div>
