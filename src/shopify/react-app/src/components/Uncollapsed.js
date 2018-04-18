@@ -11,22 +11,13 @@ class Uncollapsed extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            size: 140
         };
 
         
     
     }
 
-    getInitialState() {
-        return {
-            size: 140
-        };
-    }
 
-    handleSizeChange(event) {
-        this.setState(_.extend(this.state, {size: event.target.value}));
-    }
     
     render() {
 
@@ -47,7 +38,7 @@ class Uncollapsed extends Component {
                             </div>
                         </Col>
                         <Col sm="3" className="QR_col" >
-                            <QRCode className="QRcode" size={parseInt(this.state.size)} value={this.props.qrVal} />
+                            <QRCode className="QRcode" size={140} value={this.props.qrVal} />
                         </Col>
                 </Row>
                 <Row id="unfulfillproducts">
