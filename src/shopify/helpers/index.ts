@@ -32,18 +32,33 @@ module.exports = {
     },
 
     shopAdminAPI(method: string, shop: any, relUrl: string, shopRequestHeaders: any, body: any, callback: () => any) {
-        const options = {
-            method,
-            uri: "https://" + shop + relUrl,
-            headers: shopRequestHeaders,
-            body,
-            json: true,
-        };
+        let options;
+
+        if (body !== null) {
+            options = {
+                body,
+                headers: shopRequestHeaders,
+                json: true,
+                method,
+                uri: "https://" + shop + relUrl,
+            };
+
+        } else {
+
+            options = {
+                headers: shopRequestHeaders,
+                json: true,
+                method,
+                uri: "https://" + shop + relUrl,
+            };
+
+        }
+
         console.log("sending request");
         console.log(shopRequestHeaders);
+
         request(options).then(callback).catch((err: Error) => {
-            console.log("admin api error");
             return (err);
-          } );
+        });
     },
 };
