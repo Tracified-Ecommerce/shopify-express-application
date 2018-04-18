@@ -142,10 +142,10 @@ class TraceTimeLine extends Component {
                         <Timeline>
                             {this.state.timeline.items.map((stage, index) => {
 
-                                if(isEmpty(stage.data)) {
-                                    console.log("stage is empty");
-                                    return;
-                                } else {
+                                // if(isEmpty(stage.data)) {
+                                //     console.log("stage is empty");
+                                //     return;
+                                // } else {
                                     let titleText = (index + 1) + ". " + stage.title;
                                 let descriptionText = stage.description;
 
@@ -179,7 +179,7 @@ class TraceTimeLine extends Component {
                                         </div>
                                     </TimelineEvent>
                                 );
-                                }
+                                // }
                             })}
                         </Timeline>
                     </div>

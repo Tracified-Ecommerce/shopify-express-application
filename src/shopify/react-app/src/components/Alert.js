@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, DisplayText, TextContainer } from '@shopify/polaris';
+import './Alert.css';
 
 class Alert extends Component {
     render() {
