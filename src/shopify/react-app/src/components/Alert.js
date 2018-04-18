@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, DisplayText, TextContainer } from '@shopify/polaris';
+import { Button, DisplayText, TextStyle , TextContainer } from '@shopify/polaris';
 import './Alert.css';
 
 class Alert extends Component {
@@ -50,12 +50,12 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-          <DisplayText size="extraLarge">{this.props.heading}</DisplayText>
-            <DisplayText size="small">{this.props.message}</DisplayText>  
+          <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
+            <TextStyle size="small">{this.props.message}</TextStyle>  
           </TextContainer>
             
             <div className="alertFooter" style={footerStyle}>
-            <Button className="closeBtn" style={closeBtnStyle} primary onClick={this.props.onClose} >
+            <Button className="closeBtn" style={closeBtnStyle} primary onClick={this.props.onClose} icon="cancel">
               Close
             </Button>
             </div>
