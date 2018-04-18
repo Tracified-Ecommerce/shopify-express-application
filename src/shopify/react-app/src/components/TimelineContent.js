@@ -3,6 +3,7 @@ import { Container, Row, Col} from 'reactstrap';
 import { Button, Stack } from '@shopify/polaris';
 import { isObject } from 'util';
 import { OverflowDetector } from 'react-overflow';
+import { isEmpty } from "lodash";
 import './timelineMediaQueries.css';
 
 class TimelineContent extends Component {
@@ -55,7 +56,7 @@ class TimelineContent extends Component {
                         
                         let subGroup = stageData[key];
 
-                        if(subGroup.hasOwnProperty("value")){
+                        if(subGroup.hasOwnProperty("value") && subGroup.value != null){
 
                             if(isObject(subGroup.value)) {
                                 console.log("found an object subGroup.value: " + subGroup.value);
