@@ -17,7 +17,7 @@
          text-align: right;
      }
 
-     .audio, canvas, progress, video{
+     .audio, .canvas, .progress, .video{
          height: 140px !important;
          width: 140px !important;
      }
