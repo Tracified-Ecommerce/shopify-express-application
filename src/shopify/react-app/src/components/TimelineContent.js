@@ -82,8 +82,8 @@ class TimelineContent extends Component {
                                             if(isObject(subGroup[innerKey])){
                                                 console.log("found an object subGroup[innerKey] : " + JSON.stringify(subGroup[innerKey]));
                                                 return(
-                                                    <Col xs='12' sm='6'>
-                                                    <div className="keyClass" key={innerKey} style={{height:24}}><span className="spanClass" style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span className="innerSpanClass">{subGroup[innerKey].value}</span></div>
+                                                    <Col key={innerKey} xs='12' sm='6'>
+                                                    <div className="keyClass" style={{height:24}}><span className="spanClass" style={{fontWeight: 'bold', paddingLeft: '3em'}}>{subGroup[innerKey].title}</span> : <span className="innerSpanClass">{subGroup[innerKey].value}</span></div>
                                                     </Col>
                                                 )
                                             } else {
