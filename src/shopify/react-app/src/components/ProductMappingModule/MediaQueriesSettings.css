@@ -59,15 +59,15 @@
 
     .pName{
         margin-left: -17px;
-        width: 45%;
+        width: 39% !important;
     }
     .Pid{
         margin-left: -28px!important;
-        width: 18.8%;
+        width: 16.8% !important;
     }
     .tTitle{
         margin-left: -20px!important;
-        width: 27.2%;
+        width: 37.2% !important;
     } 
     .Permission{
         margin-left: -40px!important;
