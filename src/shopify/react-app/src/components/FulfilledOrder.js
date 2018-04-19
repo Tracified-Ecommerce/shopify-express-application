@@ -26,6 +26,8 @@ class FulfilledOrder extends Component {
 
     }
 
+   
+
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
         let tempItemID = "noTraceabilityItem";
@@ -144,6 +146,10 @@ class FulfilledOrder extends Component {
             padding: "2%"
         }
 
+        var customStyles = {
+             marginBottom  : "10%"
+        }
+
         return (
             <tr>
                 <td style={commonCusOdrStyle}>
@@ -183,6 +189,7 @@ class FulfilledOrder extends Component {
                     >
                         <Modal className="timeline_modal"
                             src={modalURL}
+                            style={customStyles}
                             width="large"   
                             open={this.state.modalOpen}
                             title="Tracified - Trust Through Traceability"
