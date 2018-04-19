@@ -64,6 +64,11 @@ code{
 
 /*Media Queries for mobile devices  */
 @media  (min-width: 360px) and (max-width: 640px) {
+    .installPageWrapper .Polaris-Page__Header{
+        padding-left: 30px;
+        padding-right: 10px;
+    }
+
     .configWrapper{
         padding-right: 15px;
         padding-left: 30px;
