@@ -17,7 +17,7 @@ class Installation extends Component {
         return (
             <Page title="Tracified - Configuration Instructions">
             <div className="configWrapper">
-                    <iframe width="100%" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4?showinfo=0&controls=1&rel=0&amp" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                    <iframe className="ecomConfigVideo" width="100%" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4?showinfo=0&controls=1&rel=0&amp" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
                
                     <Card>
                         <ol>
