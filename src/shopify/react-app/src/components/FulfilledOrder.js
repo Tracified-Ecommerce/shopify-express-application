@@ -26,11 +26,7 @@ class FulfilledOrder extends Component {
 
     }
 
-    customStyles = {
-        content : {
-          marginBottom           : '10%',
-        }
-      };
+   
 
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
@@ -148,6 +144,10 @@ class FulfilledOrder extends Component {
 
         var commonCusOdrStyle = {
             padding: "2%"
+        }
+
+        var customStyles = {
+             marginBottom  : "10%"
         }
 
         return (
