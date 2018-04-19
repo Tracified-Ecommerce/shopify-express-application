@@ -23,7 +23,7 @@ class Part2Cards extends Component {
             isCheckedOrd: true,
             errorText: "No Result Found"
         };
-        this.toggleCardType = this.toggleCardType.bind(this);
+        // this.toggleCardType = this.toggleCardType.bind(this);
     }
 
     // handleClick = (index, isClosed) => {
