@@ -3,7 +3,7 @@ import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import { Thumbnail, Card, Page, List, RadioButton, Button, Stack,TextField} from '@shopify/polaris';
 import Loading from './Loading';
-import CollapseMain from './CollapseMain';
+// import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
 import ErrorMsgSearch from './errorMsgSearch';
 import './untracifiedOrders_mediaQueries.css'
@@ -11,10 +11,10 @@ import './untracifiedOrders_mediaQueries.css'
 class Part2Cards extends Component {
     constructor() {
         super();
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
         this.state = {
             orders: [],
-            cardStateArray: [],
+            // cardStateArray: [],
             products: {},
             isOrderListLoading: true,
             search: '',
@@ -26,25 +26,25 @@ class Part2Cards extends Component {
         this.toggleCardType = this.toggleCardType.bind(this);
     }
 
-    handleClick = (index, isClosed) => {
+    // handleClick = (index, isClosed) => {
 
-        if (!isClosed) {
-            //reset all values in array to false -> (sets all cards' "isOpen" attributes to false)
-            this.state.cardStateArray.fill(false);
+    //     if (!isClosed) {
+    //         //reset all values in array to false -> (sets all cards' "isOpen" attributes to false)
+    //         this.state.cardStateArray.fill(false);
 
-        }
+    //     }
 
-        //set only this card's collapse attribute to true
-        var temp = this.state.cardStateArray.slice();
-        temp[index] = !(temp[index]);
-        // replace array with modified temp array
-        this.setState({ cardStateArray: temp });
+    //     //set only this card's collapse attribute to true
+    //     var temp = this.state.cardStateArray.slice();
+    //     temp[index] = !(temp[index]);
+    //     // replace array with modified temp array
+    //     this.setState({ cardStateArray: temp });
 
-    }
+    // }
 
-    toggleCardType() {
-        this.setState({ isExpanded: !this.state.isExpanded });
-    }
+    // toggleCardType() {
+    //     this.setState({ isExpanded: !this.state.isExpanded });
+    // }
 
     componentDidMount() {
         axios.get('/shopify/shop-api/products')
@@ -117,7 +117,7 @@ class Part2Cards extends Component {
 
     render() {
 
-        let buttonText = this.state.isExpanded ? { text: "Switch to collapsed view" } : { text: "Switch to expanded view" }
+        // let buttonText = this.state.isExpanded ? { text: "Switch to collapsed view" } : { text: "Switch to expanded view" }
 
         if (this.state.isOrderListLoading) {
             return <Loading />;
@@ -286,14 +286,14 @@ class Part2Cards extends Component {
 
                         <div className="toggleBtn" style={toggleBtnStyle}>
                             <Stack.Item>
-                                <Button
+                                {/* <Button
                                     plain
                                     size="slim"
                                     outline
                                     onClick={this.toggleCardType}
                                 >
                                     {buttonText.text}
-                                </Button>
+                                </Button> */}
                             </Stack.Item>
                         </div>
 
@@ -365,22 +365,7 @@ class Part2Cards extends Component {
                                             />
 
                                         );
-                                    } else {
-                                        console.log("correct 1 - collapaseMain");
-                                        return (
-                                            <CollapseMain
-                                                key={index}
-                                                order={order}
-                                                productsProp={this.state.products}
-                                                qrVal={qrValue}
-                                                title={title}
-                                                resetOrders={this.resetOrders}
-                                                collapseArray={this.state.cardStateArray}
-                                                collapseArrayKey={index}
-                                                onClick={this.handleClick}
-                                            />
-                                        );
-                                    }
+                                    } 
 
                                 })
 
