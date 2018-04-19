@@ -75,10 +75,14 @@ code{
     }
 
     .configWrapper .Polaris-Card{
-        padding-right: 16px;
         padding-top: 10px;
         padding-bottom: 10px;
         font-size: 14px;
+    }
+
+    .configWrapper .Polaris-Card ol{
+        padding-right: 15px;
+        padding-left: 30px;
     }
 
     .configWrapper .ecomConfigVideo{
