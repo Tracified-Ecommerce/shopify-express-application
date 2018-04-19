@@ -146,10 +146,6 @@ class FulfilledOrder extends Component {
             padding: "2%"
         }
 
-        var customStyles = {
-             marginBottom  : "10%"
-        }
-
         return (
             <tr>
                 <td style={commonCusOdrStyle}>
@@ -188,8 +184,8 @@ class FulfilledOrder extends Component {
                         shopOrigin={shopOrigin}
                     >
                         <Modal className="timeline_modal"
+                            style="margin-bottom: 10%;"
                             src={modalURL}
-                            style={customStyles}
                             width="large"   
                             open={this.state.modalOpen}
                             title="Tracified - Trust Through Traceability"
