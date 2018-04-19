@@ -65,20 +65,20 @@ code{
 /*Media Queries for mobile devices  */
 @media  (min-width: 360px) and (max-width: 640px) {
     .installPageWrapper .Polaris-Page__Header{
-        padding-left: 30px;
+        padding-left: 15px;
         padding-right: 10px;
     }
 
     .configWrapper{
         padding-right: 15px;
-        padding-left: 30px;
+        padding-left: 15px;
     }
 
     .configWrapper .Polaris-Card{
         padding-right: 16px;
         padding-top: 10px;
         padding-bottom: 10px;
-        font-size: 80%;
+        font-size: 14px;
     }
 
     .configWrapper .ecomConfigVideo{
