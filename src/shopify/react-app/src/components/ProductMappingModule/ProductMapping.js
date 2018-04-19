@@ -330,8 +330,8 @@ var saveBtnStyle={
                 {this.tabRow()}
               </tbody>
             </table> 
--
--            <Button primary onClick={this.onSubmit} style={saveBtnStyle} className="saveBtn">
+
+            <Button primary onClick={this.onSubmit} style={saveBtnStyle} className="saveBtn">
               Save
             </Button>
             <AlertBox show={this.state.isOpen}
