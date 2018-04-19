@@ -1,3 +1,18 @@
 .alertFooter .Polaris-Button.Polaris-Button--primary{
-    margin-right: 10%;
+    margin-right: 14%;
+}
+
+.alertBox .Polaris-TextContainer{
+    font-family: Arial;
+}
+
+hr{
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+}
+
+.alertFooter{
+    width:  447px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
 }

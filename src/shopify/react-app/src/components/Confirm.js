@@ -28,7 +28,7 @@ class Confirm extends Component {
         flexDirection: "column",
         justifyContent: "space-between",
         borderRadius: 20,
-        maxWidth: 500,
+        maxWidth: 448,
         minHeight: 150,
         margin: '0 auto',
         padding: 30
@@ -50,7 +50,7 @@ class Confirm extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-            <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
+            <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
             <div className="spaceBetweenHeading"></div>
             <TextStyle variation="subdued">{this.props.message}</TextStyle>  
           </TextContainer>
