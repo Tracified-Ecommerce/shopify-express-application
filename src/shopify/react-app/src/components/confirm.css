@@ -6,6 +6,10 @@
     font-family: Arial;
 }
 
+.alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+    font-weight: bold;
+}
+
 hr{
     margin-top: 0px !important;
     margin-bottom: 5px !important;
