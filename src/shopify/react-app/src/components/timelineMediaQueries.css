@@ -17,6 +17,10 @@
     .compSpanClass, .compClass{
         font-size: 11px !important;
     }    
+
+    .fresh-ui .ui-modal {
+        margin-top: -10%;
+    }
 }
 
 /* mobile screens */
