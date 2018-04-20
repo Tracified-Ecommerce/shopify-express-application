@@ -50,9 +50,7 @@ class Confirm extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <div className="closeIcon">
-          <Button className="CloseIconBtn" onClick={this.props.onCancel} icon="cancel">
-              Yes
-            </Button>
+          <Button className="CloseIconBtn" onClick={this.props.onCancel} icon="cancel"></Button>
           </div>
           <TextContainer>
             <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>

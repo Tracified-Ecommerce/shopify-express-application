@@ -22,3 +22,13 @@
         padding-left: 28px !important;
         padding-right: 28px !important;
     }
+
+    .closeIcon .Polaris-Button{
+        margin-left: 90%;
+        margin-right: 10%;
+        margin-top: -10%;
+        border: none;
+        background-color: transparent;
+        width: 0%;
+    }
+    
