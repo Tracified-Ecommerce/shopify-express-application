@@ -51,10 +51,12 @@ class Confirm extends Component {
           <div className="alertBox" style={modalStyle}>
           
           <TextContainer>
-            <table>
+            <table className="cnfirmBox" style={{width="100%"}}>
               <tr>
                 <td>
                   <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
+                </td>
+                <td>
                   <div className="closeIcon">
                     <Button className="CloseIconBtn" onClick={this.props.onCancel} icon="cancel"></Button>
                   </div>
