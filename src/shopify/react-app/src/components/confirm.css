@@ -1,22 +1,77 @@
-.alertFooter .Polaris-Button.Polaris-Button--primary{
-    margin-right: 14%;
+/* Media queries for the mobile devices */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .alertFooter .Polaris-Button.Polaris-Button--primary{
+        margin-right: 14%;
+    }
+    
+    .alertBox .Polaris-TextContainer{
+        font-family: Arial;
+    }
+    
+    .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        font-weight: bold;
+    }
+    
+    hr{
+        margin-top: 0px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .alertFooter{
+        width:  447px !important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+    }
 }
 
-.alertBox .Polaris-TextContainer{
-    font-family: Arial;
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    .alertFooter .Polaris-Button.Polaris-Button--primary{
+        margin-right: 14%;
+    }
+    
+    .alertBox .Polaris-TextContainer{
+        font-family: Arial;
+    }
+    
+    .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        font-weight: bold;
+    }
+    
+    hr{
+        margin-top: 0px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .alertFooter{
+        width:  447px !important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+    }
 }
 
-.alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
-    font-weight: bold;
-}
-
-hr{
-    margin-top: 0px !important;
-    margin-bottom: 5px !important;
-}
-
-.alertFooter{
-    width:  447px !important;
-    padding-left: 28px !important;
-    padding-right: 28px !important;
+/* Media queries for the PC devices */
+@media (min-width: 1024px) {
+    .alertFooter .Polaris-Button.Polaris-Button--primary{
+        margin-right: 14%;
+    }
+    
+    .alertBox .Polaris-TextContainer{
+        font-family: Arial;
+    }
+    
+    .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        font-weight: bold;
+    }
+    
+    hr{
+        margin-top: 0px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .alertFooter{
+        width:  447px !important;
+        padding-left: 28px !important;
+        padding-right: 28px !important;
+    }
 }
