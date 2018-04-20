@@ -1,0 +1,36 @@
+/* Media queries for the mobile devices */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .timelineContentWrapper{
+        width: 101%;
+    } 
+
+    .wrapperClass{
+        font-size: 11px;
+        width: 96%;
+    }
+    
+    .keyClass{
+        height: 40px;
+        margin-left: -5%;
+    } 
+
+    .compSpanClass, .compClass{
+        font-size: 11px !important;
+    }    
+}
+
+/* mobile screens */
+@media screen and (min-width: 360px){
+    .ui-modal {       
+        height: 80% !important;
+        margin-bottom: 15% !important;
+    }
+}
+
+
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    .fresh-ui .ui-modal {
+        margin-top: -10%;
+    }
+}

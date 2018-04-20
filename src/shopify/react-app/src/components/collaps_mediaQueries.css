@@ -1,0 +1,65 @@
+/* Media Queries for PC */
+@media screen and (min-width: 1024px){
+    .showItems_column{
+        max-width: 75%;
+        margin-top: 3%;
+    }
+
+    .MATbutton{
+        float: left;
+        
+    }
+    .MATbtn_column{
+        text-align: right;
+    }
+
+    .imageContainer{
+        margin-bottom: 20px;
+    }
+
+    .Polaris-Button.Polaris-Button--primary{
+        padding: 10px !important;
+        width: 140px;
+        font-size: 100% !important;
+    }
+
+    .MATbtn{
+        padding: 10px !important;
+    }
+ }
+ 
+ 
+ /* Media queries for the tablet devices */
+ @media (min-width: 650px) and (max-width: 1023px) {
+     
+    .showItems_column{
+        max-width: 75%;
+        margin-top: 3%;
+    }
+
+    .MATbutton{
+        float: left;
+    }
+ 
+    .Polaris-Button.Polaris-Button--primary{
+        padding: 10px !important;
+        width: 140px;
+        font-size: 100% !important;
+     
+    }
+  
+ }
+ 
+ 
+ /* Media Queries for mobile devices */
+ @media  (min-width: 360px) and (max-width: 640px) {
+    
+    .MATbtn_column{
+        text-align: center;
+    }
+
+    .showItems_column{
+        margin-top: 3%;
+    }
+   
+ }

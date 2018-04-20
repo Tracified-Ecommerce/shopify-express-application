@@ -4,6 +4,7 @@ import { Button, Card, ResourceList, Thumbnail, Stack } from '@shopify/polaris';
 import * as axios from 'axios';
 import { isUndefined } from 'util';
 import AlertBox from "./Alert";
+import './collaps_mediaQueries.css';
 // import '.'
 
 class CollapaseCard extends Component {
@@ -35,8 +36,8 @@ class CollapaseCard extends Component {
         axios.get(url)
             .then(response => {
                 this.setState({
-                    alertHeading: "",
-                    alertMessage: "Tracified details added successfully ",
+                    alertHeading: "Mark Order as Tracified",
+                    alertMessage: "The order was marked as Tracified. You can now view the relevant traceability data through Tracified Orders. ",
                 });
                 this.setState({
                     isOpen: true,
@@ -97,24 +98,21 @@ class CollapaseCard extends Component {
         });
 
         var markAsTracifiedBtnStyle={
-            marginTop: "-4%",
-            textAlign: "center",
+            marginTop: "-1%",
             marginLeft: "0%",
-            paddingRight: "1% !important"
         }
+
 
         return (
             <div>
-                <Container fluid={true}>
+                <Container className="imageContainer" fluid={true}>
                     <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                     <Row noGutters={true}>
-                        <Col sm="3">
+                        <Col sm="10" className="showItems_column">
                             <Button plain onClick={this.toggleCollapse} >{this.state.collapsed ? " Show Items \u25BC" : " Hide Items \u25B2"}</Button>
                         </Col>
-                        <Col sm="6">
-                        </ Col>
-                        <Col sm="3" style={markAsTracifiedBtnStyle}>
-                            <Button primary onClick={this.fulfillOrder} >Mark as Tracified</Button>
+                        <Col sm="3" className="MATbtn_column" style={markAsTracifiedBtnStyle}>
+                            <Button primary onClick={this.fulfillOrder} className="MATbtn" >Mark as Tracified</Button>
                         </Col>
                     </Row>
                 </Container>

@@ -66,6 +66,7 @@ class ProductMappingTableRow extends Component {
   }
 
   onItemChange(tracifiedItemID, shopifyProductID) {
+    this.props.setNotSaved(true);
     if (!(tracifiedItemID == "noItem")) {
       this.setState({
         CBdisabled: false,
@@ -83,6 +84,7 @@ class ProductMappingTableRow extends Component {
   }
 
   onPermissionChange(permission, shopifyProductID) {
+    this.props.setNotSaved(true);
     this.setState({ CBchecked: !this.state.CBchecked });
     shopifyProductID = shopifyProductID.substring(2);
     this.props.onPermissionChange(permission, shopifyProductID);

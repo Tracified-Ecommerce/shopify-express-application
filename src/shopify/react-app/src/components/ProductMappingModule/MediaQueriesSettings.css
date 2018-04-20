@@ -1,9 +1,249 @@
+/* Media Query for very large screens */
+@media screen and (min-device-width: 1824px) {
+    .cardProductMapping {
+        position: fixed;
+        z-index: 50;
+        width: 295%!important;
+        white-space: nowrap;
+        margin-left: 2%;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        padding-bottom: 3%;
+        padding-left: 0%;
+    }
+
+    /* #productmapping{
+        margin-left: 4%;
+        width: 92%;
+    } */
+
+    .MappingDetails{
+        font-size: 150% !important;
+        margin-left: 0%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+
+    .tblHeaders{
+        margin-left: -3%;
+        font-size: 110%!important;
+        font-weight: 600;
+        width: 100%;
+        font-family: calibri;
+    }
+
+    /* #settingContent {
+        width: 70% !important;
+        margin-left: 15%;
+    }     */
+            
+    .Polaris-Choice__Label{
+        font-size: 100%;
+    }
+
+    .itemTitle,.enableCheckbox{
+        z-index: -10;
+    }
+
+    .saveBtn{
+        font-size: 125% !important;
+        width: 70px!important;
+        height: 70px!important;
+        font-family: calibri;
+    }
+
+    .sticky{
+        z-index:100 !important; 
+    }
+
+    .pName{
+        margin-left: -17px;
+        width: 39% !important;
+    }
+    .Pid{
+        margin-left: -28px!important;
+        width: 16.8% !important;
+    }
+    .tTitle{
+        margin-left: -20px!important;
+        width: 37.2% !important;
+    } 
+    .Permission{
+        margin-left: -40px!important;
+    }    
+
+    .space{
+        height: 122px !important;
+    }
+}
+
+/* Media Queries for MDPI screens */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+    .cardProductMapping {
+        position: fixed;
+        z-index: 50;
+        width: 295%!important;
+        white-space: nowrap;
+        margin-left: 2%;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        padding-bottom: 3%;
+        padding-left: 0%;
+    }
+
+    /* #productmapping{
+        margin-left: 4%;
+        width: 92%;
+    } */
+
+    .MappingDetails{
+        font-size: 150% !important;
+        margin-left: 0%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+
+    .tblHeaders{
+        margin-left: -3%;
+        font-size: 110%!important;
+        font-weight: 600;
+        width: 100%;
+        font-family: calibri;
+    }
+
+    /* #settingContent {
+        width: 70% !important;
+        margin-left: 15%;
+    }     */
+            
+    .Polaris-Choice__Label{
+        font-size: 100%;
+    }
+
+    .itemTitle,.enableCheckbox{
+        z-index: -10;
+    }
+
+    .saveBtn{
+        font-size: 125% !important;
+        width: 70px!important;
+        height: 70px!important;
+        font-family: calibri;
+    }
+
+    .sticky{
+        z-index:100 !important; 
+    }
+
+    .pName{
+        margin-left: -17px;
+        width: 39% !important;
+    }
+    .Pid{
+        margin-left: -28px!important;
+        width: 16.8% !important;
+    }
+    .tTitle{
+        margin-left: -20px!important;
+        width: 37.2% !important;
+    } 
+    .Permission{
+        margin-left: -40px!important;
+    }    
+
+    .space{
+        height: 122px !important;
+    }
+}
+
+/* Media Queries for laptop with hidpi screen */
+@media screen and (min-width:1080px) and (max-width:1440px){
+    .cardProductMapping {
+        position: fixed;
+        z-index: 50;
+        width: 295%!important;
+        white-space: nowrap;
+        margin-left: 2%;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        padding-bottom: 3%;
+        padding-left: 0%;
+    }
+
+    /* #productmapping{
+        margin-left: 4%;
+        width: 92%;
+    } */
+
+    .MappingDetails{
+        font-size: 150% !important;
+        margin-left: 0%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+
+    .tblHeaders{
+        margin-left: -3%;
+        font-size: 110%!important;
+        font-weight: 600;
+        width: 100%;
+        font-family: calibri;
+    }
+
+    /* #settingContent {
+        width: 70% !important;
+        margin-left: 15%;
+    }     */
+            
+    .Polaris-Choice__Label{
+        font-size: 100%;
+    }
+
+    .itemTitle,.enableCheckbox{
+        z-index: -10;
+    }
+
+    .saveBtn{
+        font-size: 125% !important;
+        width: 70px!important;
+        height: 70px!important;
+        font-family: calibri;
+    }
+
+    .sticky{
+        z-index:100 !important; 
+    }
+
+    .pName{
+        margin-left: -17px;
+        width: 39% !important;
+    }
+    .Pid{
+        margin-left: -28px!important;
+        width: 16.8% !important;
+    }
+    .tTitle{
+        margin-left: -20px!important;
+        width: 37.2% !important;
+    } 
+    .Permission{
+        margin-left: -40px!important;
+    }    
+
+    .space{
+        height: 122px !important;
+    }
+}
+
 /* Media Queries for PC */
 @media screen and (min-width: 1024px){
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 255%!important;
+        width: 295%!important;
         white-space: nowrap;
         margin-left: 2%;
         overflow: hidden;
@@ -84,7 +324,7 @@
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 255%!important;
+        width: 295%!important;
         white-space: nowrap;
         margin-left: 2%;
         overflow: hidden;
@@ -143,7 +383,7 @@
         width: 48.5%
     }
     .Pid{
-        margin-left: -38px!important;
+        margin-left: -76px!important;
         width: 17.5%;
     }
     .tTitle{
@@ -151,7 +391,7 @@
         width: 29.2%;
     } 
     .Permission{
-        margin-left: -40px!important;
+        margin-left: 16px!important;
     }    
 
     .space{
@@ -165,7 +405,7 @@
     .cardProductMapping {
         position: fixed;
         z-index: 50;
-        width: 333%!important;
+        width: 400%!important;
         white-space: nowrap;
         margin-left: 2%;
         overflow: hidden;
@@ -190,7 +430,7 @@
 
     .tblHeaders{
         margin-left: -3%;
-        font-size: 89%!important;
+        font-size: 90%!important;
         font-weight: 600;
         width: 100%;
         font-family: calibri;
@@ -222,22 +462,13 @@
         width: 37%
     }
     .Pid{
-        /* margin-left: 84px!important;
-        margin-top: -5.6%; */
         display: none;
     }
     .tTitle{
-        /* margin-left: 194px!important;
-        margin-top: -6%;
-        height: 21%;
-        width: 45%; */
+        margin-left: -5%;
     } 
-    .Permission{
-        /* margin-left: 97%!important;
-        width: 40%;
-        margin-top: -6%; */
-        /* display: none; */
-        margin-left: -2%;
+    .Permission{       
+        margin-left: 5%;
     }
     
     .hide-cell-xs{
@@ -246,5 +477,13 @@
 
     .space{
         height: 122px !important;
+    }
+
+    .itemTitle {
+        /* padding-right: 15% !important; */
+    }
+
+    #settingContent tbody{
+        font-size: 80%;
     }
 }

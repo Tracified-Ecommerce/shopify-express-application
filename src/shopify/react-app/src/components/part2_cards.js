@@ -79,6 +79,10 @@ class Part2Cards extends Component {
                 this.setState({
                     orders: response.data.orders,
                     isOrderListLoading: false
+                }, () => {
+                    this.setState({
+                        search: ""
+                    });
                 });
             }).catch((error) => {
                 console.log(error);
@@ -280,7 +284,7 @@ class Part2Cards extends Component {
                         distribution="trailing"
                     >
 
-                        <div style={toggleBtnStyle}>
+                        <div className="toggleBtn" style={toggleBtnStyle}>
                             <Stack.Item>
                                 <Button
                                     plain
@@ -294,7 +298,7 @@ class Part2Cards extends Component {
                         </div>
 
                     </Stack>
-                    <div style={{ paddingBottom: 5 , textAlign: "center" }}>
+                    <div className="untraciFilterBy" style={{ paddingBottom: 5 , textAlign: "center" }}>
                         <Stack alignment="center" >
                             <Stack.Item>
                             <div style={{marginBottom:5,fontWeight:"bold",fontSize:"140%", paddingBottom:'9%'}}>
@@ -322,14 +326,14 @@ class Part2Cards extends Component {
                             </Stack.Item>
                     
                             <Stack.Item>
-
-                                <input
-                                    type="text"
-                                    value={this.state.search}
-                                    onChange={this.updateSearch.bind(this)}
-                                    style={inputStyle}
-                                />
-
+                                <div className="searchOdrs">
+                                    <input
+                                        type="text"
+                                        value={this.state.search}
+                                        onChange={this.updateSearch.bind(this)}
+                                        style={inputStyle}
+                                    />
+                                </div>
                             </Stack.Item>
 
                         </Stack>
@@ -339,15 +343,17 @@ class Part2Cards extends Component {
                     {
                         (!Array.isArray(orderArray) || !orderArray.length) ? (
 
+
                             <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
 
                                 orderArray.map((order, index) => {
                                     const qrValue = order.order_number.toString();
                                     const title = "Order ID: " + order.order_number;
 
-
+                                    console.log("correct 1");
 
                                     if (this.state.isExpanded) {
+                                        console.log("correct 1= uncollapased");
                                         return (
                                             <Uncollapsed
                                                 key={index}
@@ -360,6 +366,7 @@ class Part2Cards extends Component {
 
                                         );
                                     } else {
+                                        console.log("correct 1 - collapaseMain");
                                         return (
                                             <CollapseMain
                                                 key={index}

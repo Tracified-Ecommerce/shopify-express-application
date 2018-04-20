@@ -205,6 +205,7 @@ class ProductMapping extends Component {
       return this.state.shopifyProducts.map((object, i) => {
         return <ProductMappingTableRow
           onItemChange={this.onItemChange}
+          setNotSaved={this.props.setNotSaved}
           onPermissionChange={this.onPermissionChange}
           obj={object}
           key={i}
@@ -227,6 +228,7 @@ class ProductMapping extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    this.props.setNotSaved(false);
     // get our form data out of state
     const mapping = this.state.mapping;
 
@@ -243,7 +245,7 @@ class ProductMapping extends Component {
         // alert("Mapping Successfully Saved!");
         this.setState({
           alertHeading: "",
-          alertMessage: "Mapping Successfully Saved!",
+          alertMessage: "Mapping Successfully Saved!"
       });
       this.setState({
           isOpen: true,
@@ -305,7 +307,6 @@ var saveBtnStyle={
     return (
       // <Page>
       <div class="Polaris-Page" id="productmapping">
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.js"></script>
         <table className="table table-striped table-center-content" id="settingContent">
           

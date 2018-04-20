@@ -5,8 +5,8 @@ import { Row, Col, Card, Collapse } from 'reactstrap';
 import { Thumbnail, Page, Button, Stack, TextStyle } from '@shopify/polaris';
 import AlertBox from "./Alert";
 import './untracifiedOrders_mediaQueries.css';
+import './collapsMain_mediaQueries.css';
 const QRCode = require('qrcode.react');
-
 
 class CollapseMain extends Component {
 
@@ -34,16 +34,16 @@ class CollapseMain extends Component {
         this.props.resetOrders();
     }
 
-    fulfillOrder() {
+     fulfillOrder() {
         const url = '/shopify/shop-api/orders/' + this.props.order.id + '/tracify';
         axios.get(url)
             .then(response => {
                 this.setState({
-                    alertHeading: "",
-                    alertMessage: "Tracified details added successfully ",
+                    alertHeading: "Mark Order as Tracified",
+                    alertMessage: "The order was marked as Tracified. You can now view the relevant traceability data through Tracified Orders.",
                 });
                 this.setState({
-                    isOpen: true,
+                    isOpen: true
                 });
             }).catch((err) => {
                 console.log(err);
@@ -70,16 +70,16 @@ class CollapseMain extends Component {
 
             <Card className="collapasedView_Untracified" style={cardStyle}>
                 <Row>
-                    <Col sm="2" style={{ paddingBottom: 5, paddingTop: 5 }}>
+                    <Col sm="3" class="" style={{ paddingBottom: 5, paddingTop: 5 }}>
                         <TextStyle variation="strong">{this.props.title}</TextStyle>
                     </Col>
                     <Col sm="3" style={{ paddingBottom: 5, paddingTop: 5 }}>
                         <TextStyle variation="subdued"><strong>Created on:</strong> {this.props.order.created_at}</TextStyle>
                     </Col>
-                    <Col xs="3" sm="5" style={{ paddingTop: 5, paddingBottom: 5, paddingRight: 0, width: 409 }}>
+                    <Col sm="3" style={{ paddingBottom: 5,paddingTop: 5 }}>
                         <TextStyle variation="subdued"><strong>Customer:</strong> {this.props.order.customer}</TextStyle>
                     </Col>
-                    <Col className="exploreBtn" sm="2" style={{ paddingRight: 0, width: 130, display: "table-cell", verticalAlign: "middle"}}>
+                    <Col className="exploreBtn" sm="3" >
                         <Button
                             size="slim"
                             outline
@@ -94,7 +94,7 @@ class CollapseMain extends Component {
                         <Col sm="12">
                             <Row style={{ padding: 20 }}>
                                 <Col sm="3" style={{ paddingBottom: 20 }}>
-                                    <Button primary onClick={this.fulfillOrder}>Mark as Tracified</Button>
+                                    <Button primary class="MAT_btn" onClick={this.fulfillOrder}>Mark as Tracified</Button>
                                 </Col>
                                 <Col sm="7">
                                 </Col >

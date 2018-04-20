@@ -1,17 +1,57 @@
 
 /* Media queries for the mobile devices */
 @media  (min-width: 360px) and (max-width: 640px) {
-    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled{
+    .timelineBtnWrapper{
+        width: 100px;
+    }
+
+    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled , .timelineBtnWrapper .Polaris-Button{
         padding: 1%;
         height: 10px;
     }
 
-    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled .Polaris-Button__Content span{
+    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled .Polaris-Button__Content span , .timelineBtnWrapper .Polaris-Button .Polaris-Button__Content span{
         font-size: 11px;
     }
 
     .orderNo, .cusName{
         vertical-align: middle;
+        font-size: 13px;
     }
 
+    .selectWrapper .Polaris-Select__Input{
+        font-size: 12px;
+    }
+
+    #tblHeaderWrapper thread{
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .searchText input{
+        width: 350px;
+    }
+
+    .filterWrapper{
+        font-size: 14px;
+    }
+
+    /* timeline modal */
+    .timelineModal .ui-modal.ui-modal--is-visible{
+        width: 90%;
+    }
+}
+
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    .timelineBtnWrapper .Polaris-Button.Polaris-Button--disabled , .timelineBtnWrapper .Polaris-Button{
+        height: 10px;
+        padding: 1%;
+        width: 200px;
+    }
+
+    .searchText input{
+        width: 350px;
+        margin-top: -3px !important;
+    }    
 }

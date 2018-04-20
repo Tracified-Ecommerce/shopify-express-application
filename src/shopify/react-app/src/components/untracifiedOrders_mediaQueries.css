@@ -1,51 +1,128 @@
 /* Media Queries for PC */
 @media screen and (min-width: 1024px){
-   .pageWrapper .Polaris-Page{
+    .pageWrapper .Polaris-Page{
+         margin-left: auto;
+         margin-right: auto;
+    }
+ 
+    .pageWrapper{
+        height:900px;
+    }
+ 
+    .unfulfillColLeft{
+     max-width: 75%;
+     }
+     
+     .QR_col{
+         text-align: right;
+     }
+
+     .audio, .canvas, .progress, .video{
+         height: 140px !important;
+         width: 140px !important;
+     }
+
+     .cardUntracifiedExpand .Polaris-Card{
+        margin-bottom: 3%;
+     }
+
+     .Polaris-List__Item{
+         margin-bottom: 0rem !important;
+     }
+ }
+ 
+ 
+ /* Media queries for the tablet devices */
+ @media (min-width: 650px) and (max-width: 1023px) {
+     .cardUntracifiedExpand .Polaris-Card{
+        margin-bottom: 3%;
+     }
+   
+     .unfulfillColLeft{
+         max-width: 75%;
+ 
+     }
+ 
+     .untracified_card{
+         text-align: center;
+ 
+     }
+ 
+ }
+ 
+ 
+ /* Media Queries for mobile devices */
+ @media  (min-width: 360px) and (max-width: 640px) {   
+ 
+     #unfulfillContent{
+         text-align: center;
+     }
+   
+     #unfulfillproducts{
+         text-align: center;
+         margin-top: 16px;
+     }
+ 
+ 
+     #untracified_list{
+         max-width: 80%;
+     }
+
+     .list_col{
+        max-width: 80%;
+        font-size: 115%;
+    }
+     
+ 
+     .collapasedView_Untracified{
+         text-align: center;
+         width: 90%;
         margin-left: auto;
         margin-right: auto;
-   }
-}
+     }
+ 
+     .searchOdrs input{
+        width: 322px;
+        margin-bottom: 7% !important;
+        margin-left: 0% !important;
+     }
 
-
-/* Media queries for the tablet devices */
-@media (min-width: 650px) and (max-width: 1023px) {
+     .QRcode{
+         width: 100px;
+         height: 100px;
+     }
+ 
+     .unfulfillColLeft{
+         padding-left: 20%;
+     }
     
-  
-    .unfulfillColLeft{
-        max-width: 75%;
-
-    }
-
-    .untracified_card{
+     .cardUntracifiedExpand .Polaris-Heading{
         text-align: center;
+     }
 
-    }
+     .cardUntracifiedExpand .Polaris-Card{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5%;
+     }
 
-}
+     .cardUntracifiedExpand .Polaris-List.Polaris-List--typeBullet{
+        font-size: 82%;
+     }
 
+     .untraciFilterBy{
+        font-size: 87%;
+        margin-left: 6%;
+     }
 
-/* Media Queries for mobile devices */
-@media  (min-width: 360px) and (max-width: 640px) {
-   
+     .ExpandCollapaseToggleBtn .Polaris-Button.Polaris-Button--outline.Polaris-Button--plain.Polaris-Button--sizeSlim {
+        font-size: 90%;
+        margin-left: -10%;
+        margin-right: 0%;
+     }
 
-    #unfulfillContent{
-        text-align: center;
-    }
-  
-    #unfulfillproducts{
-        text-align: center; 
-    }
-
-
-    #untracified_list{
-        list-style-type:none !important;
-    }
-
-    #cardHeader{
-        text-align: center; 
-    }
-
-    .collapasedView_Untracified{
-        text-align: center;
-    }
-}
+     .toggleBtn{
+        margin-left: -7% !important;
+     }
+ }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Button, DisplayText, TextStyle , TextContainer } from '@shopify/polaris';
+import { Button, DisplayText,TextStyle, TextContainer } from '@shopify/polaris';
+import './confirm.css';
 
-class Alert extends Component {
+class Confirm extends Component {
     render() {
       // Render nothing if the "show" prop is false
       if(!this.props.show) {
@@ -41,27 +42,31 @@ class Alert extends Component {
         textAlign: "center"
       };
 
-      const closeBtnStyle ={
-        margin: 'auto'
-      };
-
-      var spaceBetweenContentStyle={
+      var spaceBetweenHeadingStyle={
         height:"10%"
       }
-  
+         
       return (
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-          <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
-            <div className="spaceBetweenContent"></div>
-            <TextStyle size="small">{this.props.message}</TextStyle>  
+            <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
+            <div className="spaceBetweenHeading"></div>
+            <TextStyle variation="subdued">{this.props.message}</TextStyle>  
           </TextContainer>
-            
+
+           <hr/> 
+           
             <div className="alertFooter" style={footerStyle}>
-            <Button className="closeBtn" style={closeBtnStyle} primary onClick={this.props.onClose} icon="cancel">
-              Close
+            <Button className="confirmBtn" primary onClick={this.props.onConfirm} icon="save">
+              Confirm
             </Button>
+
+            {/* <div className="CloseBtn"> */}
+              <Button className="cancelBtn" primary onClick={this.props.onCancel} icon="cancel">
+                Cancel
+              </Button>
+            {/* </div> */}
             </div>
           </div>
         </div>
@@ -69,4 +74,4 @@ class Alert extends Component {
     }
   }
 
-  export default Alert
+  export default Confirm
