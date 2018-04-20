@@ -31,14 +31,14 @@ class Confirm extends Component {
         maxWidth: 448,
         minHeight: 150,
         margin: '0 auto',
-        padding: 30
+        padding: 25
       };
 
       const footerStyle = {
         position: "relative", 
         bottom: 0, 
         width: "100%", 
-        height: "50px",
+        // height: "50px",
         // textAlign: "center"
       };
 
