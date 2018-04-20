@@ -184,7 +184,7 @@ class FulfilledOrder extends Component {
                         shopOrigin={shopOrigin}
                     >
                         <Modal className="timeline_modal"
-                            margin-bottom= "10%"
+                            marginBottom= "10%"
                             src={modalURL}
                             width="large"   
                             open={this.state.modalOpen}
