@@ -47,7 +47,7 @@ class Confirm extends Component {
       }
 
       var confirmBoxStyle={
-        width="100%"
+        Width:"100%"
       }
          
       return (
