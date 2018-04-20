@@ -45,13 +45,17 @@ class Confirm extends Component {
       var spaceBetweenHeadingStyle={
         height:"10%"
       }
+
+      var confirmBoxStyle={
+        width="100%"
+      }
          
       return (
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           
           <TextContainer>
-            <table className="cnfirmBox" style={{width="100%"}}>
+            <table className="cnfirmBox" style={confirmBoxStyle}>
               <tr>
                 <td>
                   <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
