@@ -62,8 +62,8 @@ class TimelineContent extends Component {
                         if(subGroup.hasOwnProperty("value")){
 
                             if(isObject(subGroup.value)) {
-                                return
-                                <div className="GroupWrapperClass" key={key} >
+                                return (
+                                <div className="GroupWrapperClass" key={key + key} >
                                     <div >
                                         <span style={{ fontWeight: 'bold', fontSize: 14, color: 'green' }}>
                                             &#8227; {subGroup.title} :
@@ -91,7 +91,7 @@ class TimelineContent extends Component {
                                             })
                                         }
                                         </ul>
-                                    </div>;
+                                    </div>);
                             } else {
                                 if (isNull(subGroup.value)) {
                                     return <div style={{ display: "none" }}></div>
@@ -131,12 +131,12 @@ class TimelineContent extends Component {
                                                                 subGroup[innerKey].value.map(x => {
                                                                     flag++;
                                                                     if (flag == 1) {
-                                                                        return
+                                                                        return (
                                                                         <li className="timelineListItem">
                                                                             <div className="compClass">
                                                                                 <span className="compSpanClass" >&#8227; {subGroup[innerKey].title}</span> : <span className="innerSpanClass">{x}</span>
                                                                             </div>
-                                                                        </li>
+                                                                        </li> )
                                                                     } else {
                                                                         newTitle = subGroup[innerKey].title.replace(/[a-zA-z0-9]/g, "\u2007");
                                                                         return
