@@ -183,8 +183,7 @@ class FulfilledOrder extends Component {
                         apiKey="7f3bc78eabe74bdca213aceb9cfcc1f4"
                         shopOrigin={shopOrigin}
                     >
-                        <Modal className="timeline_modal"
-                            margin-bottom= "10%"
+                        <Modal
                             src={modalURL}
                             width="large"   
                             open={this.state.modalOpen}
