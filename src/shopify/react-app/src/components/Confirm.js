@@ -31,14 +31,14 @@ class Confirm extends Component {
         maxWidth: 448,
         minHeight: 150,
         margin: '0 auto',
-        padding: 30
+        padding: 25
       };
 
       const footerStyle = {
         position: "relative", 
         bottom: 0, 
         width: "100%", 
-        height: "50px",
+        // height: "50px",
         // textAlign: "center"
       };
 
@@ -49,6 +49,11 @@ class Confirm extends Component {
       return (
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
+          <div className="closeIcon">
+          <Button className="CloseIconBtn" onClick={this.props.onCancel} icon="cancel">
+              Yes
+            </Button>
+          </div>
           <TextContainer>
             <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
             <div className="spaceBetweenHeading"></div>
