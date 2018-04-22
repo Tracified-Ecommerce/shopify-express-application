@@ -16,13 +16,13 @@ class Loading extends Component {
             marginLeft:"10%",
             marginRight:"10%",
             marginTop:"10%",
-            width:"80%"
+            width:"80%",
+            color:"teal"
         }
 
         var spinnerStyle={
-            marginTop:"10%",
-            marginLeft:"20%",
-            marginRight:"20%"
+            marginLeft:"30%",
+            marginRight:"30%"
         }
 
         return (
