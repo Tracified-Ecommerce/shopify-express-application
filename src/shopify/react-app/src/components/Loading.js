@@ -12,9 +12,14 @@ class Loading extends Component {
     }
 
     render() {
+        var loadingMsgStyle={
+            marginLeft:auto,
+            marginRight:auto,
+            width:"100%"
+        }
 
         return (
-            <div style={{ padding: '5% 0 0 37%' }}>
+            <div className="loadingMsg" style={loadingMsgStyle}>
                 <DisplayText  size="small"                >
                     <TextStyle variation="subdued">{this.props.loadMsg}</TextStyle>
                 </DisplayText><br />
