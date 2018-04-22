@@ -18,9 +18,9 @@
     }
     
     .alertFooter{
-        width:  447px !important;
-        padding-left: 28px !important;
-        padding-right: 28px !important;
+        width:  447px;
+        padding-left: 28px ;
+        padding-right: 28px ;
     }
 
     .closeIcon .Polaris-Button{
@@ -33,6 +33,22 @@
     }
 
     .cnfirmBox{
-        width: 95%;
+        width: 94%;
+    }
+
+    .closeIcon .Polaris-Icon{
+        width: 55%;
+        padding-top: 25%;
     }
     
+/*Media Queries for mobile devices  */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .cnfirmBox{
+        width: 88%;
+    }   
+
+    .alertFooter {
+        padding-left: 17px;
+        padding-right: 12px;
+    }
+}
