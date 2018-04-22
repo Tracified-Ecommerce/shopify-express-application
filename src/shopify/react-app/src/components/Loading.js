@@ -15,7 +15,14 @@ class Loading extends Component {
         var loadingMsgStyle={
             marginLeft:"10%",
             marginRight:"10%",
+            marginTop:"10%",
             width:"80%"
+        }
+
+        var spinnerStyle={
+            marginTop:"10%",
+            marginLeft:"20%",
+            marginRight:"20%"
         }
 
         return (
@@ -23,7 +30,7 @@ class Loading extends Component {
                 <DisplayText  size="small"                >
                     <TextStyle variation="subdued">{this.props.loadMsg}</TextStyle>
                 </DisplayText><br />
-                <div style={{ padding: '0 0 0 10%' }}>
+                <div className="spinnerClass" style={spinnerStyle}>
                     <Spinner
                         size="large"
                         color="teal"
