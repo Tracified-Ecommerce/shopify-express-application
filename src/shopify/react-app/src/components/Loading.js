@@ -13,9 +13,9 @@ class Loading extends Component {
 
     render() {
         var loadingMsgStyle={
-            marginLeft:"auto",
-            marginRight:"auto",
-            width:"100%"
+            marginLeft:"10%",
+            marginRight:"10%",
+            width:"80%"
         }
 
         return (

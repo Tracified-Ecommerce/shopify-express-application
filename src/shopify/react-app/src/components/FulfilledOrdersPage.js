@@ -90,7 +90,7 @@ class FulfilledOrdersPage extends Component {
     render() {
 
         if (this.state.isOrderListLoading || this.state.isMappingLoading) {
-            return <Loading loadMsg="Please wait, Loading ..."/>;
+            return <Loading loadMsg="Please wait, Loading products from Shopify..."/>;
         }
         else {
             // All the order details
