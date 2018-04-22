@@ -120,7 +120,7 @@ class Part2Cards extends Component {
         // let buttonText = this.state.isExpanded ? { text: "Switch to collapsed view" } : { text: "Switch to expanded view" }
 
         if (this.state.isOrderListLoading) {
-            return <Loading />;
+            return <Loading loadMsg="Please wait, loading your orders from shopify..."/>;
         }
         else {
             // All the order details
