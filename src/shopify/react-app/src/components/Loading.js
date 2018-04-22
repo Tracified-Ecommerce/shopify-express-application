@@ -13,8 +13,8 @@ class Loading extends Component {
 
     render() {
         var loadingMsgStyle={
-            marginLeft:auto,
-            marginRight:auto,
+            marginLeft:"auto",
+            marginRight:"auto",
             width:"100%"
         }
 
