@@ -16,7 +16,7 @@ class Loading extends Component {
         return (
             <div style={{ padding: '5% 0 0 37%' }}>
                 <DisplayText  size="small"                >
-                    <TextStyle variation="subdued">Loading... Please Wait!</TextStyle>
+                    <TextStyle variation="subdued">{this.props.loadMsg}</TextStyle>
                 </DisplayText><br />
                 <div style={{ padding: '0 0 0 10%' }}>
                     <Spinner

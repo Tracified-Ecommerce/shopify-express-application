@@ -278,7 +278,7 @@ class ProductMapping extends Component {
     }
 
     if (isTraceListLoading || isProductListLoading) {
-      return <Loading/> ;
+      return <Loading loadMsg="Loading your items from shopify ..."/> ;
      
       console.log('spinner');
     } else {

@@ -90,7 +90,7 @@ class FulfilledOrdersPage extends Component {
     render() {
 
         if (this.state.isOrderListLoading || this.state.isMappingLoading) {
-            return <Loading />;
+            return <Loading loadMsg="Please wait, Loading ..."/>;
         }
         else {
             // All the order details
