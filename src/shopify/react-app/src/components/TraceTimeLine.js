@@ -120,7 +120,7 @@ class TraceTimeLine extends Component {
         };
 
         if (this.state.istimelineLoading) {
-            return <Loading />;
+            return <Loading loadMsg=" Please wait. Loading item traceability..."/>;
         }
         else if (this.state.isError) {
             console.log("inside timeline iserror block");
