@@ -58,10 +58,10 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-              <div className="alertHleft">
+              <div className="alertHleft" xs="6">
                 <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
               </div>
-              <div className="alertHright">
+              <div className="alertHright" xs="3">
                 <Button className="CloseIconBtn" onClick={this.props.onClose} icon="cancel"></Button>
               </div>    
             <div className="spaceBetweenHeading"></div>
