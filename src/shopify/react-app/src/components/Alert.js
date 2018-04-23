@@ -57,7 +57,7 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-            <table className="alertBox" style={alertBoxStyle}>
+            <table className="alertBox">
               <tr>
                 <td>
                   <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
