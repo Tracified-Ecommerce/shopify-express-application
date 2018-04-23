@@ -14,16 +14,17 @@ class Loading extends Component {
 
     render() {
         var loadingMsgStyle={
-            marginLeft:"10%",
-            marginRight:"10%",
+            marginLeft:"auto",
+            marginRight:"auto",
             marginTop:"10%",
-            width:"80%",
-            color:"teal"
+            width:"40%",
+            textAlign:"center"
         }
 
         var spinnerStyle={
-            marginLeft:"30%",
-            marginRight:"30%"
+            width:"10%",
+            marginLeft:"auto",
+            marginRight:"auto"
         }
 
         return (
