@@ -3,6 +3,10 @@
     .loadingMsg .Polaris-TextStyle--variationSubdued{       
         font-size: 14px;
     }
+
+    .loadingMsg{
+        width: 60%;
+    }
 }
 
 
