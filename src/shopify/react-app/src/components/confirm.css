@@ -40,10 +40,6 @@
         width: 55%;
         padding-top: 25%;
     }
-
-    .confirmBtn .Polaris-Button{
-        margin-left: 0%;
-    }
     
 /*Media Queries for mobile devices  */
 @media  (min-width: 360px) and (max-width: 640px) {

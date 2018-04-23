@@ -39,7 +39,7 @@ class Confirm extends Component {
         bottom: 0, 
         width: "100%", 
         // height: "50px",
-        textAlign: "center"
+        // textAlign: "center"
       };
 
       var spaceBetweenHeadingStyle={
@@ -74,11 +74,9 @@ class Confirm extends Component {
            <hr/> 
            
             <div className="alertFooter" style={footerStyle}>
-              <div className="confirmBtn">
-                <Button primary onClick={this.props.onConfirm} icon="save">
-                  Yes
-                </Button>
-              </div>
+            <Button className="confirmBtn" primary onClick={this.props.onConfirm} icon="save">
+              Yes
+            </Button>
 
             {/* <div className="CloseBtn"> */}
               <Button className="cancelBtn" primary onClick={this.props.onCancel} icon="cancel">
