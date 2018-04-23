@@ -30,7 +30,7 @@ class Alert extends Component {
         maxWidth: 500,
         minHeight: 150,
         margin: '0 auto',
-        padding: 30
+        padding: 25
       };
 
       const footerStyle = {
@@ -45,6 +45,10 @@ class Alert extends Component {
         margin: 'auto'
       };
 
+      var spaceBetweenHeadingStyle={
+        height:"10%"
+      }
+
       var spaceBetweenContentStyle={
         height:"10%"
       }
@@ -53,9 +57,9 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-          <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
+          <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
             <div className="spaceBetweenContent"></div>
-            <TextStyle size="small">{this.props.message}</TextStyle>  
+            <TextStyle size="subdued">{this.props.message}</TextStyle>  
           </TextContainer>
             
             <div className="alertFooter" style={footerStyle}>
