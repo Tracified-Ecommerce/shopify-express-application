@@ -65,7 +65,7 @@ class Alert extends Component {
                 </td>
                 <td className="closeIcon_td">
                 <div className="closeIcon">
-                    <Button className="CloseIconBtn" onClick={this.props.onCancel} icon="cancel"></Button>
+                    <Button className="CloseIconBtn" onClick={this.props.onClose} icon="cancel"></Button>
                   </div>
                 </td>
               </tr>
