@@ -187,7 +187,7 @@ class FulfilledOrder extends Component {
                             src={modalURL}
                             width="large"   
                             open={this.state.modalOpen}
-                            // title="Tracified - Trust Through Traceability"
+                            title=" "
                             primaryAction={{
                                 content: 'Close',
                                 onAction: () => this.setState({ modalOpen: false, traceButtonDisable: false }),
