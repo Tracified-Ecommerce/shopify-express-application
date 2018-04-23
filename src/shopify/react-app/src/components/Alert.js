@@ -63,7 +63,7 @@ class Alert extends Component {
                 <td>
                   <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
                 </td>
-                <td>
+                <td className="closeIcon_td">
                 <div className="closeIcon">
                     <Button className="CloseIconBtn" onClick={this.props.onCancel} icon="cancel"></Button>
                   </div>
