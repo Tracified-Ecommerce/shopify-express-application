@@ -17,7 +17,6 @@ class Loading extends Component {
             marginLeft:"auto",
             marginRight:"auto",
             marginTop:"10%",
-            width:"40%",
             textAlign:"center"
         }
 
