@@ -116,7 +116,10 @@ class TraceTimeLine extends Component {
             height: 90,
             width: 220,
             marginLeft: 10,
-            padding: 10
+            padding: 10,
+            position: "sticky",
+            top: "0px",
+            zIndex: 200,
         };
 
         if (this.state.istimelineLoading) {
