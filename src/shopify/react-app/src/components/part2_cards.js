@@ -62,7 +62,7 @@ class Part2Cards extends Component {
                 });
                 this.setState({
                     orders: response.data.orders,
-                    isOrderListLoading: false,
+                    // isOrderListLoading: false,
                     cardStateArray: arr
                 });
             }).catch(function (error) {
