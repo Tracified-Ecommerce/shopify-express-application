@@ -37,7 +37,7 @@ class Alert extends Component {
         position: "relative", 
         bottom: 0, 
         width: "100%", 
-        height: "50px",
+        // height: "50px",
         textAlign: "center"
       };
 
@@ -57,9 +57,21 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-          <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
-            <div className="spaceBetweenContent"></div>
-            <TextStyle size="subdued">{this.props.message}</TextStyle>  
+            <table className="alertBox" style={alertBoxStyle}>
+              <tr>
+                <td>
+                  <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
+                </td>
+                <td>
+                <div className="closeIcon">
+                    <Button className="CloseIconBtn" onClick={this.props.onCancel} icon="cancel"></Button>
+                  </div>
+                </td>
+              </tr>
+            </table>
+         
+            <div className="spaceBetweenHeading"></div>
+            <TextStyle variation="subdued">{this.props.message}</TextStyle>  
           </TextContainer>
             
             <div className="alertFooter" style={footerStyle}>
