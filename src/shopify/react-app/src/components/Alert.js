@@ -58,19 +58,12 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-            <table className="alertBox">
-              <tr>
-                <td>
-                  <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
-                </td>
-                <td className="closeIcon_td">
-                <div className="closeIcon">
-                    <Button className="CloseIconBtn" onClick={this.props.onClose} icon="cancel"></Button>
-                  </div>
-                </td>
-              </tr>
-            </table>
-         
+              <div className="alertHleft">
+                <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
+              </div>
+              <div className="alertHright">
+                <Button className="CloseIconBtn" onClick={this.props.onClose} icon="cancel"></Button>
+              </div>    
             <div className="spaceBetweenHeading"></div>
             <TextStyle variation="subdued">{this.props.message}</TextStyle>  
           </TextContainer>

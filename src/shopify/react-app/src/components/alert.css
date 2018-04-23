@@ -67,5 +67,16 @@
   .closeIcon_td{
       width: 91%;
   }
+
+  .alertHleft{
+      max-width: 80%;
+      text-align: center;
+  }
+
+  .alertHright{
+      max-width: 20%;
+      text-align: right;
+  }
+
   
  }
