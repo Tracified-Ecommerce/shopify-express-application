@@ -129,6 +129,11 @@ hr{
 
 }
 
+.alertmessage{
+    max-width: 64%;
+    padding-top: 4%;
+    text-align: center;
+}
   
  }
 

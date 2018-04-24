@@ -69,7 +69,7 @@ class Alert extends Component {
               </Col>
               </Row>
               <Row> 
-                <Col>   
+                <Col className="alertmessage">   
                 <div className="spaceBetweenHeading"></div>
                 <TextStyle variation="subdued">{this.props.message}</TextStyle> 
                 </Col>
