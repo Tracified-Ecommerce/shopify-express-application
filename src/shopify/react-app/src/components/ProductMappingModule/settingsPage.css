@@ -1,31 +1,58 @@
-.no-right-padding{
-    padding-right: 0;
+/*Media Queries for mobile devices  */
+@media  (min-width: 360px) and (max-width: 640px) {
+
 }
 
-/* alert box styles which appears in settings page  */
-.SettingAlert .alertBox{
-    width: 35%;
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    .SettingAlert .alertBox {
+        width: 50%;
+    }
+
+    .SettingAlert .alertmessage {
+        max-width: 35%;
+        padding-top: 2%;
+        margin-left: 2%;
+        margin-right: 0;
+    }
+
+    .Polaris-Button.Polaris-Button--iconOnly{
+        border: transparent;
+        background: transparent;
+    }
 }
 
-.SettingAlert .alertmessage {
-    max-width: 25%;
-    padding-top: 2%;
-    margin-left: 3%;
-    margin-right: 0%;
-}
-
-.SettingAlert .alertHleft {
-    max-width: 20%;
-    text-align: center;
-    margin-left: 10%;
-    margin-right: 5%;
-}
-
-.SettingAlert .alertHright{
-    margin-left: 0%;
-    float: right;
-}
-
-.SettingAlert .Mat_clsose_Icon{
-    margin-right: 7%;
-}
+ /* Media queries for the pc */
+ @media screen and (min-width: 1024px){
+    .no-right-padding{
+        padding-right: 0;
+    }
+    
+    /* alert box styles which appears in settings page  */
+    .SettingAlert .alertBox{
+        width: 35%;
+    }
+    
+    .SettingAlert .alertmessage {
+        max-width: 25%;
+        padding-top: 2%;
+        margin-left: 3%;
+        margin-right: 0%;
+    }
+    
+    .SettingAlert .alertHleft {
+        max-width: 20%;
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    
+    .SettingAlert .alertHright{
+        margin-left: 0%;
+        float: right;
+    }
+    
+    .SettingAlert .Mat_clsose_Icon{
+        margin-right: 7%;
+    }
+ }
