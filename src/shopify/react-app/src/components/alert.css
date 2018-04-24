@@ -112,20 +112,10 @@
       width: 91%;
   }
 
-  .alertHleft{
-      max-width: 80%;
-      text-align: center;
-  }
-
-  .alertHright{
-      max-width: 20%;
-      text-align: right;
-  }
-
-  
   .alertFooter .Polaris-Button.Polaris-Button--primary{
     /* margin-right: 5%; */
     margin-left: 5%;
+    margin-bottom: 1%;
 }
 
 .alertBox .Polaris-TextContainer{
@@ -158,11 +148,27 @@ hr{
 
 .alertBox{
     width: 94%;
+    text-align: center;
 }
 
 .closeIcon .Polaris-Icon{
     width: 40%;
     padding-top: 25%;
+
+}
+
+.alertHleft{
+    max-width: 75%;
+    text-align: right;
+    float: left;
+    padding-left: 26%;
+}
+
+.alertHright{
+    max-width: 20%;
+    text-align: right;
+    float: right;
+    margin-right: 7%;
 
 }
 
