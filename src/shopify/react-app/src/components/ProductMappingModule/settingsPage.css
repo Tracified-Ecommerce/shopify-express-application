@@ -1,6 +1,39 @@
 /*Media Queries for mobile devices  */
 @media  (min-width: 360px) and (max-width: 640px) {
+    .SettingAlert .alertBox {
+        width: 100%;
+    }
 
+    .SettingAlert .alertmessage {
+        font-size: 13px;
+        text-align: center;
+        max-width: 100%;
+        padding-top: 2%;
+        margin-left: 2%;
+        margin-right: 0;
+    }
+
+    .Polaris-Button.Polaris-Button--iconOnly{
+        border: transparent;
+        background: transparent;
+    }
+
+    .SettingAlert .alertHright{
+        margin-left: 20%;
+        margin-top: -1%;
+        float: right;
+    }
+
+    .SettingAlert .alertHleft{
+        max-width: 50%;
+        text-align: center;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+
+    .SettingAlert .alertFooter .Polaris-Button__Content span{
+        font-size: 12px;
+    }
 }
 
 /* Media queries for the tablet devices */
@@ -19,6 +52,13 @@
     .Polaris-Button.Polaris-Button--iconOnly{
         border: transparent;
         background: transparent;
+    }
+
+    .SettingAlert .alertHright{
+        margin-left: 0%;
+        margin-right: 64%;
+        margin-top: -1%;
+        float: right;
     }
 }
 
