@@ -29,7 +29,7 @@ class Alert extends Component {
         flexDirection: "column",
         justifyContent: "space-between",
         borderRadius: 20,
-        maxWidth: 500,
+        maxWidth: 450,
         minHeight: 150,
         margin: '0 auto',
         padding: 25
