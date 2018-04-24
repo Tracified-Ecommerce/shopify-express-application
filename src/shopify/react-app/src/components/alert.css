@@ -153,6 +153,10 @@ hr{
  @media screen and (min-width: 1024px){
  
     
+    .heading_row{
+        display: flex;
+    }
+
     .alertFooter .Polaris-Button.Polaris-Button--primary{
         /* margin-right: 5%; */
         margin-left: 5%;
@@ -198,14 +202,14 @@ hr{
 
 
     .alertHleft{
-        max-width: 75%;
+        max-width: 20%;
     text-align: center;
-    margin-left: 9%;
+    margin-left: 5%;
     }
 
-    
+
     .alertHright{
-       margin-left: 7%;
+       margin-left: 11%;
        float: right;
     
     }
