@@ -50,10 +50,9 @@ class ProductMappingTableRow extends Component {
     this.changePermission = this.changePermission.bind(this);
     this.onItemChange = this.onItemChange.bind(this);
     this.onPermissionChange = this.onPermissionChange.bind(this);
-
-
   }
 
+  
 
   changeMapping(value, id) {
     this.props.updateMapping(value, id);
@@ -86,6 +85,7 @@ class ProductMappingTableRow extends Component {
   onPermissionChange(permission, shopifyProductID) {
     this.props.setNotSaved(true);
     this.setState({ CBchecked: !this.state.CBchecked });
+    console.log("state has changed in checkbox !!!!!!!!!!!!!");
     shopifyProductID = shopifyProductID.substring(2);
     this.props.onPermissionChange(permission, shopifyProductID);
   }

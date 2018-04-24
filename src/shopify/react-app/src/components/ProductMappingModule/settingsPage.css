@@ -1,3 +1,4 @@
+/* Styles for the alert box which comes after clicking the save button */
 /*Media Queries for mobile devices  */
 @media  (min-width: 360px) and (max-width: 640px) {
     .SettingAlert .alertBox {
