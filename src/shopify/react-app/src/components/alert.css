@@ -1,0 +1,223 @@
+
+/*Media Queries for mobile devices  */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .alertBox{
+        width: 88%;
+    } 
+    
+    
+    .closeIcon {
+        width: 40%;
+        padding-top: 25%;
+
+    }
+
+    .heading_row{
+        display: flex;
+    }
+
+    .alertFooter {
+        padding-left: 17px;
+        padding-right: 12px;
+    }
+
+    .heading_row .Polaris-Button{
+        margin-top: 4px;
+    }
+    
+    .alertFooter .Polaris-Button.Polaris-Button--primary{
+        /* margin-right: 5%; */
+        margin-left: 5%;
+    }
+    
+    .alertBox .Polaris-TextContainer{
+        font-family: Arial;
+    }
+    
+    .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        font-weight: bold;
+    }
+    
+    hr{
+        margin-top: 0px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .alertFooter{
+        width:  447px;
+        padding-left: 11px ;
+        padding-right: 28px ;
+    }
+
+    .closeIcon .Polaris-Button{
+        margin-left: 90%;
+        margin-right: 10%;
+        margin-top: -10%;
+        border: none;
+        background: transparent;
+        width: 0%;
+    }
+
+    .alertBox{
+        width: 94%;
+    }
+
+    .closeIcon .Polaris-Icon{
+        width: 40%;
+        padding-top: 25%;
+
+    }
+    .alertHright{
+        margin-left: 15%;
+     
+     }
+}
+
+ /* Media queries for the tablet devices */
+ @media (min-width: 650px) and (max-width: 1023px) {
+     
+  .closeIcon_td{
+      width: 91%;
+  }
+
+  .alertFooter .Polaris-Button.Polaris-Button--primary{
+    /* margin-right: 5%; */
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.alertBox .Polaris-TextContainer{
+    font-family: Arial;
+}
+
+.alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+    font-weight: bold;
+}
+
+hr{
+    margin-top: 0px !important;
+    margin-bottom: 5px !important;
+}
+
+.alertFooter{
+    width:  447px;
+    padding-left: 11px ;
+    padding-right: 28px ;
+}
+
+.closeIcon .Polaris-Button{
+    margin-left: 90%;
+    margin-right: 10%;
+    margin-top: -10%;
+    border: none;
+    background: transparent;
+    width: 0%;
+}
+
+.alertBox{
+    width: 94%;
+    text-align: center;
+}
+
+.closeIcon .Polaris-Icon{
+    width: 40%;
+    padding-top: 25%;
+
+}
+
+.alertHleft{
+    max-width: 75%;
+    text-align: right;
+    float: left;
+    padding-left: 14%;
+}
+
+.alertHright{
+    max-width: 6%;
+    text-align: right;
+    float: right;
+    margin-right: 41%;
+
+}
+
+.alertmessage{
+    max-width: 64%;
+    padding-top: 4%;
+    text-align: center;
+}
+  
+ }
+
+ /* Media queries for the pc */
+
+ @media screen and (min-width: 1024px){
+ 
+    
+    .heading_row{
+        display: flex;
+    }
+
+    .alertFooter .Polaris-Button.Polaris-Button--primary{
+        /* margin-right: 5%; */
+        margin-left: 5%;
+    }
+    
+    .alertBox .Polaris-TextContainer{
+        font-family: Arial;
+    }
+    
+    .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        font-weight: bold;
+    }
+    
+    hr{
+        margin-top: 0px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .alertFooter{
+        width:  447px;
+        padding-left: 11px ;
+        padding-right: 28px ;
+    }
+
+    .closeIcon .Polaris-Button{
+        margin-left: 90%;
+        margin-right: 10%;
+        margin-top: -10%;
+        border: none;
+        background: transparent;
+        width: 0%;
+    }
+
+    .alertBox{
+        width: 94%;
+    }
+
+    .closeIcon .Polaris-Icon{
+        width: 40%;
+        padding-top: 25%;
+
+    }
+
+
+    .alertHleft{
+        max-width: 20%;
+    text-align: center;
+    margin-left: 5%;
+    }
+
+
+    .alertHright{
+       margin-left: 11%;
+       float: right;
+    
+    }
+
+    .alertmessage{
+        max-width: 35%;
+        padding-top: 2%;
+        text-align: center;
+    }
+  
+ }

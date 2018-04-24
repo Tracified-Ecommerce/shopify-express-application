@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Button, DisplayText, TextStyle , TextContainer } from '@shopify/polaris';
+import { Button, DisplayText, TextStyle , TextContainer , } from '@shopify/polaris';
+import './alert.css';
+import { Container, Row, Col } from 'reactstrap';
 
 class Alert extends Component {
     render() {
@@ -37,7 +39,7 @@ class Alert extends Component {
         position: "relative", 
         bottom: 0, 
         width: "100%", 
-        height: "50px",
+        // height: "50px",
         textAlign: "center"
       };
 
@@ -57,9 +59,22 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-          <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
-            <div className="spaceBetweenContent"></div>
-            <TextStyle size="subdued">{this.props.message}</TextStyle>  
+            <Container>
+            <Row className="heading_row">
+              <Col xs="6"className="alertHleft">
+                  <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
+              </Col>
+              <Col xs="3" className="alertHright">  
+                  <Button className="CloseIconBtn" onClick={this.props.onClose} icon="cancel"></Button>
+              </Col>
+              </Row>
+              <Row> 
+                <Col className="alertmessage">   
+                <div className="spaceBetweenHeading"></div>
+                <TextStyle variation="subdued">{this.props.message}</TextStyle> 
+                </Col>
+            </Row>
+            </Container> 
           </TextContainer>
             
             <div className="alertFooter" style={footerStyle}>

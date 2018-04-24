@@ -126,7 +126,7 @@ class TraceTimeLine extends Component {
         let capitalizedTitle = paramTitle.charAt(0).toUpperCase() + paramTitle.slice(1);
 
         if (this.state.istimelineLoading) {
-            return <Loading />;
+            return <Loading loadMsg=" Please wait. Loading item traceability..."/>;
         }
         else if (this.state.isError) {
             console.log("inside timeline iserror block");
