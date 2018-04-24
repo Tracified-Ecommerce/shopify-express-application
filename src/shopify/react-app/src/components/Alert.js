@@ -60,7 +60,7 @@ class Alert extends Component {
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
             <Container>
-            <Row>
+            <Row className="heading_row">
               <Col xs="6"className="alertHleft">
                   <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
               </Col>
