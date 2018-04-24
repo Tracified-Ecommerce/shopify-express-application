@@ -59,11 +59,12 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
+            <Container>
             <Row>
-              <Col xs="6"className="alertHleft">
+              <Col className="alertHleft">
                   <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
               </Col>
-              <Col xs="3" className="alertHright">  
+              <Col className="alertHright">  
                   <Button className="CloseIconBtn" onClick={this.props.onClose} icon="cancel"></Button>
               </Col>
               </Row>
@@ -72,7 +73,8 @@ class Alert extends Component {
                 <div className="spaceBetweenHeading"></div>
                 <TextStyle variation="subdued">{this.props.message}</TextStyle> 
                 </Col>
-            </Row> 
+            </Row>
+            </Container> 
           </TextContainer>
             
             <div className="alertFooter" style={footerStyle}>
