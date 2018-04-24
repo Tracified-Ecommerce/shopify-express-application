@@ -20,3 +20,12 @@
     margin-left: 10%;
     margin-right: 5%;
 }
+
+.SettingAlert .alertHright{
+    margin-left: 0%;
+    float: right;
+}
+
+.SettingAlert .Mat_clsose_Icon{
+    margin-right: 7%;
+}
