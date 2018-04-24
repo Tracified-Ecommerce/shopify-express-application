@@ -334,12 +334,14 @@ var saveBtnStyle={
             <Button primary onClick={this.onSubmit} style={saveBtnStyle} className="saveBtn">
               Save
             </Button>
-            <AlertBox show={this.state.isOpen}
-                    onClose={this.toggleAlert}
-                    heading={this.state.alertHeading}
-                    message={this.state.alertMessage}
-                    closeBtnText="OK">
-            </AlertBox>
+            <div className="SettingAlert">
+              <AlertBox show={this.state.isOpen}
+                      onClose={this.toggleAlert}
+                      heading={this.state.alertHeading}
+                      message={this.state.alertMessage}
+                      closeBtnText="OK">
+              </AlertBox>
+            </div>
       </div>
       // </Page>
     );
