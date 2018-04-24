@@ -66,7 +66,7 @@ class Alert extends Component {
               </Col>
               <Col xs="3" className="alertHright"> 
                 <div className="Mat_clsose_Icon"> 
-                  <Button className="close_IconBtn" onClick={this.props.onClose} icon="cancel"></Button>
+                  <Button className="Mat_close_IconBtn" onClick={this.props.onClose} icon="cancel"></Button>
                   </div>
               </Col>
               </Row>
