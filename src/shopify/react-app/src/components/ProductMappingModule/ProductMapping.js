@@ -29,6 +29,7 @@ import {
 import '@shopify/polaris/styles.css';
 import './AppMP.css';
 import './MediaQueriesSettings.css';
+import './settingsPage.css';
 import { setTimeout } from 'timers';
 import { request } from 'http';
 import { Row, Col, Container,Button} from 'reactstrap';

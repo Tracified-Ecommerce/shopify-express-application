@@ -1,3 +1,22 @@
 .no-right-padding{
     padding-right: 0;
 }
+
+/* alert box styles which appears in settings page  */
+.SettingAlert .alertBox{
+    width: 35%;
+}
+
+.SettingAlert .alertmessage {
+    max-width: 25%;
+    padding-top: 2%;
+    margin-left: 3%;
+    margin-right: 0%;
+}
+
+.SettingAlert .alertHleft {
+    max-width: 20%;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 5%;
+}
