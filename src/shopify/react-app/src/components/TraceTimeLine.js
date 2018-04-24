@@ -122,6 +122,9 @@ class TraceTimeLine extends Component {
             zIndex: 200,
         };
 
+        let paramTitle = this.props.match.params.itemName;
+        let capitalizedTitle = paramTitle.charAt(0).toUpperCase() + paramTitle.slice(1);
+
         if (this.state.istimelineLoading) {
             return <Loading />;
         }
@@ -143,7 +146,7 @@ class TraceTimeLine extends Component {
                         </h1>
 
                         <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Order ID:&nbsp;{this.props.match.params.orderID}</p>
-                        <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Item Name:&nbsp;{this.props.match.params.itemName}</p>
+                        <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Item Name:&nbsp;{this.props.match.params.capitalizedTitle}</p>
 
                     </div>
                     <div style={{ paddingLeft: 30 }}>
