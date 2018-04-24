@@ -12,6 +12,10 @@
 
     }
 
+    .Polaris-Icon__Svg{
+        max-width: 52% !important;
+    }
+
     .heading_row{
         display: flex;
     }

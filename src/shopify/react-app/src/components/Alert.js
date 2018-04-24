@@ -64,8 +64,10 @@ class Alert extends Component {
               <Col xs="6"className="alertHleft">
                   <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
               </Col>
-              <Col xs="3" className="alertHright">  
+              <Col xs="3" className="alertHright"> 
+                <div> 
                   <Button className="CloseIconBtn" onClick={this.props.onClose} icon="cancel"></Button>
+                  </div>
               </Col>
               </Row>
               <Row> 
