@@ -52,12 +52,7 @@ class ProductMappingTableRow extends Component {
     this.onPermissionChange = this.onPermissionChange.bind(this);
   }
 
-  componentWillMount = () => {
-    this.selectedCheckboxes = new Set();
-  }
-
   
-
   changeMapping(value, id) {
     this.props.updateMapping(value, id);
     this.setState({ selectVal: value });
@@ -93,24 +88,10 @@ class ProductMappingTableRow extends Component {
     shopifyProductID = shopifyProductID.substring(2);
     this.props.onPermissionChange(permission, shopifyProductID);
     
-    toggleCheckbox();
+    
   }
 
-  // checkbox change
-  toggleCheckbox = CheckboxID => {
-    if (this.selectedCheckboxes.has(CheckboxID)) {
-      this.selectedCheckboxes.delete(CheckboxID);
-      console.log("checkbox changed 111111");
-    } else {
-      this.selectedCheckboxes.add(CheckboxID);
-      console.log("checkbox changed 22222");
-    }
-  }
-
-
-
-
-  render() {
+   render() {
     // OLD CODE 
     // let traceList = this.props.tracelist.split(" ");
     let traceList = JSON.parse(this.props.tracelist);
