@@ -184,7 +184,7 @@ hr{
         padding-right: 28px ;
     }
 
-    .closeIcon .Polaris-Button{
+    .Mat_clsose_Icon .Polaris-Button{
         margin-left: 90%;
         margin-right: 10%;
         margin-top: -10%;
@@ -197,7 +197,7 @@ hr{
         width: 94%;
     }
 
-    .closeIcon .Polaris-Icon{
+    .Mat_clsose_Icon .Polaris-Icon{
         width: 40%;
         padding-top: 25%;
 
@@ -206,13 +206,13 @@ hr{
 
     .alertHleft{
         max-width: 20%;
-    text-align: center;
-    margin-left: 5%;
+        text-align: center;
+        margin-left: 5%;
     }
 
 
     .alertHright{
-       margin-left: 11%;
+       margin-left: 7%;
        float: right;
     
     }
