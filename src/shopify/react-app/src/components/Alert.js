@@ -61,7 +61,7 @@ class Alert extends Component {
           <TextContainer>
             <Container>
             <Row>
-              <Col xs="6" className="alertHleft">
+              <Col xs="6"className="alertHleft">
                   <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
               </Col>
               <Col xs="3" className="alertHright">  
