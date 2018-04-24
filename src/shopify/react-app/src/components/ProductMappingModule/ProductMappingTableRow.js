@@ -52,6 +52,10 @@ class ProductMappingTableRow extends Component {
     this.onPermissionChange = this.onPermissionChange.bind(this);
   }
 
+  componentWillMount = () => {
+    this.selectedCheckboxes = new Set();
+  }
+
   
 
   changeMapping(value, id) {
@@ -88,7 +92,19 @@ class ProductMappingTableRow extends Component {
     console.log("state has changed in checkbox !!!!!!!!!!!!!");
     shopifyProductID = shopifyProductID.substring(2);
     this.props.onPermissionChange(permission, shopifyProductID);
+
+    // checkbox change
+    toggleCheckbox = CheckboxID => {
+      if (this.selectedCheckboxes.has(CheckboxID)) {
+        this.selectedCheckboxes.delete(CheckboxID);
+        console.log("checkbox changed 111111");
+      } else {
+        this.selectedCheckboxes.add(labCheckboxIDel);
+        console.log("checkbox changed 22222");
+      }
+    }
   }
+
 
 
 
@@ -145,6 +161,7 @@ class ProductMappingTableRow extends Component {
             label="Traceability Enabled"
             onChange={this.onPermissionChange}
             id={CheckboxID}
+            label={CheckboxID}
             checked={this.state.CBchecked} />
         </td>
       </tr>
