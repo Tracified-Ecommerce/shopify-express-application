@@ -1,4 +1,3 @@
-
 /*Media Queries for mobile devices  */
 @media  (min-width: 360px) and (max-width: 640px) {
     .alertBox{
@@ -12,6 +11,10 @@
 
     }
 
+    .heading_row .Polaris-Icon__Svg{
+        max-width: 52% !important;
+    }
+
     .heading_row{
         display: flex;
     }
@@ -23,6 +26,7 @@
 
     .heading_row .Polaris-Button{
         margin-top: 4px;
+        border: none;
     }
     
     .alertFooter .Polaris-Button.Polaris-Button--primary{
@@ -63,7 +67,7 @@
     }
 
     .closeIcon .Polaris-Icon{
-        width: 40%;
+        width: 55%;
         padding-top: 25%;
 
     }
@@ -181,7 +185,7 @@ hr{
         padding-right: 28px ;
     }
 
-    .closeIcon .Polaris-Button{
+    .Mat_clsose_Icon .Polaris-Button{
         margin-left: 90%;
         margin-right: 10%;
         margin-top: -10%;
@@ -194,7 +198,7 @@ hr{
         width: 94%;
     }
 
-    .closeIcon .Polaris-Icon{
+    .Mat_clsose_Icon .Polaris-Icon{
         width: 40%;
         padding-top: 25%;
 
@@ -203,13 +207,13 @@ hr{
 
     .alertHleft{
         max-width: 20%;
-    text-align: center;
-    margin-left: 5%;
+        text-align: center;
+        margin-left: 5%;
     }
 
 
     .alertHright{
-       margin-left: 11%;
+       margin-left: 7%;
        float: right;
     
     }
