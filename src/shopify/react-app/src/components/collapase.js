@@ -128,7 +128,8 @@ class CollapaseCard extends Component {
                 <AlertBox show={this.state.isOpen}
                     onClose={this.toggleAlert}
                     heading={this.state.alertHeading}
-                    message={this.state.alertMessage}>
+                    message={this.state.alertMessage}
+                    closeBtnText="Close">
                 </AlertBox>
             </div>
         );

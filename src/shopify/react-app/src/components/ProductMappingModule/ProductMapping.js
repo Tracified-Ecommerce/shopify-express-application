@@ -244,8 +244,8 @@ class ProductMapping extends Component {
       .then((result) => {
         // alert("Mapping Successfully Saved!");
         this.setState({
-          alertHeading: "",
-          alertMessage: "Mapping Successfully Saved!"
+          alertHeading: "Saved",
+          alertMessage: "Mapping details saved successfully"
       });
       this.setState({
           isOpen: true,
@@ -337,7 +337,8 @@ var saveBtnStyle={
             <AlertBox show={this.state.isOpen}
                     onClose={this.toggleAlert}
                     heading={this.state.alertHeading}
-                    message={this.state.alertMessage}>
+                    message={this.state.alertMessage}
+                    closeBtnText="OK">
             </AlertBox>
       </div>
       // </Page>
