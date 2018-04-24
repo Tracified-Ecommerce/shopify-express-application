@@ -92,16 +92,18 @@ class ProductMappingTableRow extends Component {
     console.log("state has changed in checkbox !!!!!!!!!!!!!");
     shopifyProductID = shopifyProductID.substring(2);
     this.props.onPermissionChange(permission, shopifyProductID);
+    
+    toggleCheckbox();
+  }
 
-    // checkbox change
-    toggleCheckbox = CheckboxID => {
-      if (this.selectedCheckboxes.has(CheckboxID)) {
-        this.selectedCheckboxes.delete(CheckboxID);
-        console.log("checkbox changed 111111");
-      } else {
-        this.selectedCheckboxes.add(labCheckboxIDel);
-        console.log("checkbox changed 22222");
-      }
+  // checkbox change
+  toggleCheckbox = CheckboxID => {
+    if (this.selectedCheckboxes.has(CheckboxID)) {
+      this.selectedCheckboxes.delete(CheckboxID);
+      console.log("checkbox changed 111111");
+    } else {
+      this.selectedCheckboxes.add(CheckboxID);
+      console.log("checkbox changed 22222");
     }
   }
 
