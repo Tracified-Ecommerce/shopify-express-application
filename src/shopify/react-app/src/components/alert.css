@@ -26,6 +26,7 @@
 
     .heading_row .Polaris-Button{
         margin-top: 4px;
+        border: none;
     }
     
     .alertFooter .Polaris-Button.Polaris-Button--primary{
