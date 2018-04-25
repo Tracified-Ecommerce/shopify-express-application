@@ -6,6 +6,11 @@
     
     .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
         width: 138%;
+        font-size: 84%;
+    }
+
+    .MaTAlert  .Polaris-TextStyle--variationSubdued{
+        font-size: 84%;
     }
 
     .MaTAlert .closeIcon {
@@ -28,7 +33,7 @@
     }
 
     .MaTAlert .heading_row .Polaris-Button{
-        margin-top: 4px;
+      
         border: none;
     }
     
@@ -52,7 +57,7 @@
     
     .MaTAlert .alertFooter{
         width:  447px;
-        padding-left: 11px ;
+        padding-left: 28px ;
         padding-right: 28px ;
     }
 
@@ -75,9 +80,13 @@
 
     }
     .MaTAlert .alertHright{
-        margin-left: 15%;
+        margin-left: 16%;
      
      }
+
+     .MaTAlert .alertHleft{
+        min-width: 75%;
+    }
 }
 
  /* Media queries for the tablet devices */
@@ -86,6 +95,14 @@
     .MaTAlert .closeIcon_td{
       width: 91%;
   }
+
+  .MaTAlert .heading_row .Polaris-Button{
+      margin-top: 0px;
+  }
+
+  .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+    width: 100%;
+}
 
   .MaTAlert .alertFooter .Polaris-Button.Polaris-Button--primary{
     /* margin-right: 5%; */
@@ -136,7 +153,7 @@
     max-width: 75%;
     text-align: right;
     float: left;
-    padding-left: 14%;
+    padding-left: 13%;
 }
 
 
@@ -144,12 +161,12 @@
     max-width: 6%;
     text-align: right;
     float: right;
-    margin-right: 41%;
+    margin-right: 48%;
 
 }
 
 .MaTAlert .alertmessage{
-    max-width: 64%;
+    max-width: 54%;
     padding-top: 4%;
     text-align: center;
 }
@@ -230,7 +247,7 @@
     }
 
     .MaTAlert .alertmessage{
-        max-width: 30%;
+        max-width: 35%;
         padding-top: 2%;
         text-align: center;
     }
