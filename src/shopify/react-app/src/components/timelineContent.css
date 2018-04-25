@@ -1,4 +1,7 @@
-/* Media queries for the mobile devices */
+.innerSpanClass{
+    display: table-cell;
+}
+
 .compSpanClass{
     font-weight: bold;
 }
