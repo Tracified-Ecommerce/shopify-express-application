@@ -22,11 +22,8 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
 });
 
 router.get("/products", (req: IRequest, res: Response) => {
-    console.log("products");
-    console.log(req.session.shop.name);
     shopAdminAPI(
         "GET", req.session.shop.name, "/admin/products.json", req.shopRequestHeaders, null, (products: any) => {
-            console.log("got products");
             res.status(200).send(products);
         });
 });
@@ -36,28 +33,29 @@ router.get("/orders", (req: IRequest, res: Response) => {
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders/count.json", req.shopRequestHeaders, null, (response: any) => {
         console.log("got order count : " + response.count);
         orderCount = response.count;
-    });
+        let pageCount = Math.ceil(620 / 250);
+        console.log("test page count = " + pageCount);
+        pageCount = Math.ceil(orderCount / 250);
+        console.log("actual page count = " + pageCount);
+        let orderURL = "";
+        let unTracified: any[] = [];
+        let tempArray: any[] = [];
+        for (let i = 1; i <= pageCount; i++) {
+            orderURL = "/admin/orders.json?status=any&limit=250&page=" + i;
+            shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
 
-    let pageCount = Math.ceil(620 / 250);
-    console.log("test page count = " + pageCount);
-    pageCount = Math.ceil(orderCount / 250);
-    console.log("actual page count = " + pageCount);
-    // let orderURL = "";
-
-    shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
-        console.log("got orders");
-        let unTracified = [];
-        unTracified = orders.orders.filter((order: IOrder) => {
-            // let flag = false;
-            let flag = true;
-            order.note_attributes.map((noteAttrib: any) => {
-                if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
-                    flag = false;
-                }
+                tempArray = orders.orders.filter((order: IOrder) => {
+                    let flag = true;
+                    order.note_attributes.map((noteAttrib: any) => {
+                        if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                            flag = false;
+                        }
+                    });
+                    return flag;
+                });
+                unTracified = unTracified.concat(tempArray);
             });
-            console.log("inside fulfilled function");
-            return flag;
-        });
+        }
         res.status(200).send({ orders: unTracified });
     });
 });
