@@ -5,7 +5,7 @@
     } 
     
     .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
-        width: 138%;
+        width: 132%;
         font-size: 84%;
     }
 
@@ -81,7 +81,7 @@
 
     }
     .MaTAlert .alertHright{
-        margin-left: 16%;
+        margin-left: 13%;
      
      }
 
