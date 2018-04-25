@@ -4,6 +4,9 @@
         width: 88%;
     } 
     
+    .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        width: 138%;
+    }
     
     .MaTAlert .closeIcon {
         width: 40%;
@@ -157,6 +160,13 @@
 
  @media screen and (min-width: 1024px){
  
+    .MaTAlert .alertBox{
+        max-width: 387px;
+    }
+
+    .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        width: 138%;
+    }
     
     .MaTAlert .heading_row{
         display: flex;
