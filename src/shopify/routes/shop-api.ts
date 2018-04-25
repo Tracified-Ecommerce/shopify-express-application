@@ -32,11 +32,18 @@ router.get("/products", (req: IRequest, res: Response) => {
 });
 
 router.get("/orders", (req: IRequest, res: Response) => {
-    console.log("orders");
+    let orderCount = 0;
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders/count.json", req.shopRequestHeaders, null, (response: any) => {
-        console.log("got order count");
-        console.log(response.count);
+        console.log("got order count : " + response.count);
+        orderCount = response.count;
     });
+
+    let pageCount = Math.ceil(620 / 250);
+    console.log("test page count = " + pageCount);
+    pageCount = Math.ceil(orderCount / 250);
+    console.log("actual page count = " + pageCount);
+    // let orderURL = "";
+
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
         let unTracified = [];
