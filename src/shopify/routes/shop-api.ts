@@ -8,6 +8,7 @@ import { Helper, IHelper } from "../helpers/index";
 const helper: IHelper = new Helper();
 const router = Router();
 const shopAdminAPI = helper.shopAdminAPI;
+const createPromise = helper.createPromise;
 
 router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
     if (req.session && req.session.shop) {
@@ -40,10 +41,10 @@ router.get("/orders", (req: IRequest, res: Response) => {
         let orderURL = "";
         let unTracified: any[] = [];
         let tempArray: any[] = [];
+        let promiseArray: any[] = [];
         for (let i = 1; i <= pageCount; i++) {
             orderURL = "/admin/orders.json?status=any&limit=250&page=" + i;
-            shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
-
+            promiseArray.push(createPromise("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null).then((orders: any) => {
                 tempArray = orders.orders.filter((order: IOrder) => {
                     let flag = true;
                     order.note_attributes.map((noteAttrib: any) => {
@@ -54,9 +55,25 @@ router.get("/orders", (req: IRequest, res: Response) => {
                     return flag;
                 });
                 unTracified = unTracified.concat(tempArray);
-            });
+                console.log("untracified : " + unTracified);
+            }));
+
+            // shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
+            //     tempArray = orders.orders.filter((order: IOrder) => {
+            //         let flag = true;
+            //         order.note_attributes.map((noteAttrib: any) => {
+            //             if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+            //                 flag = false;
+            //             }
+            //         });
+            //         return flag;
+            //     });
+            //     unTracified = unTracified.concat(tempArray);
+            // });
         }
-        res.status(200).send({ orders: unTracified });
+        Promise.all(promiseArray).then(() => {
+            res.status(200).send({ orders: unTracified });
+        });
     });
 });
 

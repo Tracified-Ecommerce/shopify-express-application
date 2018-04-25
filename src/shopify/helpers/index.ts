@@ -17,8 +17,7 @@ export interface IHelper {
         shop: any,
         relUrl: string,
         shopRequestHeaders: any,
-        body: any,
-        callback: (obj: any) => any): request.RequestPromise;
+        body: any): request.RequestPromise;
 }
 
 export class Helper implements IHelper {
@@ -28,8 +27,7 @@ export class Helper implements IHelper {
         shop: any,
         relUrl: string,
         shopRequestHeaders: any,
-        body: any,
-        callback: (obj: any) => any ) {
+        body: any) {
         let options;
 
         if (body !== null) {
