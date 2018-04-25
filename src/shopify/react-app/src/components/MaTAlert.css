@@ -208,6 +208,10 @@
     .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
         font-weight: bold;
     }
+
+    .MaTAlert .Polaris-DisplayText--sizeSmall{
+        line-height: 3.8rem;
+    }
     
     .MaTAlert hr{
         margin-top: 0px !important;
