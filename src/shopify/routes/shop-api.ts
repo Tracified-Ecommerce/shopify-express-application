@@ -42,9 +42,10 @@ router.get("/orders", (req: IRequest, res: Response) => {
         let unTracified: any[] = [];
         let tempArray: any[] = [];
         let promiseArray: any[] = [];
-        for (let i = 1; i <= 2; i++) {
+        for (let i = 1; i <= pageCount; i++) {
             orderURL = "/admin/orders.json?status=any&limit=250&page=" + i;
-            promiseArray.push(createPromise("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null).then((orders: any) => {
+            console.log(orderURL);
+            promiseArray.push(createPromise("GET", req.session.shop.name, orderURL, req.shopRequestHeaders, null).then((orders: any) => {
                 tempArray = orders.orders.filter((order: IOrder) => {
                     let flag = true;
                     order.note_attributes.map((noteAttrib: any) => {
