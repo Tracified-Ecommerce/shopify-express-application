@@ -97,7 +97,7 @@ class FulfilledOrder extends Component {
                     let itemName = response.data.product.handle;
                     this.setState({
                         itemName: itemName,
-                        modalTitle: "Product Tileline : " + itemName.charAt(0).toUpperCase() + itemName.slice(1)
+                        modalTitle: "Product Timeline : " + itemName.charAt(0).toUpperCase() + itemName.slice(1)
                     }, () => {
                         this.setState({ modalOpen: true });
                     });
