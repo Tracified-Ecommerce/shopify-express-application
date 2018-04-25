@@ -164,12 +164,6 @@ hr{
     padding-top: 4%;
     text-align: center;
 }
-
-    .Matalertmessage{
-    max-width: 64%;
-    padding-top: 4%;
-    text-align: center;
-    }
   
  }
 
@@ -234,32 +228,13 @@ hr{
 
 
     .alertHright{
-       margin-left: 4%;
+       margin-left: 19%;
        float: right;
     
     }
-
-    .alertHeadingleft{
-        max-width: 75%;
-        text-align: right;
-        float: left;
-        padding-left: 14%;
-    }
     
-    .alertHeadingright{
-        max-width: 6%;
-        text-align: right;
-        float: right;
-        margin-right: 41%;
-    }
 
     .alertmessage{
-        max-width: 35%;
-        padding-top: 2%;
-        text-align: center;
-    }
-
-    .Matalertmessage{
         max-width: 35%;
         padding-top: 2%;
         text-align: center;
