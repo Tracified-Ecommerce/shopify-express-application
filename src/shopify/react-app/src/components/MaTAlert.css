@@ -35,6 +35,7 @@
     .MaTAlert .heading_row .Polaris-Button{
       
         border: none;
+        margin-top: 0px;
     }
     
     .MaTAlert .alertFooter .Polaris-Button.Polaris-Button--primary{
