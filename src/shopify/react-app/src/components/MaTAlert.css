@@ -7,7 +7,7 @@
     .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
         width: 138%;
     }
-    
+
     .MaTAlert .closeIcon {
         width: 40%;
         padding-top: 25%;
@@ -161,7 +161,7 @@
  @media screen and (min-width: 1024px){
  
     .MaTAlert .alertBox{
-        max-width: 387px;
+        max-width: 387px ! important;
     }
 
     .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
@@ -224,7 +224,7 @@
 
 
     .MaTAlert .alertHright{
-       margin-left: 19%;
+       margin-left: 4%;
        float: right;
     
     }
