@@ -145,20 +145,6 @@ hr{
 
 }
 
-.alertHeadingleft{
-    max-width: 75%;
-    text-align: right;
-    float: left;
-    padding-left: 14%;
-}
-
-.alertHeadingright{
-    max-width: 6%;
-    text-align: right;
-    float: right;
-    margin-right: 41%;
-}
-
 .alertmessage{
     max-width: 64%;
     padding-top: 4%;
@@ -232,7 +218,6 @@ hr{
        float: right;
     
     }
-    
 
     .alertmessage{
         max-width: 35%;
