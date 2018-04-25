@@ -5,7 +5,12 @@
     } 
     
     .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
-        width: 138%;
+        width: 132%;
+        font-size: 84%;
+    }
+
+    .MaTAlert  .Polaris-TextStyle--variationSubdued{
+        font-size: 84%;
     }
 
     .MaTAlert .closeIcon {
@@ -28,8 +33,9 @@
     }
 
     .MaTAlert .heading_row .Polaris-Button{
-        margin-top: 4px;
+      
         border: none;
+        margin-top: 0px;
     }
     
     .MaTAlert .alertFooter .Polaris-Button.Polaris-Button--primary{
@@ -52,7 +58,7 @@
     
     .MaTAlert .alertFooter{
         width:  447px;
-        padding-left: 11px ;
+        padding-left: 28px ;
         padding-right: 28px ;
     }
 
@@ -75,9 +81,13 @@
 
     }
     .MaTAlert .alertHright{
-        margin-left: 16%;
+        margin-left: 13%;
      
      }
+
+     .MaTAlert .alertHleft{
+        min-width: 75%;
+    }
 }
 
  /* Media queries for the tablet devices */
@@ -85,6 +95,11 @@
      
     .MaTAlert .closeIcon_td{
       width: 91%;
+  }
+
+  .MaTAlert .heading_row .Polaris-Button{
+      margin-top: 0px;
+      border: none;
   }
 
   .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
@@ -140,7 +155,7 @@
     max-width: 75%;
     text-align: right;
     float: left;
-    padding-left: 14%;
+    padding-left: 13%;
 }
 
 
@@ -148,22 +163,119 @@
     max-width: 6%;
     text-align: right;
     float: right;
-    margin-right: 47%;
+    margin-right: 48%;
 
 }
 
 .MaTAlert .alertmessage{
     max-width: 54%;
-    padding-top: 4%;
+    padding-top: 1%;
     text-align: center;
 }
   
+
+
+.MaTAlert .heading_row .Polaris-Icon__Svg{
+    max-width: 64% !important;
+}
  }
 
  /* Media queries for the pc */
 
- @media screen and (min-width: 1024px){
+ @media (min-width: 1024px) {
  
+    .MaTAlert .alertBox{
+        max-width: 387px ! important;
+    }
+
+    .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        width: 138%;
+    }
+    
+    .MaTAlert .heading_row{
+        display: flex;
+    }
+
+    .MaTAlert .alertFooter .Polaris-Button.Polaris-Button--primary{
+        /* margin-right: 5%; */
+        margin-left: 5%;
+    }
+    
+    .MaTAlert .alertBox .Polaris-TextContainer{
+        font-family: Arial;
+    }
+    
+    .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
+        font-weight: bold;
+    }
+
+    .MaTAlert .Polaris-DisplayText--sizeSmall{
+        line-height: 3.8rem;
+    }
+    
+    .MaTAlert hr{
+        margin-top: 0px !important;
+        margin-bottom: 5px !important;
+    }
+    
+    .MaTAlert .alertFooter{
+        width:  447px;
+        padding-left: 11px ;
+        padding-right: 28px ;
+    }
+
+    .MaTAlert .Mat_clsose_Icon .Polaris-Button{
+        margin-left: 90%;
+        margin-right: 10%;
+        margin-top: -10%;
+        border: none;
+        background: transparent;
+        width: 0%;
+    }
+
+     .MaTAlert .alertBox{
+        width: 94%;
+    }
+
+    .MaTAlert .Mat_clsose_Icon .Polaris-Icon{
+        width: 40%;
+        padding-top: 25%;
+
+    }
+
+
+    .MaTAlert .alertHleft{
+        max-width: 20%;
+        text-align: center;
+        margin-left: 1%;
+    }
+
+
+    .MaTAlert .alertHright{
+       margin-left: 4%;
+       float: right;
+    
+    }
+
+    .MaTAlert .alertmessage{
+        max-width: 35%;
+        padding-top: 2%;
+        text-align: center;
+    }
+
+    .MaTAlert .heading_row .Polaris-Button{
+        margin-top: 0px;
+        border: none;
+    }
+  
+    .MaTAlert .heading_row .Polaris-Icon__Svg{
+        min-width: 15px;
+    }
+
+
+ }
+
+ @media (min-width: 1440px)  {
     .MaTAlert .alertBox{
         max-width: 387px ! important;
     }
@@ -234,9 +346,14 @@
     }
 
     .MaTAlert .alertmessage{
-        max-width: 35%;
+        max-width: 29%;
         padding-top: 2%;
         text-align: center;
+    }
+
+    .MaTAlert .heading_row .Polaris-Button{
+        margin-top: 0px;
+        border: none;
     }
   
  }
