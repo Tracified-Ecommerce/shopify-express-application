@@ -182,7 +182,7 @@
 
  /* Media queries for the pc */
 
- @media (min-width: 1024px) and (max-width: 1439px) {
+ @media (min-width: 1024px) {
  
     .MaTAlert .alertBox{
         max-width: 387px ! important;
