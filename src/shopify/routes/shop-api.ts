@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import { NextFunction, Request, Response, Router } from "express";
 import { Error } from "mongoose";
 import { IOrder } from "../../types/order/orderType";
@@ -25,16 +26,21 @@ router.get("/products", (req: IRequest, res: Response) => {
     console.log(req.session.shop.name);
     shopAdminAPI(
         "GET", req.session.shop.name, "/admin/products.json", req.shopRequestHeaders, null, (products: any) => {
-        console.log("got products");
-        res.status(200).send(products);
-    });
+            console.log("got products");
+            res.status(200).send(products);
+        });
 });
 
 router.get("/orders", (req: IRequest, res: Response) => {
     console.log("orders");
+    shopAdminAPI("GET", req.session.shop.name, "/admin/orders/count.json", req.shopRequestHeaders, null, (response: any) => {
+        console.log("got order count");
+        console.log(response.count);
+    });
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
-        const unTracified = orders.orders.filter((order: IOrder) => {
+        let unTracified = [];
+        unTracified = orders.orders.filter((order: IOrder) => {
             // let flag = false;
             let flag = true;
             order.note_attributes.map((noteAttrib: any) => {
@@ -45,7 +51,7 @@ router.get("/orders", (req: IRequest, res: Response) => {
             console.log("inside fulfilled function");
             return flag;
         });
-        res.status(200).send({orders : unTracified});
+        res.status(200).send({ orders: unTracified });
     });
 });
 
@@ -58,7 +64,7 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
         req.shopRequestHeaders,
         null,
         (orders: any) => {
-        const fulfilledOrders = orders.orders.filter((order: IOrder) => {
+            const fulfilledOrders = orders.orders.filter((order: IOrder) => {
                 let flag = false;
                 order.note_attributes.map((noteAttrib: any) => {
                     if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
@@ -69,8 +75,8 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
                 return flag;
             });
 
-        res.status(200).send({fulfilledOrders, shopDomain});
-    });
+            res.status(200).send({ fulfilledOrders, shopDomain });
+        });
 });
 
 router.get("/orders/:id/fulfill", (req: IRequest & Request, res: Response) => {
@@ -80,8 +86,8 @@ router.get("/orders/:id/fulfill", (req: IRequest & Request, res: Response) => {
             notify_customer: true,
             tracking_number: null,
         },
-      };
-    shopAdminAPI("POST", req.session.shop.name, url , req.shopRequestHeaders, body, (fulfillment: any) => {
+    };
+    shopAdminAPI("POST", req.session.shop.name, url, req.shopRequestHeaders, body, (fulfillment: any) => {
         console.log("order fulfilled");
         res.status(200).send(fulfillment);
     });
@@ -91,24 +97,24 @@ router.get("/orders/:id/tracify", (req: IRequest & Request, res: Response) => {
     const url: string = "/admin/orders/" + req.params.id + ".json";
     const body: object = {
 
-            order: {
-                id: req.params.id,
-                note_attributes: {
-                    tracified: true,
-                },
+        order: {
+            id: req.params.id,
+            note_attributes: {
+                tracified: true,
             },
-        };
+        },
+    };
 
-    shopAdminAPI("PUT", req.session.shop.name, url , req.shopRequestHeaders, body, (order: any) => {
-            console.log("order fulfilled");
-            res.status(200).send(order);
-        });
+    shopAdminAPI("PUT", req.session.shop.name, url, req.shopRequestHeaders, body, (order: any) => {
+        console.log("order fulfilled");
+        res.status(200).send(order);
+    });
 });
 
 router.get("/item/:id", (req: IRequest & Request, res: Response) => {
     const url: string = "/admin/products/" + req.params.id + ".json";
 
-    shopAdminAPI("GET", req.session.shop.name, url , req.shopRequestHeaders, null, (item: any) => {
+    shopAdminAPI("GET", req.session.shop.name, url, req.shopRequestHeaders, null, (item: any) => {
         console.log("item request sent");
         res.status(200).send(item);
     });
