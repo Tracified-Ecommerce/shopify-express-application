@@ -265,7 +265,7 @@
     }
   
     .MaTAlert .heading_row .Polaris-Icon__Svg{
-        max-width: 150% !important;
+        min-width: 15px;
     }
 
 
