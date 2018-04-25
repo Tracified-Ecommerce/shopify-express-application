@@ -99,6 +99,7 @@
 
   .MaTAlert .heading_row .Polaris-Button{
       margin-top: 0px;
+      border: none;
   }
 
   .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
@@ -172,6 +173,11 @@
     text-align: center;
 }
   
+
+
+.MaTAlert .heading_row .Polaris-Icon__Svg{
+    max-width: 64% !important;
+}
  }
 
  /* Media queries for the pc */
@@ -252,5 +258,13 @@
         padding-top: 2%;
         text-align: center;
     }
+
+    .MaTAlert .heading_row .Polaris-Button{
+        margin-top: 0px;
+        border: none;
+    }
   
+    .MaTAlert .heading_row .Polaris-Icon__Svg{
+        max-width: 64% !important;
+    }
  }
