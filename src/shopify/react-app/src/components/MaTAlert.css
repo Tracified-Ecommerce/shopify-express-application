@@ -136,6 +136,7 @@ hr{
     padding-left: 14%;
 }
 
+
 .alertHright{
     max-width: 6%;
     text-align: right;
@@ -213,7 +214,7 @@ hr{
 
 
     .alertHright{
-       margin-left: 4%;
+       margin-left: 19%;
        float: right;
     
     }
