@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { Thumbnail, Card, Page, List, RadioButton, Button, Stack,TextField} from '@shopify/polaris';
+import { Thumbnail, Card, Page, List, RadioButton, Button, Stack, TextField } from '@shopify/polaris';
 import Loading from './Loading';
 // import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
@@ -54,6 +54,15 @@ class Part2Cards extends Component {
             }).catch(function (error) {
                 console.log(error);
             });
+
+        axios.get('/shopify/shop-api/orderCount')
+            .then(response => {
+                console.log("order count is : " + response.data.orderCount);
+                console.log("page count is : " + response.data.pageCount);
+            }).catch(function (error) {
+                console.log(error);
+            });
+
         axios.get('/shopify/shop-api/orders')
             .then(response => {
                 let arr = [];
@@ -120,7 +129,7 @@ class Part2Cards extends Component {
         // let buttonText = this.state.isExpanded ? { text: "Switch to collapsed view" } : { text: "Switch to expanded view" }
 
         if (this.state.isOrderListLoading) {
-            return <Loading loadMsg=" Please wait. Loading your orders from Shopify..."/>;
+            return <Loading loadMsg=" Please wait. Loading your orders from Shopify..." />;
         }
         else {
             // All the order details
@@ -271,7 +280,7 @@ class Part2Cards extends Component {
                 paddingLeft: "5%"
             }
 
-            var toggleBtnStyle={
+            var toggleBtnStyle = {
                 paddingBottom: "10px",
                 marginLeft: "5%",
                 width: "105%"
@@ -279,14 +288,14 @@ class Part2Cards extends Component {
 
             return (
                 <div className="pageWrapper">
-                <Page title="UnTracified Orders" separator>
-                    <Stack
-                        distribution="trailing"
-                    >
+                    <Page title="UnTracified Orders" separator>
+                        <Stack
+                            distribution="trailing"
+                        >
 
-                        <div className="toggleBtn" style={toggleBtnStyle}>
-                            <Stack.Item>
-                                {/* <Button
+                            <div className="toggleBtn" style={toggleBtnStyle}>
+                                <Stack.Item>
+                                    {/* <Button
                                     plain
                                     size="slim"
                                     outline
@@ -294,85 +303,85 @@ class Part2Cards extends Component {
                                 >
                                     {buttonText.text}
                                 </Button> */}
-                            </Stack.Item>
-                        </div>
-
-                    </Stack>
-                    <div className="untraciFilterBy" style={{ paddingBottom: 5 , textAlign: "center" }}>
-                        <Stack alignment="center" >
-                            <Stack.Item>
-                            <div style={{marginBottom:5,fontWeight:"bold",fontSize:"140%", paddingBottom:'9%'}}>
-                                    Filter By :
-                             </div>
-                            </Stack.Item>
-                       
-                            <Stack.Item>
-                                <RadioButton
-
-                                    id="id1"
-                                    label="Order ID"
-                                    checked={this.state.isCheckedOrd}
-                                    onFocus={this.clickOrder.bind(this)}
-                                />
-                            </Stack.Item>
-                            <Stack.Item>
-
-                                <RadioButton
-                                    label="Customer Name"
-                                    checked={this.state.isCheckedCus}
-                                    onFocus={this.clickCustomer.bind(this)}
-
-                                />
-                            </Stack.Item>
-                    
-                            <Stack.Item>
-                                <div className="searchOdrs">
-                                    <input
-                                        type="text"
-                                        value={this.state.search}
-                                        onChange={this.updateSearch.bind(this)}
-                                        style={inputStyle}
-                                    />
-                                </div>
-                            </Stack.Item>
+                                </Stack.Item>
+                            </div>
 
                         </Stack>
-                    </div>
+                        <div className="untraciFilterBy" style={{ paddingBottom: 5, textAlign: "center" }}>
+                            <Stack alignment="center" >
+                                <Stack.Item>
+                                    <div style={{ marginBottom: 5, fontWeight: "bold", fontSize: "140%", paddingBottom: '9%' }}>
+                                        Filter By :
+                             </div>
+                                </Stack.Item>
+
+                                <Stack.Item>
+                                    <RadioButton
+
+                                        id="id1"
+                                        label="Order ID"
+                                        checked={this.state.isCheckedOrd}
+                                        onFocus={this.clickOrder.bind(this)}
+                                    />
+                                </Stack.Item>
+                                <Stack.Item>
+
+                                    <RadioButton
+                                        label="Customer Name"
+                                        checked={this.state.isCheckedCus}
+                                        onFocus={this.clickCustomer.bind(this)}
+
+                                    />
+                                </Stack.Item>
+
+                                <Stack.Item>
+                                    <div className="searchOdrs">
+                                        <input
+                                            type="text"
+                                            value={this.state.search}
+                                            onChange={this.updateSearch.bind(this)}
+                                            style={inputStyle}
+                                        />
+                                    </div>
+                                </Stack.Item>
+
+                            </Stack>
+                        </div>
 
 
-                    {
-                        (!Array.isArray(orderArray) || !orderArray.length) ? (
+                        {
+                            (!Array.isArray(orderArray) || !orderArray.length) ? (
 
 
-                            <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
+                                <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
 
-                                orderArray.map((order, index) => {
-                                    const qrValue = order.order_number.toString();
-                                    const title = "Order ID: " + order.order_number;
+                                    orderArray.map((order, index) => {
+                                        const qrValue = order.order_number.toString();
+                                        const title = "Order ID: " + order.order_number;
 
-                                    console.log("correct 1");
+                                        console.log("correct 1");
 
-                                    if (this.state.isExpanded) {
-                                        console.log("correct 1= uncollapased");
-                                        return (
-                                            <Uncollapsed
-                                                key={index}
-                                                order={order}
-                                                productsProp={this.state.products}
-                                                resetOrders={this.resetOrders}
-                                                qrVal={qrValue}
-                                                title={title}
-                                            />
+                                        if (this.state.isExpanded) {
+                                            console.log("correct 1= uncollapased");
+                                            return (
+                                                <Uncollapsed
+                                                    key={index}
+                                                    order={order}
+                                                    productsProp={this.state.products}
+                                                    resetOrders={this.resetOrders}
+                                                    qrVal={qrValue}
+                                                    title={title}
+                                                />
 
-                                        );
-                                    } 
+                                            );
+                                        }
 
-                                })
+                                    })
 
-                            )
-                    }
+                                )
+                        }
 
-                </Page>
+                    </Page>
                 </div>
             );
         }
