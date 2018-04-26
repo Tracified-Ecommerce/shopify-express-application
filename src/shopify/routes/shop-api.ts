@@ -56,7 +56,7 @@ router.get("/orders/:pageID", (req: IRequest, res: Response) => {
                     flag = false;
                 }
             });
-            console.log("inside fulfilled function");
+            console.log("inside unfulfilled function");
             return flag;
 });
         res.status(200).send({ orders: unTracified });
@@ -89,6 +89,31 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
     shopAdminAPI(
         "GET", req.session.shop.name,
         "/admin/orders.json?status=any",
+        req.shopRequestHeaders,
+        null,
+        (orders: any) => {
+            const fulfilledOrders = orders.orders.filter((order: IOrder) => {
+                let flag = false;
+                order.note_attributes.map((noteAttrib: any) => {
+                    if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                        flag = true;
+                    }
+                });
+                console.log("inside fulfilled function");
+                return flag;
+            });
+
+            res.status(200).send({ fulfilledOrders, shopDomain });
+        });
+});
+
+router.get("/fulfilled-orders/:pageID", (req: IRequest, res: Response) => {
+    console.log("fullfilled orders");
+    const orderURL = "/admin/orders.json?status=any&page=" + req.params.pageID;
+    const shopDomain = req.session.shop.name;
+    shopAdminAPI(
+        "GET", req.session.shop.name,
+        orderURL,
         req.shopRequestHeaders,
         null,
         (orders: any) => {

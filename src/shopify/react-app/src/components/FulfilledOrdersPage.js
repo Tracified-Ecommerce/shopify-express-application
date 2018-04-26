@@ -45,21 +45,38 @@ class FulfilledOrdersPage extends Component {
             }).catch(function (error) {
                 console.error(error);
             });
-        axios.get('/shopify/shop-api/fulfilled-orders')
+
+        axios.get('/shopify/shop-api/orderCount')
             .then(response => {
-                this.setState({
-                    orders: response.data.fulfilledOrders,
-                    shopDomain: response.data.shopDomain,
-                    isOrderListLoading: false
-                });
+                console.log("order count is : " + response.data.orderCount);
+                console.log("page count is : " + response.data.pageCount);
+                const pageCount = response.data.pageCount;
+                for (let i = 1; i <= pageCount; i++) {
+                    const orderPageURL = "/shopify/shop-api/fulfilled-orders/" + i;
+                    axios.get(orderPageURL)
+                        .then(response => {
+                            console.log("got tracified orders from backend");
+                            console.log(JSON.stringify(response.data));
+                            let updatedOrderArray = this.state.orders;
+                            updatedOrderArray = updatedOrderArray.concat(response.data.orders);
+                            this.setState({
+                                orders: updatedOrderArray,
+                                shopDomain: response.data.shopDomain,
+                                isOrderListLoading: false,
+                            });
+                        }).catch(function (error) {
+                            console.log(error);
+                        });
+                }
+
             }).catch(function (error) {
-                console.error(error);
+                console.log(error);
             });
     }
     /** Uncomment this method if there is a need to restrict the input to a pattern.
      * (insert-regex-here) can be changed to a test for the pattern 
      */
-    
+
     // onKeyPress(event) {
     //     const keyCode = event.keyCode || event.which;
     //     const keyValue = String.fromCharCode(keyCode);
@@ -90,7 +107,7 @@ class FulfilledOrdersPage extends Component {
     render() {
 
         if (this.state.isOrderListLoading || this.state.isMappingLoading) {
-            return <Loading loadMsg="Please wait. Loading your orders from Shopify..."/>;
+            return <Loading loadMsg="Please wait. Loading your orders from Shopify..." />;
         }
         else {
             // All the order details
@@ -290,11 +307,11 @@ class FulfilledOrdersPage extends Component {
                     </div>
                     <table className="table table-striped" id="tblHeaderWrapper">
                         <thead>
-                             <tr>
+                            <tr>
                                 <td ><b>Order No</b></td>
                                 <td ><b>Customer</b></td>
                                 <td ><b>Order Item to View</b></td>
-                                <td ><b>Trace</b></td>                                
+                                <td ><b>Trace</b></td>
                             </tr>
                         </thead>
                         <tbody>
