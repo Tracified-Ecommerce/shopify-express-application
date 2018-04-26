@@ -65,6 +65,8 @@ class Part2Cards extends Component {
 
         axios.get('/shopify/shop-api/orders')
             .then(response => {
+                console.log("got orders from backend");
+                console.log(JSON.stringify(response.data));
                 let arr = [];
                 response.data.orders.forEach((order) => {
                     arr.push(false);
