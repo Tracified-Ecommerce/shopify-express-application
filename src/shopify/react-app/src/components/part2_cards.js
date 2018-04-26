@@ -60,23 +60,23 @@ class Part2Cards extends Component {
                 console.log("order count is : " + response.data.orderCount);
                 console.log("page count is : " + response.data.pageCount);
                 const pageCount = response.data.pageCount;
-                for(let i = 1; i <= pageCount; i++) {
-                    const orderPageURL = "/shopify/shop-api/orders/" + i; 
+                for (let i = 1; i <= pageCount; i++) {
+                    const orderPageURL = "/shopify/shop-api/orders/" + i;
                     axios.get(orderPageURL)
-                    .then(response => {
-                        console.log("got orders from backend");
-                        console.log(JSON.stringify(response.data));
-                        let updatedOrderArray = this.state.orders;
-                        updatedOrderArray = updatedOrderArray.concat(response.data.orders);
-                        this.setState({
-                            orders: updatedOrderArray,
-                            isOrderListLoading: false,
+                        .then(response => {
+                            console.log("got orders from backend");
+                            console.log(JSON.stringify(response.data));
+                            let updatedOrderArray = this.state.orders;
+                            updatedOrderArray = updatedOrderArray.concat(response.data.orders);
+                            this.setState({
+                                orders: updatedOrderArray,
+                                isOrderListLoading: false,
+                            });
+                        }).catch(function (error) {
+                            console.log(error);
                         });
-                    }).catch(function (error) {
-                        console.log(error);
-                    });
                 }
-                
+
             }).catch(function (error) {
                 console.log(error);
             });
@@ -143,7 +143,10 @@ class Part2Cards extends Component {
 
                 let orders = this.state.orders.filter(
                     (order) => {
-                        const customer = order.customer.first_name + " " + order.customer.last_name;
+                        let customer = "Admin created order"; 
+                        if (order.customer) { 
+                            customer = order.customer.first_name + " " + order.customer.last_name; 
+                        }
                         const customer1 = customer.toLowerCase();
                         const customer2 = customer.toUpperCase();
                         return customer1.indexOf(this.state.search) !== -1 || customer2.indexOf(this.state.search) !== -1 || customer.indexOf(this.state.search) !== -1;
@@ -164,7 +167,10 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    const customer = order.customer.first_name + " " + order.customer.last_name;
+                    let customer = "Admin created order"; 
+                    if (order.customer) { 
+                        customer = order.customer.first_name + " " + order.customer.last_name; 
+                    }
 
 
 
@@ -207,7 +213,10 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    const customer = order.customer.first_name + " " + order.customer.last_name;
+                    let customer = "Admin created order"; 
+                    if (order.customer) { 
+                        customer = order.customer.first_name + " " + order.customer.last_name; 
+                    }
 
 
                     orderArray.push({
@@ -244,7 +253,10 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    const customer = order.customer.first_name + " " + order.customer.last_name;
+                    let customer = "Admin created order"; 
+                    if (order.customer) { 
+                        customer = order.customer.first_name + " " + order.customer.last_name; 
+                    }
 
 
 
