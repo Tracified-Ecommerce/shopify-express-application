@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { Thumbnail, Card, Page, List, RadioButton, Button, Stack, TextField } from '@shopify/polaris';
+import { Thumbnail, Card, Page, List, RadioButton, Button, Stack,TextField} from '@shopify/polaris';
 import Loading from './Loading';
 // import CollapseMain from './CollapseMain';
 import Uncollapsed from './Uncollapsed';
@@ -120,7 +120,7 @@ class Part2Cards extends Component {
         // let buttonText = this.state.isExpanded ? { text: "Switch to collapsed view" } : { text: "Switch to expanded view" }
 
         if (this.state.isOrderListLoading) {
-            return <Loading loadMsg=" Please wait. Loading your orders from Shopify..." />;
+            return <Loading loadMsg=" Please wait. Loading your orders from Shopify..."/>;
         }
         else {
             // All the order details
@@ -130,7 +130,7 @@ class Part2Cards extends Component {
 
                 let orders = this.state.orders.filter(
                     (order) => {
-                        if (order.customer) { customer = order.customer.first_name + " " + order.customer.last_name; };
+                        const customer = order.customer.first_name + " " + order.customer.last_name;
                         const customer1 = customer.toLowerCase();
                         const customer2 = customer.toUpperCase();
                         return customer1.indexOf(this.state.search) !== -1 || customer2.indexOf(this.state.search) !== -1 || customer.indexOf(this.state.search) !== -1;
@@ -151,7 +151,7 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    if (order.customer) { customer = order.customer.first_name + " " + order.customer.last_name; };
+                    const customer = order.customer.first_name + " " + order.customer.last_name;
 
 
 
@@ -194,7 +194,7 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    if (order.customer) { customer = order.customer.first_name + " " + order.customer.last_name; };
+                    const customer = order.customer.first_name + " " + order.customer.last_name;
 
 
                     orderArray.push({
@@ -231,7 +231,7 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    if (order.customer) { customer = order.customer.first_name + " " + order.customer.last_name; };
+                    const customer = order.customer.first_name + " " + order.customer.last_name;
 
 
 
@@ -271,7 +271,7 @@ class Part2Cards extends Component {
                 paddingLeft: "5%"
             }
 
-            var toggleBtnStyle = {
+            var toggleBtnStyle={
                 paddingBottom: "10px",
                 marginLeft: "5%",
                 width: "105%"
@@ -279,14 +279,14 @@ class Part2Cards extends Component {
 
             return (
                 <div className="pageWrapper">
-                    <Page title="UnTracified Orders" separator>
-                        <Stack
-                            distribution="trailing"
-                        >
+                <Page title="UnTracified Orders" separator>
+                    <Stack
+                        distribution="trailing"
+                    >
 
-                            <div className="toggleBtn" style={toggleBtnStyle}>
-                                <Stack.Item>
-                                    {/* <Button
+                        <div className="toggleBtn" style={toggleBtnStyle}>
+                            <Stack.Item>
+                                {/* <Button
                                     plain
                                     size="slim"
                                     outline
@@ -294,85 +294,85 @@ class Part2Cards extends Component {
                                 >
                                     {buttonText.text}
                                 </Button> */}
-                                </Stack.Item>
-                            </div>
-
-                        </Stack>
-                        <div className="untraciFilterBy" style={{ paddingBottom: 5, textAlign: "center" }}>
-                            <Stack alignment="center" >
-                                <Stack.Item>
-                                    <div style={{ marginBottom: 5, fontWeight: "bold", fontSize: "140%", paddingBottom: '9%' }}>
-                                        Filter By :
-                             </div>
-                                </Stack.Item>
-
-                                <Stack.Item>
-                                    <RadioButton
-
-                                        id="id1"
-                                        label="Order ID"
-                                        checked={this.state.isCheckedOrd}
-                                        onFocus={this.clickOrder.bind(this)}
-                                    />
-                                </Stack.Item>
-                                <Stack.Item>
-
-                                    <RadioButton
-                                        label="Customer Name"
-                                        checked={this.state.isCheckedCus}
-                                        onFocus={this.clickCustomer.bind(this)}
-
-                                    />
-                                </Stack.Item>
-
-                                <Stack.Item>
-                                    <div className="searchOdrs">
-                                        <input
-                                            type="text"
-                                            value={this.state.search}
-                                            onChange={this.updateSearch.bind(this)}
-                                            style={inputStyle}
-                                        />
-                                    </div>
-                                </Stack.Item>
-
-                            </Stack>
+                            </Stack.Item>
                         </div>
 
+                    </Stack>
+                    <div className="untraciFilterBy" style={{ paddingBottom: 5 , textAlign: "center" }}>
+                        <Stack alignment="center" >
+                            <Stack.Item>
+                            <div style={{marginBottom:5,fontWeight:"bold",fontSize:"140%", paddingBottom:'9%'}}>
+                                    Filter By :
+                             </div>
+                            </Stack.Item>
+                       
+                            <Stack.Item>
+                                <RadioButton
 
-                        {
-                            (!Array.isArray(orderArray) || !orderArray.length) ? (
+                                    id="id1"
+                                    label="Order ID"
+                                    checked={this.state.isCheckedOrd}
+                                    onFocus={this.clickOrder.bind(this)}
+                                />
+                            </Stack.Item>
+                            <Stack.Item>
+
+                                <RadioButton
+                                    label="Customer Name"
+                                    checked={this.state.isCheckedCus}
+                                    onFocus={this.clickCustomer.bind(this)}
+
+                                />
+                            </Stack.Item>
+                    
+                            <Stack.Item>
+                                <div className="searchOdrs">
+                                    <input
+                                        type="text"
+                                        value={this.state.search}
+                                        onChange={this.updateSearch.bind(this)}
+                                        style={inputStyle}
+                                    />
+                                </div>
+                            </Stack.Item>
+
+                        </Stack>
+                    </div>
 
 
-                                <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
+                    {
+                        (!Array.isArray(orderArray) || !orderArray.length) ? (
 
-                                    orderArray.map((order, index) => {
-                                        const qrValue = order.order_number.toString();
-                                        const title = "Order ID: " + order.order_number;
 
-                                        console.log("correct 1");
+                            <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
 
-                                        if (this.state.isExpanded) {
-                                            console.log("correct 1= uncollapased");
-                                            return (
-                                                <Uncollapsed
-                                                    key={index}
-                                                    order={order}
-                                                    productsProp={this.state.products}
-                                                    resetOrders={this.resetOrders}
-                                                    qrVal={qrValue}
-                                                    title={title}
-                                                />
+                                orderArray.map((order, index) => {
+                                    const qrValue = order.order_number.toString();
+                                    const title = "Order ID: " + order.order_number;
 
-                                            );
-                                        }
+                                    console.log("correct 1");
 
-                                    })
+                                    if (this.state.isExpanded) {
+                                        console.log("correct 1= uncollapased");
+                                        return (
+                                            <Uncollapsed
+                                                key={index}
+                                                order={order}
+                                                productsProp={this.state.products}
+                                                resetOrders={this.resetOrders}
+                                                qrVal={qrValue}
+                                                title={title}
+                                            />
 
-                                )
-                        }
+                                        );
+                                    } 
 
-                    </Page>
+                                })
+
+                            )
+                    }
+
+                </Page>
                 </div>
             );
         }
