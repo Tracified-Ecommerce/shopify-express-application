@@ -12,10 +12,46 @@ export interface IHelper {
         shopRequestHeaders: any,
         body: any,
         callback: (obj: any) => any): any;
+    createPromise(
+        method: string,
+        shop: any,
+        relUrl: string,
+        shopRequestHeaders: any,
+        body: any): request.RequestPromise;
 }
 
 export class Helper implements IHelper {
 
+    public createPromise(
+        method: string,
+        shop: any,
+        relUrl: string,
+        shopRequestHeaders: any,
+        body: any) {
+        let options;
+
+        if (body !== null) {
+            options = {
+                body,
+                headers: shopRequestHeaders,
+                json: true,
+                method,
+                uri: "https://" + shop + relUrl,
+            };
+
+        } else {
+
+            options = {
+                headers: shopRequestHeaders,
+                json: true,
+                method,
+                uri: "https://" + shop + relUrl,
+            };
+
+        }
+
+        return request(options);
+    }
     public verifyQueryHMAC(query: any, apiSecret: string) {
         if (!query.hmac) {
             return false;

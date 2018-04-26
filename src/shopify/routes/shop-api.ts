@@ -8,6 +8,7 @@ import { Helper, IHelper } from "../helpers/index";
 const helper: IHelper = new Helper();
 const router = Router();
 const shopAdminAPI = helper.shopAdminAPI;
+const createPromise = helper.createPromise;
 
 router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
     if (req.session && req.session.shop) {
@@ -22,11 +23,8 @@ router.all("/*", (req: IRequest, res: Response, next: NextFunction) => {
 });
 
 router.get("/products", (req: IRequest, res: Response) => {
-    console.log("products");
-    console.log(req.session.shop.name);
     shopAdminAPI(
         "GET", req.session.shop.name, "/admin/products.json", req.shopRequestHeaders, null, (products: any) => {
-            console.log("got products");
             res.status(200).send(products);
         });
 });
@@ -59,7 +57,7 @@ router.get("/orders/:pageID", (req: IRequest, res: Response) => {
             });
             console.log("inside fulfilled function");
             return flag;
-        });
+});
         res.status(200).send({ orders: unTracified });
     });
 });
