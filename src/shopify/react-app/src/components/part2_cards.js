@@ -59,7 +59,8 @@ class Part2Cards extends Component {
             .then(response => {
                 console.log("order count is : " + response.data.orderCount);
                 console.log("page count is : " + response.data.pageCount);
-                for(const i = 1; i <= pageCount; i++) {
+                const pageCount = response.data.pageCount;
+                for(let i = 1; i <= pageCount; i++) {
                     const orderPageURL = "/shopify/shop-api/orders/" + i; 
                     axios.get(orderPageURL)
                     .then(response => {
