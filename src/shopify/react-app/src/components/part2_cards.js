@@ -71,7 +71,6 @@ class Part2Cards extends Component {
                         this.setState({
                             orders: updatedOrderArray,
                             isOrderListLoading: false,
-                            cardStateArray: arr
                         });
                     }).catch(function (error) {
                         console.log(error);
