@@ -59,26 +59,28 @@ class Part2Cards extends Component {
             .then(response => {
                 console.log("order count is : " + response.data.orderCount);
                 console.log("page count is : " + response.data.pageCount);
+                for(const i = 1; i <= pageCount; i++) {
+                    const orderPageURL = "/shopify/shop-api/orders/" + i; 
+                    axios.get(orderPageURL)
+                    .then(response => {
+                        console.log("got orders from backend");
+                        console.log(JSON.stringify(response.data));
+                        let updatedOrderArray = this.state.orders;
+                        updatedOrderArray = updatedOrderArray.concat(response.data.orders);
+                        this.setState({
+                            orders: updatedOrderArray,
+                            isOrderListLoading: false,
+                            cardStateArray: arr
+                        });
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
+                
             }).catch(function (error) {
                 console.log(error);
             });
 
-        axios.get('/shopify/shop-api/orders/1')
-            .then(response => {
-                console.log("got orders from backend");
-                console.log(JSON.stringify(response.data));
-                let arr = [];
-                response.data.orders.forEach((order) => {
-                    arr.push(false);
-                });
-                this.setState({
-                    orders: response.data.orders,
-                    isOrderListLoading: false,
-                    cardStateArray: arr
-                });
-            }).catch(function (error) {
-                console.log(error);
-            });
     }
 
     resetOrders = () => {
