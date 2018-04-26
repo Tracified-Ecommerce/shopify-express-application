@@ -44,8 +44,9 @@ router.get("/orderCount", (req: IRequest, res: Response) => {
 
 router.get("/orders/:pageID", (req: IRequest, res: Response) => {
 
-    shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
-        console.log("got orders");
+    const orderURL = "/admin/orders.json?status=any" + req.params.pageID;
+    shopAdminAPI("GET", req.session.shop.name, orderURL, req.shopRequestHeaders, null, (orders: any) => {
+        console.log("got orders from page " + req.params.pageID);
         let unTracified = [];
         unTracified = orders.orders.filter((order: IOrder) => {
             // let flag = false;
@@ -64,7 +65,7 @@ router.get("/orders/:pageID", (req: IRequest, res: Response) => {
 
 router.get("/orders", (req: IRequest, res: Response) => {
 
-    shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json?page=2", req.shopRequestHeaders, null, (orders: any) => {
+    shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json?status=any", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
         let unTracified = [];
         unTracified = orders.orders.filter((order: IOrder) => {

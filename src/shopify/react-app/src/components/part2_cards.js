@@ -63,7 +63,7 @@ class Part2Cards extends Component {
                 console.log(error);
             });
 
-        axios.get('/shopify/shop-api/orders')
+        axios.get('/shopify/shop-api/orders/1')
             .then(response => {
                 console.log("got orders from backend");
                 console.log(JSON.stringify(response.data));
