@@ -34,20 +34,39 @@ router.get("/products", (req: IRequest, res: Response) => {
 router.get("/orderCount", (req: IRequest, res: Response) => {
     let orderCount = 0;
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders/count.json", req.shopRequestHeaders, null, (response: any) => {
-        console.log("got order count : " + response.count);
         orderCount = response.count;
-        let pageCount = Math.ceil(620 / 250);
-        console.log("test page count = " + pageCount);
-        pageCount = Math.ceil(orderCount / 250);
-        console.log("actual page count = " + pageCount);
+        // let pageCount = Math.ceil(620 / 250);
+        // console.log("test page count = " + pageCount);
+        const pageCount = Math.ceil(orderCount / 250);
+        console.log("order page count = " + pageCount);
         res.status(200).send({ orderCount, pageCount });
     });
 
 });
 
-router.get("/orders", (req: IRequest, res: Response) => {
+router.get("/orders/:pageID", (req: IRequest, res: Response) => {
 
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
+        console.log("got orders");
+        let unTracified = [];
+        unTracified = orders.orders.filter((order: IOrder) => {
+            // let flag = false;
+            let flag = true;
+            order.note_attributes.map((noteAttrib: any) => {
+                if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                    flag = false;
+                }
+            });
+            console.log("inside fulfilled function");
+            return flag;
+        });
+        res.status(200).send({ orders: unTracified });
+    });
+});
+
+router.get("/orders", (req: IRequest, res: Response) => {
+
+    shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json?page=2", req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders");
         let unTracified = [];
         unTracified = orders.orders.filter((order: IOrder) => {
@@ -116,7 +135,7 @@ router.get("/orders/:id/tracify", (req: IRequest & Request, res: Response) => {
     };
 
     shopAdminAPI("PUT", req.session.shop.name, url, req.shopRequestHeaders, body, (order: any) => {
-        console.log("order fulfilled");
+        console.log("order tracified");
         res.status(200).send(order);
     });
 });
