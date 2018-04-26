@@ -35,7 +35,7 @@ router.get("/orderCount", (req: IRequest, res: Response) => {
         orderCount = response.count;
         // let pageCount = Math.ceil(620 / 250);
         // console.log("test page count = " + pageCount);
-        const pageCount = Math.ceil(orderCount / 250);
+        const pageCount = Math.ceil(orderCount / 50);
         console.log("order page count = " + pageCount);
         res.status(200).send({ orderCount, pageCount });
     });
@@ -44,7 +44,7 @@ router.get("/orderCount", (req: IRequest, res: Response) => {
 
 router.get("/orders/:pageID", (req: IRequest, res: Response) => {
 
-    const orderURL = "/admin/orders.json?status=any" + req.params.pageID;
+    const orderURL = "/admin/orders.json?status=any&page=" + req.params.pageID;
     shopAdminAPI("GET", req.session.shop.name, orderURL, req.shopRequestHeaders, null, (orders: any) => {
         console.log("got orders from page " + req.params.pageID);
         let unTracified = [];
