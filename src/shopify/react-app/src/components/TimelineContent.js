@@ -19,7 +19,8 @@ class TimelineContent extends Component {
 
         return (
             <div className="timelineContentWrapper">
-               
+
+                {/* <div className="componentClass" style={divStyle} id={this.props.componentID} > */}
                 <div className="componentClass" id={this.props.componentID} >
                     {
 
@@ -101,12 +102,17 @@ class TimelineContent extends Component {
                                                             console.log("subGroup[innerKey].value :"+subGroup[innerKey].value);
                                                             let valueTimelineStage = "" ;
                                                             console.log("valueTimelineStage :"+valueTimelineStage);
-
-                                                            subGroup[innerKey].value.forEach(i => {
-                                                                console.log("################# Inside for each ###############");
-                                                                console.log("values of valueTimelineStage :::: " + i);
-                                                                valueTimelineStage +=  i+"  ";
-                                                            })
+                                                            
+                                                            for (let i = 0; i < subGroup[innerKey].value.length; i++) {
+                                                                // const element = subGroup[innerKey].value[i];
+                                                                if (i == ((subGroup[innerKey].value.length)-1)){
+                                                                    console.log("if condition@@@@@@@@@@@" );
+                                                                    valueTimelineStage +=  subGroup[innerKey].value[i].toString()+"  ";
+                                                                }else {
+                                                                    valueTimelineStage +=   subGroup[innerKey].value[i].toString()+" , ";
+                                                                }
+                                                                
+                                                            }
 
                                                             return (
                                                                 <div key={innerKey}>
@@ -159,6 +165,10 @@ class TimelineContent extends Component {
                         })
                     }
                 </div>
+
+                {/* <div style={seeMoreStyle}>
+                    {buttonCode}
+                </div> */}
 
             </div>
         );
