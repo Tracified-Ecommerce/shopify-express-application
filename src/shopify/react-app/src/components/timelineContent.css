@@ -1,5 +1,5 @@
 .innerSpanClass{
-    display: table-cell;
+    display: -webkit-inline-box;
 }
 
 .compSpanClass{
