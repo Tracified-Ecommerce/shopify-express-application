@@ -111,6 +111,7 @@ class FulfilledOrdersPage extends Component {
         }
         else {
             // All the order details
+
             if (this.state.isCheckedCus) {
 
                 let orders = this.state.orders.filter(
@@ -159,7 +160,7 @@ class FulfilledOrdersPage extends Component {
 
                 let orders = this.state.orders.filter(
                     (order) => {
-                        return order.order_number.indexOf(this.state.search) !== -1;
+                        return order.name.indexOf(this.state.search) !== -1;
                     }
                 );
 
@@ -224,7 +225,7 @@ class FulfilledOrdersPage extends Component {
 
             let orders = this.state.orders.filter(
                 (order1) => {
-                    return order1.order_number.indexOf(this.state.search) !== -1;
+                    return order1.name.indexOf(this.state.search) !== -1;
                 }
             );
 
