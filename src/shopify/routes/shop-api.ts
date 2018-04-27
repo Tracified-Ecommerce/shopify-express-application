@@ -32,58 +32,54 @@ router.get("/products", (req: IRequest, res: Response) => {
 router.get("/orderCount", (req: IRequest, res: Response) => {
     let orderCount = 0;
     shopAdminAPI("GET", req.session.shop.name, "/admin/orders/count.json", req.shopRequestHeaders, null, (response: any) => {
-        console.log("got order count : " + response.count);
         orderCount = response.count;
-        let pageCount = Math.ceil(620 / 250);
-        console.log("test page count = " + pageCount);
-        pageCount = Math.ceil(orderCount / 250);
-        console.log("actual page count = " + pageCount);
-<<<<<<< HEAD
-        let orderURL = "";
-        let unTracified: any[] = [];
-        let tempArray: any[] = [];
-        let promiseArray: any[] = [];
-        for (let i = 1; i <= pageCount; i++) {
-            orderURL = "/admin/orders.json?status=any&limit=250&page=" + i;
-            console.log(orderURL);
-            promiseArray.push(createPromise("GET", req.session.shop.name, orderURL, req.shopRequestHeaders, null).then((orders: any) => {
-                tempArray = orders.orders.filter((order: IOrder) => {
-                    let flag = true;
-                    order.note_attributes.map((noteAttrib: any) => {
-                        if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
-                            flag = false;
-                        }
-                    });
-                    return flag;
-                });
-                unTracified = unTracified.concat(tempArray);
-                console.log("untracified : " + unTracified);
-            }));
-=======
+        // let pageCount = Math.ceil(620 / 250);
+        // console.log("test page count = " + pageCount);
+        const pageCount = Math.ceil(orderCount / 50);
+        console.log("order page count = " + pageCount);
         res.status(200).send({ orderCount, pageCount });
     });
 
 });
 
-router.get("/orders", (req: IRequest, res: Response) => {
->>>>>>> 2ec66f04787168eeedfea16605ae5195053e41fb
+router.get("/orders/:pageID", (req: IRequest, res: Response) => {
 
-            // shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json", req.shopRequestHeaders, null, (orders: any) => {
-            //     tempArray = orders.orders.filter((order: IOrder) => {
-            //         let flag = true;
-            //         order.note_attributes.map((noteAttrib: any) => {
-            //             if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
-            //                 flag = false;
-            //             }
-            //         });
-            //         return flag;
-            //     });
-            //     unTracified = unTracified.concat(tempArray);
-            // });
-        }
-        Promise.all(promiseArray).then(() => {
-            res.status(200).send({ orders: unTracified });
+    const orderURL = "/admin/orders.json?status=any&page=" + req.params.pageID;
+    shopAdminAPI("GET", req.session.shop.name, orderURL, req.shopRequestHeaders, null, (orders: any) => {
+        console.log("got orders from page " + req.params.pageID);
+        let unTracified = [];
+        unTracified = orders.orders.filter((order: IOrder) => {
+            // let flag = false;
+            let flag = true;
+            order.note_attributes.map((noteAttrib: any) => {
+                if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                    flag = false;
+                }
+            });
+            console.log("inside unfulfilled function");
+            return flag;
+});
+        res.status(200).send({ orders: unTracified });
+    });
+});
+
+router.get("/orders", (req: IRequest, res: Response) => {
+
+    shopAdminAPI("GET", req.session.shop.name, "/admin/orders.json?status=any", req.shopRequestHeaders, null, (orders: any) => {
+        console.log("got orders");
+        let unTracified = [];
+        unTracified = orders.orders.filter((order: IOrder) => {
+            // let flag = false;
+            let flag = true;
+            order.note_attributes.map((noteAttrib: any) => {
+                if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                    flag = false;
+                }
+            });
+            console.log("inside fulfilled function");
+            return flag;
         });
+        res.status(200).send({ orders: unTracified });
     });
 });
 
@@ -93,6 +89,31 @@ router.get("/fulfilled-orders", (req: IRequest, res: Response) => {
     shopAdminAPI(
         "GET", req.session.shop.name,
         "/admin/orders.json?status=any",
+        req.shopRequestHeaders,
+        null,
+        (orders: any) => {
+            const fulfilledOrders = orders.orders.filter((order: IOrder) => {
+                let flag = false;
+                order.note_attributes.map((noteAttrib: any) => {
+                    if (noteAttrib.name === "tracified" && noteAttrib.value === "true") {
+                        flag = true;
+                    }
+                });
+                console.log("inside fulfilled function");
+                return flag;
+            });
+
+            res.status(200).send({ fulfilledOrders, shopDomain });
+        });
+});
+
+router.get("/fulfilled-orders/:pageID", (req: IRequest, res: Response) => {
+    console.log("fullfilled orders");
+    const orderURL = "/admin/orders.json?status=any&page=" + req.params.pageID;
+    const shopDomain = req.session.shop.name;
+    shopAdminAPI(
+        "GET", req.session.shop.name,
+        orderURL,
         req.shopRequestHeaders,
         null,
         (orders: any) => {
@@ -138,7 +159,7 @@ router.get("/orders/:id/tracify", (req: IRequest & Request, res: Response) => {
     };
 
     shopAdminAPI("PUT", req.session.shop.name, url, req.shopRequestHeaders, body, (order: any) => {
-        console.log("order fulfilled");
+        console.log("order tracified");
         res.status(200).send(order);
     });
 });

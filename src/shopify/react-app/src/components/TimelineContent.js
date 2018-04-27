@@ -8,10 +8,6 @@ import './timelineContent.css';
 
 class TimelineContent extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
 
         var stageData = this.props.data;
@@ -165,10 +161,6 @@ class TimelineContent extends Component {
                         })
                     }
                 </div>
-
-                {/* <div style={seeMoreStyle}>
-                    {buttonCode}
-                </div> */}
 
             </div>
         );

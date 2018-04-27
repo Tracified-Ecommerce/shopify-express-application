@@ -11,10 +11,8 @@ import './untracifiedOrders_mediaQueries.css'
 class Part2Cards extends Component {
     constructor() {
         super();
-        // this.handleClick = this.handleClick.bind(this);
         this.state = {
             orders: [],
-            // cardStateArray: [],
             products: {},
             isOrderListLoading: true,
             search: '',
@@ -23,28 +21,7 @@ class Part2Cards extends Component {
             isCheckedOrd: true,
             errorText: "No Result Found"
         };
-        // this.toggleCardType = this.toggleCardType.bind(this);
     }
-
-    // handleClick = (index, isClosed) => {
-
-    //     if (!isClosed) {
-    //         //reset all values in array to false -> (sets all cards' "isOpen" attributes to false)
-    //         this.state.cardStateArray.fill(false);
-
-    //     }
-
-    //     //set only this card's collapse attribute to true
-    //     var temp = this.state.cardStateArray.slice();
-    //     temp[index] = !(temp[index]);
-    //     // replace array with modified temp array
-    //     this.setState({ cardStateArray: temp });
-
-    // }
-
-    // toggleCardType() {
-    //     this.setState({ isExpanded: !this.state.isExpanded });
-    // }
 
     componentDidMount() {
         axios.get('/shopify/shop-api/products')
@@ -59,24 +36,28 @@ class Part2Cards extends Component {
             .then(response => {
                 console.log("order count is : " + response.data.orderCount);
                 console.log("page count is : " + response.data.pageCount);
+                const pageCount = response.data.pageCount;
+                for (let i = 1; i <= pageCount; i++) {
+                    const orderPageURL = "/shopify/shop-api/orders/" + i;
+                    axios.get(orderPageURL)
+                        .then(response => {
+                            console.log("got orders from backend");
+                            console.log(JSON.stringify(response.data));
+                            let updatedOrderArray = this.state.orders;
+                            updatedOrderArray = updatedOrderArray.concat(response.data.orders);
+                            this.setState({
+                                orders: updatedOrderArray,
+                                isOrderListLoading: false,
+                            });
+                        }).catch(function (error) {
+                            console.log(error);
+                        });
+                }
+
             }).catch(function (error) {
                 console.log(error);
             });
 
-        axios.get('/shopify/shop-api/orders')
-            .then(response => {
-                let arr = [];
-                response.data.orders.forEach((order) => {
-                    arr.push(false);
-                });
-                this.setState({
-                    orders: response.data.orders,
-                    isOrderListLoading: false,
-                    cardStateArray: arr
-                });
-            }).catch(function (error) {
-                console.log(error);
-            });
     }
 
     resetOrders = () => {
@@ -126,20 +107,19 @@ class Part2Cards extends Component {
 
     render() {
 
-        // let buttonText = this.state.isExpanded ? { text: "Switch to collapsed view" } : { text: "Switch to expanded view" }
-
         if (this.state.isOrderListLoading) {
             return <Loading loadMsg=" Please wait. Loading your orders from Shopify..." />;
         }
         else {
-            // All the order details
-            //var orders = this.state.orders;
 
             if (this.state.isCheckedCus) {
 
                 let orders = this.state.orders.filter(
                     (order) => {
-                        const customer = order.customer.first_name + " " + order.customer.last_name;
+                        let customer = "Admin created order"; 
+                        if (order.customer) { 
+                            customer = order.customer.first_name + " " + order.customer.last_name; 
+                        }
                         const customer1 = customer.toLowerCase();
                         const customer2 = customer.toUpperCase();
                         return customer1.indexOf(this.state.search) !== -1 || customer2.indexOf(this.state.search) !== -1 || customer.indexOf(this.state.search) !== -1;
@@ -160,7 +140,10 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    const customer = order.customer.first_name + " " + order.customer.last_name;
+                    let customer = "Admin created order"; 
+                    if (order.customer) { 
+                        customer = order.customer.first_name + " " + order.customer.last_name; 
+                    }
 
 
 
@@ -203,7 +186,10 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    const customer = order.customer.first_name + " " + order.customer.last_name;
+                    let customer = "Admin created order"; 
+                    if (order.customer) { 
+                        customer = order.customer.first_name + " " + order.customer.last_name; 
+                    }
 
 
                     orderArray.push({
@@ -240,7 +226,10 @@ class Part2Cards extends Component {
                         });
                     });
 
-                    const customer = order.customer.first_name + " " + order.customer.last_name;
+                    let customer = "Admin created order"; 
+                    if (order.customer) { 
+                        customer = order.customer.first_name + " " + order.customer.last_name; 
+                    }
 
 
 
@@ -295,14 +284,6 @@ class Part2Cards extends Component {
 
                             <div className="toggleBtn" style={toggleBtnStyle}>
                                 <Stack.Item>
-                                    {/* <Button
-                                    plain
-                                    size="slim"
-                                    outline
-                                    onClick={this.toggleCardType}
-                                >
-                                    {buttonText.text}
-                                </Button> */}
                                 </Stack.Item>
                             </div>
 

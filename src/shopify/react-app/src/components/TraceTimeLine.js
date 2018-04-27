@@ -17,9 +17,7 @@ class TraceTimeLine extends Component {
 
     constructor(props) {
         super(props);
-        // this.handleClick = this.handleClick.bind(this);
         this.state = {
-            // array: [],
             timeline: "",
             istimelineLoading: true,
             errorArray: [],
@@ -28,21 +26,6 @@ class TraceTimeLine extends Component {
         };
     }
 
-    // handleClick = (index, isClosed) => {
-
-    //     if (!isClosed) {
-    //         //reset all values in array to false -> (sets all cards' "isOpen" attributes to false)
-    //         this.state.array.fill(false);
-
-    //     }
-
-    //     //set only this card's collapse attribute to true
-    //     var temp = this.state.array.slice();
-    //     temp[index] = !(temp[index]);
-    //     // replace array with modified temp array
-    //     this.setState({ array: temp });
-
-    // }
 
     componentDidMount() {
         const traceURL = "/shopify/tracified/trace/" + this.props.match.params.orderID + "/" + this.props.match.params.itemID;
@@ -57,17 +40,10 @@ class TraceTimeLine extends Component {
                 const responseData = JSON.parse(response.data);
                 let timeline = responseData.tabs[2];
                 let itms = timeline.items;
-                // let arr = [];
-
-                // itms.map((e, i) => {
-                //     arr.push(false);
-                //     return true;
-                // });
 
                 this.setState({
                     timeline: timeline,
                     istimelineLoading: false,
-                    // array: arr
                 }, () => {
                     this.setState({
                         filteredTimeline: this.state.timeline.items.filter(stage => !isEmpty(stage.data))
@@ -176,11 +152,8 @@ class TraceTimeLine extends Component {
 
                                         <div id={index}>
                                             <TimelineContent
-                                                // collapseArray={this.state.array}
-                                                // collapseArrayKey={index}
                                                 data={stageData}
                                                 componentID={"component" + index}
-                                                // onClick={this.handleClick}
                                             />
                                         </div>
                                     </TimelineEvent>
