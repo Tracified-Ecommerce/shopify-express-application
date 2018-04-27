@@ -11,10 +11,8 @@ import './untracifiedOrders_mediaQueries.css'
 class Part2Cards extends Component {
     constructor() {
         super();
-        // this.handleClick = this.handleClick.bind(this);
         this.state = {
             orders: [],
-            // cardStateArray: [],
             products: {},
             isOrderListLoading: true,
             search: '',
@@ -23,28 +21,7 @@ class Part2Cards extends Component {
             isCheckedOrd: true,
             errorText: "No Result Found"
         };
-        // this.toggleCardType = this.toggleCardType.bind(this);
     }
-
-    // handleClick = (index, isClosed) => {
-
-    //     if (!isClosed) {
-    //         //reset all values in array to false -> (sets all cards' "isOpen" attributes to false)
-    //         this.state.cardStateArray.fill(false);
-
-    //     }
-
-    //     //set only this card's collapse attribute to true
-    //     var temp = this.state.cardStateArray.slice();
-    //     temp[index] = !(temp[index]);
-    //     // replace array with modified temp array
-    //     this.setState({ cardStateArray: temp });
-
-    // }
-
-    // toggleCardType() {
-    //     this.setState({ isExpanded: !this.state.isExpanded });
-    // }
 
     componentDidMount() {
         axios.get('/shopify/shop-api/products')
@@ -130,14 +107,10 @@ class Part2Cards extends Component {
 
     render() {
 
-        // let buttonText = this.state.isExpanded ? { text: "Switch to collapsed view" } : { text: "Switch to expanded view" }
-
         if (this.state.isOrderListLoading) {
             return <Loading loadMsg=" Please wait. Loading your orders from Shopify..." />;
         }
         else {
-            // All the order details
-            //var orders = this.state.orders;
 
             if (this.state.isCheckedCus) {
 
@@ -311,14 +284,6 @@ class Part2Cards extends Component {
 
                             <div className="toggleBtn" style={toggleBtnStyle}>
                                 <Stack.Item>
-                                    {/* <Button
-                                    plain
-                                    size="slim"
-                                    outline
-                                    onClick={this.toggleCardType}
-                                >
-                                    {buttonText.text}
-                                </Button> */}
                                 </Stack.Item>
                             </div>
 
