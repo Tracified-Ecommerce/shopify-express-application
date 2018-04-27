@@ -144,7 +144,6 @@ class ProductMappingTableRow extends Component {
             label="Traceability Enabled"
             onChange={this.onPermissionChange}
             id={CheckboxID}
-            label={CheckboxID}
             checked={this.state.CBchecked} />
         </td>
       </tr>
