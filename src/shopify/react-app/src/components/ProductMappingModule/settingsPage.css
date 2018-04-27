@@ -99,7 +99,7 @@
  }
 
  /* Media Queries for larger screens  */
- @media screen and (min-width:1824px){
+ @media screen and (min-device-width:1824px){
     .no-right-padding{
         padding-right: 0;
     }
