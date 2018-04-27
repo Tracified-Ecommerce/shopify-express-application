@@ -97,3 +97,38 @@
         margin-right: 7%;
     }
  }
+
+ /* Media Queries for larger screens  */
+ @media screen and (min-width:1824px){
+    .no-right-padding{
+        padding-right: 0;
+    }
+    
+    /* alert box styles which appears in settings page  */
+    .SettingAlert .alertBox{
+        width: 25%;
+    }
+    
+    .SettingAlert .alertmessage {
+        max-width: 25%;
+        padding-top: 2%;
+        margin-left: 2%;
+        margin-right: 0%;
+    }
+    
+    .SettingAlert .alertHleft {
+        max-width: 20%;
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    
+    .SettingAlert .alertHright{
+        margin-left: 0%;
+        float: right;
+    }
+    
+    .SettingAlert .Mat_clsose_Icon{
+        margin-right: 7%;
+    }
+ }
