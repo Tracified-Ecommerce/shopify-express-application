@@ -58,7 +58,7 @@ class FulfilledOrdersPage extends Component {
                             console.log("got tracified orders from backend");
                             console.log(JSON.stringify(response.data));
                             let updatedOrderArray = this.state.orders;
-                            updatedOrderArray = updatedOrderArray.concat(response.data.orders);
+                            updatedOrderArray = updatedOrderArray.concat(response.data.fulfilledOrders);
                             this.setState({
                                 orders: updatedOrderArray,
                                 shopDomain: response.data.shopDomain,
