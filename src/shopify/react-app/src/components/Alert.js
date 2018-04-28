@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Button, DisplayText, TextStyle , TextContainer } from '@shopify/polaris';
+import { Button, DisplayText, TextStyle , TextContainer , } from '@shopify/polaris';
+import './alert.css';
+import { Container, Row, Col } from 'reactstrap';
 
 class Alert extends Component {
     render() {
@@ -27,23 +29,27 @@ class Alert extends Component {
         flexDirection: "column",
         justifyContent: "space-between",
         borderRadius: 20,
-        maxWidth: 500,
+        maxWidth: 450,
         minHeight: 150,
         margin: '0 auto',
-        padding: 30
+        padding: 25
       };
 
       const footerStyle = {
         position: "relative", 
         bottom: 0, 
         width: "100%", 
-        height: "50px",
+        // height: "50px",
         textAlign: "center"
       };
 
       const closeBtnStyle ={
         margin: 'auto'
       };
+
+      var spaceBetweenHeadingStyle={
+        height:"10%"
+      }
 
       var spaceBetweenContentStyle={
         height:"10%"
@@ -53,14 +59,29 @@ class Alert extends Component {
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
           <TextContainer>
-          <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
-            <div className="spaceBetweenContent"></div>
-            <TextStyle size="small">{this.props.message}</TextStyle>  
+            <Container>
+            <Row className="heading_row">
+              <Col xs="6"className="alertHleft">
+                  <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
+              </Col>
+              <Col xs="3" className="alertHright"> 
+                <div className="Mat_clsose_Icon"> 
+                  <Button className="Mat_close_IconBtn" onClick={this.props.onClose} icon="cancel"></Button>
+                  </div>
+              </Col>
+              </Row>
+              <Row> 
+                <Col className="alertmessage">   
+                <div className="spaceBetweenHeading"></div>
+                <TextStyle variation="subdued">{this.props.message}</TextStyle> 
+                </Col>
+            </Row>
+            </Container> 
           </TextContainer>
             
             <div className="alertFooter" style={footerStyle}>
             <Button className="closeBtn" style={closeBtnStyle} primary onClick={this.props.onClose} icon="cancel">
-              Close
+              {this.props.closeBtnText}
             </Button>
             </div>
           </div>

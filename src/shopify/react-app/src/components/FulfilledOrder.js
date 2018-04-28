@@ -15,6 +15,7 @@ class FulfilledOrder extends Component {
             productID: this.props.order.lineItems[0].product_id,
             modalOpen: false,
             alertOpen: false,
+            modalTitle: "",
             itemName: "",
             itemEnable: "",
             traceButtonDisable: true,
@@ -25,6 +26,8 @@ class FulfilledOrder extends Component {
         this.onTraceSelect = this.onTraceSelect.bind(this);
 
     }
+
+   
 
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
@@ -93,7 +96,8 @@ class FulfilledOrder extends Component {
                     console.log("inside onTraceSelect() product selected is : " + response.data.product.handle);
                     let itemName = response.data.product.handle;
                     this.setState({
-                        itemName: itemName
+                        itemName: itemName,
+                        modalTitle: "Product Timeline : " + itemName.charAt(0).toUpperCase() + itemName.slice(1)
                     }, () => {
                         this.setState({ modalOpen: true });
                     });
@@ -185,7 +189,7 @@ class FulfilledOrder extends Component {
                             src={modalURL}
                             width="large"   
                             open={this.state.modalOpen}
-                            title="Tracified - Trust Through Traceability"
+                            title={this.state.modalTitle}
                             primaryAction={{
                                 content: 'Close',
                                 onAction: () => this.setState({ modalOpen: false, traceButtonDisable: false }),

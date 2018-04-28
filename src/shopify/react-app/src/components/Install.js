@@ -15,17 +15,11 @@ class Installation extends Component {
         }
 
         return (
+            <div className="installPageWrapper">
             <Page title="Tracified - Configuration Instructions">
-            <div>
-                {/* <div class="InstallTitle">
-                    <h1>
-                        <DisplayText size="medium">Tracified - Configuration Instructions</DisplayText>
-                    </h1>
-                </div> */}
-                {/* <div class="InstallVideo"> */}
-                    <iframe width="100%" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4?showinfo=0&controls=1&rel=0&amp" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-                {/* </div> */}
-                {/* <div class="InstallDescription"> */}
+            <div className="configWrapper">
+                    <iframe className="ecomConfigVideo" width="100%" height="583px" src="https://www.youtube.com/embed/gk8W521N5d4?showinfo=0&controls=1&rel=0&amp" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+               
                     <Card>
                         <ol>
                             <li style={liStyle}>
@@ -62,9 +56,9 @@ class Installation extends Component {
                         </div>
                     </Card>
                     <br />
-                {/* </div> */}
-            </div>
+                </div>
             </Page>
+            </div>
         );
     }
 }

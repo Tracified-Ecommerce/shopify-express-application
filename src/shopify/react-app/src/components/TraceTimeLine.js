@@ -17,9 +17,7 @@ class TraceTimeLine extends Component {
 
     constructor(props) {
         super(props);
-        // this.handleClick = this.handleClick.bind(this);
         this.state = {
-            // array: [],
             timeline: "",
             istimelineLoading: true,
             errorArray: [],
@@ -28,21 +26,6 @@ class TraceTimeLine extends Component {
         };
     }
 
-    // handleClick = (index, isClosed) => {
-
-    //     if (!isClosed) {
-    //         //reset all values in array to false -> (sets all cards' "isOpen" attributes to false)
-    //         this.state.array.fill(false);
-
-    //     }
-
-    //     //set only this card's collapse attribute to true
-    //     var temp = this.state.array.slice();
-    //     temp[index] = !(temp[index]);
-    //     // replace array with modified temp array
-    //     this.setState({ array: temp });
-
-    // }
 
     componentDidMount() {
         const traceURL = "/shopify/tracified/trace/" + this.props.match.params.orderID + "/" + this.props.match.params.itemID;
@@ -57,17 +40,10 @@ class TraceTimeLine extends Component {
                 const responseData = JSON.parse(response.data);
                 let timeline = responseData.tabs[2];
                 let itms = timeline.items;
-                // let arr = [];
-
-                // itms.map((e, i) => {
-                //     arr.push(false);
-                //     return true;
-                // });
 
                 this.setState({
                     timeline: timeline,
                     istimelineLoading: false,
-                    // array: arr
                 }, () => {
                     this.setState({
                         filteredTimeline: this.state.timeline.items.filter(stage => !isEmpty(stage.data))
@@ -116,11 +92,17 @@ class TraceTimeLine extends Component {
             height: 90,
             width: 220,
             marginLeft: 10,
-            padding: 10
+            padding: 10,
+            position: "sticky",
+            top: "0px",
+            zIndex: 200,
         };
 
+        let paramTitle = this.props.match.params.itemName;
+        let capitalizedTitle = paramTitle.charAt(0).toUpperCase() + paramTitle.slice(1);
+
         if (this.state.istimelineLoading) {
-            return <Loading />;
+            return <Loading loadMsg=" Please wait. Loading item traceability..."/>;
         }
         else if (this.state.isError) {
             console.log("inside timeline iserror block");
@@ -140,7 +122,7 @@ class TraceTimeLine extends Component {
                         </h1>
 
                         <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Order ID:&nbsp;{this.props.match.params.orderID}</p>
-                        <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Item Name:&nbsp;{this.props.match.params.itemName}</p>
+                        <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Item Name:&nbsp;{capitalizedTitle}</p>
 
                     </div>
                     <div style={{ paddingLeft: 30 }}>
@@ -170,11 +152,8 @@ class TraceTimeLine extends Component {
 
                                         <div id={index}>
                                             <TimelineContent
-                                                // collapseArray={this.state.array}
-                                                // collapseArrayKey={index}
                                                 data={stageData}
                                                 componentID={"component" + index}
-                                                // onClick={this.handleClick}
                                             />
                                         </div>
                                     </TimelineEvent>

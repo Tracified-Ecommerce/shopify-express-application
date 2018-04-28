@@ -1,0 +1,8 @@
+/*Media Queries for mobile devices  */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .loadingMsg .Polaris-TextStyle--variationSubdued{       
+        font-size: 14px;
+    }
+}
+
+

@@ -4,6 +4,7 @@ import {
     DisplayText,
     TextStyle
 } from '@shopify/polaris';
+import './Loading.css';
 
 class Loading extends Component {
 
@@ -12,13 +13,25 @@ class Loading extends Component {
     }
 
     render() {
+        var loadingMsgStyle={
+            marginLeft:"auto",
+            marginRight:"auto",
+            marginTop:"10%",
+            textAlign:"center"
+        }
+
+        var spinnerStyle={
+            width:"10%",
+            marginLeft:"auto",
+            marginRight:"auto"
+        }
 
         return (
-            <div style={{ padding: '5% 0 0 37%' }}>
+            <div className="loadingMsg" style={loadingMsgStyle}>
                 <DisplayText  size="small"                >
-                    <TextStyle variation="subdued">Loading... Please Wait!</TextStyle>
+                    <TextStyle variation="subdued">{this.props.loadMsg}</TextStyle>
                 </DisplayText><br />
-                <div style={{ padding: '0 0 0 10%' }}>
+                <div className="spinnerClass" style={spinnerStyle}>
                     <Spinner
                         size="large"
                         color="teal"

@@ -28,29 +28,45 @@ class Confirm extends Component {
         flexDirection: "column",
         justifyContent: "space-between",
         borderRadius: 20,
-        maxWidth: 500,
+        maxWidth: 448,
         minHeight: 150,
         margin: '0 auto',
-        padding: 30
+        padding: 25
       };
 
       const footerStyle = {
         position: "relative", 
         bottom: 0, 
         width: "100%", 
-        height: "50px",
+        // height: "50px",
         textAlign: "center"
       };
 
       var spaceBetweenHeadingStyle={
         height:"10%"
       }
+
+      var confirmBoxStyle={
+        Width:"95%"
+      }
          
       return (
         <div className="backdrop" style={backdropStyle}>
           <div className="alertBox" style={modalStyle}>
+          
           <TextContainer>
-            <DisplayText size="large" element="h1">{this.props.heading}</DisplayText>
+            <table className="cnfirmBox" style={confirmBoxStyle}>
+              <tr>
+                <td>
+                  <DisplayText size="small" element="h1">{this.props.heading}</DisplayText>
+                </td>
+                <td>
+                  <div className="closeIcon">
+                    <Button className="CloseIconBtn" onClick={this.props.onCancel} icon="cancel"></Button>
+                  </div>
+                </td>
+              </tr>
+            </table>
             <div className="spaceBetweenHeading"></div>
             <TextStyle variation="subdued">{this.props.message}</TextStyle>  
           </TextContainer>
@@ -59,12 +75,12 @@ class Confirm extends Component {
            
             <div className="alertFooter" style={footerStyle}>
             <Button className="confirmBtn" primary onClick={this.props.onConfirm} icon="save">
-              Confirm
+              Yes
             </Button>
 
             {/* <div className="CloseBtn"> */}
               <Button className="cancelBtn" primary onClick={this.props.onCancel} icon="cancel">
-                Cancel
+                No
               </Button>
             {/* </div> */}
             </div>

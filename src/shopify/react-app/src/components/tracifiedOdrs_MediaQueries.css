@@ -40,6 +40,14 @@
     .timelineModal .ui-modal.ui-modal--is-visible{
         width: 90%;
     }
+
+    .timeline_modal{
+        margin-bottom: 10%;
+    }
+
+    .ui-modal-contents{
+        margin-bottom: 10%;
+    }
 }
 
 /* Media queries for the tablet devices */

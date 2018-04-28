@@ -20,9 +20,8 @@
 }
 
 /* mobile screens */
-@media screen and (min-width: 360px){
-    .ui-modal {       
-        height: 80% !important;
+@media screen and (max-width: 450px){
+    .fresh-ui .ui-modal { 
         margin-bottom: 15% !important;
     }
 }

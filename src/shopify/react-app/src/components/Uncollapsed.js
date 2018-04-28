@@ -8,17 +8,7 @@ import './untracifiedOrders_mediaQueries.css';
 const QRCode = require('qrcode.react');
 
 class Uncollapsed extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
 
-        
-    
-    }
-
-
-    
     render() {
 
         var markAsTracifiedBtnStyle={

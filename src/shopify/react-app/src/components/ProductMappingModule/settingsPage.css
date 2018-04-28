@@ -1,3 +1,134 @@
-.no-right-padding{
-    padding-right: 0;
+/* Styles for the alert box which comes after clicking the save button */
+/*Media Queries for mobile devices  */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .SettingAlert .alertBox {
+        width: 100%;
+    }
+
+    .SettingAlert .alertmessage {
+        font-size: 13px;
+        text-align: center;
+        max-width: 100%;
+        padding-top: 2%;
+        margin-left: 2%;
+        margin-right: 0;
+    }
+
+    .Polaris-Button.Polaris-Button--iconOnly{
+        border: transparent;
+        background: transparent;
+    }
+
+    .SettingAlert .alertHright{
+        margin-left: -13%;
+        margin-top: -1%;
+        float: right;
+    }
+
+    .SettingAlert .alertHleft{
+        max-width: 50%;
+        text-align: center;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+
+    .SettingAlert .alertFooter .Polaris-Button__Content span{
+        font-size: 12px;
+    }
 }
+
+/* Media queries for the tablet devices */
+@media (min-width: 650px) and (max-width: 1023px) {
+    .SettingAlert .alertBox {
+        width: 50%;
+    }
+
+    .SettingAlert .alertmessage {
+        max-width: 35%;
+        padding-top: 2%;
+        margin-left: 2%;
+        margin-right: 0;
+    }
+
+    .Polaris-Button.Polaris-Button--iconOnly{
+        border: transparent;
+        background: transparent;
+    }
+
+    .SettingAlert .alertHright{
+        margin-left: 0%;
+        margin-right: 64%;
+        margin-top: -1%;
+        float: right;
+    }
+}
+
+ /* Media queries for the pc */
+ @media screen and (min-width: 1024px){
+    .no-right-padding{
+        padding-right: 0;
+    }
+    
+    /* alert box styles which appears in settings page  */
+    .SettingAlert .alertBox{
+        width: 35%;
+    }
+    
+    .SettingAlert .alertmessage {
+        max-width: 25%;
+        padding-top: 2%;
+        margin-left: 3%;
+        margin-right: 0%;
+    }
+    
+    .SettingAlert .alertHleft {
+        max-width: 20%;
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    
+    .SettingAlert .alertHright{
+        margin-left: 0%;
+        float: right;
+    }
+    
+    .SettingAlert .Mat_clsose_Icon{
+        margin-right: 7%;
+    }
+ }
+
+ /* Media Queries for larger screens  */
+ @media screen and (min-device-width:1824px){
+    .no-right-padding{
+        padding-right: 0;
+    }
+    
+    /* alert box styles which appears in settings page  */
+    .SettingAlert .alertBox{
+        width: 25%;
+    }
+    
+    .SettingAlert .alertmessage {
+        max-width: 25%;
+        padding-top: 2%;
+        margin-left: 2%;
+        margin-right: 0%;
+    }
+    
+    .SettingAlert .alertHleft {
+        max-width: 20%;
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    
+    .SettingAlert .alertHright{
+        margin-left: 0%;
+        float: right;
+    }
+    
+    .SettingAlert .Mat_clsose_Icon{
+        margin-right: 7%;
+    }
+ }

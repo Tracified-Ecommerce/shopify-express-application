@@ -29,6 +29,7 @@ import {
 import '@shopify/polaris/styles.css';
 import './AppMP.css';
 import './MediaQueriesSettings.css';
+import './settingsPage.css';
 import { setTimeout } from 'timers';
 import { request } from 'http';
 import { Row, Col, Container,Button} from 'reactstrap';
@@ -244,8 +245,8 @@ class ProductMapping extends Component {
       .then((result) => {
         // alert("Mapping Successfully Saved!");
         this.setState({
-          alertHeading: "",
-          alertMessage: "Mapping Successfully Saved!"
+          alertHeading: "Saved",
+          alertMessage: "Mapping details saved successfully"
       });
       this.setState({
           isOpen: true,
@@ -278,7 +279,7 @@ class ProductMapping extends Component {
     }
 
     if (isTraceListLoading || isProductListLoading) {
-      return <Loading/> ;
+      return <Loading loadMsg=" Please wait. Loading your items from Shopify..."/> ;
      
       console.log('spinner');
     } else {
@@ -330,15 +331,18 @@ var saveBtnStyle={
                 {this.tabRow()}
               </tbody>
             </table> 
--
--            <Button primary onClick={this.onSubmit} style={saveBtnStyle} className="saveBtn">
+
+            <Button primary onClick={this.onSubmit} style={saveBtnStyle} className="saveBtn">
               Save
             </Button>
-            <AlertBox show={this.state.isOpen}
-                    onClose={this.toggleAlert}
-                    heading={this.state.alertHeading}
-                    message={this.state.alertMessage}>
-            </AlertBox>
+            <div className="SettingAlert">
+              <AlertBox show={this.state.isOpen}
+                      onClose={this.toggleAlert}
+                      heading={this.state.alertHeading}
+                      message={this.state.alertMessage}
+                      closeBtnText="OK">
+              </AlertBox>
+            </div>
       </div>
       // </Page>
     );

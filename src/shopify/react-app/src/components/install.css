@@ -8,16 +8,6 @@
     margin-bottom: 2%;
 }
 
-.InstallDescription{
-    font-size: 120%;
-    font-family: calibri;
-    margin-left: 10%;
-    margin-top: 1%;
-    width: 1040px;
-    margin-left: 19%;
-    margin-right: 1593px;
-}
-
 li{
    padding-bottom: 2%;
     color: #637381;
@@ -70,4 +60,33 @@ code{
 
 .ytp-chrome-top-buttons{
     display: none !important;
+}
+
+/*Media Queries for mobile devices  */
+@media  (min-width: 360px) and (max-width: 640px) {
+    .installPageWrapper .Polaris-Page__Header{
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+
+    .configWrapper{
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .configWrapper .Polaris-Card{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .configWrapper .Polaris-Card ol{
+        padding-right: 15px;
+        padding-left: 30px;
+    }
+
+    .configWrapper .ecomConfigVideo{
+        height: 230px;
+        margin-top: -18px;
+    }
 }

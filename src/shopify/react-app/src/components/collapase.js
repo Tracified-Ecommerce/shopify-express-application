@@ -5,6 +5,7 @@ import * as axios from 'axios';
 import { isUndefined } from 'util';
 import AlertBox from "./Alert";
 import './collaps_mediaQueries.css';
+import './MaTAlert.css';
 // import '.'
 
 class CollapaseCard extends Component {
@@ -104,7 +105,7 @@ class CollapaseCard extends Component {
 
 
         return (
-            <div>
+            <div >
                 <Container className="imageContainer" fluid={true}>
                     <Stack alignment="baseline" wrap={false}> {resourceThumbnails} </Stack>
                     <Row noGutters={true}>
@@ -125,11 +126,14 @@ class CollapaseCard extends Component {
                     />
 
                 </Collapse>
+                <div className="MaTAlert">
                 <AlertBox show={this.state.isOpen}
                     onClose={this.toggleAlert}
                     heading={this.state.alertHeading}
-                    message={this.state.alertMessage}>
+                    message={this.state.alertMessage}
+                    closeBtnText="Close">
                 </AlertBox>
+                </div >
             </div>
         );
     }

@@ -39,7 +39,7 @@ class FulfilledOrders extends Component {
     render() {
 
         if (this.state.isOrderListLoading) {
-            return <Loading />;
+            return <Loading loadMsg=" Please wait. Loading item traceability..."/> ;
         }
         else {
             // All the order details
