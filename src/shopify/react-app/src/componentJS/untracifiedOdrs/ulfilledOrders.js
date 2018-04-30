@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import CollapaseCards from './collapase';
+import untracifiedItemList from './untracifiedItemList';
 import * as axios from 'axios';
 import { Container, Row, Col, Card } from 'reactstrap';
 import { Thumbnail, Page, List, Button, Stack, Select, ResourceList } from '@shopify/polaris';
-import Loading from './Loading';
+import loading from '../loading';
 const QRCode = require('qrcode.react');
 
-class FulfilledOrders extends Component {
+class tracifiedContentTbls extends Component {
     constructor() {
         super();
         this.state = {
             orders: [],
             products: {},
-            isOrderListLoading: true
+            isOrderListloading: true
         };
     }
 
@@ -27,8 +27,8 @@ class FulfilledOrders extends Component {
         axios.get('/shopify/shop-api/fulfilled-orders')
             .then(response => {
                 this.setState({
-                    orders: response.data.fulfilledOrders,
-                    isOrderListLoading: false
+                    orders: response.data.tracifiedContentTbls,
+                    isOrderListloading: false
                 });
             }).catch((error) => {
                 console.log(error);
@@ -38,8 +38,8 @@ class FulfilledOrders extends Component {
 
     render() {
 
-        if (this.state.isOrderListLoading) {
-            return <Loading loadMsg=" Please wait. Loading item traceability..."/> ;
+        if (this.state.isOrderListloading) {
+            return <loading loadMsg=" Please wait. loading item traceability..."/> ;
         }
         else {
             // All the order details
@@ -114,5 +114,5 @@ class FulfilledOrders extends Component {
     }
 }
 
-export default FulfilledOrders;
+export default tracifiedContentTbls;
 

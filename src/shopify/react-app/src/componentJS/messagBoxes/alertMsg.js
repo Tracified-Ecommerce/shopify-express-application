@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, DisplayText, TextStyle , TextContainer , } from '@shopify/polaris';
-import './alert.css';
 import { Container, Row, Col } from 'reactstrap';
+import './styleCSS/messageBoxes/alertMsg.css';
 
 class Alert extends Component {
     render() {

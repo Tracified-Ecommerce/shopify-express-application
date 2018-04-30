@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Loading from './Loading';
+import loading from './loading';
 import * as axios from 'axios';
 import {
     Spinner,
@@ -8,10 +8,10 @@ import {
 } from '@shopify/polaris';
 import { Row, Col, Container } from 'reactstrap';
 import { Timeline, TimelineEvent } from 'react-event-timeline';
-import TimelineContent from './TimelineContent';
-import ErrorPage from './ErrorPage';
+import tracifiedTimelineContent from './tracifiedTimelineContent';
+import errorPage from '../errorPage';
 import { isEmpty } from "lodash";
-import './timelineMediaQueries.css';
+import './styleCSS/tracifiedOdrs/tracifiedOdrs-MediaQueries.css';
 
 class TraceTimeLine extends Component {
 
@@ -19,7 +19,7 @@ class TraceTimeLine extends Component {
         super(props);
         this.state = {
             timeline: "",
-            istimelineLoading: true,
+            istimelineloading: true,
             errorArray: [],
             filteredTimeline: [],
             isError: false,
@@ -43,7 +43,7 @@ class TraceTimeLine extends Component {
 
                 this.setState({
                     timeline: timeline,
-                    istimelineLoading: false,
+                    istimelineloading: false,
                 }, () => {
                     this.setState({
                         filteredTimeline: this.state.timeline.items.filter(stage => !isEmpty(stage.data))
@@ -76,7 +76,7 @@ class TraceTimeLine extends Component {
                     });
 
                     this.setState({
-                        istimelineLoading: false,
+                        istimelineloading: false,
                     });
                 } else {
                     console.error("error in timeline : " + error);
@@ -101,8 +101,8 @@ class TraceTimeLine extends Component {
         let paramTitle = this.props.match.params.itemName;
         let capitalizedTitle = paramTitle.charAt(0).toUpperCase() + paramTitle.slice(1);
 
-        if (this.state.istimelineLoading) {
-            return <Loading loadMsg=" Please wait. Loading item traceability..."/>;
+        if (this.state.istimelineloading) {
+            return <loading loadMsg=" Please wait. loading item traceability..."/>;
         }
         else if (this.state.isError) {
             console.log("inside timeline iserror block");
@@ -151,7 +151,7 @@ class TraceTimeLine extends Component {
                                     >
 
                                         <div id={index}>
-                                            <TimelineContent
+                                            <tracifiedTimelineContent
                                                 data={stageData}
                                                 componentID={"component" + index}
                                             />

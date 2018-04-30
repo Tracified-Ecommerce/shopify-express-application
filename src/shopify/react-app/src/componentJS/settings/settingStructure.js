@@ -3,9 +3,9 @@
 import React, { Component } from 'react';
 // import Sticky from 'react-sticky-el';
 import ReactDOM from 'react-dom';
-import ProductMappingService from './ProductMappingService';
+import settingServices from './settingServices';
 import axios from 'axios';
-import ProductMappingTableRow from './ProductMappingTableRow';
+import settingDetailTbl from './settingDetailTbl';
 import Sticky from 'react-sticky-el';
 import AlertBox from "../../components/Alert";
 import {
@@ -28,13 +28,13 @@ import {
 } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 import './AppMP.css';
-import './MediaQueriesSettings.css';
-import './settingsPage.css';
+import './styleCSS/settings/settings-MediaQueries.css';
+// import './settingsPage.css';
 import { setTimeout } from 'timers';
 import { request } from 'http';
 import { Row, Col, Container,Button} from 'reactstrap';
-import Loading from '../Loading';
-import ProductMappingCard from './productMappingCard';
+import loading from '../loading';
+import settingCard from './settingCard';
 
 
 class ProductMapping extends Component {
@@ -42,8 +42,8 @@ class ProductMapping extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isTraceListLoading: true,
-      isProductListLoading: true,
+      isTraceListloading: true,
+      isProductListloading: true,
       shopifyProducts: [],
       tracedata: [],
       permission: {},
@@ -52,7 +52,7 @@ class ProductMapping extends Component {
       isOpen: false,
     };
 
-    this.productMappingService = new ProductMappingService();
+    this.settingServices = new settingServices();
     this.updateMapping = this.updateMapping.bind(this);
     this.updatePermission = this.updatePermission.bind(this);
     this.onItemChange = this.onItemChange.bind(this);
@@ -159,7 +159,7 @@ class ProductMapping extends Component {
         this.setState({ shopifyProducts: products });
 
         if (response.status == 200) {
-          this.setState({ isProductListLoading: false });
+          this.setState({ isProductListloading: false });
 
 
         }
@@ -189,7 +189,7 @@ class ProductMapping extends Component {
 
       // this.setState({ tracedata: responseTxt });
         if (response_.status == 200) {
-          this.setState({ isTraceListLoading: false });
+          this.setState({ isTraceListloading: false });
 
         }
       })
@@ -204,7 +204,7 @@ class ProductMapping extends Component {
     const trace = this.state.tracedata;
     if (this.state.shopifyProducts instanceof Array) {
       return this.state.shopifyProducts.map((object, i) => {
-        return <ProductMappingTableRow
+        return <settingDetailTbl
           onItemChange={this.onItemChange}
           setNotSaved={this.props.setNotSaved}
           onPermissionChange={this.onPermissionChange}
@@ -271,15 +271,15 @@ class ProductMapping extends Component {
 
   render() {
   
-    const { productName, tracifiedItemID, tracifiedItemtitle, permission, isTraceListLoading, isProductListLoading } = this.state;
+    const { productName, tracifiedItemID, tracifiedItemtitle, permission, isTraceListloading, isProductListloading } = this.state;
 
     var navStyle={
       // width: '340%',
       zindex: '20'
     }
 
-    if (isTraceListLoading || isProductListLoading) {
-      return <Loading loadMsg=" Please wait. Loading your items from Shopify..."/> ;
+    if (isTraceListloading || isProductListloading) {
+      return <loading loadMsg=" Please wait. loading your items from Shopify..."/> ;
      
       console.log('spinner');
     } else {
@@ -318,7 +318,7 @@ var saveBtnStyle={
                 <Sticky >
                 <Row className="cardWrapper" style={navStyle}>
                   <div id="stickyCard">                
-                    <ProductMappingCard/>
+                    <settingCard/>
                   </div>
                 </Row>
               </Sticky>

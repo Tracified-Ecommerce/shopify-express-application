@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import * as axios from 'axios';
 import { Page, RadioButton, Card, Stack, TextField } from '@shopify/polaris';
 import { Container, Row, Col } from 'reactstrap';
-import FulfilledOrder from './FulfilledOrder';
-import Loading from './Loading';
+import tracifiedContentTbl from './tracifiedContentTbl';
+import loading from '../loading';
 import SearchInput, { createFilter } from 'react-search-input'
-import ErrorMsgSearch from './errorMsgSearch';
-import './tracifiedOdrs_MediaQueries.css';
+import errorMsg from '../errorMsg';
+import './styleCSS/tracifiedOdrs/tracifiedOdrs-MediaQueries.css';
 
 const KEYS_TO_FILTER = ['order.order_number']
 const QRCode = require('qrcode.react');
 
-class FulfilledOrdersPage extends Component {
+class tracifiedContentTblsPage extends Component {
     constructor() {
         super();
         this.state = {
@@ -19,8 +19,8 @@ class FulfilledOrdersPage extends Component {
             mapping: {},
             products: {},
             shopDomain: "",
-            isOrderListLoading: true,
-            isMappingLoading: true,
+            isOrderListloading: true,
+            isMappingloading: true,
             search: '',
             inputType: "number",
             isCheckedCus: false,
@@ -39,7 +39,7 @@ class FulfilledOrdersPage extends Component {
                     });
                 }
                 this.setState({
-                    isMappingLoading: false
+                    isMappingloading: false
                 });
 
             }).catch(function (error) {
@@ -58,11 +58,11 @@ class FulfilledOrdersPage extends Component {
                             console.log("got tracified orders from backend");
                             console.log(JSON.stringify(response.data));
                             let updatedOrderArray = this.state.orders;
-                            updatedOrderArray = updatedOrderArray.concat(response.data.fulfilledOrders);
+                            updatedOrderArray = updatedOrderArray.concat(response.data.tracifiedContentTbls);
                             this.setState({
                                 orders: updatedOrderArray,
                                 shopDomain: response.data.shopDomain,
-                                isOrderListLoading: false,
+                                isOrderListloading: false,
                             });
                         }).catch(function (error) {
                             console.log(error);
@@ -106,8 +106,8 @@ class FulfilledOrdersPage extends Component {
 
     render() {
 
-        if (this.state.isOrderListLoading || this.state.isMappingLoading) {
-            return <Loading loadMsg="Please wait. Loading your orders from Shopify..." />;
+        if (this.state.isOrderListloading || this.state.isMappingloading) {
+            return <loading loadMsg="Please wait. loading your orders from Shopify..." />;
         }
         else {
             // All the order details
@@ -319,13 +319,13 @@ class FulfilledOrdersPage extends Component {
                             {
                                 (!Array.isArray(orderArray) || !orderArray.length) ? (
 
-                                    <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
+                                    <errorMsg errorMessage={this.state.errorText} />) : (
 
                                         orderArray.map((order, index) => {
 
 
                                             return (
-                                                <FulfilledOrder
+                                                <tracifiedContentTbl
                                                     key={order.order_number}
                                                     order={order}
                                                     shopDomain={this.state.shopDomain}
@@ -343,7 +343,7 @@ class FulfilledOrdersPage extends Component {
                                 /* {orderArray.map((order, index) => {
 
                                 return (
-                                    <FulfilledOrder
+                                    <tracifiedContentTbl
                                         key={order.order_number}
                                         order={order}
                                         shopDomain={this.state.shopDomain}
@@ -359,7 +359,7 @@ class FulfilledOrdersPage extends Component {
                                 
                                 ( !Array.isArray(orderArray) || !orderArray.length)   ? (
                 
-                                    <ErrorMsgSearch errorMessage={this.state.errorText}/> ) : (
+                                    <errorMsg errorMessage={this.state.errorText}/> ) : (
                                         "True"
                                     )
                                 }  */}
@@ -374,4 +374,4 @@ class FulfilledOrdersPage extends Component {
     }
 }
 
-export default FulfilledOrdersPage;
+export default tracifiedContentTblsPage;

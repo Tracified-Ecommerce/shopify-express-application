@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Row, Col, Container,Button} from 'reactstrap';
-// import {Page} from '@shopify/polaris';
-// import './productMappingCard.css';
-import './MediaQueriesSettings.css';
-import './settingsPage.css';
+import './styleCSS/settings/settings-MediaQueries.css';
+// import './settingsPage.css';
 
-class ProductMappingCard extends Component{
+class settingCard extends Component{
     render(){
         var cardStyle={
             backgroundColor:'white',
@@ -52,4 +50,4 @@ class ProductMappingCard extends Component{
     }
 }
 
-export default ProductMappingCard;
+export default settingCard;

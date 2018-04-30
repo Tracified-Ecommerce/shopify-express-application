@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import { Thumbnail, Card, Page, List, RadioButton, Button, Stack, TextField } from '@shopify/polaris';
-import Loading from './Loading';
+import loading from '../loading';
 // import CollapseMain from './CollapseMain';
-import Uncollapsed from './Uncollapsed';
-import ErrorMsgSearch from './errorMsgSearch';
-import './untracifiedOrders_mediaQueries.css'
+import untracifiedOdrCard from './untracifiedOdrCard';
+import errorMsg from '../errorMsg';
+import './styleCSS/untracifiedOdrs/untracifiedOrders_mediaQueries.css'
 
 class Part2Cards extends Component {
     constructor() {
@@ -14,7 +14,7 @@ class Part2Cards extends Component {
         this.state = {
             orders: [],
             products: {},
-            isOrderListLoading: true,
+            isOrderListloading: true,
             search: '',
             isExpanded: true,
             isCheckedCus: false,
@@ -47,7 +47,7 @@ class Part2Cards extends Component {
                             updatedOrderArray = updatedOrderArray.concat(response.data.orders);
                             this.setState({
                                 orders: updatedOrderArray,
-                                isOrderListLoading: false,
+                                isOrderListloading: false,
                             });
                         }).catch(function (error) {
                             console.log(error);
@@ -62,13 +62,13 @@ class Part2Cards extends Component {
 
     resetOrders = () => {
         this.setState({
-            isOrderListLoading: true
+            isOrderListloading: true
         });
         axios.get('/shopify/shop-api/orders')
             .then(response => {
                 this.setState({
                     orders: response.data.orders,
-                    isOrderListLoading: false
+                    isOrderListloading: false
                 }, () => {
                     this.setState({
                         search: ""
@@ -107,8 +107,8 @@ class Part2Cards extends Component {
 
     render() {
 
-        if (this.state.isOrderListLoading) {
-            return <Loading loadMsg=" Please wait. Loading your orders from Shopify..." />;
+        if (this.state.isOrderListloading) {
+            return <loading loadMsg=" Please wait. loading your orders from Shopify..." />;
         }
         else {
 
@@ -334,7 +334,7 @@ class Part2Cards extends Component {
                             (!Array.isArray(orderArray) || !orderArray.length) ? (
 
 
-                                <ErrorMsgSearch errorMessage={this.state.errorText} />) : (
+                                <errorMsg errorMessage={this.state.errorText} />) : (
 
                                     orderArray.map((order, index) => {
                                         const qrValue = order.order_number.toString();

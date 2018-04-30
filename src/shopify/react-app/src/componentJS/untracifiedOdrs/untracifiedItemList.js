@@ -3,9 +3,9 @@ import { Container, Collapse, Row, Col } from 'reactstrap';
 import { Button, Card, ResourceList, Thumbnail, Stack } from '@shopify/polaris';
 import * as axios from 'axios';
 import { isUndefined } from 'util';
-import AlertBox from "./Alert";
-import './collaps_mediaQueries.css';
-import './MaTAlert.css';
+import alertMsg from "./messageBoxes/alertMsg";
+import './styleCSS/untracifiedOdrs/untracifiedOdrs-MediaQueries.css';
+import './styleCSS/messageBoxes/alertMarkAsTracified.css';
 // import '.'
 
 class CollapaseCard extends Component {

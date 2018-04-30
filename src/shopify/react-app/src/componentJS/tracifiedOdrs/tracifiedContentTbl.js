@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Button, Select } from '@shopify/polaris';
 import * as axios from 'axios';
 import { EmbeddedApp, Alert, Modal } from '@shopify/polaris/embedded';
-import './tracifiedOdrs_MediaQueries.css';
-import './timelineMediaQueries.css';
+import './styleCSS/tracifiedOdrs/tracifiedOdrs-MediaQueries.css';
+import './styleCSS/tracifiedOdrs/tracifiedTimeline-MediaQueries.css';
 
-class FulfilledOrder extends Component {
+class tracifiedContentTbl extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -216,4 +216,4 @@ class FulfilledOrder extends Component {
     }
 }
 
-export default FulfilledOrder;
+export default tracifiedContentTbl;

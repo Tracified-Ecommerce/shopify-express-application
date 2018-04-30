@@ -3,8 +3,8 @@ import { Container, Row, Col } from 'reactstrap';
 import { Button, Stack } from '@shopify/polaris';
 import { isObject } from 'util';
 import { isEmpty, isNull, isArray } from "lodash";
-import './timelineMediaQueries.css';
-import './timelineContent.css';
+import './styleCSS/tracifiedOdrs/tracifiedOdrs-MediaQueries.css';
+import './styleCSS/tracifiedOdrs/tracifiedTimelineContent.css';
 
 class TimelineContent extends Component {
 

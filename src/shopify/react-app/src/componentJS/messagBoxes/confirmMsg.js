@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, DisplayText,TextStyle, TextContainer } from '@shopify/polaris';
-import './confirm.css';
+import './styleCSS/messageBoxes/confirmMsg.css';
 
 class Confirm extends Component {
     render() {

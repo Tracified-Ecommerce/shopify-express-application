@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ProductMappingService from './ProductMappingService';
+import settingServices from './settingServices';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
@@ -26,19 +26,19 @@ import {
 } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 
-class ProductMappingTableRow extends Component {
+class settingDetailTbl extends Component {
     constructor(props) {
         super(props);
 
         this.props.tracelist.forEach(v => console.log(v.id));
 
-        this.productMappingService = new ProductMappingService();
+        this.settingServices = new settingServices();
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        this.productMappingService.deleteData(this.props.obj.id);
+        this.settingServices.deleteData(this.props.obj.id);
     }
     render() {
         return (
@@ -87,4 +87,4 @@ class ProductMappingTableRow extends Component {
     }
 }
 
-export default ProductMappingTableRow;
+export default settingDetailTbl;

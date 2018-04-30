@@ -3,7 +3,7 @@ import CollapaseCards from './collapase';
 import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import { Thumbnail, Card, Page, List } from '@shopify/polaris';
-import Loading from './Loading';
+import loading from '../loading';
 import './untracifiedOrders_mediaQueries.css';
 const QRCode = require('qrcode.react');
 

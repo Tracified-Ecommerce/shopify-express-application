@@ -1,7 +1,7 @@
 import axios from 'axios';
 const serverAddress = ' https://236717cb.ngrok.io';
 
-class ProductMappingService{
+class settingServices{
     //send mapping data
     sendData(data){
         axios.post(serverAddress+'/items/add/post',{ 
@@ -32,4 +32,4 @@ class ProductMappingService{
       }
 }
 
-export default ProductMappingService;
+export default settingServices;

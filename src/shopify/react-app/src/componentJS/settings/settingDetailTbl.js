@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ProductMappingService from './ProductMappingService';
+import settingServices from './settingServices';
 import 'react-select/dist/react-select.css';
 import './AppMP.css';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-
-
-
 import {
   Layout,
   Page,
@@ -45,7 +42,7 @@ class ProductMappingTableRow extends Component {
 
     let testlist = this.props.tracelist;
     let arraytestlist = testlist.split("");
-    this.productMappingService = new ProductMappingService();
+    this.settingServices = new settingServices();
     this.changeMapping = this.changeMapping.bind(this);
     this.changePermission = this.changePermission.bind(this);
     this.onItemChange = this.onItemChange.bind(this);
