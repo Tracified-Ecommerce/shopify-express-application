@@ -1,4 +1,9 @@
 
+/**
+ * @name configGuide.js
+ * @description This contains code for tab content of Tracified configuration guide.
+ **/
+
 import React, { Component } from 'react';
 import { Card, DisplayText, Button ,Page} from '@shopify/polaris';
 import { Container, Row, Col } from 'reactstrap';

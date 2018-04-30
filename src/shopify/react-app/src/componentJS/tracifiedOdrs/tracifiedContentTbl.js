@@ -1,3 +1,10 @@
+/**
+ * @name tracifiedContentTbl.js
+ * @description Component for the tracified order table body content. When user clicks
+ * on "Mark as tracified" button of an order, it will automatically trasfer to 
+ * tracified orders page.
+ **/
+
 import React, { Component } from 'react';
 import { Button, Select } from '@shopify/polaris';
 import * as axios from 'axios';

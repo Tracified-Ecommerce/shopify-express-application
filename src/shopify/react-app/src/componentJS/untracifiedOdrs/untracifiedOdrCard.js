@@ -1,3 +1,10 @@
+/**
+ * @name untracifiedOdrCard.js
+ * @description All the orders are displays as a card in untracified orders page. It 
+ * can easily filter  & check required order details & also have a QR code to the 
+ * order fulfilment.
+ **/
+
 import React, { Component } from 'react';
 import CollapaseCards from './collapase';
 import * as axios from 'axios';

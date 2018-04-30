@@ -1,3 +1,8 @@
+/**
+ * @name accountVerify.js
+ * @description ...........
+ **/
+
 import React, { Component } from 'react';
 import '@shopify/polaris/styles.css';
 import { Row, Col } from 'reactstrap';

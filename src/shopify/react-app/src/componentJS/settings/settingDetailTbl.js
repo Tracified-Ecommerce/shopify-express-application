@@ -1,3 +1,9 @@
+/**
+ * @name settingDetailTbl.js
+ * @description This component is the table body content for product mapping in 
+ * settings page.
+ **/
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import settingServices from './settingServices';

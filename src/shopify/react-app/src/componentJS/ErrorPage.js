@@ -1,3 +1,8 @@
+/**
+ * @name errorPage.js
+ * @description ..............
+ **/
+
 import React, { Component } from 'react';
 
 class ErrorPage extends Component {

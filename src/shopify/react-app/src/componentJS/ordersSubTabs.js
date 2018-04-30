@@ -1,3 +1,8 @@
+/**
+ * @name ordersSubTabs.js
+ * @description component for the nested tab view of orders tab.
+ **/
+
 import React, { Component } from 'react';
 import {Tabs} from '@shopify/polaris';
 import '@shopify/polaris/styles.css';

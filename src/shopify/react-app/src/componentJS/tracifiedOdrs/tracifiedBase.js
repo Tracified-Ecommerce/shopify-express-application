@@ -1,3 +1,8 @@
+/**
+ * @name tracifiedBase.js
+ * @description Component for the structure of tracified orders page.
+ **/
+
 import React, { Component } from 'react';
 import * as axios from 'axios';
 import { Page, RadioButton, Card, Stack, TextField } from '@shopify/polaris';

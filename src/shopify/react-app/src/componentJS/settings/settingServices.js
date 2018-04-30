@@ -1,3 +1,8 @@
+/**
+ * @name settingServices.js
+ * @description services handling component for settings page.
+ **/
+
 import axios from 'axios';
 const serverAddress = ' https://236717cb.ngrok.io';
 

@@ -1,4 +1,7 @@
-// IndexItem.js
+/**
+ * @name indexItem.js
+ * @description .............
+ **/
 
 import React, { Component } from 'react';
 import ItemService from './ItemService';

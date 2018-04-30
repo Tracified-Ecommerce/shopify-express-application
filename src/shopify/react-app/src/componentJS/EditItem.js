@@ -1,4 +1,7 @@
-// EditItem.js
+/**
+ * @name editItem.js
+ * @description ................
+ **/
 
 import React, { Component } from 'react';
 import axios from 'axios';

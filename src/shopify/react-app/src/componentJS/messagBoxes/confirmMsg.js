@@ -1,3 +1,9 @@
+/**
+ * @name confirmMsg.js
+ * @description This confirm message box will display when user try to navigate to 
+ * another tab without clicking save button after doing changes to settings page.
+ **/
+
 import React, { Component } from 'react';
 import { Button, DisplayText,TextStyle, TextContainer } from '@shopify/polaris';
 import './styleCSS/messageBoxes/confirmMsg.css';

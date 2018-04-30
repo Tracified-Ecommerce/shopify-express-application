@@ -1,3 +1,8 @@
+/**
+ * @name untracifiedItemList.js
+ * @description Items which have ordered by a user per order is displays by this component.
+ **/
+
 import React, { Component } from 'react';
 import { Container, Collapse, Row, Col } from 'reactstrap';
 import { Button, Card, ResourceList, Thumbnail, Stack } from '@shopify/polaris';

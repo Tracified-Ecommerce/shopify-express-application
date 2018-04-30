@@ -1,3 +1,10 @@
+/**
+ * @name tracifiedTimelineContent.js
+ * @description The user can trace back traceability details for all stages of 
+ * traceability enabled items as a timeline. This component is responsible for the 
+ * timeline content, like how the cards for stages work not the basic structure of it. 
+ **/
+
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { Button, Stack } from '@shopify/polaris';

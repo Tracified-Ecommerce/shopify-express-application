@@ -1,3 +1,8 @@
+/**
+ * @name errorMsg.js
+ * @description This component is responsible for displaying error messages in plugin pages as embedded messages.
+ **/
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 

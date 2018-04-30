@@ -1,4 +1,7 @@
-// ProductMapping.js
+/**
+ * @name settingStructure.js
+ * @description This is consists basic structure of settings page.
+ **/
 
 import React, { Component } from 'react';
 // import Sticky from 'react-sticky-el';

@@ -1,3 +1,9 @@
+/**
+ * @name alertMsg.js
+ * @description This is alert message component for various alerts, 
+ * such as settings "save" button click & "mark as tracified" button click.
+ **/
+
 import React, { Component } from 'react';
 import { Button, DisplayText, TextStyle , TextContainer , } from '@shopify/polaris';
 import { Container, Row, Col } from 'reactstrap';

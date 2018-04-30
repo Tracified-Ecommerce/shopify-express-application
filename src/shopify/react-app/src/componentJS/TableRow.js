@@ -1,4 +1,7 @@
-// TableRow.js
+/**
+ * @name tableRow.js
+ * @description ............. 
+ **/
 
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';

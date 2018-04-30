@@ -1,3 +1,8 @@
+/**
+ * @name untracifiedBase.js
+ * @description This component shows the basic structure of Untracified orders page.
+ **/
+
 import React, { Component } from 'react';
 import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';

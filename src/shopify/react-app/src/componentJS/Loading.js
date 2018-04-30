@@ -1,10 +1,15 @@
+/**
+ * @name loading.js
+ * @description Loading component creates a waiting screen with a meaningful text.
+ **/
+
 import React, { Component } from 'react';
 import {
     Spinner,
     DisplayText,
     TextStyle
 } from '@shopify/polaris';
-import './Loading.css';
+import './loading.css';
 
 class Loading extends Component {
 

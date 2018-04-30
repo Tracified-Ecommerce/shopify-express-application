@@ -1,3 +1,8 @@
+/**
+ * @name pluginMainTabs.js
+ * @description Component of the main segregated tab view of the plugin.  
+ **/
+
 import React, { Component } from 'react';
 import { Tabs } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';

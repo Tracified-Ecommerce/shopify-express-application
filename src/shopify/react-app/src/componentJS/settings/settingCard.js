@@ -1,3 +1,9 @@
+/**
+ * @name settingCard.js
+ * @description This component is used to show the card content (title & table headers)
+ * which acts as sticky navigation bar in settings page.
+ **/
+
 import React, { Component } from 'react';
 import { Row, Col, Container,Button} from 'reactstrap';
 import './styleCSS/settings/settings-MediaQueries.css';

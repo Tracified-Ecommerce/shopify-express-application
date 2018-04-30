@@ -1,3 +1,10 @@
+/**
+ * @name tracifiedTimelineStructre.js
+ * @description This is the basic timeline structure. The timeline will appear when a 
+ * user clicks "View Tracemore Timeline" for the traceability enabled items in 
+ * Tracified orders page.
+ **/
+
 import React, { Component } from 'react';
 import loading from './loading';
 import * as axios from 'axios';

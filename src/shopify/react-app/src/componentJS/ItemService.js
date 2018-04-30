@@ -1,3 +1,8 @@
+/**
+ * @name itemService.js
+ * @description ............
+ **/
+
 import axios from 'axios';
 
 class ItemService{

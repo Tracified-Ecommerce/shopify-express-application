@@ -1,6 +1,11 @@
+/**
+ * @name tracifiedLogo.js
+ * @description Component which contain tracified logo.  
+ **/
+
 import React, {Component} from 'react';
 import TraciLogo from '../assets/tracified_logo.png';
-import './MediaQueries_Logo.css';
+import './styleCSS/tracifiedLogo-MediaQueries.css';
 
 class TracifiedLogo extends Component{
     render(){
