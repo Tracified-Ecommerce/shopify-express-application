@@ -119,7 +119,8 @@ class FulfilledOrder extends Component {
                     itemName: itemName
                 });
             }).catch((error) => {
-                console.log(error);
+                console.log("Error in fullfilled order item name request : " + error);
+                return;
             });
 
     }
