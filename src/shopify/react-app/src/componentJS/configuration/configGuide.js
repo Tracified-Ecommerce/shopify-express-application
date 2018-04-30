@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Card, DisplayText, Button ,Page} from '@shopify/polaris';
 import { Container, Row, Col } from 'reactstrap';
-import './install.css';
-import './installMediaQueries.css';
+import './styleCSS/configuration/configGuide.css';
+import './styleCSS/configuration/configGuide-MediaQueries.css';
 
 class Installation extends Component {
     render() {
