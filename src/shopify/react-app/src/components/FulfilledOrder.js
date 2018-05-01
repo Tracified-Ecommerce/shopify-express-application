@@ -108,7 +108,7 @@ class FulfilledOrder extends Component {
             // const url = '/shopify/shop-api/item/' + this.state.productID;
             // axios.get(url)
             //     .then(response => {
-            console.log("inside onTraceSelect() product selected is : " + response.data.product.handle);
+            // console.log("inside onTraceSelect() product selected is : " + response.data.product.handle);
             let itemName = this.dict[this.state.productID].handle;
             this.setState({
                 itemName: itemName,
