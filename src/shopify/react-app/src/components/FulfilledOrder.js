@@ -35,8 +35,8 @@ class FulfilledOrder extends Component {
     };
 
     createDictionary(arr) {
-        for (i = 0; i < arr.length; i++) {
-            this.dict[getKey(arr[i], "id")] = arr[i];
+        for (let i = 0; i < arr.length; i++) {
+            this.dict[this.getKey(arr[i], "id")] = arr[i];
         }
     }
 
