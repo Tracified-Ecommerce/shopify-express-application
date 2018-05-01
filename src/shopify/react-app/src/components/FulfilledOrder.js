@@ -21,18 +21,30 @@ class FulfilledOrder extends Component {
             traceButtonDisable: true,
             itemID: this.props.mapping.hasOwnProperty(this.props.order.lineItems[0].product_id) ? (this.props.mapping[this.props.order.lineItems[0].product_id][1] ? this.props.mapping[this.props.order.lineItems[0].product_id][1] : "noTraceabilityItem") : "noTraceabilityItem"
         };
+        this.dict = {};
         this.itemID = "";
         this.onSelectItem = this.onSelectItem.bind(this);
         this.onTraceSelect = this.onTraceSelect.bind(this);
+        this.getKey = this.getKey.bind(this);
+        this.createDictionary = this.createDictionary.bind(this);
 
     }
 
-   
+    getKey(obj, key) {
+        return obj[key];
+    };
+
+    createDictionary(arr) {
+        for (i = 0; i < arr.length; i++) {
+            this.dict[getKey(arr[i], "id")] = arr[i];
+        }
+    }
 
     onSelectItem(productID, orderNumber) {
         const mapping = this.props.mapping;
         let tempItemID = "noTraceabilityItem";
         console.log(this.state.itemID);
+        console.log("name from dictionary : " + this.dict[this.state.itemID]);
 
         if (mapping.hasOwnProperty(productID) && mapping[productID][1]) {
             // if the item exists in the mapping reasiign the temporary itemID
@@ -90,6 +102,8 @@ class FulfilledOrder extends Component {
             });
             // this.state.timelineText="see timeline";
             console.log("inside onTraceSelect() product id is : " + this.state.productID);
+
+            console.log("name from dictionary : " + this.dict[this.state.itemID]);
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
                 .then(response => {
@@ -111,6 +125,7 @@ class FulfilledOrder extends Component {
 
     componentDidMount() {
 
+        this.createDictionary(this.props.items);
         const url = '/shopify/shop-api/item/' + this.state.productID;
         axios.get(url)
             .then(response => {
@@ -153,12 +168,12 @@ class FulfilledOrder extends Component {
             <tr>
                 <td style={commonCusOdrStyle}>
                     <div className="orderNo">
-                    {order.order_number}
+                        {order.order_number}
                     </div>
                 </td>
                 <td style={commonCusOdrStyle}>
                     <div className="cusName">
-                    {order.customer}
+                        {order.customer}
                     </div>
                 </td>
                 <td>
@@ -188,7 +203,7 @@ class FulfilledOrder extends Component {
                     >
                         <Modal
                             src={modalURL}
-                            width="large"   
+                            width="large"
                             open={this.state.modalOpen}
                             title={this.state.modalTitle}
                             primaryAction={{
