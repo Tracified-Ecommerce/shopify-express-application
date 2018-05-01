@@ -33,7 +33,7 @@ class CollapaseCard extends Component {
     }
 
     fulfillOrder() {
-        const url = '/shopify/shop-api/orders/' + this.props.orderID + '/tracify';
+        const url = '/shopify/shop-api/orders/tracify/' + this.props.orderID;
         axios.get(url)
             .then(response => {
                 this.setState({

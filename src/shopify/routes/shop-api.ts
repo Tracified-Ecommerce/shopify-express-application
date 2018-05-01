@@ -146,7 +146,7 @@ router.get("/orders/:id/fulfill", (req: IRequest & Request, res: Response) => {
     });
 });
 
-router.get("/orders/:id/tracify", (req: IRequest & Request, res: Response) => {
+router.get("/orders/tracify/:id", (req: IRequest & Request, res: Response) => {
     const url: string = "/admin/orders/" + req.params.id + ".json";
     const body: object = {
 
@@ -164,8 +164,18 @@ router.get("/orders/:id/tracify", (req: IRequest & Request, res: Response) => {
     });
 });
 
+// TODO: remove this route and associated requests
 router.get("/item/:id", (req: IRequest & Request, res: Response) => {
     const url: string = "/admin/products/" + req.params.id + ".json";
+
+    shopAdminAPI("GET", req.session.shop.name, url, req.shopRequestHeaders, null, (item: any) => {
+        console.log("item request sent");
+        res.status(200).send(item);
+    });
+});
+
+router.get("/itemnames", (req: IRequest & Request, res: Response) => {
+    const url: string = "/admin/products.json?fields=id,handle";
 
     shopAdminAPI("GET", req.session.shop.name, url, req.shopRequestHeaders, null, (item: any) => {
         console.log("item request sent");

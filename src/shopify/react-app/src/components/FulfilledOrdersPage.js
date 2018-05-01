@@ -18,6 +18,7 @@ class FulfilledOrdersPage extends Component {
             orders: [],
             mapping: {},
             products: {},
+            items: [],
             shopDomain: "",
             isOrderListLoading: true,
             isMappingLoading: true,
@@ -42,6 +43,18 @@ class FulfilledOrdersPage extends Component {
                     isMappingLoading: false
                 });
 
+            }).catch(function (error) {
+                console.error(error);
+            });
+
+        axios.get('/shopify/shop-api/itemnames')
+            .then(response => {
+                if (response.status == 200) {
+                   console.log("itemnames : " + response.data)
+                //    this.setState({
+                //     items: res
+                // });
+                }
             }).catch(function (error) {
                 console.error(error);
             });
