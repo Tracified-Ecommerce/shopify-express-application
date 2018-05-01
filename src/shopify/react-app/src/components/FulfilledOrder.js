@@ -44,7 +44,6 @@ class FulfilledOrder extends Component {
         const mapping = this.props.mapping;
         let tempItemID = "noTraceabilityItem";
         console.log(this.state.itemID);
-        console.log("name from dictionary : " + this.dict[this.state.itemID]);
 
         if (mapping.hasOwnProperty(productID) && mapping[productID][1]) {
             // if the item exists in the mapping reasiign the temporary itemID
@@ -76,6 +75,8 @@ class FulfilledOrder extends Component {
             this.setState({
                 traceButtonDisable: false,
                 timelineText: "View Tracemore Timeline"
+            }, ()=>{
+                console.log("name from dictionary : " + this.dict[this.state.itemID]);
             });
 
         }
@@ -126,6 +127,7 @@ class FulfilledOrder extends Component {
     componentDidMount() {
 
         this.createDictionary(this.props.items);
+        console.log("dictinoary created : " + JSON.stringify(this.dict))
         const url = '/shopify/shop-api/item/' + this.state.productID;
         axios.get(url)
             .then(response => {
