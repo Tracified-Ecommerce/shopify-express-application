@@ -379,16 +379,16 @@
     }
 
     .pName{
-        margin-left: -21px;
-        width: 48.5%
+        margin-left: -11px;
+        width: 46.5%
     }
     .Pid{
         margin-left: -76px!important;
         width: 17.5%;
     }
     .tTitle{
-        margin-left: -5px!important;
-        width: 29.2%;
+        margin-left: -8px!important;
+        width: 28.2%;
     } 
     .Permission{
         margin-left: 16px!important;
@@ -423,7 +423,7 @@
 
     .MappingDetails{
         font-size: 150% !important;
-        margin-left: 0%;
+        margin-left: 5px;
         padding-top: 4%;
         /* margin-bottom: 16%; */
     }
