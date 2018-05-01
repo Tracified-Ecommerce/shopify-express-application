@@ -75,7 +75,7 @@ class FulfilledOrder extends Component {
             this.setState({
                 traceButtonDisable: false,
                 timelineText: "View Tracemore Timeline"
-            }, ()=>{
+            }, () => {
                 console.log("name from dictionary : " + this.dict[this.state.productID].handle);
             });
 
@@ -105,20 +105,20 @@ class FulfilledOrder extends Component {
             console.log("inside onTraceSelect() product id is : " + this.state.productID);
 
             console.log("name from dictionary : " + this.dict[this.state.productID].handle);
-            const url = '/shopify/shop-api/item/' + this.state.productID;
-            axios.get(url)
-                .then(response => {
-                    console.log("inside onTraceSelect() product selected is : " + response.data.product.handle);
-                    let itemName = response.data.product.handle;
-                    this.setState({
-                        itemName: itemName,
-                        modalTitle: "Product Timeline : " + itemName.charAt(0).toUpperCase() + itemName.slice(1)
-                    }, () => {
-                        this.setState({ modalOpen: true });
-                    });
-                }).catch((error) => {
-                    console.log(error);
-                });
+            // const url = '/shopify/shop-api/item/' + this.state.productID;
+            // axios.get(url)
+            //     .then(response => {
+            console.log("inside onTraceSelect() product selected is : " + response.data.product.handle);
+            let itemName = this.dict[this.state.productID].handle;
+            this.setState({
+                itemName: itemName,
+                modalTitle: "Product Timeline : " + itemName.charAt(0).toUpperCase() + itemName.slice(1)
+            }, () => {
+                this.setState({ modalOpen: true });
+            });
+            // }).catch((error) => {
+            //     console.log(error);
+            // });
 
             // this.setState({ modalOpen: true });
         }
@@ -127,18 +127,19 @@ class FulfilledOrder extends Component {
     componentDidMount() {
 
         this.createDictionary(this.props.items);
-        console.log("dictinoary created : " + JSON.stringify(this.dict))
-        const url = '/shopify/shop-api/item/' + this.state.productID;
-        axios.get(url)
-            .then(response => {
-                let itemName = response.data.product.handle;
-                this.setState({
-                    itemName: itemName
-                });
-            }).catch((error) => {
-                console.log("Error in fullfilled order item name request : " + error);
-                return;
-            });
+        console.log("dictinary created : ");
+        console.log("name from dictionary : " + this.dict[this.state.productID].handle);
+        // const url = '/shopify/shop-api/item/' + this.state.productID;
+        // axios.get(url)
+        // .then(response => {
+        let itemName = this.dict[this.state.productID].handle;
+        this.setState({
+            itemName: itemName
+        });
+        // }).catch((error) => {
+        //     console.log("Error in fullfilled order item name request : " + error);
+        //     return;
+        // });
 
     }
 
