@@ -50,10 +50,10 @@ class FulfilledOrdersPage extends Component {
         axios.get('/shopify/shop-api/itemnames')
             .then(response => {
                 if (response.status == 200) {
-                   console.log("itemnames : " + response.data)
-                //    this.setState({
-                //     items: res
-                // });
+                   console.log("itemnames : " + JSON.stringify(response.data.products));
+                   this.setState({
+                    items: response.data.products
+                });
                 }
             }).catch(function (error) {
                 console.error(error);
@@ -342,7 +342,8 @@ class FulfilledOrdersPage extends Component {
                                                     key={order.order_number}
                                                     order={order}
                                                     shopDomain={this.state.shopDomain}
-                                                    mapping={this.state.mapping} />
+                                                    mapping={this.state.mapping}
+                                                    items={this.state.items} />
 
 
                                             )
