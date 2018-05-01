@@ -347,10 +347,10 @@
     }
 
     .tblHeaders{
-        margin-left: -3%;
+        margin-left: -5%;
         font-size: 107%!important;
         font-weight: 600;
-        width: 100%;
+        width: 110%;
         font-family: calibri;
     }
 
@@ -391,7 +391,7 @@
         width: 28.2%;
     } 
     .Permission{
-        margin-left: 16px!important;
+        margin-left: 7px!important;
     }    
 
     .space{
@@ -459,7 +459,7 @@
 
     .pName{
         margin-left: -26px;
-        width: 37%
+        width: 40%
     }
     .Pid{
         display: none;
