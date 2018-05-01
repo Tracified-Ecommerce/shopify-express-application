@@ -100,12 +100,12 @@ class TraceTimeLine extends Component {
             marginRight: "auto",
             display: "block",
             width: "80%",
-            height: "55%",
+            height: "45%",
         }
 
         let timelineTopStyle = {
             backgroundColor: 'rgba(0,0,0,1)',
-            height: 90,
+            height: 95,
             width: 220,
             marginLeft: 10,
             padding: 10
