@@ -11,7 +11,7 @@ import { Timeline, TimelineEvent } from 'react-event-timeline';
 import TimelineContent from './TimelineContent';
 import ErrorPage from './ErrorPage';
 import { isEmpty } from "lodash";
-import TracifiedLogo from '../assets/traci_logo_transparent.png'
+import TracifiedLogo from '../assets/tracified_logo.png'
 import './timelineMediaQueries.css';
 
 class TraceTimeLine extends Component {
@@ -100,11 +100,11 @@ class TraceTimeLine extends Component {
             marginRight: "auto",
             display: "block",
             width: "80%",
-            height: "45%",
+            height: "55%",
         }
 
         let timelineTopStyle = {
-            backgroundColor: 'rgba(0,0,0,0.8)',
+            backgroundColor: 'rgba(0,0,0,1)',
             height: 90,
             width: 220,
             marginLeft: 10,
