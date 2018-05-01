@@ -76,7 +76,7 @@ class FulfilledOrder extends Component {
                 traceButtonDisable: false,
                 timelineText: "View Tracemore Timeline"
             }, ()=>{
-                console.log("name from dictionary : " + this.dict[this.state.itemID]);
+                console.log("name from dictionary : " + this.dict[this.state.productID]);
             });
 
         }
@@ -104,7 +104,7 @@ class FulfilledOrder extends Component {
             // this.state.timelineText="see timeline";
             console.log("inside onTraceSelect() product id is : " + this.state.productID);
 
-            console.log("name from dictionary : " + this.dict[this.state.itemID]);
+            console.log("name from dictionary : " + this.dict[this.state.productID]);
             const url = '/shopify/shop-api/item/' + this.state.productID;
             axios.get(url)
                 .then(response => {
