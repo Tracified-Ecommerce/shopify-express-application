@@ -11,7 +11,7 @@ import {
 } from '@shopify/polaris';
 import './loading.css';
 
-class Loading extends Component {
+class loading extends Component {
 
     constructor(props) {
         super(props);
@@ -49,4 +49,4 @@ class Loading extends Component {
 }
 
 
-export default Loading;
+export default loading;

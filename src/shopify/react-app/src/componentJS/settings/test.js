@@ -31,7 +31,7 @@ import {
 } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 
-class settingDetailTbl extends Component {
+class test extends Component {
     constructor(props) {
         super(props);
 
@@ -92,4 +92,4 @@ class settingDetailTbl extends Component {
     }
 }
 
-export default settingDetailTbl;
+export default test;

@@ -6,12 +6,12 @@
 import React, { Component } from 'react';
 import { Tabs } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
-import SubTabs from './subTabs';
-import Installation from './Install';
-import Mapping from './ProductMappingModule/ProductMapping';
-import Confirm from './Confirm';
+import ordersSubTabs from './ordersSubTabs';
+import configGuide from './configuration/configGuide';
+import settingStructure from './settings/settingStructure';
+import confirmMsg from './messageBoxes/confirmMsg';
 
-class TabsView extends Component {
+class pluginMainTabs extends Component {
   constructor(props) {
     super(props);
 
@@ -79,17 +79,17 @@ class TabsView extends Component {
     const tabPanels = [
       (
         <Tabs.Panel id="panel1">
-          <SubTabs />
+          <ordersSubTabs />
         </Tabs.Panel>
       ),
       (
         <Tabs.Panel id="panel2">
-          <Mapping setNotSaved={this.setNotSaved} />
+          <settingStructure setNotSaved={this.setNotSaved} />
         </Tabs.Panel>
       ),
       (
         <Tabs.Panel id="panel3">
-          <Installation />
+          <configGuide />
         </Tabs.Panel>
       ),
     ];
@@ -102,15 +102,15 @@ class TabsView extends Component {
           onSelect={this.handleTabChange}
         />
         {tabPanels[selectedTab]}
-        <Confirm show={this.state.isOpen}
+        <confirmMsg show={this.state.isOpen}
           onConfirm={this.toggleConfirm}
           onCancel={this.toggleCancel}
           heading={this.state.confirmHeading}
           message={this.state.confirmMessage}>
-        </Confirm>
+        </confirmMsg>
       </div>
     );
   }
 }
 
-export default TabsView;
+export default pluginMainTabs;

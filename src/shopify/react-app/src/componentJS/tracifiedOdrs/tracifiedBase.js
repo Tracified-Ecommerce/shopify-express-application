@@ -16,7 +16,7 @@ import './styleCSS/tracifiedOdrs/tracifiedOdrs-MediaQueries.css';
 const KEYS_TO_FILTER = ['order.order_number']
 const QRCode = require('qrcode.react');
 
-class tracifiedContentTblsPage extends Component {
+class tracifiedBase extends Component {
     constructor() {
         super();
         this.state = {
@@ -379,4 +379,4 @@ class tracifiedContentTblsPage extends Component {
     }
 }
 
-export default tracifiedContentTblsPage;
+export default tracifiedBase;

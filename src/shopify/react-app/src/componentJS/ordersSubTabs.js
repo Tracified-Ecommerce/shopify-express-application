@@ -6,11 +6,11 @@
 import React, { Component } from 'react';
 import {Tabs} from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
-import Mapping from './ProductMappingModule/ProductMapping';
-import Part2Cards from './part2_cards';
-import FulfilledOrdersPage from './FulfilledOrdersPage';
+import settingStructure from './settings/settingStructure';
+import untracifiedBase from './untracifiedOdrs/untracifiedBase';
+import tracifiedBase from './tracifiedOdrs/tracifiedBase';
 
-class SubTabs extends Component {
+class ordersSubTabs extends Component {
   constructor(props) {
     super(props);
 
@@ -44,12 +44,12 @@ class SubTabs extends Component {
     const tabPanels = [
       (
         <Tabs.Panel id="panel1">
-          <Part2Cards/>
+          <untracifiedBase/>
         </Tabs.Panel>
       ),
       (
         <Tabs.Panel id="panel2">
-        <FulfilledOrdersPage/>
+        <tracifiedBase/>
         </Tabs.Panel>
       )
     ];
@@ -68,4 +68,4 @@ class SubTabs extends Component {
   }
 }
 
-export default SubTabs;
+export default ordersSubTabs;

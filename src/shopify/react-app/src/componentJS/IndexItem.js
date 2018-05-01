@@ -4,11 +4,11 @@
  **/
 
 import React, { Component } from 'react';
-import ItemService from './ItemService';
+import itemService from './itemService';
 import axios from 'axios';
-import TableRow from './TableRow';
+import tableRow from './tableRow';
 
-class IndexItem extends Component {
+class indexItem extends Component {
 
   constructor(props) {
       super(props);
@@ -63,4 +63,4 @@ class IndexItem extends Component {
     }
   }
 
-export default IndexItem;
+export default indexItem;

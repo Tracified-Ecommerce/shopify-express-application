@@ -11,7 +11,7 @@ import { Thumbnail, Page, List, Button, Stack, Select, ResourceList } from '@sho
 import loading from '../loading';
 const QRCode = require('qrcode.react');
 
-class tracifiedContentTbls extends Component {
+class ulfilledOrders extends Component {
     constructor() {
         super();
         this.state = {
@@ -119,5 +119,5 @@ class tracifiedContentTbls extends Component {
     }
 }
 
-export default tracifiedContentTbls;
+export default ulfilledOrders;
 

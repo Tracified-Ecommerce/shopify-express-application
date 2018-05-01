@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import TraciLogo from '../assets/tracified_logo.png';
 import './styleCSS/tracifiedLogo-MediaQueries.css';
 
-class TracifiedLogo extends Component{
+class tracifiedLogo extends Component{
     render(){
         var backStyle={
             backgroundColor:"black",
@@ -27,4 +27,4 @@ class TracifiedLogo extends Component{
     }
 }
 
-export default TracifiedLogo;
+export default tracifiedLogo;

@@ -13,7 +13,7 @@ import untracifiedOdrCard from './untracifiedOdrCard';
 import errorMsg from '../errorMsg';
 import './styleCSS/untracifiedOdrs/untracifiedOrders_mediaQueries.css'
 
-class Part2Cards extends Component {
+class untracifiedBase extends Component {
     constructor() {
         super();
         this.state = {
@@ -374,4 +374,4 @@ class Part2Cards extends Component {
     }
 }
 
-export default Part2Cards;
+export default untracifiedBase;

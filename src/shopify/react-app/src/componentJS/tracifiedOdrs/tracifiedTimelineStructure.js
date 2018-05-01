@@ -20,7 +20,7 @@ import errorPage from '../errorPage';
 import { isEmpty } from "lodash";
 import './styleCSS/tracifiedOdrs/tracifiedOdrs-MediaQueries.css';
 
-class TraceTimeLine extends Component {
+class tracifiedTimelineStructre extends Component {
 
     constructor(props) {
         super(props);
@@ -174,4 +174,4 @@ class TraceTimeLine extends Component {
     }
 }
 
-export default TraceTimeLine;
+export default tracifiedTimelineStructre;

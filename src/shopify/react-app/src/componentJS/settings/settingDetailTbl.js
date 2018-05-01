@@ -33,7 +33,7 @@ import {
 } from '@shopify/polaris';
 import '@shopify/polaris/styles.css';
 
-class ProductMappingTableRow extends Component {
+class settingDetailTbl extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -152,9 +152,9 @@ class ProductMappingTableRow extends Component {
       </tr>
     );
 
-    <ProductMappingTableRow /> ,
+    <settingDetailTbl /> ,
       document.getElementById('root')
   }
 }
 
-export default ProductMappingTableRow;
+export default settingDetailTbl;

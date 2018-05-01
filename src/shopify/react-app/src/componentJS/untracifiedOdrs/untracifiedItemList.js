@@ -13,7 +13,7 @@ import './styleCSS/untracifiedOdrs/untracifiedOdrs-MediaQueries.css';
 import './styleCSS/messageBoxes/alertMarkAsTracified.css';
 // import '.'
 
-class CollapaseCard extends Component {
+class untracifiedItemList extends Component {
     constructor(props) {
         super(props);
         this.toggleCollapse = this.toggleCollapse.bind(this);
@@ -144,5 +144,5 @@ class CollapaseCard extends Component {
     }
 }
 
-export default CollapaseCard;
+export default untracifiedItemList;
 

@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class ErrorMsgSearch extends Component {
+class errorMsg extends Component {
 
     constructor(props) {
         super(props);
@@ -25,4 +25,4 @@ class ErrorMsgSearch extends Component {
 }
 
 
-export default ErrorMsgSearch;
+export default errorMsg;

@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 
-class ErrorPage extends Component {
+class errorPage extends Component {
 
     constructor(props) {
         super(props);
@@ -35,4 +35,4 @@ class ErrorPage extends Component {
 }
 
 
-export default ErrorPage;
+export default errorPage;

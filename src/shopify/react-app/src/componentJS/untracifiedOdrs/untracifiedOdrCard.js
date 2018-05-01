@@ -6,15 +6,15 @@
  **/
 
 import React, { Component } from 'react';
-import CollapaseCards from './collapase';
+import untracifiedItemList from './untracifiedItemList';
 import * as axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import { Thumbnail, Card, Page, List } from '@shopify/polaris';
 import loading from '../loading';
-import './untracifiedOrders_mediaQueries.css';
+import './untracifiedOdrs/untracifiedOrders_mediaQueries.css';
 const QRCode = require('qrcode.react');
 
-class Uncollapsed extends Component {
+class untracifiedOdrCard extends Component {
 
     render() {
 
@@ -39,7 +39,7 @@ class Uncollapsed extends Component {
                         </Col>
                 </Row>
                 <Row id="unfulfillproducts">
-                    <CollapaseCards  itemArray={this.props.order.lineItems} style={markAsTracifiedBtnStyle} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
+                    <untracifiedItemList  itemArray={this.props.order.lineItems} style={markAsTracifiedBtnStyle} resetOrders={this.props.resetOrders} products={this.props.productsProp} orderID={this.props.order.id} />
                 </Row>
             </Card>
             </div>
@@ -47,4 +47,4 @@ class Uncollapsed extends Component {
     }
 }
 
-export default Uncollapsed;
+export default untracifiedOdrCard;

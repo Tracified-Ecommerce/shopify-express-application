@@ -5,9 +5,9 @@
 
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import ItemService from './ItemService';
+import itemService from './itemService';
 
-class TableRow extends Component {
+class tableRow extends Component {
     constructor(props){
         super(props);
 
@@ -44,4 +44,4 @@ class TableRow extends Component {
   }
 }
 
-export default TableRow;
+export default tableRow;

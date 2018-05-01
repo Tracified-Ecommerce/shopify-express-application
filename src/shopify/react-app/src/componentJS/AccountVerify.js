@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import '@shopify/polaris/styles.css';
 import { Row, Col } from 'reactstrap';
 import * as axios from 'axios';
-import AlertBox from "./Alert";
+import alertMsg from "./messageBoxes/alertMsg";
 import {
     AccountConnection,
     Page,
@@ -22,7 +22,7 @@ import {
 } from '@shopify/polaris';
 
 
-class AccountVerify extends Component {
+class accountVerify extends Component {
 
     constructor(props) {
         super(props);
@@ -99,14 +99,14 @@ class AccountVerify extends Component {
                     <Row>
                     </Row>
                 </Card>
-                <AlertBox show={this.state.isOpen}
+                <alertMsg show={this.state.isOpen}
                     onClose={this.toggleAlert}
                     heading={this.state.alertHeading}
                     message={this.state.alertMessage}>
-                </AlertBox>
+                </alertMsg>
             </Page>
         );
     }
 }
 
-export default AccountVerify;
+export default accountVerify;

@@ -1,4 +1,3 @@
-
 /**
  * @name configGuide.js
  * @description This contains code for tab content of Tracified configuration guide.
@@ -10,7 +9,7 @@ import { Container, Row, Col } from 'reactstrap';
 import './styleCSS/configuration/configGuide.css';
 import './styleCSS/configuration/configGuide-MediaQueries.css';
 
-class Installation extends Component {
+class configGuide extends Component {
     render() {
         var liStyle = {
             marginTop: '2%'
@@ -68,4 +67,4 @@ class Installation extends Component {
         );
     }
 }
-export default Installation;
+export default configGuide;

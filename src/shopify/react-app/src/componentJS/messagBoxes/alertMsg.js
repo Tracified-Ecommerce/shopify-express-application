@@ -9,7 +9,7 @@ import { Button, DisplayText, TextStyle , TextContainer , } from '@shopify/polar
 import { Container, Row, Col } from 'reactstrap';
 import './styleCSS/messageBoxes/alertMsg.css';
 
-class Alert extends Component {
+class alertMsg extends Component {
     render() {
       // Render nothing if the "show" prop is false
       if(!this.props.show) {
@@ -96,4 +96,4 @@ class Alert extends Component {
     }
   }
 
-  export default Alert
+  export default alertMsg;

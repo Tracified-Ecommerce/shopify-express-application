@@ -40,7 +40,7 @@ import loading from '../loading';
 import settingCard from './settingCard';
 
 
-class ProductMapping extends Component {
+class settingStructure extends Component {
 
   constructor(props) {
     super(props);
@@ -349,10 +349,10 @@ var saveBtnStyle={
       </div>
       // </Page>
     );
-    <ProductMapping /> , document.getElementById('productmapping')
+    <settingStructure /> , document.getElementById('productmapping')
     // console.log('document thing works');
   }
 
 }
 
-export default ProductMapping;
+export default settingStructure;

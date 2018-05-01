@@ -5,9 +5,9 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import ItemService from './ItemService';
+import itemService from './itemService';
 
-class EditItem extends Component {
+class editItem extends Component {
 
   constructor(props) {
       super(props);
@@ -52,4 +52,4 @@ class EditItem extends Component {
   }
 }
 
-export default EditItem;
+export default editItem;

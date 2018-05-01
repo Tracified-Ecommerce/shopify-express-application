@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { Button, DisplayText,TextStyle, TextContainer } from '@shopify/polaris';
 import './styleCSS/messageBoxes/confirmMsg.css';
 
-class Confirm extends Component {
+class confirmMsg extends Component {
     render() {
       // Render nothing if the "show" prop is false
       if(!this.props.show) {
@@ -96,4 +96,4 @@ class Confirm extends Component {
     }
   }
 
-  export default Confirm
+  export default confirmMsg;

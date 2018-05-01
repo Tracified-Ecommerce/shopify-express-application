@@ -13,7 +13,7 @@ import { isEmpty, isNull, isArray } from "lodash";
 import './styleCSS/tracifiedOdrs/tracifiedOdrs-MediaQueries.css';
 import './styleCSS/tracifiedOdrs/tracifiedTimelineContent.css';
 
-class TimelineContent extends Component {
+class tracifiedTimelineContent extends Component {
 
     render() {
 
@@ -177,4 +177,4 @@ class TimelineContent extends Component {
 
 }
 
-export default TimelineContent;
+export default tracifiedTimelineContent;
