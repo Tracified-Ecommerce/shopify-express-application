@@ -11,6 +11,7 @@ import { Timeline, TimelineEvent } from 'react-event-timeline';
 import TimelineContent from './TimelineContent';
 import ErrorPage from './ErrorPage';
 import { isEmpty } from "lodash";
+import TracifiedLogo from '../assets/traci_logo_transparent.png'
 import './timelineMediaQueries.css';
 
 class TraceTimeLine extends Component {
@@ -94,6 +95,14 @@ class TraceTimeLine extends Component {
             zIndex: 200
         };
 
+        let imgStyle = {
+            marginLeft: "auto",
+            marginRight: "auto",
+            display: "block",
+            width: "80%",
+            height: "45%",
+        }
+
         let timelineTopStyle = {
             backgroundColor: 'rgba(0,0,0,0.8)',
             height: 90,
@@ -117,15 +126,7 @@ class TraceTimeLine extends Component {
                 <div className="traceTimelineWrapper" style={{ backgroundColor: '#f4f6f8' }}>
                     <div style={timelineTopContainerStyle}>
                         <div style={timelineTopStyle}>
-                            <h1 style={{ color: 'white', textAlign: 'center', marginBottom: '5px', fontSize: '15px' }}>
-                                <span style={{ color: 'white' }}>
-                                    Traci
-                            </span>
-                                <span style={{ color: 'green' }}>
-                                    fied
-                            </span>
-                            </h1>
-
+                            <img src={TracifiedLogo} style={imgStyle} />
                             <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Order ID:&nbsp;{this.props.match.params.orderID}</p>
                             <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Item Name:&nbsp;{capitalizedTitle}</p>
 
