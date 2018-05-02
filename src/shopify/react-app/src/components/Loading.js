@@ -38,8 +38,6 @@ class Loading extends Component {
                         accessibilityLabel="Loading"
                     />
                 </div>
-                <div className="filler" style={{height:"4000px"}}>
-                </div>
             </div>
         );
     }

@@ -8,6 +8,7 @@ import Logo from './components/TracifiedLogo';
 import ProductMapping from './components/ProductMappingModule/ProductMapping';
 import TraceTimeLine from './components/TraceTimeLine';
 import '@shopify/polaris/styles.css';
+import './loadfix.css';
 import AddItem from './components/AddItem';
 import IndexItem from './components/IndexItem';
 import EditItem from './components/EditItem';
