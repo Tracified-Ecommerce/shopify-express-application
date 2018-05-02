@@ -105,7 +105,7 @@ class TimelineContent extends Component {
                                                                     console.log("if condition@@@@@@@@@@@" );
                                                                     valueTimelineStage +=  subGroup[innerKey].value[i].toString()+"  ";
                                                                 }else {
-                                                                    valueTimelineStage +=   subGroup[innerKey].value[i].toString()+" , ";
+                                                                    valueTimelineStage +=   subGroup[innerKey].value[i].toString()+", ";
                                                                 }
                                                                 
                                                             }
