@@ -4,6 +4,15 @@
         width: 101%;
     } 
 
+    .timelineInfoBox {
+        width: auto !important;
+        margin-left: 0px !important;
+    }
+
+    .timelineLogo {
+        width: 45%;
+    }
+
     .wrapperClass{
         font-size: 11px;
         width: 96%;

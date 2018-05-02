@@ -13,6 +13,7 @@ import ErrorPage from './ErrorPage';
 import { isEmpty } from "lodash";
 import TracifiedLogo from '../assets/tracified_logo.png'
 import './timelineMediaQueries.css';
+import './traceTimeline.css';
 
 class TraceTimeLine extends Component {
 
@@ -88,28 +89,28 @@ class TraceTimeLine extends Component {
 
     render() {
 
-        let timelineTopContainerStyle = {
-            backgroundColor: 'rgba(244,246,248)',
-            position: "sticky",
-            top: "0px",
-            zIndex: 200
-        };
+        // let timelineTopContainerStyle = {
+        //     backgroundColor: 'rgba(244,246,248)',
+        //     position: "sticky",
+        //     top: "0px",
+        //     zIndex: 200
+        // };
 
-        let imgStyle = {
-            marginLeft: "auto",
-            marginRight: "auto",
-            display: "block",
-            width: "80%",
-            height: "45%",
-        }
+        // let imgStyle = {
+        //     marginLeft: "auto",
+        //     marginRight: "auto",
+        //     display: "block",
+        //     width: "80%",
+        //     height: "45%",
+        // }
 
-        let timelineTopStyle = {
-            backgroundColor: 'rgba(0,0,0,1)',
-            height: 95,
-            width: 220,
-            marginLeft: 10,
-            padding: 10
-        };
+        // let timelineTopStyle = {
+        //     backgroundColor: 'rgba(0,0,0,1)',
+        //     height: 95,
+        //     width: 220,
+        //     marginLeft: 10,
+        //     padding: 10
+        // };
 
         let paramTitle = this.props.match.params.itemName;
         let capitalizedTitle = paramTitle.charAt(0).toUpperCase() + paramTitle.slice(1);
@@ -124,9 +125,9 @@ class TraceTimeLine extends Component {
         } else {
             return (
                 <div className="traceTimelineWrapper" style={{ backgroundColor: '#f4f6f8' }}>
-                    <div style={timelineTopContainerStyle}>
-                        <div style={timelineTopStyle}>
-                            <img src={TracifiedLogo} style={imgStyle} />
+                    <div className="timelineTopContainer">
+                        <div className="timelineInfoBox">
+                            <img src={TracifiedLogo} className="timelineLogo" />
                             <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Order ID:&nbsp;{this.props.match.params.orderID}</p>
                             <p style={{ color: 'white', fontSize: 14, textAlign: 'center', marginBottom: 1 }}>Item Name:&nbsp;{capitalizedTitle}</p>
 
