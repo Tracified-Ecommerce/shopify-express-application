@@ -76,6 +76,7 @@
     .alertFooter .Polaris-Button.Polaris-Button--primary {
         width: 17%;
         margin-top: 5%;
+        margin-left: 3%;
     }
 
     .alertFooter .Polaris-Button__Content{
