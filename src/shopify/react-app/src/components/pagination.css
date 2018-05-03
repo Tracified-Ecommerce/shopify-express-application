@@ -1,0 +1,118 @@
+/* Media Queries for PC */
+@media screen and (min-width: 1024px){
+    .paginationUl{
+        list-style: none;
+        margin-top: 6%;
+        width: 575px;
+        font-weight: bold;
+    }
+
+    .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
+        background-color: rgba(105, 187, 241, 0.377);
+       }
+
+    .paginationUl li:focus {
+        background-color: rgba(105, 187, 241, 0.377);
+    }
+
+    .paginationUl li .active {
+        opacity: 0.7;
+    }
+
+    .paginationUl li {
+        float: left;
+        list-style: none;
+        text-align: center;
+        background-color: transparent;
+        margin-right: 22px;
+        width: 7%;
+        line-height: 150%;
+        padding-bottom: 1%;
+      }
+      .pagination_stack{
+        width: 100%;
+      }
+
+      .pagination_stack .Polaris-Stack__Item {
+        display: flex;
+    }
+
+    .a{
+        font-size: 114%;
+    }
+ }
+ 
+ 
+ /* Media queries for the tablet devices */
+ @media (min-width: 650px) and (max-width: 1023px) {
+    .paginationUl{
+        list-style: none;
+        max-width: 64%;
+        font-weight: bold;
+    }
+
+    .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
+        background-color: rgba(105, 187, 241, 0.377);
+       }
+
+    .paginationUl li:focus {
+        background-color: rgba(105, 187, 241, 0.377);
+    }
+
+    .paginationUl li .active {
+        opacity: 0.7;
+    }
+
+    .paginationUl li {
+        float: left;
+        list-style: none;
+        text-align: center;
+        background-color: transparent;
+        margin-right: 30px;
+        width: 3%;
+        line-height: 150%;
+        padding-bottom: 1%;
+      }
+      .pagination_stack{
+        width: 118%;
+      }
+
+      .pagination_stack .Polaris-Stack__Item {
+          display: flex;
+      }
+ }
+ 
+ /* Media Queries for mobile devices */
+ @media  (min-width: 360px) and (max-width: 640px) {   
+ 
+    .paginationUl{
+        list-style: none;
+        font-weight: bold;
+    }
+
+    .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
+        background-color: rgba(105, 187, 241, 0.377);
+       }
+
+    .paginationUl li:focus {
+        background-color: rgba(105, 187, 241, 0.377);
+    }
+
+    .paginationUl li .active {
+        opacity: 0.7;
+    }
+
+    .paginationUl li {
+        float: left;
+        list-style: none;
+        text-align: center;
+        background-color: transparent;
+        margin-right: 30px;
+        width: 3%;
+        line-height: 150%;
+        padding-bottom: 1%;
+      }
+      .pagination_stack{
+        width: 118%;
+      }
+ }
