@@ -44,10 +44,11 @@
     }
 
     .SettingAlert .alertmessage {
-        max-width: 35%;
+        max-width: 25%;
         padding-top: 2%;
-        margin-left: 2%;
+        margin-bottom: 1%;
         margin-right: 0;
+        text-align: left;
     }
 
     .Polaris-Button.Polaris-Button--iconOnly{
@@ -56,10 +57,16 @@
     }
 
     .SettingAlert .alertHright{
+        min-width: 17%;
+        text-align: left;
         margin-left: 0%;
-        margin-right: 64%;
-        margin-top: -1%;
-        float: right;
+    }
+
+    .alertFooter .Polaris-Button.Polaris-Button--primary {
+        margin-left: 5%;
+        width: 30% !important;
+        text-align: right;
+        margin-right: -85%;
     }
 }
 
@@ -71,13 +78,13 @@
     
     /* alert box styles which appears in settings page  */
     .SettingAlert .alertBox{
-        width: 30%;
+        width: 32%;
     }
     
     .SettingAlert .alertmessage {
         max-width: 25%;
         padding-top: 2%;
-        margin-bottom: 2%;
+        margin-bottom: 1%;
         margin-right: 0;
         text-align: left;
     }
@@ -90,7 +97,7 @@
     }
     
     .SettingAlert .alertHleft {
-        min-width: 21%;
+        min-width: 17%;
         text-align: left;
         margin-left: 0%;
         /* margin-right: 5%; */
