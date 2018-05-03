@@ -28,7 +28,7 @@ class Confirm extends Component {
         flexDirection: "column",
         justifyContent: "space-between",
         borderRadius: 20,
-        maxWidth: 448,
+        maxWidth: 590,
         minHeight: 150,
         margin: '0 auto',
         padding: 25
@@ -39,7 +39,7 @@ class Confirm extends Component {
         bottom: 0, 
         width: "100%", 
         // height: "50px",
-        textAlign: "center"
+        textAlign: "right"
       };
 
       var spaceBetweenHeadingStyle={
@@ -74,7 +74,7 @@ class Confirm extends Component {
            <hr/> 
            
             <div className="alertFooter" style={footerStyle}>
-            <Button className="confirmBtn" primary onClick={this.props.onConfirm}>
+            <Button className="confirmBtn" onClick={this.props.onConfirm}>
               Don't Save
             </Button>
 
