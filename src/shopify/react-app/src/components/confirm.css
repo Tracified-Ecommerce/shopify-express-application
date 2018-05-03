@@ -50,8 +50,28 @@
         width: 88%;
     }   
 
+    .alertBox{
+        font-size: 13px;
+    }
+
+    .closeIcon .Polaris-Button{
+        margin-left: 165%;
+        margin-top: -70%;
+        border: none;
+        background: transparent;
+        width: 0%;
+    }
     .alertFooter {
         padding-left: 5px;
         padding-right: 12px;
+    }
+
+    .alertFooter .Polaris-Button.Polaris-Button--primary {
+        width: 40%;
+        margin-top: 5%;
+    }
+
+    .alertFooter .Polaris-Button__Content{
+        font-size: 13px;
     }
 }
