@@ -74,13 +74,13 @@ class Confirm extends Component {
            <hr/> 
            
             <div className="alertFooter" style={footerStyle}>
-            <Button className="confirmBtn" primary onClick={this.props.onConfirm} icon="save">
-              Yes
+            <Button className="confirmBtn" primary onClick={this.props.onConfirm}>
+              Don't Save
             </Button>
 
             {/* <div className="CloseBtn"> */}
-              <Button className="cancelBtn" primary onClick={this.props.onCancel} icon="cancel">
-                No
+              <Button className="cancelBtn" primary onClick={this.props.onCancel}>
+              Save
               </Button>
             {/* </div> */}
             </div>
