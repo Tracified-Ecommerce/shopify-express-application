@@ -114,7 +114,7 @@
     .SettingAlert .alertHleft {
         min-width: 17%;
         text-align: left;
-        margin-left: -14%;
+        margin-left: 0%;
     }
     
     .SettingAlert .alertHright{
