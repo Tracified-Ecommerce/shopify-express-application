@@ -39,10 +39,15 @@
 
 /* Media queries for the tablet devices */
 @media (min-width: 650px) and (max-width: 1023px) {
-    .SettingAlert .alertBox {
-        width: 50%;
+    .no-right-padding{
+        padding-right: 0;
     }
-
+    
+    /* alert box styles which appears in settings page  */
+    .SettingAlert .alertBox{
+        width: 32%;
+    }
+    
     .SettingAlert .alertmessage {
         max-width: 25%;
         padding-top: 2%;
@@ -51,22 +56,27 @@
         text-align: left;
     }
 
-    .Polaris-Button.Polaris-Button--iconOnly{
-        border: transparent;
-        background: transparent;
-    }
-
-    .SettingAlert .alertHright{
-        min-width: 17%;
-        text-align: left;
-        margin-left: 0%;
-    }
-
     .alertFooter .Polaris-Button.Polaris-Button--primary {
         margin-left: 5%;
         width: 30% !important;
         text-align: right;
         margin-right: -85%;
+    }
+    
+    .SettingAlert .alertHleft {
+        min-width: 17%;
+        text-align: left;
+        margin-left: 0%;
+        /* margin-right: 5%; */
+    }
+    
+    .SettingAlert .alertHright{
+        margin-left: 0%;
+        float: right;
+    }
+    
+    .SettingAlert .Mat_clsose_Icon{
+        margin-right: 7%;
     }
 }
 
