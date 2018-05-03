@@ -45,11 +45,11 @@
     
     /* alert box styles which appears in settings page  */
     .SettingAlert .alertBox{
-        width: 32%;
+        width: 55%;
     }
     
     .SettingAlert .alertmessage {
-        max-width: 25%;
+        min-width: 25%;
         padding-top: 2%;
         margin-bottom: 1%;
         margin-right: 0;
@@ -57,26 +57,32 @@
     }
 
     .alertFooter .Polaris-Button.Polaris-Button--primary {
-        margin-left: 5%;
-        width: 30% !important;
+        width: 21%!important;
         text-align: right;
-        margin-right: -85%;
+        margin-right: -77%;
     }
     
     .SettingAlert .alertHleft {
         min-width: 17%;
         text-align: left;
-        margin-left: 0%;
-        /* margin-right: 5%; */
+        margin-left: -14%;
     }
     
     .SettingAlert .alertHright{
-        margin-left: 0%;
-        float: right;
+        margin-left: 28%;
+        float: left;
     }
     
     .SettingAlert .Mat_clsose_Icon{
-        margin-right: 7%;
+        margin-right: -27%;
+    }
+
+    .SettingAlert .Mat_clsose_Icon .Polaris-Button.Polaris-Button--iconOnly{
+        border: 0px solid transparent;
+    }
+
+    .SettingAlert .Mat_clsose_Icon .Polaris-Button.Polaris-Button--iconOnly{
+        width: 30%;
     }
 }
 

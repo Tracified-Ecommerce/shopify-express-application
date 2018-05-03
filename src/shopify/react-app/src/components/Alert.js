@@ -80,7 +80,7 @@ class Alert extends Component {
           </TextContainer>
             
             <div className="alertFooter" style={footerStyle}>
-            <Button className="closeBtn" style={closeBtnStyle} primary onClick={this.props.onClose} icon="cancel">
+            <Button className="closeBtn" style={closeBtnStyle} primary onClick={this.props.onClose}>
               {this.props.closeBtnText}
             </Button>
             </div>
