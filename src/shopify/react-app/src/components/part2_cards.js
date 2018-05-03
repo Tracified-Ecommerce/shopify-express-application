@@ -45,6 +45,8 @@ class Part2Cards extends Component {
     this.orderArray = [];
     this.paginatedArray = [];
     this.totalPages;
+    this.startPage;
+    this.endPage;
   }
 
   componentDidMount() {
@@ -320,25 +322,30 @@ class Part2Cards extends Component {
           this.orderArray.length / this.state.itemsPerPage
         );
 
-        this.pages = Array.apply(null, { length: this.totalPages });
+        this.startPage;
+        this.endPage;
+        if (this.totalPages <= 6) {
 
-        if (this.totalPages <= 10) {
-          var startPage, endPage;
+          this.startPage = 1;
+          this.endPage = this.totalPages;
 
-          startPage = 1;
-          endPage = this.totalPages;
         } else {
-          if (this.state.pageNo <= 6) {
-            startPage = 1;
-            endPage = 10;
+          if (this.state.pageNo <= 5) {
+            this.startPage = 1;
+            this.endPage = 6;
+
           } else if (this.state.pageNo + 4 >= this.totalPages) {
-            startPage = this.totalPages - 9;
-            endPage = this.totalPages;
+            this.startPage = this.totalPages - 8;
+            this.endPage = this.totalPages;
+
           } else {
-            startPage = this.state.pageNo - 5;
-            endPage = this.state.pageNo + 4;
+            this.startPage = this.state.pageNo - 2;
+            this.endPage = this.state.pageNo + 3;
+
           }
         }
+
+        this.pages = [...Array((this.endPage + 1) - this.startPage).keys()].map(i => this.startPage + i);
       } else {
         var orders = this.state.orders;
 
