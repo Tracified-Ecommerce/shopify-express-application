@@ -54,20 +54,21 @@
     .alertBox{
         font-size: 16px;
         text-align: left;
+        max-width: 500px;
     }
 
     .closeIcon .Polaris-Button{
-        margin-left: 165%;
-        margin-top: -70%;
+        margin-left: 97%;
+        margin-top: 5%;
         border: none;
         background: transparent;
-        width: 0%;
+        width: 0;
     }
     .alertFooter {
         padding-left: 5px;
         padding-right: 12px;
         width: 133%;
-        margin-left: -15%;
+        margin-left: 2%;
         text-align: right;
     }
 
@@ -77,7 +78,7 @@
     }
 
     .alertFooter .Polaris-Button__Content{
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
