@@ -335,23 +335,23 @@ class FulfilledOrdersPage extends Component {
 
         this.startPage;
         this.endPage;
-        if (this.totalPages <= 6) {
+        if (this.totalPages <= 10) {
 
           this.startPage = 1;
           this.endPage = this.totalPages;
 
         } else {
-          if (this.state.pageNo <= 5) {
+          if (this.state.pageNo <= 6) {
             this.startPage = 1;
-            this.endPage = 6;
+            this.endPage = 10;
 
           } else if (this.state.pageNo + 4 >= this.totalPages) {
-            this.startPage = this.totalPages - 8;
+            this.startPage = this.totalPages - 9;
             this.endPage = this.totalPages;
 
           } else {
-            this.startPage = this.state.pageNo - 2;
-            this.endPage = this.state.pageNo + 3;
+            this.startPage = this.state.pageNo - 5;
+            this.endPage = this.state.pageNo + 4;
 
           }
         }

@@ -9,10 +9,20 @@
 
     .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
         background-color: rgba(105, 187, 241, 0.377);
+       
        }
 
     .paginationUl li:focus {
         background-color: rgba(105, 187, 241, 0.377);
+      
+    }
+
+    .paginationUl li a{
+        font-size: 114%;
+        padding-bottom: 8px;
+        padding-top: 1px;
+        padding-left: 13px;
+        padding-right: 13px;
     }
 
     .paginationUl li .active {
@@ -24,7 +34,8 @@
         list-style: none;
         text-align: center;
         background-color: transparent;
-        margin-right: 22px;
+        margin-right: 31px;
+        margin-left: 11px;
         width: 7%;
         line-height: 150%;
         padding-bottom: 1%;
@@ -37,9 +48,6 @@
         display: flex;
     }
 
-    .a{
-        font-size: 114%;
-    }
  }
  
  
@@ -80,6 +88,14 @@
       .pagination_stack .Polaris-Stack__Item {
           display: flex;
       }
+
+      .a{
+        font-size: 114%;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        padding-left: 13px;
+        padding-right: 13px
+    }
  }
  
  /* Media Queries for mobile devices */
@@ -92,6 +108,7 @@
 
     .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
         background-color: rgba(105, 187, 241, 0.377);
+        padding: 8px;
        }
 
     .paginationUl li:focus {
@@ -115,4 +132,12 @@
       .pagination_stack{
         width: 118%;
       }
+
+      .a{
+        font-size: 114%;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        padding-left: 13px;
+        padding-right: 13px
+    }
  }
