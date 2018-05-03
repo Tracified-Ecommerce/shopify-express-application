@@ -340,7 +340,7 @@ var saveBtnStyle={
                       onClose={this.toggleAlert}
                       heading={this.state.alertHeading}
                       message={this.state.alertMessage}
-                      closeBtnText="OK">
+                      closeBtnText="Got it">
               </AlertBox>
             </div>
       </div>
