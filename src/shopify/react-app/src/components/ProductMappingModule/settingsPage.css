@@ -135,6 +135,25 @@
     }
  }
 
+@media screen and (min-width:1440px){
+    .SettingAlert .alertBox{
+        width: 35%;
+    }
+
+    .SettingAlert .alertHright {
+        margin-left: 20%;
+        float: left;
+    }
+
+    .alertFooter {
+        padding-right: 13px;
+    }
+
+    .Mat_clsose_Icon .Polaris-Icon {
+        width: 50%;
+    }
+}
+
  /* Media Queries for larger screens  */
  @media screen and (min-device-width:1824px){
     .no-right-padding{
@@ -148,24 +167,24 @@
     
     .SettingAlert .alertmessage {
         max-width: 25%;
-        padding-top: 2%;
-        margin-left: 2%;
-        margin-right: 0%;
+        padding-top: 1%;
+        margin-left: 1%;
+        margin-right: 0;
     }
     
     .SettingAlert .alertHleft {
         max-width: 20%;
-        text-align: center;
-        margin-left: 10%;
+        text-align: left;
+        margin-left: 1%;
         margin-right: 5%;
     }
     
-    .SettingAlert .alertHright{
-        margin-left: 0%;
-        float: right;
+    .SettingAlert .alertHright {
+        margin-left: 10%;
+        float: left;
     }
     
-    .SettingAlert .Mat_clsose_Icon{
-        margin-right: 7%;
+    .SettingAlert .Mat_clsose_Icon {
+        margin-right: 90%;
     }
  }
