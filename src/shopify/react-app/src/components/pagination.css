@@ -39,9 +39,14 @@
         line-height: 150%;
         padding-bottom: 1%;
       }
-      #previous , #first , #next , #last{
+     #first , #next , #last{
         width: 9%;
         margin-right: 8px;
+        margin-left: 14px;
+      }
+      #previous {
+        width: 9%;
+        margin-right: 20px;
         margin-left: 14px;
       }
       .pagination_stack{
@@ -84,6 +89,17 @@
         width: 3%;
         line-height: 150%;
         padding-bottom: 1%;
+      }
+
+      #first , #next , #last{
+        width: 9%;
+        margin-right: 8px;
+        margin-left: 14px;
+      }
+      #previous {
+        width: 9%;
+        margin-right: 20px;
+        margin-left: 14px;
       }
       .pagination_stack{
         width: 118%;
@@ -135,6 +151,18 @@
       }
       .pagination_stack{
         width: 118%;
+      }
+
+      
+      #first , #next , #last{
+        width: 9%;
+        margin-right: 8px;
+        margin-left: 14px;
+      }
+      #previous {
+        width: 9%;
+        margin-right: 20px;
+        margin-left: 14px;
       }
 
       .a{
