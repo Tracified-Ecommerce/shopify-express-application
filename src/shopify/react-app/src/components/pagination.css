@@ -3,8 +3,7 @@
     .paginationUl{
         list-style: none;
         margin-top: 6%;
-        width: 575px;
-        font-weight: bold;
+        width: fit-content;
     }
 
     .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
@@ -34,11 +33,16 @@
         list-style: none;
         text-align: center;
         background-color: transparent;
-        margin-right: 31px;
-        margin-left: 11px;
+        margin-right: -16px;
+        margin-left: 14px;
         width: 7%;
         line-height: 150%;
         padding-bottom: 1%;
+      }
+      #previous , #first , #next , #last{
+        width: 9%;
+        margin-right: 8px;
+        margin-left: 14px;
       }
       .pagination_stack{
         width: 100%;
@@ -55,8 +59,8 @@
  @media (min-width: 650px) and (max-width: 1023px) {
     .paginationUl{
         list-style: none;
-        max-width: 64%;
-        font-weight: bold;
+        max-width: fit-content;
+        width: fit-content;
     }
 
     .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
@@ -103,7 +107,7 @@
  
     .paginationUl{
         list-style: none;
-        font-weight: bold;
+        width: fit-content;
     }
 
     .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {

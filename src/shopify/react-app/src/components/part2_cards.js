@@ -514,10 +514,10 @@ class Part2Cards extends Component {
               <Stack distribution="center">
                 <Stack.Item>
                   <ul className="paginationUl">
-                    <li className={this.state.pageNo === 1 ? "disabled" : ""}>
+                    <li id="first" className={this.state.pageNo === 1 ? "disabled" : ""}>
                       <a onClick={() => this.setPage(0)}>First</a>
                     </li>
-                    <li className={this.state.pageNo === 1 ? "disabled" : ""}>
+                    <li id="previous" className={this.state.pageNo === 1 ? "disabled" : ""}>
                       <a onClick={() => this.selectPreviousPage()}>Previous</a>
                     </li>
                     {this.pages.map((page, index) => (
@@ -530,14 +530,14 @@ class Part2Cards extends Component {
                         <a onClick={() => this.setPage(index)}>{index + 1}</a>
                       </li>
                     ))}
-                    <li
+                    <li id="next"
                       className={
                         this.state.pageNo === this.totalPages ? "disabled" : ""
                       }
                     >
                       <a onClick={() => this.selectNextPage()}>Next</a>
                     </li>
-                    <li
+                    <li id="last"
                       className={
                         this.state.pageNo === this.totalPages ? "disabled" : ""
                       }
