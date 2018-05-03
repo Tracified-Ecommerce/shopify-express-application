@@ -71,21 +71,29 @@
     
     /* alert box styles which appears in settings page  */
     .SettingAlert .alertBox{
-        width: 35%;
+        width: 30%;
     }
     
     .SettingAlert .alertmessage {
         max-width: 25%;
         padding-top: 2%;
-        margin-left: 3%;
-        margin-right: 0%;
+        margin-bottom: 2%;
+        margin-right: 0;
+        text-align: left;
+    }
+
+    .alertFooter .Polaris-Button.Polaris-Button--primary {
+        margin-left: 5%;
+        width: 30% !important;
+        text-align: right;
+        margin-right: -85%;
     }
     
     .SettingAlert .alertHleft {
-        max-width: 20%;
-        text-align: center;
-        margin-left: 10%;
-        margin-right: 5%;
+        min-width: 21%;
+        text-align: left;
+        margin-left: 0%;
+        /* margin-right: 5%; */
     }
     
     .SettingAlert .alertHright{
