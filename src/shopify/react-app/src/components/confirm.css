@@ -1,10 +1,14 @@
     .alertBox , .cnfirmBox{
         color: #666666;
     }
-    
+
     .alertFooter .Polaris-Button.Polaris-Button--primary{
         width: 20%;
         margin-left: 5%;
+    }
+
+    .alertFooter .Polaris-Button{
+        border: 1px solid black;
     }
     
     .alertBox .Polaris-TextContainer{
