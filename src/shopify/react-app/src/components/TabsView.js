@@ -17,8 +17,8 @@ class TabsView extends Component {
       tempSelectedTab: 0,
       selectedTab: 0,
       notSaved: false,
-      confirmHeading:"Confirm Navigation",
-      confirmMessage:"You have unsaved changes. Are you sure you want to leave this page ?"
+      confirmHeading:"Save Changes",
+      confirmMessage:"Want to save changes you made in settings?"
     };
   }
 
