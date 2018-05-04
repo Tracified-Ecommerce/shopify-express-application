@@ -321,7 +321,7 @@
     }
 
     .MaTAlert .Mat_clsose_Icon .Polaris-Button{
-        margin-left: 140px;
+        margin-left: 160px;
         margin-right: 10%;
         margin-top: -10%;
         border: none;
@@ -338,7 +338,7 @@
 
     .MaTAlert .alertHleft{
         max-width: 20%;
-        text-align: center;
+        text-align: left;
         margin-left: 1%;
     }
 
