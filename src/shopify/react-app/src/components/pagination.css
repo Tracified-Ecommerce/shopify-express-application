@@ -66,6 +66,8 @@
         list-style: none;
         max-width: fit-content;
         width: fit-content;
+        margin-left: -50%;
+
     }
 
     .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
@@ -85,7 +87,7 @@
         list-style: none;
         text-align: center;
         background-color: transparent;
-        margin-right: 30px;
+        margin-right: 3%;
         width: 3%;
         line-height: 150%;
         padding-bottom: 1%;
