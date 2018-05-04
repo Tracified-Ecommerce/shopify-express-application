@@ -95,7 +95,7 @@
     
     /* alert box styles which appears in settings page  */
     .SettingAlert .alertBox{
-        width: 33%;
+        width: 350px;
     }
     
     .SettingAlert .alertmessage {
@@ -107,7 +107,7 @@
     }
 
     .alertFooter .Polaris-Button.Polaris-Button--primary {
-        width: 21%!important;
+        width: 30%!important;
         text-align: right;
         margin-right: -77%;
     }
@@ -119,12 +119,12 @@
     }
     
     .SettingAlert .alertHright{
-        margin-left: 19%;
+        margin-left: 207px;
         float: left;
     }
     
     .alertFooter{
-        margin-left: 5%;
+        margin-left: 35%;
     }
 
     .SettingAlert .Mat_clsose_Icon{
