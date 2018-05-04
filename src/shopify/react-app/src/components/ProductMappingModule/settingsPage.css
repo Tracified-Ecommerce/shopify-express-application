@@ -57,7 +57,7 @@
     .SettingAlert .alertmessage {
         min-width: 25%;
         padding-top: 1%;
-        margin-bottom: 1%;
+        margin-bottom: -1%;
         margin-right: 0;
         text-align: left;
     }
@@ -65,7 +65,7 @@
     .alertFooter .Polaris-Button.Polaris-Button--primary {
         width: 21%!important;
         text-align: right;
-        margin-right: -77%;
+        margin-right: -88%;
     }
     
     .SettingAlert .alertHleft {
@@ -106,7 +106,7 @@
     .SettingAlert .alertmessage {
         min-width: 25%;
         padding-top: 1%;
-        margin-bottom: 1%;
+        margin-bottom: -1%;
         margin-right: 0;
         text-align: left;
     }
@@ -156,7 +156,7 @@
     }
 
     .alertFooter {
-        padding-right: 13px;
+        padding-right: 31px;
     }
 
     .Mat_clsose_Icon .Polaris-Icon {
