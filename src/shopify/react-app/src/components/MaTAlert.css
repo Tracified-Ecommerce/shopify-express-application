@@ -33,14 +33,14 @@
     }
 
     .MaTAlert .heading_row .Polaris-Button{
-      
+        margin-left: 7px;
         border: none;
         margin-top: 0px;
     }
     
     .MaTAlert .alertFooter .Polaris-Button.Polaris-Button--primary{
         /* margin-right: 5%; */
-        margin-left: 5%;
+        margin-left: -6%;
     }
     
     .MaTAlert .alertBox .Polaris-TextContainer{
@@ -71,6 +71,10 @@
         width: 0%;
     }
 
+    .alertmessage.col{
+        text-align: left;
+    }
+
     .MaTAlert .alertBox{
         width: 94%;
     }
@@ -87,6 +91,8 @@
 
      .MaTAlert .alertHleft{
         min-width: 75%;
+        text-align: left;
+        font-size: 14px;
     }
 }
 
@@ -181,7 +187,7 @@
 }
  }
 
- 
+
  /* Media queries for the pc */
  @media (min-width: 1024px) {
  
