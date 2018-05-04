@@ -37,8 +37,8 @@ class CollapaseCard extends Component {
         axios.get(url)
             .then(response => {
                 this.setState({
-                    alertHeading: "Mark Order as Tracified",
-                    alertMessage: "The order was marked as Tracified. You can now view the relevant traceability data through Tracified Orders. ",
+                    alertHeading: "Your order is now Tracified",
+                    alertMessage: "Now you can view the relevant traceability data through Tracified Orders. ",
                 });
                 this.setState({
                     isOpen: true,
