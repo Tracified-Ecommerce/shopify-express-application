@@ -36,6 +36,10 @@
     .SettingAlert .alertFooter .Polaris-Button__Content span{
         font-size: 12px;
     }
+
+    .alertFooter{
+        margin-left: 13%;
+    }
 }
 
 /* Media queries for the tablet devices */
