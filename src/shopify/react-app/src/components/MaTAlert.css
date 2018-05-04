@@ -246,14 +246,14 @@
 
 
     .MaTAlert .alertHleft{
-        max-width: 20%;
+        max-width: 250px;
         text-align: left;
         margin-left: 0%;
     }
 
 
     .MaTAlert .alertHright{
-        margin-left: 25%;
+        margin-left: 200px;
        float: right;
     
     }
@@ -267,6 +267,7 @@
     .MaTAlert .heading_row .Polaris-Button{
         margin-top: 0px;
         border: none;
+        margin-left: 111px;
     }
   
     .MaTAlert .heading_row .Polaris-Icon__Svg{
