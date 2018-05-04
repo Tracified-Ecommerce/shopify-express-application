@@ -70,9 +70,7 @@
 @media (min-width: 650px) and (max-width: 1023px) {
   .paginationUl {
     list-style: none;
-    max-width: fit-content;
-    width: fit-content;
-    margin-left: -50%;
+    margin-left: 3%;
   }
 
   .paginationUl li:hover,
@@ -104,14 +102,12 @@
   .paginationUl li a {
     font-size: 130%;
     width: 4%;
-    padding-top: 2%;
-    padding-bottom: 35%;
-    padding-left: 30%;
-    padding-right: 30%;
+
   }
 
   #first {
-    width: 9%;
+    width: 12%;
+    margin-right: 0px;
   }
   #next {
     width: 9%;
@@ -125,10 +121,7 @@
   }
   #previous {
     width: 9%;
-   padding-top: 0%;
-   padding-bottom: 10%;
-   padding-left: 23%;
-   padding-right: 23%;
+
   }
   .pagination_stack {
     width: 100%;
