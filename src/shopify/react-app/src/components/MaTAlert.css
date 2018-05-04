@@ -143,6 +143,7 @@
 .MaTAlert .alertBox{
     width: 94%;
     text-align: center;
+    max-width: 650px!important;
 }
 
 .MaTAlert .closeIcon .Polaris-Icon{
@@ -155,7 +156,7 @@
     max-width: 75%;
     text-align: right;
     float: left;
-    padding-left: 13%;
+    padding-left: 0%;
 }
 
 
@@ -168,9 +169,9 @@
 }
 
 .MaTAlert .alertmessage{
-    max-width: 54%;
+    min-width: 70%;
     padding-top: 1%;
-    text-align: center;
+    text-align: left;
 }
   
 
@@ -185,7 +186,7 @@
  @media (min-width: 1024px) {
  
     .MaTAlert .alertBox{
-        max-width: 387px ! important;
+        max-width: 650px!important;
     }
 
     .MaTAlert .alertBox .Polaris-DisplayText.Polaris-DisplayText--sizeSmall{
@@ -198,7 +199,7 @@
 
     .MaTAlert .alertFooter .Polaris-Button.Polaris-Button--primary{
         /* margin-right: 5%; */
-        margin-left: 5%;
+        margin-left: 0%;
     }
     
     .MaTAlert .alertBox .Polaris-TextContainer{
@@ -233,9 +234,9 @@
         width: 0%;
     }
 
-     .MaTAlert .alertBox{
+     /* .MaTAlert .alertBox{
         width: 94%;
-    }
+    } */
 
     .MaTAlert .Mat_clsose_Icon .Polaris-Icon{
         width: 40%;
@@ -246,21 +247,21 @@
 
     .MaTAlert .alertHleft{
         max-width: 20%;
-        text-align: center;
-        margin-left: 1%;
+        text-align: left;
+        margin-left: 0%;
     }
 
 
     .MaTAlert .alertHright{
-       margin-left: 4%;
+        margin-left: 25%;
        float: right;
     
     }
 
     .MaTAlert .alertmessage{
-        max-width: 35%;
-        padding-top: 2%;
-        text-align: center;
+        min-width: 70%;
+        padding-top: 1%;
+        text-align: left;
     }
 
     .MaTAlert .heading_row .Polaris-Button{
