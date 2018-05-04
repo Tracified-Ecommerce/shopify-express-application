@@ -2,7 +2,7 @@
         color: #666666;
     }
     
-    .alertFooter .Polaris-Button.Polaris-Button--primary{
+    .confirmFooter .Polaris-Button.Polaris-Button--primary{
         width: 20%;
         margin-left: 3%;
         margin-top: 1%;
@@ -21,7 +21,7 @@
         margin-bottom: 5px !important;
     }
     
-    .alertFooter{
+    .confirmFooter{
         width:  447px;
         padding-left: 11px ;
         padding-right: 20px ;
@@ -65,7 +65,7 @@
         background: transparent;
         width: 0;
     }
-    .alertFooter {
+    .confirmFooter {
         padding-left: 5px;
         padding-right: 12px;
         width: 122%!important;
@@ -73,13 +73,13 @@
         /* text-align: center; */
     }
 
-    .alertFooter .Polaris-Button.Polaris-Button--primary {
+    .confirmFooter .Polaris-Button.Polaris-Button--primary {
         width: 17%;
         margin-top: 3%;
         margin-left: 3%;
     }
 
-    .alertFooter .Polaris-Button__Content{
+    .confirmFooter .Polaris-Button__Content{
         font-size: 14px;
     }
 }
@@ -101,20 +101,20 @@
         background: transparent;
         width: 0%;
     }
-    .alertFooter {
+    .confirmFooter {
         padding-left: 5px;
         padding-right: 12px;
         width: 122%!important;
         margin-left: -15%;
     }
 
-    .alertFooter .Polaris-Button.Polaris-Button--primary {
+    .confirmFooter .Polaris-Button.Polaris-Button--primary {
         width: 42%;
         margin-top: 3%;
         margin-left: 3%;
     }
 
-    .alertFooter .Polaris-Button__Content{
+    .confirmFooter .Polaris-Button__Content{
         font-size: 13px;
     }
 }

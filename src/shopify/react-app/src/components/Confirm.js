@@ -73,7 +73,7 @@ class Confirm extends Component {
 
            <hr/> 
            
-            <div className="alertFooter" style={footerStyle}>
+            <div className="confirmFooter" style={footerStyle}>
             <Button className="confirmBtn" onClick={this.props.onConfirm}>
               Don't Save
             </Button>
