@@ -199,7 +199,7 @@
 
     .MaTAlert .alertFooter .Polaris-Button.Polaris-Button--primary{
         /* margin-right: 5%; */
-        margin-left: 5%;
+        margin-left: 0%;
     }
     
     .MaTAlert .alertBox .Polaris-TextContainer{
@@ -253,7 +253,7 @@
 
 
     .MaTAlert .alertHright{
-       margin-left: 4%;
+        margin-left: 25%;
        float: right;
     
     }
