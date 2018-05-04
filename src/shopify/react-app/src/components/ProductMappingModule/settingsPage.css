@@ -95,7 +95,7 @@
     
     /* alert box styles which appears in settings page  */
     .SettingAlert .alertBox{
-        width: 40%;
+        width: 33%;
     }
     
     .SettingAlert .alertmessage {
@@ -119,10 +119,14 @@
     }
     
     .SettingAlert .alertHright{
-        margin-left: 21%;
+        margin-left: 19%;
         float: left;
     }
     
+    .alertFooter{
+        margin-left: 5%;
+    }
+
     .SettingAlert .Mat_clsose_Icon{
         margin-right: 100%;
     }
