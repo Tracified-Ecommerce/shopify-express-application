@@ -136,6 +136,10 @@
         margin-right: 100%;
     }
 
+    .Mat_clsose_Icon .Polaris-Icon {
+        width: 53%;
+    }
+
     .SettingAlert .Mat_clsose_Icon .Polaris-Button.Polaris-Button--iconOnly{
         border: 0px solid transparent;
     }
@@ -160,7 +164,7 @@
     }
 
     .Mat_clsose_Icon .Polaris-Icon {
-        width: 50%;
+        width: 63%;
     }
 }
 
