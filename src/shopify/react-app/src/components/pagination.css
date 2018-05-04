@@ -4,6 +4,7 @@
         list-style: none;
         margin-top: 6%;
         width: fit-content;
+        min-width: 100%;
     }
 
     .paginationUl li:hover, .paginationUl a:hover, .paginationUl li.active , .paginationUl  a:active {
@@ -17,11 +18,11 @@
     }
 
     .paginationUl li a{
-        font-size: 114%;
-        padding-bottom: 8px;
-        padding-top: 1px;
-        padding-left: 13px;
-        padding-right: 13px;
+        font-size: 130%;
+        padding-bottom: 7px;
+        padding-top: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     .paginationUl li .active {
@@ -33,21 +34,25 @@
         list-style: none;
         text-align: center;
         background-color: transparent;
-        margin-right: -16px;
-        margin-left: 14px;
-        width: 7%;
-        line-height: 150%;
+        width: 5%;
+        line-height: 100%;
         padding-bottom: 1%;
+        padding-top: 1%;
       }
-     #first , #next , #last{
+     #first{
+        width: 6%;
+        
+      }
+      #next {
         width: 9%;
-        margin-right: 8px;
-        margin-left: 14px;
+        
+      }
+     #last{
+        width: 9%;
+        
       }
       #previous {
-        width: 9%;
-        margin-right: 20px;
-        margin-left: 14px;
+        width: 8%;
       }
       .pagination_stack{
         width: 100%;
@@ -55,6 +60,7 @@
 
       .pagination_stack .Polaris-Stack__Item {
         display: flex;
+        min-width: 100%;
     }
 
  }
