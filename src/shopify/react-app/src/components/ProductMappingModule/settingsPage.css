@@ -26,9 +26,10 @@
     }
 
     .SettingAlert .alertHleft{
-        max-width: 50%;
-        text-align: center;
-        margin-left: 40%;
+        min-width: 63%;
+        text-align: left;
+        margin-left: 1%;
+        margin-top: 2%;
         margin-right: 40%;
     }
 
