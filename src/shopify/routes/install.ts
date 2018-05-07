@@ -19,9 +19,13 @@ const router = Router();
 // installation route
 
 const scopes = "read_products,write_products,write_themes,write_orders,read_orders";
-const forwardingAddress = configs.shopifyConfigs.install.forwardingAddress;
-const apiKey = configs.shopifyConfigs.install.apiKey;
-const apiSecret = configs.shopifyConfigs.install.apiSecret;
+// const forwardingAddress = configs.shopifyConfigs.install.forwardingAddress;
+// const apiKey = configs.shopifyConfigs.install.apiKey;
+// const apiSecret = configs.shopifyConfigs.install.apiSecret;
+
+const forwardingAddress = process.env.FORWARDING_ADDRESS;
+const apiKey = process.env.TRAC_PLUGIN_API_KEY;
+const apiSecret = process.env.TRAC_PLUGIN_API_SECRET;
 
 router.get("/", (req: Request, res: Response) => {
   const shop = req.query.shop;

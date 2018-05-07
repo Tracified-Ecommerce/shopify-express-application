@@ -3,8 +3,8 @@ import request = require("request-promise");
 import errors = require("request-promise/errors");
 import * as configs from "../appConfig";
 const tracifiedURL: string = "https://tracified-mock-api.herokuapp.com";
-const tracifiedPosURL: string = configs.shopifyConfigs.services.tracifiedPosUrl;
-const adminURL: string = configs.shopifyConfigs.services.adminURL;
+const tracifiedPosURL: string = process.env.TRAC_POS_URL;
+const adminURL: string = process.env.TRAC_ADMIN_URL;
 
 export interface IServices {
     verifyTracifiedAccount(tempToken: string, shopName: string): Promise<any>;

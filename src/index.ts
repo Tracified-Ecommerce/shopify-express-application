@@ -40,7 +40,8 @@ app.engine("html", ejs.renderFile);
  * db connection
  * -set up default mongoose connection
  */
-const mongoDB = configs.shopifyConfigs.db;
+// const mongoDB = configs.shopifyConfigs.db;
+const mongoDB = process.env.MONGO_URI;
 mongoose.connect(mongoDB, {
   useMongoClient: true,
 });
