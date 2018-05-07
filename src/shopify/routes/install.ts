@@ -23,9 +23,9 @@ const scopes = "read_products,write_products,write_themes,write_orders,read_orde
 // const apiKey = configs.shopifyConfigs.install.apiKey;
 // const apiSecret = configs.shopifyConfigs.install.apiSecret;
 
-const forwardingAddress = process.env.FORWARDING_ADDRESS;
-const apiKey = process.env.TRAC_PLUGIN_API_KEY;
-const apiSecret = process.env.TRAC_PLUGIN_API_SECRET;
+const forwardingAddress: any = process.env.FORWARDING_ADDRESS;
+const apiKey: any = process.env.TRAC_PLUGIN_API_KEY;
+const apiSecret: any = process.env.TRAC_PLUGIN_API_SECRET;
 
 router.get("/", (req: Request, res: Response) => {
   const shop = req.query.shop;
